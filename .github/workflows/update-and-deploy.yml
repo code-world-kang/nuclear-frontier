@@ -1,0 +1,74 @@
+name: 每日更新并发布网站
+
+on:
+  schedule:
+    # GitHub 使用 UTC：00:17 对应北京时间 08:17。
+    - cron: "17 0 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "data/**"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: nuclear-frontier-pages
+  cancel-in-progress: false
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v6
+
+      - name: 配置 Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: 拉取每日论文、新闻与通知
+        run: python scripts/update_content.py --days 14 --strict
+
+      - name: 拉取公开收藏快照
+        env:
+          FAVORITE_SYNC_EXPORT_URL: ${{ secrets.FAVORITE_SYNC_EXPORT_URL }}
+          FAVORITE_SYNC_READ_TOKEN: ${{ secrets.FAVORITE_SYNC_READ_TOKEN }}
+        run: python scripts/sync_public_favorites.py
+
+      - name: 构建站点数据
+        run: python scripts/build_site.py
+
+      - name: 运行数据与代码检查
+        run: |
+          python -m unittest discover -s tests -v
+          node --check site/app.js
+
+      - name: 保存当日数据快照
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data site/data
+          if ! git diff --cached --quiet; then
+            git commit -m "data: 每日更新 $(date -u +%F)"
+            git push
+          fi
+
+      - name: 配置 GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: 上传网站文件
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+      - name: 发布 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

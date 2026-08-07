@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "experimental-nuclear",
+      "name": "实验核物理",
+      "icon": "◉",
+      "keywords": ["experimental nuclear", "nuclear experiment", "radioactive ion beam", "rare isotope", "isotope beam", "spectroscopy", "decay measurement"]
+    },
+    {
+      "id": "theoretical-nuclear",
+      "name": "理论核物理",
+      "icon": "Ψ",
+      "keywords": ["nuclear theory", "ab initio", "density functional", "shell model", "chiral effective", "many-body", "mean-field"]
+    },
+    {
+      "id": "nuclear-structure",
+      "name": "核结构",
+      "icon": "◈",
+      "keywords": ["nuclear structure", "nuclear spectroscopy", "shell evolution", "magic number", "isomer", "collective motion", "giant resonance", "halo nucleus", "drip line", "exotic nuclei", "excited state", "charge radii", "octupole", "quadrupole"]
+    },
+    {
+      "id": "nuclear-reactions",
+      "name": "核反应",
+      "icon": "⇌",
+      "keywords": ["nuclear reaction", "reaction cross section", "transfer reaction", "knockout reaction", "fusion reaction", "fusion", "fission", "fragmentation", "neutron capture", "direct reaction"]
+    },
+    {
+      "id": "high-energy-nuclear",
+      "name": "高能核物理",
+      "icon": "⚡",
+      "keywords": ["heavy-ion collision", "heavy ion collision", "quark-gluon plasma", "quark gluon plasma", "QGP", "relativistic heavy", "RHIC", "ALICE", "sPHENIX", "hadron", "jet quenching", "elliptic flow", "nuclear modification factor"]
+    },
+    {
+      "id": "nuclear-astrophysics",
+      "name": "核天体物理",
+      "icon": "✶",
+      "keywords": ["nuclear astrophysics", "nucleosynthesis", "neutron star", "r-process", "s-process", "rp-process", "supernova", "stellar reaction", "equation of state", "neutron-star merger"]
+    },
+    {
+      "id": "detectors-daq",
+      "name": "探测器与DAQ",
+      "icon": "▣",
+      "keywords": ["detector", "data acquisition", "DAQ", "silicon detector", "scintillator", "time of flight", "TOF", "time projection chamber", "TPC", "calorimeter", "particle identification", "nuclear electronics", "germanium detector"]
+    },
+    {
+      "id": "accelerators",
+      "name": "加速器与束流",
+      "icon": "⟳",
+      "keywords": ["accelerator", "beam dynamics", "beam diagnostic", "ion source", "cyclotron", "synchrotron", "linac", "radioactive beam", "beam line"]
+    },
+    {
+      "id": "fusion",
+      "name": "核聚变",
+      "icon": "☀",
+      "keywords": ["nuclear fusion", "fusion energy", "fusion plasma", "tokamak", "stellarator", "inertial confinement", "magnetic confinement", "ITER", "EAST", "NIF", "tritium", "plasma-facing", "fusion reactor"]
+    },
+    {
+      "id": "ai-science",
+      "name": "AI与科学计算",
+      "icon": "AI",
+      "keywords": ["artificial intelligence", "machine learning", "deep learning", "neural network", "foundation model", "large language model", "surrogate model", "scientific machine learning", "Bayesian inference", "uncertainty quantification"]
+    },
+    {
+      "id": "nuclear-data-applications",
+      "name": "核数据与应用",
+      "icon": "≡",
+      "keywords": ["nuclear data", "evaluated data", "cross-section library", "medical isotope", "radiotherapy", "radiation imaging", "nuclear medicine", "reactor physics", "dosimetry"]
+    },
+    {
+      "id": "particle-cross",
+      "name": "粒子与核物理交叉",
+      "icon": "μ",
+      "keywords": ["particle physics", "neutrino", "dark matter", "standard model", "beyond the standard model", "BESIII", "Belle II", "LHCb", "ATLAS", "CMS"]
+    },
+    {
+      "id": "frontiers",
+      "name": "其他物理前沿",
+      "icon": "☆",
+      "keywords": ["quantum", "condensed matter", "topological", "gravitational wave", "black hole", "quantum information"]
+    }
+  ],
+  "priority_terms": [
+    "first observation", "first measurement", "discovery", "breakthrough",
+    "editor's suggestion", "editors' suggestion", "featured article",
+    "new isotope", "new element", "highest precision", "record precision",
+    "nature", "physical review letters"
+  ],
+  "nuclear_gate": [
+    "nuclear", "nucleus", "nuclei", "nuclide", "isotope", "radioactive",
+    "heavy-ion", "heavy ion", "neutron", "proton", "hadron", "quark",
+    "fission", "fusion", "accelerator", "detector", "particle", "astrophys",
+    "neutrino", "plasma", "radiation", "dosimetry", "reactor"
+  ],
+  "ai_gate": [
+    "physics", "nuclear", "particle", "detector", "accelerator", "plasma",
+    "scientific computing", "simulation", "discovery", "laboratory", "materials",
+    "chemistry", "biology", "astronomy", "climate"
+  ]
+}

@@ -1,0 +1,516 @@
+{
+  "site": {
+    "site_name": "核视界",
+    "site_subtitle": "核物理·聚变·AI 前沿情报",
+    "timezone": "Asia/Shanghai",
+    "daily_limit": 600,
+    "history_days": 3650,
+    "favorite_sync_endpoint": "",
+    "favorite_sync_enabled": false,
+    "repository_url": "https://github.com/code-world-kang/nuclear-frontier"
+  },
+  "categories": [
+    {
+      "id": "experimental-nuclear",
+      "name": "实验核物理",
+      "icon": "◉",
+      "keywords": [
+        "experimental nuclear",
+        "nuclear experiment",
+        "radioactive ion beam",
+        "rare isotope",
+        "isotope beam",
+        "spectroscopy",
+        "decay measurement"
+      ]
+    },
+    {
+      "id": "theoretical-nuclear",
+      "name": "理论核物理",
+      "icon": "Ψ",
+      "keywords": [
+        "nuclear theory",
+        "ab initio",
+        "density functional",
+        "shell model",
+        "chiral effective",
+        "many-body",
+        "mean-field"
+      ]
+    },
+    {
+      "id": "nuclear-structure",
+      "name": "核结构",
+      "icon": "◈",
+      "keywords": [
+        "nuclear structure",
+        "nuclear spectroscopy",
+        "shell evolution",
+        "magic number",
+        "isomer",
+        "collective motion",
+        "giant resonance",
+        "halo nucleus",
+        "drip line",
+        "exotic nuclei",
+        "excited state",
+        "charge radii",
+        "octupole",
+        "quadrupole"
+      ]
+    },
+    {
+      "id": "nuclear-reactions",
+      "name": "核反应",
+      "icon": "⇌",
+      "keywords": [
+        "nuclear reaction",
+        "reaction cross section",
+        "transfer reaction",
+        "knockout reaction",
+        "fusion reaction",
+        "fusion",
+        "fission",
+        "fragmentation",
+        "neutron capture",
+        "direct reaction"
+      ]
+    },
+    {
+      "id": "high-energy-nuclear",
+      "name": "高能核物理",
+      "icon": "⚡",
+      "keywords": [
+        "heavy-ion collision",
+        "heavy ion collision",
+        "quark-gluon plasma",
+        "quark gluon plasma",
+        "QGP",
+        "relativistic heavy",
+        "RHIC",
+        "ALICE",
+        "sPHENIX",
+        "hadron",
+        "jet quenching",
+        "elliptic flow",
+        "nuclear modification factor"
+      ]
+    },
+    {
+      "id": "nuclear-astrophysics",
+      "name": "核天体物理",
+      "icon": "✶",
+      "keywords": [
+        "nuclear astrophysics",
+        "nucleosynthesis",
+        "neutron star",
+        "r-process",
+        "s-process",
+        "rp-process",
+        "supernova",
+        "stellar reaction",
+        "equation of state",
+        "neutron-star merger"
+      ]
+    },
+    {
+      "id": "detectors-daq",
+      "name": "探测器与DAQ",
+      "icon": "▣",
+      "keywords": [
+        "detector",
+        "data acquisition",
+        "DAQ",
+        "silicon detector",
+        "scintillator",
+        "time of flight",
+        "TOF",
+        "time projection chamber",
+        "TPC",
+        "calorimeter",
+        "particle identification",
+        "nuclear electronics",
+        "germanium detector"
+      ]
+    },
+    {
+      "id": "accelerators",
+      "name": "加速器与束流",
+      "icon": "⟳",
+      "keywords": [
+        "accelerator",
+        "beam dynamics",
+        "beam diagnostic",
+        "ion source",
+        "cyclotron",
+        "synchrotron",
+        "linac",
+        "radioactive beam",
+        "beam line"
+      ]
+    },
+    {
+      "id": "fusion",
+      "name": "核聚变",
+      "icon": "☀",
+      "keywords": [
+        "nuclear fusion",
+        "fusion energy",
+        "fusion plasma",
+        "tokamak",
+        "stellarator",
+        "inertial confinement",
+        "magnetic confinement",
+        "ITER",
+        "EAST",
+        "NIF",
+        "tritium",
+        "plasma-facing",
+        "fusion reactor"
+      ]
+    },
+    {
+      "id": "ai-science",
+      "name": "AI与科学计算",
+      "icon": "AI",
+      "keywords": [
+        "artificial intelligence",
+        "machine learning",
+        "deep learning",
+        "neural network",
+        "foundation model",
+        "large language model",
+        "surrogate model",
+        "scientific machine learning",
+        "Bayesian inference",
+        "uncertainty quantification"
+      ]
+    },
+    {
+      "id": "nuclear-data-applications",
+      "name": "核数据与应用",
+      "icon": "≡",
+      "keywords": [
+        "nuclear data",
+        "evaluated data",
+        "cross-section library",
+        "medical isotope",
+        "radiotherapy",
+        "radiation imaging",
+        "nuclear medicine",
+        "reactor physics",
+        "dosimetry"
+      ]
+    },
+    {
+      "id": "particle-cross",
+      "name": "粒子与核物理交叉",
+      "icon": "μ",
+      "keywords": [
+        "particle physics",
+        "neutrino",
+        "dark matter",
+        "standard model",
+        "beyond the standard model",
+        "BESIII",
+        "Belle II",
+        "LHCb",
+        "ATLAS",
+        "CMS"
+      ]
+    },
+    {
+      "id": "frontiers",
+      "name": "其他物理前沿",
+      "icon": "☆",
+      "keywords": [
+        "quantum",
+        "condensed matter",
+        "topological",
+        "gravitational wave",
+        "black hole",
+        "quantum information"
+      ]
+    }
+  ],
+  "status": {
+    "last_success": "2026-08-07T22:44:13+08:00",
+    "window": {
+      "from": "2026-07-08",
+      "to": "2026-08-07"
+    },
+    "source_results": [
+      {
+        "name": "APS Physics",
+        "kind": "news",
+        "ok": true,
+        "count": 80,
+        "message": ""
+      },
+      {
+        "name": "CERN News",
+        "kind": "news",
+        "ok": true,
+        "count": 3,
+        "message": ""
+      },
+      {
+        "name": "GSI/FAIR",
+        "kind": "news",
+        "ok": false,
+        "count": 0,
+        "message": "The read operation timed out"
+      },
+      {
+        "name": "IAEA",
+        "kind": "news",
+        "ok": true,
+        "count": 4,
+        "message": ""
+      },
+      {
+        "name": "Nature Machine Intelligence",
+        "kind": "news",
+        "ok": true,
+        "count": 0,
+        "message": ""
+      },
+      {
+        "name": "Nature Physics",
+        "kind": "news",
+        "ok": true,
+        "count": 8,
+        "message": ""
+      },
+      {
+        "name": "CERN Announcements",
+        "kind": "notice",
+        "ok": true,
+        "count": 0,
+        "message": ""
+      },
+      {
+        "name": "FRIB News",
+        "kind": "notice",
+        "ok": true,
+        "count": 2,
+        "message": ""
+      },
+      {
+        "name": "ITER News",
+        "kind": "notice",
+        "ok": true,
+        "count": 12,
+        "message": ""
+      },
+      {
+        "name": "国家自然科学基金委数理科学部",
+        "kind": "notice",
+        "ok": true,
+        "count": 20,
+        "message": ""
+      },
+      {
+        "name": "Chinese Physics C",
+        "kind": "paper",
+        "ok": true,
+        "count": 62,
+        "message": ""
+      },
+      {
+        "name": "Journal of Physics G",
+        "kind": "paper",
+        "ok": true,
+        "count": 5,
+        "message": ""
+      },
+      {
+        "name": "Nature",
+        "kind": "paper",
+        "ok": true,
+        "count": 22,
+        "message": ""
+      },
+      {
+        "name": "Nature Astronomy",
+        "kind": "paper",
+        "ok": true,
+        "count": 4,
+        "message": ""
+      },
+      {
+        "name": "Nature Physics",
+        "kind": "paper",
+        "ok": true,
+        "count": 2,
+        "message": ""
+      },
+      {
+        "name": "Nuclear Fusion",
+        "kind": "paper",
+        "ok": true,
+        "count": 120,
+        "message": ""
+      },
+      {
+        "name": "Nuclear Instruments and Methods in Physics Research A",
+        "kind": "paper",
+        "ok": true,
+        "count": 89,
+        "message": ""
+      },
+      {
+        "name": "Nuclear Physics A",
+        "kind": "paper",
+        "ok": true,
+        "count": 12,
+        "message": ""
+      },
+      {
+        "name": "Nuclear Science and Techniques",
+        "kind": "paper",
+        "ok": true,
+        "count": 38,
+        "message": ""
+      },
+      {
+        "name": "Physical Review C",
+        "kind": "paper",
+        "ok": true,
+        "count": 186,
+        "message": ""
+      },
+      {
+        "name": "Physical Review Letters",
+        "kind": "paper",
+        "ok": true,
+        "count": 61,
+        "message": ""
+      },
+      {
+        "name": "Physical Review Research",
+        "kind": "paper",
+        "ok": true,
+        "count": 34,
+        "message": ""
+      },
+      {
+        "name": "Physics Letters B",
+        "kind": "paper",
+        "ok": true,
+        "count": 140,
+        "message": ""
+      },
+      {
+        "name": "Physics of Plasmas",
+        "kind": "paper",
+        "ok": true,
+        "count": 18,
+        "message": ""
+      },
+      {
+        "name": "Plasma Physics and Controlled Fusion",
+        "kind": "paper",
+        "ok": true,
+        "count": 37,
+        "message": ""
+      },
+      {
+        "name": "Science Bulletin",
+        "kind": "paper",
+        "ok": true,
+        "count": 1,
+        "message": ""
+      },
+      {
+        "name": "The European Physical Journal A",
+        "kind": "paper",
+        "ok": true,
+        "count": 31,
+        "message": ""
+      },
+      {
+        "name": "arXiv astro-ph.HE",
+        "kind": "paper",
+        "ok": true,
+        "count": 21,
+        "message": ""
+      },
+      {
+        "name": "arXiv astro-ph.SR",
+        "kind": "paper",
+        "ok": true,
+        "count": 15,
+        "message": ""
+      },
+      {
+        "name": "arXiv cs.AI",
+        "kind": "paper",
+        "ok": true,
+        "count": 6,
+        "message": ""
+      },
+      {
+        "name": "arXiv cs.LG",
+        "kind": "paper",
+        "ok": true,
+        "count": 6,
+        "message": ""
+      },
+      {
+        "name": "arXiv hep-ex",
+        "kind": "paper",
+        "ok": true,
+        "count": 13,
+        "message": ""
+      },
+      {
+        "name": "arXiv hep-ph",
+        "kind": "paper",
+        "ok": true,
+        "count": 15,
+        "message": ""
+      },
+      {
+        "name": "arXiv nucl-ex",
+        "kind": "paper",
+        "ok": true,
+        "count": 10,
+        "message": ""
+      },
+      {
+        "name": "arXiv nucl-th",
+        "kind": "paper",
+        "ok": true,
+        "count": 12,
+        "message": ""
+      },
+      {
+        "name": "arXiv physics.ins-det",
+        "kind": "paper",
+        "ok": true,
+        "count": 5,
+        "message": ""
+      },
+      {
+        "name": "arXiv physics.plasm-ph",
+        "kind": "paper",
+        "ok": true,
+        "count": 7,
+        "message": ""
+      }
+    ],
+    "counts": {
+      "papers": 1033,
+      "news": 96,
+      "notices": 21,
+      "featured": 40
+    },
+    "new_counts": {
+      "papers": 972,
+      "news": 95,
+      "notices": 34
+    }
+  },
+  "notice": "本站汇总官方公开元数据，不代表数据源机构背书。请以原始页面为准。"
+}

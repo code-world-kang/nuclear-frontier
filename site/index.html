@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="每日自动汇总核物理、高能核物理、核天体物理、核聚变与AI交叉的论文、新闻和官方通知。">
+  <title>核视界 · 核物理前沿情报</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="核视界首页">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><b></b></span>
+        <span><strong>核视界</strong><small>NUCLEAR FRONTIER</small></span>
+      </a>
+      <nav class="topnav" aria-label="主导航">
+        <button class="nav-link active" data-view="papers">论文</button>
+        <button class="nav-link" data-view="featured">重点</button>
+        <button class="nav-link" data-view="news">新闻</button>
+        <button class="nav-link" data-view="notices">通知</button>
+        <button class="nav-link" data-view="favorites">我的参考</button>
+      </nav>
+      <div class="top-actions">
+        <button class="icon-button" id="keywordButton" title="我的关键词" aria-label="管理我的关键词">⌘K</button>
+        <a class="source-link" id="repoLink" href="#" target="_blank" rel="noreferrer">数据源 <span>↗</span></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> DAILY RESEARCH INTELLIGENCE</div>
+          <h1 id="heroTitle">穿越信息噪声，<br><em>捕捉核物理前沿。</em></h1>
+          <p>来自主流期刊、arXiv 与官方机构的每日情报。自动去重、分类、关联，保留可核验原始链接。</p>
+          <div class="hero-actions">
+            <button class="primary-button" data-scroll="stream">浏览今日论文 <span>↓</span></button>
+            <button class="secondary-button" data-view-jump="featured">查看重点文献</button>
+          </div>
+          <div class="update-line">
+            <span class="status-pulse"></span>
+            <span id="lastUpdated">正在读取更新状态…</span>
+          </div>
+        </div>
+        <aside class="spotlight" id="spotlight" aria-label="今日焦点">
+          <div class="spotlight-head"><span>EDITOR'S RADAR</span><b>今日焦点</b></div>
+          <div class="skeleton tall"></div>
+        </aside>
+      </section>
+
+      <section class="metrics" aria-label="数据统计">
+        <article><span>历史论文</span><strong id="paperCount">—</strong><small>持续累积</small></article>
+        <article><span>今日重点</span><strong id="featuredCount">—</strong><small>可解释评分</small></article>
+        <article><span>官方新闻</span><strong id="newsCount">—</strong><small>只保留原始来源</small></article>
+        <article><span>数据源状态</span><strong id="sourceHealth">—</strong><small id="sourceHealthHint">正在检查</small></article>
+      </section>
+
+      <section class="workspace" id="stream">
+        <aside class="filters-panel">
+          <div class="panel-title"><span>研究领域</span><button id="clearCategory">全部</button></div>
+          <div class="category-list" id="categoryList"></div>
+          <div class="keyword-card">
+            <span>个人关注</span>
+            <strong>让你的关键词提前浮现</strong>
+            <p>可添加核素、反应道、装置或分析方法。</p>
+            <button id="addKeywordAside">+添加关键词</button>
+          </div>
+        </aside>
+
+        <div class="content-column">
+          <div class="content-head">
+            <div>
+              <span class="section-kicker" id="sectionKicker">LATEST PAPERS</span>
+              <h2 id="sectionTitle">最新论文</h2>
+            </div>
+            <div class="view-tabs" role="tablist">
+              <button class="view-tab active" data-view="papers">全部</button>
+              <button class="view-tab" data-view="featured">重点</button>
+              <button class="view-tab" data-view="favorites">已收藏</button>
+            </div>
+          </div>
+
+          <div class="toolbar">
+            <label class="search-box">
+              <span aria-hidden="true">⌕</span>
+              <input id="searchInput" type="search" placeholder="搜索题目、作者、期刊、DOI 或关键词…" autocomplete="off">
+              <kbd>/</kbd>
+            </label>
+            <select id="sortSelect" aria-label="排序方式">
+              <option value="date">最新发布</option>
+              <option value="importance">重要性</option>
+              <option value="source">期刊/来源</option>
+            </select>
+          </div>
+
+          <div class="active-filters" id="activeFilters"></div>
+          <div class="results-meta"><span id="resultCount">正在载入…</span><span id="viewNote">题目与摘要保留原文</span></div>
+          <div class="card-list" id="cardList">
+            <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+          </div>
+          <button class="load-more" id="loadMore" hidden>显示更多</button>
+          <div class="empty-state" id="emptyState" hidden>
+            <b>没有找到匹配内容</b>
+            <p>请尝试其他关键词或清除分类筛选。</p>
+          </div>
+        </div>
+
+        <aside class="radar-panel">
+          <div class="radar-head"><span>信息雷达</span><button data-view-jump="notices">全部 →</button></div>
+          <div id="radarList" class="radar-list"><div class="skeleton mini"></div></div>
+          <div class="source-status-card">
+            <div><span class="status-pulse"></span><b>自动更新</b></div>
+            <p id="automationSummary">正在读取数据源状态…</p>
+            <button id="showSourceStatus">查看数据源状态</button>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-brand"><b>核视界</b><span>一个独立、开放的科研情报项目</span></div>
+      <p>感谢 arXiv 提供开放互操作数据。本站不与所引用的期刊或机构存在隶属或背书关系。</p>
+    </footer>
+  </div>
+
+  <dialog id="keywordDialog">
+    <form method="dialog" class="dialog-card" id="keywordForm">
+      <div class="dialog-head"><div><small>PERSONAL TOPICS</small><h3>我的关键词</h3></div><button value="cancel" aria-label="关闭">×</button></div>
+      <p>关键词会在搜索和排序中生效。与GitHub的自动同步通道配置完成后，会每日写入公开仓库。</p>
+      <div class="keyword-input-row"><input id="keywordInput" placeholder="例如：11Li、knockout reaction、EAST"><button type="submit">添加</button></div>
+      <div class="keyword-tags" id="keywordTags"></div>
+      <div class="dialog-actions"><button type="button" id="exportPersonal">导出备份</button><label class="import-label">导入备份<input type="file" id="importPersonal" accept="application/json"></label></div>
+    </form>
+  </dialog>
+
+  <dialog id="detailDialog">
+    <article class="dialog-card detail-card" id="detailContent"></article>
+  </dialog>
+
+  <dialog id="statusDialog">
+    <article class="dialog-card"><div class="dialog-head"><div><small>SOURCE HEALTH</small><h3>数据源状态</h3></div><button onclick="this.closest('dialog').close()">×</button></div><div id="statusContent"></div></article>
+  </dialog>
+
+  <template id="paperCardTemplate">
+    <article class="paper-card">
+      <div class="card-accent"></div>
+      <div class="paper-main">
+        <div class="paper-meta"></div>
+        <h3></h3>
+        <p class="authors"></p>
+        <p class="abstract"></p>
+        <div class="tag-row"></div>
+        <div class="paper-actions"></div>
+      </div>
+      <button class="favorite-button" aria-label="收藏文章" title="收藏">☆</button>
+    </article>
+  </template>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
