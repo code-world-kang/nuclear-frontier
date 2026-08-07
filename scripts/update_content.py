@@ -340,10 +340,24 @@ def parse_feed_items(raw: bytes) -> list[dict[str, str]]:
     return output
 
 
+def fetch_feed_items(url: str, attempts: int = 3) -> list[dict[str, str]]:
+    """同时重试网络与 XML 解析，应对 CDN 偶发返回截断或污染内容。"""
+    last_error: Exception | None = None
+    for attempt in range(attempts):
+        try:
+            raw = fetch(url, accept="application/rss+xml, application/xml, text/xml", attempts=1)
+            return parse_feed_items(raw)
+        except (ET.ParseError, RuntimeError) as exc:
+            last_error = exc
+            if attempt + 1 < attempts:
+                time.sleep(1.5 * (attempt + 1))
+    raise RuntimeError(str(last_error) if last_error else "feed parsing failed")
+
+
 def fetch_arxiv(source: dict[str, Any], classifier: Classifier) -> tuple[list[dict[str, Any]], SourceResult]:
     url = f"https://rss.arxiv.org/rss/{urllib.parse.quote(source['category'])}"
     try:
-        items = parse_feed_items(fetch(url, accept="application/rss+xml, application/xml, text/xml"))
+        items = fetch_feed_items(url)
         records: list[dict[str, Any]] = []
         for item in items:
             title, abstract = item["title"], item["summary"]
@@ -384,7 +398,7 @@ def fetch_arxiv(source: dict[str, Any], classifier: Classifier) -> tuple[list[di
 
 def fetch_news(source: dict[str, Any], classifier: Classifier) -> tuple[list[dict[str, Any]], SourceResult]:
     try:
-        items = parse_feed_items(fetch(source["url"], accept="application/rss+xml, application/xml, text/xml"))
+        items = fetch_feed_items(source["url"])
         records = []
         for item in items[:80]:
             title, summary = item["title"], item["summary"]
