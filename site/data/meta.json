@@ -234,9 +234,9 @@
     }
   ],
   "status": {
-    "last_success": "2026-08-07T14:49:32+00:00",
+    "last_success": "2026-08-07T23:04:45+08:00",
     "window": {
-      "from": "2026-07-24",
+      "from": "2026-07-08",
       "to": "2026-08-07"
     },
     "source_results": [
@@ -271,9 +271,9 @@
       {
         "name": "Nature Machine Intelligence",
         "kind": "news",
-        "ok": false,
+        "ok": true,
         "count": 0,
-        "message": "not well-formed (invalid token): line 14, column 4"
+        "message": ""
       },
       {
         "name": "Nature Physics",
@@ -314,28 +314,28 @@
         "name": "Chinese Physics C",
         "kind": "paper",
         "ok": true,
-        "count": 40,
+        "count": 62,
         "message": ""
       },
       {
         "name": "Journal of Physics G",
         "kind": "paper",
         "ok": true,
-        "count": 3,
+        "count": 5,
         "message": ""
       },
       {
         "name": "Nature",
         "kind": "paper",
         "ok": true,
-        "count": 13,
+        "count": 22,
         "message": ""
       },
       {
         "name": "Nature Astronomy",
         "kind": "paper",
         "ok": true,
-        "count": 1,
+        "count": 4,
         "message": ""
       },
       {
@@ -349,7 +349,7 @@
         "name": "Nuclear Fusion",
         "kind": "paper",
         "ok": true,
-        "count": 47,
+        "count": 120,
         "message": ""
       },
       {
@@ -362,36 +362,36 @@
       {
         "name": "Nuclear Physics A",
         "kind": "paper",
-        "ok": false,
-        "count": 0,
-        "message": "HTTP Error 429: Too Many Requests"
+        "ok": true,
+        "count": 12,
+        "message": ""
       },
       {
         "name": "Nuclear Science and Techniques",
         "kind": "paper",
         "ok": true,
-        "count": 26,
+        "count": 38,
         "message": ""
       },
       {
         "name": "Physical Review C",
         "kind": "paper",
         "ok": true,
-        "count": 91,
+        "count": 186,
         "message": ""
       },
       {
         "name": "Physical Review Letters",
         "kind": "paper",
         "ok": true,
-        "count": 33,
+        "count": 62,
         "message": ""
       },
       {
         "name": "Physical Review Research",
         "kind": "paper",
         "ok": true,
-        "count": 17,
+        "count": 34,
         "message": ""
       },
       {
@@ -404,15 +404,15 @@
       {
         "name": "Physics of Plasmas",
         "kind": "paper",
-        "ok": true,
-        "count": 18,
-        "message": ""
+        "ok": false,
+        "count": 0,
+        "message": "HTTP Error 429: Too Many Requests"
       },
       {
         "name": "Plasma Physics and Controlled Fusion",
         "kind": "paper",
         "ok": true,
-        "count": 34,
+        "count": 37,
         "message": ""
       },
       {
@@ -426,7 +426,7 @@
         "name": "The European Physical Journal A",
         "kind": "paper",
         "ok": true,
-        "count": 18,
+        "count": 31,
         "message": ""
       },
       {
@@ -447,7 +447,7 @@
         "name": "arXiv cs.AI",
         "kind": "paper",
         "ok": true,
-        "count": 6,
+        "count": 3,
         "message": ""
       },
       {
@@ -501,13 +501,13 @@
       }
     ],
     "counts": {
-      "papers": 1033,
+      "papers": 961,
       "news": 97,
       "notices": 21,
       "featured": 40
     },
     "new_counts": {
-      "papers": 683,
+      "papers": 952,
       "news": 95,
       "notices": 34
     }

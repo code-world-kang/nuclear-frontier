@@ -3,9 +3,15 @@ const PERSONAL_KEY = 'nuclear-frontier.personal.v1';
 
 const state = {
   papers: [], featured: [], news: [], notices: [], publicFavorites: [],
-  meta: null, view: 'papers', category: 'all', query: '', sort: 'date', visible: 20,
+  meta: null, view: 'papers', category: 'all', query: '', sort: 'date', scope: 'daily-focus', visible: 20,
   personal: loadPersonal(), categoryMap: new Map(),
 };
+
+const CORE_CATEGORIES = new Set([
+  'experimental-nuclear', 'theoretical-nuclear', 'nuclear-structure', 'nuclear-reactions',
+  'high-energy-nuclear', 'nuclear-astrophysics', 'detectors-daq', 'accelerators', 'fusion',
+  'nuclear-data-applications',
+]);
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -71,9 +77,49 @@ function personalMatch(item) {
   return state.personal.keywords.some(keyword => haystack.includes(keyword.toLowerCase()));
 }
 
+function paperDay(item) {
+  return (item.published || '').slice(0, 10);
+}
+
+function latestPaperDay() {
+  return state.papers.reduce((latest, item) => paperDay(item) > latest ? paperDay(item) : latest, '');
+}
+
+function dailyFocusIds() {
+  const latest = latestPaperDay();
+  const today = state.papers.filter(item => paperDay(item) === latest);
+  const selected = today.filter(item => {
+    const core = (item.categories || []).some(category => CORE_CATEGORIES.has(category));
+    return (core && (item.importance || 0) >= 40) || (item.importance || 0) >= 50;
+  });
+  const selectedIds = new Set(selected.map(item => item.id));
+  // AI 只补充当日最相关的少量条目，避免通用 AI 预印本淹没核物理。
+  today
+    .filter(item => !selectedIds.has(item.id) && (item.categories || []).includes('ai-science'))
+    .sort((a, b) => (b.importance || 0) - (a.importance || 0) || (b.published || '').localeCompare(a.published || ''))
+    .slice(0, 3)
+    .forEach(item => selectedIds.add(item.id));
+  return selectedIds;
+}
+
+function inPaperScope(item, focusIds, latest) {
+  if (state.view !== 'papers' || state.scope === 'all') return true;
+  if (state.scope === 'daily-focus') return focusIds.has(item.id);
+  if (state.scope === 'today') return paperDay(item) === latest;
+  if (state.scope === '7days') {
+    const lower = new Date(`${latest}T00:00:00Z`);
+    lower.setUTCDate(lower.getUTCDate() - 6);
+    return paperDay(item) >= lower.toISOString().slice(0, 10);
+  }
+  return true;
+}
+
 function filteredItems() {
   const query = state.query.trim().toLowerCase();
+  const latest = latestPaperDay();
+  const focusIds = state.scope === 'daily-focus' ? dailyFocusIds() : new Set();
   const values = currentItems().filter(item => {
+    if (!inPaperScope(item, focusIds, latest)) return false;
     if (state.category !== 'all' && !(item.categories || []).includes(state.category)) return false;
     if (!query) return true;
     const haystack = [
@@ -248,6 +294,7 @@ function setView(view) {
   $('#sectionKicker').textContent = kicker;
   $('#sectionTitle').textContent = title;
   $('#viewNote').textContent = note;
+  $('#scopeSelect').hidden = view !== 'papers';
   $$('.nav-link, .view-tab').forEach(button => button.classList.toggle('active', button.dataset.view === view));
   renderCards();
   history.replaceState(null, '', `${PATH}#${view}`);
@@ -448,6 +495,7 @@ function bindEvents() {
   $('#clearCategory').addEventListener('click', () => setCategory('all'));
   $('#searchInput').addEventListener('input', event => { state.query = event.target.value; state.visible = 20; renderCards(); });
   $('#sortSelect').addEventListener('change', event => { state.sort = event.target.value; renderCards(); });
+  $('#scopeSelect').addEventListener('change', event => { state.scope = event.target.value; state.visible = 20; renderCards(); });
   $('#loadMore').addEventListener('click', () => { state.visible += 20; renderCards(); });
   $('#keywordButton').addEventListener('click', () => $('#keywordDialog').showModal());
   $('#addKeywordAside').addEventListener('click', () => $('#keywordDialog').showModal());
@@ -496,7 +544,10 @@ async function initialize() {
     tryFavoriteSync();
   } catch (error) {
     console.error(error);
-    $('#cardList').innerHTML = `<div class="empty-state"><b>数据暂时无法载入</b><p>${text(error.message)}。请稍后刷新。</p></div>`;
+    const hint = location.protocol === 'file:'
+      ? '请打开在线站点 https://code-world-kang.github.io/nuclear-frontier/'
+      : '请稍后刷新。';
+    $('#cardList').innerHTML = `<div class="empty-state"><b>数据暂时无法载入</b><p>${text(error.message)}。${text(hint)}</p></div>`;
     $('#lastUpdated').textContent = '数据加载失败';
   }
 }

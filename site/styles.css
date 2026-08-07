@@ -140,7 +140,7 @@ a { color: inherit; }
 .view-tabs { border-bottom: 1px solid var(--line); display: flex; }
 .view-tab { border: 0; border-bottom: 2px solid transparent; background: none; padding: 8px 13px 10px; color: #839194; font-size: 12px; cursor: pointer; }
 .view-tab.active { color: var(--ink); border-color: var(--mint); font-weight: 650; }
-.toolbar { margin-top: 24px; display: grid; grid-template-columns: 1fr auto; gap: 11px; }
+.toolbar { margin-top: 24px; display: grid; grid-template-columns: 1fr auto auto; gap: 11px; }
 .search-box { height: 44px; border: 1px solid var(--line); background: white; border-radius: 9px; display: flex; align-items: center; gap: 11px; padding: 0 13px; color: #8d9c9e; }
 .search-box input { min-width: 0; flex: 1; border: 0; outline: 0; color: var(--ink); background: transparent; font-size: 12px; }
 .search-box kbd { font-size: 10px; background: #edf1ef; border: 1px solid #d9dfdc; border-radius: 4px; padding: 1px 6px; }

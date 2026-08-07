@@ -35,6 +35,8 @@ class RepositoryTests(unittest.TestCase):
     def test_site_entrypoint_exists(self):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
         self.assertIn('id="cardList"', index)
+        self.assertIn('id="scopeSelect"', index)
+        self.assertIn("window.location.protocol === 'file:'", index)
         self.assertIn('src="./app.js"', index)
 
 

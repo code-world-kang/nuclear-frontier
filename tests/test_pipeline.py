@@ -51,6 +51,14 @@ class PipelineTests(unittest.TestCase):
         self.assertFalse(self.classifier.contains_term("a significant improvement", "NIF"))
         self.assertTrue(self.classifier.contains_term("an experiment at NIF", "NIF"))
 
+    def test_general_ai_requires_scientific_physics_context(self):
+        self.assertFalse(self.classifier.relevant(
+            "A deep learning model for online advertising", "User click prediction", "important-ai"
+        ))
+        self.assertTrue(self.classifier.relevant(
+            "Machine learning for plasma diagnostics", "Physics-informed detector reconstruction", "important-ai"
+        ))
+
 
 if __name__ == "__main__":
     unittest.main()

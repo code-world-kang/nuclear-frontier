@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="每日自动汇总核物理、高能核物理、核天体物理、核聚变与AI交叉的论文、新闻和官方通知。">
   <title>核视界 · 核物理前沿情报</title>
+  <script>
+    // 直接双击 HTML 会受到浏览器对 file:// 的数据访问限制，统一转到已发布站点。
+    if (window.location.protocol === 'file:') {
+      window.location.replace(`https://code-world-kang.github.io/nuclear-frontier/${window.location.hash}`);
+    }
+  </script>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./styles.css">
@@ -88,6 +94,12 @@
               <input id="searchInput" type="search" placeholder="搜索题目、作者、期刊、DOI 或关键词…" autocomplete="off">
               <kbd>/</kbd>
             </label>
+            <select id="scopeSelect" aria-label="论文时间范围">
+              <option value="daily-focus">今日核心</option>
+              <option value="today">今日全部</option>
+              <option value="7days">近7日</option>
+              <option value="all">历史全部</option>
+            </select>
             <select id="sortSelect" aria-label="排序方式">
               <option value="date">最新发布</option>
               <option value="importance">重要性</option>

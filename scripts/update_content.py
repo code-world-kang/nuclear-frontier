@@ -486,6 +486,13 @@ def main() -> int:
 
     max_items = int(runtime.get("daily_limit", 600)) * 20
     papers = merge_records(read_json(DATA / "papers.json", []), papers_new, max_items)
+    source_modes = {source["name"]: source.get("mode", "all") for source in source_config.get("arxiv_feeds", [])}
+    # 通用 AI 源只保留与物理或科学计算明确交叉的文章，旧假阳性也会在更新时清理。
+    papers = [
+        paper for paper in papers
+        if source_modes.get(paper.get("source")) != "important-ai"
+        or classifier.relevant(paper.get("title", ""), paper.get("abstract", ""), "important-ai")
+    ]
     # 配置中的分类词可持续改进；每日对历史记录重新分类，避免旧假阳性永久残留。
     for paper in papers:
         categories, tags = classifier.classify(
