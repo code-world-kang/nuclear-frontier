@@ -73,7 +73,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-reactions",
@@ -133,7 +133,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-decay",
@@ -210,7 +210,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -279,7 +279,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-reactions",
@@ -348,7 +348,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-reactions",
@@ -372,6 +372,146 @@
     "abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-08-08T04:39:53+08:00",
+      "source": "INSPIRE"
+    }
+  },
+  {
+    "id": "6af1a10b23bdf77c",
+    "type": "paper",
+    "title": "Off-line commissioning of the St. Benedict radio frequency quadrupole ion guide",
+    "abstract": "The Superallowed Transition BEta-NEutrino Decay Ion Coincidence Trap (St. Benedict) is currently under construction at the Nuclear Science Laboratory (NSL) of the University of Notre Dame. It aims to measure the beta-neutrino angular correlation parameter for superallowed mixed mirror beta decay transitions. Measurements of this kind offer unique insight into the electroweak part of the Standard Model through tests of unitarity of the Cabibbo–Kobayashi–Maskawa (CKM) matrix. St. Benedict is comprised of several beam-manipulating components including a radio frequency quadrupole (RFQ) ion guide. This ion guide features an off-line source at 90° to the beam path for testing and calibration of downstream components once St. Benedict is online. Off-line commissioning of the ion guide demonstrated a transport efficiency greater than 95% for ions coming from the upstream RF carpet chamber. When taking ions from the 90° off-line source a lower efficiency of 60% was obtained.",
+    "authors": [
+      "R. Zite",
+      "M. Brodeur",
+      "O. Bruce",
+      "D. Gan",
+      "P.D. O’Malley",
+      "W.S. Porter",
+      "F. Rivero"
+    ],
+    "published": "2026-08-01",
+    "updated": "2026-08-01",
+    "source": "Nuclear Instruments and Methods in Physics Research A",
+    "source_short": "NIMA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nima.2026.171483",
+    "arxiv_id": "2603.10037",
+    "url": "https://doi.org/10.1016/j.nima.2026.171483",
+    "pdf_url": "https://arxiv.org/pdf/2603.10037",
+    "categories": [
+      "nuclear-decay",
+      "detectors-daq",
+      "particle-cross"
+    ],
+    "tags": [
+      "beta decay",
+      "neutrino",
+      "standard model"
+    ],
+    "importance": 68,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +22",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "primary_topic": "nuclear-decay",
+    "methods": [],
+    "classification_confidence": 0.72,
+    "classification_evidence": [
+      "beta decay",
+      "neutrino",
+      "standard model"
+    ],
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-08T04:39:53+08:00",
+      "source": "INSPIRE"
+    }
+  },
+  {
+    "id": "0cf34788ba3d6ec4",
+    "type": "paper",
+    "title": "Impact of shape coexistence on nuclear stability",
+    "abstract": "Nuclear decay properties are conventionally predicted assuming nuclei decay from their ground-state configurations. However, this often neglects a fundamental structural complexity which is the phenomenon of shape coexistence, where nuclei possess multiple competing configurations at nearly degenerate energies. When both parent and daughter nuclei can exist in different energy minima, multiple decay pathways become possible. We systematically investigate how shape coexistence influences nuclear decay for approximately 1500 even-even nuclei (8 ≤ Z ≤ 118, 8 ≤ N ≤ 184) using the Nilsson-Strutinsky method and relativistic mean-field calculations with NL3*, DD-ME2, and DD-PC1 functionals. We identify around 400 nuclei exhibiting competing energy minima separated by less than 1 MeV. For these shape-coexisting nuclei, we calculate α, β + and β − decay half-lives considering all possible transition pathways between the competing minima. Our results demonstrate that shape coexistence substantially impacts decay predictions, with half-lives showing variations up to nearly one logarithmic unit depending on which configurations participate in the transition. Comparison with experimental data from NUBASE2020 shows that pathways involving the second minimum sometimes reproduce measured lifetimes more closely than conventional ground-state to ground-state assumptions. Branching ratios exhibit even stronger sensitivity, with certain nuclei displaying complete inversions of the dominant decay mode depending on configuration choice. These pathway-dependent variations are not due to model uncertainties but reflect inherent structural effects. The correlation between the shape dynamics and nuclear stability establishes the shape coexistence as an essential component in predictive nuclear structure and astrophysics studies.",
+    "authors": [
+      "G. Saxena",
+      "H. Sikhwal",
+      "N. Chandnani",
+      "Pranali Parab",
+      "Siddharth Parashari",
+      "Gabriela Llosá",
+      "Mamta Aggarwal"
+    ],
+    "published": "2026-08-01",
+    "updated": "2026-08-01",
+    "source": "Physics Letters B",
+    "source_short": "PLB",
+    "source_type": "journal",
+    "doi": "10.1016/j.physletb.2026.140621",
+    "arxiv_id": "2606.07092",
+    "url": "https://doi.org/10.1016/j.physletb.2026.140621",
+    "pdf_url": "https://arxiv.org/pdf/2606.07092",
+    "categories": [
+      "nuclear-decay",
+      "nuclear-structure",
+      "theoretical-nuclear"
+    ],
+    "tags": [
+      "mean-field",
+      "nuclear structure",
+      "shape coexistence",
+      "nuclear decay"
+    ],
+    "importance": 68,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +22",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "primary_topic": "nuclear-decay",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.8,
+    "classification_evidence": [
+      "mean-field",
+      "nuclear structure",
+      "shape coexistence",
+      "nuclear decay"
+    ],
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-08T04:20:17+08:00",
       "source": "INSPIRE"
     }
   },
@@ -422,7 +562,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-decay",
@@ -451,146 +591,6 @@
     "abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-08-08T04:20:17+08:00",
-      "source": "INSPIRE"
-    }
-  },
-  {
-    "id": "0cf34788ba3d6ec4",
-    "type": "paper",
-    "title": "Impact of shape coexistence on nuclear stability",
-    "abstract": "Nuclear decay properties are conventionally predicted assuming nuclei decay from their ground-state configurations. However, this often neglects a fundamental structural complexity which is the phenomenon of shape coexistence, where nuclei possess multiple competing configurations at nearly degenerate energies. When both parent and daughter nuclei can exist in different energy minima, multiple decay pathways become possible. We systematically investigate how shape coexistence influences nuclear decay for approximately 1500 even-even nuclei (8 ≤ Z ≤ 118, 8 ≤ N ≤ 184) using the Nilsson-Strutinsky method and relativistic mean-field calculations with NL3*, DD-ME2, and DD-PC1 functionals. We identify around 400 nuclei exhibiting competing energy minima separated by less than 1 MeV. For these shape-coexisting nuclei, we calculate α, β + and β − decay half-lives considering all possible transition pathways between the competing minima. Our results demonstrate that shape coexistence substantially impacts decay predictions, with half-lives showing variations up to nearly one logarithmic unit depending on which configurations participate in the transition. Comparison with experimental data from NUBASE2020 shows that pathways involving the second minimum sometimes reproduce measured lifetimes more closely than conventional ground-state to ground-state assumptions. Branching ratios exhibit even stronger sensitivity, with certain nuclei displaying complete inversions of the dominant decay mode depending on configuration choice. These pathway-dependent variations are not due to model uncertainties but reflect inherent structural effects. The correlation between the shape dynamics and nuclear stability establishes the shape coexistence as an essential component in predictive nuclear structure and astrophysics studies.",
-    "authors": [
-      "G. Saxena",
-      "H. Sikhwal",
-      "N. Chandnani",
-      "Pranali Parab",
-      "Siddharth Parashari",
-      "Gabriela Llosá",
-      "Mamta Aggarwal"
-    ],
-    "published": "2026-08-01",
-    "updated": "2026-08-01",
-    "source": "Physics Letters B",
-    "source_short": "PLB",
-    "source_type": "journal",
-    "doi": "10.1016/j.physletb.2026.140621",
-    "arxiv_id": "2606.07092",
-    "url": "https://doi.org/10.1016/j.physletb.2026.140621",
-    "pdf_url": "https://arxiv.org/pdf/2606.07092",
-    "categories": [
-      "nuclear-decay",
-      "nuclear-structure",
-      "theoretical-nuclear"
-    ],
-    "tags": [
-      "mean-field",
-      "nuclear structure",
-      "shape coexistence",
-      "nuclear decay"
-    ],
-    "importance": 68,
-    "open_access": null,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +22",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
-    "abstract_status": "full",
-    "abstract_source": "INSPIRE",
-    "primary_topic": "nuclear-decay",
-    "methods": [
-      "experimental"
-    ],
-    "classification_confidence": 0.8,
-    "classification_evidence": [
-      "mean-field",
-      "nuclear structure",
-      "shape coexistence",
-      "nuclear decay"
-    ],
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-08-08T04:20:17+08:00",
-      "source": "INSPIRE"
-    }
-  },
-  {
-    "id": "6af1a10b23bdf77c",
-    "type": "paper",
-    "title": "Off-line commissioning of the St. Benedict radio frequency quadrupole ion guide",
-    "abstract": "The Superallowed Transition BEta-NEutrino Decay Ion Coincidence Trap (St. Benedict) is currently under construction at the Nuclear Science Laboratory (NSL) of the University of Notre Dame. It aims to measure the beta-neutrino angular correlation parameter for superallowed mixed mirror beta decay transitions. Measurements of this kind offer unique insight into the electroweak part of the Standard Model through tests of unitarity of the Cabibbo–Kobayashi–Maskawa (CKM) matrix. St. Benedict is comprised of several beam-manipulating components including a radio frequency quadrupole (RFQ) ion guide. This ion guide features an off-line source at 90° to the beam path for testing and calibration of downstream components once St. Benedict is online. Off-line commissioning of the ion guide demonstrated a transport efficiency greater than 95% for ions coming from the upstream RF carpet chamber. When taking ions from the 90° off-line source a lower efficiency of 60% was obtained.",
-    "authors": [
-      "R. Zite",
-      "M. Brodeur",
-      "O. Bruce",
-      "D. Gan",
-      "P.D. O’Malley",
-      "W.S. Porter",
-      "F. Rivero"
-    ],
-    "published": "2026-08-01",
-    "updated": "2026-08-01",
-    "source": "Nuclear Instruments and Methods in Physics Research A",
-    "source_short": "NIMA",
-    "source_type": "journal",
-    "doi": "10.1016/j.nima.2026.171483",
-    "arxiv_id": "2603.10037",
-    "url": "https://doi.org/10.1016/j.nima.2026.171483",
-    "pdf_url": "https://arxiv.org/pdf/2603.10037",
-    "categories": [
-      "nuclear-decay",
-      "detectors-daq",
-      "particle-cross"
-    ],
-    "tags": [
-      "beta decay",
-      "neutrino",
-      "standard model"
-    ],
-    "importance": 68,
-    "open_access": null,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +22",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
-    "abstract_status": "full",
-    "abstract_source": "INSPIRE",
-    "primary_topic": "nuclear-decay",
-    "methods": [],
-    "classification_confidence": 0.72,
-    "classification_evidence": [
-      "beta decay",
-      "neutrino",
-      "standard model"
-    ],
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by-nc-nd/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-08-08T04:39:53+08:00",
       "source": "INSPIRE"
     }
   },
@@ -643,7 +643,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -716,7 +716,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-structure",
@@ -771,7 +771,7 @@
       "跨领域关联 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "missing",
     "abstract_source": "",
     "primary_topic": "nuclear-reactions",
@@ -789,7 +789,12 @@
     ],
     "rights_status": "unknown",
     "figures": [],
-    "figure_status": "rights_unknown"
+    "figure_status": "rights_unknown",
+    "abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-08-07T20:49:19+00:00",
+      "source": "INSPIRE"
+    }
   },
   {
     "id": "e71f8af9d3115bf1",
@@ -829,7 +834,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-decay",
@@ -889,7 +894,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:39:53+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -965,7 +970,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-structure",
@@ -1025,7 +1030,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -1042,6 +1047,75 @@
     "license": "",
     "publisher_licenses": [
       "https://link.aps.org/licenses/aps-default-license"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-08T04:20:17+08:00",
+      "source": "INSPIRE"
+    }
+  },
+  {
+    "id": "30cab19785d32857",
+    "type": "paper",
+    "title": "Scaling approach to rigid and soft nuclear deformation through flow fluctuations in high-energy nuclear collisions",
+    "abstract": "The nature of octupole deformation, whether static or vibrational, remains an open question in nuclear physics. Here, we propose a scaling approach to probe this ambiguity by triangular flow fluctuations using multi-particle cumulants, c3,ε{4}, in relativistic 238 U+ 238 U collisions. We demonstrate that both |c3,ε{4}| and the ratio | c 3 , ε { 4 } / c 3 , ε 2 { 2 } | scale linearly with the fourth-order moment of octupole deformation, 〈 β 3 , U 4 〉 . Combined with the known linear relation of c3,ε{2} to 〈 β 3 , U 2 〉 , this new relation provides a direct extraction of both the mean and variance of the octupole deformation fluctuations, finally discriminating between static and dynamic origins. This work establishes a new tool to probe the static and dynamic collective modes in high-energy nuclear collisions, advancing a significant step toward refining the initial conditions of quark-gluon plasma.",
+    "authors": [
+      "Lumeng Liu",
+      "Chunjian Zhang",
+      "Jinhui Chen",
+      "Jiangyong Jia",
+      "Xu-Guang Huang",
+      "Yu-Gang Ma"
+    ],
+    "published": "2026-08-01",
+    "updated": "2026-08-01",
+    "source": "Physics Letters B",
+    "source_short": "PLB",
+    "source_type": "journal",
+    "doi": "10.1016/j.physletb.2026.140636",
+    "arxiv_id": "2509.09376",
+    "url": "https://doi.org/10.1016/j.physletb.2026.140636",
+    "pdf_url": "https://arxiv.org/pdf/2509.09376",
+    "categories": [
+      "nuclear-structure",
+      "high-energy-nuclear",
+      "nuclear-general"
+    ],
+    "tags": [
+      "nuclear deformation",
+      "octupole",
+      "quark-gluon plasma",
+      "nuclear physics"
+    ],
+    "importance": 66,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "primary_topic": "nuclear-structure",
+    "methods": [],
+    "classification_confidence": 0.8,
+    "classification_evidence": [
+      "nuclear deformation",
+      "octupole",
+      "quark-gluon plasma",
+      "nuclear physics"
+    ],
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by/4.0/"
     ],
     "rights_status": "unknown",
     "figures": [],
@@ -1095,7 +1169,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -1108,75 +1182,6 @@
       "many-body",
       "drip line",
       "nucleon-nucleon"
-    ],
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-08-08T04:20:17+08:00",
-      "source": "INSPIRE"
-    }
-  },
-  {
-    "id": "30cab19785d32857",
-    "type": "paper",
-    "title": "Scaling approach to rigid and soft nuclear deformation through flow fluctuations in high-energy nuclear collisions",
-    "abstract": "The nature of octupole deformation, whether static or vibrational, remains an open question in nuclear physics. Here, we propose a scaling approach to probe this ambiguity by triangular flow fluctuations using multi-particle cumulants, c3,ε{4}, in relativistic 238 U+ 238 U collisions. We demonstrate that both |c3,ε{4}| and the ratio | c 3 , ε { 4 } / c 3 , ε 2 { 2 } | scale linearly with the fourth-order moment of octupole deformation, 〈 β 3 , U 4 〉 . Combined with the known linear relation of c3,ε{2} to 〈 β 3 , U 2 〉 , this new relation provides a direct extraction of both the mean and variance of the octupole deformation fluctuations, finally discriminating between static and dynamic origins. This work establishes a new tool to probe the static and dynamic collective modes in high-energy nuclear collisions, advancing a significant step toward refining the initial conditions of quark-gluon plasma.",
-    "authors": [
-      "Lumeng Liu",
-      "Chunjian Zhang",
-      "Jinhui Chen",
-      "Jiangyong Jia",
-      "Xu-Guang Huang",
-      "Yu-Gang Ma"
-    ],
-    "published": "2026-08-01",
-    "updated": "2026-08-01",
-    "source": "Physics Letters B",
-    "source_short": "PLB",
-    "source_type": "journal",
-    "doi": "10.1016/j.physletb.2026.140636",
-    "arxiv_id": "2509.09376",
-    "url": "https://doi.org/10.1016/j.physletb.2026.140636",
-    "pdf_url": "https://arxiv.org/pdf/2509.09376",
-    "categories": [
-      "nuclear-structure",
-      "high-energy-nuclear",
-      "nuclear-general"
-    ],
-    "tags": [
-      "nuclear deformation",
-      "octupole",
-      "quark-gluon plasma",
-      "nuclear physics"
-    ],
-    "importance": 66,
-    "open_access": null,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +20",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
-    "abstract_status": "full",
-    "abstract_source": "INSPIRE",
-    "primary_topic": "nuclear-structure",
-    "methods": [],
-    "classification_confidence": 0.8,
-    "classification_evidence": [
-      "nuclear deformation",
-      "octupole",
-      "quark-gluon plasma",
-      "nuclear physics"
     ],
     "license": "",
     "publisher_licenses": [
@@ -1261,7 +1266,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-decay",
@@ -1287,6 +1292,61 @@
     "abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-08-08T04:39:53+08:00",
+      "source": "INSPIRE"
+    }
+  },
+  {
+    "id": "ee068c64aacf9f55",
+    "type": "paper",
+    "title": "Nuclear γ -ray cascades as Markov processes",
+    "abstract": "A framework for computing $γ$-ray feeding probabilities in nuclear decay schemes based on absorbing Markov chains is presented. In this approach, excited nuclear states are treated as transient states and long-lived levels as absorbing states, allowing feeding fractions to be obtained exactly from the transition matrix. Experimental uncertainties are propagated via Monte Carlo sampling from Dirichlet distributions, which naturally maintains the physical constraint of unit normalization for branching-ratio vectors. This framework is applied to the key $E_r= 92$ keV resonance in the $^{25}$Mg(p,$γ$)$^{26}$Al reaction ($E_x = 6398$ keV), which governs the production of $^{26}$Al in hydrogen-burning environments. Combining multiple experimental datasets within a Hierarchical Bayesian framework, a ground-state feeding probability of $f_0 = 0.68 \\pm 0.06~(1σ) \\pm 0.13~(2σ)$ is found, and for the first time the dominant $γ$-decay transitions contributing to its uncertainty are identified. The formalism reproduces traditional cascade calculations while providing analytic sensitivity information and a transparent uncertainty decomposition. This approach offers a general and computationally efficient tool for propagating nuclear-structure uncertainties to astrophysical reaction rates and can be readily extended to other nuclei.",
+    "authors": [
+      "Anonymous"
+    ],
+    "published": "2026-07-30",
+    "updated": "2026-07-30",
+    "source": "Physical Review C",
+    "source_short": "PRC",
+    "source_type": "journal",
+    "doi": "10.1103/2463-2jfv",
+    "arxiv_id": "2608.00176",
+    "url": "https://doi.org/10.1103/2463-2jfv",
+    "pdf_url": "https://arxiv.org/pdf/2608.00176",
+    "categories": [
+      "nuclear-decay"
+    ],
+    "tags": [
+      "nuclear decay"
+    ],
+    "importance": 64,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +22",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "primary_topic": "nuclear-decay",
+    "methods": [
+      "review"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "nuclear decay"
+    ],
+    "license": "",
+    "publisher_licenses": [
+      "https://link.aps.org/licenses/aps-default-license"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-07T20:49:19+00:00",
       "source": "INSPIRE"
     }
   },
@@ -1323,7 +1383,7 @@
       "跨领域关联 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "missing",
     "abstract_source": "",
     "primary_topic": "nuclear-decay",
@@ -1341,77 +1401,10 @@
     ],
     "rights_status": "unknown",
     "figures": [],
-    "figure_status": "rights_unknown"
-  },
-  {
-    "id": "d00886ba766e7e66",
-    "type": "paper",
-    "title": "High-resolution Multi-Reflection Time-of-Flight Mass Spectrometer for exotic nuclei at IGISOL",
-    "abstract": "A Multi-Reflection Time-of-Flight Mass Spectrometer (MR-ToF-MS) has been commissioned at the Ion-Guide Isotope Separator On-Line (IGISOL) facility. It consists of six electrode pairs that form a nearly energy-isochronous potential and a pulsed drift-tube to trap the ions between the electrodes. Time-of-flight peak widths down to 22 ns full-width at half-maximum and mass resolving powers of approximately 1 . 5 × 1 0 5 within 20 ms have been demonstrated. The obtained time-focus and mass resolving power depend sensitively on the minimal temporal width, trapping energy, energy spread and the number of revolutions of the ions. The mass resolving power is also affected by fluctuations in the electrode voltages due to temperature variations. The longitudinal emittance of trapped 39 K is estimated to be 175 eV ⋅ ns based on the data, which is close to the expected 186(10) eV ⋅ ns longitudinal emittance of the buncher. The time-of-flight temperature sensitivity is found to be − 5.55(30) ppm/K. In addition to atomic mass measurements of short-lived exotic nuclides, the MR-ToF-MS can be used as a fast mass separator for various other experiments at IGISOL and as an ion counter for laser spectroscopy and yield measurements.",
-    "authors": [
-      "V.A. Virtanen",
-      "T. Eronen",
-      "A. Kankainen",
-      "O. Beliuskina",
-      "Z. Ge",
-      "R.P. de Groote",
-      "A. Jokinen",
-      "M. Mougeot",
-      "A. de Roubin",
-      "J. Ruotsalainen",
-      "J. Sarén",
-      "A. Takkinen"
-    ],
-    "published": "2026-08-01",
-    "updated": "2026-08-01",
-    "source": "Nuclear Instruments and Methods in Physics Research A",
-    "source_short": "NIMA",
-    "source_type": "journal",
-    "doi": "10.1016/j.nima.2026.171513",
-    "arxiv_id": "2508.10048",
-    "url": "https://doi.org/10.1016/j.nima.2026.171513",
-    "pdf_url": "https://arxiv.org/pdf/2508.10048",
-    "categories": [
-      "nuclear-structure",
-      "detectors-daq"
-    ],
-    "tags": [
-      "exotic nuclei",
-      "TOF"
-    ],
-    "importance": 64,
-    "open_access": null,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +20",
-      "跨领域关联 +2",
-      "完整摘要 +2"
-    ],
-    "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
-    "abstract_status": "full",
-    "abstract_source": "INSPIRE",
-    "primary_topic": "nuclear-structure",
-    "methods": [
-      "experimental"
-    ],
-    "classification_confidence": 0.64,
-    "classification_evidence": [
-      "exotic nuclei",
-      "TOF"
-    ],
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by-nc-nd/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
     "figure_status": "rights_unknown",
     "abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-08-08T04:20:17+08:00",
+      "status": "not_found",
+      "checked_at": "2026-08-07T20:49:19+00:00",
       "source": "INSPIRE"
     }
   },
@@ -1488,7 +1481,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -1553,7 +1546,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -1577,6 +1570,78 @@
     "abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-08-08T04:39:53+08:00",
+      "source": "INSPIRE"
+    }
+  },
+  {
+    "id": "d00886ba766e7e66",
+    "type": "paper",
+    "title": "High-resolution Multi-Reflection Time-of-Flight Mass Spectrometer for exotic nuclei at IGISOL",
+    "abstract": "A Multi-Reflection Time-of-Flight Mass Spectrometer (MR-ToF-MS) has been commissioned at the Ion-Guide Isotope Separator On-Line (IGISOL) facility. It consists of six electrode pairs that form a nearly energy-isochronous potential and a pulsed drift-tube to trap the ions between the electrodes. Time-of-flight peak widths down to 22 ns full-width at half-maximum and mass resolving powers of approximately 1 . 5 × 1 0 5 within 20 ms have been demonstrated. The obtained time-focus and mass resolving power depend sensitively on the minimal temporal width, trapping energy, energy spread and the number of revolutions of the ions. The mass resolving power is also affected by fluctuations in the electrode voltages due to temperature variations. The longitudinal emittance of trapped 39 K is estimated to be 175 eV ⋅ ns based on the data, which is close to the expected 186(10) eV ⋅ ns longitudinal emittance of the buncher. The time-of-flight temperature sensitivity is found to be − 5.55(30) ppm/K. In addition to atomic mass measurements of short-lived exotic nuclides, the MR-ToF-MS can be used as a fast mass separator for various other experiments at IGISOL and as an ion counter for laser spectroscopy and yield measurements.",
+    "authors": [
+      "V.A. Virtanen",
+      "T. Eronen",
+      "A. Kankainen",
+      "O. Beliuskina",
+      "Z. Ge",
+      "R.P. de Groote",
+      "A. Jokinen",
+      "M. Mougeot",
+      "A. de Roubin",
+      "J. Ruotsalainen",
+      "J. Sarén",
+      "A. Takkinen"
+    ],
+    "published": "2026-08-01",
+    "updated": "2026-08-01",
+    "source": "Nuclear Instruments and Methods in Physics Research A",
+    "source_short": "NIMA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nima.2026.171513",
+    "arxiv_id": "2508.10048",
+    "url": "https://doi.org/10.1016/j.nima.2026.171513",
+    "pdf_url": "https://arxiv.org/pdf/2508.10048",
+    "categories": [
+      "nuclear-structure",
+      "detectors-daq"
+    ],
+    "tags": [
+      "exotic nuclei",
+      "TOF"
+    ],
+    "importance": 64,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +2",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "exotic nuclei",
+      "TOF"
+    ],
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-08T04:20:17+08:00",
       "source": "INSPIRE"
     }
   },
@@ -1618,7 +1683,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-structure",
@@ -1638,6 +1703,201 @@
     "rights_status": "unknown",
     "figures": [],
     "figure_status": "rights_unknown"
+  },
+  {
+    "id": "9c9f3a5d83e63328",
+    "type": "paper",
+    "title": "Investigation of differences between triton and He 3 in emission dynamics and chronology via correlation functions in Ca 40 + Ca 40 collisions at 35 MeV/u: Insights toward resolving the He 3 puzzle",
+    "abstract": "The He 3 puzzle, namely, that He 3 exhibits anomalously higher kinetic energies per nucleon than tritons ( t ) and α particles in the multifragmentation processes, remains a prominent open issue in the field of heavy-ion collision, as existing interpretations rely primarily on the measured energy spectra and lack constraints from multiple experimental observables. In this work, focusing on the He 3 puzzle in comparison to t , the differences between t and He 3 in in-plane/out-of-plane emission dynamics and emission chronology from the necklike region in the midcentral Ca 40 + Ca 40 collisions at 35 MeV/u are experimentally investigated using the two-particle correlation functions. It is found that, compared to t , He 3 shows stronger in-plane collective motion, weaker out-of-plane collective motion, and delayed emission time, collectively indicating that, compared to t , He 3 tends to be emitted in a less violent collision process or the He 3 production is suppressed in a more violent process from an inverse perspective. This work offers novel insights into the He 3 puzzle by combining dynamical and chronological observables.",
+    "authors": [
+      "X. Duan",
+      "X. Liu",
+      "H. Zheng",
+      "A. Bonasera",
+      "Z. Chen",
+      "J. Han",
+      "M. Huang",
+      "W. Lin",
+      "C. W. Ma",
+      "P. Ren",
+      "G. Tian",
+      "J. Wang",
+      "R. Wada",
+      "J. B. Natowitz"
+    ],
+    "published": "2026-07-30",
+    "updated": "2026-07-30",
+    "source": "Physical Review C",
+    "source_short": "PRC",
+    "source_type": "journal",
+    "doi": "10.1103/zbd7-yjg2",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1103/zbd7-yjg2",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-structure",
+      "high-energy-nuclear"
+    ],
+    "tags": [
+      "collective motion",
+      "heavy-ion collision"
+    ],
+    "importance": 64,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +2",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "experimental",
+      "review"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "collective motion",
+      "heavy-ion collision"
+    ],
+    "license": "",
+    "publisher_licenses": [
+      "https://link.aps.org/licenses/aps-default-license"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-07T20:49:19+00:00",
+      "source": "INSPIRE"
+    }
+  },
+  {
+    "id": "a9d766c501426548",
+    "type": "paper",
+    "title": "Constraining tensor force with the charge radii difference of mirror-pair nuclei",
+    "abstract": "Charge radii differences of mirror partner nuclei provide an alternative probe to pin down the interaction components in asymmetric nuclear matter. In this work, the differences in the charge radii of almost spherical mirror-paired nuclei $^{54}$Ni-$^{54}$Fe and $^{36}$Ca-$^{36}$S are used to constrain the magnitude of tensor terms in the Skyrme interactions. The calculated results suggest that a linear correlation can be found between the difference of charge radii of mirror partner nuclei and the adopted strengths of the triplet-odd and triplet-even tensor components. Besides, it suggests that charge radii differences of mirror-paired nuclei are more sensitive to the adopted strengths of the triplet-odd parameter $U$ rather than the triplet-even parameter $T$. Combining the quantitative constraint strengths of the triplet-even tensor part obtained from the magnetic dipole (M1) excitations, the charge-exchange Gamow-Teller (GT) states, and the spin-dipole (SD) excitations, the triplet-odd strengths are further constrained for the SLy5 as well as SGII effective interactions. This provides an alternative approach to constrain the appropriate magnitude of tensor force.",
+    "authors": [
+      "Anonymous"
+    ],
+    "published": "2026-07-29",
+    "updated": "2026-07-29",
+    "source": "Physical Review C",
+    "source_short": "PRC",
+    "source_type": "journal",
+    "doi": "10.1103/c983-bg79",
+    "arxiv_id": "2608.00389",
+    "url": "https://doi.org/10.1103/c983-bg79",
+    "pdf_url": "https://arxiv.org/pdf/2608.00389",
+    "categories": [
+      "nuclear-structure",
+      "nuclear-general"
+    ],
+    "tags": [
+      "charge radii",
+      "nuclear matter"
+    ],
+    "importance": 64,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +2",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "review"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "charge radii",
+      "nuclear matter"
+    ],
+    "license": "",
+    "publisher_licenses": [
+      "https://link.aps.org/licenses/aps-default-license"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-07T20:49:19+00:00",
+      "source": "INSPIRE"
+    }
+  },
+  {
+    "id": "2f7d9ab0d3742425",
+    "type": "paper",
+    "title": "Shape phase transition, coexistence, and mixing in the Ru 98 – 106 isotopes",
+    "abstract": "The deformation properties within the Ru 98 – 106 even-even isotopic chain, are investigated by means of the covariant density functional theory with a density-dependent point-coupling x parametrization. The considered nuclei are found to exhibit very shallow prolate and triaxial ground-state deformation. This information is used to ascertain their dynamical behavior within prolate γ -stable and γ -unstable instances of a phenomenological Bohr-Mottelson Hamiltonian with an octic potential in the axial deformation variable. The comparative study of the low-lying collective states, revealed the presence of a shape phase transition from low to high deformation, as well as evidence of shape coexistence and mixing between spherical vibrator, γ -unstable or prolate configurations in ground and excited states. It is also shown that the effect of shape coexistence and mixing on the γ -band states can account to some extent for the typical γ -unstable staggering even in prolate γ -stable conditions.",
+    "authors": [
+      "R. Budaca",
+      "P. Buganu",
+      "F. El Ouardi",
+      "A. Lahbas"
+    ],
+    "published": "2026-07-28",
+    "updated": "2026-07-28",
+    "source": "Physical Review C",
+    "source_short": "PRC",
+    "source_type": "journal",
+    "doi": "10.1103/tr8y-kcyq",
+    "arxiv_id": "2603.07194",
+    "url": "https://doi.org/10.1103/tr8y-kcyq",
+    "pdf_url": "https://arxiv.org/pdf/2603.07194",
+    "categories": [
+      "nuclear-structure",
+      "theoretical-nuclear"
+    ],
+    "tags": [
+      "density functional",
+      "shape coexistence"
+    ],
+    "importance": 64,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +2",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "theoretical",
+      "review"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "density functional",
+      "shape coexistence"
+    ],
+    "license": "",
+    "publisher_licenses": [
+      "https://link.aps.org/licenses/aps-default-license"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-07T20:49:19+00:00",
+      "source": "INSPIRE"
+    }
   },
   {
     "id": "8f0102f00fe6da56",
@@ -1676,7 +1936,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-structure",
@@ -1736,7 +1996,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-structure",
@@ -1820,7 +2080,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-reactions",
@@ -1848,71 +2108,6 @@
     "abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-08-08T04:39:53+08:00",
-      "source": "INSPIRE"
-    }
-  },
-  {
-    "id": "2e7e9f09788673de",
-    "type": "paper",
-    "title": "The upgrade II of the LHCb RICH System",
-    "abstract": "The Ring Imaging Cherenkov (RICH) detectors of the LHCb experiment have provided charged hadron identification over a wide momentum range since the start of data taking at the LHC. After a first major upgrade currently operating in LHC Run 3, the LHCb experiment foresees a second, more ambitious “Upgrade II” to operate at five to seven times higher instantaneous luminosity starting from Run 5. The RICH system will face unprecedented challenges in terms of photon rates, radiation, timing requirements and mechanical constraints, while aiming to maintain the same or better particle identification (PID) performance. This paper provides an overview of the LHCb RICH Upgrade II programme, summarizing the main detector requirements and the ongoing R&D activities on photon detectors, cooling, optics and fast electronics.",
-    "authors": [
-      "C. Gotti"
-    ],
-    "published": "2026-08-01",
-    "updated": "2026-08-01",
-    "source": "Nuclear Instruments and Methods in Physics Research A",
-    "source_short": "NIMA",
-    "source_type": "journal",
-    "doi": "10.1016/j.nima.2026.171536",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1016/j.nima.2026.171536",
-    "pdf_url": "",
-    "categories": [
-      "detectors-daq",
-      "high-energy-nuclear",
-      "particle-cross"
-    ],
-    "tags": [
-      "hadron",
-      "particle identification",
-      "LHCb"
-    ],
-    "importance": 63,
-    "open_access": null,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +17",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
-    "abstract_status": "full",
-    "abstract_source": "INSPIRE",
-    "primary_topic": "detectors-daq",
-    "methods": [
-      "experimental",
-      "review"
-    ],
-    "classification_confidence": 0.72,
-    "classification_evidence": [
-      "hadron",
-      "particle identification",
-      "LHCb"
-    ],
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-08-08T04:20:17+08:00",
       "source": "INSPIRE"
     }
   },
@@ -1962,7 +2157,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "detectors-daq",
@@ -1990,6 +2185,120 @@
       "checked_at": "2026-08-08T04:20:17+08:00",
       "source": "INSPIRE"
     }
+  },
+  {
+    "id": "2e7e9f09788673de",
+    "type": "paper",
+    "title": "The upgrade II of the LHCb RICH System",
+    "abstract": "The Ring Imaging Cherenkov (RICH) detectors of the LHCb experiment have provided charged hadron identification over a wide momentum range since the start of data taking at the LHC. After a first major upgrade currently operating in LHC Run 3, the LHCb experiment foresees a second, more ambitious “Upgrade II” to operate at five to seven times higher instantaneous luminosity starting from Run 5. The RICH system will face unprecedented challenges in terms of photon rates, radiation, timing requirements and mechanical constraints, while aiming to maintain the same or better particle identification (PID) performance. This paper provides an overview of the LHCb RICH Upgrade II programme, summarizing the main detector requirements and the ongoing R&D activities on photon detectors, cooling, optics and fast electronics.",
+    "authors": [
+      "C. Gotti"
+    ],
+    "published": "2026-08-01",
+    "updated": "2026-08-01",
+    "source": "Nuclear Instruments and Methods in Physics Research A",
+    "source_short": "NIMA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nima.2026.171536",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nima.2026.171536",
+    "pdf_url": "",
+    "categories": [
+      "detectors-daq",
+      "high-energy-nuclear",
+      "particle-cross"
+    ],
+    "tags": [
+      "hadron",
+      "particle identification",
+      "LHCb"
+    ],
+    "importance": 63,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +17",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "primary_topic": "detectors-daq",
+    "methods": [
+      "experimental",
+      "review"
+    ],
+    "classification_confidence": 0.72,
+    "classification_evidence": [
+      "hadron",
+      "particle identification",
+      "LHCb"
+    ],
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-08T04:20:17+08:00",
+      "source": "INSPIRE"
+    }
+  },
+  {
+    "id": "fe159b5fa2a24211",
+    "type": "paper",
+    "title": "The piezochiral effect",
+    "abstract": "Abstract Chirality is a pervasive property of matter that underpins many important phenomena across physics 1 , chemistry 2 and biology 3 . Given its broad importance, the development of protocols for rational control of chirality in solid-state systems is highly desirable, especially if this effect can be tuned continuously and in two directions. Yet, this goal has remained elusive owing to the absence of a universal conjugate field that couples linearly to this structural order 4–6 . Here we introduce the piezochiral effect, which enables control of chirality through mechanical strain. We show by symmetry analysis that uniaxial strain induces chirality in a broad class of achiral crystals that host fragments of opposite chirality within each unit cell 7,8 , an effect that has so far remained unrecognized. The strain-induced handedness can be tuned either by changing the strain direction or by switching between compressive and tensile strain. We experimentally verify this effect in AgGaS 2 , using measurements of the optical activity under strain. Our discovery establishes a new scheme for chirality control, with potential applications that range from spintronics to asymmetric catalysis, and enantioselective interactions in biosystems.",
+    "authors": [
+      "Z. Zeng",
+      "M. Först",
+      "M. Fechner",
+      "X. Deng",
+      "A. Cavalleri",
+      "P. G. Radaelli"
+    ],
+    "published": "2026-07-29",
+    "updated": "2026-07-29",
+    "source": "Nature",
+    "source_short": "Nature",
+    "source_type": "journal",
+    "doi": "10.1038/s41586-026-10845-5",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1038/s41586-026-10845-5",
+    "pdf_url": "",
+    "categories": [
+      "frontiers"
+    ],
+    "tags": [],
+    "importance": 66,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +56",
+      "突破性表述 +8",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": [],
+    "license": "",
+    "publisher_licenses": [
+      "https://creativecommons.org/licenses/by/4.0"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown"
   },
   {
     "id": "56f43633b0d9097b",
@@ -2036,7 +2345,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "detectors-daq",
@@ -2106,7 +2415,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "theoretical-nuclear",
@@ -2178,7 +2487,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "theoretical-nuclear",
@@ -2232,7 +2541,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "missing",
     "abstract_source": "",
     "primary_topic": "nuclear-decay",
@@ -2256,55 +2565,6 @@
       "checked_at": "2026-08-08T04:20:17+08:00",
       "source": "INSPIRE"
     }
-  },
-  {
-    "id": "fe159b5fa2a24211",
-    "type": "paper",
-    "title": "The piezochiral effect",
-    "abstract": "Abstract Chirality is a pervasive property of matter that underpins many important phenomena across physics 1 , chemistry 2 and biology 3 . Given its broad importance, the development of protocols for rational control of chirality in solid-state systems is highly desirable, especially if this effect can be tuned continuously and in two directions. Yet, this goal has remained elusive owing to the absence of a universal conjugate field that couples linearly to this structural order 4–6 . Here we introduce the piezochiral effect, which enables control of chirality through mechanical strain. We show by symmetry analysis that uniaxial strain induces chirality in a broad class of achiral crystals that host fragments of opposite chirality within each unit cell 7,8 , an effect that has so far remained unrecognized. The strain-induced handedness can be tuned either by changing the strain direction or by switching between compressive and tensile strain. We experimentally verify this effect in AgGaS 2 , using measurements of the optical activity under strain. Our discovery establishes a new scheme for chirality control, with potential applications that range from spintronics to asymmetric catalysis, and enantioselective interactions in biosystems.",
-    "authors": [
-      "Z. Zeng",
-      "M. Först",
-      "M. Fechner",
-      "X. Deng",
-      "A. Cavalleri",
-      "P. G. Radaelli"
-    ],
-    "published": "2026-07-29",
-    "updated": "2026-07-29",
-    "source": "Nature",
-    "source_short": "Nature",
-    "source_type": "journal",
-    "doi": "10.1038/s41586-026-10845-5",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1038/s41586-026-10845-5",
-    "pdf_url": "",
-    "categories": [
-      "frontiers"
-    ],
-    "tags": [],
-    "importance": 66,
-    "open_access": null,
-    "score_reasons": [
-      "来源权重 +56",
-      "突破性表述 +8",
-      "完整摘要 +2"
-    ],
-    "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
-    "license": "",
-    "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown"
   },
   {
     "id": "6ec54077fd087432",
@@ -2359,7 +2619,7 @@
       "核物理研究侧重 +22"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "missing",
     "abstract_source": "",
     "primary_topic": "nuclear-decay",
@@ -2444,395 +2704,115 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T04:00:19+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00"
+    "last_seen": "2026-08-07T20:49:19+00:00"
   },
   {
-    "id": "0d74fcb60b9432a4",
+    "id": "107e2548ab228e1f",
     "type": "paper",
-    "title": "Probing quadruple deformation in transitional nuclei via angular momentum projection",
-    "abstract": "Within the interacting boson model (IBM), a geometric analysis of transitional nuclei is carried out through angular momentum projection of the intrinsic coherent state. The results indicate that K -mixing effects in the calculations are typically negligible, validating the use of K -fixed projection for semiclassical analyses of the spin dependence of quadrupole deformation in the IBM. Further analysis indicates that in a rotating transitional system, quadrupole deformation is stretched with increasing angular momentum, providing a geometrically intuitive perspective on the commonly observed Jacobi-type transitions, as exemplified by the case studies of Gd 160 and Dy 162 . The method is additionally applied to the yrast states of Os 170 to probe quadrupole deformation changes linked to the observed low-spin B ( E 2 ) anomaly behavior, demonstrating the capability of IBM-based angular momentum projection in interpreting exotic collective phenomena.",
+    "title": "The NUMEN project: NUclear Matrix Elements for Neutrinoless double beta decay (2nd edition)",
+    "abstract": "The article describes the main achievements of the NUMEN project together with an updated and detailed overview of the related R&D activities and theoretical developments. NUMEN proposes an innovative technique to access the nuclear matrix elements entering the expression of the lifetime of the double beta decay by cross section measurements of heavy-ion induced Double Charge Exchange (DCE) reactions. Despite the fact that the two processes, namely neutrinoless double beta decay and DCE reactions, are triggered by the weak and strong interaction respectively, important analogies are suggested. The basic point is the coincidence of the initial and final state many-body wave functions in the two types of processes and the formal similarity of the transition operators. First experimental results obtained at the INFN-LNS laboratory for the$^{40}$Ca($^{18}$O,$^{18}$Ne)$^{40}$Ar reaction at 270MeV give an encouraging indication on the capability of the proposed technique to access relevant quantitative information. The main experimental tools for this project are the K800 Superconducting Cyclotron and MAGNEX spectrometer. The former is used for the acceleration of the required high resolution and low emittance heavy-ion beams and the latter is the large acceptance magnetic spectrometer for the detection of the ejectiles. The use of the high-order trajectory reconstruction technique, implemented in MAGNEX, allows to reach the experimental resolution and sensitivity required for the accurate measurement of the DCE cross sections at forward angles. However, the tiny values of such cross sections and the resolution requirements demand beam intensities much larger than those manageable with the present facility. The on-going upgrade of the INFN-LNS facilities in this perspective is part of the NUMEN project and will be discussed in the article.",
     "authors": [
-      "Xian-Zhi Zhao",
-      "Sheng-Nan Wang",
-      "Yu Zhang"
-    ],
-    "published": "2026-08-03",
-    "updated": "2026-08-03",
-    "source": "Physical Review C",
-    "source_short": "PRC",
-    "source_type": "journal",
-    "doi": "10.1103/29sg-clv3",
-    "arxiv_id": "2608.02247",
-    "url": "https://doi.org/10.1103/29sg-clv3",
-    "pdf_url": "https://arxiv.org/pdf/2608.02247",
-    "categories": [
-      "nuclear-structure"
-    ],
-    "tags": [
-      "quadrupole deformation"
-    ],
-    "importance": 62,
-    "open_access": null,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +20",
-      "完整摘要 +2"
-    ],
-    "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
-    "abstract_status": "full",
-    "abstract_source": "INSPIRE",
-    "primary_topic": "nuclear-structure",
-    "methods": [
-      "review"
-    ],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "quadrupole deformation"
-    ],
-    "license": "",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-08-08T04:20:17+08:00",
-      "source": "INSPIRE"
-    }
-  },
-  {
-    "id": "cfbea4303558baf7",
-    "type": "paper",
-    "title": "Shape coexistence in 94Zr from a model-independent analysis",
-    "abstract": "Low-lying states of 94 Zr were investigated via low-energy multi-step Coulomb excitation. From the measured γ-ray yields, 16 reduced E2 transition probabilities between low-spin states were determined, together with the spectroscopic quadrupole moments of the 2 1 , 2 + states. Based on this information, for the first time in the Zr isotopic chain, the shapes of the 0 1 , 2 + states including their deformation softness were inferred in a model-independent way using the quadrupole sum rules approach. The ground state of 94 Zr possesses a rather diffuse shape associated with a spherical configuration, while the 0 2 + state is triaxial tending towards oblate and more strongly deformed. The observed features of shape coexistence in 94 Zr are consistent with both Monte-Carlo shell-model predictions and IBM-CM calculations, and provide model-independent constraints on the shape character assigned in the IBM-CM to the intruder configuration in 92–96 Zr.",
-    "authors": [
-      "N. Marchini",
-      "M. Rocchini",
-      "M. Zielińska",
-      "A. Nannini",
-      "D.T. Doherty",
-      "N. Gavrielov",
-      "P.E. Garrett",
-      "K. Hadyńska-Klȩk",
-      "A. Goasduff",
-      "D. Testov",
-      "S.D. Bakes",
-      "D. Bazzacco",
-      "G. Benzoni",
-      "T. Berry",
-      "D. Brugnara",
-      "F. Camera",
-      "W.N. Catford",
-      "M. Chiari",
-      "F. Galtarossa",
-      "N. Gelli",
-      "A. Gottardo",
-      "A. Gozzelino",
-      "A. Illana",
-      "J. Keatings",
-      "D. Mengoni",
-      "L. Morrison",
-      "D.R. Napoli",
-      "M. Ottanelli",
-      "P. Ottanelli",
-      "G. Pasqualato",
-      "F. Recchia",
-      "S. Riccetto",
-      "M. Scheck",
-      "M. Siciliano",
-      "J.J. Valiente Dóbon",
-      "I. Zanon"
-    ],
-    "published": "2026-08-01",
-    "updated": "2026-08-01",
-    "source": "Physics Letters B",
-    "source_short": "PLB",
-    "source_type": "journal",
-    "doi": "10.1016/j.physletb.2026.140668",
-    "arxiv_id": "2408.06940",
-    "url": "https://doi.org/10.1016/j.physletb.2026.140668",
-    "pdf_url": "https://arxiv.org/pdf/2408.06940",
-    "categories": [
-      "nuclear-structure"
-    ],
-    "tags": [
-      "shape coexistence"
-    ],
-    "importance": 62,
-    "open_access": null,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +20",
-      "完整摘要 +2"
-    ],
-    "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
-    "abstract_status": "full",
-    "abstract_source": "INSPIRE",
-    "primary_topic": "nuclear-structure",
-    "methods": [
-      "experimental"
-    ],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "shape coexistence"
-    ],
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-08-08T04:20:17+08:00",
-      "source": "INSPIRE"
-    }
-  },
-  {
-    "id": "c4068d6a6993f899",
-    "type": "paper",
-    "title": "Observation of tensor-driven high-momentum neutrons in 16O via (p, d) reactions and zero-degree deuteron momentum spectroscopy",
-    "abstract": "•Tensor interactions are a key component of the nucleon–nucleon interactions.•They create strong proton–neutron correlations and high-momentum components.•Tensor interactions affect shell evolution and magic numbers far from stability.•Knockout reactions probe high-momentum nucleons but are difficult for rare isotopes.•Zero-degree neutron pickup sensitively probes tensor-driven high momentum nucleons. The 16 O(p, d) 15 O reaction has been studied at 0 ∘ using 403-, 604-, 907- and 1209-MeV protons, comparing cross sections populating positive- and negative-parity states in 15 O. Transitions to positive-parity states exhibit strong enhancement due to high-momentum neutrons, while negative-parity transitions show much smaller effects. The cross-section ratio between positive- and negative-parity states rises sharply with momentum transfer, matching theoretical predictions that include tensor interactions, particularly the peak near 2 fm − 1 . These results highlight 0 ∘ neutron-pickup reactions as a sensitive probe for tensor-driven high-momentum components, paving the way for studies in exotic nuclei via radioactive beams.",
-    "authors": [
-      "X. Wang",
-      "H.J. Ong",
-      "S. Terashima",
-      "I. Tanihata",
-      "Y.K. Tanaka",
-      "H. Geissel",
-      "N. Aoi",
+      "F. Cappuzzello",
+      "C. Agodi",
+      "D. Calvo",
+      "D. Carbone",
+      "M. Cavallaro",
+      "M. Colonna",
+      "M. Giovannini",
+      "R. Linares",
+      "J. R. B. Oliveira",
+      "L. Pandola",
+      "D. Pierroutsakou",
+      "A. D. Russo",
+      "E. Santopinto",
+      "V. Soukeras",
+      "A. Spatafora",
+      "D. Torresi",
+      "S. Tudisco",
+      "L. Acosta",
+      "N. Added",
+      "V. A. P. de Aguiar",
+      "P. Amador-Valenzuela",
+      "A. Anastasio",
+      "N. Auerbach",
+      "L. H. Avanzi",
       "Y. Ayyad",
-      "J. Benlliure",
-      "F. Farinon",
-      "H. Fujioka",
-      "J. Gellanki",
-      "C.L. Guo",
-      "E. Haettner",
-      "W.L. Hai",
-      "M.N. Harakeh",
-      "C. Hornung",
-      "K. Itahashi",
-      "R. Janik",
-      "N. Kalantar-Nayestanaki",
-      "R. Knöbel",
-      "N. Kurz",
-      "K. Miki",
-      "I. Mukha",
-      "T. Myo",
-      "T. Nishi",
-      "D.Y. Pang",
-      "S. Pietri",
-      "A. Prochazka",
-      "C. Rappold",
-      "M.P. Reiter",
-      "J.L. Rodríguez-Sánchez",
-      "C. Scheidenberger",
-      "H. Simon",
-      "B. Sitar",
-      "P. Strmen",
-      "B.H. Sun",
-      "K. Suzuki",
-      "H. Toki",
-      "H. Weick"
+      "R. Babu",
+      "J. I. Bellone",
+      "R. Bijker",
+      "A. Boiano",
+      "I. Boztosun",
+      "S. Brasolin",
+      "G. A. Brischetto",
+      "C. Cabo Landeira",
+      "N. Cairone",
+      "S. Calabrese",
+      "L. Campajola",
+      "E. N. Cardozo",
+      "K. Challa",
+      "E. R. Chávez-Lomelí",
+      "E. F. Chinaglia"
     ],
-    "published": "2026-08-01",
-    "updated": "2026-08-01",
-    "source": "Physics Letters B",
-    "source_short": "PLB",
+    "published": "2026-07-28",
+    "updated": "2026-07-28",
+    "source": "The European Physical Journal A",
+    "source_short": "EPJ A",
     "source_type": "journal",
-    "doi": "10.1016/j.physletb.2026.140563",
-    "arxiv_id": "2508.12561",
-    "url": "https://doi.org/10.1016/j.physletb.2026.140563",
-    "pdf_url": "https://arxiv.org/pdf/2508.12561",
+    "doi": "10.1140/epja/s10050-026-01911-7",
+    "arxiv_id": "1811.08693",
+    "url": "https://doi.org/10.1140/epja/s10050-026-01911-7",
+    "pdf_url": "https://arxiv.org/pdf/1811.08693",
     "categories": [
-      "nuclear-structure"
+      "nuclear-decay",
+      "nuclear-reactions",
+      "theoretical-nuclear",
+      "accelerators"
     ],
     "tags": [
-      "shell evolution",
-      "exotic nuclei"
+      "many-body",
+      "beta decay",
+      "double beta decay",
+      "neutrinoless double beta",
+      "charge exchange",
+      "cyclotron"
     ],
     "importance": 62,
     "open_access": null,
     "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +20",
+      "来源权重 +32",
+      "核物理研究侧重 +22",
+      "跨领域关联 +6",
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
+    "last_seen": "2026-08-07T20:49:19+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
-    "primary_topic": "nuclear-structure",
+    "primary_topic": "nuclear-decay",
     "methods": [
       "experimental",
-      "theoretical"
+      "theoretical",
+      "review"
     ],
-    "classification_confidence": 0.64,
+    "classification_confidence": 0.96,
     "classification_evidence": [
-      "shell evolution",
-      "exotic nuclei"
+      "many-body",
+      "beta decay",
+      "double beta decay",
+      "neutrinoless double beta",
+      "charge exchange",
+      "cyclotron"
     ],
     "license": "",
     "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
+      "https://www.springernature.com/gp/researchers/text-and-data-mining"
     ],
     "rights_status": "unknown",
     "figures": [],
     "figure_status": "rights_unknown",
     "abstract_enrichment": {
       "status": "ready",
-      "checked_at": "2026-08-08T04:39:53+08:00",
-      "source": "INSPIRE"
-    }
-  },
-  {
-    "id": "3271377bb723a7dd",
-    "type": "paper",
-    "title": "Insensitivity of the Coulomb breakup of halo nuclei to spectroscopic factors",
-    "abstract": "Exotic nuclear structures such as halos are mostly studied using reactions. In Coulomb breakup, the radioactive projectile dissociates through its interaction with a heavy target. Often, a spectroscopic factor for the dominant core-halo configuration is inferred from experimental data. In this work, we present a new calculation of the Coulomb breakup of the one-neutron halo nucleus 11 Be performed with a coupled-channel effective particle-rotor model of that nucleus, which accounts for the excitation of the 10 Be core. Changes in the spectroscopic factor have no effect on the cross sections when the asymptotic normalisation coefficient is fixed, hence confirming the insensitivity of Coulomb-breakup cross sections to spectroscopic factors.",
-    "authors": [
-      "L.-P. Kubushishi",
-      "P. Capel"
-    ],
-    "published": "2026-08-01",
-    "updated": "2026-08-01",
-    "source": "Physics Letters B",
-    "source_short": "PLB",
-    "source_type": "journal",
-    "doi": "10.1016/j.physletb.2026.140694",
-    "arxiv_id": "2603.10339",
-    "url": "https://doi.org/10.1016/j.physletb.2026.140694",
-    "pdf_url": "https://arxiv.org/pdf/2603.10339",
-    "categories": [
-      "nuclear-structure"
-    ],
-    "tags": [
-      "halo nucleus"
-    ],
-    "importance": 62,
-    "open_access": null,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +20",
-      "完整摘要 +2"
-    ],
-    "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
-    "abstract_status": "full",
-    "abstract_source": "INSPIRE",
-    "primary_topic": "nuclear-structure",
-    "methods": [
-      "theoretical"
-    ],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "halo nucleus"
-    ],
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-08-08T04:39:53+08:00",
-      "source": "INSPIRE"
-    }
-  },
-  {
-    "id": "9856ea94cc35a909",
-    "type": "paper",
-    "title": "Evidence of the excited X(5)-like critical-point symmetry structures in 152Sm",
-    "abstract": "The positive-parity structure of 152 Sm has been investigated through high-statistics γ-ray spectroscopy following the ( 150 Nd(α,2n) 152 Sm reaction at Elab = 26 MeV. Several collective structures built on excited 0 + states have been extended through the observation of new levels and γ-ray transitions, and spin-parity assignments have been established using directional-correlation and linear-polarization measurements. Electromagnetic transition strengths (B(E2)), deduced from measured branching ratios and known level lifetimes, reveal pronounced collectivity among the excited configurations. The resulting level scheme provides evidence for a sequence of excited collective bands extending beyond the well-known ground-state and first excited 0 + structures. The excitation energies and transition strengths are examined within the framework of the X(5) critical-point description of the first-order U(5)-SU(3) shape-phase transition. In addition to the established X(5)-like features of the low-lying spectrum, the observed systematics of the higher-lying bands are found to be consistent with excited collective structures exhibiting X(5)-like characteristics. The results provide new constraints on the realization of critical-point behavior in finite nuclei and on the evolution of collectivity in the N=90 region.",
-    "authors": [
-      "S. Basak",
-      "S. Rajbanshi",
-      "T. Bhattacharjee",
-      "D. Kumar",
-      "A. Pal",
-      "S.S. Alam",
-      "A. Saha",
-      "A.K. Sikdar",
-      "J. Nandi",
-      "Ananya Das",
-      "Shabir Dar",
-      "S. Samanta",
-      "S. Chatterjee",
-      "R. Raut",
-      "S.S. Ghugre",
-      "A. Adhikari",
-      "Y. Sapkota",
-      "R. Rahaman",
-      "A. Gupta",
-      "A. Bisoi",
-      "S. Sharma",
-      "S. Das",
-      "P. Das",
-      "U. Datta",
-      "I. Ray",
-      "G. Duchêne"
-    ],
-    "published": "2026-08-01",
-    "updated": "2026-08-01",
-    "source": "Physics Letters B",
-    "source_short": "PLB",
-    "source_type": "journal",
-    "doi": "10.1016/j.physletb.2026.140662",
-    "arxiv_id": "2606.21269",
-    "url": "https://doi.org/10.1016/j.physletb.2026.140662",
-    "pdf_url": "https://arxiv.org/pdf/2606.21269",
-    "categories": [
-      "nuclear-structure"
-    ],
-    "tags": [
-      "B(E2)",
-      "level scheme"
-    ],
-    "importance": 62,
-    "open_access": null,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +20",
-      "完整摘要 +2"
-    ],
-    "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T04:00:19+08:00",
-    "abstract_status": "full",
-    "abstract_source": "INSPIRE",
-    "primary_topic": "nuclear-structure",
-    "methods": [
-      "experimental"
-    ],
-    "classification_confidence": 0.64,
-    "classification_evidence": [
-      "B(E2)",
-      "level scheme"
-    ],
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-08-08T04:39:53+08:00",
+      "checked_at": "2026-08-07T20:49:19+00:00",
       "source": "INSPIRE"
     }
   }
