@@ -21,7 +21,10 @@ def load(path: Path):
 
 def main() -> None:
     PUBLIC_DATA.mkdir(parents=True, exist_ok=True)
-    for name in ("papers.json", "news.json", "notices.json", "featured.json", "status.json"):
+    for name in (
+        "papers.json", "news.json", "notices.json", "featured.json", "status.json",
+        "translations.zh-CN.json",
+    ):
         shutil.copy2(DATA / name, PUBLIC_DATA / name)
     favorites = DATA / "personal" / "favorites.json"
     shutil.copy2(favorites, PUBLIC_DATA / "public-favorites.json")

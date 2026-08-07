@@ -1,86 +1,575 @@
 {
   "crossref_journals": [
-    {"name": "Physical Review C", "short": "PRC", "issn": "2469-9985", "mode": "all", "weight": 5},
-    {"name": "Nuclear Science and Techniques", "short": "NST", "issn": "2210-3147", "mode": "all", "weight": 5},
-    {"name": "Nuclear Instruments and Methods in Physics Research A", "short": "NIMA", "issn": "0168-9002", "mode": "all", "weight": 5},
-    {"name": "Nuclear Physics A", "short": "NPA", "issn": "0375-9474", "mode": "all", "weight": 5},
-    {"name": "Nuclear Fusion", "short": "NF", "issn": "0029-5515", "mode": "all", "weight": 5},
-    {"name": "Physics of Plasmas", "short": "PoP", "issn": "1089-7674", "mode": "filtered", "weight": 3},
-    {"name": "Plasma Physics and Controlled Fusion", "short": "PPCF", "issn": "1361-6587", "mode": "filtered", "weight": 4},
-    {"name": "Physics Letters B", "short": "PLB", "issn": "0370-2693", "mode": "all", "weight": 5},
-    {"name": "Physical Review Letters", "short": "PRL", "issn": "1079-7114", "mode": "filtered", "weight": 6},
-    {"name": "The European Physical Journal A", "short": "EPJ A", "issn": "1434-601X", "mode": "all", "weight": 4},
-    {"name": "Journal of Physics G", "short": "J. Phys. G", "issn": "1361-6471", "mode": "all", "weight": 4},
-    {"name": "Chinese Physics C", "short": "CPC", "issn": "1674-1137", "mode": "all", "weight": 4},
-    {"name": "Physical Review Research", "short": "PRResearch", "issn": "2643-1564", "mode": "filtered", "weight": 4},
-    {"name": "Nature", "short": "Nature", "issn": "1476-4687", "mode": "filtered", "weight": 7},
-    {"name": "Nature Physics", "short": "Nature Physics", "issn": "1745-2481", "mode": "filtered", "weight": 7},
-    {"name": "Nature Astronomy", "short": "Nature Astronomy", "issn": "2397-3366", "mode": "filtered", "weight": 6},
-    {"name": "Science Bulletin", "short": "Science Bulletin", "issn": "2095-9273", "mode": "filtered", "weight": 5},
-    {"name": "Physical Review D", "short": "PRD", "issn": "2470-0029", "mode": "filtered", "weight": 5},
-    {"name": "Physical Review E", "short": "PRE", "issn": "2470-0053", "mode": "filtered", "weight": 4},
-    {"name": "The Astrophysical Journal", "short": "ApJ", "issn": "1538-4357", "mode": "filtered", "weight": 5},
-    {"name": "Monthly Notices of the Royal Astronomical Society", "short": "MNRAS", "issn": "1365-2966", "mode": "filtered", "weight": 4},
-    {"name": "Astronomy and Astrophysics", "short": "A&A", "issn": "1432-0746", "mode": "filtered", "weight": 4},
-    {"name": "Machine Learning Science and Technology", "short": "MLST", "issn": "2632-2153", "mode": "important-ai", "weight": 4},
-    {"name": "Nuclear Data Sheets", "short": "NDS", "issn": "1095-9904", "mode": "all", "weight": 5},
-    {"name": "Atomic Data and Nuclear Data Tables", "short": "ADNDT", "issn": "1090-2090", "mode": "all", "weight": 5},
-    {"name": "Fusion Engineering and Design", "short": "FED", "issn": "0920-3796", "mode": "all", "weight": 4},
-    {"name": "Review of Scientific Instruments", "short": "RSI", "issn": "1089-7623", "mode": "filtered", "weight": 4},
-    {"name": "Journal of Instrumentation", "short": "JINST", "issn": "1748-0221", "mode": "filtered", "weight": 4},
-    {"name": "IEEE Transactions on Nuclear Science", "short": "IEEE TNS", "issn": "1558-1578", "mode": "all", "weight": 4},
-    {"name": "Annals of Nuclear Energy", "short": "ANE", "issn": "0306-4549", "mode": "all", "weight": 4},
-    {"name": "Radiation Physics and Chemistry", "short": "RPC", "issn": "0969-806X", "mode": "filtered", "weight": 3}
+    {
+      "name": "Physical Review C",
+      "short": "PRC",
+      "issn": "2469-9985",
+      "mode": "all",
+      "weight": 5,
+      "default_categories": [
+        "nuclear-general"
+      ]
+    },
+    {
+      "name": "Nuclear Science and Techniques",
+      "short": "NST",
+      "issn": "2210-3147",
+      "mode": "all",
+      "weight": 5,
+      "default_categories": [
+        "nuclear-general"
+      ]
+    },
+    {
+      "name": "Nuclear Instruments and Methods in Physics Research A",
+      "short": "NIMA",
+      "issn": "0168-9002",
+      "mode": "all",
+      "weight": 5,
+      "default_categories": [
+        "detectors-daq"
+      ]
+    },
+    {
+      "name": "Nuclear Physics A",
+      "short": "NPA",
+      "issn": "0375-9474",
+      "mode": "all",
+      "weight": 5,
+      "default_categories": [
+        "nuclear-general"
+      ]
+    },
+    {
+      "name": "Nuclear Fusion",
+      "short": "NF",
+      "issn": "0029-5515",
+      "mode": "all",
+      "weight": 5,
+      "default_categories": [
+        "fusion"
+      ]
+    },
+    {
+      "name": "Physics of Plasmas",
+      "short": "PoP",
+      "issn": "1089-7674",
+      "mode": "filtered",
+      "weight": 3,
+      "default_categories": [
+        "fusion"
+      ]
+    },
+    {
+      "name": "Plasma Physics and Controlled Fusion",
+      "short": "PPCF",
+      "issn": "1361-6587",
+      "mode": "filtered",
+      "weight": 4,
+      "default_categories": [
+        "fusion"
+      ]
+    },
+    {
+      "name": "Physics Letters B",
+      "short": "PLB",
+      "issn": "0370-2693",
+      "mode": "all",
+      "weight": 5
+    },
+    {
+      "name": "Physical Review Letters",
+      "short": "PRL",
+      "issn": "1079-7114",
+      "mode": "filtered",
+      "weight": 6
+    },
+    {
+      "name": "The European Physical Journal A",
+      "short": "EPJ A",
+      "issn": "1434-601X",
+      "mode": "all",
+      "weight": 4,
+      "default_categories": [
+        "nuclear-general"
+      ]
+    },
+    {
+      "name": "Journal of Physics G",
+      "short": "J. Phys. G",
+      "issn": "1361-6471",
+      "mode": "all",
+      "weight": 4,
+      "default_categories": [
+        "nuclear-general"
+      ]
+    },
+    {
+      "name": "Chinese Physics C",
+      "short": "CPC",
+      "issn": "1674-1137",
+      "mode": "all",
+      "weight": 4,
+      "default_categories": [
+        "nuclear-general"
+      ]
+    },
+    {
+      "name": "Physical Review Research",
+      "short": "PRResearch",
+      "issn": "2643-1564",
+      "mode": "filtered",
+      "weight": 4
+    },
+    {
+      "name": "Nature",
+      "short": "Nature",
+      "issn": "1476-4687",
+      "mode": "filtered",
+      "weight": 7
+    },
+    {
+      "name": "Nature Physics",
+      "short": "Nature Physics",
+      "issn": "1745-2481",
+      "mode": "filtered",
+      "weight": 7
+    },
+    {
+      "name": "Nature Astronomy",
+      "short": "Nature Astronomy",
+      "issn": "2397-3366",
+      "mode": "filtered",
+      "weight": 6
+    },
+    {
+      "name": "Science Bulletin",
+      "short": "Science Bulletin",
+      "issn": "2095-9273",
+      "mode": "filtered",
+      "weight": 5
+    },
+    {
+      "name": "Physical Review D",
+      "short": "PRD",
+      "issn": "2470-0029",
+      "mode": "filtered",
+      "weight": 5
+    },
+    {
+      "name": "Physical Review E",
+      "short": "PRE",
+      "issn": "2470-0053",
+      "mode": "filtered",
+      "weight": 4
+    },
+    {
+      "name": "The Astrophysical Journal",
+      "short": "ApJ",
+      "issn": "1538-4357",
+      "mode": "filtered",
+      "weight": 5
+    },
+    {
+      "name": "Monthly Notices of the Royal Astronomical Society",
+      "short": "MNRAS",
+      "issn": "1365-2966",
+      "mode": "filtered",
+      "weight": 4
+    },
+    {
+      "name": "Astronomy and Astrophysics",
+      "short": "A&A",
+      "issn": "1432-0746",
+      "mode": "filtered",
+      "weight": 4
+    },
+    {
+      "name": "Machine Learning Science and Technology",
+      "short": "MLST",
+      "issn": "2632-2153",
+      "mode": "important-ai",
+      "weight": 4
+    },
+    {
+      "name": "Nuclear Data Sheets",
+      "short": "NDS",
+      "issn": "1095-9904",
+      "mode": "all",
+      "weight": 5,
+      "default_categories": [
+        "nuclear-data-applications"
+      ]
+    },
+    {
+      "name": "Atomic Data and Nuclear Data Tables",
+      "short": "ADNDT",
+      "issn": "1090-2090",
+      "mode": "all",
+      "weight": 5,
+      "default_categories": [
+        "nuclear-data-applications"
+      ]
+    },
+    {
+      "name": "Fusion Engineering and Design",
+      "short": "FED",
+      "issn": "0920-3796",
+      "mode": "all",
+      "weight": 4,
+      "default_categories": [
+        "fusion"
+      ]
+    },
+    {
+      "name": "Review of Scientific Instruments",
+      "short": "RSI",
+      "issn": "1089-7623",
+      "mode": "filtered",
+      "weight": 4,
+      "default_categories": [
+        "detectors-daq"
+      ]
+    },
+    {
+      "name": "Journal of Instrumentation",
+      "short": "JINST",
+      "issn": "1748-0221",
+      "mode": "filtered",
+      "weight": 4,
+      "default_categories": [
+        "detectors-daq"
+      ]
+    },
+    {
+      "name": "IEEE Transactions on Nuclear Science",
+      "short": "IEEE TNS",
+      "issn": "1558-1578",
+      "mode": "all",
+      "weight": 4,
+      "default_categories": [
+        "detectors-daq"
+      ]
+    },
+    {
+      "name": "Annals of Nuclear Energy",
+      "short": "ANE",
+      "issn": "0306-4549",
+      "mode": "all",
+      "weight": 4
+    },
+    {
+      "name": "Radiation Physics and Chemistry",
+      "short": "RPC",
+      "issn": "0969-806X",
+      "mode": "filtered",
+      "weight": 3
+    },
+    {
+      "name": "Nuclear Instruments and Methods in Physics Research B",
+      "short": "NIMB",
+      "issn": "0168-583X",
+      "mode": "all",
+      "weight": 4,
+      "default_categories": [
+        "detectors-daq",
+        "accelerators"
+      ]
+    },
+    {
+      "name": "Physical Review Accelerators and Beams",
+      "short": "PRAB",
+      "issn": "2469-9888",
+      "mode": "filtered",
+      "weight": 4,
+      "default_categories": [
+        "accelerators"
+      ]
+    },
+    {
+      "name": "Progress of Theoretical and Experimental Physics",
+      "short": "PTEP",
+      "issn": "2050-3911",
+      "mode": "filtered",
+      "weight": 4,
+      "default_categories": [
+        "nuclear-general"
+      ]
+    },
+    {
+      "name": "Progress in Particle and Nuclear Physics",
+      "short": "PPNP",
+      "issn": "0146-6410",
+      "mode": "all",
+      "weight": 6,
+      "default_categories": [
+        "nuclear-general"
+      ]
+    },
+    {
+      "name": "Annual Review of Nuclear and Particle Science",
+      "short": "ARNPS",
+      "issn": "0163-8998",
+      "mode": "all",
+      "weight": 6,
+      "default_categories": [
+        "nuclear-general"
+      ]
+    },
+    {
+      "name": "Reviews of Modern Physics",
+      "short": "RMP",
+      "issn": "1539-0756",
+      "mode": "filtered",
+      "weight": 6,
+      "default_categories": [
+        "nuclear-general"
+      ]
+    },
+    {
+      "name": "Radiation Measurements",
+      "short": "Rad. Meas.",
+      "issn": "1350-4487",
+      "mode": "filtered",
+      "weight": 4,
+      "default_categories": [
+        "detectors-daq"
+      ]
+    },
+    {
+      "name": "Applied Radiation and Isotopes",
+      "short": "ARI",
+      "issn": "0969-8043",
+      "mode": "filtered",
+      "weight": 4,
+      "default_categories": [
+        "nuclear-data-applications"
+      ]
+    },
+    {
+      "name": "International Journal of Modern Physics E",
+      "short": "IJMPE",
+      "issn": "0218-3013",
+      "mode": "all",
+      "weight": 4,
+      "default_categories": [
+        "nuclear-general"
+      ]
+    },
+    {
+      "name": "Nuclear Physics B",
+      "short": "NPB",
+      "issn": "0550-3213",
+      "mode": "filtered",
+      "weight": 4,
+      "default_categories": [
+        "particle-cross"
+      ]
+    }
   ],
   "arxiv_feeds": [
-    {"name": "arXiv nucl-ex", "category": "nucl-ex", "mode": "all", "weight": 4},
-    {"name": "arXiv nucl-th", "category": "nucl-th", "mode": "all", "weight": 4},
-    {"name": "arXiv hep-ex", "category": "hep-ex", "mode": "filtered", "weight": 3},
-    {"name": "arXiv hep-ph", "category": "hep-ph", "mode": "filtered", "weight": 3},
-    {"name": "arXiv astro-ph.HE", "category": "astro-ph.HE", "mode": "filtered", "weight": 3},
-    {"name": "arXiv astro-ph.SR", "category": "astro-ph.SR", "mode": "filtered", "weight": 3},
-    {"name": "arXiv physics.ins-det", "category": "physics.ins-det", "mode": "filtered", "weight": 3},
-    {"name": "arXiv physics.plasm-ph", "category": "physics.plasm-ph", "mode": "filtered", "weight": 3},
-    {"name": "arXiv cs.AI", "category": "cs.AI", "mode": "important-ai", "weight": 2, "limit": 6},
-    {"name": "arXiv cs.LG", "category": "cs.LG", "mode": "important-ai", "weight": 2, "limit": 6}
+    {
+      "name": "arXiv nucl-ex",
+      "category": "nucl-ex",
+      "mode": "all",
+      "weight": 4,
+      "default_categories": [
+        "experimental-nuclear"
+      ]
+    },
+    {
+      "name": "arXiv nucl-th",
+      "category": "nucl-th",
+      "mode": "all",
+      "weight": 4,
+      "default_categories": [
+        "theoretical-nuclear"
+      ]
+    },
+    {
+      "name": "arXiv hep-ex",
+      "category": "hep-ex",
+      "mode": "filtered",
+      "weight": 3
+    },
+    {
+      "name": "arXiv hep-ph",
+      "category": "hep-ph",
+      "mode": "filtered",
+      "weight": 3
+    },
+    {
+      "name": "arXiv astro-ph.HE",
+      "category": "astro-ph.HE",
+      "mode": "filtered",
+      "weight": 3
+    },
+    {
+      "name": "arXiv astro-ph.SR",
+      "category": "astro-ph.SR",
+      "mode": "filtered",
+      "weight": 3
+    },
+    {
+      "name": "arXiv physics.ins-det",
+      "category": "physics.ins-det",
+      "mode": "filtered",
+      "weight": 3,
+      "default_categories": [
+        "detectors-daq"
+      ]
+    },
+    {
+      "name": "arXiv physics.plasm-ph",
+      "category": "physics.plasm-ph",
+      "mode": "filtered",
+      "weight": 3,
+      "default_categories": [
+        "fusion"
+      ]
+    },
+    {
+      "name": "arXiv cs.AI",
+      "category": "cs.AI",
+      "mode": "important-ai",
+      "weight": 2,
+      "limit": 6
+    },
+    {
+      "name": "arXiv cs.LG",
+      "category": "cs.LG",
+      "mode": "important-ai",
+      "weight": 2,
+      "limit": 6
+    },
+    {
+      "name": "arXiv physics.acc-ph",
+      "category": "physics.acc-ph",
+      "mode": "filtered",
+      "weight": 3,
+      "default_categories": [
+        "accelerators"
+      ]
+    },
+    {
+      "name": "arXiv hep-lat",
+      "category": "hep-lat",
+      "mode": "filtered",
+      "weight": 3,
+      "default_categories": [
+        "theoretical-nuclear"
+      ]
+    }
   ],
   "news_feeds": [
-    {"name": "APS Physics", "url": "https://feeds.aps.org/rss/recent/physics.xml", "kind": "news", "weight": 4},
-    {"name": "Nature Physics", "url": "https://www.nature.com/nphys.rss", "kind": "news", "weight": 5},
-    {"name": "Nature Machine Intelligence", "url": "https://www.nature.com/natmachintell.rss", "kind": "news", "weight": 4},
-    {"name": "IAEA", "url": "https://www.iaea.org/feeds/topnews", "kind": "news", "weight": 5},
-    {"name": "GSI/FAIR", "url": "https://www.gsi.de/en/start/news?type=100", "kind": "news", "weight": 5}
+    {
+      "name": "APS Physics",
+      "url": "https://feeds.aps.org/rss/recent/physics.xml",
+      "kind": "news",
+      "weight": 4
+    },
+    {
+      "name": "Nature Physics",
+      "url": "https://www.nature.com/nphys.rss",
+      "kind": "news",
+      "weight": 5
+    },
+    {
+      "name": "Nature Machine Intelligence",
+      "url": "https://www.nature.com/natmachintell.rss",
+      "kind": "news",
+      "weight": 4
+    },
+    {
+      "name": "IAEA",
+      "url": "https://www.iaea.org/feeds/topnews",
+      "kind": "news",
+      "weight": 5
+    },
+    {
+      "name": "GSI/FAIR",
+      "url": "https://www.gsi.de/en/start/news?type=100",
+      "kind": "news",
+      "weight": 5
+    }
   ],
   "notice_pages": [
     {
       "name": "CERN News",
       "kind": "news",
       "url": "https://home.cern/tag/news/",
-      "include": ["collision", "experiment", "detector", "accelerator", "physics", "plasma", "machine learning", "antimatter", "neutrino", "LHC", "ALICE", "ATLAS", "CMS", "LHCb"],
+      "include": [
+        "collision",
+        "experiment",
+        "detector",
+        "accelerator",
+        "physics",
+        "plasma",
+        "machine learning",
+        "antimatter",
+        "neutrino",
+        "LHC",
+        "ALICE",
+        "ATLAS",
+        "CMS",
+        "LHCb"
+      ],
       "weight": 6
     },
     {
       "name": "国家自然科学基金委数理科学部",
       "url": "https://www.nsfc.gov.cn/p1/2851/3084/tzgg111.html",
-      "include": ["物理", "项目指南", "通知", "通告", "申请", "基金", "专项"],
+      "include": [
+        "物理",
+        "项目指南",
+        "通知",
+        "通告",
+        "申请",
+        "基金",
+        "专项"
+      ],
       "weight": 6
     },
     {
       "name": "CERN Announcements",
       "url": "https://home.cern/tag/official-news/",
-      "include": ["call", "deadline", "announcement", "programme", "conference", "school"],
+      "include": [
+        "call",
+        "deadline",
+        "announcement",
+        "programme",
+        "conference",
+        "school"
+      ],
       "weight": 4
     },
     {
       "name": "FRIB News",
       "url": "https://frib.msu.edu/news/index.html",
-      "include": ["call", "proposal", "deadline", "experiment", "beam", "news"],
+      "include": [
+        "call for proposals",
+        "proposal deadline",
+        "user proposal",
+        "program advisory committee",
+        "PAC meeting",
+        "deadline",
+        "announcement"
+      ],
       "weight": 5
     },
     {
       "name": "ITER News",
       "url": "https://www.iter.org/newsline",
-      "include": ["call", "announcement", "deadline", "milestone", "experiment", "news"],
+      "include": [
+        "call for proposals",
+        "call for applications",
+        "deadline",
+        "announcement",
+        "fellowship",
+        "school",
+        "conference",
+        "workshop"
+      ],
       "weight": 5
     }
   ]

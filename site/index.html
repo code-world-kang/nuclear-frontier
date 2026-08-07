@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="每日自动汇总核物理、高能核物理、核天体物理、核聚变与AI交叉的论文、新闻和官方通知。">
-  <title>核视界 · 核物理前沿情报</title>
+  <meta name="description" content="小康康的物理世界：每日自动汇总实验核物理、核理论、核结构、核衰变、核反应与核探测器论文、新闻和官方通知。">
+  <title>小康康的物理世界</title>
   <script>
     // 直接双击 HTML 会受到浏览器对 file:// 的数据访问限制，统一转到已发布站点。
     if (window.location.protocol === 'file:') {
@@ -18,43 +18,39 @@
 <body>
   <div class="shell">
     <header class="topbar">
-      <a class="brand" href="#" aria-label="核视界首页">
+      <a class="brand" href="./#papers" aria-label="小康康的物理世界首页">
         <span class="brand-mark" aria-hidden="true"><i></i><i></i><b></b></span>
-        <span><strong>核视界</strong><small>NUCLEAR FRONTIER</small></span>
+        <span><strong>小康康的物理世界</strong><small>XIAO KANG'S PHYSICS WORLD</small></span>
       </a>
       <nav class="topnav" aria-label="主导航">
         <button class="nav-link active" data-view="papers">论文</button>
-        <button class="nav-link" data-view="featured">重点</button>
         <button class="nav-link" data-view="news">新闻</button>
         <button class="nav-link" data-view="notices">通知</button>
         <button class="nav-link" data-scroll="briefing">简报</button>
-        <button class="nav-link" data-view="favorites">我的参考</button>
+        <button class="nav-link" data-view="favorites">我的</button>
       </nav>
       <div class="top-actions">
         <button class="icon-button" id="keywordButton" title="我的关键词" aria-label="管理我的关键词">⌘K</button>
-        <a class="source-link" id="repoLink" href="#" target="_blank" rel="noreferrer">数据源 <span>↗</span></a>
+        <a class="source-link github-link" id="githubProfileLink" href="https://github.com/code-world-kang" target="_blank" rel="noreferrer">我的 GitHub <span>↗</span></a>
+        <a class="source-link repo-link" id="repoLink" href="#" target="_blank" rel="noreferrer">本站仓库 <span>↗</span></a>
       </div>
     </header>
 
     <main>
-      <section class="hero" aria-labelledby="heroTitle">
-        <div class="hero-copy">
-          <div class="eyebrow"><span class="live-dot"></span> DAILY RESEARCH INTELLIGENCE</div>
-          <h1 id="heroTitle">穿越信息噪声，<br><em>捕捉核物理前沿。</em></h1>
-          <p>来自主流期刊、arXiv 与官方机构的每日情报。自动去重、分类、关联，保留可核验原始链接。</p>
-          <div class="hero-actions">
-            <button class="primary-button" data-scroll="stream">浏览今日论文 <span>↓</span></button>
-            <button class="secondary-button" data-view-jump="featured">查看重点文献</button>
-          </div>
-          <div class="update-line">
-            <span class="status-pulse"></span>
-            <span id="lastUpdated">正在读取更新状态…</span>
-          </div>
+      <section class="briefing" id="briefing" aria-labelledby="briefingTitle">
+        <div class="briefing-welcome" aria-hidden="true">
+          <span>🌿</span><span>⚛</span><span>🌱</span>
         </div>
-        <aside class="spotlight" id="spotlight" aria-label="今日焦点">
-          <div class="spotlight-head"><span>EDITOR'S RADAR</span><b>今日焦点</b></div>
-          <div class="skeleton tall"></div>
-        </aside>
+        <div class="briefing-head">
+          <div><span class="section-kicker">DAILY PHYSICS BRIEFING</span><h1 id="briefingTitle">今日科研简报</h1></div>
+          <div class="briefing-status"><span class="status-pulse"></span><span id="lastUpdated">正在读取更新状态…</span><b id="briefingDate">正在整理今日数据…</b></div>
+        </div>
+        <p class="briefing-summary" id="briefingSummary">正在生成基于原始元数据的可核验摘要。</p>
+        <div class="briefing-grid">
+          <article><span>核心核物理主题</span><div id="topicBrief" class="brief-list"></div></article>
+          <article><span>主要来源</span><div id="sourceBrief" class="brief-list"></div></article>
+          <article><span>今日核物理焦点</span><div id="topBrief" class="brief-top"></div></article>
+        </div>
       </section>
 
       <section class="metrics" aria-label="数据统计">
@@ -64,16 +60,16 @@
         <article><span>数据源状态</span><strong id="sourceHealth">—</strong><small id="sourceHealthHint">正在检查</small></article>
       </section>
 
-      <section class="briefing" id="briefing" aria-labelledby="briefingTitle">
-        <div class="briefing-head">
-          <div><span class="section-kicker">DAILY BRIEFING</span><h2 id="briefingTitle">今日科研简报</h2></div>
-          <span id="briefingDate">正在整理今日数据…</span>
+      <section class="home-hub" id="homeHub" aria-labelledby="homeHubTitle">
+        <div class="home-hub-head">
+          <div><span class="section-kicker">NUCLEAR RESEARCH DESK</span><h2 id="homeHubTitle">首页速览</h2></div>
+          <p>核实验、核理论、核结构、核衰变与核探测器优先</p>
         </div>
-        <p class="briefing-summary" id="briefingSummary">正在生成基于原始元数据的可核验摘要。</p>
-        <div class="briefing-grid">
-          <article><span>今日主题</span><div id="topicBrief" class="brief-list"></div></article>
-          <article><span>主要来源</span><div id="sourceBrief" class="brief-list"></div></article>
-          <article><span>值得先看</span><div id="topBrief" class="brief-top"></div></article>
+        <div class="home-hub-grid" id="homeHubGrid">
+          <article class="home-lane"><div class="skeleton mini"></div></article>
+          <article class="home-lane"><div class="skeleton mini"></div></article>
+          <article class="home-lane"><div class="skeleton mini"></div></article>
+          <article class="home-lane"><div class="skeleton mini"></div></article>
         </div>
       </section>
 
@@ -103,14 +99,27 @@
             </div>
           </div>
 
+          <section class="my-space-nav" id="mySpaceNav" hidden aria-label="我的科研空间">
+            <button class="my-space-tab active" type="button" data-my-section="papers"><span>📚</span><b>我的论文</b><small>收藏、关键词与阅读笔记</small></button>
+            <button class="my-space-tab" type="button" data-my-section="code"><span>💻</span><b>我的代码</b><small>GitHub 项目与分析工具</small></button>
+            <button class="my-space-tab" type="button" data-my-section="references"><span>🧭</span><b>参考资料</b><small>数据库、手册与常用链接</small></button>
+          </section>
+
           <div class="toolbar">
             <label class="search-box">
               <span aria-hidden="true">⌕</span>
               <input id="searchInput" type="search" placeholder="搜索题目、作者、期刊、DOI 或关键词…" autocomplete="off">
               <kbd>/</kbd>
             </label>
+            <select id="searchFieldSelect" aria-label="自定义搜索字段">
+              <option value="all">全文字段</option>
+              <option value="title">仅题目</option>
+              <option value="abstract">仅摘要</option>
+              <option value="author">仅作者</option>
+              <option value="identifier">DOI / arXiv</option>
+            </select>
             <select id="scopeSelect" aria-label="论文时间范围">
-              <option value="daily-focus">今日核心</option>
+              <option value="daily-focus">今日核物理</option>
               <option value="today">今日全部</option>
               <option value="7days">近7日</option>
               <option value="all">历史全部</option>
@@ -126,7 +135,12 @@
           </div>
 
           <div class="active-filters" id="activeFilters"></div>
-          <div class="results-meta"><span id="resultCount">正在载入…</span><span id="viewNote">题目与摘要保留原文</span><button id="exportReferences">导出 Zotero / RIS</button></div>
+          <section class="my-keywords-panel" id="myKeywordsPanel" hidden aria-labelledby="myKeywordsTitle">
+            <div><span class="section-kicker">MY KEYWORDS</span><h3 id="myKeywordsTitle">我的收藏关键词</h3></div>
+            <p>选择一个关键词，筛选已收藏的论文。</p>
+            <div class="my-keyword-list" id="myKeywordList"></div>
+          </section>
+          <div class="results-meta"><span id="resultCount">正在载入…</span><span id="viewNote">原文与 Codex 中文译文可切换</span><button id="addMyItem" hidden>+ 添加内容</button><button id="exportReferences">导出 Zotero / RIS</button></div>
           <div class="card-list" id="cardList">
             <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
           </div>
@@ -150,8 +164,8 @@
     </main>
 
     <footer>
-      <div class="footer-brand"><b>核视界</b><span>一个独立、开放的科研情报项目</span></div>
-      <p>感谢 arXiv 提供开放互操作数据。本站不与所引用的期刊或机构存在隶属或背书关系。</p>
+      <div class="footer-brand"><b>小康康的物理世界</b><span>一个生长中的个人核物理研究空间</span></div>
+      <p>感谢 arXiv 提供开放互操作数据。仅展示明确为 CC0 / CC BY、且自动检查未发现常见第三方标记的原稿图；最终权利状态以原文为准。本站不代表期刊或机构背书。</p>
     </footer>
   </div>
 
@@ -169,6 +183,31 @@
     <article class="dialog-card detail-card" id="detailContent"></article>
   </dialog>
 
+  <dialog id="favoriteDialog">
+    <form class="dialog-card favorite-dialog-card" id="favoriteForm">
+      <div class="dialog-head"><div><small>KEY REFERENCE</small><h3>设定收藏关键词</h3></div><button type="button" id="cancelFavorite" aria-label="取消收藏">×</button></div>
+      <p class="favorite-paper-title" id="favoritePaperTitle"></p>
+      <p>至少选择或输入 1 个关键词后才会收藏。可使用核素、反应道、装置、方法或研究主题。</p>
+      <div class="favorite-suggestions" id="favoriteSuggestions"></div>
+      <label class="favorite-keyword-input"><span>自定义关键词</span><input id="favoriteKeywordInput" placeholder="例如：11Li、beta decay、AGATA、shell model"></label>
+      <div class="favorite-selected" id="favoriteSelected"></div>
+      <p class="form-error" id="favoriteError" role="alert"></p>
+      <div class="favorite-dialog-actions"><button type="button" class="secondary-form-button" id="cancelFavoriteBottom">取消</button><button type="submit" class="primary-form-button">保存到重点参考</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="myItemDialog">
+    <form class="dialog-card" id="myItemForm">
+      <div class="dialog-head"><div><small>MY RESEARCH SPACE</small><h3 id="myItemDialogTitle">添加内容</h3></div><button type="button" id="cancelMyItem" aria-label="关闭">×</button></div>
+      <p>保存到当前浏览器，可随个人备份一起导出。</p>
+      <label class="personal-field"><span>名称</span><input id="myItemTitle" required placeholder="例如：Geant4 模拟代码"></label>
+      <label class="personal-field"><span>链接</span><input id="myItemUrl" required type="url" placeholder="https://github.com/…"></label>
+      <label class="personal-field"><span>说明</span><textarea id="myItemDescription" placeholder="用途、内容或阅读提示"></textarea></label>
+      <label class="personal-field"><span>关键词</span><input id="myItemKeywords" placeholder="ROOT, 探测器, 核结构"></label>
+      <div class="favorite-dialog-actions"><button type="button" class="secondary-form-button" id="cancelMyItemBottom">取消</button><button type="submit" class="primary-form-button">保存</button></div>
+    </form>
+  </dialog>
+
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <dialog id="statusDialog">
@@ -179,12 +218,15 @@
     <article class="paper-card">
       <div class="card-accent"></div>
       <div class="paper-main">
-        <div class="paper-meta"></div>
-        <h3></h3>
-        <p class="authors"></p>
-        <p class="abstract"></p>
-        <div class="tag-row"></div>
-        <div class="paper-actions"></div>
+        <div class="paper-copy">
+          <div class="paper-meta"></div>
+          <h3></h3>
+          <p class="authors"></p>
+          <div class="abstract-block"><span class="abstract-label">完整摘要</span><p class="abstract"></p></div>
+          <div class="tag-row"></div>
+          <div class="paper-actions"></div>
+        </div>
+        <aside class="paper-figures" aria-label="论文关键图"></aside>
       </div>
       <button class="favorite-button" aria-label="收藏文章" title="收藏">☆</button>
     </article>

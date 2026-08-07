@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import unittest
+import urllib.parse
 from pathlib import Path
 
 
@@ -18,6 +19,8 @@ class RepositoryTests(unittest.TestCase):
             ROOT / "data" / "news.json",
             ROOT / "data" / "notices.json",
             ROOT / "data" / "status.json",
+            ROOT / "data" / "translations.zh-CN.json",
+            ROOT / "site" / "data" / "translations.zh-CN.json",
         ]:
             with self.subTest(path=path):
                 json.loads(path.read_text(encoding="utf-8"))
@@ -33,10 +36,58 @@ class RepositoryTests(unittest.TestCase):
                 self.assertIsInstance(paper.get("categories"), list)
                 self.assertEqual(len(paper.get("categories", [])), len(set(paper.get("categories", []))))
 
+    def test_figure_records_are_license_gated_and_bounded(self):
+        papers = json.loads((ROOT / "data" / "papers.json").read_text(encoding="utf-8"))
+        for paper in papers:
+            figures = paper.get("figures", [])
+            with self.subTest(id=paper.get("id")):
+                self.assertLessEqual(len(figures), 2)
+                if figures:
+                    license_url = paper.get("license", "").lower()
+                    self.assertTrue(
+                        "creativecommons.org/licenses/by/" in license_url
+                        or "creativecommons.org/publicdomain/zero/" in license_url
+                    )
+                    self.assertEqual(paper.get("rights_status"), "reusable")
+                    for figure in figures:
+                        self.assertTrue(figure.get("url"))
+                        self.assertTrue(figure.get("caption"))
+                        self.assertTrue(figure.get("source_url"))
+                        parsed = urllib.parse.urlsplit(figure["url"])
+                        self.assertEqual(parsed.scheme, "https")
+                        self.assertIn(parsed.hostname, {"arxiv.org", "export.arxiv.org"})
+
+    def test_core_nuclear_taxonomy_is_present(self):
+        topics = json.loads((ROOT / "config" / "topics.json").read_text(encoding="utf-8"))
+        ids = {item["id"] for item in topics["categories"]}
+        for category in [
+            "experimental-nuclear", "theoretical-nuclear", "nuclear-structure",
+            "nuclear-decay", "nuclear-reactions", "detectors-daq",
+        ]:
+            self.assertIn(category, ids)
+
+    def test_codex_translations_match_existing_papers(self):
+        papers = json.loads((ROOT / "data" / "papers.json").read_text(encoding="utf-8"))
+        translations = json.loads((ROOT / "data" / "translations.zh-CN.json").read_text(encoding="utf-8"))
+        paper_ids = {paper["id"] for paper in papers}
+        self.assertEqual(translations.get("provider"), "Codex")
+        self.assertGreaterEqual(len(translations.get("items", {})), 1)
+        for paper_id, item in translations["items"].items():
+            with self.subTest(id=paper_id):
+                self.assertIn(paper_id, paper_ids)
+                self.assertTrue(item.get("title_zh"))
+                self.assertTrue(item.get("abstract_zh"))
+
     def test_site_entrypoint_exists(self):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
         self.assertIn('id="cardList"', index)
         self.assertIn('id="scopeSelect"', index)
+        self.assertIn('id="homeHubGrid"', index)
+        self.assertIn('id="favoriteDialog"', index)
+        self.assertIn('id="myKeywordList"', index)
+        self.assertIn('id="mySpaceNav"', index)
+        self.assertIn('id="myItemDialog"', index)
+        self.assertIn("小康康的物理世界", index)
         self.assertIn("window.location.protocol === 'file:'", index)
         self.assertIn('src="./app.js"', index)
 

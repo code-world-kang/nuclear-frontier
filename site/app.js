@@ -2,15 +2,27 @@ const PATH = new URL('.', window.location.href).pathname;
 const PERSONAL_KEY = 'nuclear-frontier.personal.v1';
 
 const state = {
-  papers: [], featured: [], news: [], notices: [], publicFavorites: [],
-  meta: null, view: 'papers', category: 'all', source: 'all', query: '', sort: 'date', scope: 'daily-focus', visible: 20,
-  personal: loadPersonal(), categoryMap: new Map(),
+  papers: [], featured: [], news: [], notices: [], publicFavorites: [], translations: {},
+  meta: null, view: 'papers', category: 'all', source: 'all', query: '', searchField: 'all', sort: 'date', scope: 'daily-focus', visible: 20,
+  favoriteKeyword: 'all', favoriteDraft: null, mySection: 'papers', translatedIds: new Set(),
+  personal: loadPersonal(), categoryMap: new Map(), favoriteSyncInFlight: false,
 };
 
+const PRIMARY_NUCLEAR_CATEGORIES = new Set([
+  'experimental-nuclear', 'theoretical-nuclear', 'nuclear-structure', 'nuclear-decay', 'nuclear-reactions',
+  'detectors-daq', 'nuclear-general', 'high-energy-nuclear', 'nuclear-astrophysics',
+]);
+
 const CORE_CATEGORIES = new Set([
-  'experimental-nuclear', 'theoretical-nuclear', 'nuclear-structure', 'nuclear-reactions',
-  'high-energy-nuclear', 'nuclear-astrophysics', 'detectors-daq', 'accelerators', 'fusion',
-  'nuclear-data-applications',
+  ...PRIMARY_NUCLEAR_CATEGORIES, 'high-energy-nuclear', 'nuclear-astrophysics', 'accelerators',
+  'fusion', 'nuclear-data-applications',
+]);
+
+const NUCLEAR_PRIORITY = new Map([
+  ['experimental-nuclear', 12], ['nuclear-structure', 12], ['nuclear-decay', 12],
+  ['theoretical-nuclear', 11], ['nuclear-reactions', 10], ['detectors-daq', 10],
+  ['nuclear-general', 9], ['accelerators', 5], ['nuclear-data-applications', 5], ['high-energy-nuclear', 4],
+  ['nuclear-astrophysics', 4], ['fusion', 3], ['particle-cross', 1], ['ai-science', 0],
 ]);
 
 const $ = (selector, root = document) => root.querySelector(selector);
@@ -20,19 +32,55 @@ function loadPersonal() {
   try {
     const parsed = JSON.parse(localStorage.getItem(PERSONAL_KEY) || '{}');
     return {
-      favorites: parsed.favorites || {},
+      favorites: parsed.favorites && typeof parsed.favorites === 'object' ? parsed.favorites : {},
       keywords: Array.isArray(parsed.keywords) ? parsed.keywords : [],
       outbox: Array.isArray(parsed.outbox) ? parsed.outbox : [],
       readStatus: parsed.readStatus || {},
       notes: parsed.notes || {},
+      codeItems: Array.isArray(parsed.codeItems) ? parsed.codeItems : [],
+      resources: Array.isArray(parsed.resources) ? parsed.resources : [],
+      hiddenPublicFavorites: Array.isArray(parsed.hiddenPublicFavorites) ? parsed.hiddenPublicFavorites : [],
     };
   } catch {
-    return { favorites: {}, keywords: [], outbox: [], readStatus: {}, notes: {} };
+    return { favorites: {}, keywords: [], outbox: [], readStatus: {}, notes: {}, codeItems: [], resources: [], hiddenPublicFavorites: [] };
   }
 }
 
 function savePersonal() {
   localStorage.setItem(PERSONAL_KEY, JSON.stringify(state.personal));
+}
+
+function normalizeKeyword(value = '') {
+  return String(value).replace(/\s+/g, ' ').trim();
+}
+
+function keywordKey(value = '') {
+  return normalizeKeyword(value).toLocaleLowerCase('zh-CN');
+}
+
+function uniqueKeywords(values = []) {
+  const seen = new Set();
+  return values.map(normalizeKeyword).filter(value => {
+    const key = keywordKey(value);
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function publicFavoritePayload(record = {}) {
+  const { note: _privateNote, ...publicRecord } = record;
+  return publicRecord;
+}
+
+function corePriority(item) {
+  return Math.max(0, ...(item.categories || []).map(category => NUCLEAR_PRIORITY.get(category) || 0));
+}
+
+function compareNuclearFirst(a, b) {
+  return corePriority(b) - corePriority(a)
+    || (b.importance || 0) - (a.importance || 0)
+    || (b.published || '').localeCompare(a.published || '');
 }
 
 function text(value = '') {
@@ -72,14 +120,40 @@ function currentItems() {
   if (state.view === 'news') return state.news;
   if (state.view === 'notices') return state.notices;
   if (state.view === 'favorites') {
+    const hidden = new Set(state.personal.hiddenPublicFavorites);
     const ids = new Set([
       ...Object.keys(state.personal.favorites),
-      ...state.publicFavorites.map(item => typeof item === 'string' ? item : item.id),
+      ...state.publicFavorites.map(item => typeof item === 'string' ? item : item.id).filter(id => !hidden.has(id)),
     ]);
     return state.papers.filter(item => ids.has(item.id));
   }
   if (state.view === 'unread') return state.papers.filter(item => state.personal.readStatus[item.id] !== 'read');
   return state.papers;
+}
+
+function isPrimaryNuclear(item) {
+  return (item.categories || []).some(category => PRIMARY_NUCLEAR_CATEGORIES.has(category));
+}
+
+function publicFavoriteRecord(id) {
+  if (state.personal.hiddenPublicFavorites.includes(id)) return null;
+  return state.publicFavorites.find(item => typeof item === 'object' && item.id === id) || null;
+}
+
+function hasPublicFavorite(id) {
+  return state.publicFavorites.some(item => (typeof item === 'string' ? item : item.id) === id);
+}
+
+function favoriteRecord(id) {
+  const local = state.personal.favorites[id];
+  if (local && typeof local === 'object') return local;
+  return publicFavoriteRecord(id);
+}
+
+function favoriteKeywords(id) {
+  const record = favoriteRecord(id);
+  if (!record) return [];
+  return uniqueKeywords(record.keywords || []);
 }
 
 function personalMatch(item) {
@@ -99,18 +173,9 @@ function latestPaperDay() {
 function dailyFocusIds() {
   const latest = latestPaperDay();
   const today = state.papers.filter(item => paperDay(item) === latest);
-  const selected = today.filter(item => {
-    const core = (item.categories || []).some(category => CORE_CATEGORIES.has(category));
-    return (core && (item.importance || 0) >= 40) || (item.importance || 0) >= 50;
-  });
-  const selectedIds = new Set(selected.map(item => item.id));
-  // AI 只补充当日最相关的少量条目，避免通用 AI 预印本淹没核物理。
-  today
-    .filter(item => !selectedIds.has(item.id) && (item.categories || []).includes('ai-science'))
-    .sort((a, b) => (b.importance || 0) - (a.importance || 0) || (b.published || '').localeCompare(a.published || ''))
-    .slice(0, 3)
-    .forEach(item => selectedIds.add(item.id));
-  return selectedIds;
+  return new Set(today
+    .filter(isPrimaryNuclear)
+    .map(item => item.id));
 }
 
 function inPaperScope(item, focusIds, latest) {
@@ -133,19 +198,32 @@ function filteredItems() {
     if (!inPaperScope(item, focusIds, latest)) return false;
     if (state.category !== 'all' && !(item.categories || []).includes(state.category)) return false;
     if (!['news', 'notices'].includes(state.view) && state.source !== 'all' && item.source !== state.source) return false;
+    if (state.view === 'favorites' && state.favoriteKeyword !== 'all') {
+      const keywords = favoriteKeywords(item.id);
+      if (state.favoriteKeyword === 'missing' && keywords.length) return false;
+      if (state.favoriteKeyword.startsWith('kw:') && !keywords.some(value => keywordKey(value) === state.favoriteKeyword.slice(3))) return false;
+    }
     if (!query) return true;
-    const haystack = [
-      item.title, item.abstract, item.summary, item.source, item.source_short,
-      item.doi, item.arxiv_id, ...(item.authors || []), ...(item.tags || []),
-      ...(item.categories || []).map(id => state.categoryMap.get(id)?.name || id),
-    ].join(' ').toLowerCase();
+    const fields = {
+      title: [item.title],
+      abstract: [item.abstract, item.summary],
+      author: item.authors || [],
+      identifier: [item.doi, item.arxiv_id],
+      all: [
+        item.title, item.abstract, item.summary, item.source, item.source_short,
+        item.doi, item.arxiv_id, ...(item.authors || []), ...(item.tags || []),
+        ...favoriteKeywords(item.id),
+        ...(item.categories || []).map(id => state.categoryMap.get(id)?.name || id),
+      ],
+    };
+    const haystack = (fields[state.searchField] || fields.all).join(' ').toLowerCase();
     return query.split(/\s+/).every(term => haystack.includes(term));
   });
 
   values.sort((a, b) => {
     const personalDelta = Number(personalMatch(b)) - Number(personalMatch(a));
     if (personalDelta) return personalDelta;
-    if (state.sort === 'importance') return (b.importance || 0) - (a.importance || 0) || (b.published || '').localeCompare(a.published || '');
+    if (state.sort === 'importance') return compareNuclearFirst(a, b);
     if (state.sort === 'source') return (a.source || '').localeCompare(b.source || '') || (b.published || '').localeCompare(a.published || '');
     return (b.published || '').localeCompare(a.published || '') || (b.importance || 0) - (a.importance || 0);
   });
@@ -157,7 +235,7 @@ function categoryName(id) {
 }
 
 function isFavorite(id) {
-  return Boolean(state.personal.favorites[id]) || state.publicFavorites.some(item => (typeof item === 'string' ? item : item.id) === id);
+  return Boolean(state.personal.favorites[id]) || (hasPublicFavorite(id) && !state.personal.hiddenPublicFavorites.includes(id));
 }
 
 function readingLabel(id) {
@@ -179,6 +257,64 @@ function markOpened(item) {
     state.personal.readStatus[item.id] = 'reading';
     savePersonal();
   }
+}
+
+function figureSourceUrl(item, figure = {}) {
+  return figure.source_url || (item.arxiv_id ? `https://arxiv.org/html/${item.arxiv_id}` : item.url || '#');
+}
+
+function appendFigureGallery(item, host, { fallback = true } = {}) {
+  const figures = (item.figures || []).filter(figure => figure?.url).slice(0, 2);
+  if (!figures.length) {
+    if (!fallback || item.type !== 'paper') {
+      host.hidden = true;
+      return;
+    }
+    const empty = document.createElement('div');
+    empty.className = 'figure-fallback';
+    empty.innerHTML = `<span aria-hidden="true">◫</span><b>暂无可公开展示的论文图</b><small>不抓取许可不明的出版商图片</small><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">查看原文图表 ↗</a>`;
+    host.append(empty);
+    return;
+  }
+  figures.forEach((figure, index) => {
+    const node = document.createElement('figure');
+    const link = document.createElement('a');
+    link.href = figureSourceUrl(item, figure);
+    link.target = '_blank';
+    link.rel = 'noreferrer';
+    link.title = '在开放原文中查看该图';
+    const image = document.createElement('img');
+    image.src = figure.url;
+    image.alt = figure.caption ? `论文关键图 ${index + 1}：${figure.caption}` : `论文关键图 ${index + 1}`;
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    image.addEventListener('error', () => node.classList.add('image-error'));
+    link.append(image);
+    const caption = document.createElement('figcaption');
+    const provider = figure.attribution || figure.provider || figure.source || 'arXiv 开放原文';
+    const normalizedLicenseUrl = (figure.license || '').replace(/^http:\/\//i, 'https://');
+    const licenseUrl = /^https:\/\/creativecommons\.org\/(?:licenses|publicdomain)\//i.test(normalizedLicenseUrl)
+      ? `<a href="${text(normalizedLicenseUrl)}" target="_blank" rel="noreferrer">${text(figure.provider?.match(/CC(?:0| BY)[^·,]*/i)?.[0] || '查看许可')}</a>`
+      : '许可见原文';
+    caption.innerHTML = `<b>${text(figure.label || `关键图 ${index + 1}`)}</b><span>${text(figure.caption || '点击查看原始图注')}</span><small>归属：${text(provider)} · ${licenseUrl}</small>`;
+    node.append(link, caption);
+    host.append(node);
+  });
+}
+
+function translationFor(item) {
+  return state.translations[item.id] || null;
+}
+
+function usingTranslation(item) {
+  return state.translatedIds.has(item.id) && Boolean(translationFor(item));
+}
+
+function toggleTranslation(item) {
+  if (!translationFor(item)) return showToast('这篇论文暂时还没有 Codex 中文译文');
+  if (state.translatedIds.has(item.id)) state.translatedIds.delete(item.id);
+  else state.translatedIds.add(item.id);
+  renderCards();
 }
 
 function cardFor(item) {
@@ -226,15 +362,23 @@ function cardFor(item) {
   titleLink.href = item.url || '#';
   titleLink.target = '_blank';
   titleLink.rel = 'noreferrer';
-  titleLink.textContent = item.title;
+  const translation = translationFor(item);
+  const translated = usingTranslation(item);
+  titleLink.textContent = translated ? translation.title_zh : item.title;
   heading.append(titleLink);
 
   const authors = $('.authors', card);
   authors.textContent = item.authors?.length ? item.authors.join(', ') : item.source;
   if (!item.authors?.length && item.type !== 'paper') authors.hidden = true;
 
+  const abstractValue = item.abstract || item.summary || '';
   const abstract = $('.abstract', card);
-  abstract.textContent = truncate(item.abstract || item.summary || '该数据源未提供可公开摘要。');
+  abstract.textContent = translated
+    ? translation.abstract_zh
+    : (abstractValue || '该数据源未公开摘要；本站不生成或杜撰摘要。');
+  $('.abstract-label', card).textContent = abstractValue
+    ? (translated ? '完整摘要（Codex 中文译文）' : (item.type === 'paper' ? '完整摘要（原文）' : '完整介绍（原始来源）'))
+    : (item.type === 'paper' ? '摘要状态' : '介绍状态');
 
   const tags = $('.tag-row', card);
   (item.categories || []).slice(0, 2).forEach(id => {
@@ -243,12 +387,27 @@ function cardFor(item) {
     tag.textContent = categoryName(id);
     tags.append(tag);
   });
+  const methodLabels = { experimental: '实验', theoretical: '理论', review: '综述' };
+  (item.methods || []).slice(0, 2).forEach(value => {
+    const tag = document.createElement('span');
+    tag.className = 'tag method-tag';
+    tag.textContent = methodLabels[value] || value;
+    tags.append(tag);
+  });
   (item.tags || []).slice(0, 3).forEach(value => {
     const tag = document.createElement('span');
     tag.className = 'tag';
     tag.textContent = value;
     tags.append(tag);
   });
+  favoriteKeywords(item.id).forEach(value => {
+    const tag = document.createElement('span');
+    tag.className = 'tag favorite-keyword-tag';
+    tag.textContent = `# ${value}`;
+    tags.append(tag);
+  });
+
+  appendFigureGallery(item, $('.paper-figures', card));
 
   const actions = $('.paper-actions', card);
   const original = document.createElement('a');
@@ -272,6 +431,18 @@ function cardFor(item) {
     doi.className = 'paper-doi';
     actions.append(doi);
   }
+  if (item.type === 'paper') {
+    const translate = document.createElement('button');
+    translate.type = 'button';
+    translate.className = 'translation-button';
+    translate.textContent = translation ? (translated ? '查看英文原文' : '中文译文') : '暂未翻译';
+    translate.disabled = !translation;
+    translate.title = translation
+      ? '在英文原文与 Codex 中文译文之间切换'
+      : '最新核心论文将由 Codex 分批翻译';
+    translate.addEventListener('click', () => toggleTranslation(item));
+    actions.append(translate);
+  }
   const related = document.createElement('button');
   related.type = 'button';
   related.className = 'related-button';
@@ -288,6 +459,10 @@ function cardFor(item) {
   }
 
   const favorite = $('.favorite-button', card);
+  if (item.type !== 'paper') {
+    favorite.hidden = true;
+    return card;
+  }
   favorite.textContent = isFavorite(item.id) ? '★' : '☆';
   favorite.classList.toggle('active', isFavorite(item.id));
   favorite.setAttribute('aria-pressed', String(isFavorite(item.id)));
@@ -295,7 +470,61 @@ function cardFor(item) {
   return card;
 }
 
+const DEFAULT_CODE_ITEMS = [
+  {
+    id: 'default-nuclear-frontier', title: 'nuclear-frontier',
+    url: 'https://github.com/code-world-kang/nuclear-frontier',
+    description: '小康康的物理世界：每日自动更新的核物理科研情报网站。',
+    keywords: ['GitHub', '核物理', '科研网站'], builtin: true,
+  },
+];
+
+const DEFAULT_RESOURCES = [
+  { id: 'default-arxiv-nucl-ex', title: 'arXiv · Nuclear Experiment', url: 'https://arxiv.org/list/nucl-ex/recent', description: '实验核物理最新预印本。', keywords: ['nucl-ex', '预印本'], builtin: true },
+  { id: 'default-nndc', title: 'NNDC · Nuclear Data', url: 'https://www.nndc.bnl.gov/', description: '核结构、核衰变与反应数据入口。', keywords: ['核数据', 'ENSDF'], builtin: true },
+  { id: 'default-iaea-nds', title: 'IAEA Nuclear Data Services', url: 'https://www-nds.iaea.org/', description: 'IAEA 核数据服务与数据库。', keywords: ['IAEA', '核数据'], builtin: true },
+  { id: 'default-root-docs', title: 'CERN ROOT Documentation', url: 'https://root.cern/manual/', description: 'ROOT 数据分析框架官方手册。', keywords: ['ROOT', '数据分析'], builtin: true },
+];
+
+function myCollectionItems(section = state.mySection) {
+  if (section === 'code') return [...DEFAULT_CODE_ITEMS, ...state.personal.codeItems];
+  if (section === 'references') return [...DEFAULT_RESOURCES, ...state.personal.resources];
+  return [];
+}
+
+function personalCollectionCard(item, section) {
+  const card = document.createElement('article');
+  card.className = 'personal-card';
+  const tags = uniqueKeywords(item.keywords || []).map(value => `<span>${text(value)}</span>`).join('');
+  card.innerHTML = `
+    <div class="personal-card-icon" aria-hidden="true">${section === 'code' ? '⌘' : '↗'}</div>
+    <div><small>${section === 'code' ? 'CODE & PROJECT' : 'REFERENCE'}</small><h3><a href="${text(item.url)}" target="_blank" rel="noreferrer">${text(item.title)}</a></h3>
+    <p>${text(item.description || '尚未填写说明。')}</p><div class="personal-card-tags">${tags}</div></div>
+    <div class="personal-card-actions"><a href="${text(item.url)}" target="_blank" rel="noreferrer">打开 ↗</a>${item.builtin ? '' : '<button type="button">删除</button>'}</div>`;
+  if (!item.builtin) $('button', card)?.addEventListener('click', () => {
+    const key = section === 'code' ? 'codeItems' : 'resources';
+    state.personal[key] = state.personal[key].filter(value => value.id !== item.id);
+    savePersonal(); renderCards(); renderHomeHub(); showToast('已删除');
+  });
+  return card;
+}
+
+function renderMyCollection() {
+  const query = state.query.trim().toLowerCase();
+  const items = myCollectionItems().filter(item => !query || [item.title, item.description, ...(item.keywords || [])].join(' ').toLowerCase().includes(query));
+  $('#cardList').replaceChildren(...items.map(item => personalCollectionCard(item, state.mySection)));
+  $('#resultCount').textContent = `共 ${items.length} 项`;
+  $('#emptyState').hidden = items.length !== 0;
+  $('#loadMore').hidden = true;
+  $('#activeFilters').replaceChildren();
+  $('#myKeywordsPanel').hidden = true;
+}
+
 function renderCards() {
+  if (state.view === 'favorites' && state.mySection !== 'papers') {
+    renderMyCollection();
+    return;
+  }
   const items = filteredItems();
   const list = $('#cardList');
   list.replaceChildren(...items.slice(0, state.visible).map(cardFor));
@@ -303,6 +532,7 @@ function renderCards() {
   $('#emptyState').hidden = items.length !== 0;
   $('#loadMore').hidden = items.length <= state.visible;
   renderActiveFilters();
+  renderMyKeywordsPanel();
 }
 
 function renderActiveFilters() {
@@ -326,17 +556,63 @@ function renderActiveFilters() {
     });
     host.append(tag);
   }
-  state.personal.keywords.forEach(keyword => {
-    const tag = document.createElement('button');
+  if (state.searchField !== 'all') {
+    const label = $('#searchFieldSelect').selectedOptions[0]?.textContent || '自定义字段';
+    const tag = document.createElement('span');
     tag.className = 'active-filter';
-    tag.textContent = `关注：${keyword}`;
-    tag.addEventListener('click', () => {
-      $('#searchInput').value = keyword;
-      state.query = keyword;
-      renderCards();
+    tag.innerHTML = `${text(label)}<button aria-label="恢复全文搜索">×</button>`;
+    $('button', tag).addEventListener('click', () => {
+      state.searchField = 'all'; $('#searchFieldSelect').value = 'all'; renderCards();
     });
     host.append(tag);
-  });
+  }
+  if (state.view === 'favorites' && state.mySection === 'papers' && state.favoriteKeyword !== 'all') {
+    const label = state.favoriteKeyword === 'missing'
+      ? '未分类'
+      : allFavoriteKeywordStats().find(item => item.key === state.favoriteKeyword)?.label || '收藏关键词';
+    const tag = document.createElement('span');
+    tag.className = 'active-filter';
+    tag.innerHTML = `收藏：${text(label)}<button aria-label="清除收藏关键词筛选">×</button>`;
+    $('button', tag).addEventListener('click', () => { state.favoriteKeyword = 'all'; renderCards(); });
+    host.append(tag);
+  }
+}
+
+function updateMySpaceUI() {
+  const isMy = state.view === 'favorites';
+  const isPaperShelf = !isMy || state.mySection === 'papers';
+  $('#mySpaceNav').hidden = !isMy;
+  $('.view-tabs').hidden = isMy;
+  $$('.my-space-tab').forEach(button => button.classList.toggle('active', button.dataset.mySection === state.mySection));
+  document.body.classList.toggle('personal-collection-view', isMy && !isPaperShelf);
+  $('#searchFieldSelect').hidden = !isPaperShelf;
+  $('#scopeSelect').hidden = state.view !== 'papers';
+  $('#sourceSelect').hidden = !isPaperShelf || ['news', 'notices'].includes(state.view);
+  $('#sortSelect').hidden = !isPaperShelf;
+  $('#exportReferences').hidden = ['news', 'notices'].includes(state.view) || !isPaperShelf;
+  $('#addMyItem').hidden = !(isMy && !isPaperShelf);
+  $('#myKeywordsPanel').hidden = !(isMy && isPaperShelf);
+  $('#searchInput').placeholder = isMy && !isPaperShelf
+    ? (state.mySection === 'code' ? '搜索我的代码与项目…' : '搜索参考资料…')
+    : '搜索题目、作者、期刊、DOI 或关键词…';
+}
+
+function setMySection(section) {
+  if (!['papers', 'code', 'references'].includes(section)) return;
+  state.mySection = section;
+  state.visible = 20;
+  const labels = {
+    papers: ['MY PAPERS', '我的论文', '按收藏关键词筛选论文、阅读状态与笔记'],
+    code: ['MY CODE', '我的代码', '连接 GitHub 项目与常用分析代码'],
+    references: ['REFERENCE SHELF', '参考资料', '数据库、官方手册与个人资料入口'],
+  };
+  const [kicker, title, note] = labels[section];
+  $('#sectionKicker').textContent = kicker;
+  $('#sectionTitle').textContent = title;
+  $('#viewNote').textContent = note;
+  updateMySpaceUI();
+  renderCards();
+  history.replaceState(null, '', `${PATH}#favorites-${section}`);
 }
 
 function setView(view) {
@@ -347,17 +623,19 @@ function setView(view) {
     featured: ['EDITOR\'S RADAR', '重点文献', '基于来源、新颖性与关注词评分'],
     news: ['OFFICIAL NEWS', '科研新闻', '仅保留官方原始链接'],
     notices: ['OFFICIAL NOTICES', '官方通知', '截止日期请以原始通知为准'],
-    favorites: ['KEY REFERENCES', '我的重点参考', '本机收藏与GitHub公开收藏合并显示'],
+    favorites: ['MY RESEARCH SPACE', '我的科研空间', '我的论文、代码与参考资料集中管理'],
     unread: ['READING QUEUE', '我的未读文献', '点击“未读”可在未读、在读和已读之间切换'],
   };
   const [kicker, title, note] = labels[view] || labels.papers;
   $('#sectionKicker').textContent = kicker;
   $('#sectionTitle').textContent = title;
   $('#viewNote').textContent = note;
-  $('#scopeSelect').hidden = view !== 'papers';
-  $('#sourceSelect').hidden = ['news', 'notices'].includes(view);
-  $('#exportReferences').hidden = ['news', 'notices'].includes(view);
   $$('.nav-link, .view-tab').forEach(button => button.classList.toggle('active', button.dataset.view === view));
+  updateMySpaceUI();
+  if (view === 'favorites') {
+    setMySection(state.mySection);
+    return;
+  }
   renderCards();
   history.replaceState(null, '', `${PATH}#${view}`);
 }
@@ -380,40 +658,147 @@ function renderSourceOptions() {
   select.value = state.source;
 }
 
+function favoriteSuggestionValues(item) {
+  const categorySuggestions = (item.categories || []).map(categoryName);
+  const recent = state.personal.keywords.slice(-8).reverse();
+  return uniqueKeywords([...categorySuggestions, ...(item.tags || []), ...recent]).slice(0, 16);
+}
+
+function renderFavoriteDraft() {
+  const draft = state.favoriteDraft;
+  if (!draft) return;
+  const selectedKeys = new Set([...draft.selected].map(keywordKey));
+  const suggestions = $('#favoriteSuggestions');
+  suggestions.replaceChildren(...favoriteSuggestionValues(draft.item).map(value => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'suggestion-chip';
+    button.classList.toggle('active', selectedKeys.has(keywordKey(value)));
+    button.textContent = value;
+    button.addEventListener('click', () => {
+      const existing = [...draft.selected].find(item => keywordKey(item) === keywordKey(value));
+      if (existing) draft.selected.delete(existing);
+      else draft.selected.add(value);
+      $('#favoriteError').textContent = '';
+      renderFavoriteDraft();
+    });
+    return button;
+  }));
+  const selected = $('#favoriteSelected');
+  selected.replaceChildren(...[...draft.selected].map(value => {
+    const chip = document.createElement('span');
+    chip.className = 'selected-keyword';
+    chip.innerHTML = `${text(value)}<button type="button" aria-label="移除 ${text(value)}">×</button>`;
+    $('button', chip).addEventListener('click', () => { draft.selected.delete(value); renderFavoriteDraft(); });
+    return chip;
+  }));
+  if (!draft.selected.size) selected.innerHTML = '<small>尚未选择关键词</small>';
+}
+
+function addFavoriteInputToDraft() {
+  const input = $('#favoriteKeywordInput');
+  const values = uniqueKeywords(input.value.split(/[,;，；\n]+/));
+  values.forEach(value => state.favoriteDraft?.selected.add(value));
+  input.value = '';
+  if (values.length) $('#favoriteError').textContent = '';
+  renderFavoriteDraft();
+}
+
+function openFavoriteDialog(item) {
+  state.favoriteDraft = { item, selected: new Set(favoriteKeywords(item.id)) };
+  $('#favoritePaperTitle').textContent = item.title;
+  $('#favoriteKeywordInput').value = '';
+  $('#favoriteError').textContent = '';
+  renderFavoriteDraft();
+  $('#favoriteDialog').showModal();
+  setTimeout(() => $('#favoriteKeywordInput').focus(), 50);
+}
+
+function closeFavoriteDialog() {
+  $('#favoriteDialog').close();
+  state.favoriteDraft = null;
+}
+
+async function saveFavoriteDraft() {
+  const draft = state.favoriteDraft;
+  if (!draft) return;
+  addFavoriteInputToDraft();
+  const keywords = uniqueKeywords([...draft.selected]);
+  if (!keywords.length) {
+    $('#favoriteError').textContent = '请至少选择或输入 1 个关键词。';
+    return;
+  }
+  const item = draft.item;
+  state.personal.favorites[item.id] = {
+    id: item.id, doi: item.doi || '', arxiv_id: item.arxiv_id || '', title: item.title,
+    url: item.url, categories: item.categories || [], tags: item.tags || [], keywords,
+    added_at: new Date().toISOString(), note: state.personal.notes[item.id] || '',
+  };
+  state.personal.hiddenPublicFavorites = state.personal.hiddenPublicFavorites.filter(id => id !== item.id);
+  state.personal.keywords = uniqueKeywords([...state.personal.keywords, ...keywords]);
+  state.personal.outbox.push({ operation: 'upsert', item: publicFavoritePayload(state.personal.favorites[item.id]), at: new Date().toISOString() });
+  savePersonal();
+  closeFavoriteDialog();
+  renderKeywords();
+  renderCards();
+  renderHomeHub();
+  showToast(`已收藏，关键词：${keywords.join('、')}`);
+  await tryFavoriteSync();
+}
+
 async function toggleFavorite(item, button) {
   if (state.personal.favorites[item.id]) {
     delete state.personal.favorites[item.id];
+    if (hasPublicFavorite(item.id) && !state.personal.hiddenPublicFavorites.includes(item.id)) {
+      state.personal.hiddenPublicFavorites.push(item.id);
+    }
     state.personal.outbox.push({ operation: 'remove', id: item.id, at: new Date().toISOString() });
-  } else {
-    state.personal.favorites[item.id] = {
-      id: item.id, doi: item.doi || '', arxiv_id: item.arxiv_id || '', title: item.title,
-      url: item.url, categories: item.categories || [], tags: item.tags || [],
-      added_at: new Date().toISOString(), note: state.personal.notes[item.id] || '',
-    };
-    state.personal.outbox.push({ operation: 'upsert', item: state.personal.favorites[item.id], at: new Date().toISOString() });
+    savePersonal();
+    const active = isFavorite(item.id);
+    button.textContent = active ? '★' : '☆';
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+    await tryFavoriteSync();
+    renderCards();
+    renderHomeHub();
+    showToast('已取消本机收藏');
+    return;
   }
-  savePersonal();
-  const active = isFavorite(item.id);
-  button.textContent = active ? '★' : '☆';
-  button.classList.toggle('active', active);
-  button.setAttribute('aria-pressed', String(active));
-  await tryFavoriteSync();
-  if (state.view === 'favorites') renderCards();
+  if (hasPublicFavorite(item.id) && !state.personal.hiddenPublicFavorites.includes(item.id)) {
+    state.personal.hiddenPublicFavorites.push(item.id);
+    state.personal.outbox.push({ operation: 'remove', id: item.id, at: new Date().toISOString() });
+    savePersonal();
+    await tryFavoriteSync();
+    renderCards();
+    renderHomeHub();
+    showToast('已在本机隐藏并提交取消收藏');
+    return;
+  }
+  openFavoriteDialog(item);
 }
 
 async function tryFavoriteSync() {
   const runtime = state.meta?.site;
-  if (!runtime?.favorite_sync_enabled || !runtime.favorite_sync_endpoint || !state.personal.outbox.length) return;
+  if (!runtime?.favorite_sync_enabled || !runtime.favorite_sync_endpoint || !state.personal.outbox.length || state.favoriteSyncInFlight) return;
+  const batch = state.personal.outbox.slice().map(event => event.operation === 'upsert' && event.item
+    ? { ...event, item: publicFavoritePayload(event.item) }
+    : event);
+  state.favoriteSyncInFlight = true;
+  let succeeded = false;
   try {
     const response = await fetch(runtime.favorite_sync_endpoint, {
       method: 'POST', headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ events: state.personal.outbox }),
+      body: JSON.stringify({ events: batch }),
     });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    state.personal.outbox = [];
+    state.personal.outbox.splice(0, batch.length);
     savePersonal();
+    succeeded = true;
   } catch (error) {
     console.warn('收藏同步将在下次联网时重试', error);
+  } finally {
+    state.favoriteSyncInFlight = false;
+    if (succeeded && state.personal.outbox.length) queueMicrotask(tryFavoriteSync);
   }
 }
 
@@ -483,12 +868,14 @@ function exportReferenceSet() {
   const favorites = currentItems().filter(item => isFavorite(item.id));
   const items = favorites.length ? favorites : filteredItems();
   if (!items.length) return showToast('当前没有可导出的文献');
-  downloadText(`核视界-参考文献-${new Date().toISOString().slice(0, 10)}.ris`, items.map(toRIS).join('\n\n'), 'application/x-research-info-systems');
+  downloadText(`小康康的物理世界-参考文献-${new Date().toISOString().slice(0, 10)}.ris`, items.map(toRIS).join('\n\n'), 'application/x-research-info-systems');
   showToast(`已导出 ${items.length} 条 RIS，可导入 Zotero`);
 }
 
 function openDetails(item) {
   markOpened(item);
+  const translation = translationFor(item);
+  const translated = usingTranslation(item);
   const related = state.papers
     .map(candidate => ({ candidate, score: similarity(item, candidate) }))
     .filter(entry => entry.score > 0)
@@ -498,17 +885,20 @@ function openDetails(item) {
   const scoreReasons = (item.score_reasons || []).map(reason => `<span>${text(reason)}</span>`).join('');
   host.innerHTML = `
     <div class="dialog-head"><div><small>${text(item.source || '')}</small><h3>文献详情与关联</h3></div><button aria-label="关闭">×</button></div>
-    <h2>${text(item.title)}</h2>
+    <h2>${text(translated ? translation.title_zh : item.title)}</h2>
     <p class="detail-meta">${text((item.authors || []).join(', ') || item.source || '')}<br>${text(prettyDate(item.published))}${item.doi ? ` · DOI ${text(item.doi)}` : ''}</p>
     <div class="tag-row">${(item.categories || []).map(id => `<span class="tag category">${text(categoryName(id))}</span>`).join('')}</div>
     <div class="score-box"><b>重要性 ${item.importance || 0}</b><div>${scoreReasons || '<span>基于来源与主题计算</span>'}</div></div>
-    <h4>原文摘要</h4>
-    <p class="detail-abstract">${text(item.abstract || item.summary || '该来源未提供可公开摘要。')}</p>
+    <h4>${translated ? 'Codex 中文译文' : '原文摘要'}</h4>
+    <p class="detail-abstract">${text(translated ? translation.abstract_zh : (item.abstract || item.summary || '该来源未提供可公开摘要。'))}</p>
+    <h4>论文关键图</h4>
+    <div class="detail-figures" id="detailFigures"></div>
     <div class="detail-tools">
       <a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">打开原文 ↗</a>
       ${item.pdf_url ? `<a href="${text(item.pdf_url)}" target="_blank" rel="noreferrer">PDF ↗</a>` : ''}
       ${item.doi ? '<button id="copyDoi">复制 DOI</button>' : ''}
       <button id="exportBib">导出 BibTeX</button>
+      ${translation ? `<button id="toggleDetailTranslation">${translated ? '查看英文原文' : '查看中文译文'}</button>` : ''}
     </div>
     <h4>我的笔记</h4>
     <textarea class="note-editor" id="detailNote" placeholder="记录阅读要点、引用位置或后续实验想法…">${text(state.personal.notes[item.id] || '')}</textarea>
@@ -516,8 +906,15 @@ function openDetails(item) {
     <h4>关联文献</h4>
     <div class="related-list">${related.length ? related.map(({ candidate, score }) => `<a class="related-item" href="${text(candidate.url)}" target="_blank" rel="noreferrer">${text(candidate.title)}<small>${text(candidate.source)} · 关联度 ${score}</small></a>`).join('') : '<p>当前历史库中尚无明显关联文献。</p>'}</div>
   `;
+  appendFigureGallery(item, $('#detailFigures', host));
   $('.dialog-head button', host).addEventListener('click', () => $('#detailDialog').close());
   $('#copyDoi', host)?.addEventListener('click', () => copyText(item.doi, 'DOI 已复制'));
+  $('#toggleDetailTranslation', host)?.addEventListener('click', () => {
+    if (translated) state.translatedIds.delete(item.id);
+    else state.translatedIds.add(item.id);
+    renderCards();
+    openDetails(item);
+  });
   $('#exportBib', host).addEventListener('click', () => {
     downloadText(`${citationKey(item)}.bib`, toBibTeX(item), 'application/x-bibtex');
     showToast('BibTeX 已导出');
@@ -526,7 +923,9 @@ function openDetails(item) {
     const note = $('#detailNote', host).value.trim();
     if (note) state.personal.notes[item.id] = note;
     else delete state.personal.notes[item.id];
-    if (state.personal.favorites[item.id]) state.personal.favorites[item.id].note = note;
+    if (state.personal.favorites[item.id]) {
+      state.personal.favorites[item.id].note = note;
+    }
     savePersonal();
     showToast('笔记已保存');
   });
@@ -534,7 +933,7 @@ function openDetails(item) {
     cycleReadingStatus(item);
     $('#cycleRead', host).textContent = readingLabel(item.id);
   });
-  $('#detailDialog').showModal();
+  if (!$('#detailDialog').open) $('#detailDialog').showModal();
 }
 
 function renderCategories() {
@@ -557,7 +956,7 @@ function renderCategories() {
 }
 
 function renderSpotlight() {
-  const item = state.featured[0] || state.papers[0];
+  const item = [...state.featured].sort(compareNuclearFirst)[0] || [...state.papers].sort(compareNuclearFirst)[0];
   if (!item) {
     $('#spotlight').innerHTML = '<div class="spotlight-head"><span>EDITOR\'S RADAR</span><b>今日焦点</b></div><p>等待首次数据更新。</p>';
     return;
@@ -586,24 +985,74 @@ function renderRadar() {
   }));
 }
 
+function homeLane({ kicker, title, count, items, view, tone, scope = '' }) {
+  const article = document.createElement('article');
+  article.className = `home-lane ${tone || ''}`;
+  const list = items.slice(0, 4).map((item, index) => `
+    <a class="home-lane-item" href="${text(item.url || '#')}" target="_blank" rel="noreferrer">
+      <span>${String(index + 1).padStart(2, '0')}</span>
+      <div><b>${text(item.title)}</b><small>${text(item.source_short || item.source || '')}${item.published ? ` · ${text(prettyDate(item.published))}` : ''}</small></div>
+    </a>`).join('');
+  article.innerHTML = `
+    <header><div><small>${text(kicker)}</small><h3>${text(title)}</h3></div><strong>${count}</strong></header>
+    <div class="home-lane-list">${list || '<p>等待下一次自动更新。</p>'}</div>
+    <button type="button">查看全部 <span>→</span></button>`;
+  $('button', article).addEventListener('click', () => {
+    if (scope) {
+      state.scope = scope;
+      $('#scopeSelect').value = scope;
+    }
+    setView(view);
+    $('#stream').scrollIntoView({ behavior: 'smooth' });
+  });
+  return article;
+}
+
+function renderHomeHub() {
+  const latest = latestPaperDay();
+  const today = state.papers.filter(item => paperDay(item) === latest);
+  const todayNuclear = today.filter(isPrimaryNuclear).sort(compareNuclearFirst);
+  const news = [...state.news].sort(compareNuclearFirst);
+  const notices = [...state.notices].sort(compareNuclearFirst);
+  const hiddenFavorites = new Set(state.personal.hiddenPublicFavorites);
+  const favoriteIds = new Set([
+    ...Object.keys(state.personal.favorites),
+    ...state.publicFavorites.map(item => typeof item === 'string' ? item : item.id).filter(id => !hiddenFavorites.has(id)),
+  ]);
+  const myItems = [
+    ...state.papers.filter(item => favoriteIds.has(item.id)).slice(0, 2).map(item => ({ ...item, source_short: '我的论文' })),
+    ...myCollectionItems('code').slice(0, 1).map(item => ({ ...item, source_short: '我的代码' })),
+    ...myCollectionItems('references').slice(0, 1).map(item => ({ ...item, source_short: '参考资料' })),
+  ];
+  const myCount = favoriteIds.size + myCollectionItems('code').length + myCollectionItems('references').length;
+  $('#homeHubGrid').replaceChildren(
+    homeLane({ kicker: 'TODAY', title: '今日核物理', count: todayNuclear.length, items: todayNuclear, view: 'papers', tone: 'papers-lane', scope: 'daily-focus' }),
+    homeLane({ kicker: 'NEWS', title: '科研新闻', count: state.news.length, items: news, view: 'news', tone: 'news-lane' }),
+    homeLane({ kicker: 'NOTICES', title: '官方通知', count: state.notices.length, items: notices, view: 'notices', tone: 'notices-lane' }),
+    homeLane({ kicker: 'MY SPACE', title: '我的科研', count: myCount, items: myItems, view: 'favorites', tone: 'my-lane' }),
+  );
+}
+
 function renderBriefing() {
   const latest = state.meta.insights?.latest_day || latestPaperDay();
-  const items = state.papers.filter(item => paperDay(item) === latest);
+  const allItems = state.papers.filter(item => paperDay(item) === latest);
+  const items = allItems.filter(isPrimaryNuclear);
   const categoryCounts = new Map();
   const sourceCounts = new Map();
   items.forEach(item => {
-    (item.categories || []).forEach(category => categoryCounts.set(category, (categoryCounts.get(category) || 0) + 1));
+    (item.categories || []).filter(category => PRIMARY_NUCLEAR_CATEGORIES.has(category)).forEach(category => categoryCounts.set(category, (categoryCounts.get(category) || 0) + 1));
     sourceCounts.set(item.source, (sourceCounts.get(item.source) || 0) + 1);
   });
-  const topics = [...categoryCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
+  const topics = [...categoryCounts.entries()].sort((a, b) => (NUCLEAR_PRIORITY.get(b[0]) || 0) - (NUCLEAR_PRIORITY.get(a[0]) || 0) || b[1] - a[1]).slice(0, 5);
   const sources = [...sourceCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
-  const topItems = [...items].sort((a, b) => (b.importance || 0) - (a.importance || 0)).slice(0, 3);
-  $('#briefingDate').textContent = latest ? `${prettyDate(latest)} · ${items.length} 篇` : '等待今日数据';
+  const topItems = [...items].sort(compareNuclearFirst).slice(0, 3);
+  $('#briefingDate').textContent = latest ? `${prettyDate(latest)} · 核物理焦点 ${items.length} 篇` : '等待今日数据';
   const topicNames = topics.slice(0, 3).map(([id]) => categoryName(id));
   const journalCount = items.filter(item => item.source_type === 'journal').length;
   const preprintCount = items.filter(item => item.source_type === 'preprint').length;
+  const translatedCount = Object.keys(state.translations).length;
   $('#briefingSummary').textContent = items.length
-    ? `今日共收录 ${items.length} 篇：期刊论文 ${journalCount} 篇、预印本 ${preprintCount} 篇。主要集中在${topicNames.join('、')}，以下条目按来源、突破性表述和跨领域关联评分。`
+    ? `今日共收录 ${allItems.length} 篇论文，其中 ${items.length} 篇进入核物理焦点：期刊论文 ${journalCount} 篇、预印本 ${preprintCount} 篇。优先呈现${topicNames.join('、')}；聚变、AI 等交叉方向仍可在论文分类中查看。当前已有 ${translatedCount} 篇 Codex 中文译文。`
     : '尚无可用的当日元数据。';
 
   const renderBars = (host, values, labelFor) => {
@@ -655,11 +1104,67 @@ function renderKeywords() {
   }));
 }
 
+function allFavoriteKeywordStats() {
+  const counts = new Map();
+  let uncategorized = 0;
+  const ids = new Set([
+    ...Object.keys(state.personal.favorites),
+    ...state.publicFavorites.map(item => typeof item === 'string' ? item : item.id).filter(id => !state.personal.hiddenPublicFavorites.includes(id)),
+  ]);
+  ids.forEach(id => {
+    const values = favoriteKeywords(id);
+    if (!values.length) uncategorized += 1;
+    values.forEach(label => {
+      const key = `kw:${keywordKey(label)}`;
+      const old = counts.get(key) || { key, label, count: 0 };
+      old.count += 1;
+      counts.set(key, old);
+    });
+  });
+  const values = [...counts.values()].sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, 'zh-CN'));
+  if (uncategorized) values.push({ key: 'missing', label: '未分类', count: uncategorized });
+  return values;
+}
+
+function renderMyKeywordsPanel() {
+  const panel = $('#myKeywordsPanel');
+  if (!panel || state.view !== 'favorites' || state.mySection !== 'papers') {
+    if (panel) panel.hidden = true;
+    return;
+  }
+  panel.hidden = false;
+  const stats = allFavoriteKeywordStats();
+  const total = currentItems().length;
+  const host = $('#myKeywordList');
+  const all = document.createElement('button');
+  all.type = 'button';
+  all.className = 'my-keyword-button';
+  all.classList.toggle('active', state.favoriteKeyword === 'all');
+  all.innerHTML = `<span>全部收藏</span><b>${total}</b>`;
+  all.addEventListener('click', () => { state.favoriteKeyword = 'all'; renderCards(); });
+  const nodes = stats.map(item => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'my-keyword-button';
+    button.classList.toggle('active', state.favoriteKeyword === item.key);
+    button.innerHTML = `<span># ${text(item.label)}</span><b>${item.count}</b>`;
+    button.addEventListener('click', () => { state.favoriteKeyword = item.key; state.visible = 20; renderCards(); });
+    return button;
+  });
+  host.replaceChildren(all, ...nodes);
+  if (!stats.length) {
+    const hint = document.createElement('p');
+    hint.className = 'my-keyword-empty';
+    hint.textContent = '收藏论文时设定的关键词会出现在这里。';
+    host.append(hint);
+  }
+}
+
 function exportPersonal() {
   const blob = new Blob([JSON.stringify(state.personal, null, 2)], { type: 'application/json' });
   const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
-  link.download = `核视界-收藏备份-${new Date().toISOString().slice(0, 10)}.json`;
+  link.download = `小康康的物理世界-个人备份-${new Date().toISOString().slice(0, 10)}.json`;
   link.click();
   URL.revokeObjectURL(link.href);
 }
@@ -672,21 +1177,72 @@ async function importPersonal(file) {
       favorites: value.favorites || {}, keywords: Array.isArray(value.keywords) ? value.keywords : [],
       outbox: Array.isArray(value.outbox) ? value.outbox : [],
       readStatus: value.readStatus || {}, notes: value.notes || {},
+      codeItems: Array.isArray(value.codeItems) ? value.codeItems : [],
+      resources: Array.isArray(value.resources) ? value.resources : [],
+      hiddenPublicFavorites: Array.isArray(value.hiddenPublicFavorites) ? value.hiddenPublicFavorites : [],
     };
-    savePersonal(); renderKeywords(); renderCards();
+    Object.values(state.personal.favorites).forEach(record => {
+      if (record && typeof record === 'object') record.keywords = uniqueKeywords(record.keywords || []);
+    });
+    savePersonal(); renderKeywords(); renderCards(); renderHomeHub();
   } catch (error) {
     alert(`无法导入备份：${error.message}`);
   }
 }
 
+function openMyItemDialog() {
+  if (!['code', 'references'].includes(state.mySection)) return;
+  $('#myItemDialogTitle').textContent = state.mySection === 'code' ? '添加我的代码' : '添加参考资料';
+  $('#myItemForm').reset();
+  $('#myItemDialog').showModal();
+}
+
+function closeMyItemDialog() {
+  $('#myItemDialog').close();
+}
+
+function saveMyItem(event) {
+  event.preventDefault();
+  const title = $('#myItemTitle').value.trim();
+  const rawUrl = $('#myItemUrl').value.trim();
+  let url;
+  try {
+    url = new URL(rawUrl);
+    if (!['http:', 'https:'].includes(url.protocol)) throw new Error('unsupported protocol');
+  } catch {
+    return showToast('请输入有效的 http 或 https 链接');
+  }
+  const key = state.mySection === 'code' ? 'codeItems' : 'resources';
+  state.personal[key].unshift({
+    id: `personal-${Date.now()}-${Math.random().toString(16).slice(2, 8)}`,
+    title,
+    url: url.href,
+    description: $('#myItemDescription').value.trim(),
+    keywords: uniqueKeywords($('#myItemKeywords').value.split(/[,;，；\n]+/)),
+    added_at: new Date().toISOString(),
+  });
+  savePersonal();
+  closeMyItemDialog();
+  renderCards();
+  renderHomeHub();
+  showToast('已保存到我的科研空间');
+}
+
 function bindEvents() {
-  $$('.nav-link, .view-tab').forEach(button => button.addEventListener('click', () => setView(button.dataset.view)));
+  $$('.nav-link[data-view], .view-tab[data-view]').forEach(button => button.addEventListener('click', () => setView(button.dataset.view)));
+  $('.brand').addEventListener('click', event => {
+    event.preventDefault();
+    setView('papers');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
   $$('[data-view-jump]').forEach(button => button.addEventListener('click', () => {
     setView(button.dataset.viewJump); $('#stream').scrollIntoView({ behavior: 'smooth' });
   }));
   $$('[data-scroll]').forEach(button => button.addEventListener('click', () => $(`#${button.dataset.scroll}`)?.scrollIntoView({ behavior: 'smooth' })));
+  $$('.my-space-tab').forEach(button => button.addEventListener('click', () => setMySection(button.dataset.mySection)));
   $('#clearCategory').addEventListener('click', () => setCategory('all'));
   $('#searchInput').addEventListener('input', event => { state.query = event.target.value; state.visible = 20; renderCards(); });
+  $('#searchFieldSelect').addEventListener('change', event => { state.searchField = event.target.value; state.visible = 20; renderCards(); });
   $('#sortSelect').addEventListener('change', event => { state.sort = event.target.value; renderCards(); });
   $('#scopeSelect').addEventListener('change', event => { state.scope = event.target.value; state.visible = 20; renderCards(); });
   $('#sourceSelect').addEventListener('change', event => { state.source = event.target.value; state.visible = 20; renderCards(); });
@@ -706,6 +1262,13 @@ function bindEvents() {
   });
   $('#exportPersonal').addEventListener('click', exportPersonal);
   $('#importPersonal').addEventListener('change', event => event.target.files?.[0] && importPersonal(event.target.files[0]));
+  $('#favoriteForm').addEventListener('submit', event => { event.preventDefault(); saveFavoriteDraft(); });
+  $('#cancelFavorite').addEventListener('click', closeFavoriteDialog);
+  $('#cancelFavoriteBottom').addEventListener('click', closeFavoriteDialog);
+  $('#addMyItem').addEventListener('click', openMyItemDialog);
+  $('#myItemForm').addEventListener('submit', saveMyItem);
+  $('#cancelMyItem').addEventListener('click', closeMyItemDialog);
+  $('#cancelMyItemBottom').addEventListener('click', closeMyItemDialog);
   $('#showSourceStatus').addEventListener('click', showStatus);
   $('#exportReferences').addEventListener('click', exportReferenceSet);
   document.addEventListener('keydown', event => {
@@ -717,13 +1280,15 @@ function bindEvents() {
 }
 
 async function loadData() {
-  const files = ['meta', 'papers', 'featured', 'news', 'notices', 'public-favorites'];
+  const files = ['meta', 'papers', 'featured', 'news', 'notices', 'public-favorites', 'translations.zh-CN'];
   const responses = await Promise.all(files.map(async name => {
     const response = await fetch(`./data/${name}.json`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
     return response.json();
   }));
+  const translationPayload = responses.pop();
   [state.meta, state.papers, state.featured, state.news, state.notices, state.publicFavorites] = responses;
+  state.translations = translationPayload.items || {};
   state.meta.categories.forEach(category => state.categoryMap.set(category.id, category));
   if (state.meta.site.repository_url) $('#repoLink').href = state.meta.site.repository_url;
   else $('#repoLink').hidden = true;
@@ -733,9 +1298,15 @@ async function initialize() {
   bindEvents();
   try {
     await loadData();
-    renderCategories(); renderSourceOptions(); renderSpotlight(); renderRadar(); renderBriefing(); renderMetrics(); renderKeywords();
+    renderCategories(); renderSourceOptions(); renderHomeHub(); renderRadar(); renderBriefing(); renderMetrics(); renderKeywords();
     const hash = location.hash.slice(1);
-    setView(['papers', 'featured', 'news', 'notices', 'favorites', 'unread'].includes(hash) ? hash : 'papers');
+    const myMatch = hash.match(/^favorites-(papers|code|references)$/);
+    if (myMatch) {
+      state.mySection = myMatch[1];
+      setView('favorites');
+    } else {
+      setView(['papers', 'featured', 'news', 'notices', 'favorites', 'unread'].includes(hash) ? hash : 'papers');
+    }
     tryFavoriteSync();
   } catch (error) {
     console.error(error);
