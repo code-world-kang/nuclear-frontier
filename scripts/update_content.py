@@ -314,7 +314,10 @@ def xml_text(element: ET.Element, names: list[str]) -> str:
 
 
 def parse_feed_items(raw: bytes) -> list[dict[str, str]]:
-    root = ET.fromstring(raw)
+    # 部分官方 RSS 偶尔带有 XML 1.0 不允许的控制字符，先清理再解析。
+    xml = raw.decode("utf-8", errors="replace")
+    xml = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", "", xml)
+    root = ET.fromstring(xml)
     candidates = [node for node in root.iter() if node.tag.rsplit("}", 1)[-1].lower() in ("item", "entry")]
     output: list[dict[str, str]] = []
     for node in candidates:

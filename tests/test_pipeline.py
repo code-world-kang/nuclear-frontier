@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from update_content import Classifier, count_new_records, merge_records, normalize_title  # noqa: E402
+from update_content import Classifier, count_new_records, merge_records, normalize_title, parse_feed_items  # noqa: E402
 
 
 class PipelineTests(unittest.TestCase):
@@ -86,6 +86,11 @@ class PipelineTests(unittest.TestCase):
             {"id": "new", "title": "New paper"},
         ]
         self.assertEqual(count_new_records(old, incoming), 1)
+
+    def test_feed_parser_removes_invalid_xml_control_characters(self):
+        raw = b'<rss><channel><item><title>A\x0b title</title><link>https://example.org/a</link></item></channel></rss>'
+        items = parse_feed_items(raw)
+        self.assertEqual(items[0]["title"], "A title")
 
 
 if __name__ == "__main__":
