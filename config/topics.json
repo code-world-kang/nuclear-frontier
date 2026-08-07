@@ -5,49 +5,49 @@
       "id": "experimental-nuclear",
       "name": "实验核物理",
       "icon": "◉",
-      "keywords": ["experimental nuclear", "nuclear experiment", "radioactive ion beam", "rare isotope", "isotope beam", "spectroscopy", "decay measurement"]
+      "keywords": ["experimental nuclear", "nuclear experiment", "radioactive ion beam", "rare isotope", "isotope beam", "gamma spectroscopy", "decay spectroscopy", "decay measurement", "mass measurement", "lifetime measurement", "in-beam spectroscopy"]
     },
     {
       "id": "theoretical-nuclear",
       "name": "理论核物理",
       "icon": "Ψ",
-      "keywords": ["nuclear theory", "ab initio", "density functional", "shell model", "chiral effective", "many-body", "mean-field"]
+      "keywords": ["nuclear theory", "ab initio", "density functional", "shell model", "chiral effective", "many-body", "mean-field", "coupled cluster", "energy density functional", "relativistic mean field", "lattice qcd"]
     },
     {
       "id": "nuclear-structure",
       "name": "核结构",
       "icon": "◈",
-      "keywords": ["nuclear structure", "nuclear spectroscopy", "shell evolution", "magic number", "isomer", "collective motion", "giant resonance", "halo nucleus", "drip line", "exotic nuclei", "excited state", "charge radii", "octupole", "quadrupole"]
+      "keywords": ["nuclear structure", "nuclear spectroscopy", "shell evolution", "magic number", "isomer", "collective motion", "giant resonance", "halo nucleus", "drip line", "exotic nuclei", "excited state", "charge radii", "nuclear deformation", "shape coexistence", "octupole", "quadrupole"]
     },
     {
       "id": "nuclear-reactions",
       "name": "核反应",
       "icon": "⇌",
-      "keywords": ["nuclear reaction", "reaction cross section", "transfer reaction", "knockout reaction", "fusion reaction", "fusion", "fission", "fragmentation", "neutron capture", "direct reaction"]
+      "keywords": ["nuclear reaction", "reaction cross section", "transfer reaction", "knockout reaction", "breakup reaction", "charge exchange", "fusion reaction", "fusion", "fission", "fragmentation", "neutron capture", "radiative capture", "direct reaction", "compound nucleus"]
     },
     {
       "id": "high-energy-nuclear",
       "name": "高能核物理",
       "icon": "⚡",
-      "keywords": ["heavy-ion collision", "heavy ion collision", "quark-gluon plasma", "quark gluon plasma", "QGP", "relativistic heavy", "RHIC", "ALICE", "sPHENIX", "hadron", "jet quenching", "elliptic flow", "nuclear modification factor"]
+      "keywords": ["heavy-ion collision", "heavy ion collision", "quark-gluon plasma", "quark gluon plasma", "QGP", "relativistic heavy", "RHIC", "ALICE", "sPHENIX", "hadron", "lattice qcd", "jet quenching", "elliptic flow", "anisotropic flow", "nuclear modification factor", "color glass condensate"]
     },
     {
       "id": "nuclear-astrophysics",
       "name": "核天体物理",
       "icon": "✶",
-      "keywords": ["nuclear astrophysics", "nucleosynthesis", "neutron star", "r-process", "s-process", "rp-process", "supernova", "stellar reaction", "equation of state", "neutron-star merger"]
+      "keywords": ["nuclear astrophysics", "nucleosynthesis", "neutron star", "neutron-star merger", "compact star", "r-process", "s-process", "rp-process", "supernova", "core-collapse", "stellar reaction", "equation of state", "kilonova", "x-ray burst"]
     },
     {
       "id": "detectors-daq",
       "name": "探测器与DAQ",
       "icon": "▣",
-      "keywords": ["detector", "data acquisition", "DAQ", "silicon detector", "scintillator", "time of flight", "TOF", "time projection chamber", "TPC", "calorimeter", "particle identification", "nuclear electronics", "germanium detector"]
+      "keywords": ["detector", "data acquisition", "DAQ", "silicon detector", "scintillator", "time of flight", "TOF", "time projection chamber", "TPC", "calorimeter", "particle identification", "nuclear electronics", "germanium detector", "gas electron multiplier", "GEM", "photomultiplier", "silicon photomultiplier", "SiPM", "front-end electronics"]
     },
     {
       "id": "accelerators",
       "name": "加速器与束流",
       "icon": "⟳",
-      "keywords": ["accelerator", "beam dynamics", "beam diagnostic", "ion source", "cyclotron", "synchrotron", "linac", "radioactive beam", "beam line"]
+      "keywords": ["accelerator", "beam dynamics", "beam diagnostic", "ion source", "cyclotron", "synchrotron", "linac", "radioactive beam", "beam line", "storage ring", "electron cooling", "radiofrequency cavity"]
     },
     {
       "id": "fusion",
@@ -65,7 +65,7 @@
       "id": "nuclear-data-applications",
       "name": "核数据与应用",
       "icon": "≡",
-      "keywords": ["nuclear data", "evaluated data", "cross-section library", "medical isotope", "radiotherapy", "radiation imaging", "nuclear medicine", "reactor physics", "dosimetry"]
+      "keywords": ["nuclear data", "evaluated data", "cross-section library", "mass evaluation", "decay data", "medical isotope", "radioisotope production", "radiotherapy", "radiation imaging", "nuclear medicine", "reactor physics", "dosimetry", "neutron transport", "criticality"]
     },
     {
       "id": "particle-cross",
@@ -84,13 +84,19 @@
     "first observation", "first measurement", "discovery", "breakthrough",
     "editor's suggestion", "editors' suggestion", "featured article",
     "new isotope", "new element", "highest precision", "record precision",
-    "nature", "physical review letters"
+    "world first", "unprecedented precision", "evidence for", "observation of"
   ],
   "nuclear_gate": [
     "nuclear", "nucleus", "nuclei", "nuclide", "isotope", "radioactive",
     "heavy-ion", "heavy ion", "neutron", "proton", "hadron", "quark",
     "fission", "fusion", "accelerator", "detector", "particle", "astrophys",
     "neutrino", "plasma", "radiation", "dosimetry", "reactor"
+  ],
+  "physics_gate": [
+    "physics", "quantum", "topological", "magnetic", "superconduct", "plasma",
+    "astrophysics", "astronomy", "gravitational wave", "black hole", "dark matter",
+    "neutrino", "hadron", "quark", "accelerator", "detector", "nuclear", "isotope",
+    "neutron", "proton", "radiation", "materials science"
   ],
   "ai_gate": [
     "nuclear physics", "particle physics", "high energy physics", "plasma physics",

@@ -16,6 +16,7 @@ import html
 import json
 import re
 import sys
+import threading
 import time
 import urllib.error
 import urllib.parse
@@ -31,6 +32,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "config"
 DATA = ROOT / "data"
 USER_AGENT = "NuclearFrontierPortal/1.0 (+https://github.com; academic metadata aggregator)"
+CROSSREF_SEMAPHORE = threading.BoundedSemaphore(2)
 
 
 @dataclass
@@ -40,6 +42,7 @@ class SourceResult:
     ok: bool
     count: int
     message: str = ""
+    duration_ms: int = 0
 
 
 def read_json(path: Path, default: Any) -> Any:
@@ -72,6 +75,14 @@ def fetch(url: str, *, accept: str = "*/*", attempts: int = 3) -> bytes:
         try:
             with urllib.request.urlopen(request, timeout=25) as response:
                 return response.read()
+        except urllib.error.HTTPError as exc:
+            last_error = exc
+            if attempt + 1 < attempts and exc.code in (429, 500, 502, 503, 504):
+                retry_after = exc.headers.get("Retry-After", "") if exc.headers else ""
+                delay = float(retry_after) if retry_after.isdigit() else 2.5 * (attempt + 1)
+                time.sleep(min(delay, 15))
+                continue
+            break
         except (urllib.error.URLError, TimeoutError, OSError) as exc:
             last_error = exc
             if attempt + 1 < attempts:
@@ -154,6 +165,7 @@ class Classifier:
         self.categories = config["categories"]
         self.priority_terms = [item.lower() for item in config["priority_terms"]]
         self.nuclear_gate = [item.lower() for item in config["nuclear_gate"]]
+        self.physics_gate = [item.lower() for item in config.get("physics_gate", [])]
         self.ai_gate = [item.lower() for item in config["ai_gate"]]
 
     @staticmethod
@@ -187,6 +199,13 @@ class Classifier:
                 (("nuclear instruments",), "detectors-daq"),
                 (("nuclear fusion", "plasma physics"), "fusion"),
                 (("physics letters b",), "particle-cross"),
+                (("physical review d",), "particle-cross"),
+                (("astrophysical journal", "monthly notices", "astronomy and astrophysics"), "nuclear-astrophysics"),
+                (("machine learning science",), "ai-science"),
+                (("nuclear data sheets", "atomic data and nuclear data"), "nuclear-data-applications"),
+                (("fusion engineering",), "fusion"),
+                (("scientific instruments", "instrumentation", "ieee transactions on nuclear science"), "detectors-daq"),
+                (("annals of nuclear energy", "radiation physics and chemistry"), "nuclear-data-applications"),
             )
             category_ids = [next((category for names, category in source_defaults if any(name in source.lower() for name in names)), "frontiers")]
         return category_ids, list(dict.fromkeys(tags))[:8]
@@ -195,21 +214,38 @@ class Classifier:
         if mode == "all":
             return True
         text = f"{title} {abstract}".lower()
-        nuclear_hits = self.match_count(text, self.nuclear_gate)
+        strong_nuclear_terms = [
+            term for term in self.nuclear_gate
+            if term not in {"nuclear", "nucleus", "nuclei", "particle", "proton", "detector", "radiation"}
+        ] + ["nuclear physics", "nuclear structure", "nuclear reaction", "nuclear matter", "nuclear data", "atomic nucleus"]
+        strong_nuclear_hits = self.match_count(text, strong_nuclear_terms)
         priority_hits = self.match_count(text, self.priority_terms)
         if mode == "important-ai":
             ai_hits = self.match_count(text, self.ai_gate)
             return ai_hits >= 1 and self.match_count(text, ["machine learning", "artificial intelligence", "neural network", "foundation model", "large language model", "deep learning"]) >= 1
-        return nuclear_hits >= 1 or priority_hits >= 1
+        physics_hits = self.match_count(text, self.physics_gate)
+        return strong_nuclear_hits >= 1 or (priority_hits >= 1 and physics_hits >= 1)
 
-    def importance(self, title: str, abstract: str, base: int, categories: list[str]) -> int:
+    def importance_details(self, title: str, abstract: str, base: int, categories: list[str]) -> tuple[int, list[str]]:
         text = f"{title} {abstract}".lower()
         score = base * 10
-        score += min(20, self.match_count(text, self.priority_terms) * 8)
-        score += min(12, max(0, len(categories) - 1) * 4)
+        reasons = [f"来源权重 +{base * 10}"]
+        priority_hits = self.match_count(text, self.priority_terms)
+        if priority_hits:
+            bonus = min(20, priority_hits * 8)
+            score += bonus
+            reasons.append(f"突破性表述 +{bonus}")
+        if len(categories) > 1:
+            bonus = min(12, (len(categories) - 1) * 4)
+            score += bonus
+            reasons.append(f"跨领域关联 +{bonus}")
         if any(category in categories for category in ("high-energy-nuclear", "nuclear-astrophysics", "fusion", "ai-science")):
             score += 4
-        return min(score, 100)
+            reasons.append("前沿主题 +4")
+        return min(score, 100), reasons
+
+    def importance(self, title: str, abstract: str, base: int, categories: list[str]) -> int:
+        return self.importance_details(title, abstract, base, categories)[0]
 
 
 def crossref_url(issn: str, start: str, end: str) -> str:
@@ -225,7 +261,8 @@ def crossref_url(issn: str, start: str, end: str) -> str:
 
 def fetch_crossref(source: dict[str, Any], classifier: Classifier, start: str, end: str) -> tuple[list[dict[str, Any]], SourceResult]:
     try:
-        payload = json.loads(fetch(crossref_url(source["issn"], start, end), accept="application/json"))
+        with CROSSREF_SEMAPHORE:
+            payload = json.loads(fetch(crossref_url(source["issn"], start, end), accept="application/json"))
         records: list[dict[str, Any]] = []
         for item in payload.get("message", {}).get("items", []):
             title = clean_text((item.get("title") or [""])[0])
@@ -241,6 +278,7 @@ def fetch_crossref(source: dict[str, Any], classifier: Classifier, start: str, e
             published = iso_date(item.get("published-online") or item.get("published-print") or item.get("published"))
             doi = item.get("DOI", "")
             url = item.get("URL") or (f"https://doi.org/{doi}" if doi else "")
+            importance, score_reasons = classifier.importance_details(title, abstract, source["weight"], categories)
             records.append({
                 "id": stable_id("doi", doi) if doi else stable_id(title, published, source["short"]),
                 "type": "paper",
@@ -258,7 +296,8 @@ def fetch_crossref(source: dict[str, Any], classifier: Classifier, start: str, e
                 "pdf_url": "",
                 "categories": categories,
                 "tags": tags,
-                "importance": classifier.importance(title, abstract, source["weight"], categories),
+                "importance": importance,
+                "score_reasons": score_reasons,
                 "open_access": None,
             })
         return records, SourceResult(source["name"], "paper", True, len(records))
@@ -310,6 +349,7 @@ def fetch_arxiv(source: dict[str, Any], classifier: Classifier) -> tuple[list[di
             categories, tags = classifier.classify(title, abstract, source["name"])
             arxiv_id = extract_arxiv_id(item["url"])
             published = iso_date(item["published"])
+            importance, score_reasons = classifier.importance_details(title, abstract, source["weight"], categories)
             records.append({
                 "id": stable_id("arxiv", arxiv_id) if arxiv_id else stable_id(title, published, source["category"]),
                 "type": "paper",
@@ -327,7 +367,8 @@ def fetch_arxiv(source: dict[str, Any], classifier: Classifier) -> tuple[list[di
                 "pdf_url": f"https://arxiv.org/pdf/{arxiv_id}" if arxiv_id else "",
                 "categories": categories,
                 "tags": tags,
-                "importance": classifier.importance(title, abstract, source["weight"], categories),
+                "importance": importance,
+                "score_reasons": score_reasons,
                 "open_access": True,
             })
         if source["mode"] == "important-ai":
@@ -349,6 +390,7 @@ def fetch_news(source: dict[str, Any], classifier: Classifier) -> tuple[list[dic
                 continue
             categories, tags = classifier.classify(title, summary, source["name"])
             published = iso_date(item["published"])
+            importance, score_reasons = classifier.importance_details(title, summary, source["weight"], categories)
             records.append({
                 "id": stable_id("news", item["url"]),
                 "type": "news",
@@ -359,7 +401,8 @@ def fetch_news(source: dict[str, Any], classifier: Classifier) -> tuple[list[dic
                 "url": item["url"],
                 "categories": categories,
                 "tags": tags,
-                "importance": classifier.importance(title, summary, source["weight"], categories),
+                "importance": importance,
+                "score_reasons": score_reasons,
             })
         return records, SourceResult(source["name"], "news", True, len(records))
     except Exception as exc:  # noqa: BLE001
@@ -384,6 +427,7 @@ def fetch_notice(source: dict[str, Any], classifier: Classifier) -> tuple[list[d
             categories, tags = classifier.classify(title, "", source["name"])
             published = iso_date(title)
             record_kind = source.get("kind", "notice")
+            importance, score_reasons = classifier.importance_details(title, "", source["weight"], categories)
             records.append({
                 "id": stable_id("notice", url),
                 "type": record_kind,
@@ -395,7 +439,8 @@ def fetch_notice(source: dict[str, Any], classifier: Classifier) -> tuple[list[d
                 "url": url,
                 "categories": categories,
                 "tags": tags,
-                "importance": classifier.importance(title, "", source["weight"], categories),
+                "importance": importance,
+                "score_reasons": score_reasons,
             })
             if len(records) >= 30:
                 break
@@ -423,6 +468,8 @@ def merge_records(existing: list[dict[str, Any]], incoming: list[dict[str, Any]]
             combined["categories"] = list(dict.fromkeys(old.get("categories", []) + item.get("categories", [])))[:4]
             combined["tags"] = list(dict.fromkeys(old.get("tags", []) + item.get("tags", [])))[:10]
             combined["importance"] = max(old.get("importance", 0), item.get("importance", 0))
+            combined["first_seen"] = old.get("first_seen") or item.get("first_seen", "")
+            combined["last_seen"] = item.get("last_seen") or old.get("last_seen", "")
             merged[target_id] = combined
         else:
             merged[target_id] = item
@@ -432,6 +479,23 @@ def merge_records(existing: list[dict[str, Any]], incoming: list[dict[str, Any]]
         key=lambda item: (item.get("published", ""), item.get("importance", 0), item.get("title", "")),
         reverse=True,
     )[:max_items]
+
+
+def count_new_records(existing: list[dict[str, Any]], incoming: list[dict[str, Any]]) -> int:
+    """统计真正首次出现的条目，而不是把回溯窗口中重复抓取的条目当成新增。"""
+    existing_ids = {item.get("id") for item in existing if item.get("id")}
+    existing_titles = {normalize_title(item.get("title", "")) for item in existing if item.get("title")}
+    seen: set[str] = set()
+    count = 0
+    for item in incoming:
+        key = item.get("id") or normalize_title(item.get("title", ""))
+        title_key = normalize_title(item.get("title", ""))
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        if item.get("id") not in existing_ids and title_key not in existing_titles:
+            count += 1
+    return count
 
 
 def main() -> int:
@@ -446,6 +510,7 @@ def main() -> int:
     runtime = read_json(CONFIG / "runtime.json", {})
     classifier = Classifier(topic_config)
     today = dt.datetime.now(dt.timezone.utc).date()
+    run_at = dt.datetime.now(dt.timezone.utc).astimezone().isoformat(timespec="seconds")
     start = (today - dt.timedelta(days=args.days)).isoformat()
     end = today.isoformat()
 
@@ -461,14 +526,18 @@ def main() -> int:
     jobs.extend(("notice", source) for source in source_config.get("notice_pages", []))
 
     def execute(job: tuple[str, dict[str, Any]]) -> tuple[list[dict[str, Any]], SourceResult]:
+        started = time.perf_counter()
         kind, source = job
         if kind == "crossref":
-            return fetch_crossref(source, classifier, start, end)
-        if kind == "arxiv":
-            return fetch_arxiv(source, classifier)
-        if kind == "news":
-            return fetch_news(source, classifier)
-        return fetch_notice(source, classifier)
+            records, result = fetch_crossref(source, classifier, start, end)
+        elif kind == "arxiv":
+            records, result = fetch_arxiv(source, classifier)
+        elif kind == "news":
+            records, result = fetch_news(source, classifier)
+        else:
+            records, result = fetch_notice(source, classifier)
+        result.duration_ms = round((time.perf_counter() - started) * 1000)
+        return records, result
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.max_workers) as pool:
         future_map = {pool.submit(execute, job): job for job in jobs}
@@ -484,15 +553,33 @@ def main() -> int:
             state = "OK" if result.ok else "FAIL"
             print(f"[{state:4}] {result.kind:6} {result.name}: {result.count} {result.message}")
 
-    max_items = int(runtime.get("daily_limit", 600)) * 20
-    papers = merge_records(read_json(DATA / "papers.json", []), papers_new, max_items)
-    source_modes = {source["name"]: source.get("mode", "all") for source in source_config.get("arxiv_feeds", [])}
-    # 通用 AI 源只保留与物理或科学计算明确交叉的文章，旧假阳性也会在更新时清理。
+    existing_papers = read_json(DATA / "papers.json", [])
+    existing_news = read_json(DATA / "news.json", [])
+    existing_notices = read_json(DATA / "notices.json", [])
+    for item in papers_new + news_new + notices_new:
+        item["first_seen"] = run_at
+        item["last_seen"] = run_at
+
+    true_new_counts = {
+        "papers": count_new_records(existing_papers, papers_new),
+        "news": count_new_records(existing_news, news_new),
+        "notices": count_new_records(existing_notices, notices_new),
+    }
+    max_items = int(runtime.get("daily_limit", 900)) * 20
+    papers = merge_records(existing_papers, papers_new, max_items)
+    paper_sources = source_config.get("crossref_journals", []) + source_config.get("arxiv_feeds", [])
+    source_modes = {source["name"]: source.get("mode", "all") for source in paper_sources}
+    source_weights = {source["name"]: int(source.get("weight", 3)) for source in paper_sources}
+    # 所有筛选型来源都按当前规则重新门控，防止旧假阳性永久残留。
     papers = [
         paper for paper in papers
-        if source_modes.get(paper.get("source")) != "important-ai"
-        or classifier.relevant(paper.get("title", ""), paper.get("abstract", ""), "important-ai")
+        if source_modes.get(paper.get("source"), "all") == "all"
+        or classifier.relevant(
+            paper.get("title", ""), paper.get("abstract", ""), source_modes.get(paper.get("source"), "filtered")
+        )
     ]
+    history_cutoff = (today - dt.timedelta(days=int(runtime.get("history_days", 3650)))).isoformat()
+    papers = [paper for paper in papers if not paper.get("published") or paper.get("published", "")[:10] >= history_cutoff]
     # 配置中的分类词可持续改进；每日对历史记录重新分类，避免旧假阳性永久残留。
     for paper in papers:
         categories, tags = classifier.classify(
@@ -500,21 +587,31 @@ def main() -> int:
         )
         paper["categories"] = categories
         paper["tags"] = tags
-    news = merge_records(read_json(DATA / "news.json", []), news_new, 1000)
-    notices = merge_records(read_json(DATA / "notices.json", []), notices_new, 1000)
-    featured = sorted(papers[:500], key=lambda item: (item.get("importance", 0), item.get("published", "")), reverse=True)[:40]
+        paper["importance"], paper["score_reasons"] = classifier.importance_details(
+            paper.get("title", ""), paper.get("abstract", ""), source_weights.get(paper.get("source"), 3), categories
+        )
+        paper.setdefault("first_seen", f"{paper.get('published', today.isoformat())}T00:00:00+00:00")
+        paper.setdefault("last_seen", paper["first_seen"])
+    news = merge_records(existing_news, news_new, 1500)
+    notices = merge_records(existing_notices, notices_new, 1500)
+    latest_day = max((paper.get("published", "")[:10] for paper in papers), default=today.isoformat())
+    featured_cutoff = (dt.date.fromisoformat(latest_day) - dt.timedelta(days=14)).isoformat()
+    featured_candidates = [paper for paper in papers if paper.get("published", "")[:10] >= featured_cutoff]
+    featured = sorted(
+        featured_candidates, key=lambda item: (item.get("importance", 0), item.get("published", "")), reverse=True
+    )[:40]
 
     write_json(DATA / "papers.json", papers)
     write_json(DATA / "news.json", news)
     write_json(DATA / "notices.json", notices)
     write_json(DATA / "featured.json", featured)
-    now = dt.datetime.now(dt.timezone.utc).astimezone().isoformat(timespec="seconds")
     status = {
-        "last_success": now,
+        "last_success": run_at,
         "window": {"from": start, "to": end},
         "source_results": [asdict(item) for item in sorted(results, key=lambda result: (result.kind, result.name))],
         "counts": {"papers": len(papers), "news": len(news), "notices": len(notices), "featured": len(featured)},
-        "new_counts": {"papers": len(papers_new), "news": len(news_new), "notices": len(notices_new)},
+        "new_counts": true_new_counts,
+        "fetched_counts": {"papers": len(papers_new), "news": len(news_new), "notices": len(notices_new)},
     }
     write_json(DATA / "status.json", status)
     print(json.dumps(status["counts"], ensure_ascii=False))

@@ -18,7 +18,10 @@
 数据管线优先使用官方 RSS/API 和出版元数据，包括：
 
 - arXiv：`nucl-ex`、`nucl-th`、`hep-ex`、`hep-ph`、`astro-ph.HE`、`physics.ins-det`、`physics.plasm-ph`、`cs.AI`、`cs.LG`
-- 期刊：PRC、PRL、NST、NIMA、PLB、Nuclear Physics A、Nuclear Fusion、EPJ A、J. Phys. G、Chinese Physics C、Nature 等
+- 核物理与粒子物理：PRC、PRD、PRL、PLB、Nuclear Physics A、EPJ A、J. Phys. G、Chinese Physics C、NST
+- 探测器与核数据：NIMA、JINST、Review of Scientific Instruments、IEEE TNS、Nuclear Data Sheets、Atomic Data and Nuclear Data Tables
+- 聚变与核应用：Nuclear Fusion、Physics of Plasmas、PPCF、Fusion Engineering and Design、Annals of Nuclear Energy
+- 核天体与交叉：ApJ、MNRAS、A&A、Nature、Nature Physics、Nature Astronomy、MLST 等
 - 新闻和通知：APS Physics、Nature、IAEA、CERN、NSFC、FRIB、FAIR、ITER 等官方页面
 
 具体源和筛选策略在 [`config/sources.json`](config/sources.json)中维护。分类与关键词在 [`config/topics.json`](config/topics.json)中维护。
@@ -33,6 +36,16 @@ GitHub Actions 在每天北京时间 08:17 左右执行：
 4. 保留历史数据；
 5. 运行测试；
 6. 提交当日快照并重新发布 GitHub Pages。
+
+## 网站功能
+
+- 今日核心、今日全部、近 7 日和历史全部四级时间视图；
+- 按研究领域、期刊/来源、关键词、发布日期和重要性筛选排序；
+- 每日简报、主题分布、来源分布与优先阅读列表；
+- 文献关联推荐、可解释重要性评分和数据源健康状态；
+- 收藏、未读/在读/已读、私人笔记和个人关键词；
+- 一键导出 Zotero 可导入的 RIS，单篇文献可导出 BibTeX；
+- 桌面端、平板和手机端响应式布局。
 
 工作流也支持在 GitHub Actions 页面使用 `workflow_dispatch` 立即更新。
 
@@ -55,7 +68,7 @@ node --check site/app.js
 
 ## 收藏与 GitHub 同步
 
-- 浏览器使用 IndexedDB/localStorage 等价的小型本地数据保存收藏队列；
+- 浏览器使用 `localStorage` 保存收藏、阅读状态、笔记和待同步队列；
 - `config/runtime.json` 中启用 `favorite_sync_endpoint` 后，网页会把待同步收藏发送到安全中转端点；
 - 每日任务通过 `FAVORITE_SYNC_EXPORT_URL` 拉取快照，写入 `data/personal/favorites.json`；
 - 中转端点未部署时，收藏仍会在当前浏览器保留，并支持 JSON 导出/导入；

@@ -1,103 +1,71 @@
 [
   {
-    "id": "44003800f0cef32f",
+    "id": "dbec9647f5e0b5bf",
     "type": "paper",
-    "title": "The Virtual Tissues foundation model resolves spatial proteomics across scales",
-    "abstract": "Abstract Spatial proteomics technologies have transformed our understanding of complex tissue architecture in cancer but present unique challenges for computational analysis 1 . Each study uses a different marker panel and protocol, and most methods are tailored to single cohorts, which limits knowledge transfer and robust biomarker discovery. Here we present Virtual Tissues (VirTues), a general-purpose foundation model for spatial proteomics that learns marker-aware, multi-scale representations of proteins, cells, niches and tissues directly from multiplex imaging data. From a single pretrained backbone, VirTues supports marker reconstruction, cell segmentation and typing, niche annotation, spatial biomarker discovery and patient stratification, including zero-shot annotation across heterogeneous panels and datasets. In triple-negative breast cancer, VirTues-derived biomarkers predict anti-PD-L1 chemo-immunotherapy response 2 and stratify disease-free survival in an independent cohort 3 , outperforming state-of-the-art biomarkers derived from the same datasets and current clinical stratification schemes.",
+    "title": "First observation of currents induced by Alfven eigenmodes in a magnetic confinement device",
+    "abstract": "",
     "authors": [
-      "Johann Wenckstern",
-      "Eeshaan Jain",
-      "Benedikt von Querfurth",
-      "Yexiang Cheng",
-      "Kiril Vasilev",
-      "Matteo Pariset",
-      "Phil F. Cheng",
-      "Petros Liakopoulos",
-      "Olivier Michielin",
-      "Andreas Wicki",
-      "Gabriele Gut",
-      "Charlotte Bunne"
+      "Anonymous"
     ],
-    "published": "2026-08-05",
-    "updated": "2026-08-05",
-    "source": "Nature",
-    "source_short": "Nature",
+    "published": "2026-07-31",
+    "updated": "2026-07-31",
+    "source": "Physical Review Letters",
+    "source_short": "PRL",
     "source_type": "journal",
-    "doi": "10.1038/s41586-026-10884-y",
+    "doi": "10.1103/1kzf-4n8n",
     "arxiv_id": "",
-    "url": "https://doi.org/10.1038/s41586-026-10884-y",
+    "url": "https://doi.org/10.1103/1kzf-4n8n",
     "pdf_url": "",
     "categories": [
-      "ai-science"
+      "fusion"
     ],
     "tags": [
-      "foundation model"
+      "magnetic confinement"
     ],
-    "importance": 86,
-    "open_access": null
+    "importance": 80,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "突破性表述 +16",
+      "前沿主题 +4"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
-    "id": "d175ea4aa28f1451",
+    "id": "fe159b5fa2a24211",
     "type": "paper",
-    "title": "A compendium of next-generation patient-derived models for diverse cancers",
-    "abstract": "Abstract The development of new therapeutics and the validation of pathogenetic cancer mechanisms require representative laboratory models 1,2 . However, existing collections represent only a fraction of the diversity observed in human cancer 2–4 . Recent technologies have enabled efficient in vitro model derivation (for example, tumour organoids) 5 . However, whether these maintain essential properties of patient tumours during long-term expansion has not been systematically investigated. Here we present results of a large-scale international programme—the Human Cancer Models Initiative—which involved the generation of a resource of 665 next-generation models from 2,780 donors with 25 cancer types and integrated tumour–model whole genome, exome, methylome and transcriptome analyses. The resource provides 522 models with comprehensive clinical data, 153 models of rare cancers and 71 models from participants with non-European ancestry. Analyses of 421 matched tumour–model pairs reveal high genetic (97.8%) and epigenetic (95%) concordance and define correlates of model discordance. Single-nucleus RNA sequencing of tumour–model pairs reveals subsets of models in which culture conditions significantly influence cell states. Finally, we characterize model preservation of extrachromosomal DNA and post-treatment mutational signatures to provide opportunities to study therapeutic resistance. This model repository is being made available to the community—including multimodal molecular profiling, clinical information and integrative software tools—thus providing a valuable resource for preclinical investigation of cancer pathogenesis and treatment response.",
+    "title": "The piezochiral effect",
+    "abstract": "Abstract Chirality is a pervasive property of matter that underpins many important phenomena across physics 1 , chemistry 2 and biology 3 . Given its broad importance, the development of protocols for rational control of chirality in solid-state systems is highly desirable, especially if this effect can be tuned continuously and in two directions. Yet, this goal has remained elusive owing to the absence of a universal conjugate field that couples linearly to this structural order 4–6 . Here we introduce the piezochiral effect, which enables control of chirality through mechanical strain. We show by symmetry analysis that uniaxial strain induces chirality in a broad class of achiral crystals that host fragments of opposite chirality within each unit cell 7,8 , an effect that has so far remained unrecognized. The strain-induced handedness can be tuned either by changing the strain direction or by switching between compressive and tensile strain. We experimentally verify this effect in AgGaS 2 , using measurements of the optical activity under strain. Our discovery establishes a new scheme for chirality control, with potential applications that range from spintronics to asymmetric catalysis, and enantioselective interactions in biosystems.",
     "authors": [
-      "Dina ElHarouni",
-      "Mushriq Al-Jazrawe",
-      "Seongmin Choi",
-      "Merve Dede",
-      "Toshinori Hinoue",
-      "Sean A. Misek",
-      "Heeju Noh",
-      "Luca Zanella",
-      "Yuen-Yi Tseng",
-      "Hayley E. Francies",
-      "Dennis Plenker",
-      "Cindy W. Kyi",
-      "Julyann Perez-Mayoral",
-      "Megan J. Stine",
-      "Eva Tonsing-Carter",
-      "Rachana Agarwal",
-      "Jean Claude Zenklusen",
-      "James M. Clinton",
-      "Jennifer M. Shelton",
-      "Timothy R. Chu",
-      "William F. Hooper",
-      "Xavi Loinaz",
-      "Paula Keskula",
-      "Jordan Tagle",
-      "Peyton C. Kuhlers",
-      "Bahar Tercan",
-      "Sylvia F. Boj",
-      "Alessandro Vasciaveo",
-      "Lorenzo Tomassoni",
-      "James M. Crawford",
-      "Shawna Walsh",
-      "Claire Sinai",
-      "Sonam Bhatia",
-      "Priya Sridevi",
-      "Hardik Patel",
-      "Maria Antonietta Cerone",
-      "Mubarak Akadri",
-      "Andrew J. Aguirre",
-      "Rehan Akbani",
-      "Majd Al Assaad"
+      "Z. Zeng",
+      "M. Först",
+      "M. Fechner",
+      "X. Deng",
+      "A. Cavalleri",
+      "P. G. Radaelli"
     ],
-    "published": "2026-08-05",
-    "updated": "2026-08-05",
+    "published": "2026-07-29",
+    "updated": "2026-07-29",
     "source": "Nature",
     "source_short": "Nature",
     "source_type": "journal",
-    "doi": "10.1038/s41586-026-10806-y",
+    "doi": "10.1038/s41586-026-10845-5",
     "arxiv_id": "",
-    "url": "https://doi.org/10.1038/s41586-026-10806-y",
+    "url": "https://doi.org/10.1038/s41586-026-10845-5",
     "pdf_url": "",
     "categories": [
       "frontiers"
     ],
     "tags": [],
-    "importance": 82,
-    "open_access": null
+    "importance": 78,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +70",
+      "突破性表述 +8"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
     "id": "4b14ffc90156b780",
@@ -165,171 +133,253 @@
       "detector",
       "neutrino"
     ],
-    "importance": 80,
-    "open_access": null
+    "importance": 76,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "突破性表述 +8",
+      "跨领域关联 +8"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
-    "id": "d38c3f64ca1bf00c",
+    "id": "9a8d69e00ef4f30c",
     "type": "paper",
-    "title": "DCAF11-dependent molecular glue degrader activated by glutathionylation",
-    "abstract": "Abstract Targeted protein degradation is a powerful pharmacological strategy that harnesses the ubiquitin proteasome system to eliminate disease-relevant proteins, including otherwise undruggable proteins 1 . Here we report an unbiased and broadly applicable platform for the systematic discovery of molecular glues across diverse E3 ligases. Using multiplexed mass spectrometry-based chemical screening, we identified M12, a molecular glue that reprogrammes the E3 ligase DCAF11 to degrade DDX18. Mechanistically, M12 functions as a prodrug that is activated through glutathione S -transferase-mediated glutathionylation. The glutathione moiety binds to an evolutionary conserved glutathione-binding site on DCAF11, and the exposed M12 moiety facilitates neo-substrate recruitment. We demonstrate that this glutathione-dependent mechanism readily enables targeted degradation of a range of proteins. Collectively, these findings establish that metabolically activated compounds can redirect E3 ligase function, thereby expanding the scope of targeted protein degradation and chemically induced proximity.",
+    "title": "Evidence for J / ψ Suppression in Incoherent Photonuclear Production",
+    "abstract": "According to quantum chromodynamics, at sufficiently high energy, the structure of hadrons reveals a dynamic equilibrium between gluon splitting and gluon recombination—a phenomenon known as saturation. The process of diffractive photonuclear production of a J / ψ vector meson provides a direct insight into the gluon composition of hadrons. The J / ψ production as a function of momentum transferred in the interaction, quantified by the Mandelstam- t variable, serves as an excellent probe for studying the structure of hadrons within the impact-parameter plane, because different ranges in t are sensitive to the dynamics of the gluon field at varying spatial size scales. The ALICE Collaboration has measured the energy dependence of incoherent photonuclear production of J / ψ mesons off lead ions, at s NN = 5.02 TeV , for three Mandelstam- t intervals. The energy dependence of the photonuclear cross section at the highest | t | range measured, ( 0.81 < | t | < 1.44 ) GeV 2 , is sensitive to subnucleonic structures of the Pb target. The increase of the cross section with energy at large | t | shows evidence of suppression with respect to the increase seen at low | t | . The observed pattern of the energy evolution in data is similar to that of gluon saturation models.",
     "authors": [
-      "Hojong Yoon",
-      "Franziska Wachter",
-      "Katharine A. Barrett",
-      "Cyrus Jin",
-      "Anna Rodríguez-Pöhnlein",
-      "Justine C. Rutter",
-      "Ryan J. Lumpkin",
-      "Rebecca J. Metivier",
-      "Katherine A. Donovan",
-      "Kheewoong Baek",
-      "Yongying Jiang",
-      "Minwoo Lee",
-      "Robert W. Kalis",
-      "Jianwei Che",
-      "Yuan Xiong",
-      "Eric S. Fischer",
-      "Benjamin L. Ebert"
+      "S. Acharya",
+      "A. Agarwal",
+      "G. Aglieri Rinella",
+      "L. Aglietta",
+      "M. Agnello",
+      "N. Agrawal",
+      "Z. Ahammed",
+      "S. Ahmad",
+      "S. U. Ahn",
+      "I. Ahuja",
+      "A. Akindinov",
+      "V. Akishina",
+      "M. Al-Turany",
+      "D. Aleksandrov",
+      "B. Alessandro",
+      "H. M. Alfanda",
+      "R. Alfaro Molina",
+      "B. Ali",
+      "A. Alici",
+      "N. Alizadehvandchali",
+      "A. Alkin",
+      "J. Alme",
+      "G. Alocco",
+      "T. Alt",
+      "A. R. Altamura",
+      "I. Altsybeev",
+      "J. R. Alvarado",
+      "M. N. Anaam",
+      "C. Andrei",
+      "N. Andreou",
+      "A. Andronic",
+      "E. Andronov",
+      "V. Anguelov",
+      "F. Antinori",
+      "P. Antonioli",
+      "N. Apadula",
+      "L. Aphecetche",
+      "H. Appelshäuser",
+      "C. Arata",
+      "S. Arcelli"
     ],
-    "published": "2026-08-05",
-    "updated": "2026-08-05",
-    "source": "Nature",
-    "source_short": "Nature",
+    "published": "2026-07-29",
+    "updated": "2026-07-29",
+    "source": "Physical Review Letters",
+    "source_short": "PRL",
     "source_type": "journal",
-    "doi": "10.1038/s41586-026-10873-1",
+    "doi": "10.1103/jmwb-75m7",
     "arxiv_id": "",
-    "url": "https://doi.org/10.1038/s41586-026-10873-1",
+    "url": "https://doi.org/10.1103/jmwb-75m7",
     "pdf_url": "",
     "categories": [
-      "frontiers"
+      "frontiers",
+      "high-energy-nuclear"
     ],
-    "tags": [],
-    "importance": 78,
-    "open_access": null
+    "tags": [
+      "ALICE",
+      "quantum"
+    ],
+    "importance": 76,
+    "score_reasons": [
+      "来源权重 +60",
+      "突破性表述 +8",
+      "跨领域关联 +4",
+      "前沿主题 +4"
+    ],
+    "open_access": null,
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
-    "id": "b9c65d28eb83b0d3",
+    "id": "2a07c1bb92283401",
     "type": "paper",
-    "title": "A tumour-derived organoid biobank maps cancer gene dependencies",
-    "abstract": "Abstract Cancer cell lines remain foundational for research and drug discovery, yet they incompletely capture tumour diversity, lack linked patient context, and have undergone adaptation to culture. Tumour organoids are three-dimensional cultures derived from patient tissue that offer a powerful complement to cell lines 1 . Here we derived and characterized 256 clinically annotated tumour organoids directly from colorectal, oesophageal, ovarian, pancreatic and gastric cancers as renewable, genetically stable models. Extensive characterization of each model and matched patient tumour samples included whole-genome and transcriptome sequencing, and genome-wide CRISPR–Cas9 screens across 162 organoids mapped gene dependencies. Integrative analyses revealed genomic and clinical markers of dependency across common and rare subtypes, identified organoid-specific essential genes, and revealed targetable vulnerabilities following tumour evolution in paired pre- and post-treatment samples. In colorectal cancer, functional and pharmacological interrogation of the EGFR–RAS–MAPK axis uncovered differential effects of KRAS variant alleles. This open, publicly available resource provides a systematic map of gene dependencies in patient-derived organoids, expanding the model diversity and mechanistic insight needed to advance precision oncology.",
+    "title": "Discovery of a Candidate 2 keV Cyclotron Resonance Scattering Feature in the HLX NGC 3583 X-1",
+    "abstract": "Abstract We present a broadband X-ray study of the transient hyperluminous X-ray source (HLX), 2SXPS J111416.1+481833, in the galaxy NGC 3583, using archival XMM-Newton, NuSTAR, and Chandra data, and long-term Swift X-ray Telescope monitoring. The source episodically enters the hyperluminous regime with X-ray luminosities of L X > 10 41 erg s −1 and drops by a factor >45 from its peak into a deep low state. We detect a clear spectral cutoff at ∼5–6 keV in the broadband spectra, which are well modeled by a soft thermal component combined with optically thick thermal Comptonization or an inner advection-dominated disk. In the XMM-Newton spectra, we detect a statistically significant (≳3.9 σ ) absorption line centered at E line ≈ 1.97 ± 0.04 keV with a width of σ line ≈ 74 ± 40 eV. We primarily interpret the line as a candidate proton cyclotron resonance scattering feature, implying a local magnetic field strength of B ∼ 4 × 10 14 G. Alternative interpretations, such as an origin in an ionized outflow, were explored and found to be less likely. We do not detect coherent X-ray pulsations, placing 90% confidence upper limits on the pulsed fraction of 19.3% in the 0.3–10 keV band and 36.3% in the 3–15 keV band. The combination of extreme luminosity, a hard spectral state, and the detection of a candidate cyclotron line provides strong evidence for a highly magnetized neutron star accretor.",
     "authors": [
-      "C. Herranz-Ors",
-      "S. G. Bhosle",
-      "A. E. Beck",
-      "J. G. R. Gilbert",
-      "G. Picco",
-      "J. Espejo Valle-Inclan",
-      "F. Muyas",
-      "S. Valentini",
-      "A. E. Andres",
-      "R. Ansari",
-      "S. Barthorpe",
-      "G. Battarbee",
-      "C. M. Beaver",
-      "S. Brocklesby",
-      "J. Cantwell",
-      "C. A. Collins",
-      "J. Davis",
-      "H. G. Dimitrova",
-      "J. Doran",
-      "E. Efendi",
-      "K. Evans",
-      "M. Fekry",
-      "T. A. Fowler",
-      "M. Garcia-Casado",
-      "J. A. T. Griffiths",
-      "C. Hall",
-      "R. Hamer",
-      "C. Hardy",
-      "Z. Hewitson",
-      "E. Hitch",
-      "L. Holland",
-      "D. A. Jackson",
-      "N. Joshi",
-      "A. Kavasakali",
-      "L. Letchford",
-      "H. B. Lightfoot",
-      "H. Lingala",
-      "I. Mali",
-      "K. May",
-      "T. Mironenko"
+      "Kiran M. Jayasurya",
+      "Aman Upadhyay",
+      "Vikram Rana"
     ],
-    "published": "2026-08-05",
-    "updated": "2026-08-05",
-    "source": "Nature",
-    "source_short": "Nature",
+    "published": "2026-08-04",
+    "updated": "2026-08-04",
+    "source": "The Astrophysical Journal",
+    "source_short": "ApJ",
     "source_type": "journal",
-    "doi": "10.1038/s41586-026-10830-y",
+    "doi": "10.3847/1538-4357/ae8522",
     "arxiv_id": "",
-    "url": "https://doi.org/10.1038/s41586-026-10830-y",
+    "url": "https://doi.org/10.3847/1538-4357/ae8522",
     "pdf_url": "",
     "categories": [
-      "frontiers"
+      "accelerators",
+      "nuclear-astrophysics"
     ],
-    "tags": [],
-    "importance": 78,
-    "open_access": null
+    "tags": [
+      "neutron star",
+      "cyclotron"
+    ],
+    "importance": 74,
+    "score_reasons": [
+      "来源权重 +50",
+      "突破性表述 +16",
+      "跨领域关联 +4",
+      "前沿主题 +4"
+    ],
+    "open_access": null,
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
-    "id": "01e3672664f25d7b",
+    "id": "679b3d09f0e9c5e3",
     "type": "paper",
-    "title": "Chiral Charge Density Waves in Transition Metal Dichalcogenide",
-    "abstract": "The emergence of chirality in the charge density wave (CDW) phase of 1 T − TiSe 2 has recently attracted significant attention, yet its microscopic origin remains debated. The prevailing interpretation attributes chirality to a relative phase shift between the charge density components. Here, using density functional theory and symmetry analysis, it is demonstrated that such phase-shifted states entail prohibitive energy costs, rendering them unlikely candidates for the ground state. Instead, a nearly degenerate metastable CDW phase stacking order with monoclinic symmetry is identified that naturally breaks mirror and inversion symmetries. The CDW in 1 T − TiSe 2 possesses a dual physical nature: The electronic charge redistribution is intrinsically bond modulated, while the periodic lattice distortion is atom-centered transverse. This spatial separation allows a specific optical coupling mechanism where circularly polarized light breaks the energetic degeneracy between chiral domains. These results reconcile conflicting experimental observations, identifying the “spontaneous” chirality observed in local probes as a statistical distribution of CDW phase stacking domains while establishing the mechanism for macroscopic, light-induced gyrotropic order.",
+    "title": "Direct Observation of the Optical Magnus Effect with a Trapped Ion",
+    "abstract": "We directly observe and spatially map an optical analog of the Magnus effect, where intrinsic spin-orbit-like coupling of light generates a spin-dependent transverse displacement of the atom-light interaction profile for a Ca + 40 ion. Probed on a quadrupole transition using a tightly focused beam, we observe displacements of the maximum in the profile of the effective interaction by several 100 nm originating from intrinsic longitudinal electric field components beyond the paraxial approximation. The tight focus of the beam induces additional transverse polarization gradients, which we characterize through a phase-sensitive measurement and spatial maps for different beam configurations. The results establish the physical basis of polarization-gradient interactions relevant to optical tweezer-based quantum control.",
     "authors": [
-      "Ettore Carpene"
+      "Philip Leindecker",
+      "Louis P. H. Gallagher",
+      "Edgar Brucke",
+      "Dominique Zehnder",
+      "Luka Milanovic",
+      "Matteo Marinelli",
+      "Rene Gerritsma",
+      "Robert J. C. Spreeuw",
+      "Jonathan Home",
+      "Cornelius Hempel"
     ],
     "published": "2026-08-06",
     "updated": "2026-08-06",
     "source": "Physical Review Letters",
     "source_short": "PRL",
     "source_type": "journal",
-    "doi": "10.1103/5vkg-zvhv",
+    "doi": "10.1103/kj5p-qqs5",
     "arxiv_id": "",
-    "url": "https://doi.org/10.1103/5vkg-zvhv",
+    "url": "https://doi.org/10.1103/kj5p-qqs5",
     "pdf_url": "",
     "categories": [
-      "theoretical-nuclear"
+      "frontiers",
+      "nuclear-structure"
     ],
     "tags": [
-      "density functional"
+      "quadrupole",
+      "quantum"
     ],
-    "importance": 76,
-    "open_access": null
+    "importance": 72,
+    "score_reasons": [
+      "来源权重 +60",
+      "突破性表述 +8",
+      "跨领域关联 +4"
+    ],
+    "open_access": null,
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
-    "id": "327fcfaf5f60a1a2",
+    "id": "57f562d9921af96a",
     "type": "paper",
-    "title": "Determination of Quark-Gluon-Quark Interference within the Proton",
-    "abstract": "Quarks and gluons, as quantum particles, are subject to various effects that go beyond the naive parton picture and are not captured by ordinary parton densities. In this work, we investigate the twist-three parton distribution functions, which encode quantum interference between quark-gluon-quark states, and for the first time, determine them directly from experimental data. The analysis combines observables described by collinear and transverse-momentum–dependent factorization theorems within a unified global fit, incorporating a complete leading-order QCD evolution at the twist-three level. The extracted distributions reveal clear flavor-dependent patterns and are distinct from zero at a statistically significant level ( 2 − 3 σ ). These findings provide the first quantitative evidence for quark-gluon-quark correlations within the proton, revealing its genuinely quantum nature and opening a new direction for precision studies of partonic correlations.",
+    "title": "Observation of a B c * + meson with the ATLAS detector",
+    "abstract": "",
     "authors": [
-      "Alexey Vladimirov",
-      "Guillermo Portela",
-      "Simone Rodini"
+      "Anonymous"
     ],
-    "published": "2026-08-03",
-    "updated": "2026-08-03",
+    "published": "2026-07-30",
+    "updated": "2026-07-30",
     "source": "Physical Review Letters",
     "source_short": "PRL",
     "source_type": "journal",
-    "doi": "10.1103/rd63-hdwp",
+    "doi": "10.1103/vrxp-zkbs",
     "arxiv_id": "",
-    "url": "https://doi.org/10.1103/rd63-hdwp",
+    "url": "https://doi.org/10.1103/vrxp-zkbs",
     "pdf_url": "",
     "categories": [
-      "frontiers"
+      "detectors-daq",
+      "particle-cross"
     ],
     "tags": [
-      "quantum"
+      "detector",
+      "ATLAS"
     ],
-    "importance": 76,
-    "open_access": null
+    "importance": 72,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "突破性表述 +8",
+      "跨领域关联 +4"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
-    "id": "dd8ff05c7eac9577",
+    "id": "d68586ee6f47ad8e",
     "type": "paper",
-    "title": "C P Violation Analysis of Local and Nonlocal Amplitudes in the B ¯ 0 → K ¯ * 0 μ + μ − Decay",
-    "abstract": "A search for C P violation in the B ¯ 0 → K ¯ * 0 μ + μ − decay is performed using proton-proton collision data collected by the LHCb experiment during Run 1 and Run 2, corresponding to an integrated luminosity of 8.4 fb − 1 . The analysis exploits the full angular distribution of the decay, providing sensitivity to C P -violating effects in both vector and axial-vector contributions to this flavor-changing neutral-current process. The complex Wilson coefficients are determined within the weak effective theory through an unbinned maximum-likelihood fit to the angular observables, incorporating nonlocal hadronic amplitudes across the full dimuon mass spectrum. The precision of the C P -violation observables is improved by an order of magnitude relative to previous measurements, with the imaginary parts of the Wilson coefficients now determined more precisely than the real parts. No significant C P violation is observed, and the results are consistent with the standard model.",
+    "title": "r -Process Nucleosynthesis with Ab Initio Nuclear Masses around the N = 82 Shell Closure",
+    "abstract": "Our understanding of the origin of heavy elements beyond iron relies on the rapid neutron capture process ( r process), which accounts for roughly half of their cosmic abundance. However, the extreme neutron-rich conditions required for the r process involve many nuclei that remain experimentally inaccessible, making theoretical predictions essential. We explore the impact of nuclear masses calculated with the valence-space in-medium similarity renormalization group, focusing on the region around the N = 82 shell closure. We show for the first time that such mass calculations can be used to refine r -process predictions compared to global, but more phenomenological mass models. With the masses, the waiting point of the second r -process peak is strengthened, which leads to an overall slower nucleosynthesis flow, lower abundances of nuclei beyond the peak, and a stronger shift of the third r -process peak.",
+    "authors": [
+      "J. Kuske",
+      "T. Miyagi",
+      "A. Arcones",
+      "A. Schwenk"
+    ],
+    "published": "2026-07-28",
+    "updated": "2026-07-28",
+    "source": "Physical Review Letters",
+    "source_short": "PRL",
+    "source_type": "journal",
+    "doi": "10.1103/k4lv-436c",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1103/k4lv-436c",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-reactions",
+      "nuclear-astrophysics",
+      "theoretical-nuclear"
+    ],
+    "tags": [
+      "ab initio",
+      "neutron capture",
+      "nucleosynthesis"
+    ],
+    "importance": 72,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "跨领域关联 +8",
+      "前沿主题 +4"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
+  },
+  {
+    "id": "e7231d74df0333e6",
+    "type": "paper",
+    "title": "Test of Lepton Flavor Universality with B 0 → K * 0 ℓ + ℓ − Decays at Large Dilepton Invariant Mass",
+    "abstract": "Muon-electron universality is tested in B 0 → K * 0 ℓ + ℓ − decays, in the dilepton-invariant-mass region above the ψ ( 2 S ) resonance. The analysis uses beauty mesons produced in proton-proton collisions recorded by the LHCb detector at center-of-mass energies of 7, 8, and 13 TeV, corresponding to an integrated luminosity of 9 fb − 1 . The ratio of branching fractions between the muon and electron channels R K * 0 is measured to be 1.08 − 0.12 + 0.14 ( stat ) ± 0.07 ( syst ) for a dilepton-invariant-mass squared above 14.0 GeV 2 / c 4 , consistent with the standard model prediction. This result represents the most precise measurement of R K * 0 in this region and the first such measurement performed at a hadron collider.",
     "authors": [
       "R. Aaij",
       "M. Abdelfatah",
@@ -343,6 +393,7 @@
       "P. Adlarson",
       "C. Agapopoulou",
       "C. A. Aidala",
+      "Z. Ajaltouni",
       "S. Akar",
       "K. Akiba",
       "P. Albicocco",
@@ -350,6 +401,7 @@
       "R. Aleksiejunas",
       "F. Alessio",
       "P. Alvarez Cartelle",
+      "R. Amalric",
       "S. Amato",
       "J. L. Amey",
       "Y. Amhis",
@@ -368,119 +420,37 @@
       "S. Arguedas Cuendis",
       "L. Arnone",
       "M. Artuso",
-      "E. Aslanides",
-      "R. Ataíde Da Silva",
-      "M. Atzeni"
+      "E. Aslanides"
     ],
-    "published": "2026-08-03",
-    "updated": "2026-08-03",
+    "published": "2026-07-28",
+    "updated": "2026-07-28",
     "source": "Physical Review Letters",
     "source_short": "PRL",
     "source_type": "journal",
-    "doi": "10.1103/gg5v-mp26",
+    "doi": "10.1103/vzv9-hcks",
     "arxiv_id": "",
-    "url": "https://doi.org/10.1103/gg5v-mp26",
+    "url": "https://doi.org/10.1103/vzv9-hcks",
     "pdf_url": "",
     "categories": [
-      "particle-cross"
+      "particle-cross",
+      "detectors-daq",
+      "high-energy-nuclear"
     ],
     "tags": [
+      "hadron",
+      "detector",
       "standard model",
       "LHCb"
     ],
     "importance": 72,
-    "open_access": null
-  },
-  {
-    "id": "dbec9647f5e0b5bf",
-    "type": "paper",
-    "title": "First observation of currents induced by Alfven eigenmodes in a magnetic confinement device",
-    "abstract": "",
-    "authors": [
-      "Anonymous"
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "跨领域关联 +8",
+      "前沿主题 +4"
     ],
-    "published": "2026-07-31",
-    "updated": "2026-07-31",
-    "source": "Physical Review Letters",
-    "source_short": "PRL",
-    "source_type": "journal",
-    "doi": "10.1103/1kzf-4n8n",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/1kzf-4n8n",
-    "pdf_url": "",
-    "categories": [
-      "fusion"
-    ],
-    "tags": [
-      "magnetic confinement"
-    ],
-    "importance": 72,
-    "open_access": null
-  },
-  {
-    "id": "0a18a81f7df496f8",
-    "type": "paper",
-    "title": "Dissecting Jet Modification in the Quark-Gluon Plasma with Multipoint Energy Correlators",
-    "abstract": "Energy correlators have recently attracted significant attention in the study of heavy ion collisions due to their potential to robustly connect experimental measurements with an underlying quantum field theoretic description. While theoretical studies have so far primarily focused on the simplest two-point correlator, mapping out the dynamics of the quark-gluon plasma (QGP) will require developing a theoretical understanding of multipoint energy correlators. In this Letter, we present a systematic theoretical study of multipoint energy correlators for jets fragmenting in a dense quark-gluon plasma, accounting for both the medium’s perturbative modification to the jet and its hydrodynamical backreaction. We consider both the scaling behavior of projected correlators, as well as the shape dependent three-point correlator, highlighting how both provide insight into interactions with the QGP. We discuss the parametric dependence of modifications on the medium scales, opening new opportunities to experimentally separate jet modifications from the medium response. Our results open the door to a systematic exploration of multipoint energy correlators in heavy ion collisions.",
-    "authors": [
-      "João Barata",
-      "Ian Moult",
-      "Andrey V. Sadofyev",
-      "João M. Silva"
-    ],
-    "published": "2026-07-31",
-    "updated": "2026-07-31",
-    "source": "Physical Review Letters",
-    "source_short": "PRL",
-    "source_type": "journal",
-    "doi": "10.1103/9jzc-7jcv",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/9jzc-7jcv",
-    "pdf_url": "",
-    "categories": [
-      "high-energy-nuclear",
-      "frontiers"
-    ],
-    "tags": [
-      "quark-gluon plasma",
-      "QGP",
-      "quantum"
-    ],
-    "importance": 72,
-    "open_access": null
-  },
-  {
-    "id": "72388929c104522f",
-    "type": "paper",
-    "title": "Perfect particle transmission through duality defects",
-    "abstract": "Abstract The theory of generalized symmetries has recently clarified how twisted sectors resolve the Callan–Rubakov paradox, where scattering of a charged particle by a magnetic monopole appeared to violate conservation laws. Here we study a more general setting of wavepackets that propagate across topological interfaces in quantum spin systems exhibiting non-invertible symmetries and across duality defects coupling dual theories. In these scenarios, we find that the transmission is always perfect and a particle traversing the interface is converted into a non-local string-like excitation. We give a systematic way of constructing such a defect by identifying its Hilbert space with the virtual bond dimension of the matrix product operator representing defect lines. Our work provides a precise characterization of topological interfaces in perfect transmission phenomena and yields a lattice analogue of the solution to the monopole paradox in quantum field theory.",
-    "authors": [
-      "Atsushi Ueda",
-      "Vic Vander Linden",
-      "Boris De Vos",
-      "Laurens Lootens",
-      "Jutho Haegeman",
-      "Paul Fendley",
-      "Frank Verstraete"
-    ],
-    "published": "2026-08-07",
-    "updated": "2026-08-07",
-    "source": "Nature Physics",
-    "source_short": "Nature Physics",
-    "source_type": "journal",
-    "doi": "10.1038/s41567-026-03390-5",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1038/s41567-026-03390-5",
-    "pdf_url": "",
-    "categories": [
-      "frontiers"
-    ],
-    "tags": [
-      "quantum",
-      "topological"
-    ],
-    "importance": 70,
-    "open_access": null
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
     "id": "c54528a5807b61bb",
@@ -515,146 +485,12 @@
     ],
     "tags": [],
     "importance": 70,
-    "open_access": null
-  },
-  {
-    "id": "1225aca0d4df3f60",
-    "type": "paper",
-    "title": "In situ particle-to-fibre transformation of hydrogels for 3D printing",
-    "abstract": "",
-    "authors": [
-      "Dezhi Zhou",
-      "Bohan Dou",
-      "Shiyuan Fan",
-      "Hon Son Ooi",
-      "Kai Han",
-      "Yilong He",
-      "Xuening Zhang",
-      "Chuqian Wang",
-      "Yuzhi Guo",
-      "Liping Chen",
-      "Heng Liu",
-      "Jie Na",
-      "Qiang He",
-      "Haitao Wu",
-      "Qi Gu",
-      "Liliang Ouyang"
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +70"
     ],
-    "published": "2026-08-05",
-    "updated": "2026-08-05",
-    "source": "Nature",
-    "source_short": "Nature",
-    "source_type": "journal",
-    "doi": "10.1038/s41586-026-10883-z",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1038/s41586-026-10883-z",
-    "pdf_url": "",
-    "categories": [
-      "frontiers"
-    ],
-    "tags": [],
-    "importance": 70,
-    "open_access": null
-  },
-  {
-    "id": "f484630af388d2c4",
-    "type": "paper",
-    "title": "Amygdala astrocyte primary cilium mechanisms contribute to stress behaviours",
-    "abstract": "Abstract Understanding how adverse life events trigger stress-related behavioural changes remains an unresolved challenge. The amygdala is integral to emotion and stress responses 1 and comprises astrocytes, neurons and other cells. Here we show that amygdala astrocytes contribute to stress-related behaviours through signalling mechanisms related to their primary cilia 2 . Amygdala astrocytes are altered during stress at the protein and gene expression level, display reduced expression of molecules related to primary cilia 3,4 and have morphologically short primary cilia 5,6 . G protein-coupled receptors (GPCRs) are central to astrocyte 7 and primary cilia 2,8,9 function. Therefore, we speculated that GPCR signalling activation might be beneficial in stress-related behavioural disorders. We identified amygdala astrocyte GPCRs as regulators of responses following stress. Chemogenetics and targeting of native sphingosine-1-phosphate receptor 1 (S1PR1) GPCRs led to the restoration of astrocyte primary cilia length, corrected molecular alterations and improved stress-related behaviours. Cilium-related genes were abundantly expressed in human amygdala astrocytes, with many displaying disrupted expression in stress-related brain disorders. S1PR1 was also highly expressed in amygdala astrocytes from human tissue. Selective genetic disruption of amygdala astrocyte primary cilia in mice altered some stress-related behaviours and gene expression of astrocytes and parenchymal cells. These data confirm that astrocytic cilia have important roles in this brain nucleus. In summary, amygdala astrocytes and their primary cilia are disrupted during stress, and their restoration is accompanied by stress-related molecular and behavioural improvements. Astrocyte primary cilia-related mechanisms may therefore provide new treatment strategies for stress-related and other brain disorders.",
-    "authors": [
-      "Sara G. Pelaz",
-      "Katsukuni Mitsui",
-      "Natalia Kolosowska",
-      "Haley Fritch",
-      "Chiranjivi Neupane",
-      "Vanessa H. Casha",
-      "Marta Alonso-Gardón",
-      "Vijaya Pandey",
-      "Lizheng Wang",
-      "Riki Kawaguchi",
-      "James A. Wohlschlegel",
-      "Jiami Guo",
-      "Steven A. McCarroll",
-      "Sabina Berretta",
-      "Baljit S. Khakh"
-    ],
-    "published": "2026-08-05",
-    "updated": "2026-08-05",
-    "source": "Nature",
-    "source_short": "Nature",
-    "source_type": "journal",
-    "doi": "10.1038/s41586-026-10874-0",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1038/s41586-026-10874-0",
-    "pdf_url": "",
-    "categories": [
-      "frontiers"
-    ],
-    "tags": [],
-    "importance": 70,
-    "open_access": null
-  },
-  {
-    "id": "489fa289355a563c",
-    "type": "paper",
-    "title": "A cholinergic hub in the nucleus accumbens gates opioid-reward learning",
-    "abstract": "",
-    "authors": [
-      "S. Aryana Yousefzadeh",
-      "Haidun Yan",
-      "Seung-Hwa Kwak",
-      "Yunju Oh",
-      "Pyeonghwa Jeong",
-      "Vladimir Pogorelov",
-      "J. Russell Ravenel",
-      "Shaun S. X. Lim",
-      "James M. Roach",
-      "Brenda C. Shields",
-      "Ramona M. Rodriguiz",
-      "William C. Wetsel",
-      "Jiyong Hong",
-      "Michael R. Tadross"
-    ],
-    "published": "2026-08-05",
-    "updated": "2026-08-05",
-    "source": "Nature",
-    "source_short": "Nature",
-    "source_type": "journal",
-    "doi": "10.1038/s41586-026-10887-9",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1038/s41586-026-10887-9",
-    "pdf_url": "",
-    "categories": [
-      "frontiers"
-    ],
-    "tags": [],
-    "importance": 70,
-    "open_access": null
-  },
-  {
-    "id": "c30c710775e4d2c6",
-    "type": "paper",
-    "title": "Plans for nuclear-powered merchant ships must confront risks",
-    "abstract": "",
-    "authors": [
-      "Jihong Chen",
-      "Zheng Wan"
-    ],
-    "published": "2026-08-03",
-    "updated": "2026-08-03",
-    "source": "Nature",
-    "source_short": "Nature",
-    "source_type": "journal",
-    "doi": "10.1038/d41586-026-02388-6",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1038/d41586-026-02388-6",
-    "pdf_url": "",
-    "categories": [
-      "frontiers"
-    ],
-    "tags": [],
-    "importance": 70,
-    "open_access": null
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
     "id": "e118b095dc113de1",
@@ -687,37 +523,14 @@
       "magnetic confinement"
     ],
     "importance": 68,
-    "open_access": null
-  },
-  {
-    "id": "8e7b9225cd19682b",
-    "type": "paper",
-    "title": "Small Progenitors, Large Couplings: Type Ic Supernova Constraints on Radiatively Decaying Particles",
-    "abstract": "Supernova (SN) 1987A provides classic bounds on gamma-ray flashes from the radiative decay of sub-GeV particles, but the latter may decay so rapidly as to be shielded by the stellar envelope. Using axionlike particles with photon coupling as a benchmark, we show that Type Ic core-collapse supernovae largely evade this attenuation due to their compact progenitors. We identify two regimes. At small couplings, while individual flashes may be missed by Fermi-LAT, the high Type Ic rate enables a stacking analysis of nondetections. At larger couplings, decay photons trigger fireball formation; the absence of a signal from the rare broad-lined Type Ic SN 1998bw excludes this scenario. The resulting bounds significantly exceed those from SN 1987A for short decay lengths.",
-    "authors": [
-      "Francisco R. Candón",
-      "Damiano F. G. Fiorillo",
-      "Hans-Thomas Janka",
-      "Bart F. A. van Baal",
-      "Edoardo Vitagliano"
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "跨领域关联 +4",
+      "前沿主题 +4"
     ],
-    "published": "2026-08-06",
-    "updated": "2026-08-06",
-    "source": "Physical Review Letters",
-    "source_short": "PRL",
-    "source_type": "journal",
-    "doi": "10.1103/d562-j1yz",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/d562-j1yz",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-astrophysics"
-    ],
-    "tags": [
-      "supernova"
-    ],
-    "importance": 68,
-    "open_access": null
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
     "id": "ac1822ed3c6e039b",
@@ -751,7 +564,13 @@
       "quantum"
     ],
     "importance": 68,
-    "open_access": null
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "突破性表述 +8"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
     "id": "7579499799dcd7ea",
@@ -786,16 +605,181 @@
       "cyclotron"
     ],
     "importance": 68,
-    "open_access": null
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "突破性表述 +8"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
-    "id": "d98c27c3e9e39ccd",
+    "id": "327fcfaf5f60a1a2",
     "type": "paper",
-    "title": "Search for the Lepton-Flavor Violating Decays B + → π + μ ± e ∓",
-    "abstract": "The first search for the lepton-flavor violating decays B + → π + μ ± e ∓ in proton-proton collisions is presented, using data collected by the LHCb experiment between 2011 and 2018, corresponding to an integrated luminosity of 9 fb − 1 . No significant signal is observed and an upper limit on the branching fraction is set at B ( B + → π + μ ± e ∓ ) < 1.8 × 10 − 9 at the 90% confidence level, 2 orders of magnitude more restrictive than the most stringent upper limit to date. This is the first constraint on lepton-flavor violating b → d quark transitions at the LHC and also sets the most stringent upper limits to date on b → d μ ± e ∓ transitions. Limits on left-handed and scalar scenarios beyond the standard model are also reported.",
+    "title": "Determination of Quark-Gluon-Quark Interference within the Proton",
+    "abstract": "Quarks and gluons, as quantum particles, are subject to various effects that go beyond the naive parton picture and are not captured by ordinary parton densities. In this work, we investigate the twist-three parton distribution functions, which encode quantum interference between quark-gluon-quark states, and for the first time, determine them directly from experimental data. The analysis combines observables described by collinear and transverse-momentum–dependent factorization theorems within a unified global fit, incorporating a complete leading-order QCD evolution at the twist-three level. The extracted distributions reveal clear flavor-dependent patterns and are distinct from zero at a statistically significant level ( 2 − 3 σ ). These findings provide the first quantitative evidence for quark-gluon-quark correlations within the proton, revealing its genuinely quantum nature and opening a new direction for precision studies of partonic correlations.",
+    "authors": [
+      "Alexey Vladimirov",
+      "Guillermo Portela",
+      "Simone Rodini"
+    ],
+    "published": "2026-08-03",
+    "updated": "2026-08-03",
+    "source": "Physical Review Letters",
+    "source_short": "PRL",
+    "source_type": "journal",
+    "doi": "10.1103/rd63-hdwp",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1103/rd63-hdwp",
+    "pdf_url": "",
+    "categories": [
+      "frontiers"
+    ],
+    "tags": [
+      "quantum"
+    ],
+    "importance": 68,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "突破性表述 +8"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
+  },
+  {
+    "id": "0a18a81f7df496f8",
+    "type": "paper",
+    "title": "Dissecting Jet Modification in the Quark-Gluon Plasma with Multipoint Energy Correlators",
+    "abstract": "Energy correlators have recently attracted significant attention in the study of heavy ion collisions due to their potential to robustly connect experimental measurements with an underlying quantum field theoretic description. While theoretical studies have so far primarily focused on the simplest two-point correlator, mapping out the dynamics of the quark-gluon plasma (QGP) will require developing a theoretical understanding of multipoint energy correlators. In this Letter, we present a systematic theoretical study of multipoint energy correlators for jets fragmenting in a dense quark-gluon plasma, accounting for both the medium’s perturbative modification to the jet and its hydrodynamical backreaction. We consider both the scaling behavior of projected correlators, as well as the shape dependent three-point correlator, highlighting how both provide insight into interactions with the QGP. We discuss the parametric dependence of modifications on the medium scales, opening new opportunities to experimentally separate jet modifications from the medium response. Our results open the door to a systematic exploration of multipoint energy correlators in heavy ion collisions.",
+    "authors": [
+      "João Barata",
+      "Ian Moult",
+      "Andrey V. Sadofyev",
+      "João M. Silva"
+    ],
+    "published": "2026-07-31",
+    "updated": "2026-07-31",
+    "source": "Physical Review Letters",
+    "source_short": "PRL",
+    "source_type": "journal",
+    "doi": "10.1103/9jzc-7jcv",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1103/9jzc-7jcv",
+    "pdf_url": "",
+    "categories": [
+      "high-energy-nuclear",
+      "frontiers"
+    ],
+    "tags": [
+      "quark-gluon plasma",
+      "QGP",
+      "quantum"
+    ],
+    "importance": 68,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "跨领域关联 +4",
+      "前沿主题 +4"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
+  },
+  {
+    "id": "d23da222c54918b7",
+    "type": "paper",
+    "title": "Turbulent Nature of the Quasicontinuous Exhaust Regime for Fusion Plasmas",
+    "abstract": "We demonstrate a turbulence mechanism that reconciles high plasma confinement with efficient heat exhaust—a central challenge for fusion energy. Global two-fluid turbulence simulations of the reactor-relevant quasicontinuous exhaust regime on the ASDEX Upgrade tokamak reveal that a quasicoherent mode drives mesoscopic oscillations of the pedestal boundary across the magnetic separatrix and ejects ballistic filaments (blobs), reproducing both the mean profiles and turbulent fluctuations observed experimentally. This behavior arises from a synergistic interplay between kinetic ballooning modes and resistive X-point modes straddling the separatrix. These first-principles results place extrapolations to future fusion reactors on a firm physical footing.",
+    "authors": [
+      "Kaiyu Zhang",
+      "Wladimir Zholobenko",
+      "Andreas Stegmeir",
+      "Michael Faitsch",
+      "Konrad Eder",
+      "Christoph Pitzal",
+      "Frank Jenko",
+      "ASDEX Upgrade Team"
+    ],
+    "published": "2026-07-30",
+    "updated": "2026-07-30",
+    "source": "Physical Review Letters",
+    "source_short": "PRL",
+    "source_type": "journal",
+    "doi": "10.1103/j44y-5dp6",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1103/j44y-5dp6",
+    "pdf_url": "",
+    "categories": [
+      "fusion",
+      "nuclear-reactions"
+    ],
+    "tags": [
+      "fusion",
+      "fusion energy",
+      "tokamak"
+    ],
+    "importance": 68,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "跨领域关联 +4",
+      "前沿主题 +4"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
+  },
+  {
+    "id": "77619e46fc1298fa",
+    "type": "paper",
+    "title": "Breakthrough in Short-Wavelength Infrared Quantum Efficiency in Te-Hyperdoped Silicon Photodetectors via Light-Trapping Strategies",
+    "abstract": "",
+    "authors": [
+      "E. García-Hemme",
+      "R. Benítez-Fernández",
+      "S. Duarte-Cano",
+      "F. Pérez-Zenteno",
+      "S. Algaidy",
+      "C. Mata-Alonso",
+      "S. de Castro-Romero",
+      "R. García-Hernansanz",
+      "J. Olea",
+      "A. del Prado",
+      "E. San Andrés",
+      "I. Mártil",
+      "D. Pastor"
+    ],
+    "published": "2026-07-29",
+    "updated": "2026-07-29",
+    "source": "Physical Review Letters",
+    "source_short": "PRL",
+    "source_type": "journal",
+    "doi": "10.1103/96rx-zx6l",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1103/96rx-zx6l",
+    "pdf_url": "",
+    "categories": [
+      "frontiers"
+    ],
+    "tags": [
+      "quantum"
+    ],
+    "importance": 68,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "突破性表述 +8"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
+  },
+  {
+    "id": "adc04d2bac31ef17",
+    "type": "paper",
+    "title": "Evidence for the Rare Decay B + → Λ ¯ p μ + μ −",
+    "abstract": "A search for the rare decay B + → Λ ¯ p μ + μ − is performed using proton-proton collision data recorded by the LHCb experiment at a center-of-mass energy of s = 13 TeV , corresponding to an integrated luminosity of 5.4 fb − 1 . An excess of events is found with respect to the background-only expectation, with a signal significance of 3.5 standard deviations, in the low invariant-mass region of m ( Λ ¯ p ) < 2.8 GeV / c 2 . The branching fraction is measured to be B low ( B + → Λ ¯ p μ + μ − ) = ( 1.7 0 − 0.56 + 0.65 ( stat ) ± 0.17 ( syst ) ± 0.14 ( ext ) ) × 10 − 8 , where the last uncertainty is due to external inputs on B ( B + → J / ψ Λ ¯ p ) × B ( J / ψ → μ + μ − ) . With no significant signal observed in the high m ( Λ ¯ p ) region above 2.8 GeV / c 2 , an upper limit is set to be B high ( B + → Λ ¯ p μ + μ − ) < 2.8 ( 3.7 ) × 10 − 9 at the 90% (95%) confidence level.",
     "authors": [
       "R. Aaij",
-      "M. Abdelfatah",
       "A. S. W. Abdelmotteleb",
       "C. Abellan Beteta",
       "F. Abudinén",
@@ -806,13 +790,16 @@
       "P. Adlarson",
       "C. Agapopoulou",
       "C. A. Aidala",
+      "Z. Ajaltouni",
       "S. Akar",
       "K. Akiba",
+      "M. Akthar",
       "P. Albicocco",
       "J. Albrecht",
       "R. Aleksiejunas",
       "F. Alessio",
       "P. Alvarez Cartelle",
+      "R. Amalric",
       "S. Amato",
       "J. L. Amey",
       "Y. Amhis",
@@ -830,73 +817,295 @@
       "M. Argenton",
       "S. Arguedas Cuendis",
       "L. Arnone",
-      "M. Artuso",
-      "E. Aslanides",
-      "R. Ataíde Da Silva",
-      "M. Atzeni"
+      "A. Artamonov",
+      "M. Artuso"
     ],
-    "published": "2026-08-04",
-    "updated": "2026-08-04",
+    "published": "2026-07-28",
+    "updated": "2026-07-28",
     "source": "Physical Review Letters",
     "source_short": "PRL",
     "source_type": "journal",
-    "doi": "10.1103/ln8k-mlhr",
+    "doi": "10.1103/pl88-4435",
     "arxiv_id": "",
-    "url": "https://doi.org/10.1103/ln8k-mlhr",
+    "url": "https://doi.org/10.1103/pl88-4435",
     "pdf_url": "",
     "categories": [
       "particle-cross"
     ],
     "tags": [
-      "standard model",
-      "beyond the standard model",
       "LHCb"
     ],
     "importance": 68,
-    "open_access": null
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "突破性表述 +8"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
-    "id": "060c800b496add48",
+    "id": "35aae6223ad56628",
     "type": "paper",
-    "title": "Achievement of a high-density, high-confinement, and high-beta tokamak plasma regime in DIII-D, and implications for a lower-current path for ITER and FPP",
-    "abstract": "Abstract Experiments on DIII-D have demonstrated a density-confinement synergy that enables sustainment of high performance in a previously unattained parameter regime of simultaneous very high energy confinement quality (H 98y2 ≥ 1.5), very high line-average density Greenwald fraction (ƒ Gr = πa 2 <n>/I P ≥ 1.4), and high toroidal beta (β T ≥ 3%). Tokamak operation in this regime is essential for a compact steady-state FPP, as well as for Q=10 with 500 MW of fusion power in ITER at I P << 15 MA. These experiments leveraged the knowledge that, in the high-poloidal-beta (β P ) regime, impurity and density gradients can enhance turbulence stabilization caused by high α MHD (α MHD ~(dβ P )⁄dr). This was described by theoretical predictions and gyrokinetic transport simulations [M.T. Kotschenreuther et al, 2024 Nucl. Fusion, 64 076033], and later confirmed by experiments on DIII-D [S. Ding et al, 2024 Nature 629 555]. To increase both β P and β T , the new experiments increased the ideal-wall stability β N -limit by using a smaller plasma-outer wall distance and higher triangularity in the plasma cross section (top/bottom average δ~0.9), enabled by the recent “shape & volume rise” (SVR) modification to the DIII-D divertor. The higher triangularity also contributed to achieving higher ƒ Gr by enabling higher pedestal density. At high density, the pedestal is ballooning limited and exhibits small and frequent ELMs, while the divertor is near detachment even without any impurity seeding. High plasma performance was attained and sustained reproducibly, with the eventual terminations brought about by an MHD mode destabilized as the current profile slowly continued to evolve. A path to stationary fully noninductive operation might include ECH injection to reduce both core impurity accumulation and the electron collisionality, thus increasing the bootstrap current. These experiments provide the first experimental demonstration of the ƒ Gr , H 98y2 , and β T values required simultaneously for ITER Q = 10 at I P < 10 MA, pointing to practical ways to improve the energy confinement in a fusion reactor.",
+    "title": "Direct Measurement of the In-Medium η ′ Mass Spectrum through the γ γ Decay Channel",
+    "abstract": "We measured the invariant mass of the η ′ ( 958 ) meson through the η ′ → γ γ decay channel to search for possible character change of η ′ in a nuclear medium. The measured invariant-mass spectra were analyzed by fitting realistic spectral functions. An enhancement was observed in the lower tail of the η ′ mass peak for low-momentum ( P γ γ < 1 GeV / c ) events. Three statistical methods were applied to assess the significance of the enhancement. All methods yield a statistical significance above 3.7 σ . The spectral fitting indicates a mass reduction of 57.5 − 27.8 + 5.7 MeV / c 2 . Our result provides the first evidence for an in-medium spectral modification of the η ′ meson obtained through a direct measurement of its invariant mass.",
     "authors": [
-      "Andrea M Garofalo",
-      "Bart Van Compernolle",
-      "Siye Ding",
-      "Jeremy M Hanson",
-      "Christopher Thomas Holcomb",
-      "Tomas Odstrcil",
-      "Nathan Jordan Richner",
-      "Shengyu Shi",
-      "H Q Wang",
-      "Torrin Bechtel",
-      "Colin Chrystal",
-      "Tyler Cote",
-      "Qiming Hu",
-      "A W Hyatt"
+      "Y. Matsumura",
+      "N. Muramatsu",
+      "T. A. Hashimoto",
+      "M. Miyabe",
+      "H. Shimizu",
+      "A. O. Tokiyasu",
+      "J. K. Ahn",
+      "W. C. Chang",
+      "J. Y. Chen",
+      "M. L. Chu",
+      "S. Daté",
+      "T. Gogami",
+      "H. Hamano",
+      "Q. H. He",
+      "K. Hicks",
+      "T. Hiraiwa",
+      "Y. Honda",
+      "T. Hotta",
+      "Y. Inoue",
+      "T. Ishikawa",
+      "I. Jaegle",
+      "Y. Kasamatsu",
+      "H. Katsuragawa",
+      "S. Kido",
+      "R. Kobayakawa",
+      "Y. Kon",
+      "S. Masumoto",
+      "K. Mizutani",
+      "T. Z. Mo",
+      "T. Nakamura",
+      "T. Nakano",
+      "T. Nam",
+      "M. Niiyama",
+      "Y. Nozawa",
+      "Y. Ohashi",
+      "H. Ohnishi",
+      "T. Ohta",
+      "M. Okabe",
+      "K. Ozawa",
+      "C. Rangacharyulu"
+    ],
+    "published": "2026-07-27",
+    "updated": "2026-07-27",
+    "source": "Physical Review Letters",
+    "source_short": "PRL",
+    "source_type": "journal",
+    "doi": "10.1103/x414-n6g9",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1103/x414-n6g9",
+    "pdf_url": "",
+    "categories": [
+      "frontiers"
+    ],
+    "tags": [],
+    "importance": 68,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "突破性表述 +8"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
+  },
+  {
+    "id": "95462409e684e6d4",
+    "type": "paper",
+    "title": "Spin Constraints on 4U 1630−47 via Combined Continuum-fitting and Reflection Methods: A Comparative Study Using Frequentist and Bayesian Statistics",
+    "abstract": "Abstract We present a comprehensive Bayesian spectral analysis of the black hole X-ray binary 4U 1630−47 during its 2022 outburst, using simultaneous NICER and NuSTAR observations. Using the traditional frequentist approach, we build our model combining reflection spectroscopy with continuum-fitting techniques and analyze the data. In the Bayesian framework, we jointly constrain the black hole’s spin, mass, and inclination within a unified framework. Employing nested sampling, we capture parameter degeneracies and rigorously propagate both statistical and systematic uncertainties. Our results yield robust evidence for a high spin, with the exact value still subject to model-dependent systematic uncertainties from both approaches. Our Bayesian analysis infers spin a * = 0.9 6 − 0.03 + 0.02 , mass M BH = 12.1 9 − 1.46 + 1.22 M ⊙ , and inclination angle i = 55.7 5 − 1.37 + 1.60 degrees, obtained via the relxillNS version of our model. It also demonstrates the power of Bayesian inference in providing valuable insights into the complex physics of black hole accretion and enabling high-confidence measurements of fundamental parameters.",
+    "authors": [
+      "Debtroy Das",
+      "Honghui Liu",
+      "Zuobin Zhang",
+      "Cosimo Bambi",
+      "Jiachen Jiang",
+      "Johannes Buchner",
+      "Andrea Santangelo",
+      "Menglei Zhou"
+    ],
+    "published": "2026-08-04",
+    "updated": "2026-08-04",
+    "source": "The Astrophysical Journal",
+    "source_short": "ApJ",
+    "source_type": "journal",
+    "doi": "10.3847/1538-4357/ae839e",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3847/1538-4357/ae839e",
+    "pdf_url": "",
+    "categories": [
+      "ai-science",
+      "frontiers"
+    ],
+    "tags": [
+      "Bayesian inference",
+      "black hole"
+    ],
+    "importance": 66,
+    "score_reasons": [
+      "来源权重 +50",
+      "突破性表述 +8",
+      "跨领域关联 +4",
+      "前沿主题 +4"
+    ],
+    "open_access": null,
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
+  },
+  {
+    "id": "aaad8760bee776a2",
+    "type": "paper",
+    "title": "Uncertainties in the neutrino fog: Studying the isospin-violating dark matter case",
+    "abstract": "First observation of solar neutrinos through coherent elastic neutrino-nucleus scattering by dark matter (DM) direct detection experiments makes the study of the neutrino fog of the most relevance. This irreducible neutrino background depends on the target material as well as other experimental parameters. Recently, the dependence of the neutrino fog on the DM models under consideration has also been remarked on. In this work, we study the case of isospin-violating dark matter (IVDM) models, discussing specific examples of DM models and making a detailed analysis of the implications of IVDM on the neutrino fog. We also explore the conditions under which this background can be mitigated for specific DM models.",
+    "authors": [
+      "Laura Duque",
+      "J. M. Lamprea",
+      "O. G. Miranda"
     ],
     "published": "2026-08-03",
     "updated": "2026-08-03",
-    "source": "Nuclear Fusion",
-    "source_short": "NF",
+    "source": "Physical Review D",
+    "source_short": "PRD",
     "source_type": "journal",
-    "doi": "10.1088/1741-4326/ae93dc",
+    "doi": "10.1103/f3w6-f8sp",
     "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1741-4326/ae93dc",
+    "url": "https://doi.org/10.1103/f3w6-f8sp",
     "pdf_url": "",
     "categories": [
-      "fusion",
-      "nuclear-reactions"
+      "particle-cross"
     ],
     "tags": [
-      "fusion",
-      "nuclear fusion",
-      "tokamak",
-      "ITER"
+      "neutrino",
+      "dark matter"
     ],
     "importance": 66,
-    "open_access": null
+    "score_reasons": [
+      "来源权重 +50",
+      "突破性表述 +16"
+    ],
+    "open_access": null,
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
+  },
+  {
+    "id": "d7a36a4a9927210b",
+    "type": "paper",
+    "title": "Detection of Gamma-Ray Emission with Fermi-LAT from Two Neighboring Galactic Supernova Remnants: G032.8-00.1 (Kes 78) and G032.4+00.1, and Their Adjacent PeVatron Candidate PWN G32.64+0.53",
+    "abstract": "Abstract G032.8-00.1 (Kes 78) and G032.4+00.1 are two adjacent (in projection) supernova remnants (SNRs) with angular sizes of 0 . ° 47 × 0 . ° 26 and ∼0 . ° 15, respectively, apart by ∼0 . ° 4. Both show radio continuum shells—elongated for the former and spherical for the latter—and X-ray emission of different origin: center-filled thermal X-rays from shocked hot gas in Kes 78 and ringlike X-ray synchrotron radiation in G032.4+00.1. While both were previously linked to the gamma-ray source 2FGL J1850.7-0014c, this association was abandoned in the latest Fermi Large Area Telescope (LAT) catalogs. The current view supports a GeV gamma-ray excess from this location, though its origin remains uncertain. Using ∼16.2 yr of Fermi-LAT data, we investigate the gamma-ray emission from this region. Our morphological and spectral analysis identifies these SNRs as the most likely counterparts of the detected excess, which exhibits two distinct maxima. The emission is extended in both cases, indicating spatial association with each SNR. The curved GeV spectra, best described by a log-parabola model, together with likely interaction with nearby molecular gas, strongly support a hadronic origin, although leptonic contributions cannot be excluded. This is further supported by multiwavelength spectral energy distribution modeling. This discovery adds G032.4+00.1 to the select group of Galactic SNRs established as gamma-ray emitters with a dominant nonthermal X-ray component, of which only a handful are currently known. A statistically significant detection at the 4.5 σ level in the 10–100 GeV band is also obtained for the nearby PeVatron candidate pulsar wind nebula PWN G32.64+0.53 associated with PSR J1849–0001.",
+    "authors": [
+      "Miltiadis Michailidis",
+      "Marianne Lemoine-Goumard",
+      "Niccolo Di Lalla",
+      "Nicola Omodei"
+    ],
+    "published": "2026-07-31",
+    "updated": "2026-07-31",
+    "source": "The Astrophysical Journal",
+    "source_short": "ApJ",
+    "source_type": "journal",
+    "doi": "10.3847/1538-4357/ae83a5",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3847/1538-4357/ae83a5",
+    "pdf_url": "",
+    "categories": [
+      "accelerators",
+      "nuclear-astrophysics"
+    ],
+    "tags": [
+      "supernova",
+      "synchrotron"
+    ],
+    "importance": 66,
+    "score_reasons": [
+      "来源权重 +50",
+      "突破性表述 +8",
+      "跨领域关联 +4",
+      "前沿主题 +4"
+    ],
+    "open_access": null,
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
+  },
+  {
+    "id": "1e0c6512c24b1796",
+    "type": "paper",
+    "title": "Probing Binary Neutron Star Merger Ejecta and Remnants with Gravitational-wave and Radio Observations",
+    "abstract": "Abstract We present a study aimed at quantifying the detectability of radio counterparts of binary neutron star (BNS) mergers with total masses ≲3 M ⊙ , which may form neutron star remnants. We focus on mergers localized by gravitational-wave (GW) observations to sky areas ≲10 deg 2 , a precision that greatly facilitates optical counterpart identification and enables radio discovery even without detections at other wavelengths. Widely separated GW detectors are essential for building samples of well-localized BNS mergers accessible to radio telescopes, with minimum yearly detection rates (assuming the smallest values of the BNS local merger rate) ranging from a few with current GW detectors to hundreds with next-generation GW instruments. Current GW networks limit well-localized detections to z ≲ 0.2, while next-generation GW detectors extend the reach to z ≲ 0.8, encompassing the median redshift of short gamma-ray bursts (GRBs). With next-generation radio arrays operating at several tens of GHz and providing an order of magnitude improvement in sensitivity compared to the most sensitive ones available today, short GRB-like jet afterglows can be detected for a large fraction of the considered BNS mergers. At lower radio frequencies, detections with current radio interferometric arrays are feasible, though subject to synchrotron self-absorption effects. The enhanced sensitivity and survey speed of future radio interferometers operating at a few GHz, combined with the higher detection rate of well-localized BNSs enabled by next-generation GW observatories, are key to probing disk-wind and dynamical ejecta afterglows, as well as remnant diversity.",
+    "authors": [
+      "Kara Merfeld",
+      "Alessandra Corsi"
+    ],
+    "published": "2026-07-28",
+    "updated": "2026-07-28",
+    "source": "The Astrophysical Journal",
+    "source_short": "ApJ",
+    "source_type": "journal",
+    "doi": "10.3847/1538-4357/ae80ab",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3847/1538-4357/ae80ab",
+    "pdf_url": "",
+    "categories": [
+      "accelerators",
+      "nuclear-astrophysics"
+    ],
+    "tags": [
+      "neutron star",
+      "synchrotron"
+    ],
+    "importance": 66,
+    "score_reasons": [
+      "来源权重 +50",
+      "突破性表述 +8",
+      "跨领域关联 +4",
+      "前沿主题 +4"
+    ],
+    "open_access": null,
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
+  },
+  {
+    "id": "f39dafc31080145e",
+    "type": "paper",
+    "title": "Multimessenger Constraints on the Central Engine in SN 2023ixf: Neutron Star or Black Hole?",
+    "abstract": "Abstract The physical trigger of core-collapse supernovae (CC-SNe) is a central theme in modern surveys of the transient Universe. A multimessenger approach may provide a unique window to CC-SNe produced by a newly born neutron star (NS) or black hole (BH). Here, we apply joint electromagnetic-gravitational wave (EM-GW) analysis to the nearby event SN 2023ixf using a model-independent broadband search with a GW-energy detection threshold of a few times 10 −5 M ⊙ c 2 for chirps and 10 −2 M ⊙ c 2 for noise-like emission below 1 kHz. No joint LIGO Hanford-Livingston (H1-L1) signal associated with SN 2023ixf is observed over a 2.5 day window proceeding the first discovery. Together with EM photometric-spectroscopic data, we interpret this null result to indicate the absence of BH formation, in part by mass scaling of the BH powering GW170817B following GW170817. This multimessenger outcome thus supports scenarios consistent with NS formation and a progenitor mass likely below ∼20 M ⊙ , independently also estimated by EM interpretations.",
+    "authors": [
+      "Maryam Aghaei Abchouyeh",
+      "Maurice H.P.M. van Putten",
+      "Massimo Della Valle"
+    ],
+    "published": "2026-07-28",
+    "updated": "2026-07-28",
+    "source": "The Astrophysical Journal",
+    "source_short": "ApJ",
+    "source_type": "journal",
+    "doi": "10.3847/1538-4357/ae81a3",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3847/1538-4357/ae81a3",
+    "pdf_url": "",
+    "categories": [
+      "frontiers",
+      "nuclear-astrophysics"
+    ],
+    "tags": [
+      "neutron star",
+      "core-collapse",
+      "gravitational wave",
+      "black hole"
+    ],
+    "importance": 66,
+    "score_reasons": [
+      "来源权重 +50",
+      "突破性表述 +8",
+      "跨领域关联 +4",
+      "前沿主题 +4"
+    ],
+    "open_access": null,
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
     "id": "3c1a019c77dc5d6e",
@@ -926,37 +1135,161 @@
       "hadron"
     ],
     "importance": 64,
-    "open_access": null
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "前沿主题 +4"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
-    "id": "1c1e9a15d493c7c7",
+    "id": "8c4f7ff54ac11754",
     "type": "paper",
-    "title": "Scaling of soft QGP signatures in relativistic lead, xenon, and oxygen collisions in EPOS4",
+    "title": "Relativistic effects of PSR J1856–0039 double neutron star system in a 2.36-hour compact orbit",
     "abstract": "",
     "authors": [
-      "Salman Khurshid Malik",
-      "Fakhar Ul Haider",
-      "Pratibha Bhagat",
-      "Anju Bhasin",
-      "Ramni Gupta"
+      "Anonymous"
     ],
-    "published": "2026-08-07",
-    "updated": "2026-08-07",
-    "source": "Physical Review C",
-    "source_short": "PRC",
+    "published": "2026-07-28",
+    "updated": "2026-07-28",
+    "source": "Physical Review Letters",
+    "source_short": "PRL",
     "source_type": "journal",
-    "doi": "10.1103/gqr8-vjxy",
+    "doi": "10.1103/hmjp-htd1",
     "arxiv_id": "",
-    "url": "https://doi.org/10.1103/gqr8-vjxy",
+    "url": "https://doi.org/10.1103/hmjp-htd1",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-astrophysics"
+    ],
+    "tags": [
+      "neutron star"
+    ],
+    "importance": 64,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "前沿主题 +4"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
+  },
+  {
+    "id": "ae743a624c1951b4",
+    "type": "paper",
+    "title": "Next-to-next-to-leading-order QCD corrections to hadron production in deep-inelastic scattering at finite transverse momentum",
+    "abstract": "",
+    "authors": [
+      "Anonymous"
+    ],
+    "published": "2026-07-28",
+    "updated": "2026-07-28",
+    "source": "Physical Review Letters",
+    "source_short": "PRL",
+    "source_type": "journal",
+    "doi": "10.1103/bf1g-9hq7",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1103/bf1g-9hq7",
     "pdf_url": "",
     "categories": [
       "high-energy-nuclear"
     ],
     "tags": [
-      "QGP"
+      "hadron"
+    ],
+    "importance": 64,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +60",
+      "前沿主题 +4"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
+  },
+  {
+    "id": "90453e911d1d0ff1",
+    "type": "paper",
+    "title": "Inferring the Intrinsic Population and Cosmic Rate of Short Gamma-Ray Bursts through Forward Modeling of Fermi/GBM and Swift/BAT Observations",
+    "abstract": "Abstract Short gamma-ray bursts (sGRBs) are widely believed to originate from mergers of compact binaries, including binary neutron stars and neutron star–black hole systems. However, the observed sGRB population is strongly shaped by selection effects associated with detector sensitivity, triggering criteria, and jet orientation, which bias the inferred luminosity, redshift, and spectral distributions. We develop a forward-modeling framework to constrain the intrinsic properties and cosmic formation rate of sGRBs by simulating their detection with two independent instruments operating in different energy bands: the Fermi Gamma-ray Burst Monitor (GBM) and the Swift Burst Alert Telescope (BAT). At the level of the raw observations, the two samples exhibit apparent differences in their brightness and spectral distributions. We generate synthetic sGRB populations using parameterized luminosity functions, spectral models, and redshift evolution tied to the cosmic star formation history convolved with a power-law delay-time distribution. Each burst is passed through realistic, instrument-specific detector responses, background conditions, and onboard trigger algorithms, and is then spectrally fit to recover observable quantities. We find that a single intrinsic population model nevertheless provides a statistically consistent description of both datasets, reproducing the observed distributions of low-energy spectral index, peak energy, and fluence. The analysis reveals strong selection biases that favor low-redshift detections and truncate the observed distributions of peak energy, fluence, and duration, while only weakly affecting the low-energy spectral index. Correcting for jet beaming, we infer local sGRB formation rates of ∼258 and 562 yr −1 Gpc −3 from Swift/BAT and Fermi/GBM, broadly consistent with binary neutron-star merger rates inferred from gravitational-wave observations.",
+    "authors": [
+      "Ya-Nan Wang",
+      "Xiang-Li Qian",
+      "Yi-Qing Guo",
+      "Tian-Lu Chen",
+      "Shan-Jie Shu",
+      "Jia-Dan Xie",
+      "Yu-Hua Yao",
+      "Qiang Yuan",
+      "You-Liang Feng"
+    ],
+    "published": "2026-08-07",
+    "updated": "2026-08-07",
+    "source": "The Astrophysical Journal",
+    "source_short": "ApJ",
+    "source_type": "journal",
+    "doi": "10.3847/1538-4357/ae8e70",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3847/1538-4357/ae8e70",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-astrophysics",
+      "frontiers",
+      "detectors-daq"
+    ],
+    "tags": [
+      "neutron star",
+      "neutron-star merger",
+      "detector",
+      "black hole"
     ],
     "importance": 62,
-    "open_access": null
+    "score_reasons": [
+      "来源权重 +50",
+      "跨领域关联 +8",
+      "前沿主题 +4"
+    ],
+    "open_access": null,
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
+  },
+  {
+    "id": "6fc519b863368fbe",
+    "type": "paper",
+    "title": "A Heliosphere-like Current Sheet in Jupiter’s Magnetosphere with Hinging Geometry",
+    "abstract": "Abstract Jupiter’s magnetospheric current sheet is predominantly shaped by rapid rotation and internal plasma sources, yet its structure is also influenced by the surrounding solar wind. It provides a natural laboratory for understanding how a rotation-dominated current sheet maintains its global organization while accommodating external forcing. Using Juno observations together with analytical modeling, we investigate both the global geometry and small-scale irregularities of this system. Our analysis indicates that Jupiter’s current sheet exhibits a wavy “ballerina-skirt” morphology analogous to that of the heliospheric current sheet. Beyond this large-scale similarity, statistical analysis of magnetic polarity distributions provides the first direct observational evidence for Jovian current sheet hinging, identifying a characteristic distance of ∼30 R J . Small-scale structures associated with external perturbations are likewise more frequently observed beyond this hinging distance. The correspondence between boundaries in large-scale geometry and small-scale activity indicates a physical transition: ∼30 R J separates a rotation-dominated inner region from an outer region governed by the complex interplay between internal subcorotating plasma dynamics and external solar wind forcing. The structural parallels with the heliospheric current sheet, together with multiscale deviations from this baseline morphology, illustrate how Jupiter’s magnetospheric current sheet operates and maintains organization under coupled internal and external drivers, offering a framework for understanding other rapidly rotating magnetized plasma systems.",
+    "authors": [
+      "J. W. Sun",
+      "L. Xie",
+      "Z. H. Yao",
+      "S. Y. Fu",
+      "B. Zhang",
+      "R. L. Guo",
+      "Y. Xu",
+      "Z. L. Zeng"
+    ],
+    "published": "2026-08-06",
+    "updated": "2026-08-06",
+    "source": "The Astrophysical Journal",
+    "source_short": "ApJ",
+    "source_type": "journal",
+    "doi": "10.3847/1538-4357/ae78de",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3847/1538-4357/ae78de",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-astrophysics"
+    ],
+    "tags": [],
+    "importance": 62,
+    "score_reasons": [
+      "来源权重 +50",
+      "突破性表述 +8",
+      "前沿主题 +4"
+    ],
+    "open_access": null,
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
     "id": "230907abd130ab2f",
@@ -988,7 +1321,14 @@
       "surrogate model"
     ],
     "importance": 62,
-    "open_access": null
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +50",
+      "跨领域关联 +8",
+      "前沿主题 +4"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
     "id": "a3ad5bd308304b5c",
@@ -1028,7 +1368,14 @@
       "tokamak"
     ],
     "importance": 62,
-    "open_access": null
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +50",
+      "跨领域关联 +8",
+      "前沿主题 +4"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
     "id": "3dfbe3d30a11f5b5",
@@ -1064,98 +1411,221 @@
       "ITER"
     ],
     "importance": 62,
-    "open_access": null
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +50",
+      "跨领域关联 +8",
+      "前沿主题 +4"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
-    "id": "71addd3402d8cc1c",
+    "id": "f7729feaad3dd765",
     "type": "paper",
-    "title": "Direction-resolved synthetic DD neutron spectra based on arbitrary fast-ion distributions for the HL-3 tokamak",
-    "abstract": "Abstract A spatially resolved and direction-resolved framework for computing fusion reaction rates and synthetic neutron energy spectra is implemented in the Particle Orbit Tracing Code (PTC). The model accepts arbitrary ion velocity distributions and explicitly separates thermal, beam–thermal, and beam–beam contributions, enabling calculations of local fusion sources and line-integrated neutron spectra for specified viewing geometries. The approach is applied to HL-3 tokamak plasmas with neutral beam injection. For core ion temperatures T i 0 ⩽ 20 keV , the volume-integrated DD neutron production rate is dominated by beam–thermal reactions, accounting for approximately 70%–80% of the total. Increasing the beam injection energy enhances the beam–thermal contribution to the neutron production rate and leads to higher-energy and broader neutron spectra. The neutron spectral shape depends strongly on the viewing geometry: a mid-plane radial line-of-sight (LOS) exhibits a clear double-peaked beam–thermal spectrum, whereas a mid-plane chord LOS yields a smoother, single-peaked spectrum. The volume-integrated DD neutron production rate predicted by PTC is slightly higher than the TRANSP result, with a relative difference of ∼ 7 % when normalised to the PTC value. Compared with unfolded HL-3 DD neutron spectra from shots #6002 and #12260, the LOS-integrated synthetic spectra capture the main DD-peak structure and the spectral shape on the high-energy side at the source-spectrum level. The remaining low-energy-side differences are mainly associated with diagnostic-chain effects and residual source-modelling limitations.",
+    "title": "Didecay signature of new physics particles at intensity frontier experiments",
+    "abstract": "We present a discovery-era strategy for intensity frontier experiments based on “didecay” events, in which feebly interacting particles (FIPs) are produced in pairs and then both decay inside the detector. This signature may exist in broad classes of models with FIPs decaying in the same way as minimal “portal” particles. The two displaced vertices may allow reconstruction of the pair invariant mass and hence reveal the production channel, information normally inaccessible at these facilities. This, in turn, lets one discriminate between FIP models that share identical decay signatures. As a case study, we consider the model of Higgs-like scalars and show that SHiP, Belle II, and the Downstream@LHCb can each cover wide domains of viable parameter space using didecays.",
     "authors": [
-      "Xiangfeng Wu",
-      "Zhanhong Lin",
-      "Guangzhi Ren",
-      "Jie Zhang",
-      "Baolong Hao",
-      "Guoliang Yuan",
-      "Guangzhou Hao",
-      "Guanming Yang",
-      "Lei Feng",
-      "Zhengji Li",
-      "Shuosu Yang",
-      "Feng Wang",
-      "Zheng-Xiong Wang"
+      "Giovani Dalla Valle Garcia",
+      "Maksym Ovchynnikov"
     ],
     "published": "2026-08-05",
     "updated": "2026-08-05",
-    "source": "Nuclear Fusion",
-    "source_short": "NF",
+    "source": "Physical Review D",
+    "source_short": "PRD",
     "source_type": "journal",
-    "doi": "10.1088/1741-4326/ae8de7",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1741-4326/ae8de7",
-    "pdf_url": "",
+    "doi": "10.1103/l1t6-5nyh",
+    "arxiv_id": "2503.01760",
+    "url": "https://doi.org/10.1103/l1t6-5nyh",
+    "pdf_url": "https://arxiv.org/pdf/2503.01760",
     "categories": [
-      "nuclear-reactions",
-      "fusion"
+      "particle-cross",
+      "detectors-daq"
     ],
     "tags": [
-      "fusion reaction",
-      "fusion",
-      "nuclear fusion",
-      "tokamak"
+      "detector",
+      "Belle II",
+      "LHCb"
     ],
     "importance": 62,
-    "open_access": null
+    "score_reasons": [
+      "来源权重 +50",
+      "突破性表述 +8",
+      "跨领域关联 +4"
+    ],
+    "open_access": null,
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
-    "id": "02e65ee2376f47d0",
+    "id": "7b78ab16dbe0b356",
     "type": "paper",
-    "title": "Alpha particle velocity- and orbit-space sensitivity of gamma-ray spectroscopy diagnostics based on the 10 B ( α , p γ ) 13 C reaction",
-    "abstract": "Abstract A key challenge on the path towards burning plasmas is the measurement of the alpha particle phase space. Among the few experimental options available, gamma-ray spectroscopy (GRS) is a key method. Previous demonstrations at Joint European Torus were based on reactions between alpha particles and beryllium as the target impurity, but this is no longer applicable, neither at ITER with a tungsten-based first wall, nor in other forthcoming burning plasma experiments. On the other hand, owing to the use of boron injection for plasma operations in tungsten devices, gamma-ray reactions between the alpha particles and boron impurities have been proposed as an alternative. This work presents the first numerical evaluation of the velocity-space and orbit-space sensitivity of boron-based GRS to the alpha particle phase space, focusing on the 10 B ( α , p γ ) 13 C reaction. Depending on the emission peak, we find that measurements can be separately sensitive to selected super- and sub-Alfvenic velocities, with an enhanced sensitivity towards particles on trapped and potato orbits, for the case of radial lines of sight. Information on co- and counter-going alphas may be accessed only by more refined spectral shape analysis or if a tangential line of sight is deployed. The results are relevant to establish a bridge between the indirect GRS measurements and the alpha particle phase space. They furthermore provide a quantitative input to determine which wave-alpha particle resonant interactions may (or may not) be measurable with boron based GRS, depending on the observation geometry.",
+    "title": "Significant Differences in Energetic Storm Particle Properties Observed by STEREO-A and Wind at a Longitudinal Separation of 6°",
+    "abstract": "Abstract We investigate an energetic storm particle (ESP) event associated with an interplanetary shock observed near 1 au on 2023 November 12 by STEREO-A and Wind, which were longitudinally separated by only ∼6°. The two spacecraft measured shocks with similar compression ratios, shock speeds, and shock-normal orientations, but distinct energetic-particle responses. Wind measured no detectable ESP enhancement, whereas STEREO-A observed a short-lived increase in ion intensity near the shock. At STEREO-A, the ion spectra are well described by single power laws, with a temporary softening from γ ≈ 2.8 to γ ≈ 3.3 near the shock and no clear evidence for an exponential cutoff within the measured energy range (∼0.1–6.5 MeV). At Wind, the spectra remain nearly unchanged across the shock, with γ ≈ 3.1 and no localized intensity increase. The main differences in the derived shock parameters are a moderate difference in shock angle ( θ Bn ∼ 58° at Wind and θ Bn ∼ 74° at STEREO-A) and a larger difference in the Alfvénic Mach number ( M A ∼ 5.7 at Wind and M A ∼ 2.1 at STEREO-A). Despite the larger Alfvénic Mach number at Wind, no localized ESP enhancement was observed there. These observations suggest that even small longitudinal separations can be associated with markedly different energetic-particle responses at the same interplanetary shock. The results further indicate that shock parameters alone are not sufficient to determine whether an ESP enhancement will be observed and that magnetic connectivity and particle transport conditions may contribute to the appearance of ESP enhancements at individual spacecraft.",
     "authors": [
-      "M. Nocente",
-      "A. Ciurlino",
-      "A. Valentini",
-      "H. Järleblad",
-      "Y. Kazakov",
-      "V.G. Kiptily",
-      "M. Rud",
-      "B. Coriton",
-      "G. Croci",
-      "A. Dal Molin",
-      "M. Dalla Rosa",
-      "S. Fugazza",
-      "G. Gorini",
-      "A. Kovalev",
-      "G. Marcer",
-      "M. Rebai",
-      "F. Scioscioli",
-      "M. Tardocchi",
-      "M. Salewski"
+      "A. Santa Fe Dueñas",
+      "N. Lugaz",
+      "B. Zhuang",
+      "N. Al-Haddad"
     ],
-    "published": "2026-08-05",
-    "updated": "2026-08-05",
-    "source": "Nuclear Fusion",
-    "source_short": "NF",
+    "published": "2026-08-04",
+    "updated": "2026-08-04",
+    "source": "The Astrophysical Journal",
+    "source_short": "ApJ",
     "source_type": "journal",
-    "doi": "10.1088/1741-4326/ae8de9",
+    "doi": "10.3847/1538-4357/ae8848",
     "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1741-4326/ae8de9",
+    "url": "https://doi.org/10.3847/1538-4357/ae8848",
     "pdf_url": "",
     "categories": [
-      "fusion",
-      "experimental-nuclear",
-      "nuclear-reactions"
+      "nuclear-astrophysics"
+    ],
+    "tags": [],
+    "importance": 62,
+    "score_reasons": [
+      "来源权重 +50",
+      "突破性表述 +8",
+      "前沿主题 +4"
+    ],
+    "open_access": null,
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
+  },
+  {
+    "id": "86381987bb18bfc1",
+    "type": "paper",
+    "title": "Discovery and Timing of the First Millisecond Pulsar in NGC 6316",
+    "abstract": "Abstract NGC 6316 is a poorly studied, distant, and massive globular cluster with prominent gamma-ray emission detected via the Fermi Large Area Telescope. Based on gamma-ray spectral studies, NGC 6316 is expected to host tens of millisecond pulsars (MSPs). Using the Green Bank Telescope and Murriyang, CSIRO’s Parkes radio telescope (Parkes), we present the discovery and a 3.1 yr duration timing solution of the first MSP found in the cluster. PSR J1716−2808A has a rotational period of 2.45 ms and is in a binary with a ∼0.1 M ⊙ companion with an orbital period of 0.42 day. This is a typical cluster MSP within a compact orbit with no evidence of eclipses. PSR J1716−2808A has a dispersion measure (DM) = 172.26 pc cm −3 , which is lower than predicted NE2001, YMW16, and NE2025 electron density model values. The MSP is located within half a core radius from the cluster center and has a negative period derivative, implying that it is on the back side of the cluster and is being accelerated towards us. Given the negative period derivative, we report an upper limit on the maximum line-of-sight cluster acceleration, a l ,GC / c ≈ −2.3 × 10 −18 s −1 , experienced by the pulsar and constraints on the magnetic field to be <∼3 × 10 8 G. The presence of external acceleration strongly supports the pulsar being within NGC 6316. We can better constrain NGC 6316’s properties through longer-term timing of PSR J1716−2808A or by finding more pulsars within the cluster. Based on the gamma-ray pulsar estimates and a cluster distance of 11.3 kpc, deeper, more sensitive searches would find many additional pulsars.",
+    "authors": [
+      "D. R. Bhakta",
+      "S. M. Ransom",
+      "M. DeCesar",
+      "S. Dai"
+    ],
+    "published": "2026-08-04",
+    "updated": "2026-08-04",
+    "source": "The Astrophysical Journal",
+    "source_short": "ApJ",
+    "source_type": "journal",
+    "doi": "10.3847/1538-4357/ae883e",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3847/1538-4357/ae883e",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-astrophysics"
+    ],
+    "tags": [],
+    "importance": 62,
+    "score_reasons": [
+      "来源权重 +50",
+      "突破性表述 +8",
+      "前沿主题 +4"
+    ],
+    "open_access": null,
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
+  },
+  {
+    "id": "4727d7f4f8288d25",
+    "type": "paper",
+    "title": "SN 2021ukt: A Transitional Supernova with a Short Plateau and Persistent Interaction",
+    "abstract": "Abstract We present spectroscopic and photometric observations of SN 2021ukt, a peculiar short-plateau object that was originally identified as a Type IIn supernovae (SN) and later underwent an unprecedented transition to a Type Ib (possibly Type IIb) SN. The early time light curves of SN 2021ukt exhibit an ∼25 day plateau. Such a short phase of hydrogen recombination suggests a rather thin H-rich outer envelope of the progenitor star. The narrow Balmer emission lines in the spectra of SN 2021ukt during the first week indicate the interaction between the expanding ejecta and the immediate circumstellar material (CSM). This H α line is observed throughout its helium-rich ejecta-dominated phase and nebular phase, suggesting persistent interaction with a radially extended CSM profile. We explore synthetic light curves among grids of parameters generated by MESA + STELLA . We also compare the spectrophotometric evolution of SN 2021ukt with several SNe that exhibit a short plateau and persistent ejecta–CSM interaction. An estimate of the progenitor mass of SN 2021ukt is made based on the flux ratio between [Ca ii ] λλ 7291, 7324 and [O i ] λλ 6300, 6364 during its nebular phase. Our analysis suggests that the progenitor star of SN 2021ukt has a zero-age main-sequence mass of M ZAMS ≈ 12 M ⊙ , a mass of radioactive 56 Ni synthesized in the SN ejecta of M Ni ≈ 0.05 M ⊙ , and a mass of the H-rich envelope of M H,env ≲ 0.5 M ⊙ . This study adds to the growing sample of transitional SNe, reinforcing evidence for a continuum of underrepresented progenitors whose evolutionary pathways lie between those of standard SN models.",
+    "authors": [
+      "Neil R. Pichay",
+      "Sergiy S. Vasylyev",
+      "Audrey M. Liddle",
+      "Alexei V. Filippenko",
+      "Yi 轶 Yang 杨",
+      "WeiKang Zheng",
+      "Thomas G. Brink",
+      "Matthew Graham",
+      "Daniel Stern",
+      "Daichi Hiramatsu",
+      "Claudia P. Gutiérrez",
+      "K. Azalee Bostroem",
+      "Estefania Padilla Gonzalez",
+      "D. Andrew Howell",
+      "Curtis McCully",
+      "Megan Newsome",
+      "Craig Pellegrino",
+      "Giacomo Terreran",
+      "Ivan Altunin",
+      "Raphael Baer-Way",
+      "Vidhi Chandler",
+      "Asia A. deGraw",
+      "Connor F. Jennings",
+      "Michael B. May"
+    ],
+    "published": "2026-08-03",
+    "updated": "2026-08-03",
+    "source": "The Astrophysical Journal",
+    "source_short": "ApJ",
+    "source_type": "journal",
+    "doi": "10.3847/1538-4357/ae89a8",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3847/1538-4357/ae89a8",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-astrophysics"
     ],
     "tags": [
-      "spectroscopy",
-      "fusion",
-      "nuclear fusion",
-      "ITER"
+      "supernova"
     ],
     "importance": 62,
-    "open_access": null
+    "score_reasons": [
+      "来源权重 +50",
+      "突破性表述 +8",
+      "前沿主题 +4"
+    ],
+    "open_access": null,
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
+  },
+  {
+    "id": "0b888ffa27ade38a",
+    "type": "paper",
+    "title": "Impact of Initial Mass Function on the Chemical Evolution of High-redshift Galaxies",
+    "abstract": "Abstract Recent observations by the James Webb Space Telescope (JWST) have found evidence for an invariant relation between stellar mass, metallicity, and star formation rate up to z ∼ 8 and its breakdown at higher redshifts. Understanding the underlying physics driving such correlations is thus crucial. Here, we explore the impact of the initial mass function (IMF) on the chemical evolution of high-redshift galaxies. Indeed, star formation and metal enrichment in galaxies are regulated by supernova (SN) explosions and metal yields from massive stars, which are sensitive to the high-mass end of the IMF. Using the semi-analytical galaxy evolution code a-sloth , we follow galactic baryon cycles along merger trees built from a high-resolution cosmological simulation. Stellar feedback is modeled with up-to-date stellar evolution tracks covering the full metallicity range ( Z ∼ 10 −11 –0.03) and a broad stellar mass range ( m ⋆ ∼ 2–600 M ⊙ ), including metal yields from stellar winds, core-collapse SNe, (pulsational) pair-instability SNe, and Type Ia SNe. Assuming a Kroupa-like IMF with a varying upper mass limit m max , we find that only models with m max ≳ 200 M ⊙ can simultaneously reproduce the observed mass–metallicity–star formation rate relation and cosmic star formation history at z ≳ 4, owing to enhanced metal yields from pair-instability SNe. Our results confirm that very massive (≳200 M ⊙ ) stars and pair-instability SNe play an important role in the star formation and chemical enrichment histories of high- z galaxies. They also have profound implications for electromagnetic transients and gravitational-wave events.",
+    "authors": [
+      "Boyuan 博远 Liu 刘",
+      "Michela Mapelli",
+      "Volker Bromm",
+      "Ralf S. Klessen",
+      "Lumen Boco",
+      "Tilman Hartwig",
+      "Simon C. O. Glover",
+      "Veronika Lipatova",
+      "Guglielmo Costa",
+      "Marco Dall’Amico",
+      "Giuliano Iorio",
+      "Kendall Shepherd",
+      "Alessandro Bressan"
+    ],
+    "published": "2026-08-03",
+    "updated": "2026-08-03",
+    "source": "The Astrophysical Journal",
+    "source_short": "ApJ",
+    "source_type": "journal",
+    "doi": "10.3847/1538-4357/ae81a1",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3847/1538-4357/ae81a1",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-astrophysics"
+    ],
+    "tags": [
+      "supernova",
+      "core-collapse"
+    ],
+    "importance": 62,
+    "score_reasons": [
+      "来源权重 +50",
+      "突破性表述 +8",
+      "前沿主题 +4"
+    ],
+    "open_access": null,
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
     "id": "8d2b1de1417d8da9",
@@ -1201,450 +1671,91 @@
       "nuclear fusion"
     ],
     "importance": 62,
-    "open_access": null
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +50",
+      "跨领域关联 +8",
+      "前沿主题 +4"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
-    "id": "edb199634717028d",
+    "id": "e16d6d647250ec24",
     "type": "paper",
-    "title": "Experimental demonstration of the recoil proton track imaging method for ICF deuterium-tritium neutron spectroscopy on a tandem proton accelerator",
+    "title": "Rapid cooling of the Cassiopeia A neutron star due to superfluid quantum criticality",
     "abstract": "",
     "authors": [
-      "Yaodong Sang",
-      "Jinliang Liu",
-      "Qingmin Zhang",
-      "Shiyi He",
-      "Liang Chen",
-      "Silong Zhang",
-      "Zhipu Hou",
-      "Quan Zhang",
-      "Haoxuan Guo",
-      "Naizhe Zhao",
-      "Xiaoping Ouyang"
+      "Hao-Fu Zhu",
+      "Guo-Zhu Liu",
+      "Xufen Wu"
     ],
     "published": "2026-08-01",
     "updated": "2026-08-01",
-    "source": "Nuclear Instruments and Methods in Physics Research A",
-    "source_short": "NIMA",
+    "source": "Physics Letters B",
+    "source_short": "PLB",
     "source_type": "journal",
-    "doi": "10.1016/j.nima.2026.171541",
+    "doi": "10.1016/j.physletb.2026.140591",
     "arxiv_id": "",
-    "url": "https://doi.org/10.1016/j.nima.2026.171541",
+    "url": "https://doi.org/10.1016/j.physletb.2026.140591",
     "pdf_url": "",
     "categories": [
-      "accelerators",
-      "experimental-nuclear",
-      "fusion"
-    ],
-    "tags": [
-      "spectroscopy",
-      "accelerator",
-      "tritium"
-    ],
-    "importance": 62,
-    "open_access": null
-  },
-  {
-    "id": "920ee7c33edb6beb",
-    "type": "paper",
-    "title": "Pre-conceptual design of compact-fusion prototypical neutron source target for optimized fusion materials testing",
-    "abstract": "Abstract This work describes a design study of a cyclotron-driven Fusion Prototypic Neutron Source (FPNS) target optimized to meet US specifications for a fusion materials irradiation target. The analysis supports the use of multiple compact deuterium cyclotrons beams at a total current under 40 mA in the range of 35 MeV to 60 MeV converging on flowing annulus of lithium surrounding the sample target. The sample target region is modeled as miniaturized tensile and Charpy bend-bar specimens located within the central region of the annulus. A specific focus of this work is to provide a highly uniform flux trap of fusion-relevant neutrons maximizing the average neutron damage per unit of beam current. This design achieves the desired sample volume (>50 cm3) and damage (>10 dpa/yr) metrics with damage gradient (<40%) within the sample target region.&#xD;&#xD;The proposed design is modeled using the neutronic and transmutation analysis codes, PHITS [1] and FISPACT [2], with the assistance of a customized coupling computation platform. Sensitivity analyses are presented investigating the impact of the deuteron beam (height and energy), dimension of the various system elements , and the chosen nuclear data library (deuteron library, neutron library, Damage library) on the ultimate figure of merits including damage dose rate (DPA), gas production. Additionally, a complete transmutation calculation has been carried out on relevant fusion materials: Eurofer97, Silicon Carbide, Alloy 316, V-4Cr-4Ti, and pure tungsten, to ensure relevance of this C-FPNS elemental transmutation spectrum to that of a fusion reactor, especially for high deuterium energies. Implications to materials response of using deuterium energies in the 35-60 MeV range as compared to self-same materials exposed to a true fusion reactor neutron spectrum are presented.&#xD;",
-    "authors": [
-      "Jiankai Yu",
-      "Nesrin Cetiner",
-      "Pei Biorn-Hansen",
-      "Brian D Wirth",
-      "Jaime Marian",
-      "Ethan Peterson",
-      "Daniel Winklehner",
-      "Lance Snead"
-    ],
-    "published": "2026-07-31",
-    "updated": "2026-07-31",
-    "source": "Nuclear Fusion",
-    "source_short": "NF",
-    "source_type": "journal",
-    "doi": "10.1088/1741-4326/ae9321",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1741-4326/ae9321",
-    "pdf_url": "",
-    "categories": [
-      "fusion",
-      "accelerators",
-      "nuclear-reactions"
-    ],
-    "tags": [
-      "fusion",
-      "cyclotron",
-      "nuclear fusion",
-      "fusion reactor",
-      "nuclear data"
-    ],
-    "importance": 62,
-    "open_access": null
-  },
-  {
-    "id": "d1d8f045721d3c61",
-    "type": "paper",
-    "title": "The impact of nuclear equations of state on the dynamics and multi-messenger emission of magnetorotational stellar explosions",
-    "abstract": "arXiv:2608.06017v1 Announce Type: cross Abstract: The gravitational collapse of massive stars at the end of their life leads to powerful supernova explosions that produce compact objects, regulate the dynamics of host galaxies, and contribute to cosmic chemical evolution. In the presence of fast rotation and strong magnetic fields, such explosions can reach extreme energies, explaining sources such as hypernovae and long gamma-ray bursts. We investigate the impact of variations in the nuclear equation of state (EoS) on magnetorotational explosions and their multimessenger emission, including neutrinos and gravitational waves. Differences in stiffness, composition, and finite-temperature behavior of the EoS affect the collapse, bounce, and jet-launching phases. Using the Aenus-Alcar code, which includes relativistic magnetohydrodynamics, two-moment neutrino transport, neutrino-matter interactions, and general-relativistic corrections, we perform axisymmetric simulations with different EoSs. All models start from the same pre-supernova progenitor with solar metallicity, a zero-age main sequence mass of 20 solar masses, a dipolar magnetic field, and a shellular rotation profile. The different EoSs produce significant variations in explosion dynamics, proto-neutron star properties, ejecta mass, and multimessenger signals. Our results show that magnetorotational core-collapse supernova signatures depend not only on the cold stiffness of the EoS, but also on its thermal and compositional properties, highlighting the importance of combining gravitational-wave and neutrino observations to constrain dense matter physics and the explosion mechanism.",
-    "authors": [
-      "Andrea Celati (Dipartimento di Fisica e Astronomia",
-      "Universita di Firenze",
-      "Florence",
-      "Italy",
-      "INFN Sezione di Firenze",
-      "Florence",
-      "Italy)",
-      "Matteo Bugli (Universite Paris-Saclay",
-      "Universite Paris Cite",
-      "CEA",
-      "CNRS",
-      "AIM",
-      "Gif-sur-Yvette",
-      "France",
-      "INAF Osservatorio Astrofisico di Arcetri",
-      "Florence",
-      "Italy)",
-      "Luca Del Zanna (Dipartimento di Fisica e Astronomia",
-      "Universita di Firenze",
-      "Florence",
-      "Italy",
-      "INFN Sezione di Firenze",
-      "Florence",
-      "Italy)",
-      "Marco Cusinato (Departament d'Astronomia i Astrofisica",
-      "Universitat de Valencia",
-      "Valencia",
-      "Spain",
-      "Universite Paris-Saclay",
-      "Universite Paris Cite",
-      "CEA",
-      "CNRS",
-      "AIM",
-      "Gif-sur-Yvette",
-      "France)",
-      "Martin Obergaulinger (Departament d'Astronomia i Astrofisica",
-      "Universitat de Valencia",
-      "Valencia",
-      "Spain",
-      "Observatori Astronomic"
-    ],
-    "published": "2026-08-07",
-    "updated": "2026-08-07",
-    "source": "arXiv astro-ph.SR",
-    "source_short": "astro-ph.SR",
-    "source_type": "preprint",
-    "doi": "",
-    "arxiv_id": "2608.06017",
-    "url": "https://arxiv.org/abs/2608.06017",
-    "pdf_url": "https://arxiv.org/pdf/2608.06017",
-    "categories": [
+      "frontiers",
       "nuclear-astrophysics",
-      "particle-cross"
+      "nuclear-data-applications"
     ],
     "tags": [
       "neutron star",
-      "supernova",
-      "equation of state",
-      "neutrino"
+      "criticality",
+      "quantum"
     ],
-    "importance": 60,
-    "open_access": true
+    "importance": 62,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +50",
+      "跨领域关联 +8",
+      "前沿主题 +4"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   },
   {
-    "id": "885d529130d5909c",
+    "id": "01d52fc87dc4ce0e",
     "type": "paper",
-    "title": "Quark matter at finite temperature and proto-quark stars with the axion effects in SU(3) Nambu-Jona-Lasinio model",
-    "abstract": "arXiv:2608.06024v1 Announce Type: new Abstract: We investigate the thermodynamical properties of strange quark matter (SQM) and proto-quark stars (PQSs) within the SU(3) Nambu-Jona-Lasinio (NJL) model at finite temperature, specifically incorporating the effects of axion fields and vector interactions. Our results demonstrate that these interactions significantly influence the equation of state (EoS), constituent quark masses, entropy density, and the maximum star mass of PQSs at the isentropic stages along the star evolution line. Furthermore, we reveal a distinct thermodynamic signature in the early evolution: the presence of trapped neutrinos leads to a substantial increase in electron number density while simultaneously suppressing the core temperature compared to the neutrino-free case. These findings may highlight the crucial role of the axion effects, flavor-dependent vector interactions, and particle composition in determining the observable properties of compact stars at finite temperature.",
-    "authors": [
-      "Peng-Cheng Chu",
-      "Jiao-Jiao Wang",
-      "Ke Liu",
-      "Peng Wu",
-      "Yu-Heng Liu",
-      "He Liu",
-      "Hong-Ming Liu",
-      "Xiao-Hua Li",
-      "Min Ju",
-      "Xu-Hao Wu",
-      "Ying Zhou"
-    ],
-    "published": "2026-08-07",
-    "updated": "2026-08-07",
-    "source": "arXiv nucl-th",
-    "source_short": "nucl-th",
-    "source_type": "preprint",
-    "doi": "",
-    "arxiv_id": "2608.06024",
-    "url": "https://arxiv.org/abs/2608.06024",
-    "pdf_url": "https://arxiv.org/pdf/2608.06024",
-    "categories": [
-      "nuclear-astrophysics",
-      "particle-cross"
-    ],
-    "tags": [
-      "equation of state",
-      "neutrino"
-    ],
-    "importance": 60,
-    "open_access": true
-  },
-  {
-    "id": "88ab8562da00ca0a",
-    "type": "paper",
-    "title": "Mass Measurements of Exotic Ar 48 − 50 Isotopes: Probing Proton-Neutron Interaction of the Doubly Magic Ca 52 and the Robustness of N = 32 Subshell",
+    "title": "Corrigendum to “Rapid cooling of the Cassiopeia A neutron star due to superfluid quantum criticality” [Physics Letters B 879 (2026) 140591]",
     "abstract": "",
     "authors": [
-      "C. Y. Fu",
-      "W. D. Xian",
-      "T. Niwase",
-      "M. Rosenbusch",
-      "M. Wada",
-      "A. Scalesi",
-      "V. Somà",
-      "J. Lee",
-      "H. Ishiyama",
-      "S. Nishimura",
-      "S. Yoshida",
-      "A. Takamine",
-      "P. Schury",
-      "D. S. Hou",
-      "S. Kimura",
-      "Y. Hirayama",
-      "Y. Ito",
-      "S. Iimura",
-      "J. M. Yap",
-      "Y. X. Watanabe",
-      "Q. B. Zeng",
-      "V. H. Phong",
-      "T. T. Yeung",
-      "H. Ueno",
-      "H. Haba",
-      "T. Duguet",
-      "M. Frosini",
-      "Z. H. Li",
-      "H. Y. Wu",
-      "A. Estrade",
-      "M. Khandelwal",
-      "Y. Jang",
-      "J. Lee",
-      "A. I. Morales",
-      "R. Kanungo",
-      "M. Tanaka",
-      "D. Suzuki",
-      "H. J. Ong",
-      "H. Sakurai",
-      "S. Michimasa"
-    ],
-    "published": "2026-08-06",
-    "updated": "2026-08-06",
-    "source": "Physical Review Letters",
-    "source_short": "PRL",
-    "source_type": "journal",
-    "doi": "10.1103/krq1-t8pr",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/krq1-t8pr",
-    "pdf_url": "",
-    "categories": [
-      "frontiers"
-    ],
-    "tags": [],
-    "importance": 60,
-    "open_access": null
-  },
-  {
-    "id": "9c4b560322c29f0a",
-    "type": "paper",
-    "title": "Fusion Suppression in Super Heavy Element B h 263 Formation via Cr 54 + Bi 209",
-    "abstract": "",
-    "authors": [
-      "Tathagata Banerjee",
-      "Emanuele Vardaci",
-      "Antonio Di Nitto",
-      "Pia A. Setaro",
-      "Giuseppe Alifano",
-      "Davide Panico",
-      "Simona Di Costanzo",
-      "Antonio Vanzanella",
-      "D. Kumar",
-      "W. H. Trzaska",
-      "C. Petrone",
-      "S. Calinescu",
-      "C. Borcea"
-    ],
-    "published": "2026-08-04",
-    "updated": "2026-08-04",
-    "source": "Physical Review Letters",
-    "source_short": "PRL",
-    "source_type": "journal",
-    "doi": "10.1103/dkm5-xt6d",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/dkm5-xt6d",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-reactions"
-    ],
-    "tags": [
-      "fusion"
-    ],
-    "importance": 60,
-    "open_access": null
-  },
-  {
-    "id": "632fa86766c30ee8",
-    "type": "paper",
-    "title": "Solving the inverse source problem in femtoscopy with a toy model*",
-    "abstract": "Abstract Hadron-hadron interactions, being nonperturbative in nature, play a significant role in addressing phenomenological questions in particle physics. Femtoscopy is a powerful tool in heavy-ion collision experiments, enabling the extraction of hadron-hadron interactions via momentum-correlation functions (CFs). These CFs are typically expressed as a convolution of source functions and hadron-hadron wave functions, with the latter encoding information about the interactions. However, source functions remain poorly constrained and are commonly approximated by a Gaussian form. Reconstructing source functions from experimental correlation data constitutes an \"inverse problem.\" To address this, we propose a toy model based on Tikhonov regularization. Using a square-well potential with four distinct strengths, we calculate the CFs for inputs of single Gaussian source functions and mixed Gaussian source functions. The resulting CFs are then used to reconstruct the source functions via Tikhonov regularization. Our results show that the Gaussian source function can be successfully reconstructed, highlighting the potential of this approach for extracting realistic source functions from hadron pairs of interest.",
-    "authors": [
-      "Ao-Sheng 傲昇 Xiong 熊",
-      "Qi-Wei 奇伟 Yuan 袁",
-      "Ming-Zhu 明珠 Liu 刘",
-      "Fu-Sheng 福升 Yu 于",
-      "Zhi-Wei 志伟 Liu 刘",
-      "Li-Sheng 立升 Geng 耿"
+      "Hao-Fu Zhu",
+      "Guo-Zhu Liu",
+      "Xufen Wu"
     ],
     "published": "2026-08-01",
     "updated": "2026-08-01",
-    "source": "Chinese Physics C",
-    "source_short": "CPC",
+    "source": "Physics Letters B",
+    "source_short": "PLB",
     "source_type": "journal",
-    "doi": "10.1088/1674-1137/ae6310",
+    "doi": "10.1016/j.physletb.2026.140705",
     "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1674-1137/ae6310",
+    "url": "https://doi.org/10.1016/j.physletb.2026.140705",
     "pdf_url": "",
     "categories": [
-      "high-energy-nuclear",
-      "particle-cross"
+      "frontiers",
+      "nuclear-astrophysics",
+      "nuclear-data-applications"
     ],
     "tags": [
-      "heavy-ion collision",
-      "hadron",
-      "particle physics"
+      "neutron star",
+      "criticality",
+      "quantum"
     ],
-    "importance": 60,
-    "open_access": null
-  },
-  {
-    "id": "dca85ca28d2ac775",
-    "type": "paper",
-    "title": "Role of the radial electric field in the confinement of energetic ions in the Wendelstein 7-X stellarator",
-    "abstract": "Abstract Good fast-ion confinement is an essential requirement for a fusion reactor. The magnetic configuration of the Wendelstein 7-X (W7-X) stellarator is partially optimized in this regard in a reactor-relevant scenario: it is expected to show improved fast-ion confinement when β is high and the effect of the radial electric field is negligible. The experimental validation of this optimization is difficult since, with the available power, achieving high β under appropriate conditions for the validation is challenging and the effect of the radial electric field is inevitable. In this work, the confinement of fast ions in W7-X has been studied numerically for a variety of scenarios via the ASCOT5 code. The effect of the radial electric field on fast-ion losses is confirmed to be equivalent to the one produced by β , and this is characterized by means of scans on both parameters. Through a preliminary study with experimentally-based profiles, a viable scenario is identified that takes advantage of this effect for the experimental validation of the optimization strategy of W7-X. Finally, the study provides an exhaustive analysis of the entire fast-ion phase space, helping to identify where the fast ions should be generated in such experimental exercise.",
-    "authors": [
-      "M. Arranz",
-      "J.L. Velasco",
-      "I. Calvo",
-      "D. Carralero"
+    "importance": 62,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +50",
+      "跨领域关联 +8",
+      "前沿主题 +4"
     ],
-    "published": "2026-08-07",
-    "updated": "2026-08-07",
-    "source": "Nuclear Fusion",
-    "source_short": "NF",
-    "source_type": "journal",
-    "doi": "10.1088/1741-4326/ae8f55",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1741-4326/ae8f55",
-    "pdf_url": "",
-    "categories": [
-      "fusion",
-      "nuclear-reactions"
-    ],
-    "tags": [
-      "fusion",
-      "nuclear fusion",
-      "stellarator",
-      "fusion reactor"
-    ],
-    "importance": 58,
-    "open_access": null
-  },
-  {
-    "id": "dabfa51f9cf4c704",
-    "type": "paper",
-    "title": "Investigating long-duration plasma operation with the international multi-machine CICLOP database",
-    "abstract": "Abstract Combined high-fusion performance and long-pulse operation is one of the key integration challenges for fusion energy development in magnetic devices. Addressing these challenges requires an integrated vision of physics and engineering aspects with the purpose of simultaneously increasing time duration and fusion performance. Since the previous 2023 IAEA Fusion Energy Conference (FEC), significant progresses have been made in tokamaks and stellarators including very recent achievement in duration and/or performance. These progresses are reviewed by analysing the experimental data provided by 10 tokamaks and two stellarators. The published database (Litaudon et al 2024 Nucl. Fusion 64 015001), which initially included data up to January 2022, has been significantly updated for the 2025 IAEA FEC to incorporate the latest 2023–2025 experiments (up to May 2025) including recent records performance with new entries provided by DIII-D, EAST, JET, KSTAR, WEST, and W7-X. The update dataset has been gathered and coordination have been provided by the IEA-IAEA international CICLOP group (Coordination on International Challenges on Long duration OPeration). An overview of the recent progress toward long pulse operation analysing the CICLOP database is provided in this publication.",
-    "authors": [
-      "X. Litaudon",
-      "E. Lerche",
-      "O. Grulke",
-      "C.T. Holcomb",
-      "J. Huang",
-      "M. Jakubowski",
-      "H.S. Kim",
-      "P. Manas",
-      "T. Morisaki",
-      "F. Turco",
-      "M. Barbarino",
-      "E. Belonohy",
-      "A. Bock",
-      "S. Brezinsek",
-      "J. Bucalossi",
-      "S. Coda",
-      "L.F. Delgado-Aparicio",
-      "P. De Vries",
-      "A. Ekedahl",
-      "L. Frassinetti",
-      "A. Garofalo",
-      "C. Giroud",
-      "X. Gong",
-      "K. Hanada",
-      "S. Ide",
-      "B.V. Kuteev",
-      "P. Maget",
-      "J. Stober",
-      "D. Van Houtte"
-    ],
-    "published": "2026-08-07",
-    "updated": "2026-08-07",
-    "source": "Nuclear Fusion",
-    "source_short": "NF",
-    "source_type": "journal",
-    "doi": "10.1088/1741-4326/ae89cc",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1741-4326/ae89cc",
-    "pdf_url": "",
-    "categories": [
-      "fusion",
-      "nuclear-reactions"
-    ],
-    "tags": [
-      "fusion",
-      "nuclear fusion",
-      "fusion energy",
-      "EAST"
-    ],
-    "importance": 58,
-    "open_access": null
-  },
-  {
-    "id": "21c85ef07db568ce",
-    "type": "paper",
-    "title": "Numerical investigation of helium ash transport in CFETR steady state scenario",
-    "abstract": "Abstract In magnetic confinement fusion plasmas, the main product of deuterium-tritium fusion is energetic alpha particles, which transfer energy to the background plasma by collisions and become thermalized helium ash. Helium ash accumulation would cause fuel dilution and reduce plasma confinement performance and fusion gain. In this work, the transport of helium ash in China fusion engineering test reactor (CFETR) is simulated by the advanced transport solver TGYRO, which invokes the NEO and TGLF codes to compute neoclassical and turbulent transport, respectively. By analyzing the neoclassical and turbulent transport of helium ash, it is found that ITG turbulence is dominant for helium ash transport in CFETR. In addition, with low helium ash fractions, the redistributed helium ash density profile is higher than the initial setting profile because the source rate exceeds the outward transport, while at high helium ash fractions it becomes lower than the initial profile. Inside the internal transport barrier, ITG turbulence is suppressed, leading to a significant reduction in the outward transport of helium ash. The transport process of helium ash can also affect micro-instabilities. In particular, an increase in helium ash concentration may stabilize ITG turbulence. Redistributed energetic alpha particles due to Alfvén eigenmodes affect the helium ash transport by modifying the helium ash source profile, but they do not significantly alter the helium ash distribution. Our work advances the understanding of the dominant physical mechanism governing helium ash transport in future fusion devices.",
-    "authors": [
-      "Zhihong Kuang",
-      "Wei Shen",
-      "Jiale Chen"
-    ],
-    "published": "2026-08-06",
-    "updated": "2026-08-06",
-    "source": "Nuclear Fusion",
-    "source_short": "NF",
-    "source_type": "journal",
-    "doi": "10.1088/1741-4326/ae8e8e",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1741-4326/ae8e8e",
-    "pdf_url": "",
-    "categories": [
-      "fusion",
-      "nuclear-reactions"
-    ],
-    "tags": [
-      "fusion",
-      "nuclear fusion",
-      "magnetic confinement",
-      "tritium"
-    ],
-    "importance": 58,
-    "open_access": null
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-08T00:07:32+08:00"
   }
 ]

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 import shutil
+from collections import Counter
 from pathlib import Path
 
 
@@ -28,10 +29,28 @@ def main() -> None:
     topics = load(CONFIG / "topics.json")
     runtime = load(CONFIG / "runtime.json")
     status = load(DATA / "status.json")
+    papers = load(DATA / "papers.json")
+    latest_day = max((item.get("published", "")[:10] for item in papers), default="")
+    latest_papers = [item for item in papers if item.get("published", "")[:10] == latest_day]
+    source_counts = Counter(item.get("source", "未知来源") for item in papers)
+    category_counts = Counter(category for item in papers for category in item.get("categories", []))
+    daily_counts = Counter(item.get("published", "")[:10] for item in papers if item.get("published"))
+    insights = {
+        "latest_day": latest_day,
+        "latest_count": len(latest_papers),
+        "journal_count": sum(item.get("source_type") == "journal" for item in papers),
+        "preprint_count": sum(item.get("source_type") == "preprint" for item in papers),
+        "source_counts": [{"name": name, "count": count} for name, count in source_counts.most_common()],
+        "category_counts": dict(category_counts),
+        "daily_counts": [
+            {"date": day, "count": count} for day, count in sorted(daily_counts.items(), reverse=True)[:30]
+        ],
+    }
     meta = {
         "site": runtime,
         "categories": topics["categories"],
         "status": status,
+        "insights": insights,
         "notice": "本站汇总官方公开元数据，不代表数据源机构背书。请以原始页面为准。",
     }
     (PUBLIC_DATA / "meta.json").write_text(

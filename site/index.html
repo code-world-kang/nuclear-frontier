@@ -27,6 +27,7 @@
         <button class="nav-link" data-view="featured">重点</button>
         <button class="nav-link" data-view="news">新闻</button>
         <button class="nav-link" data-view="notices">通知</button>
+        <button class="nav-link" data-scroll="briefing">简报</button>
         <button class="nav-link" data-view="favorites">我的参考</button>
       </nav>
       <div class="top-actions">
@@ -58,9 +59,22 @@
 
       <section class="metrics" aria-label="数据统计">
         <article><span>历史论文</span><strong id="paperCount">—</strong><small>持续累积</small></article>
-        <article><span>今日重点</span><strong id="featuredCount">—</strong><small>可解释评分</small></article>
+        <article><span>最新日论文</span><strong id="featuredCount">—</strong><small>按发布日期计数</small></article>
         <article><span>官方新闻</span><strong id="newsCount">—</strong><small>只保留原始来源</small></article>
         <article><span>数据源状态</span><strong id="sourceHealth">—</strong><small id="sourceHealthHint">正在检查</small></article>
+      </section>
+
+      <section class="briefing" id="briefing" aria-labelledby="briefingTitle">
+        <div class="briefing-head">
+          <div><span class="section-kicker">DAILY BRIEFING</span><h2 id="briefingTitle">今日科研简报</h2></div>
+          <span id="briefingDate">正在整理今日数据…</span>
+        </div>
+        <p class="briefing-summary" id="briefingSummary">正在生成基于原始元数据的可核验摘要。</p>
+        <div class="briefing-grid">
+          <article><span>今日主题</span><div id="topicBrief" class="brief-list"></div></article>
+          <article><span>主要来源</span><div id="sourceBrief" class="brief-list"></div></article>
+          <article><span>值得先看</span><div id="topBrief" class="brief-top"></div></article>
+        </div>
       </section>
 
       <section class="workspace" id="stream">
@@ -84,6 +98,7 @@
             <div class="view-tabs" role="tablist">
               <button class="view-tab active" data-view="papers">全部</button>
               <button class="view-tab" data-view="featured">重点</button>
+              <button class="view-tab" data-view="unread">未读</button>
               <button class="view-tab" data-view="favorites">已收藏</button>
             </div>
           </div>
@@ -100,6 +115,9 @@
               <option value="7days">近7日</option>
               <option value="all">历史全部</option>
             </select>
+            <select id="sourceSelect" aria-label="论文来源">
+              <option value="all">所有来源</option>
+            </select>
             <select id="sortSelect" aria-label="排序方式">
               <option value="date">最新发布</option>
               <option value="importance">重要性</option>
@@ -108,7 +126,7 @@
           </div>
 
           <div class="active-filters" id="activeFilters"></div>
-          <div class="results-meta"><span id="resultCount">正在载入…</span><span id="viewNote">题目与摘要保留原文</span></div>
+          <div class="results-meta"><span id="resultCount">正在载入…</span><span id="viewNote">题目与摘要保留原文</span><button id="exportReferences">导出 Zotero / RIS</button></div>
           <div class="card-list" id="cardList">
             <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
           </div>
@@ -150,6 +168,8 @@
   <dialog id="detailDialog">
     <article class="dialog-card detail-card" id="detailContent"></article>
   </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <dialog id="statusDialog">
     <article class="dialog-card"><div class="dialog-head"><div><small>SOURCE HEALTH</small><h3>数据源状态</h3></div><button onclick="this.closest('dialog').close()">×</button></div><div id="statusContent"></div></article>

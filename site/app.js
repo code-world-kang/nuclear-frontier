@@ -3,7 +3,7 @@ const PERSONAL_KEY = 'nuclear-frontier.personal.v1';
 
 const state = {
   papers: [], featured: [], news: [], notices: [], publicFavorites: [],
-  meta: null, view: 'papers', category: 'all', query: '', sort: 'date', scope: 'daily-focus', visible: 20,
+  meta: null, view: 'papers', category: 'all', source: 'all', query: '', sort: 'date', scope: 'daily-focus', visible: 20,
   personal: loadPersonal(), categoryMap: new Map(),
 };
 
@@ -23,9 +23,11 @@ function loadPersonal() {
       favorites: parsed.favorites || {},
       keywords: Array.isArray(parsed.keywords) ? parsed.keywords : [],
       outbox: Array.isArray(parsed.outbox) ? parsed.outbox : [],
+      readStatus: parsed.readStatus || {},
+      notes: parsed.notes || {},
     };
   } catch {
-    return { favorites: {}, keywords: [], outbox: [] };
+    return { favorites: {}, keywords: [], outbox: [], readStatus: {}, notes: {} };
   }
 }
 
@@ -57,6 +59,14 @@ function truncate(value, length = 260) {
   return value.length > length ? `${value.slice(0, length).trim()}…` : value;
 }
 
+function showToast(message) {
+  const toast = $('#toast');
+  toast.textContent = message;
+  toast.classList.add('show');
+  clearTimeout(showToast.timer);
+  showToast.timer = setTimeout(() => toast.classList.remove('show'), 2200);
+}
+
 function currentItems() {
   if (state.view === 'featured') return state.featured;
   if (state.view === 'news') return state.news;
@@ -68,6 +78,7 @@ function currentItems() {
     ]);
     return state.papers.filter(item => ids.has(item.id));
   }
+  if (state.view === 'unread') return state.papers.filter(item => state.personal.readStatus[item.id] !== 'read');
   return state.papers;
 }
 
@@ -121,6 +132,7 @@ function filteredItems() {
   const values = currentItems().filter(item => {
     if (!inPaperScope(item, focusIds, latest)) return false;
     if (state.category !== 'all' && !(item.categories || []).includes(state.category)) return false;
+    if (!['news', 'notices'].includes(state.view) && state.source !== 'all' && item.source !== state.source) return false;
     if (!query) return true;
     const haystack = [
       item.title, item.abstract, item.summary, item.source, item.source_short,
@@ -146,6 +158,27 @@ function categoryName(id) {
 
 function isFavorite(id) {
   return Boolean(state.personal.favorites[id]) || state.publicFavorites.some(item => (typeof item === 'string' ? item : item.id) === id);
+}
+
+function readingLabel(id) {
+  return { reading: '在读', read: '已读' }[state.personal.readStatus[id]] || '未读';
+}
+
+function cycleReadingStatus(item) {
+  const current = state.personal.readStatus[item.id] || 'unread';
+  const next = { unread: 'reading', reading: 'read', read: 'unread' }[current];
+  if (next === 'unread') delete state.personal.readStatus[item.id];
+  else state.personal.readStatus[item.id] = next;
+  savePersonal();
+  showToast(`已标记为${readingLabel(item.id)}`);
+  renderCards();
+}
+
+function markOpened(item) {
+  if (!state.personal.readStatus[item.id]) {
+    state.personal.readStatus[item.id] = 'reading';
+    savePersonal();
+  }
 }
 
 function cardFor(item) {
@@ -174,6 +207,12 @@ function cardFor(item) {
     score.className = 'importance-badge';
     score.textContent = `重点 ${item.importance}`;
     meta.append(score);
+  }
+  if ((item.first_seen || '').slice(0, 10) === state.meta?.status?.last_success?.slice(0, 10)) {
+    const fresh = document.createElement('span');
+    fresh.className = 'new-badge';
+    fresh.textContent = 'NEW';
+    meta.append(fresh);
   }
   if (personalMatch(item)) {
     const mine = document.createElement('span');
@@ -217,6 +256,7 @@ function cardFor(item) {
   original.target = '_blank';
   original.rel = 'noreferrer';
   original.textContent = item.type === 'paper' ? '原始页面 ↗' : '阅读原文 ↗';
+  original.addEventListener('click', () => markOpened(item));
   actions.append(original);
   if (item.pdf_url) {
     const pdf = document.createElement('a');
@@ -238,6 +278,14 @@ function cardFor(item) {
   related.textContent = '关联文献';
   related.addEventListener('click', () => openDetails(item));
   actions.append(related);
+  if (item.type === 'paper') {
+    const reading = document.createElement('button');
+    reading.type = 'button';
+    reading.className = 'reading-button';
+    reading.textContent = readingLabel(item.id);
+    reading.addEventListener('click', () => cycleReadingStatus(item));
+    actions.append(reading);
+  }
 
   const favorite = $('.favorite-button', card);
   favorite.textContent = isFavorite(item.id) ? '★' : '☆';
@@ -267,6 +315,17 @@ function renderActiveFilters() {
     $('button', tag).addEventListener('click', () => setCategory('all'));
     host.append(tag);
   }
+  if (!['news', 'notices'].includes(state.view) && state.source !== 'all') {
+    const tag = document.createElement('span');
+    tag.className = 'active-filter';
+    tag.innerHTML = `${text(state.source)}<button aria-label="清除来源">×</button>`;
+    $('button', tag).addEventListener('click', () => {
+      state.source = 'all';
+      $('#sourceSelect').value = 'all';
+      renderCards();
+    });
+    host.append(tag);
+  }
   state.personal.keywords.forEach(keyword => {
     const tag = document.createElement('button');
     tag.className = 'active-filter';
@@ -289,12 +348,15 @@ function setView(view) {
     news: ['OFFICIAL NEWS', '科研新闻', '仅保留官方原始链接'],
     notices: ['OFFICIAL NOTICES', '官方通知', '截止日期请以原始通知为准'],
     favorites: ['KEY REFERENCES', '我的重点参考', '本机收藏与GitHub公开收藏合并显示'],
+    unread: ['READING QUEUE', '我的未读文献', '点击“未读”可在未读、在读和已读之间切换'],
   };
   const [kicker, title, note] = labels[view] || labels.papers;
   $('#sectionKicker').textContent = kicker;
   $('#sectionTitle').textContent = title;
   $('#viewNote').textContent = note;
   $('#scopeSelect').hidden = view !== 'papers';
+  $('#sourceSelect').hidden = ['news', 'notices'].includes(view);
+  $('#exportReferences').hidden = ['news', 'notices'].includes(view);
   $$('.nav-link, .view-tab').forEach(button => button.classList.toggle('active', button.dataset.view === view));
   renderCards();
   history.replaceState(null, '', `${PATH}#${view}`);
@@ -307,6 +369,17 @@ function setCategory(id) {
   renderCards();
 }
 
+function renderSourceOptions() {
+  const counts = new Map();
+  state.papers.forEach(item => counts.set(item.source, (counts.get(item.source) || 0) + 1));
+  const select = $('#sourceSelect');
+  select.replaceChildren(new Option('所有来源', 'all'));
+  [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).forEach(([source, count]) => {
+    select.add(new Option(`${source} (${count})`, source));
+  });
+  select.value = state.source;
+}
+
 async function toggleFavorite(item, button) {
   if (state.personal.favorites[item.id]) {
     delete state.personal.favorites[item.id];
@@ -315,7 +388,7 @@ async function toggleFavorite(item, button) {
     state.personal.favorites[item.id] = {
       id: item.id, doi: item.doi || '', arxiv_id: item.arxiv_id || '', title: item.title,
       url: item.url, categories: item.categories || [], tags: item.tags || [],
-      added_at: new Date().toISOString(), note: '',
+      added_at: new Date().toISOString(), note: state.personal.notes[item.id] || '',
     };
     state.personal.outbox.push({ operation: 'upsert', item: state.personal.favorites[item.id], at: new Date().toISOString() });
   }
@@ -357,24 +430,110 @@ function similarity(anchor, candidate) {
   return score;
 }
 
+function citationKey(item) {
+  const family = (item.authors?.[0] || item.source || 'NuclearFrontier').split(/\s+/).at(-1);
+  const year = (item.published || '').slice(0, 4) || 'nd';
+  const word = (item.title || 'paper').match(/[A-Za-z0-9]+/)?.[0] || 'paper';
+  return `${family}${year}${word}`.replace(/[^A-Za-z0-9]/g, '');
+}
+
+function toBibTeX(item) {
+  const fields = [
+    `  title = {${(item.title || '').replace(/[{}]/g, '')}}`,
+    item.authors?.length ? `  author = {${item.authors.join(' and ')}}` : '',
+    item.source ? `  journal = {${item.source}}` : '',
+    item.published ? `  year = {${item.published.slice(0, 4)}}` : '',
+    item.doi ? `  doi = {${item.doi}}` : '',
+    item.url ? `  url = {${item.url}}` : '',
+  ].filter(Boolean);
+  return `@article{${citationKey(item)},\n${fields.join(',\n')}\n}`;
+}
+
+function toRIS(item) {
+  const lines = ['TY  - JOUR', `TI  - ${item.title}`];
+  (item.authors || []).forEach(author => lines.push(`AU  - ${author}`));
+  if (item.source) lines.push(`JO  - ${item.source}`);
+  if (item.published) lines.push(`PY  - ${item.published.slice(0, 4)}`, `DA  - ${item.published}`);
+  if (item.doi) lines.push(`DO  - ${item.doi}`);
+  if (item.url) lines.push(`UR  - ${item.url}`);
+  if (item.abstract) lines.push(`AB  - ${item.abstract.replace(/\s+/g, ' ')}`);
+  lines.push('ER  - ');
+  return lines.join('\n');
+}
+
+function downloadText(name, content, mime = 'text/plain') {
+  const blob = new Blob([content], { type: `${mime};charset=utf-8` });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = name;
+  link.click();
+  URL.revokeObjectURL(link.href);
+}
+
+async function copyText(value, message) {
+  try {
+    await navigator.clipboard.writeText(value);
+    showToast(message);
+  } catch {
+    showToast('复制失败，请手动复制');
+  }
+}
+
+function exportReferenceSet() {
+  const favorites = currentItems().filter(item => isFavorite(item.id));
+  const items = favorites.length ? favorites : filteredItems();
+  if (!items.length) return showToast('当前没有可导出的文献');
+  downloadText(`核视界-参考文献-${new Date().toISOString().slice(0, 10)}.ris`, items.map(toRIS).join('\n\n'), 'application/x-research-info-systems');
+  showToast(`已导出 ${items.length} 条 RIS，可导入 Zotero`);
+}
+
 function openDetails(item) {
+  markOpened(item);
   const related = state.papers
     .map(candidate => ({ candidate, score: similarity(item, candidate) }))
     .filter(entry => entry.score > 0)
     .sort((a, b) => b.score - a.score || (b.candidate.published || '').localeCompare(a.candidate.published || ''))
     .slice(0, 6);
   const host = $('#detailContent');
+  const scoreReasons = (item.score_reasons || []).map(reason => `<span>${text(reason)}</span>`).join('');
   host.innerHTML = `
     <div class="dialog-head"><div><small>${text(item.source || '')}</small><h3>文献详情与关联</h3></div><button aria-label="关闭">×</button></div>
     <h2>${text(item.title)}</h2>
     <p class="detail-meta">${text((item.authors || []).join(', ') || item.source || '')}<br>${text(prettyDate(item.published))}${item.doi ? ` · DOI ${text(item.doi)}` : ''}</p>
     <div class="tag-row">${(item.categories || []).map(id => `<span class="tag category">${text(categoryName(id))}</span>`).join('')}</div>
+    <div class="score-box"><b>重要性 ${item.importance || 0}</b><div>${scoreReasons || '<span>基于来源与主题计算</span>'}</div></div>
     <h4>原文摘要</h4>
     <p class="detail-abstract">${text(item.abstract || item.summary || '该来源未提供可公开摘要。')}</p>
+    <div class="detail-tools">
+      <a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">打开原文 ↗</a>
+      ${item.pdf_url ? `<a href="${text(item.pdf_url)}" target="_blank" rel="noreferrer">PDF ↗</a>` : ''}
+      ${item.doi ? '<button id="copyDoi">复制 DOI</button>' : ''}
+      <button id="exportBib">导出 BibTeX</button>
+    </div>
+    <h4>我的笔记</h4>
+    <textarea class="note-editor" id="detailNote" placeholder="记录阅读要点、引用位置或后续实验想法…">${text(state.personal.notes[item.id] || '')}</textarea>
+    <div class="note-actions"><button id="saveNote">保存笔记</button><button id="cycleRead">${text(readingLabel(item.id))}</button></div>
     <h4>关联文献</h4>
     <div class="related-list">${related.length ? related.map(({ candidate, score }) => `<a class="related-item" href="${text(candidate.url)}" target="_blank" rel="noreferrer">${text(candidate.title)}<small>${text(candidate.source)} · 关联度 ${score}</small></a>`).join('') : '<p>当前历史库中尚无明显关联文献。</p>'}</div>
   `;
   $('.dialog-head button', host).addEventListener('click', () => $('#detailDialog').close());
+  $('#copyDoi', host)?.addEventListener('click', () => copyText(item.doi, 'DOI 已复制'));
+  $('#exportBib', host).addEventListener('click', () => {
+    downloadText(`${citationKey(item)}.bib`, toBibTeX(item), 'application/x-bibtex');
+    showToast('BibTeX 已导出');
+  });
+  $('#saveNote', host).addEventListener('click', () => {
+    const note = $('#detailNote', host).value.trim();
+    if (note) state.personal.notes[item.id] = note;
+    else delete state.personal.notes[item.id];
+    if (state.personal.favorites[item.id]) state.personal.favorites[item.id].note = note;
+    savePersonal();
+    showToast('笔记已保存');
+  });
+  $('#cycleRead', host).addEventListener('click', () => {
+    cycleReadingStatus(item);
+    $('#cycleRead', host).textContent = readingLabel(item.id);
+  });
   $('#detailDialog').showModal();
 }
 
@@ -427,10 +586,43 @@ function renderRadar() {
   }));
 }
 
+function renderBriefing() {
+  const latest = state.meta.insights?.latest_day || latestPaperDay();
+  const items = state.papers.filter(item => paperDay(item) === latest);
+  const categoryCounts = new Map();
+  const sourceCounts = new Map();
+  items.forEach(item => {
+    (item.categories || []).forEach(category => categoryCounts.set(category, (categoryCounts.get(category) || 0) + 1));
+    sourceCounts.set(item.source, (sourceCounts.get(item.source) || 0) + 1);
+  });
+  const topics = [...categoryCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
+  const sources = [...sourceCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
+  const topItems = [...items].sort((a, b) => (b.importance || 0) - (a.importance || 0)).slice(0, 3);
+  $('#briefingDate').textContent = latest ? `${prettyDate(latest)} · ${items.length} 篇` : '等待今日数据';
+  const topicNames = topics.slice(0, 3).map(([id]) => categoryName(id));
+  const journalCount = items.filter(item => item.source_type === 'journal').length;
+  const preprintCount = items.filter(item => item.source_type === 'preprint').length;
+  $('#briefingSummary').textContent = items.length
+    ? `今日共收录 ${items.length} 篇：期刊论文 ${journalCount} 篇、预印本 ${preprintCount} 篇。主要集中在${topicNames.join('、')}，以下条目按来源、突破性表述和跨领域关联评分。`
+    : '尚无可用的当日元数据。';
+
+  const renderBars = (host, values, labelFor) => {
+    const max = Math.max(...values.map(([, count]) => count), 1);
+    host.innerHTML = values.map(([value, count]) => `
+      <div class="brief-row"><div><span>${text(labelFor(value))}</span><b>${count}</b></div><i><em style="width:${Math.max(8, count / max * 100)}%"></em></i></div>
+    `).join('') || '<small>暂无数据</small>';
+  };
+  renderBars($('#topicBrief'), topics, categoryName);
+  renderBars($('#sourceBrief'), sources, value => value);
+  $('#topBrief').innerHTML = topItems.map((item, index) => `
+    <a href="${text(item.url)}" target="_blank" rel="noreferrer"><span>0${index + 1}</span><div><b>${text(item.title)}</b><small>${text(item.source_short || item.source)} · ${item.importance || 0}</small></div></a>
+  `).join('') || '<small>暂无数据</small>';
+}
+
 function renderMetrics() {
   const status = state.meta.status;
   $('#paperCount').textContent = state.papers.length.toLocaleString('zh-CN');
-  $('#featuredCount').textContent = state.featured.length.toLocaleString('zh-CN');
+  $('#featuredCount').textContent = (state.meta.insights?.latest_count ?? state.featured.length).toLocaleString('zh-CN');
   $('#newsCount').textContent = state.news.length.toLocaleString('zh-CN');
   const results = status.source_results || [];
   const ok = results.filter(item => item.ok).length;
@@ -443,7 +635,7 @@ function renderMetrics() {
 function showStatus() {
   const results = state.meta.status.source_results || [];
   $('#statusContent').innerHTML = results.length ? results.map(item => `
-    <div class="status-row"><span>${text(item.name)}<small> · ${text(item.kind)} · ${item.count} 条</small></span><span class="${item.ok ? 'ok' : 'fail'}">${item.ok ? '正常' : '待重试'}</span></div>
+    <div class="status-row"><span>${text(item.name)}<small> · ${text(item.kind)} · ${item.count} 条${item.duration_ms ? ` · ${(item.duration_ms / 1000).toFixed(1)}s` : ''}</small></span><span class="${item.ok ? 'ok' : 'fail'}">${item.ok ? '正常' : '待重试'}</span></div>
   `).join('') : '<p>尚无更新记录。</p>';
   $('#statusDialog').showModal();
 }
@@ -479,6 +671,7 @@ async function importPersonal(file) {
     state.personal = {
       favorites: value.favorites || {}, keywords: Array.isArray(value.keywords) ? value.keywords : [],
       outbox: Array.isArray(value.outbox) ? value.outbox : [],
+      readStatus: value.readStatus || {}, notes: value.notes || {},
     };
     savePersonal(); renderKeywords(); renderCards();
   } catch (error) {
@@ -491,11 +684,12 @@ function bindEvents() {
   $$('[data-view-jump]').forEach(button => button.addEventListener('click', () => {
     setView(button.dataset.viewJump); $('#stream').scrollIntoView({ behavior: 'smooth' });
   }));
-  $('[data-scroll="stream"]').addEventListener('click', () => $('#stream').scrollIntoView({ behavior: 'smooth' }));
+  $$('[data-scroll]').forEach(button => button.addEventListener('click', () => $(`#${button.dataset.scroll}`)?.scrollIntoView({ behavior: 'smooth' })));
   $('#clearCategory').addEventListener('click', () => setCategory('all'));
   $('#searchInput').addEventListener('input', event => { state.query = event.target.value; state.visible = 20; renderCards(); });
   $('#sortSelect').addEventListener('change', event => { state.sort = event.target.value; renderCards(); });
   $('#scopeSelect').addEventListener('change', event => { state.scope = event.target.value; state.visible = 20; renderCards(); });
+  $('#sourceSelect').addEventListener('change', event => { state.source = event.target.value; state.visible = 20; renderCards(); });
   $('#loadMore').addEventListener('click', () => { state.visible += 20; renderCards(); });
   $('#keywordButton').addEventListener('click', () => $('#keywordDialog').showModal());
   $('#addKeywordAside').addEventListener('click', () => $('#keywordDialog').showModal());
@@ -513,6 +707,7 @@ function bindEvents() {
   $('#exportPersonal').addEventListener('click', exportPersonal);
   $('#importPersonal').addEventListener('change', event => event.target.files?.[0] && importPersonal(event.target.files[0]));
   $('#showSourceStatus').addEventListener('click', showStatus);
+  $('#exportReferences').addEventListener('click', exportReferenceSet);
   document.addEventListener('keydown', event => {
     if (event.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
       event.preventDefault(); $('#searchInput').focus();
@@ -538,9 +733,9 @@ async function initialize() {
   bindEvents();
   try {
     await loadData();
-    renderCategories(); renderSpotlight(); renderRadar(); renderMetrics(); renderKeywords();
+    renderCategories(); renderSourceOptions(); renderSpotlight(); renderRadar(); renderBriefing(); renderMetrics(); renderKeywords();
     const hash = location.hash.slice(1);
-    setView(['papers', 'featured', 'news', 'notices', 'favorites'].includes(hash) ? hash : 'papers');
+    setView(['papers', 'featured', 'news', 'notices', 'favorites', 'unread'].includes(hash) ? hash : 'papers');
     tryFavoriteSync();
   } catch (error) {
     console.error(error);

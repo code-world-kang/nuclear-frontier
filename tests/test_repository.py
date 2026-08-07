@@ -31,6 +31,7 @@ class RepositoryTests(unittest.TestCase):
                 self.assertTrue(paper.get("source"))
                 self.assertTrue(paper.get("url"))
                 self.assertIsInstance(paper.get("categories"), list)
+                self.assertEqual(len(paper.get("categories", [])), len(set(paper.get("categories", []))))
 
     def test_site_entrypoint_exists(self):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")

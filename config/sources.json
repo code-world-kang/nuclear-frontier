@@ -16,7 +16,21 @@
     {"name": "Nature", "short": "Nature", "issn": "1476-4687", "mode": "filtered", "weight": 7},
     {"name": "Nature Physics", "short": "Nature Physics", "issn": "1745-2481", "mode": "filtered", "weight": 7},
     {"name": "Nature Astronomy", "short": "Nature Astronomy", "issn": "2397-3366", "mode": "filtered", "weight": 6},
-    {"name": "Science Bulletin", "short": "Science Bulletin", "issn": "2095-9273", "mode": "filtered", "weight": 5}
+    {"name": "Science Bulletin", "short": "Science Bulletin", "issn": "2095-9273", "mode": "filtered", "weight": 5},
+    {"name": "Physical Review D", "short": "PRD", "issn": "2470-0029", "mode": "filtered", "weight": 5},
+    {"name": "Physical Review E", "short": "PRE", "issn": "2470-0053", "mode": "filtered", "weight": 4},
+    {"name": "The Astrophysical Journal", "short": "ApJ", "issn": "1538-4357", "mode": "filtered", "weight": 5},
+    {"name": "Monthly Notices of the Royal Astronomical Society", "short": "MNRAS", "issn": "1365-2966", "mode": "filtered", "weight": 4},
+    {"name": "Astronomy and Astrophysics", "short": "A&A", "issn": "1432-0746", "mode": "filtered", "weight": 4},
+    {"name": "Machine Learning Science and Technology", "short": "MLST", "issn": "2632-2153", "mode": "important-ai", "weight": 4},
+    {"name": "Nuclear Data Sheets", "short": "NDS", "issn": "1095-9904", "mode": "all", "weight": 5},
+    {"name": "Atomic Data and Nuclear Data Tables", "short": "ADNDT", "issn": "1090-2090", "mode": "all", "weight": 5},
+    {"name": "Fusion Engineering and Design", "short": "FED", "issn": "0920-3796", "mode": "all", "weight": 4},
+    {"name": "Review of Scientific Instruments", "short": "RSI", "issn": "1089-7623", "mode": "filtered", "weight": 4},
+    {"name": "Journal of Instrumentation", "short": "JINST", "issn": "1748-0221", "mode": "filtered", "weight": 4},
+    {"name": "IEEE Transactions on Nuclear Science", "short": "IEEE TNS", "issn": "1558-1578", "mode": "all", "weight": 4},
+    {"name": "Annals of Nuclear Energy", "short": "ANE", "issn": "0306-4549", "mode": "all", "weight": 4},
+    {"name": "Radiation Physics and Chemistry", "short": "RPC", "issn": "0969-806X", "mode": "filtered", "weight": 3}
   ],
   "arxiv_feeds": [
     {"name": "arXiv nucl-ex", "category": "nucl-ex", "mode": "all", "weight": 4},

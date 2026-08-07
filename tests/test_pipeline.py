@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from update_content import Classifier, merge_records, normalize_title  # noqa: E402
+from update_content import Classifier, count_new_records, merge_records, normalize_title  # noqa: E402
 
 
 class PipelineTests(unittest.TestCase):
@@ -35,6 +35,15 @@ class PipelineTests(unittest.TestCase):
     def test_filtered_general_article_requires_relevance(self):
         self.assertFalse(self.classifier.relevant("A study of urban traffic", "Road networks", "filtered"))
         self.assertTrue(self.classifier.relevant("Neutron-rich nuclei", "Nuclear structure", "filtered"))
+        self.assertFalse(self.classifier.relevant(
+            "A tumour-derived organoid biobank", "First discovery of cancer dependencies in cell nuclei", "filtered"
+        ))
+        self.assertFalse(self.classifier.relevant(
+            "Nuclear uncaging in stretched epithelia", "Cell nuclei reorganize during tissue development", "filtered"
+        ))
+        self.assertTrue(self.classifier.relevant(
+            "First observation of a topological quantum phase", "A physics experiment", "filtered"
+        ))
 
     def test_merge_deduplicates_title_and_preserves_identifiers(self):
         old = [{"id": "a", "title": "Same Paper", "published": "2026-01-01", "source_type": "preprint", "arxiv_id": "2601.1", "categories": ["theoretical-nuclear"], "tags": [], "importance": 30}]
@@ -58,6 +67,25 @@ class PipelineTests(unittest.TestCase):
         self.assertTrue(self.classifier.relevant(
             "Machine learning for plasma diagnostics", "Physics-informed detector reconstruction", "important-ai"
         ))
+
+    def test_importance_has_explainable_reasons(self):
+        score, reasons = self.classifier.importance_details(
+            "First observation of a new isotope", "Nuclear structure measurement", 5,
+            ["experimental-nuclear", "nuclear-structure"],
+        )
+        self.assertGreaterEqual(score, 60)
+        self.assertTrue(any("来源权重" in reason for reason in reasons))
+        self.assertTrue(any("突破性表述" in reason for reason in reasons))
+
+    def test_true_new_count_ignores_window_refetches_and_title_duplicates(self):
+        old = [{"id": "old", "title": "Known paper"}]
+        incoming = [
+            {"id": "old", "title": "Known paper"},
+            {"id": "alias", "title": "Known paper"},
+            {"id": "new", "title": "New paper"},
+            {"id": "new", "title": "New paper"},
+        ]
+        self.assertEqual(count_new_records(old, incoming), 1)
 
 
 if __name__ == "__main__":
