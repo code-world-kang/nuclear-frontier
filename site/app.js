@@ -1009,6 +1009,8 @@ function homeLane({ kicker, title, count, items, view, tone, scope = '' }) {
 }
 
 function renderHomeHub() {
+  const host = $('#homeHubGrid');
+  if (!host) return;
   const latest = latestPaperDay();
   const today = state.papers.filter(item => paperDay(item) === latest);
   const todayNuclear = today.filter(isPrimaryNuclear).sort(compareNuclearFirst);
@@ -1025,7 +1027,7 @@ function renderHomeHub() {
     ...myCollectionItems('references').slice(0, 1).map(item => ({ ...item, source_short: '参考资料' })),
   ];
   const myCount = favoriteIds.size + myCollectionItems('code').length + myCollectionItems('references').length;
-  $('#homeHubGrid').replaceChildren(
+  host.replaceChildren(
     homeLane({ kicker: 'TODAY', title: '今日核物理', count: todayNuclear.length, items: todayNuclear, view: 'papers', tone: 'papers-lane', scope: 'daily-focus' }),
     homeLane({ kicker: 'NEWS', title: '科研新闻', count: state.news.length, items: news, view: 'news', tone: 'news-lane' }),
     homeLane({ kicker: 'NOTICES', title: '官方通知', count: state.notices.length, items: notices, view: 'notices', tone: 'notices-lane' }),

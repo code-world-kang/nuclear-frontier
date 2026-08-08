@@ -82,7 +82,7 @@ class RepositoryTests(unittest.TestCase):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
         self.assertIn('id="cardList"', index)
         self.assertIn('id="scopeSelect"', index)
-        self.assertIn('id="homeHubGrid"', index)
+        self.assertNotIn('id="homeHubGrid"', index)
         self.assertIn('id="favoriteDialog"', index)
         self.assertIn('id="myKeywordList"', index)
         self.assertIn('id="mySpaceNav"', index)
