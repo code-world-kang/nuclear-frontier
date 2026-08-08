@@ -10,6 +10,20 @@
     if (window.location.protocol === 'file:') {
       window.location.replace(`https://code-world-kang.github.io/nuclear-frontier/${window.location.hash}`);
     }
+
+    // 以北京时间选择当日主题：同一天跨设备一致，第二天自动更换。
+    (() => {
+      const themes = ['meadow', 'apricot', 'sakura', 'lavender', 'honey', 'sky', 'oat', 'peach'];
+      const applyDailyTheme = () => {
+        const parts = Object.fromEntries(new Intl.DateTimeFormat('en-CA', {
+          timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit',
+        }).formatToParts().map(part => [part.type, part.value]));
+        const day = Math.floor(Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day)) / 86400000);
+        document.documentElement.dataset.dayTheme = themes[((day % themes.length) + themes.length) % themes.length];
+      };
+      applyDailyTheme();
+      window.setInterval(applyDailyTheme, 60000);
+    })();
   </script>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -46,18 +60,17 @@
           <div class="briefing-status"><span class="status-pulse"></span><span id="lastUpdated">正在读取更新状态…</span><b id="briefingDate">正在整理今日数据…</b></div>
         </div>
         <p class="briefing-summary" id="briefingSummary">正在生成基于原始元数据的可核验摘要。</p>
+        <section class="metrics briefing-metrics" aria-label="科研简报数据统计">
+          <article><span>历史论文</span><strong id="paperCount">—</strong><small>持续累积</small></article>
+          <article><span>最新日论文</span><strong id="featuredCount">—</strong><small>按发布日期计数</small></article>
+          <article><span>官方新闻</span><strong id="newsCount">—</strong><small>只保留原始来源</small></article>
+          <article><span>数据源状态</span><strong id="sourceHealth">—</strong><small id="sourceHealthHint">正在检查</small></article>
+        </section>
         <div class="briefing-grid">
           <article><span>核心核物理主题</span><div id="topicBrief" class="brief-list"></div></article>
           <article><span>主要来源</span><div id="sourceBrief" class="brief-list"></div></article>
           <article><span>今日核物理焦点</span><div id="topBrief" class="brief-top"></div></article>
         </div>
-      </section>
-
-      <section class="metrics" aria-label="数据统计">
-        <article><span>历史论文</span><strong id="paperCount">—</strong><small>持续累积</small></article>
-        <article><span>最新日论文</span><strong id="featuredCount">—</strong><small>按发布日期计数</small></article>
-        <article><span>官方新闻</span><strong id="newsCount">—</strong><small>只保留原始来源</small></article>
-        <article><span>数据源状态</span><strong id="sourceHealth">—</strong><small id="sourceHealthHint">正在检查</small></article>
       </section>
 
       <section class="workspace" id="stream">
@@ -109,6 +122,7 @@
               <option value="daily-focus">今日核物理</option>
               <option value="today">今日全部</option>
               <option value="7days">近7日</option>
+              <option value="custom">自定义日期</option>
               <option value="all">历史全部</option>
             </select>
             <select id="sourceSelect" aria-label="论文来源">
@@ -119,6 +133,14 @@
               <option value="importance">重要性</option>
               <option value="source">期刊/来源</option>
             </select>
+          </div>
+
+          <div class="custom-date-range" id="customDateRange" role="group" aria-label="自定义论文日期范围" hidden>
+            <label><span>开始日期</span><input id="dateFrom" type="date"></label>
+            <span class="date-range-arrow" aria-hidden="true">→</span>
+            <label><span>结束日期</span><input id="dateTo" type="date"></label>
+            <button type="button" id="clearDateRange">清空日期</button>
+            <small id="dateRangeHint" aria-live="polite"></small>
           </div>
 
           <div class="active-filters" id="activeFilters"></div>
@@ -152,7 +174,7 @@
 
     <footer>
       <div class="footer-brand"><b>小康康的物理世界</b><span>一个生长中的个人核物理研究空间</span></div>
-      <p>感谢 arXiv 提供开放互操作数据。仅展示明确为 CC0 / CC BY、且自动检查未发现常见第三方标记的原稿图；最终权利状态以原文为准。本站不代表期刊或机构背书。</p>
+      <p>感谢 arXiv 提供开放互操作数据。本站仅展示可核验元数据、摘要与原始链接，不展示或镜像论文图片和全文；最终内容与权利状态以原文为准。本站不代表期刊或机构背书。</p>
     </footer>
   </div>
 
@@ -162,12 +184,22 @@
       <p>关键词会在搜索和排序中生效。与GitHub的自动同步通道配置完成后，会每日写入公开仓库。</p>
       <div class="keyword-input-row"><input id="keywordInput" placeholder="例如：11Li、knockout reaction、EAST"><button type="submit">添加</button></div>
       <div class="keyword-tags" id="keywordTags"></div>
-      <div class="dialog-actions"><button type="button" id="exportPersonal">导出备份</button><label class="import-label">导入备份<input type="file" id="importPersonal" accept="application/json"></label></div>
+      <div class="dialog-actions"><button type="button" id="exportPersonal">导出私人备份（含笔记）</button><label class="import-label">导入备份<input type="file" id="importPersonal" accept="application/json"></label></div>
     </form>
   </dialog>
 
   <dialog id="detailDialog">
     <article class="dialog-card detail-card" id="detailContent"></article>
+  </dialog>
+
+  <dialog id="noteDialog">
+    <form class="dialog-card note-dialog-card" id="noteForm">
+      <div class="dialog-head"><div><small>PRIVATE RESEARCH NOTE</small><h3>论文笔记</h3></div><button type="button" id="closeNote" aria-label="关闭笔记">×</button></div>
+      <p class="note-paper-title" id="notePaperTitle"></p>
+      <label class="note-field"><span>我的笔记</span><textarea class="note-editor" id="noteInput" maxlength="12000" placeholder="记录阅读要点、引用位置、实验想法或待验证问题…"></textarea></label>
+      <div class="note-meta"><span>仅保存在当前浏览器，不会上传或公开到 GitHub。</span><b id="noteCount">0 / 12000</b></div>
+      <div class="note-dialog-actions"><button type="button" id="deleteNote">删除笔记</button><span></span><button type="button" id="cancelNote">取消</button><button type="submit" class="primary-form-button">保存笔记</button></div>
+    </form>
   </dialog>
 
   <dialog id="favoriteDialog">
@@ -213,7 +245,6 @@
           <div class="tag-row"></div>
           <div class="paper-actions"></div>
         </div>
-        <aside class="paper-figures" aria-label="论文关键图"></aside>
       </div>
       <button class="favorite-button" aria-label="收藏文章" title="收藏">☆</button>
     </article>

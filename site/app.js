@@ -4,7 +4,7 @@ const PERSONAL_KEY = 'nuclear-frontier.personal.v1';
 const state = {
   papers: [], featured: [], news: [], notices: [], publicFavorites: [], translations: {},
   meta: null, view: 'papers', category: 'all', source: 'all', query: '', searchField: 'all', sort: 'date', scope: 'daily-focus', visible: 20,
-  favoriteKeyword: 'all', favoriteDraft: null, mySection: 'papers', translatedIds: new Set(),
+  dateFrom: '', dateTo: '', favoriteKeyword: 'all', favoriteDraft: null, noteDraft: null, mySection: 'papers', translatedIds: new Set(),
   personal: loadPersonal(), categoryMap: new Map(), favoriteSyncInFlight: false,
 };
 
@@ -31,12 +31,19 @@ const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 function loadPersonal() {
   try {
     const parsed = JSON.parse(localStorage.getItem(PERSONAL_KEY) || '{}');
+    const favorites = parsed.favorites && typeof parsed.favorites === 'object' ? parsed.favorites : {};
+    const notes = parsed.notes && typeof parsed.notes === 'object' ? parsed.notes : {};
+    Object.entries(favorites).forEach(([id, record]) => {
+      if (!record || typeof record !== 'object') return;
+      if (!notes[id] && typeof record.note === 'string' && record.note.trim()) notes[id] = record.note;
+      delete record.note;
+    });
     return {
-      favorites: parsed.favorites && typeof parsed.favorites === 'object' ? parsed.favorites : {},
+      favorites,
       keywords: Array.isArray(parsed.keywords) ? parsed.keywords : [],
       outbox: Array.isArray(parsed.outbox) ? parsed.outbox : [],
       readStatus: parsed.readStatus || {},
-      notes: parsed.notes || {},
+      notes,
       codeItems: Array.isArray(parsed.codeItems) ? parsed.codeItems : [],
       resources: Array.isArray(parsed.resources) ? parsed.resources : [],
       hiddenPublicFavorites: Array.isArray(parsed.hiddenPublicFavorites) ? parsed.hiddenPublicFavorites : [],
@@ -47,7 +54,14 @@ function loadPersonal() {
 }
 
 function savePersonal() {
-  localStorage.setItem(PERSONAL_KEY, JSON.stringify(state.personal));
+  try {
+    localStorage.setItem(PERSONAL_KEY, JSON.stringify(state.personal));
+    return true;
+  } catch (error) {
+    console.error(error);
+    showToast('浏览器存储空间不足，本次内容未能保存');
+    return false;
+  }
 }
 
 function normalizeKeyword(value = '') {
@@ -69,8 +83,25 @@ function uniqueKeywords(values = []) {
 }
 
 function publicFavoritePayload(record = {}) {
-  const { note: _privateNote, ...publicRecord } = record;
-  return publicRecord;
+  return {
+    id: record.id || '', doi: record.doi || '', arxiv_id: record.arxiv_id || '',
+    title: record.title || '', url: record.url || '', categories: record.categories || [],
+    tags: record.tags || [], keywords: uniqueKeywords(record.keywords || []), added_at: record.added_at || '',
+  };
+}
+
+function publicSyncEvent(event = {}) {
+  const at = typeof event.at === 'string' ? event.at : new Date().toISOString();
+  if (event.operation === 'upsert' && event.item) {
+    return { operation: 'upsert', item: publicFavoritePayload(event.item), at };
+  }
+  if (event.operation === 'remove' && event.id) {
+    return { operation: 'remove', id: String(event.id), at };
+  }
+  if (event.operation === 'keywords') {
+    return { operation: 'keywords', keywords: uniqueKeywords(event.keywords || []), at };
+  }
+  return null;
 }
 
 function corePriority(item) {
@@ -170,6 +201,51 @@ function latestPaperDay() {
   return state.papers.reduce((latest, item) => paperDay(item) > latest ? paperDay(item) : latest, '');
 }
 
+function paperDateBounds() {
+  const days = state.papers.map(paperDay).filter(Boolean).sort();
+  return { earliest: days[0] || '', latest: days.at(-1) || '' };
+}
+
+function configureDateRangeInputs() {
+  const { earliest, latest } = paperDateBounds();
+  ['dateFrom', 'dateTo'].forEach(id => {
+    const input = $(`#${id}`);
+    input.min = earliest;
+    input.max = latest;
+  });
+  $('#dateRangeHint').textContent = earliest && latest
+    ? `当前可选：${prettyDate(earliest)} 至 ${prettyDate(latest)}`
+    : '暂无可选日期';
+}
+
+function ensureCustomDateRange() {
+  const { earliest, latest } = paperDateBounds();
+  if (!latest) return;
+  if (!state.dateTo) state.dateTo = latest;
+  if (!state.dateFrom) {
+    const lower = new Date(`${latest}T00:00:00Z`);
+    lower.setUTCDate(lower.getUTCDate() - 29);
+    state.dateFrom = [earliest, lower.toISOString().slice(0, 10)].filter(Boolean).sort().at(-1);
+  }
+  $('#dateFrom').value = state.dateFrom;
+  $('#dateTo').value = state.dateTo;
+}
+
+function updateCustomDateRange(changedId) {
+  let from = $('#dateFrom').value;
+  let to = $('#dateTo').value;
+  if (from && to && from > to) {
+    if (changedId === 'dateFrom') to = from;
+    else from = to;
+  }
+  state.dateFrom = from;
+  state.dateTo = to;
+  $('#dateFrom').value = from;
+  $('#dateTo').value = to;
+  state.visible = 20;
+  renderCards();
+}
+
 function dailyFocusIds() {
   const latest = latestPaperDay();
   const today = state.papers.filter(item => paperDay(item) === latest);
@@ -186,6 +262,12 @@ function inPaperScope(item, focusIds, latest) {
     const lower = new Date(`${latest}T00:00:00Z`);
     lower.setUTCDate(lower.getUTCDate() - 6);
     return paperDay(item) >= lower.toISOString().slice(0, 10);
+  }
+  if (state.scope === 'custom') {
+    const day = paperDay(item);
+    return Boolean(day)
+      && (!state.dateFrom || day >= state.dateFrom)
+      && (!state.dateTo || day <= state.dateTo);
   }
   return true;
 }
@@ -257,49 +339,6 @@ function markOpened(item) {
     state.personal.readStatus[item.id] = 'reading';
     savePersonal();
   }
-}
-
-function figureSourceUrl(item, figure = {}) {
-  return figure.source_url || (item.arxiv_id ? `https://arxiv.org/html/${item.arxiv_id}` : item.url || '#');
-}
-
-function appendFigureGallery(item, host, { fallback = true } = {}) {
-  const figures = (item.figures || []).filter(figure => figure?.url).slice(0, 2);
-  if (!figures.length) {
-    if (!fallback || item.type !== 'paper') {
-      host.hidden = true;
-      return;
-    }
-    const empty = document.createElement('div');
-    empty.className = 'figure-fallback';
-    empty.innerHTML = `<span aria-hidden="true">◫</span><b>暂无可公开展示的论文图</b><small>不抓取许可不明的出版商图片</small><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">查看原文图表 ↗</a>`;
-    host.append(empty);
-    return;
-  }
-  figures.forEach((figure, index) => {
-    const node = document.createElement('figure');
-    const link = document.createElement('a');
-    link.href = figureSourceUrl(item, figure);
-    link.target = '_blank';
-    link.rel = 'noreferrer';
-    link.title = '在开放原文中查看该图';
-    const image = document.createElement('img');
-    image.src = figure.url;
-    image.alt = figure.caption ? `论文关键图 ${index + 1}：${figure.caption}` : `论文关键图 ${index + 1}`;
-    image.loading = 'lazy';
-    image.decoding = 'async';
-    image.addEventListener('error', () => node.classList.add('image-error'));
-    link.append(image);
-    const caption = document.createElement('figcaption');
-    const provider = figure.attribution || figure.provider || figure.source || 'arXiv 开放原文';
-    const normalizedLicenseUrl = (figure.license || '').replace(/^http:\/\//i, 'https://');
-    const licenseUrl = /^https:\/\/creativecommons\.org\/(?:licenses|publicdomain)\//i.test(normalizedLicenseUrl)
-      ? `<a href="${text(normalizedLicenseUrl)}" target="_blank" rel="noreferrer">${text(figure.provider?.match(/CC(?:0| BY)[^·,]*/i)?.[0] || '查看许可')}</a>`
-      : '许可见原文';
-    caption.innerHTML = `<b>${text(figure.label || `关键图 ${index + 1}`)}</b><span>${text(figure.caption || '点击查看原始图注')}</span><small>归属：${text(provider)} · ${licenseUrl}</small>`;
-    node.append(link, caption);
-    host.append(node);
-  });
 }
 
 function translationFor(item) {
@@ -407,8 +446,6 @@ function cardFor(item) {
     tags.append(tag);
   });
 
-  appendFigureGallery(item, $('.paper-figures', card));
-
   const actions = $('.paper-actions', card);
   const original = document.createElement('a');
   original.href = item.url || '#';
@@ -442,6 +479,15 @@ function cardFor(item) {
       : '最新核心论文将由 Codex 分批翻译';
     translate.addEventListener('click', () => toggleTranslation(item));
     actions.append(translate);
+
+    const hasNote = Boolean((state.personal.notes[item.id] || '').trim());
+    const note = document.createElement('button');
+    note.type = 'button';
+    note.className = `note-button${hasNote ? ' has-note' : ''}`;
+    note.textContent = hasNote ? '📝 编辑笔记 · 已保存' : '📝 写笔记';
+    note.setAttribute('aria-label', `${hasNote ? '编辑' : '为'}论文《${item.title}》${hasNote ? '的笔记' : '写笔记'}`);
+    note.addEventListener('click', () => openNoteDialog(item));
+    actions.append(note);
   }
   const related = document.createElement('button');
   related.type = 'button';
@@ -566,6 +612,19 @@ function renderActiveFilters() {
     });
     host.append(tag);
   }
+  if (state.view === 'papers' && state.scope === 'custom') {
+    const range = [state.dateFrom || '最早', state.dateTo || '最新'].join(' 至 ');
+    const tag = document.createElement('span');
+    tag.className = 'active-filter';
+    tag.innerHTML = `日期：${text(range)}<button aria-label="清除自定义日期范围">×</button>`;
+    $('button', tag).addEventListener('click', () => {
+      state.scope = 'all';
+      $('#scopeSelect').value = 'all';
+      updateMySpaceUI();
+      renderCards();
+    });
+    host.append(tag);
+  }
   if (state.view === 'favorites' && state.mySection === 'papers' && state.favoriteKeyword !== 'all') {
     const label = state.favoriteKeyword === 'missing'
       ? '未分类'
@@ -587,6 +646,7 @@ function updateMySpaceUI() {
   document.body.classList.toggle('personal-collection-view', isMy && !isPaperShelf);
   $('#searchFieldSelect').hidden = !isPaperShelf;
   $('#scopeSelect').hidden = state.view !== 'papers';
+  $('#customDateRange').hidden = !(state.view === 'papers' && state.scope === 'custom');
   $('#sourceSelect').hidden = !isPaperShelf || ['news', 'notices'].includes(state.view);
   $('#sortSelect').hidden = !isPaperShelf;
   $('#exportReferences').hidden = ['news', 'notices'].includes(state.view) || !isPaperShelf;
@@ -732,7 +792,7 @@ async function saveFavoriteDraft() {
   state.personal.favorites[item.id] = {
     id: item.id, doi: item.doi || '', arxiv_id: item.arxiv_id || '', title: item.title,
     url: item.url, categories: item.categories || [], tags: item.tags || [], keywords,
-    added_at: new Date().toISOString(), note: state.personal.notes[item.id] || '',
+    added_at: new Date().toISOString(),
   };
   state.personal.hiddenPublicFavorites = state.personal.hiddenPublicFavorites.filter(id => id !== item.id);
   state.personal.keywords = uniqueKeywords([...state.personal.keywords, ...keywords]);
@@ -780,9 +840,13 @@ async function toggleFavorite(item, button) {
 async function tryFavoriteSync() {
   const runtime = state.meta?.site;
   if (!runtime?.favorite_sync_enabled || !runtime.favorite_sync_endpoint || !state.personal.outbox.length || state.favoriteSyncInFlight) return;
-  const batch = state.personal.outbox.slice().map(event => event.operation === 'upsert' && event.item
-    ? { ...event, item: publicFavoritePayload(event.item) }
-    : event);
+  const queuedCount = state.personal.outbox.length;
+  const batch = state.personal.outbox.map(publicSyncEvent).filter(Boolean);
+  if (!batch.length) {
+    state.personal.outbox = [];
+    savePersonal();
+    return;
+  }
   state.favoriteSyncInFlight = true;
   let succeeded = false;
   try {
@@ -791,7 +855,7 @@ async function tryFavoriteSync() {
       body: JSON.stringify({ events: batch }),
     });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    state.personal.outbox.splice(0, batch.length);
+    state.personal.outbox.splice(0, queuedCount);
     savePersonal();
     succeeded = true;
   } catch (error) {
@@ -872,6 +936,76 @@ function exportReferenceSet() {
   showToast(`已导出 ${items.length} 条 RIS，可导入 Zotero`);
 }
 
+function updateNoteCount() {
+  const count = $('#noteInput').value.length;
+  $('#noteCount').textContent = `${count.toLocaleString('zh-CN')} / 12000`;
+}
+
+function openNoteDialog(item) {
+  state.noteDraft = item;
+  const value = state.personal.notes[item.id] || '';
+  $('#notePaperTitle').textContent = item.title;
+  $('#noteInput').value = value;
+  $('#deleteNote').hidden = !value.trim();
+  updateNoteCount();
+  $('#noteDialog').showModal();
+  setTimeout(() => $('#noteInput').focus(), 50);
+}
+
+function closeNoteDialog() {
+  $('#noteDialog').close();
+  state.noteDraft = null;
+}
+
+function refreshOpenDetailNoteButton(item) {
+  if (!$('#detailDialog').open || $('#detailContent').dataset.id !== item.id) return;
+  const button = $('#openDetailNote', $('#detailContent'));
+  if (button) button.textContent = state.personal.notes[item.id] ? '📝 编辑笔记 · 已保存' : '📝 写笔记';
+}
+
+function saveNoteDraft() {
+  const item = state.noteDraft;
+  if (!item) return;
+  const previous = state.personal.notes[item.id];
+  const previousFavoriteNote = state.personal.favorites[item.id]?.note;
+  const value = $('#noteInput').value.trim();
+  if (value) state.personal.notes[item.id] = value;
+  else delete state.personal.notes[item.id];
+  if (state.personal.favorites[item.id]) delete state.personal.favorites[item.id].note;
+  if (!savePersonal()) {
+    if (previous === undefined) delete state.personal.notes[item.id];
+    else state.personal.notes[item.id] = previous;
+    if (state.personal.favorites[item.id] && previousFavoriteNote !== undefined) {
+      state.personal.favorites[item.id].note = previousFavoriteNote;
+    }
+    return;
+  }
+  refreshOpenDetailNoteButton(item);
+  closeNoteDialog();
+  renderCards();
+  showToast(value ? '笔记已保存在当前浏览器' : '空笔记已清除');
+}
+
+function deleteNoteDraft() {
+  const item = state.noteDraft;
+  if (!item) return;
+  const previous = state.personal.notes[item.id];
+  const previousFavoriteNote = state.personal.favorites[item.id]?.note;
+  delete state.personal.notes[item.id];
+  if (state.personal.favorites[item.id]) delete state.personal.favorites[item.id].note;
+  if (!savePersonal()) {
+    if (previous !== undefined) state.personal.notes[item.id] = previous;
+    if (state.personal.favorites[item.id] && previousFavoriteNote !== undefined) {
+      state.personal.favorites[item.id].note = previousFavoriteNote;
+    }
+    return;
+  }
+  refreshOpenDetailNoteButton(item);
+  closeNoteDialog();
+  renderCards();
+  showToast('笔记已删除');
+}
+
 function openDetails(item) {
   markOpened(item);
   const translation = translationFor(item);
@@ -882,6 +1016,7 @@ function openDetails(item) {
     .sort((a, b) => b.score - a.score || (b.candidate.published || '').localeCompare(a.candidate.published || ''))
     .slice(0, 6);
   const host = $('#detailContent');
+  host.dataset.id = item.id;
   const scoreReasons = (item.score_reasons || []).map(reason => `<span>${text(reason)}</span>`).join('');
   host.innerHTML = `
     <div class="dialog-head"><div><small>${text(item.source || '')}</small><h3>文献详情与关联</h3></div><button aria-label="关闭">×</button></div>
@@ -891,22 +1026,18 @@ function openDetails(item) {
     <div class="score-box"><b>重要性 ${item.importance || 0}</b><div>${scoreReasons || '<span>基于来源与主题计算</span>'}</div></div>
     <h4>${translated ? 'Codex 中文译文' : '原文摘要'}</h4>
     <p class="detail-abstract">${text(translated ? translation.abstract_zh : (item.abstract || item.summary || '该来源未提供可公开摘要。'))}</p>
-    <h4>论文关键图</h4>
-    <div class="detail-figures" id="detailFigures"></div>
     <div class="detail-tools">
       <a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">打开原文 ↗</a>
       ${item.pdf_url ? `<a href="${text(item.pdf_url)}" target="_blank" rel="noreferrer">PDF ↗</a>` : ''}
       ${item.doi ? '<button id="copyDoi">复制 DOI</button>' : ''}
       <button id="exportBib">导出 BibTeX</button>
       ${translation ? `<button id="toggleDetailTranslation">${translated ? '查看英文原文' : '查看中文译文'}</button>` : ''}
+      ${item.type === 'paper' ? `<button id="openDetailNote">📝 ${state.personal.notes[item.id] ? '编辑笔记 · 已保存' : '写笔记'}</button><button id="cycleRead">${text(readingLabel(item.id))}</button>` : ''}
     </div>
-    <h4>我的笔记</h4>
-    <textarea class="note-editor" id="detailNote" placeholder="记录阅读要点、引用位置或后续实验想法…">${text(state.personal.notes[item.id] || '')}</textarea>
-    <div class="note-actions"><button id="saveNote">保存笔记</button><button id="cycleRead">${text(readingLabel(item.id))}</button></div>
+    ${item.type === 'paper' ? '<p class="note-privacy">笔记仅保存在当前浏览器，不进入公开收藏。</p>' : ''}
     <h4>关联文献</h4>
     <div class="related-list">${related.length ? related.map(({ candidate, score }) => `<a class="related-item" href="${text(candidate.url)}" target="_blank" rel="noreferrer">${text(candidate.title)}<small>${text(candidate.source)} · 关联度 ${score}</small></a>`).join('') : '<p>当前历史库中尚无明显关联文献。</p>'}</div>
   `;
-  appendFigureGallery(item, $('#detailFigures', host));
   $('.dialog-head button', host).addEventListener('click', () => $('#detailDialog').close());
   $('#copyDoi', host)?.addEventListener('click', () => copyText(item.doi, 'DOI 已复制'));
   $('#toggleDetailTranslation', host)?.addEventListener('click', () => {
@@ -919,17 +1050,8 @@ function openDetails(item) {
     downloadText(`${citationKey(item)}.bib`, toBibTeX(item), 'application/x-bibtex');
     showToast('BibTeX 已导出');
   });
-  $('#saveNote', host).addEventListener('click', () => {
-    const note = $('#detailNote', host).value.trim();
-    if (note) state.personal.notes[item.id] = note;
-    else delete state.personal.notes[item.id];
-    if (state.personal.favorites[item.id]) {
-      state.personal.favorites[item.id].note = note;
-    }
-    savePersonal();
-    showToast('笔记已保存');
-  });
-  $('#cycleRead', host).addEventListener('click', () => {
+  $('#openDetailNote', host)?.addEventListener('click', () => openNoteDialog(item));
+  $('#cycleRead', host)?.addEventListener('click', () => {
     cycleReadingStatus(item);
     $('#cycleRead', host).textContent = readingLabel(item.id);
   });
@@ -1175,17 +1297,22 @@ async function importPersonal(file) {
   try {
     const value = JSON.parse(await file.text());
     if (!value || typeof value !== 'object') throw new Error('备份格式错误');
+    const favorites = value.favorites && typeof value.favorites === 'object' ? value.favorites : {};
+    const notes = value.notes && typeof value.notes === 'object' ? value.notes : {};
+    Object.entries(favorites).forEach(([id, record]) => {
+      if (!record || typeof record !== 'object') return;
+      if (!notes[id] && typeof record.note === 'string' && record.note.trim()) notes[id] = record.note;
+      delete record.note;
+      record.keywords = uniqueKeywords(record.keywords || []);
+    });
     state.personal = {
-      favorites: value.favorites || {}, keywords: Array.isArray(value.keywords) ? value.keywords : [],
-      outbox: Array.isArray(value.outbox) ? value.outbox : [],
-      readStatus: value.readStatus || {}, notes: value.notes || {},
+      favorites, keywords: Array.isArray(value.keywords) ? uniqueKeywords(value.keywords) : [],
+      outbox: Array.isArray(value.outbox) ? value.outbox.map(publicSyncEvent).filter(Boolean) : [],
+      readStatus: value.readStatus || {}, notes,
       codeItems: Array.isArray(value.codeItems) ? value.codeItems : [],
       resources: Array.isArray(value.resources) ? value.resources : [],
       hiddenPublicFavorites: Array.isArray(value.hiddenPublicFavorites) ? value.hiddenPublicFavorites : [],
     };
-    Object.values(state.personal.favorites).forEach(record => {
-      if (record && typeof record === 'object') record.keywords = uniqueKeywords(record.keywords || []);
-    });
     savePersonal(); renderKeywords(); renderCards(); renderHomeHub();
   } catch (error) {
     alert(`无法导入备份：${error.message}`);
@@ -1246,7 +1373,23 @@ function bindEvents() {
   $('#searchInput').addEventListener('input', event => { state.query = event.target.value; state.visible = 20; renderCards(); });
   $('#searchFieldSelect').addEventListener('change', event => { state.searchField = event.target.value; state.visible = 20; renderCards(); });
   $('#sortSelect').addEventListener('change', event => { state.sort = event.target.value; renderCards(); });
-  $('#scopeSelect').addEventListener('change', event => { state.scope = event.target.value; state.visible = 20; renderCards(); });
+  $('#scopeSelect').addEventListener('change', event => {
+    state.scope = event.target.value;
+    if (state.scope === 'custom') ensureCustomDateRange();
+    state.visible = 20;
+    updateMySpaceUI();
+    renderCards();
+  });
+  $('#dateFrom').addEventListener('change', () => updateCustomDateRange('dateFrom'));
+  $('#dateTo').addEventListener('change', () => updateCustomDateRange('dateTo'));
+  $('#clearDateRange').addEventListener('click', () => {
+    state.dateFrom = '';
+    state.dateTo = '';
+    $('#dateFrom').value = '';
+    $('#dateTo').value = '';
+    state.visible = 20;
+    renderCards();
+  });
   $('#sourceSelect').addEventListener('change', event => { state.source = event.target.value; state.visible = 20; renderCards(); });
   $('#loadMore').addEventListener('click', () => { state.visible += 20; renderCards(); });
   $('#keywordButton').addEventListener('click', () => $('#keywordDialog').showModal());
@@ -1267,6 +1410,11 @@ function bindEvents() {
   $('#favoriteForm').addEventListener('submit', event => { event.preventDefault(); saveFavoriteDraft(); });
   $('#cancelFavorite').addEventListener('click', closeFavoriteDialog);
   $('#cancelFavoriteBottom').addEventListener('click', closeFavoriteDialog);
+  $('#noteForm').addEventListener('submit', event => { event.preventDefault(); saveNoteDraft(); });
+  $('#noteInput').addEventListener('input', updateNoteCount);
+  $('#closeNote').addEventListener('click', closeNoteDialog);
+  $('#cancelNote').addEventListener('click', closeNoteDialog);
+  $('#deleteNote').addEventListener('click', deleteNoteDraft);
   $('#addMyItem').addEventListener('click', openMyItemDialog);
   $('#myItemForm').addEventListener('submit', saveMyItem);
   $('#cancelMyItem').addEventListener('click', closeMyItemDialog);
@@ -1292,6 +1440,7 @@ async function loadData() {
   [state.meta, state.papers, state.featured, state.news, state.notices, state.publicFavorites] = responses;
   state.translations = translationPayload.items || {};
   state.meta.categories.forEach(category => state.categoryMap.set(category.id, category));
+  configureDateRangeInputs();
   if (state.meta.site.repository_url) $('#repoLink').href = state.meta.site.repository_url;
   else $('#repoLink').hidden = true;
 }
