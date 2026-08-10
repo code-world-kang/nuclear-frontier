@@ -161,15 +161,30 @@
       </section>
 
       <section class="workspace" id="stream">
-        <aside class="filters-panel">
-          <div class="panel-title"><span>研究领域</span><button id="clearCategory">全部</button></div>
-          <div class="category-list" id="categoryList"></div>
-          <div class="keyword-card">
-            <span>个人关注</span>
-            <strong>让你的关键词提前浮现</strong>
-            <p>可添加核素、反应道、装置或分析方法。</p>
-            <button id="addKeywordAside">+添加关键词</button>
+        <aside class="filters-panel" aria-label="论文筛选与排列">
+          <div class="filter-panel-heading"><span>我的筛选</span><button id="editFilterLayout" type="button" aria-pressed="false">编辑排列</button></div>
+          <p class="layout-edit-hint" id="layoutEditHint" hidden>拖动领域或使用上下按钮调整，结果保存在当前浏览器。</p>
+          <div class="filter-modules" id="filterModules">
+            <section class="filter-module" data-filter-module="categories">
+              <div class="panel-title">
+                <span>研究领域</span>
+                <span class="filter-module-actions"><button type="button" data-module-move="-1" aria-label="上移研究领域">↑</button><button type="button" data-module-move="1" aria-label="下移研究领域">↓</button></span>
+                <button id="clearCategory">全部</button>
+              </div>
+              <div class="category-list" id="categoryList"></div>
+              <div class="hidden-category-list" id="hiddenCategoryList" hidden></div>
+            </section>
+            <section class="filter-module" data-filter-module="keywords">
+              <div class="filter-module-actions module-card-actions"><button type="button" data-module-move="-1" aria-label="上移个人关注">↑</button><button type="button" data-module-move="1" aria-label="下移个人关注">↓</button></div>
+              <div class="keyword-card">
+                <span>个人关注</span>
+                <strong>让你的关键词提前浮现</strong>
+                <p>可添加核素、反应道、装置或分析方法。</p>
+                <button id="addKeywordAside">+添加关键词</button>
+              </div>
+            </section>
           </div>
+          <button class="reset-layout-button" id="resetFilterLayout" type="button" hidden>恢复默认排列</button>
         </aside>
 
         <div class="content-column">
@@ -184,6 +199,7 @@
               <button class="view-tab" data-view="unread">未读</button>
               <button class="view-tab" data-view="favorites">已收藏</button>
             </div>
+            <button class="assistant-trigger" id="openPaperAssistant" type="button" aria-controls="paperAssistant" aria-expanded="false"><span aria-hidden="true">✿</span>论文助手</button>
           </div>
 
           <section class="my-space-nav" id="mySpaceNav" hidden aria-label="我的科研空间">
@@ -247,15 +263,24 @@
           </div>
         </div>
 
-        <aside class="radar-panel">
-          <div class="radar-head"><span>信息雷达</span><button data-view-jump="notices">全部 →</button></div>
-          <div id="radarList" class="radar-list"><div class="skeleton mini"></div></div>
-          <div class="source-status-card">
-            <div><span class="status-pulse"></span><b>自动更新</b></div>
-            <p id="automationSummary">正在读取数据源状态…</p>
-            <button id="showSourceStatus">查看数据源状态</button>
+        <aside class="radar-panel" id="paperAssistant" aria-label="论文助手">
+          <div class="radar-head"><div><small id="assistantKicker">PAPER COMPANION</small><span id="assistantTitle">论文助手</span></div><span class="assistant-head-actions"><button id="assistantBackToOverview" type="button" aria-label="返回论文概览" hidden>←</button><button id="closePaperAssistant" type="button" aria-label="关闭论文助手">×</button></span></div>
+          <p class="assistant-intro" id="assistantIntro">只解释当前论文结果，不再重复首页新闻。</p>
+          <div id="assistantOverview">
+            <div class="assistant-metrics" id="assistantMetrics"></div>
+            <section class="assistant-section"><div class="assistant-section-head"><span>当前筛选</span><button id="clearAssistantFilters" type="button">清除</button></div><div class="assistant-chip-list" id="assistantFilters"></div></section>
+            <section class="assistant-section"><div class="assistant-section-head"><span>结果主题</span></div><div class="assistant-topic-list" id="assistantTopics"></div></section>
+            <section class="assistant-section assistant-personal"><div class="assistant-section-head"><span>我的工作区</span></div><div class="assistant-shortcuts"><button type="button" data-view-jump="favorites">收藏与笔记 <b id="assistantFavoriteTotal">0</b></button><button type="button" data-view-jump="unread">待阅论文 <b id="assistantUnreadTotal">0</b></button></div></section>
+            <a class="assistant-daily-link" href="#notices" data-view-jump="notices"><span>今日通知与新闻</span><b id="assistantDailyTotal">—</b><i>→</i></a>
+            <div class="source-status-card">
+              <div><span class="status-pulse"></span><b>自动更新</b></div>
+              <p id="automationSummary">正在读取数据源状态…</p>
+              <button id="showSourceStatus">查看数据源状态</button>
+            </div>
           </div>
+          <article class="assistant-paper-detail" id="assistantPaperDetail" hidden aria-live="polite"></article>
         </aside>
+        <button class="assistant-backdrop" id="assistantBackdrop" type="button" aria-label="关闭论文助手" tabindex="-1"></button>
       </section>
     </main>
 

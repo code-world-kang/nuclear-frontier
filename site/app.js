@@ -1,12 +1,22 @@
 const PATH = new URL('.', window.location.href).pathname;
 const PERSONAL_KEY = 'nuclear-frontier.personal.v1';
+const PAPER_LAYOUT_KEY = 'nuclear-frontier.paper-layout.v1';
+
+const DEFAULT_CATEGORY_ORDER = [
+  'experimental-nuclear', 'nuclear-structure', 'nuclear-reactions', 'nuclear-decay', 'detectors-daq',
+  'theoretical-nuclear', 'nuclear-astrophysics', 'high-energy-nuclear', 'accelerators', 'fusion',
+  'ai-science', 'nuclear-general', 'nuclear-data-applications', 'particle-cross', 'frontiers',
+];
+const DEFAULT_FILTER_MODULE_ORDER = ['categories', 'keywords'];
 
 const state = {
   papers: [], featured: [], news: [], notices: [], publicFavorites: [], translations: {}, noticePortals: { categories: [], entries: [] },
   meta: null, view: 'papers', category: 'all', source: 'all', query: '', searchField: 'all', sort: 'date', scope: 'daily-focus', visible: 20,
   dateFrom: '', dateTo: '', favoriteKeyword: 'all', favoriteDraft: null, noteDraft: null, mySection: 'papers', translatedIds: new Set(),
+  selectedPaperId: '',
   noticeCategory: 'all', noticeTiming: 'all', noticeQuery: '', noticeVisible: 24,
-  noticePortalCategory: 'all', noticePortalQuery: '', personal: loadPersonal(), categoryMap: new Map(), favoriteSyncInFlight: false,
+  noticePortalCategory: 'all', noticePortalQuery: '', personal: loadPersonal(), paperLayout: loadPaperLayout(),
+  layoutEditing: false, draggedCategory: '', categoryMap: new Map(), favoriteSyncInFlight: false,
 };
 
 const PRIMARY_NUCLEAR_CATEGORIES = new Set([
@@ -71,6 +81,28 @@ function savePersonal() {
     console.error(error);
     showToast('浏览器存储空间不足，本次内容未能保存');
     return false;
+  }
+}
+
+function loadPaperLayout() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(PAPER_LAYOUT_KEY) || '{}');
+    return {
+      categoryOrder: Array.isArray(parsed.categoryOrder) ? parsed.categoryOrder.map(String) : [...DEFAULT_CATEGORY_ORDER],
+      hiddenCategories: Array.isArray(parsed.hiddenCategories) ? parsed.hiddenCategories.map(String) : [],
+      moduleOrder: Array.isArray(parsed.moduleOrder) ? parsed.moduleOrder.map(String) : [...DEFAULT_FILTER_MODULE_ORDER],
+    };
+  } catch {
+    return { categoryOrder: [...DEFAULT_CATEGORY_ORDER], hiddenCategories: [], moduleOrder: [...DEFAULT_FILTER_MODULE_ORDER] };
+  }
+}
+
+function savePaperLayout() {
+  try {
+    localStorage.setItem(PAPER_LAYOUT_KEY, JSON.stringify(state.paperLayout));
+  } catch (error) {
+    console.error(error);
+    showToast('排列未能保存，请检查浏览器存储空间');
   }
 }
 
@@ -402,6 +434,7 @@ function cardFor(item) {
   const primary = item.categories?.[0] || 'frontiers';
   card.dataset.id = item.id;
   card.dataset.primary = primary;
+  card.classList.toggle('selected-for-assistant', state.selectedPaperId === item.id);
   if ((item.importance || 0) >= 65) card.classList.add('featured');
 
   const meta = $('.paper-meta', card);
@@ -528,6 +561,13 @@ function cardFor(item) {
     note.setAttribute('aria-label', `${hasNote ? '编辑' : '为'}论文《${item.title}》${hasNote ? '的笔记' : '写笔记'}`);
     note.addEventListener('click', () => openNoteDialog(item));
     actions.append(note);
+
+    const info = document.createElement('button');
+    info.type = 'button';
+    info.className = 'paper-info-button';
+    info.textContent = '论文信息';
+    info.addEventListener('click', () => selectPaperForAssistant(item));
+    actions.append(info);
   }
   const related = document.createElement('button');
   related.type = 'button';
@@ -549,6 +589,17 @@ function cardFor(item) {
     favorite.hidden = true;
     return card;
   }
+  card.tabIndex = 0;
+  card.setAttribute('aria-label', `论文：${item.title}。按回车在右侧查看论文信息`);
+  card.addEventListener('click', event => {
+    if (event.target.closest('a, button, input, select, textarea')) return;
+    selectPaperForAssistant(item);
+  });
+  card.addEventListener('keydown', event => {
+    if (event.key !== 'Enter' || event.target !== card) return;
+    event.preventDefault();
+    selectPaperForAssistant(item);
+  });
   favorite.textContent = isFavorite(item.id) ? '★' : '☆';
   favorite.classList.toggle('active', isFavorite(item.id));
   favorite.setAttribute('aria-pressed', String(isFavorite(item.id)));
@@ -604,6 +655,7 @@ function renderMyCollection() {
   $('#loadMore').hidden = true;
   $('#activeFilters').replaceChildren();
   $('#myKeywordsPanel').hidden = true;
+  closePaperAssistant();
 }
 
 function renderCards() {
@@ -619,6 +671,7 @@ function renderCards() {
   $('#loadMore').hidden = items.length <= state.visible;
   renderActiveFilters();
   renderMyKeywordsPanel();
+  renderPaperAssistant(items);
 }
 
 function renderActiveFilters() {
@@ -692,6 +745,11 @@ function updateMySpaceUI() {
   $('#exportReferences').hidden = ['news', 'notices'].includes(state.view) || !isPaperShelf;
   $('#addMyItem').hidden = !(isMy && !isPaperShelf);
   $('#myKeywordsPanel').hidden = !(isMy && isPaperShelf);
+  const isPaperWorkspace = ['papers', 'featured', 'unread'].includes(state.view) || (isMy && isPaperShelf);
+  $('#openPaperAssistant').hidden = !isPaperWorkspace;
+  $('#paperAssistant').hidden = !isPaperWorkspace;
+  $('#assistantBackdrop').hidden = !isPaperWorkspace;
+  if (!isPaperWorkspace) closePaperAssistant();
   $('#searchInput').placeholder = isMy && !isPaperShelf
     ? (state.mySection === 'code' ? '搜索我的代码与项目…' : '搜索参考资料…')
     : '搜索题目、作者、期刊、DOI 或关键词…';
@@ -716,6 +774,8 @@ function setMySection(section) {
 }
 
 function setView(view) {
+  closePaperAssistant();
+  state.selectedPaperId = '';
   state.view = view;
   state.visible = 20;
   const labels = {
@@ -1119,19 +1179,170 @@ function renderCategories() {
   const counts = new Map();
   state.papers.forEach(item => (item.categories || []).forEach(id => counts.set(id, (counts.get(id) || 0) + 1)));
   const host = $('#categoryList');
+  host.replaceChildren();
   const all = document.createElement('button');
-  all.className = 'category-button active';
+  all.className = 'category-button';
   all.dataset.category = 'all';
   all.innerHTML = `<span class="cat-icon">◎</span><span>全部领域</span><span class="cat-count">${state.papers.length}</span>`;
+  all.classList.toggle('active', state.category === 'all');
   host.append(all);
-  state.meta.categories.forEach(category => {
+
+  const knownIds = new Set(state.meta.categories.map(category => category.id));
+  const orderedIds = [...new Set([
+    ...state.paperLayout.categoryOrder.filter(id => knownIds.has(id)),
+    ...DEFAULT_CATEGORY_ORDER.filter(id => knownIds.has(id)),
+    ...state.meta.categories.map(category => category.id),
+  ])];
+  state.paperLayout.categoryOrder = orderedIds;
+  state.paperLayout.hiddenCategories = state.paperLayout.hiddenCategories.filter(id => knownIds.has(id));
+  const hidden = new Set(state.paperLayout.hiddenCategories);
+  const byId = new Map(state.meta.categories.map(category => [category.id, category]));
+
+  orderedIds.filter(id => !hidden.has(id)).forEach(id => {
+    const category = byId.get(id);
+    if (!category) return;
+    const row = document.createElement('div');
+    row.className = 'category-row';
+    row.dataset.categoryRow = category.id;
+    row.draggable = state.layoutEditing;
     const button = document.createElement('button');
     button.className = 'category-button';
     button.dataset.category = category.id;
     button.innerHTML = `<span class="cat-icon">${text(category.icon)}</span><span>${text(category.name)}</span><span class="cat-count">${counts.get(category.id) || 0}</span>`;
-    host.append(button);
+    button.classList.toggle('active', state.category === category.id);
+    button.addEventListener('click', () => setCategory(category.id));
+    const actions = document.createElement('span');
+    actions.className = 'category-edit-actions';
+    actions.innerHTML = `<button type="button" data-category-move="-1" aria-label="上移 ${text(category.name)}">↑</button><button type="button" data-category-move="1" aria-label="下移 ${text(category.name)}">↓</button><button type="button" data-category-hide aria-label="隐藏 ${text(category.name)}">−</button>`;
+    $$('[data-category-move]', actions).forEach(control => control.addEventListener('click', () => moveCategory(category.id, Number(control.dataset.categoryMove))));
+    $('[data-category-hide]', actions).addEventListener('click', () => hideCategory(category.id));
+    row.append(button, actions);
+    bindCategoryDrag(row);
+    host.append(row);
   });
-  $$('.category-button', host).forEach(button => button.addEventListener('click', () => setCategory(button.dataset.category)));
+  all.addEventListener('click', () => setCategory('all'));
+  renderHiddenCategories(byId);
+  renderFilterModuleOrder();
+  savePaperLayout();
+}
+
+function moveCategory(id, direction) {
+  const visible = state.paperLayout.categoryOrder.filter(value => !state.paperLayout.hiddenCategories.includes(value));
+  const from = visible.indexOf(id);
+  const target = from + direction;
+  if (from < 0 || target < 0 || target >= visible.length) return;
+  const targetId = visible[target];
+  const all = [...state.paperLayout.categoryOrder];
+  const fromAll = all.indexOf(id);
+  const targetAll = all.indexOf(targetId);
+  [all[fromAll], all[targetAll]] = [all[targetAll], all[fromAll]];
+  state.paperLayout.categoryOrder = all;
+  savePaperLayout();
+  renderCategories();
+}
+
+function hideCategory(id) {
+  if (!state.paperLayout.hiddenCategories.includes(id)) state.paperLayout.hiddenCategories.push(id);
+  if (state.category === id) state.category = 'all';
+  savePaperLayout();
+  renderCategories();
+  renderCards();
+}
+
+function restoreCategory(id) {
+  state.paperLayout.hiddenCategories = state.paperLayout.hiddenCategories.filter(value => value !== id);
+  savePaperLayout();
+  renderCategories();
+}
+
+function renderHiddenCategories(byId) {
+  const host = $('#hiddenCategoryList');
+  const items = state.paperLayout.hiddenCategories.map(id => byId.get(id)).filter(Boolean);
+  host.hidden = !state.layoutEditing || !items.length;
+  host.replaceChildren();
+  if (!items.length) return;
+  const title = document.createElement('span');
+  title.textContent = '已隐藏领域 · 点击恢复';
+  host.append(title, ...items.map(category => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = `+ ${category.name}`;
+    button.addEventListener('click', () => restoreCategory(category.id));
+    return button;
+  }));
+}
+
+function bindCategoryDrag(row) {
+  row.addEventListener('dragstart', event => {
+    if (!state.layoutEditing) return event.preventDefault();
+    state.draggedCategory = row.dataset.categoryRow;
+    row.classList.add('dragging');
+    event.dataTransfer.effectAllowed = 'move';
+  });
+  row.addEventListener('dragend', () => {
+    state.draggedCategory = '';
+    $$('.category-row').forEach(item => item.classList.remove('dragging', 'drag-over'));
+  });
+  row.addEventListener('dragover', event => {
+    if (!state.draggedCategory || state.draggedCategory === row.dataset.categoryRow) return;
+    event.preventDefault();
+    row.classList.add('drag-over');
+  });
+  row.addEventListener('dragleave', () => row.classList.remove('drag-over'));
+  row.addEventListener('drop', event => {
+    event.preventDefault();
+    const target = row.dataset.categoryRow;
+    const from = state.paperLayout.categoryOrder.indexOf(state.draggedCategory);
+    const to = state.paperLayout.categoryOrder.indexOf(target);
+    if (from < 0 || to < 0 || from === to) return;
+    const order = [...state.paperLayout.categoryOrder];
+    const [moved] = order.splice(from, 1);
+    order.splice(to, 0, moved);
+    state.paperLayout.categoryOrder = order;
+    savePaperLayout();
+    renderCategories();
+  });
+}
+
+function renderFilterModuleOrder() {
+  const host = $('#filterModules');
+  const valid = new Set(DEFAULT_FILTER_MODULE_ORDER);
+  state.paperLayout.moduleOrder = [...new Set([
+    ...state.paperLayout.moduleOrder.filter(id => valid.has(id)),
+    ...DEFAULT_FILTER_MODULE_ORDER,
+  ])];
+  state.paperLayout.moduleOrder.forEach(id => {
+    const module = $(`[data-filter-module="${id}"]`, host);
+    if (module) host.append(module);
+  });
+}
+
+function moveFilterModule(id, direction) {
+  const order = [...state.paperLayout.moduleOrder];
+  const from = order.indexOf(id);
+  const target = from + direction;
+  if (from < 0 || target < 0 || target >= order.length) return;
+  [order[from], order[target]] = [order[target], order[from]];
+  state.paperLayout.moduleOrder = order;
+  savePaperLayout();
+  renderFilterModuleOrder();
+}
+
+function toggleLayoutEditing() {
+  state.layoutEditing = !state.layoutEditing;
+  document.body.classList.toggle('layout-editing', state.layoutEditing);
+  $('#editFilterLayout').setAttribute('aria-pressed', String(state.layoutEditing));
+  $('#editFilterLayout').textContent = state.layoutEditing ? '完成' : '编辑排列';
+  $('#layoutEditHint').hidden = !state.layoutEditing;
+  $('#resetFilterLayout').hidden = !state.layoutEditing;
+  renderCategories();
+}
+
+function resetFilterLayout() {
+  state.paperLayout = { categoryOrder: [...DEFAULT_CATEGORY_ORDER], hiddenCategories: [], moduleOrder: [...DEFAULT_FILTER_MODULE_ORDER] };
+  savePaperLayout();
+  renderCategories();
+  showToast('已恢复核物理默认排列');
 }
 
 function renderSpotlight() {
@@ -1150,18 +1361,230 @@ function renderSpotlight() {
     </div>`;
 }
 
-function renderRadar() {
-  const items = [...state.notices.slice(0, 3), ...state.news.slice(0, 2)].slice(0, 5);
-  const host = $('#radarList');
-  host.replaceChildren(...items.map(item => {
-    const link = document.createElement('a');
-    link.className = 'radar-item';
-    link.href = item.url;
-    link.target = '_blank';
-    link.rel = 'noreferrer';
-    link.innerHTML = `<small><span>${text(item.source)}</span><span>${text(prettyDate(item.published))}</span></small><b>${text(item.title)}</b>`;
-    return link;
+function assistantFilterLabels() {
+  const labels = [];
+  if (state.category !== 'all') labels.push(categoryName(state.category));
+  if (state.source !== 'all') labels.push(state.source);
+  if (state.query.trim()) labels.push(`搜索：${state.query.trim()}`);
+  if (state.view === 'papers') labels.push($('#scopeSelect')?.selectedOptions[0]?.textContent || '全部时间');
+  if (state.searchField !== 'all') labels.push($('#searchFieldSelect')?.selectedOptions[0]?.textContent || '指定字段');
+  return labels;
+}
+
+function matchedTerms(value, vocabulary) {
+  const haystack = String(value || '').toLowerCase();
+  return vocabulary.filter(item => item.patterns.some(pattern => pattern.test(haystack))).map(item => item.label);
+}
+
+function extractNuclides(item) {
+  const value = [item.title, item.abstract, ...(item.tags || [])].join(' ');
+  const results = [];
+  const patterns = [/\^\{(\d{1,3})\}\$?\s*([A-Z][a-z]?)/g, /\b(\d{1,3})([A-Z][a-z])\b/g];
+  patterns.forEach(pattern => {
+    for (const match of value.matchAll(pattern)) results.push(`${match[1]}${match[2]}`);
+  });
+  return [...new Set(results)].slice(0, 8);
+}
+
+function extractPaperFacts(item) {
+  const value = [item.title, item.abstract, ...(item.tags || [])].join(' ');
+  const reactions = matchedTerms(value, [
+    { label: '电子俘获', patterns: [/electron capture/] },
+    { label: 'β 衰变', patterns: [/beta decay/, /\\beta\s*decay/] },
+    { label: '双β衰变', patterns: [/double beta/, /0\s*nu\s*beta/] },
+    { label: '核裂变', patterns: [/\bfission\b/] },
+    { label: '敲出反应', patterns: [/knockout/, /knock-out/] },
+    { label: '准自由散射', patterns: [/quasifree/, /quasi-free/] },
+    { label: '中子俘获', patterns: [/neutron capture/, /\(n,\s*(?:gamma|γ)\)/] },
+    { label: '重离子碰撞', patterns: [/heavy-ion collision/, /heavy ion collision/] },
+    { label: '弹性/非弹性散射', patterns: [/inelastic scattering/, /elastic scattering/] },
+  ]);
+  const detectors = matchedTerms(value, [
+    { label: 'HPGe/锗探测器', patterns: [/high-purity germanium/, /hpge/, /germanium detector/] },
+    { label: '硅漂移探测器', patterns: [/silicon drift detector/] },
+    { label: '硅探测器', patterns: [/silicon detector/] },
+    { label: '闪烁体', patterns: [/scintillator/, /scintillation detector/] },
+    { label: 'SiPM', patterns: [/sipm/, /silicon photomultiplier/] },
+    { label: '时间投影室 TPC', patterns: [/time projection chamber/, /\btpc\b/] },
+    { label: 'CMOS 轨迹探测器', patterns: [/\bcmos\b/] },
+    { label: '中子探测器', patterns: [/neutron detector/] },
+    { label: 'γ 谱仪', patterns: [/gamma-ray detector/, /gamma spectrometer/, /γ-ray detector/] },
+  ]);
+  const facilities = matchedTerms(value, [
+    { label: 'LEGEND', patterns: [/\blegend\b/] }, { label: 'CERN/LHC', patterns: [/\bcern\b/, /\blhc\b/] },
+    { label: 'RHIC', patterns: [/\brhic\b/] }, { label: 'FAIR/GSI', patterns: [/\bfair\b/, /\bgsi\b/] },
+    { label: 'FRIB', patterns: [/\bfrib\b/] }, { label: 'RIKEN/RIBF', patterns: [/\briken\b/, /\bribf\b/] },
+    { label: 'HIRFL/RIBLL', patterns: [/\bhirfl\b/, /\bribll\b/] }, { label: 'GANIL', patterns: [/\bganil\b/] },
+    { label: 'JLab', patterns: [/\bjlab\b/, /jefferson lab/] }, { label: 'ITER', patterns: [/\biter\b/] },
+  ]);
+  const observables = matchedTerms(value, [
+    { label: '半衰期', patterns: [/half-life/] }, { label: '分支比', patterns: [/branching ratio/] },
+    { label: '反应截面', patterns: [/cross section/] }, { label: '能谱/谱函数', patterns: [/energy spectrum/, /spectral function/] },
+    { label: '角分布', patterns: [/angular distribution/] }, { label: '核矩阵元', patterns: [/nuclear matrix element/] },
+    { label: '动量分布', patterns: [/momentum distribution/] }, { label: '质量与半径', patterns: [/mass.radius/, /mass--radius/] },
+    { label: '流系数', patterns: [/flow coefficient/] }, { label: '能量分辨率', patterns: [/energy resolution/] },
+  ]);
+  const methodLabels = { experimental: '实验测量', theoretical: '理论计算', review: '综述' };
+  const models = matchedTerms(value, [
+    { label: 'HFB', patterns: [/hartree-fock-bogoliubov/, /\bhfb\b/] }, { label: 'DFT', patterns: [/density functional theory/, /\bdft\b/] },
+    { label: '壳模型', patterns: [/shell model/] }, { label: 'DWIA', patterns: [/\bdwia\b/] },
+    { label: 'Glauber 模型', patterns: [/glauber/] }, { label: '输运模型', patterns: [/transport model/] },
+    { label: '机器学习', patterns: [/machine learning/, /neural network/, /neural operator/] },
+  ]);
+  return {
+    nuclides: extractNuclides(item), reactions, detectors, facilities, observables,
+    methods: [...new Set([...(item.methods || []).map(value => methodLabels[value] || value), ...models])],
+  };
+}
+
+function paperFactRow(label, values) {
+  const items = values?.length ? values : ['未从摘要识别'];
+  return `<div class="paper-fact-row"><dt>${text(label)}</dt><dd>${items.map(value => `<span${value === '未从摘要识别' ? ' class="missing"' : ''}>${text(value)}</span>`).join('')}</dd></div>`;
+}
+
+function renderAssistantPaperDetail(item) {
+  const host = $('#assistantPaperDetail');
+  const facts = extractPaperFacts(item);
+  const related = state.papers
+    .map(candidate => ({ candidate, score: similarity(item, candidate) }))
+    .filter(entry => entry.score > 0)
+    .sort((a, b) => b.score - a.score || (b.candidate.published || '').localeCompare(a.candidate.published || ''))
+    .slice(0, 4);
+  const identifiers = [item.doi ? `DOI ${item.doi}` : '', item.arxiv_id ? `arXiv ${item.arxiv_id}` : ''].filter(Boolean);
+  const access = item.open_access ? '开放获取' : '请以原文页面为准';
+  const scoreReasons = (item.score_reasons || []).slice(0, 4);
+  host.innerHTML = `
+    <header class="selected-paper-head">
+      <span>${text(item.source_short || item.source)} · ${text(prettyDate(item.published))}</span>
+      <h3>${text(item.title)}</h3>
+      <p>${text((item.authors || []).slice(0, 5).join(', ') || '作者信息未提供')}${(item.authors || []).length > 5 ? ` 等 ${item.authors.length} 人` : ''}</p>
+    </header>
+    <section class="assistant-section paper-detail-section">
+      <div class="assistant-section-head"><span>基础信息</span><small>来自原始元数据</small></div>
+      <dl class="paper-meta-grid">
+        <div><dt>类型</dt><dd>${item.source_type === 'preprint' ? '预印本' : '期刊论文'}</dd></div>
+        <div><dt>重要性</dt><dd>${Number(item.importance || 0)}</dd></div>
+        <div><dt>开放状态</dt><dd>${text(access)}</dd></div>
+        <div><dt>阅读状态</dt><dd>${text(readingLabel(item.id))}</dd></div>
+      </dl>
+      <div class="paper-identifiers">${identifiers.length ? identifiers.map(value => `<span>${text(value)}</span>`).join('') : '<span>暂无 DOI/arXiv 编号</span>'}</div>
+    </section>
+    <section class="assistant-section paper-detail-section">
+      <div class="assistant-section-head"><span>核物理要素</span><small>仅提取题目与摘要明确内容</small></div>
+      <dl class="paper-fact-list">
+        ${paperFactRow('核素', facts.nuclides)}
+        ${paperFactRow('反应/过程', facts.reactions)}
+        ${paperFactRow('探测器', facts.detectors)}
+        ${paperFactRow('装置/机构', facts.facilities)}
+        ${paperFactRow('方法/模型', facts.methods)}
+        ${paperFactRow('可观测量', facts.observables)}
+      </dl>
+    </section>
+    <section class="assistant-section paper-detail-section">
+      <div class="assistant-section-head"><span>为什么值得看</span><small>可解释评分</small></div>
+      <ul class="paper-reason-list">${scoreReasons.length ? scoreReasons.map(reason => `<li>${text(reason)}</li>`).join('') : '<li>当前暂无评分理由。</li>'}</ul>
+    </section>
+    <section class="assistant-section paper-detail-section">
+      <div class="assistant-section-head"><span>阅读操作</span></div>
+      <div class="paper-detail-actions">
+        <button type="button" id="assistantFavoriteAction">${isFavorite(item.id) ? '★ 已收藏' : '☆ 收藏'}</button>
+        <button type="button" id="assistantNoteAction">${state.personal.notes[item.id] ? '📝 编辑笔记' : '📝 写笔记'}</button>
+        <button type="button" id="assistantReadAction">${text(readingLabel(item.id))}</button>
+        <button type="button" id="assistantBibAction">导出 BibTeX</button>
+        <a href="${text(item.url)}" target="_blank" rel="noreferrer">原始页面 ↗</a>
+        ${item.pdf_url ? `<a href="${text(item.pdf_url)}" target="_blank" rel="noreferrer">PDF ↗</a>` : ''}
+      </div>
+    </section>
+    <section class="assistant-section paper-detail-section">
+      <div class="assistant-section-head"><span>关联论文</span><small>按分类、标签、作者匹配</small></div>
+      <div class="assistant-related-list">${related.length ? related.map(({ candidate, score }) => `<button type="button" data-related-paper="${text(candidate.id)}"><span>${text(candidate.title)}</span><small>${text(candidate.source_short || candidate.source)} · 关联度 ${score}</small></button>`).join('') : '<p>历史库中暂无明显关联论文。</p>'}</div>
+    </section>`;
+  $('#assistantFavoriteAction', host).addEventListener('click', event => toggleFavorite(item, event.currentTarget));
+  $('#assistantNoteAction', host).addEventListener('click', () => openNoteDialog(item));
+  $('#assistantReadAction', host).addEventListener('click', () => cycleReadingStatus(item));
+  $('#assistantBibAction', host).addEventListener('click', () => {
+    downloadText(`${citationKey(item)}.bib`, toBibTeX(item), 'application/x-bibtex');
+    showToast('BibTeX 已导出');
+  });
+  $$('[data-related-paper]', host).forEach(button => button.addEventListener('click', () => {
+    const candidate = state.papers.find(value => value.id === button.dataset.relatedPaper);
+    if (candidate) selectPaperForAssistant(candidate);
   }));
+}
+
+function renderPaperAssistant(items = filteredItems()) {
+  if (!$('#assistantMetrics')) return;
+  const favorites = items.filter(item => isFavorite(item.id)).length;
+  const matched = items.filter(personalMatch).length;
+  const notes = items.filter(item => Boolean(state.personal.notes[item.id]?.trim())).length;
+  $('#assistantMetrics').innerHTML = [
+    ['当前结果', items.length], ['已收藏', favorites], ['关注词命中', matched], ['有笔记', notes],
+  ].map(([label, value]) => `<div class="assistant-metric"><span>${label}</span><b>${Number(value).toLocaleString('zh-CN')}</b></div>`).join('');
+
+  const labels = assistantFilterLabels();
+  $('#assistantFilters').innerHTML = labels.length
+    ? labels.map(label => `<span class="assistant-chip">${text(label)}</span>`).join('')
+    : '<span class="assistant-chip empty">尚未限制筛选条件</span>';
+
+  const counts = new Map();
+  items.forEach(item => (item.categories || []).forEach(id => counts.set(id, (counts.get(id) || 0) + 1)));
+  const topics = [...counts.entries()].sort((a, b) => b[1] - a[1] || (NUCLEAR_PRIORITY.get(b[0]) || 0) - (NUCLEAR_PRIORITY.get(a[0]) || 0)).slice(0, 5);
+  const max = Math.max(1, ...topics.map(([, count]) => count));
+  $('#assistantTopics').innerHTML = topics.length ? topics.map(([id, count]) => `
+    <div class="assistant-topic"><span>${text(categoryName(id))}</span><b>${count}</b><i style="--topic-width:${Math.max(8, count / max * 100).toFixed(1)}%"></i></div>`).join('')
+    : '<span class="assistant-chip empty">当前没有可统计的主题</span>';
+
+  const favoriteIds = new Set([...Object.keys(state.personal.favorites), ...state.publicFavorites.map(item => typeof item === 'string' ? item : item.id)]);
+  $('#assistantFavoriteTotal').textContent = favoriteIds.size.toLocaleString('zh-CN');
+  $('#assistantUnreadTotal').textContent = state.papers.filter(item => state.personal.readStatus[item.id] !== 'read').length.toLocaleString('zh-CN');
+  $('#assistantDailyTotal').textContent = `${state.notices.length + state.news.length}`;
+
+  const selected = state.selectedPaperId ? state.papers.find(item => item.id === state.selectedPaperId) : null;
+  $('#assistantOverview').hidden = Boolean(selected);
+  $('#assistantPaperDetail').hidden = !selected;
+  $('#assistantBackToOverview').hidden = !selected;
+  $('#assistantKicker').textContent = selected ? 'SELECTED PAPER' : 'PAPER COMPANION';
+  $('#assistantTitle').textContent = selected ? '论文信息' : '论文助手';
+  $('#assistantIntro').textContent = selected ? '右侧只展示原始元数据与从题目、摘要中明确识别的科研要素。' : '只解释当前论文结果，不再重复首页新闻。';
+  if (selected) renderAssistantPaperDetail(selected);
+}
+
+function selectPaperForAssistant(item) {
+  state.selectedPaperId = item.id;
+  renderCards();
+  openPaperAssistant();
+}
+
+function showAssistantOverview() {
+  state.selectedPaperId = '';
+  renderCards();
+}
+
+function openPaperAssistant() {
+  document.body.classList.add('paper-assistant-open');
+  $('#openPaperAssistant').setAttribute('aria-expanded', 'true');
+  window.setTimeout(() => $('#closePaperAssistant').focus(), 30);
+}
+
+function closePaperAssistant() {
+  document.body.classList.remove('paper-assistant-open');
+  $('#openPaperAssistant').setAttribute('aria-expanded', 'false');
+}
+
+function clearPaperFilters() {
+  state.category = 'all';
+  state.source = 'all';
+  state.query = '';
+  state.searchField = 'all';
+  state.scope = 'all';
+  $('#searchInput').value = '';
+  $('#searchFieldSelect').value = 'all';
+  $('#scopeSelect').value = 'all';
+  $('#sourceSelect').value = 'all';
+  renderCategories();
+  updateMySpaceUI();
+  renderCards();
+  showToast('已清除论文筛选');
 }
 
 function homeJournalLabel(item) {
@@ -1694,6 +2117,7 @@ function bindEvents() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
   $$('[data-view-jump]').forEach(button => button.addEventListener('click', () => {
+    closePaperAssistant();
     setView(button.dataset.viewJump);
     const target = button.dataset.viewJump === 'notices' ? $('#dailyNoticeDashboard') : $('#stream');
     target?.scrollIntoView({ behavior: 'smooth' });
@@ -1701,6 +2125,16 @@ function bindEvents() {
   $$('[data-scroll]').forEach(button => button.addEventListener('click', () => $(`#${button.dataset.scroll}`)?.scrollIntoView({ behavior: 'smooth' })));
   $$('.my-space-tab').forEach(button => button.addEventListener('click', () => setMySection(button.dataset.mySection)));
   $('#clearCategory').addEventListener('click', () => setCategory('all'));
+  $('#editFilterLayout').addEventListener('click', toggleLayoutEditing);
+  $('#resetFilterLayout').addEventListener('click', resetFilterLayout);
+  $$('[data-filter-module] [data-module-move]').forEach(button => button.addEventListener('click', () => {
+    moveFilterModule(button.closest('[data-filter-module]').dataset.filterModule, Number(button.dataset.moduleMove));
+  }));
+  $('#openPaperAssistant').addEventListener('click', openPaperAssistant);
+  $('#closePaperAssistant').addEventListener('click', closePaperAssistant);
+  $('#assistantBackToOverview').addEventListener('click', showAssistantOverview);
+  $('#assistantBackdrop').addEventListener('click', closePaperAssistant);
+  $('#clearAssistantFilters').addEventListener('click', clearPaperFilters);
   $('#searchInput').addEventListener('input', event => { state.query = event.target.value; state.visible = 20; renderCards(); });
   $('#searchFieldSelect').addEventListener('change', event => { state.searchField = event.target.value; state.visible = 20; renderCards(); });
   $('#sortSelect').addEventListener('change', event => { state.sort = event.target.value; renderCards(); });
@@ -1776,6 +2210,11 @@ function bindEvents() {
   });
   $('#exportReferences').addEventListener('click', exportReferenceSet);
   document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && document.body.classList.contains('paper-assistant-open')) {
+      closePaperAssistant();
+      $('#openPaperAssistant').focus();
+      return;
+    }
     if (event.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
       event.preventDefault();
       (state.view === 'notices' ? $('#dailyNoticeSearch') : $('#searchInput')).focus();
@@ -1804,7 +2243,7 @@ async function initialize() {
   bindEvents();
   try {
     await loadData();
-    renderCategories(); renderSourceOptions(); renderHomeHub(); renderRadar(); renderBriefing(); renderMetrics(); renderKeywords(); renderHomeDashboard(); renderNoticePortal();
+    renderCategories(); renderSourceOptions(); renderHomeHub(); renderBriefing(); renderMetrics(); renderKeywords(); renderHomeDashboard(); renderNoticePortal();
     const hash = location.hash.slice(1);
     const myMatch = hash.match(/^favorites-(papers|code|references)$/);
     if (myMatch) {
