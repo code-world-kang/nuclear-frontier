@@ -624,12 +624,46 @@ class Classifier:
 def crossref_url(issn: str, start: str, end: str) -> str:
     params = {
         "filter": f"from-pub-date:{start},until-pub-date:{end},type:journal-article",
-        "select": "DOI,title,author,published,published-online,published-print,URL,container-title,abstract,subject,type,license,link,relation",
+        "select": "DOI,title,author,published,published-online,published-print,URL,container-title,short-container-title,abstract,subject,type,license,link,relation,volume,issue,page,article-number,publisher,resource",
         "rows": "500",
         "sort": "published",
         "order": "desc",
     }
     return f"https://api.crossref.org/journals/{urllib.parse.quote(issn)}/works?{urllib.parse.urlencode(params)}"
+
+
+def citation_page_count(value: str) -> str:
+    """仅在页码是明确的纯数字区间时计算总页数，避免把文章编号误判为页数。"""
+    match = re.fullmatch(r"\s*(\d+)\s*[-–—]\s*(\d+)\s*", value or "")
+    if not match:
+        return ""
+    first, last = (int(part) for part in match.groups())
+    return str(last - first + 1) if last >= first else ""
+
+
+def crossref_citation_fields(item: dict[str, Any]) -> dict[str, Any]:
+    """提取生成完整 BibTeX 所需的结构化出版元数据。"""
+    citation_authors = []
+    for author in item.get("author", []):
+        family = clean_text(author.get("family", ""))
+        given = clean_text(author.get("given", ""))
+        name = ", ".join(filter(None, [family, given]))
+        if name:
+            citation_authors.append(name)
+    pages = clean_text(item.get("page") or item.get("article-number"))
+    resource = item.get("resource") or {}
+    publisher_url = ((resource.get("primary") or {}).get("URL") or "").strip()
+    return {
+        "citation_authors": citation_authors[:40],
+        "journal_abbrev": clean_text((item.get("short-container-title") or [""])[0]),
+        "volume": clean_text(item.get("volume")),
+        "issue": clean_text(item.get("issue")),
+        "pages": pages,
+        "numpages": citation_page_count(item.get("page", "")),
+        "publisher": clean_text(item.get("publisher")),
+        "publisher_url": publisher_url,
+        "citation_metadata_checked": True,
+    }
 
 
 def fetch_crossref(source: dict[str, Any], classifier: Classifier, start: str, end: str) -> tuple[list[dict[str, Any]], SourceResult]:
@@ -688,6 +722,7 @@ def fetch_crossref(source: dict[str, Any], classifier: Classifier, start: str, e
                 "rights_status": "unknown",
                 "figures": [],
                 "figure_status": "rights_unknown",
+                **crossref_citation_fields(item),
             })
         return records, SourceResult(source["name"], "paper", True, len(records))
     except Exception as exc:  # noqa: BLE001 - 单源失败不应终止整个日更
@@ -1262,6 +1297,9 @@ def merge_records(existing: list[dict[str, Any]], incoming: list[dict[str, Any]]
             combined["arxiv_id"] = old.get("arxiv_id") or item.get("arxiv_id", "")
             combined["pdf_url"] = old.get("pdf_url") or item.get("pdf_url", "")
             combined["doi"] = old.get("doi") or item.get("doi", "")
+            for field in ("citation_authors", "journal_abbrev", "volume", "issue", "pages", "numpages", "publisher", "publisher_url"):
+                combined[field] = item.get(field) or old.get(field, [] if field == "citation_authors" else "")
+            combined["citation_metadata_checked"] = bool(item.get("citation_metadata_checked") or old.get("citation_metadata_checked"))
             # 新元数据缺失时不得覆盖已有的完整摘要、许可证据与已筛选图像。
             combined["abstract"] = item.get("abstract") or old.get("abstract", "")
             combined["abstract_status"] = "full" if combined["abstract"] else "missing"

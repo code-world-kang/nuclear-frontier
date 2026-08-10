@@ -14,6 +14,8 @@ from update_content import (  # noqa: E402
     Classifier,
     clean_arxiv_abstract,
     count_new_records,
+    crossref_citation_fields,
+    crossref_url,
     enrich_arxiv_figures,
     enrich_missing_abstracts,
     extract_deadline,
@@ -117,6 +119,23 @@ class PipelineTests(unittest.TestCase):
 
     def test_normalize_title(self):
         self.assertEqual(normalize_title("A: Nuclear-Physics!"), "anuclearphysics")
+
+    def test_crossref_citation_metadata_supports_complete_bibtex(self):
+        item = {
+            "author": [{"family": "Zhu", "given": "Jiawen"}, {"family": "Chen", "given": "Changfeng"}],
+            "short-container-title": ["Phys. Rev. Lett."],
+            "volume": "137",
+            "issue": "6",
+            "article-number": "063201",
+            "publisher": "American Physical Society (APS)",
+            "resource": {"primary": {"URL": "https://link.aps.org/doi/10.1103/example"}},
+        }
+        metadata = crossref_citation_fields(item)
+        self.assertEqual(metadata["citation_authors"], ["Zhu, Jiawen", "Chen, Changfeng"])
+        self.assertEqual(metadata["journal_abbrev"], "Phys. Rev. Lett.")
+        self.assertEqual(metadata["pages"], "063201")
+        self.assertEqual(metadata["publisher_url"], "https://link.aps.org/doi/10.1103/example")
+        self.assertIn("short-container-title", crossref_url("0031-9007", "2026-08-01", "2026-08-10"))
 
     def test_normalize_title_preserves_unicode_letters_and_digits(self):
         self.assertEqual(normalize_title("核结构：β 衰变２０２６"), "核结构β衰变2026")

@@ -162,9 +162,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("function toBibTeX", app)
         self.assertIn("function toGBT7714_2025", app)
         self.assertIn("function openCitationDialog", app)
+        self.assertIn("function enrichCitationMetadata", app)
         self.assertIn("[PP/OL]", app)
         self.assertIn("[J/OL]", app)
+        self.assertIn("item.volume", app)
+        self.assertIn("item.numpages", app)
+        self.assertIn("data-assistant-citation-output", app)
         self.assertIn(".paper-actions .cite-button", styles)
+        self.assertIn(".assistant-citation-output", styles)
         self.assertIn("std.samr.gov.cn/gb/search/gbDetailed", index)
 
     def test_notice_portal_is_official_categorized_and_searchable(self):

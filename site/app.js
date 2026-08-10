@@ -18,6 +18,7 @@ const state = {
   noticePortalCategory: 'all', noticePortalQuery: '', personal: loadPersonal(), paperLayout: loadPaperLayout(),
   layoutEditing: false, draggedCategory: '', categoryMap: new Map(), favoriteSyncInFlight: false,
 };
+const citationMetadataRequests = new Map();
 
 const PRIMARY_NUCLEAR_CATEGORIES = new Set([
   'experimental-nuclear', 'theoretical-nuclear', 'nuclear-structure', 'nuclear-decay', 'nuclear-reactions',
@@ -1085,26 +1086,95 @@ function similarity(anchor, candidate) {
 }
 
 function citationKey(item) {
+  const doiSuffix = String(item.doi || '').split('/').pop().replace(/[^A-Za-z0-9_.:-]/g, '');
+  if (doiSuffix) return doiSuffix;
   const family = (item.authors?.[0] || item.source || 'NuclearFrontier').split(/\s+/).at(-1);
   const year = (item.published || '').slice(0, 4) || 'nd';
   const word = (item.title || 'paper').match(/[A-Za-z0-9]+/)?.[0] || 'paper';
   return `${family}${year}${word}`.replace(/[^A-Za-z0-9]/g, '');
 }
 
+function citationMonth(item) {
+  const month = Number((item.published || '').slice(5, 7));
+  return ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][month - 1] || '';
+}
+
+function normalizedPublisher(value) {
+  return String(value || '').replace(/\s*\(APS\)\s*$/, '').trim();
+}
+
 function toBibTeX(item) {
   const isPreprint = item.source_type === 'preprint' || Boolean(item.arxiv_id && !item.doi);
+  const citationAuthors = item.citation_authors?.length ? item.citation_authors : item.authors;
+  const journal = item.journal_abbrev || item.source;
+  const month = citationMonth(item);
+  const publisher = normalizedPublisher(item.publisher);
+  const citationUrl = item.publisher_url || item.url;
   const fields = [
     `  title = {${String(item.title || '').replace(/\s+/g, ' ').trim()}}`,
-    item.authors?.length ? `  author = {${item.authors.join(' and ')}}` : '',
-    !isPreprint && item.source ? `  journal = {${item.source}}` : '',
+    citationAuthors?.length ? `  author = {${citationAuthors.join(' and ')}}` : '',
+    !isPreprint && journal ? `  journal = {${journal}}` : '',
+    !isPreprint && item.volume ? `  volume = {${item.volume}}` : '',
+    !isPreprint && item.issue ? `  issue = {${item.issue}}` : '',
+    !isPreprint && item.pages ? `  pages = {${item.pages}}` : '',
+    !isPreprint && item.numpages ? `  numpages = {${item.numpages}}` : '',
     item.published ? `  year = {${item.published.slice(0, 4)}}` : '',
+    !isPreprint && month ? `  month = {${month}}` : '',
+    !isPreprint && publisher ? `  publisher = {${publisher}}` : '',
     item.doi ? `  doi = {${item.doi}}` : '',
     isPreprint && item.arxiv_id ? `  eprint = {${item.arxiv_id}}` : '',
     isPreprint && item.arxiv_id ? '  archivePrefix = {arXiv}' : '',
     isPreprint && /^arxiv\s+/i.test(item.source || '') ? `  primaryClass = {${item.source.replace(/^arxiv\s+/i, '')}}` : '',
-    item.url ? `  url = {${item.url}}` : '',
+    citationUrl ? `  url = {${citationUrl}}` : '',
   ].filter(Boolean);
   return `@${isPreprint ? 'misc' : 'article'}{${citationKey(item)},\n${fields.join(',\n')}\n}`;
+}
+
+function citationPageCount(value) {
+  const match = String(value || '').match(/^\s*(\d+)\s*[-–—]\s*(\d+)\s*$/);
+  if (!match) return '';
+  const first = Number(match[1]);
+  const last = Number(match[2]);
+  return last >= first ? String(last - first + 1) : '';
+}
+
+function decodeMetadataText(value) {
+  const decoder = document.createElement('textarea');
+  decoder.innerHTML = String(value || '');
+  return decoder.value;
+}
+
+function crossrefCitationFields(message) {
+  const pages = String(message.page || message['article-number'] || '').trim();
+  return {
+    citation_authors: (message.author || []).map(author => [decodeMetadataText(author.family), decodeMetadataText(author.given)].filter(Boolean).join(', ')).filter(Boolean),
+    journal_abbrev: decodeMetadataText(message['short-container-title']?.[0]),
+    volume: String(message.volume || ''),
+    issue: String(message.issue || ''),
+    pages,
+    numpages: citationPageCount(message.page),
+    publisher: decodeMetadataText(message.publisher),
+    publisher_url: message.resource?.primary?.URL || '',
+    citation_metadata_checked: true,
+  };
+}
+
+function enrichCitationMetadata(item) {
+  if (!item.doi || item.citation_metadata_checked) return Promise.resolve(false);
+  const doi = item.doi.toLowerCase();
+  if (!citationMetadataRequests.has(doi)) {
+    citationMetadataRequests.set(doi, fetch(`https://api.crossref.org/works/${encodeURIComponent(item.doi)}`)
+      .then(response => {
+        if (!response.ok) throw new Error(`Crossref ${response.status}`);
+        return response.json();
+      })
+      .then(payload => crossrefCitationFields(payload.message || {}))
+      .catch(() => ({ citation_metadata_checked: true })));
+  }
+  return citationMetadataRequests.get(doi).then(metadata => {
+    Object.assign(item, metadata);
+    return Object.keys(metadata).some(key => key !== 'citation_metadata_checked' && metadata[key]?.length);
+  });
 }
 
 function plainCitationText(value) {
@@ -1136,7 +1206,9 @@ function toGBT7714_2025(item) {
     const identifier = item.arxiv_id ? `arXiv:${item.arxiv_id}` : '';
     return `${authors}. ${title}[PP/OL]. ${platform}${published ? `(${published})` : ''}[${accessed}]. ${url}${identifier ? `. ${identifier}` : ''}.`;
   }
-  return `${authors}. ${title}[J/OL]. ${item.source || '刊名不详'}, ${year}[${accessed}]. ${url}.`;
+  const volumeIssue = `${item.volume || ''}${item.issue ? `(${item.issue})` : ''}`;
+  const location = [year, volumeIssue].filter(Boolean).join(', ') + (item.pages ? `: ${item.pages}` : '');
+  return `${authors}. ${title}[J/OL]. ${item.journal_abbrev || item.source || '刊名不详'}, ${location}[${accessed}]. ${url}.`;
 }
 
 function toRIS(item) {
@@ -1171,7 +1243,7 @@ function renderCitationDialog() {
   $('#citationOutput').value = citationValue(item, format);
   $('#citationHint').textContent = format === 'gbt7714-2025'
     ? '按 GB/T 7714—2025 和现有元数据生成；预印本使用 PP/OL，缺失的卷、期和页码不会虚构。'
-    : 'BibTeX 会区分期刊论文与 arXiv 预印本，并保留 DOI、URL 和 eprint 信息。';
+    : 'BibTeX 优先包含作者、期刊、卷、期、页码、总页数、月份、出版社、DOI 与出版页面；数据源没有的字段不会虚构。';
 }
 
 function openCitationDialog(item) {
@@ -1180,6 +1252,12 @@ function openCitationDialog(item) {
   $('#citationFormat').value = 'bibtex';
   renderCitationDialog();
   $('#citationDialog').showModal();
+  if (item.doi && !item.citation_metadata_checked) {
+    $('#citationHint').textContent = '正在从 Crossref 补全卷、期、页码、出版社和规范作者姓名……';
+    void enrichCitationMetadata(item).then(() => {
+      if (state.citationDraft?.id === item.id) renderCitationDialog();
+    });
+  }
 }
 
 function closeCitationDialog() {
@@ -1614,6 +1692,14 @@ function renderAssistantPaperDetail(item) {
   const identifiers = [item.doi ? `DOI ${item.doi}` : '', item.arxiv_id ? `arXiv ${item.arxiv_id}` : ''].filter(Boolean);
   const access = item.open_access ? '开放获取' : '请以原文页面为准';
   const scoreReasons = (item.score_reasons || []).slice(0, 4);
+  const publicationMetadata = [
+    ['期刊', item.journal_abbrev || item.source],
+    ['卷', item.volume],
+    ['期', item.issue],
+    ['页码/文章号', item.pages],
+    ['总页数', item.numpages],
+    ['出版社', normalizedPublisher(item.publisher)],
+  ].filter(([, value]) => value);
   host.innerHTML = `
     <header class="selected-paper-head">
       <span>${text(item.source_short || item.source)} · ${text(prettyDate(item.published))}</span>
@@ -1628,6 +1714,14 @@ function renderAssistantPaperDetail(item) {
         <div><dt>阅读状态</dt><dd>${text(readingLabel(item.id))}</dd></div>
       </dl>
       <div class="paper-identifiers">${identifiers.length ? identifiers.map(value => `<span>${text(value)}</span>`).join('') : '<span>暂无 DOI/arXiv 编号</span>'}</div>
+    </section>
+    <section class="assistant-section paper-detail-section paper-citation-section">
+      <div class="assistant-section-head"><span>Cite / 引用</span><small>${item.doi && !item.citation_metadata_checked ? '正在补全出版元数据' : '位于右侧论文信息中'}</small></div>
+      <dl class="assistant-publication-grid">${publicationMetadata.length ? publicationMetadata.map(([label, value]) => `<div><dt>${text(label)}</dt><dd>${text(value)}</dd></div>`).join('') : '<div class="missing"><dt>出版信息</dt><dd>当前数据源未提供卷期页</dd></div>'}</dl>
+      <label class="assistant-citation-format"><span>引用格式</span><select data-assistant-citation-format><option value="bibtex">BibTeX</option><option value="gbt7714-2025">GB/T 7714—2025</option></select></label>
+      <pre class="assistant-citation-output" data-assistant-citation-output>${text(toBibTeX(item))}</pre>
+      <div class="assistant-citation-actions"><button type="button" data-assistant-copy-citation>复制</button><button type="button" data-assistant-download-citation>下载</button></div>
+      <p class="assistant-citation-note">优先使用 Crossref 与出版社元数据；缺失字段不会自动猜测。</p>
     </section>
     <section class="assistant-section paper-detail-section">
       <div class="assistant-section-head"><span>核物理要素</span><small>仅提取题目与摘要明确内容</small></div>
@@ -1648,6 +1742,18 @@ function renderAssistantPaperDetail(item) {
       <div class="assistant-section-head"><span>关联论文</span><small>按分类、标签、作者匹配</small></div>
       <div class="assistant-related-list">${related.length ? related.map(({ candidate, score }) => `<button type="button" data-related-paper="${text(candidate.id)}"><span>${text(candidate.title)}</span><small>${text(candidate.source_short || candidate.source)} · 关联度 ${score}</small></button>`).join('') : '<p>历史库中暂无明显关联论文。</p>'}</div>
     </section>`;
+  const assistantCitationFormat = $('[data-assistant-citation-format]', host);
+  const assistantCitationOutput = $('[data-assistant-citation-output]', host);
+  const refreshAssistantCitation = () => {
+    assistantCitationOutput.textContent = citationValue(item, assistantCitationFormat.value);
+  };
+  assistantCitationFormat.addEventListener('change', refreshAssistantCitation);
+  $('[data-assistant-copy-citation]', host).addEventListener('click', () => copyText(assistantCitationOutput.textContent, '引用格式已复制'));
+  $('[data-assistant-download-citation]', host).addEventListener('click', () => {
+    const isBibTeX = assistantCitationFormat.value === 'bibtex';
+    downloadText(`${citationKey(item)}.${isBibTeX ? 'bib' : 'txt'}`, assistantCitationOutput.textContent, isBibTeX ? 'application/x-bibtex' : 'text/plain');
+    showToast(`已下载${isBibTeX ? ' BibTeX' : ' GB/T 7714—2025 引用'}`);
+  });
   $$('[data-related-paper]', host).forEach(button => button.addEventListener('click', () => {
     const candidate = state.papers.find(value => value.id === button.dataset.relatedPaper);
     if (candidate) selectPaperForAssistant(candidate);
@@ -1695,6 +1801,11 @@ function selectPaperForAssistant(item) {
   state.selectedPaperId = item.id;
   renderCards();
   openPaperAssistant();
+  if (item.doi && !item.citation_metadata_checked) {
+    void enrichCitationMetadata(item).then(() => {
+      if (state.selectedPaperId === item.id) renderAssistantPaperDetail(item);
+    });
+  }
 }
 
 function showAssistantOverview() {
