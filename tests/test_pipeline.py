@@ -20,6 +20,7 @@ from update_content import (  # noqa: E402
     extract_english_notice_date,
     extract_notice_date,
     merge_records,
+    notice_is_physics_relevant,
     normalize_title,
     parse_arxiv_figures,
     parse_feed_items,
@@ -186,6 +187,24 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(merged["summary"], "Official summary")
         self.assertEqual(merged["deadline"], "2026-09-09")
         self.assertEqual(merged["first_seen"], "2026-08-01T00:00:00+08:00")
+
+    def test_notice_feed_keeps_only_physics_and_prioritizes_nuclear(self):
+        self.assertTrue(notice_is_physics_relevant("关于发布2026年度理论物理专款项目指南的通告"))
+        self.assertTrue(notice_is_physics_relevant("兰州重离子加速器国家实验室年度束流申请通知"))
+        self.assertTrue(notice_is_physics_relevant("Call for proposals", notice_category="beam-international"))
+        self.assertTrue(notice_is_physics_relevant("量子重大专项项目指南"))
+
+    def test_notice_feed_rejects_biology_medicine_and_chemistry(self):
+        rejected = [
+            "关于组织申报癌症和心脑血管疾病防治项目的通知",
+            "农业生物育种国家科技重大专项申报指南",
+            "创新药物研发国家科技重大专项通知",
+            "合成生物学与催化化学重点专项指南",
+            "Nuclear medicine and biomedical imaging call for proposals",
+        ]
+        for title in rejected:
+            with self.subTest(title=title):
+                self.assertFalse(notice_is_physics_relevant(title))
 
     def test_arxiv_rss_prefix_is_removed_without_truncating_abstract(self):
         value = "arXiv:2608.00001v1 Announce Type: new Abstract: Full abstract sentence."

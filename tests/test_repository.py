@@ -203,6 +203,22 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn(".daily-notice-list", styles)
         self.assertIn("overflow-x: hidden", styles)
 
+    def test_published_notice_feed_excludes_non_physics_fields(self):
+        notices = json.loads((ROOT / "data" / "notices.json").read_text(encoding="utf-8"))
+        self.assertGreater(len(notices), 0)
+        forbidden = [
+            "生物", "医学", "医疗", "疾病", "癌症", "肿瘤", "药物", "细胞", "基因", "化学", "化工",
+            "biology", "biomedical", "medicine", "medical", "chemistry", "chemical",
+        ]
+        for item in notices:
+            with self.subTest(title=item.get("title")):
+                value = " ".join([item.get("title", ""), item.get("summary", "")]).lower()
+                self.assertFalse(any(term in value for term in forbidden))
+
+        index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("只展示物理领域通知", index)
+        self.assertIn("自动排除生物、医学和化学主题", index)
+
 
 if __name__ == "__main__":
     unittest.main()

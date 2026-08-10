@@ -44,6 +44,47 @@ FIGURE_RETRY_COOLDOWNS = {
     "no_figures": dt.timedelta(days=30),
 }
 
+# 每日通知只保留物理学相关内容，核物理、束流实验和涉核会议优先。
+# 生物、医学和化学即使同时出现“核”“辐射”等字样也不进入通知流。
+NOTICE_NON_PHYSICS_TERMS = (
+    "生物", "医学", "医疗", "临床", "疾病", "癌症", "肿瘤", "药物", "制药", "药品", "传染病",
+    "细胞", "基因", "rna", "蛋白", "糖质", "代谢", "心脑血管", "生命科学", "农业", "育种",
+    "化学", "化工", "催化", "生态", "ecosystem", "biology", "biological", "biomedical", "medicine",
+    "medical", "clinical", "disease", "cancer", "tumor", "drug", "pharmaceutical", "chemistry", "chemical",
+    "health", "life science", "agriculture",
+)
+NOTICE_PHYSICS_TERMS = (
+    "物理", "数学物理科学部", "核物理", "原子核", "核结构", "核反应", "核衰变", "核谱学", "核数据",
+    "核探测", "核电子学", "核技术", "核能", "放射性核束", "稀有同位素", "重离子", "离子束", "束流",
+    "加速器", "探测器", "中子", "质子束", "辐射", "射线", "同步辐射", "自由电子激光", "阿秒",
+    "粒子物理", "高能物理", "中微子", "暗物质", "强相互作用", "量子", "凝聚态", "拓扑物态",
+    "超导", "等离子体", "聚变", "天体物理", "空间物理", "宇宙学", "天文", "引力", "相对论",
+    "光学", "激光", "声学", "低温", "统计物理", "热物理", "流体物理", "爆轰", "qcd",
+    "physics", "nuclear", "atomic nucleus", "nuclear structure", "nuclear reaction", "nuclear decay",
+    "radioactive beam", "rare isotope", "heavy ion", "ion beam", "beam time", "beam proposal", "accelerator",
+    "detector", "neutron", "proton beam", "radiation", "synchrotron", "free electron laser", "particle physics",
+    "high energy", "neutrino", "dark matter", "quantum", "condensed matter", "superconduct", "plasma", "fusion",
+    "astrophysics", "astronomy", "cosmology", "gravity", "relativity", "optics", "laser", "acoustics", "qcd",
+)
+NOTICE_TRUSTED_PHYSICS_CATEGORIES = frozenset({"beam-domestic", "beam-international", "meetings-nuclear"})
+
+
+def notice_is_physics_relevant(
+    title: str,
+    summary: str = "",
+    *,
+    notice_category: str = "",
+    scope: str = "",
+) -> bool:
+    """严格筛选物理通知；明确的生物、医学和化学主题直接排除。"""
+    title_text = unicodedata.normalize("NFKC", title or "").lower()
+    detail_text = unicodedata.normalize("NFKC", " ".join([title or "", summary or "", scope or ""])).lower()
+    if any(term in detail_text for term in NOTICE_NON_PHYSICS_TERMS):
+        return False
+    if notice_category in NOTICE_TRUSTED_PHYSICS_CATEGORIES:
+        return True
+    return any(term in title_text for term in NOTICE_PHYSICS_TERMS)
+
 
 @dataclass
 class SourceResult:
@@ -1113,6 +1154,12 @@ def fetch_notice(source: dict[str, Any], classifier: Classifier) -> tuple[list[d
                 continue
             if any(term in title.lower() for term in [value.lower() for value in source.get("exclude", [])]):
                 continue
+            if source.get("kind", "notice") == "notice" and not notice_is_physics_relevant(
+                title,
+                notice_category=source.get("notice_category", "funding-national"),
+                scope=source.get("scope", ""),
+            ):
+                continue
             if url in seen:
                 continue
             seen.add(url)
@@ -1170,6 +1217,15 @@ def fetch_notice(source: dict[str, Any], classifier: Classifier) -> tuple[list[d
                 ), "")
                 if heading:
                     record["title"] = heading
+        records = [
+            record for record in records
+            if notice_is_physics_relevant(
+                record.get("title", ""),
+                record.get("summary", ""),
+                notice_category=record.get("notice_category", ""),
+                scope=record.get("scope", ""),
+            )
+        ]
         return records, SourceResult(source["name"], source.get("kind", "notice"), True, len(records))
     except Exception as exc:  # noqa: BLE001
         return [], SourceResult(source["name"], source.get("kind", "notice"), False, 0, str(exc)[:240])
@@ -1427,6 +1483,15 @@ def main() -> int:
         notice for notice in notices
         if not notice_required_terms.get(notice.get("source", ""))
         or any(term in notice.get("title", "").lower() for term in notice_required_terms[notice.get("source", "")])
+    ]
+    notices = [
+        notice for notice in notices
+        if notice_is_physics_relevant(
+            notice.get("title", ""),
+            notice.get("summary", ""),
+            notice_category=notice.get("notice_category", ""),
+            scope=notice.get("scope", ""),
+        )
     ]
     latest_day = max((paper.get("published", "")[:10] for paper in papers), default=today.isoformat())
     featured_cutoff = (dt.date.fromisoformat(latest_day) - dt.timedelta(days=14)).isoformat()
