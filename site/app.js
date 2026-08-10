@@ -918,7 +918,7 @@ function renderSourceOptions() {
   state.papers.forEach(item => counts.set(item.source, (counts.get(item.source) || 0) + 1));
   const select = $('#sourceSelect');
   select.replaceChildren(new Option('所有来源', 'all'));
-  [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).forEach(([source, count]) => {
+  [...counts.entries()].sort((a, b) => a[0].localeCompare(b[0], 'en', { sensitivity: 'base', numeric: true })).forEach(([source, count]) => {
     select.add(new Option(`${source} (${count})`, source));
   });
   select.value = state.source;
@@ -1692,14 +1692,6 @@ function renderAssistantPaperDetail(item) {
   const identifiers = [item.doi ? `DOI ${item.doi}` : '', item.arxiv_id ? `arXiv ${item.arxiv_id}` : ''].filter(Boolean);
   const access = item.open_access ? '开放获取' : '请以原文页面为准';
   const scoreReasons = (item.score_reasons || []).slice(0, 4);
-  const publicationMetadata = [
-    ['期刊', item.journal_abbrev || item.source],
-    ['卷', item.volume],
-    ['期', item.issue],
-    ['页码/文章号', item.pages],
-    ['总页数', item.numpages],
-    ['出版社', normalizedPublisher(item.publisher)],
-  ].filter(([, value]) => value);
   host.innerHTML = `
     <header class="selected-paper-head">
       <span>${text(item.source_short || item.source)} · ${text(prettyDate(item.published))}</span>
@@ -1714,14 +1706,6 @@ function renderAssistantPaperDetail(item) {
         <div><dt>阅读状态</dt><dd>${text(readingLabel(item.id))}</dd></div>
       </dl>
       <div class="paper-identifiers">${identifiers.length ? identifiers.map(value => `<span>${text(value)}</span>`).join('') : '<span>暂无 DOI/arXiv 编号</span>'}</div>
-    </section>
-    <section class="assistant-section paper-detail-section paper-citation-section">
-      <div class="assistant-section-head"><span>Cite / 引用</span><small>${item.doi && !item.citation_metadata_checked ? '正在补全出版元数据' : '位于右侧论文信息中'}</small></div>
-      <dl class="assistant-publication-grid">${publicationMetadata.length ? publicationMetadata.map(([label, value]) => `<div><dt>${text(label)}</dt><dd>${text(value)}</dd></div>`).join('') : '<div class="missing"><dt>出版信息</dt><dd>当前数据源未提供卷期页</dd></div>'}</dl>
-      <label class="assistant-citation-format"><span>引用格式</span><select data-assistant-citation-format><option value="bibtex">BibTeX</option><option value="gbt7714-2025">GB/T 7714—2025</option></select></label>
-      <pre class="assistant-citation-output" data-assistant-citation-output>${text(toBibTeX(item))}</pre>
-      <div class="assistant-citation-actions"><button type="button" data-assistant-copy-citation>复制</button><button type="button" data-assistant-download-citation>下载</button></div>
-      <p class="assistant-citation-note">优先使用 Crossref 与出版社元数据；缺失字段不会自动猜测。</p>
     </section>
     <section class="assistant-section paper-detail-section">
       <div class="assistant-section-head"><span>核物理要素</span><small>仅提取题目与摘要明确内容</small></div>
@@ -1742,18 +1726,6 @@ function renderAssistantPaperDetail(item) {
       <div class="assistant-section-head"><span>关联论文</span><small>按分类、标签、作者匹配</small></div>
       <div class="assistant-related-list">${related.length ? related.map(({ candidate, score }) => `<button type="button" data-related-paper="${text(candidate.id)}"><span>${text(candidate.title)}</span><small>${text(candidate.source_short || candidate.source)} · 关联度 ${score}</small></button>`).join('') : '<p>历史库中暂无明显关联论文。</p>'}</div>
     </section>`;
-  const assistantCitationFormat = $('[data-assistant-citation-format]', host);
-  const assistantCitationOutput = $('[data-assistant-citation-output]', host);
-  const refreshAssistantCitation = () => {
-    assistantCitationOutput.textContent = citationValue(item, assistantCitationFormat.value);
-  };
-  assistantCitationFormat.addEventListener('change', refreshAssistantCitation);
-  $('[data-assistant-copy-citation]', host).addEventListener('click', () => copyText(assistantCitationOutput.textContent, '引用格式已复制'));
-  $('[data-assistant-download-citation]', host).addEventListener('click', () => {
-    const isBibTeX = assistantCitationFormat.value === 'bibtex';
-    downloadText(`${citationKey(item)}.${isBibTeX ? 'bib' : 'txt'}`, assistantCitationOutput.textContent, isBibTeX ? 'application/x-bibtex' : 'text/plain');
-    showToast(`已下载${isBibTeX ? ' BibTeX' : ' GB/T 7714—2025 引用'}`);
-  });
   $$('[data-related-paper]', host).forEach(button => button.addEventListener('click', () => {
     const candidate = state.papers.find(value => value.id === button.dataset.relatedPaper);
     if (candidate) selectPaperForAssistant(candidate);
@@ -1801,11 +1773,6 @@ function selectPaperForAssistant(item) {
   state.selectedPaperId = item.id;
   renderCards();
   openPaperAssistant();
-  if (item.doi && !item.citation_metadata_checked) {
-    void enrichCitationMetadata(item).then(() => {
-      if (state.selectedPaperId === item.id) renderAssistantPaperDetail(item);
-    });
-  }
 }
 
 function showAssistantOverview() {

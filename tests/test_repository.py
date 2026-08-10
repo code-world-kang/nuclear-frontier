@@ -167,9 +167,9 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("[J/OL]", app)
         self.assertIn("item.volume", app)
         self.assertIn("item.numpages", app)
-        self.assertIn("data-assistant-citation-output", app)
         self.assertIn(".paper-actions .cite-button", styles)
-        self.assertIn(".assistant-citation-output", styles)
+        self.assertNotIn("data-assistant-citation-output", app)
+        self.assertIn("localeCompare(b[0], 'en'", app)
         self.assertIn("std.samr.gov.cn/gb/search/gbDetailed", index)
 
     def test_notice_portal_is_official_categorized_and_searchable(self):
