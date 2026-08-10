@@ -494,6 +494,17 @@ function localizedAbstract(item) {
     : (item.abstract || item.summary || '');
 }
 
+function googleTranslateUrl(item) {
+  const sourceUrl = String(item?.url || '').trim();
+  if (/^https?:\/\//i.test(sourceUrl)) {
+    const params = new URLSearchParams({ sl: 'auto', tl: 'zh-CN', u: sourceUrl });
+    return `https://translate.google.com/translate?${params.toString()}`;
+  }
+  const sourceText = [item?.title, item?.abstract || item?.summary].filter(Boolean).join('\n\n');
+  const params = new URLSearchParams({ sl: 'auto', tl: 'zh-CN', text: sourceText, op: 'translate' });
+  return `https://translate.google.com/?${params.toString()}`;
+}
+
 function toggleTranslation(item) {
   if (!translationFor(item)) return showToast('这篇论文暂时还没有 Codex 中文译文');
   if (state.translatedIds.has(item.id)) state.translatedIds.delete(item.id);
@@ -640,6 +651,16 @@ function cardFor(item) {
     : 'Codex 将在自动翻译队列中补全这条内容';
   translate.addEventListener('click', () => toggleTranslation(item));
   actions.append(translate);
+
+  const googleTranslate = document.createElement('a');
+  googleTranslate.href = googleTranslateUrl(item);
+  googleTranslate.target = '_blank';
+  googleTranslate.rel = 'noreferrer';
+  googleTranslate.className = 'google-translation-link';
+  googleTranslate.textContent = 'Google 翻译 ↗';
+  googleTranslate.title = '使用 Google 翻译打开原始网页（外部服务）';
+  googleTranslate.setAttribute('aria-label', `使用 Google 翻译查看《${item.title}》`);
+  actions.append(googleTranslate);
 
   if (item.type === 'paper') {
     if (translation) {
@@ -1405,6 +1426,7 @@ function openDetails(item) {
       ${item.doi ? '<button id="copyDoi">复制 DOI</button>' : ''}
       <button id="openCitationFromDetail">Cite</button>
       ${translation ? `<button id="toggleDetailTranslation">${translated ? '查看英文原文' : '查看中文译文'}</button>` : ''}
+      <a class="google-translation-link" href="${text(googleTranslateUrl(item))}" target="_blank" rel="noreferrer">Google 翻译 ↗</a>
       ${item.type === 'paper' ? `<button id="openDetailNote">📝 ${state.personal.notes[item.id] ? '编辑笔记 · 已保存' : '写笔记'}</button><button id="cycleRead">${text(readingLabel(item.id))}</button>` : ''}
     </div>
     ${item.type === 'paper' ? '<p class="note-privacy">笔记仅保存在当前浏览器，不进入公开收藏。</p>' : ''}
@@ -1858,7 +1880,7 @@ function homeFeaturedCard(item) {
     <h3><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">${text(localizedTitle(item))}</a></h3>
     ${authors ? `<p class="home-featured-authors">${text(authors)}</p>` : ''}
     <div class="home-featured-abstract"><b>${item.abstract || item.summary ? (usingTranslation(item) ? '中文翻译' : '完整摘要') : '摘要状态'}</b><p>${text(abstract)}</p></div>
-    <div class="home-featured-foot"><div>${categories}</div><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">阅读原文 ↗</a></div>`;
+    <div class="home-featured-foot"><div>${categories}</div><span><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">阅读原文 ↗</a><a class="google-translation-link" href="${text(googleTranslateUrl(item))}" target="_blank" rel="noreferrer">Google 翻译 ↗</a></span></div>`;
   return article;
 }
 
@@ -1920,7 +1942,7 @@ function dailyNoticeCard(item) {
     <p>${text(truncate(localizedAbstract(item), 320) || '官方列表页未提供简介；点开原文可查看申请条件、时间与附件。')}</p>
     <footer>
       <div><b>${text(item.source || '官方来源')}</b><span>${text(item.scope || '')}</span><time>${text(prettyDate(item.published))}</time></div>
-      <a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">查看官方原文 ↗</a>
+      <span class="daily-notice-links"><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">查看官方原文 ↗</a><a class="google-translation-link" href="${text(googleTranslateUrl(item))}" target="_blank" rel="noreferrer">Google 翻译 ↗</a></span>
     </footer>`;
   return article;
 }
