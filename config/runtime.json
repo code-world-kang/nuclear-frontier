@@ -4,9 +4,11 @@
   "timezone": "Asia/Shanghai",
   "daily_limit": 900,
   "history_days": 3650,
-  "favorite_sync_endpoint": "",
-  "favorite_sync_enabled": false,
   "repository_url": "https://github.com/code-world-kang/nuclear-frontier",
+  "github_sync": {
+    "enabled": true,
+    "issue_title_prefix": "[个人数据同步]"
+  },
   "figure_enrichment_limit": 0,
   "abstract_enrichment_limit": 240
 }

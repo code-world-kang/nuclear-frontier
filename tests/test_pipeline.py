@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import base64
+import gzip
 import sys
 import unittest
 from unittest.mock import patch
@@ -28,7 +30,7 @@ from update_content import (  # noqa: E402
     parse_feed_items,
     reusable_license,
 )
-from sync_public_favorites import clean_favorites  # noqa: E402
+from sync_github_issue import MARKER, clean_state, extract_state, state_from_event  # noqa: E402
 
 
 class PipelineTests(unittest.TestCase):
@@ -44,6 +46,34 @@ class PipelineTests(unittest.TestCase):
         )
         self.assertIn("ai-science", categories)
         self.assertIn("detectors-daq", categories)
+
+    def test_github_issue_personal_state_is_schema_limited(self):
+        payload = clean_state({
+            "updated_at": "2026-08-10T00:00:00Z",
+            "personal": {"notes": {"paper-1": "公开笔记"}, "keywords": ["核结构"], "unexpected": "drop"},
+            "paperLayout": {"categoryOrder": ["nuclear-structure"]},
+            "googleTranslations": {"paper-1": {"title_zh": "题目", "abstract_zh": "摘要"}},
+            "secret": "drop",
+        })
+        self.assertEqual(payload["personal"]["notes"]["paper-1"], "公开笔记")
+        self.assertEqual(payload["paperLayout"]["categoryOrder"], ["nuclear-structure"])
+        self.assertNotIn("unexpected", payload["personal"])
+        self.assertNotIn("secret", payload)
+
+    def test_github_issue_snapshot_is_extracted_and_owner_checked(self):
+        encoded = base64.b64encode(gzip.compress(b'{"personal":{"notes":{"p1":"note"}}}')).decode()
+        body = f'{MARKER}\n<!-- nuclear-frontier-encoding:gzip-base64 -->\n```text\n{encoded}\n```'
+        self.assertEqual(extract_state(body)["personal"]["notes"]["p1"], "note")
+        event = {
+            "issue": {
+                "title": "[个人数据同步] test",
+                "body": body,
+                "user": {"login": "code-world-kang"},
+            }
+        }
+        self.assertEqual(state_from_event(event, "code-world-kang")["personal"]["notes"]["p1"], "note")
+        with self.assertRaises(PermissionError):
+            state_from_event(event, "someone-else")
 
     def test_fusion_category(self):
         categories, _ = self.classifier.classify(
@@ -339,15 +369,6 @@ class PipelineTests(unittest.TestCase):
         with patch("update_content.fetch_arxiv_resource", return_value=b"<html></html>") as mocked:
             enrich_arxiv_figures([old_failure, pending], limit=1, run_at="2026-08-08T08:00:00+08:00")
         self.assertIn("2608.30002", mocked.call_args.args[0])
-
-    def test_public_favorite_whitelist_preserves_keywords(self):
-        cleaned = clean_favorites([{
-            "id": "paper-1", "title": "Paper", "keywords": ["衰变", "探测器"],
-            "note": "私人阅读笔记", "private_token": "must-not-leak",
-        }])
-        self.assertEqual(cleaned[0]["keywords"], ["衰变", "探测器"])
-        self.assertNotIn("note", cleaned[0])
-        self.assertNotIn("private_token", cleaned[0])
 
     def test_merge_keeps_existing_full_abstract_and_figures(self):
         old = [{

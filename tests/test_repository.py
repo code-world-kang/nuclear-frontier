@@ -21,7 +21,9 @@ class RepositoryTests(unittest.TestCase):
             ROOT / "data" / "notices.json",
             ROOT / "data" / "status.json",
             ROOT / "data" / "translations.zh-CN.json",
+            ROOT / "data" / "personal" / "state.json",
             ROOT / "site" / "data" / "translations.zh-CN.json",
+            ROOT / "site" / "data" / "personal-state.json",
             ROOT / "site" / "data" / "notice-portals.json",
         ]:
             with self.subTest(path=path):
@@ -104,8 +106,9 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('Nature Communications', index)
         self.assertEqual(index.count('id="paperCount"'), 1)
         self.assertNotIn('class="paper-figures"', index)
-        self.assertIn('id="noteDialog"', index)
-        self.assertIn('id="noteInput"', index)
+        self.assertNotIn('id="noteDialog"', index)
+        self.assertIn('id="cloudSyncBar"', index)
+        self.assertIn('id="submitGitHubSync"', index)
         self.assertIn('id="favoriteDialog"', index)
         self.assertIn('id="myKeywordList"', index)
         self.assertIn('id="mySpaceNav"', index)
@@ -119,16 +122,20 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('dataset.dayTheme', index)
         self.assertIn('src="./app.js?v=', index)
 
-    def test_reader_ui_is_text_first_and_private_note_safe(self):
+    def test_reader_ui_is_text_first_and_notes_are_inline_and_public(self):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
         app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         runtime = json.loads((ROOT / "config" / "runtime.json").read_text(encoding="utf-8"))
         self.assertEqual(runtime.get("figure_enrichment_limit"), 0)
         self.assertNotIn("appendFigureGallery", app)
         self.assertNotIn("论文关键图", index + app)
-        self.assertIn("function publicSyncEvent", app)
-        self.assertIn("function openNoteDialog", app)
-        self.assertIn("不会上传或公开到 GitHub", index)
+        self.assertIn("function inlineNoteEditorFor", app)
+        self.assertIn("function saveInlineNote", app)
+        self.assertIn("function submitGitHubSync", app)
+        self.assertIn("GitHub 公开同步", index)
+        self.assertIn("nuclear-frontier-personal-state:v1", app)
+        self.assertNotIn("localStorage", app)
+        self.assertNotIn("OneDrive", index + app)
         self.assertIn("state.scope === 'custom'", app)
 
     def test_paper_information_panel_omits_title_and_reading_actions(self):
@@ -165,9 +172,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("function enrichCitationMetadata", app)
         self.assertIn("Object.keys(state.translations).forEach", app)
         self.assertIn("function localizedTitle", app)
-        self.assertIn("function googleTranslateUrl", app)
-        self.assertIn("https://translate.google.com/translate", app)
-        self.assertIn("Google 翻译 ↗", app)
+        self.assertIn("function requestGoogleTranslation", app)
+        self.assertIn("https://translate.googleapis.com/translate_a/single", app)
+        self.assertIn("function googleTranslationPanelFor", app)
+        self.assertNotIn("renderDailyNoticeDashboard", app)
+        self.assertIn("Google 翻译", app)
         self.assertIn("data-assistant-cite", app)
         self.assertIn("[PP/OL]", app)
         self.assertIn("[J/OL]", app)

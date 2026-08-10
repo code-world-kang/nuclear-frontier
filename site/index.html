@@ -163,7 +163,7 @@
       <section class="workspace" id="stream">
         <aside class="filters-panel" aria-label="论文筛选与排列">
           <div class="filter-panel-heading"><span>我的筛选</span><button id="editFilterLayout" type="button" aria-pressed="false">编辑排列</button></div>
-          <p class="layout-edit-hint" id="layoutEditHint" hidden>拖动领域或使用上下按钮调整，结果保存在当前浏览器。</p>
+          <p class="layout-edit-hint" id="layoutEditHint" hidden>拖动领域或使用上下按钮调整，完成后从同步栏提交到 GitHub。</p>
           <div class="filter-modules" id="filterModules">
             <section class="filter-module" data-filter-module="categories">
               <div class="panel-title">
@@ -207,6 +207,12 @@
             <button class="my-space-tab" type="button" data-my-section="translations"><span>译</span><b>翻译收藏</b><small>收藏译文与自定义术语</small></button>
             <button class="my-space-tab" type="button" data-my-section="code"><span>💻</span><b>我的代码</b><small>GitHub 项目与分析工具</small></button>
             <button class="my-space-tab" type="button" data-my-section="references"><span>🧭</span><b>参考资料</b><small>数据库、手册与常用链接</small></button>
+          </section>
+
+          <section class="cloud-sync-bar" id="cloudSyncBar" aria-live="polite">
+            <span class="cloud-sync-icon" aria-hidden="true">☁</span>
+            <div><b>GitHub 公开同步</b><small id="cloudSyncStatus">正在读取同步状态…</small></div>
+            <button type="button" id="submitGitHubSync" disabled>已同步</button>
           </section>
 
           <div class="toolbar">
@@ -299,25 +305,14 @@
   <dialog id="keywordDialog">
     <form method="dialog" class="dialog-card" id="keywordForm">
       <div class="dialog-head"><div><small>PERSONAL TOPICS</small><h3>我的关键词</h3></div><button value="cancel" aria-label="关闭">×</button></div>
-      <p>关键词会在搜索和排序中生效。与GitHub的自动同步通道配置完成后，会每日写入公开仓库。</p>
+      <p>关键词会在搜索和排序中生效。修改后请在页面同步栏提交到 GitHub。</p>
       <div class="keyword-input-row"><input id="keywordInput" placeholder="例如：11Li、knockout reaction、EAST"><button type="submit">添加</button></div>
       <div class="keyword-tags" id="keywordTags"></div>
-      <div class="dialog-actions"><button type="button" id="exportPersonal">导出私人备份（含笔记）</button><label class="import-label">导入备份<input type="file" id="importPersonal" accept="application/json"></label></div>
     </form>
   </dialog>
 
   <dialog id="detailDialog">
     <article class="dialog-card detail-card" id="detailContent"></article>
-  </dialog>
-
-  <dialog id="noteDialog">
-    <form class="dialog-card note-dialog-card" id="noteForm">
-      <div class="dialog-head"><div><small>PRIVATE RESEARCH NOTE</small><h3>论文笔记</h3></div><button type="button" id="closeNote" aria-label="关闭笔记">×</button></div>
-      <p class="note-paper-title" id="notePaperTitle"></p>
-      <label class="note-field"><span>我的笔记</span><textarea class="note-editor" id="noteInput" maxlength="12000" placeholder="记录阅读要点、引用位置、实验想法或待验证问题…"></textarea></label>
-      <div class="note-meta"><span>仅保存在当前浏览器，不会上传或公开到 GitHub。</span><b id="noteCount">0 / 12000</b></div>
-      <div class="note-dialog-actions"><button type="button" id="deleteNote">删除笔记</button><span></span><button type="button" id="cancelNote">取消</button><button type="submit" class="primary-form-button">保存笔记</button></div>
-    </form>
   </dialog>
 
   <dialog id="favoriteDialog">
@@ -336,7 +331,7 @@
   <dialog id="translationGlossaryDialog">
     <article class="dialog-card translation-glossary-card">
       <div class="dialog-head"><div><small>PERSONAL TRANSLATION GLOSSARY</small><h3>我的指定译法</h3></div><button type="button" id="closeTranslationGlossary" aria-label="关闭指定译法">×</button></div>
-      <p>输入原短语和你希望显示的中文译法。规则只保存在当前浏览器，并随私人备份一起导入或导出。</p>
+      <p>输入原短语和你希望显示的中文译法。规则提交后将公开同步到 GitHub。</p>
       <form id="translationGlossaryForm" class="translation-glossary-form">
         <label><span>原短语</span><input id="translationPhraseSource" required maxlength="160" placeholder="例如：knockout reaction"></label>
         <label><span>指定译法</span><input id="translationPhraseTarget" required maxlength="160" placeholder="例如：敲出反应"></label>
@@ -360,7 +355,7 @@
   <dialog id="myItemDialog">
     <form class="dialog-card" id="myItemForm">
       <div class="dialog-head"><div><small>MY RESEARCH SPACE</small><h3 id="myItemDialogTitle">添加内容</h3></div><button type="button" id="cancelMyItem" aria-label="关闭">×</button></div>
-      <p>保存到当前浏览器，可随个人备份一起导出。</p>
+      <p>保存后请在页面同步栏提交，内容将公开写入 GitHub。</p>
       <label class="personal-field"><span>名称</span><input id="myItemTitle" required placeholder="例如：Geant4 模拟代码"></label>
       <label class="personal-field"><span>链接</span><input id="myItemUrl" required type="url" placeholder="https://github.com/…"></label>
       <label class="personal-field"><span>说明</span><textarea id="myItemDescription" placeholder="用途、内容或阅读提示"></textarea></label>
@@ -409,6 +404,6 @@
     </article>
   </template>
 
-  <script type="module" src="./app.js?v=20260810-google-translate"></script>
+  <script type="module" src="./app.js?v=20260810-inline-note-translate"></script>
 </body>
 </html>

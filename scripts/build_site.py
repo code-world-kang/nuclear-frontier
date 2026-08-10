@@ -27,8 +27,13 @@ def main() -> None:
     ):
         shutil.copy2(DATA / name, PUBLIC_DATA / name)
     shutil.copy2(CONFIG / "notice_portals.json", PUBLIC_DATA / "notice-portals.json")
-    favorites = DATA / "personal" / "favorites.json"
-    shutil.copy2(favorites, PUBLIC_DATA / "public-favorites.json")
+    personal_state = DATA / "personal" / "state.json"
+    shutil.copy2(personal_state, PUBLIC_DATA / "personal-state.json")
+    personal_payload = load(personal_state)
+    favorite_records = list((personal_payload.get("personal", {}).get("favorites") or {}).values())
+    (PUBLIC_DATA / "public-favorites.json").write_text(
+        json.dumps(favorite_records, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
 
     topics = load(CONFIG / "topics.json")
     runtime = load(CONFIG / "runtime.json")

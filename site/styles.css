@@ -782,6 +782,14 @@ body {
 .my-space-tab small { color: #839488; font-size: 9px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .my-space-tab:hover, .my-space-tab.active { border-color: #9fc99e; background: #e9f6e4; box-shadow: 0 8px 20px rgba(75,124,77,.08); }
 .my-space-tab.active b { color: #2e7547; }
+.cloud-sync-bar { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 11px; align-items: center; margin: 12px 0; padding: 12px 14px; border: 1px solid #d4e4cf; border-radius: 14px; background: linear-gradient(135deg, rgba(239,248,235,.96), rgba(245,250,255,.92)); }
+.cloud-sync-icon { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 11px; color: #397b91; background: #e6f2f8; font-size: 18px; }
+.cloud-sync-bar > div { display: grid; gap: 2px; min-width: 0; }
+.cloud-sync-bar b { color: #45674e; font-size: 11px; }
+.cloud-sync-bar small { overflow: hidden; color: #74847a; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.cloud-sync-bar button { border: 1px solid #b9d2c7; border-radius: 9px; padding: 7px 11px; color: #376f57; background: #f8fcf6; cursor: pointer; font: inherit; font-size: 9px; font-weight: 700; }
+.cloud-sync-bar button:disabled { color: #929e96; cursor: not-allowed; }
+.cloud-sync-bar.connected { border-color: #aad1ae; background: linear-gradient(135deg, #e9f7e5, #eef8fb); }
 .personal-card { display: grid; grid-template-columns: auto minmax(0,1fr) auto; gap: 16px; align-items: center; padding: 20px; border: 1px solid #d9e9d6; border-radius: 17px; background: rgba(255,255,255,.90); box-shadow: 0 7px 24px rgba(59,101,65,.05); }
 .personal-card-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 14px; color: #397a4d; background: #e3f3de; font-weight: 800; font-size: 20px; }
 .personal-card small { color: #7e9484; font-size: 8px; letter-spacing: .15em; }
@@ -797,6 +805,24 @@ body {
 .personal-field { display: grid; gap: 5px; margin-top: 14px; color: #587060; font-size: 11px; }
 .personal-field input, .personal-field textarea { width: 100%; border: 1px solid #d3e4cf; border-radius: 10px; padding: 10px 12px; color: var(--ink); background: #fbfef9; font: inherit; }
 .personal-field textarea { min-height: 90px; resize: vertical; }
+
+.inline-google-translation, .inline-note-editor { margin-top: 14px; padding: 15px 16px; border: 1px solid #d7e5d2; border-radius: 13px; background: linear-gradient(145deg, #f7fbf3, #fffdf7); }
+.inline-google-translation { border-color: #d3e3eb; background: linear-gradient(145deg, #f4f9fc, #fffdf8); }
+.inline-panel-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 9px; }
+.inline-panel-head b { color: #47705a; font-size: 11px; }
+.inline-panel-head small { color: #87948b; font-size: 8px; }
+.inline-google-translation h4 { margin: 7px 0; color: #385e4a; font-family: Georgia, "Noto Serif SC", serif; font-size: 16px; line-height: 1.45; }
+.inline-google-translation > p { margin: 0; color: #5f7167; white-space: pre-wrap; font-size: 11px; line-height: 1.72; }
+.inline-translation-status { color: #668069 !important; }
+.inline-translation-error { color: #976057 !important; }
+.inline-google-retry { margin-top: 9px; border: 1px solid #bed2dd; border-radius: 8px; padding: 6px 10px; color: #3c718d; background: #f7fbfd; cursor: pointer; font: inherit; font-size: 9px; }
+.inline-note-editor textarea { width: 100%; min-height: 150px; resize: vertical; border: 1px solid #cfe0c9; border-radius: 10px; padding: 12px; color: #405b47; background: rgba(255,255,255,.9); outline: none; font: 12px/1.65 inherit; }
+.inline-note-editor textarea:focus { border-color: #76a97c; box-shadow: 0 0 0 3px rgba(91,145,99,.12); }
+.inline-note-foot { display: grid; grid-template-columns: auto 1fr auto auto auto; gap: 8px; align-items: center; margin-top: 10px; }
+.inline-note-foot b { color: #7a897e; font-size: 8px; font-weight: 600; }
+.inline-note-foot button { border: 1px solid #cfdfca; border-radius: 8px; padding: 6px 10px; color: #57705c; background: #fff; cursor: pointer; font: inherit; font-size: 9px; }
+.inline-note-foot .save { border-color: #5d9367; color: #fff; background: #5d9367; }
+.inline-note-foot .delete { border-color: #ead4cf; color: #9a5e54; background: #fff8f5; }
 
 .translation-shelf-panel { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px 20px; align-items: center; margin: 16px 0 12px; padding: 18px 20px; border: 1px solid #d9e6ca; border-radius: 17px; background: linear-gradient(135deg, rgba(244,250,233,.96), rgba(255,246,225,.88)); }
 .translation-shelf-panel[hidden] { display: none; }

@@ -1,6 +1,4 @@
 const PATH = new URL('.', window.location.href).pathname;
-const PERSONAL_KEY = 'nuclear-frontier.personal.v1';
-const PAPER_LAYOUT_KEY = 'nuclear-frontier.paper-layout.v1';
 
 const DEFAULT_CATEGORY_ORDER = [
   'experimental-nuclear', 'nuclear-structure', 'nuclear-reactions', 'nuclear-decay', 'detectors-daq',
@@ -12,14 +10,16 @@ const DEFAULT_FILTER_MODULE_ORDER = ['categories', 'keywords'];
 const state = {
   papers: [], featured: [], news: [], notices: [], publicFavorites: [], translations: {}, noticePortals: { categories: [], entries: [] },
   meta: null, view: 'papers', category: 'all', source: 'all', query: '', searchField: 'all', sort: 'date', scope: 'daily-focus', visible: 20,
-  dateFrom: '', dateTo: '', favoriteKeyword: 'all', favoriteDraft: null, noteDraft: null, citationDraft: null, mySection: 'papers', translatedIds: new Set(),
+  dateFrom: '', dateTo: '', favoriteKeyword: 'all', favoriteDraft: null, inlineNoteId: '', citationDraft: null, mySection: 'papers', translatedIds: new Set(),
+  googleTranslations: new Map(), googleTranslationOpenIds: new Set(), googleTranslationLoadingIds: new Set(), googleTranslationErrors: new Map(),
   selectedPaperId: '',
+  cloudUpdatedAt: '',
+  personalDirty: false,
   noticeCategory: 'all', noticeTiming: 'all', noticeQuery: '', noticeVisible: 24,
   noticePortalCategory: 'all', noticePortalQuery: '', personal: loadPersonal(), paperLayout: loadPaperLayout(),
-  layoutEditing: false, draggedCategory: '', categoryMap: new Map(), favoriteSyncInFlight: false,
+  layoutEditing: false, draggedCategory: '', categoryMap: new Map(),
 };
 const citationMetadataRequests = new Map();
-
 const PRIMARY_NUCLEAR_CATEGORIES = new Set([
   'experimental-nuclear', 'theoretical-nuclear', 'nuclear-structure', 'nuclear-decay', 'nuclear-reactions',
   'detectors-daq', 'nuclear-general', 'high-energy-nuclear', 'nuclear-astrophysics',
@@ -49,64 +49,25 @@ const NUCLEAR_PRIORITY = new Map([
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
-function loadPersonal() {
-  try {
-    const parsed = JSON.parse(localStorage.getItem(PERSONAL_KEY) || '{}');
-    const favorites = parsed.favorites && typeof parsed.favorites === 'object' ? parsed.favorites : {};
-    const notes = parsed.notes && typeof parsed.notes === 'object' ? parsed.notes : {};
-    Object.entries(favorites).forEach(([id, record]) => {
-      if (!record || typeof record !== 'object') return;
-      if (!notes[id] && typeof record.note === 'string' && record.note.trim()) notes[id] = record.note;
-      delete record.note;
-    });
-    return {
-      favorites,
-      keywords: Array.isArray(parsed.keywords) ? parsed.keywords : [],
-      outbox: Array.isArray(parsed.outbox) ? parsed.outbox : [],
-      readStatus: parsed.readStatus || {},
-      notes,
-      translationFavorites: parsed.translationFavorites && typeof parsed.translationFavorites === 'object' ? parsed.translationFavorites : {},
-      translationGlossary: normalizeTranslationGlossary(parsed.translationGlossary),
-      codeItems: Array.isArray(parsed.codeItems) ? parsed.codeItems : [],
-      resources: Array.isArray(parsed.resources) ? parsed.resources : [],
-      hiddenPublicFavorites: Array.isArray(parsed.hiddenPublicFavorites) ? parsed.hiddenPublicFavorites : [],
-    };
-  } catch {
-    return { favorites: {}, keywords: [], outbox: [], readStatus: {}, notes: {}, translationFavorites: {}, translationGlossary: [], codeItems: [], resources: [], hiddenPublicFavorites: [] };
-  }
+function emptyPersonal() {
+  return { favorites: {}, keywords: [], readStatus: {}, notes: {}, translationFavorites: {}, translationGlossary: [], codeItems: [], resources: [], hiddenPublicFavorites: [] };
 }
 
-function savePersonal() {
-  try {
-    localStorage.setItem(PERSONAL_KEY, JSON.stringify(state.personal));
-    return true;
-  } catch (error) {
-    console.error(error);
-    showToast('浏览器存储空间不足，本次内容未能保存');
-    return false;
-  }
+function loadPersonal() {
+  return emptyPersonal();
 }
 
 function loadPaperLayout() {
-  try {
-    const parsed = JSON.parse(localStorage.getItem(PAPER_LAYOUT_KEY) || '{}');
-    return {
-      categoryOrder: Array.isArray(parsed.categoryOrder) ? parsed.categoryOrder.map(String) : [...DEFAULT_CATEGORY_ORDER],
-      hiddenCategories: Array.isArray(parsed.hiddenCategories) ? parsed.hiddenCategories.map(String) : [],
-      moduleOrder: Array.isArray(parsed.moduleOrder) ? parsed.moduleOrder.map(String) : [...DEFAULT_FILTER_MODULE_ORDER],
-    };
-  } catch {
-    return { categoryOrder: [...DEFAULT_CATEGORY_ORDER], hiddenCategories: [], moduleOrder: [...DEFAULT_FILTER_MODULE_ORDER] };
-  }
+  return { categoryOrder: [...DEFAULT_CATEGORY_ORDER], hiddenCategories: [], moduleOrder: [...DEFAULT_FILTER_MODULE_ORDER] };
 }
 
 function savePaperLayout() {
-  try {
-    localStorage.setItem(PAPER_LAYOUT_KEY, JSON.stringify(state.paperLayout));
-  } catch (error) {
-    console.error(error);
-    showToast('排列未能保存，请检查浏览器存储空间');
-  }
+  markPersonalDirty();
+}
+
+function savePersonal() {
+  markPersonalDirty();
+  return true;
 }
 
 function normalizeKeyword(value = '') {
@@ -129,6 +90,122 @@ function normalizeTranslationGlossary(values = []) {
   });
 }
 
+function normalizePublicPersonalState(payload = {}) {
+  const personal = payload.personal && typeof payload.personal === 'object' ? payload.personal : {};
+  const normalized = emptyPersonal();
+  ['favorites', 'readStatus', 'notes', 'translationFavorites'].forEach(key => {
+    normalized[key] = personal[key] && typeof personal[key] === 'object' && !Array.isArray(personal[key]) ? personal[key] : {};
+  });
+  normalized.keywords = Array.isArray(personal.keywords) ? uniqueKeywords(personal.keywords) : [];
+  normalized.translationGlossary = normalizeTranslationGlossary(personal.translationGlossary);
+  normalized.codeItems = Array.isArray(personal.codeItems) ? personal.codeItems : [];
+  normalized.resources = Array.isArray(personal.resources) ? personal.resources : [];
+  normalized.hiddenPublicFavorites = Array.isArray(personal.hiddenPublicFavorites) ? personal.hiddenPublicFavorites.map(String) : [];
+  const layout = payload.paperLayout && typeof payload.paperLayout === 'object' ? payload.paperLayout : {};
+  const paperLayout = {
+    categoryOrder: Array.isArray(layout.categoryOrder) && layout.categoryOrder.length ? layout.categoryOrder.map(String) : [...DEFAULT_CATEGORY_ORDER],
+    hiddenCategories: Array.isArray(layout.hiddenCategories) ? layout.hiddenCategories.map(String) : [],
+    moduleOrder: Array.isArray(layout.moduleOrder) && layout.moduleOrder.length ? layout.moduleOrder.map(String) : [...DEFAULT_FILTER_MODULE_ORDER],
+  };
+  const googleTranslations = payload.googleTranslations && typeof payload.googleTranslations === 'object' ? payload.googleTranslations : {};
+  return { personal: normalized, paperLayout, googleTranslations, updatedAt: String(payload.updated_at || '') };
+}
+
+function applyPublicPersonalState(payload = {}) {
+  const normalized = normalizePublicPersonalState(payload);
+  state.personal = normalized.personal;
+  state.paperLayout = normalized.paperLayout;
+  state.googleTranslations = new Map(Object.entries(normalized.googleTranslations));
+  state.cloudUpdatedAt = normalized.updatedAt;
+}
+
+function publicPersonalPayload() {
+  return {
+    version: 1,
+    updated_at: new Date().toISOString(),
+    personal: state.personal,
+    paperLayout: state.paperLayout,
+    googleTranslations: Object.fromEntries(state.googleTranslations),
+  };
+}
+
+function updateCloudSyncUI(message = '') {
+  const bar = $('#cloudSyncBar');
+  const button = $('#submitGitHubSync');
+  if (!bar || !button) return;
+  bar.classList.toggle('connected', !state.personalDirty);
+  button.disabled = !state.personalDirty;
+  button.textContent = state.personalDirty ? '提交到 GitHub' : '已同步';
+  const publicTime = state.cloudUpdatedAt ? `公开快照：${prettyDate(state.cloudUpdatedAt)}` : '尚无公开个人数据';
+  $('#cloudSyncStatus').textContent = message || (state.personalDirty
+    ? '本页有待提交修改；点击右侧按钮后，在 GitHub 确认创建 Issue。'
+    : `已从 GitHub 读取 · ${publicTime}`);
+}
+
+function markPersonalDirty() {
+  state.personalDirty = true;
+  updateCloudSyncUI();
+}
+
+function bytesToBase64(bytes) {
+  let binary = '';
+  for (let index = 0; index < bytes.length; index += 0x8000) {
+    binary += String.fromCharCode(...bytes.subarray(index, index + 0x8000));
+  }
+  return btoa(binary);
+}
+
+async function encodeGitHubSnapshot(value) {
+  const bytes = new TextEncoder().encode(value);
+  if (!('CompressionStream' in window)) return { encoding: 'base64', data: bytesToBase64(bytes) };
+  const stream = new Blob([bytes]).stream().pipeThrough(new CompressionStream('gzip'));
+  const compressed = new Uint8Array(await new Response(stream).arrayBuffer());
+  return { encoding: 'gzip-base64', data: bytesToBase64(compressed) };
+}
+
+async function submitGitHubSync() {
+  if (!state.personalDirty) return;
+  const popup = window.open('', 'nuclear-frontier-github-sync');
+  if (!popup) return showToast('浏览器拦截了 GitHub 提交页，请允许弹出窗口');
+  popup.document.title = '正在准备 GitHub 同步';
+  popup.document.body.textContent = '正在压缩公开个人数据…';
+  const repositoryUrl = state.meta?.site?.repository_url || 'https://github.com/code-world-kang/nuclear-frontier';
+  const payload = JSON.stringify(publicPersonalPayload(), null, 2);
+  let encoded;
+  try {
+    encoded = await encodeGitHubSnapshot(payload);
+  } catch (error) {
+    popup.close();
+    console.error(error);
+    return showToast('同步数据准备失败，请稍后重试');
+  }
+  const body = [
+    '<!-- nuclear-frontier-personal-state:v1 -->',
+    `<!-- nuclear-frontier-encoding:${encoded.encoding} -->`,
+    '这是网站生成的个人科研数据公开同步请求。',
+    '',
+    '> 请保留下方压缩数据不变，直接点击“Submit new issue”。GitHub Actions 将验证账号、写入仓库并自动关闭此 Issue。',
+    '',
+    '```text',
+    encoded.data,
+    '```',
+  ].join('\n');
+  const issueUrl = new URL(`${repositoryUrl.replace(/\/$/, '')}/issues/new`);
+  issueUrl.search = new URLSearchParams({
+    title: `[个人数据同步] ${new Date().toLocaleString('zh-CN', { hour12: false })}`,
+    body,
+  });
+  if (encoded.data.length > 60_000 || issueUrl.href.length > 100_000) {
+    popup.close();
+    updateCloudSyncUI('个人数据过多，暂时无法通过 Issue 提交。');
+    return showToast('数据超出 GitHub Issue 预填长度，请先删减过长笔记');
+  }
+  popup.opener = null;
+  popup.location.replace(issueUrl.href);
+  updateCloudSyncUI('已打开 GitHub：请确认创建 Issue，约 1–2 分钟后刷新本站。');
+  showToast('请在 GitHub 页面确认提交');
+}
+
 function keywordKey(value = '') {
   return normalizeKeyword(value).toLocaleLowerCase('zh-CN');
 }
@@ -141,28 +218,6 @@ function uniqueKeywords(values = []) {
     seen.add(key);
     return true;
   });
-}
-
-function publicFavoritePayload(record = {}) {
-  return {
-    id: record.id || '', doi: record.doi || '', arxiv_id: record.arxiv_id || '',
-    title: record.title || '', url: record.url || '', categories: record.categories || [],
-    tags: record.tags || [], keywords: uniqueKeywords(record.keywords || []), added_at: record.added_at || '',
-  };
-}
-
-function publicSyncEvent(event = {}) {
-  const at = typeof event.at === 'string' ? event.at : new Date().toISOString();
-  if (event.operation === 'upsert' && event.item) {
-    return { operation: 'upsert', item: publicFavoritePayload(event.item), at };
-  }
-  if (event.operation === 'remove' && event.id) {
-    return { operation: 'remove', id: String(event.id), at };
-  }
-  if (event.operation === 'keywords') {
-    return { operation: 'keywords', keywords: uniqueKeywords(event.keywords || []), at };
-  }
-  return null;
 }
 
 function corePriority(item) {
@@ -494,15 +549,158 @@ function localizedAbstract(item) {
     : (item.abstract || item.summary || '');
 }
 
-function googleTranslateUrl(item) {
-  const sourceUrl = String(item?.url || '').trim();
-  if (/^https?:\/\//i.test(sourceUrl)) {
-    const params = new URLSearchParams({ sl: 'auto', tl: 'zh-CN', u: sourceUrl });
-    return `https://translate.google.com/translate?${params.toString()}`;
+function googleTranslationChunks(value = '', maxLength = 1400) {
+  const paragraphs = String(value).split(/\n+/).map(part => part.trim()).filter(Boolean);
+  const chunks = [];
+  paragraphs.forEach(paragraph => {
+    let remaining = paragraph;
+    while (remaining.length > maxLength) {
+      let cut = remaining.lastIndexOf('. ', maxLength);
+      if (cut < maxLength * .45) cut = remaining.lastIndexOf(' ', maxLength);
+      if (cut < maxLength * .45) cut = maxLength;
+      chunks.push(remaining.slice(0, cut + (remaining[cut] === '.' ? 1 : 0)).trim());
+      remaining = remaining.slice(cut + (remaining[cut] === '.' ? 1 : 0)).trim();
+    }
+    if (remaining) chunks.push(remaining);
+  });
+  return chunks;
+}
+
+async function requestGoogleTranslation(value = '') {
+  const chunks = googleTranslationChunks(value);
+  const translated = [];
+  for (const chunk of chunks) {
+    const url = new URL('https://translate.googleapis.com/translate_a/single');
+    url.search = new URLSearchParams({ client: 'gtx', sl: 'auto', tl: 'zh-CN', dt: 't', q: chunk });
+    const response = await fetch(url, { headers: { Accept: 'application/json' }, referrerPolicy: 'no-referrer' });
+    if (!response.ok) throw new Error(`Google 翻译请求失败（${response.status}）`);
+    const payload = await response.json();
+    const textValue = Array.isArray(payload?.[0]) ? payload[0].map(part => part?.[0] || '').join('') : '';
+    if (!textValue) throw new Error('Google 翻译未返回有效内容');
+    translated.push(textValue);
   }
-  const sourceText = [item?.title, item?.abstract || item?.summary].filter(Boolean).join('\n\n');
-  const params = new URLSearchParams({ sl: 'auto', tl: 'zh-CN', text: sourceText, op: 'translate' });
-  return `https://translate.google.com/?${params.toString()}`;
+  return translated.join('\n\n');
+}
+
+function refreshGoogleTranslationViews(item) {
+  renderCards();
+  if (state.view === 'home') renderHomeDashboard();
+  if (state.view === 'notices') renderDailyNotices();
+  if ($('#detailDialog')?.open && $('#detailContent')?.dataset.id === item.id) openDetails(item);
+}
+
+async function toggleGoogleTranslation(item) {
+  if (state.googleTranslationOpenIds.has(item.id)) {
+    state.googleTranslationOpenIds.delete(item.id);
+    refreshGoogleTranslationViews(item);
+    return;
+  }
+  state.googleTranslationOpenIds.add(item.id);
+  refreshGoogleTranslationViews(item);
+  if (state.googleTranslations.has(item.id) || state.googleTranslationLoadingIds.has(item.id)) return;
+
+  state.googleTranslationLoadingIds.add(item.id);
+  state.googleTranslationErrors.delete(item.id);
+  refreshGoogleTranslationViews(item);
+  try {
+    const titleZh = await requestGoogleTranslation(item.title || '');
+    const abstractZh = await requestGoogleTranslation(item.abstract || item.summary || '');
+    state.googleTranslations.set(item.id, { title_zh: titleZh, abstract_zh: abstractZh });
+    savePersonal();
+  } catch (error) {
+    state.googleTranslationErrors.set(item.id, error.message || 'Google 翻译暂时不可用');
+  } finally {
+    state.googleTranslationLoadingIds.delete(item.id);
+    refreshGoogleTranslationViews(item);
+  }
+}
+
+function googleTranslationPanelFor(item) {
+  if (!state.googleTranslationOpenIds.has(item.id)) return null;
+  const panel = document.createElement('section');
+  panel.className = 'inline-google-translation';
+  panel.dataset.googleTranslation = item.id;
+  const result = state.googleTranslations.get(item.id);
+  const error = state.googleTranslationErrors.get(item.id);
+  if (state.googleTranslationLoadingIds.has(item.id)) {
+    panel.innerHTML = '<div class="inline-panel-head"><b>Google 中文翻译</b><small>正在翻译题目与摘要…</small></div><p class="inline-translation-status">🌱 译文生成中，请稍候。</p>';
+  } else if (error) {
+    panel.innerHTML = `<div class="inline-panel-head"><b>Google 中文翻译</b><small>没有打开新页面</small></div><p class="inline-translation-error">${text(error)}。可稍后再试。</p><button type="button" class="inline-google-retry">重新翻译</button>`;
+    $('.inline-google-retry', panel).addEventListener('click', () => {
+      state.googleTranslationOpenIds.delete(item.id);
+      state.googleTranslationErrors.delete(item.id);
+      void toggleGoogleTranslation(item);
+    });
+  } else if (result) {
+    panel.innerHTML = `<div class="inline-panel-head"><b>Google 中文翻译</b><small>题目与摘要</small></div><h4>${text(result.title_zh || item.title)}</h4><p>${text(result.abstract_zh || '原始来源未提供可翻译的摘要。')}</p>`;
+  }
+  return panel;
+}
+
+function focusInlineNote(item) {
+  requestAnimationFrame(() => {
+    const card = $$('.paper-card').find(value => value.dataset.id === item.id);
+    const editor = $('.inline-note-editor textarea', card);
+    editor?.focus();
+    editor?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  });
+}
+
+function openInlineNote(item) {
+  state.inlineNoteId = state.inlineNoteId === item.id ? '' : item.id;
+  renderCards();
+  if (state.inlineNoteId) focusInlineNote(item);
+}
+
+function saveInlineNote(item, value) {
+  const previous = state.personal.notes[item.id];
+  const noteValue = String(value || '').trim();
+  if (noteValue) state.personal.notes[item.id] = noteValue;
+  else delete state.personal.notes[item.id];
+  if (!savePersonal()) {
+    if (previous === undefined) delete state.personal.notes[item.id];
+    else state.personal.notes[item.id] = previous;
+    return;
+  }
+  state.inlineNoteId = '';
+  renderCards();
+  showToast(noteValue ? '笔记已更新，请提交到 GitHub' : '空笔记已清除');
+}
+
+function deleteInlineNote(item) {
+  const previous = state.personal.notes[item.id];
+  delete state.personal.notes[item.id];
+  if (!savePersonal()) {
+    if (previous !== undefined) state.personal.notes[item.id] = previous;
+    return;
+  }
+  state.inlineNoteId = '';
+  renderCards();
+  showToast('笔记已删除');
+}
+
+function inlineNoteEditorFor(item) {
+  if (state.inlineNoteId !== item.id) return null;
+  const value = state.personal.notes[item.id] || '';
+  const section = document.createElement('section');
+  section.className = 'inline-note-editor';
+  section.dataset.inlineNote = item.id;
+  section.innerHTML = `
+    <div class="inline-panel-head"><b>📝 论文笔记</b><small>提交后公开同步到 GitHub</small></div>
+    <textarea maxlength="12000" placeholder="记录阅读要点、引用位置、实验想法或待验证问题…">${text(value)}</textarea>
+    <div class="inline-note-foot"><b>${value.length.toLocaleString('zh-CN')} / 12000</b><span></span>${value.trim() ? '<button type="button" class="delete">删除</button>' : ''}<button type="button" class="cancel">取消</button><button type="button" class="save">保存笔记</button></div>`;
+  const input = $('textarea', section);
+  input.addEventListener('input', () => $('.inline-note-foot b', section).textContent = `${input.value.length.toLocaleString('zh-CN')} / 12000`);
+  input.addEventListener('keydown', event => {
+    if ((event.metaKey || event.ctrlKey) && event.key === 'Enter') {
+      event.preventDefault();
+      saveInlineNote(item, input.value);
+    }
+  });
+  $('.save', section).addEventListener('click', () => saveInlineNote(item, input.value));
+  $('.cancel', section).addEventListener('click', () => { state.inlineNoteId = ''; renderCards(); });
+  $('.delete', section)?.addEventListener('click', () => deleteInlineNote(item));
+  return section;
 }
 
 function toggleTranslation(item) {
@@ -652,14 +850,13 @@ function cardFor(item) {
   translate.addEventListener('click', () => toggleTranslation(item));
   actions.append(translate);
 
-  const googleTranslate = document.createElement('a');
-  googleTranslate.href = googleTranslateUrl(item);
-  googleTranslate.target = '_blank';
-  googleTranslate.rel = 'noreferrer';
+  const googleTranslate = document.createElement('button');
+  googleTranslate.type = 'button';
   googleTranslate.className = 'google-translation-link';
-  googleTranslate.textContent = 'Google 翻译 ↗';
-  googleTranslate.title = '使用 Google 翻译打开原始网页（外部服务）';
+  googleTranslate.textContent = state.googleTranslationOpenIds.has(item.id) ? '收起 Google 译文' : 'Google 翻译';
+  googleTranslate.title = '在当前文章中翻译题目与摘要';
   googleTranslate.setAttribute('aria-label', `使用 Google 翻译查看《${item.title}》`);
+  googleTranslate.addEventListener('click', () => void toggleGoogleTranslation(item));
   actions.append(googleTranslate);
 
   if (item.type === 'paper') {
@@ -677,9 +874,9 @@ function cardFor(item) {
     const note = document.createElement('button');
     note.type = 'button';
     note.className = `note-button${hasNote ? ' has-note' : ''}`;
-    note.textContent = hasNote ? '📝 编辑笔记 · 已保存' : '📝 写笔记';
+    note.textContent = hasNote ? '📝 编辑已有笔记' : '📝 写笔记';
     note.setAttribute('aria-label', `${hasNote ? '编辑' : '为'}论文《${item.title}》${hasNote ? '的笔记' : '写笔记'}`);
-    note.addEventListener('click', () => openNoteDialog(item));
+    note.addEventListener('click', () => openInlineNote(item));
     actions.append(note);
 
     const info = document.createElement('button');
@@ -703,6 +900,10 @@ function cardFor(item) {
     reading.addEventListener('click', () => cycleReadingStatus(item));
     actions.append(reading);
   }
+  const googlePanel = googleTranslationPanelFor(item);
+  if (googlePanel) $('.paper-copy', card).append(googlePanel);
+  const noteEditor = inlineNoteEditorFor(item);
+  if (noteEditor) $('.paper-copy', card).append(noteEditor);
 
   const favorite = $('.favorite-button', card);
   if (item.type !== 'paper') {
@@ -1037,14 +1238,12 @@ async function saveFavoriteDraft() {
   };
   state.personal.hiddenPublicFavorites = state.personal.hiddenPublicFavorites.filter(id => id !== item.id);
   state.personal.keywords = uniqueKeywords([...state.personal.keywords, ...keywords]);
-  state.personal.outbox.push({ operation: 'upsert', item: publicFavoritePayload(state.personal.favorites[item.id]), at: new Date().toISOString() });
   savePersonal();
   closeFavoriteDialog();
   renderKeywords();
   renderCards();
   renderHomeHub();
   showToast(`已收藏，关键词：${keywords.join('、')}`);
-  await tryFavoriteSync();
 }
 
 async function toggleFavorite(item, button) {
@@ -1053,58 +1252,25 @@ async function toggleFavorite(item, button) {
     if (hasPublicFavorite(item.id) && !state.personal.hiddenPublicFavorites.includes(item.id)) {
       state.personal.hiddenPublicFavorites.push(item.id);
     }
-    state.personal.outbox.push({ operation: 'remove', id: item.id, at: new Date().toISOString() });
     savePersonal();
     const active = isFavorite(item.id);
     button.textContent = active ? '★' : '☆';
     button.classList.toggle('active', active);
     button.setAttribute('aria-pressed', String(active));
-    await tryFavoriteSync();
     renderCards();
     renderHomeHub();
-    showToast('已取消本机收藏');
+    showToast('已取消收藏，请提交到 GitHub');
     return;
   }
   if (hasPublicFavorite(item.id) && !state.personal.hiddenPublicFavorites.includes(item.id)) {
     state.personal.hiddenPublicFavorites.push(item.id);
-    state.personal.outbox.push({ operation: 'remove', id: item.id, at: new Date().toISOString() });
     savePersonal();
-    await tryFavoriteSync();
     renderCards();
     renderHomeHub();
-    showToast('已在本机隐藏并提交取消收藏');
+    showToast('已隐藏，请提交到 GitHub');
     return;
   }
   openFavoriteDialog(item);
-}
-
-async function tryFavoriteSync() {
-  const runtime = state.meta?.site;
-  if (!runtime?.favorite_sync_enabled || !runtime.favorite_sync_endpoint || !state.personal.outbox.length || state.favoriteSyncInFlight) return;
-  const queuedCount = state.personal.outbox.length;
-  const batch = state.personal.outbox.map(publicSyncEvent).filter(Boolean);
-  if (!batch.length) {
-    state.personal.outbox = [];
-    savePersonal();
-    return;
-  }
-  state.favoriteSyncInFlight = true;
-  let succeeded = false;
-  try {
-    const response = await fetch(runtime.favorite_sync_endpoint, {
-      method: 'POST', headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ events: batch }),
-    });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    state.personal.outbox.splice(0, queuedCount);
-    savePersonal();
-    succeeded = true;
-  } catch (error) {
-    console.warn('收藏同步将在下次联网时重试', error);
-  } finally {
-    state.favoriteSyncInFlight = false;
-    if (succeeded && state.personal.outbox.length) queueMicrotask(tryFavoriteSync);
-  }
 }
 
 function similarity(anchor, candidate) {
@@ -1330,76 +1496,6 @@ function exportReferenceSet() {
   showToast(`已导出 ${items.length} 条 RIS，可导入 Zotero`);
 }
 
-function updateNoteCount() {
-  const count = $('#noteInput').value.length;
-  $('#noteCount').textContent = `${count.toLocaleString('zh-CN')} / 12000`;
-}
-
-function openNoteDialog(item) {
-  state.noteDraft = item;
-  const value = state.personal.notes[item.id] || '';
-  $('#notePaperTitle').textContent = item.title;
-  $('#noteInput').value = value;
-  $('#deleteNote').hidden = !value.trim();
-  updateNoteCount();
-  $('#noteDialog').showModal();
-  setTimeout(() => $('#noteInput').focus(), 50);
-}
-
-function closeNoteDialog() {
-  $('#noteDialog').close();
-  state.noteDraft = null;
-}
-
-function refreshOpenDetailNoteButton(item) {
-  if (!$('#detailDialog').open || $('#detailContent').dataset.id !== item.id) return;
-  const button = $('#openDetailNote', $('#detailContent'));
-  if (button) button.textContent = state.personal.notes[item.id] ? '📝 编辑笔记 · 已保存' : '📝 写笔记';
-}
-
-function saveNoteDraft() {
-  const item = state.noteDraft;
-  if (!item) return;
-  const previous = state.personal.notes[item.id];
-  const previousFavoriteNote = state.personal.favorites[item.id]?.note;
-  const value = $('#noteInput').value.trim();
-  if (value) state.personal.notes[item.id] = value;
-  else delete state.personal.notes[item.id];
-  if (state.personal.favorites[item.id]) delete state.personal.favorites[item.id].note;
-  if (!savePersonal()) {
-    if (previous === undefined) delete state.personal.notes[item.id];
-    else state.personal.notes[item.id] = previous;
-    if (state.personal.favorites[item.id] && previousFavoriteNote !== undefined) {
-      state.personal.favorites[item.id].note = previousFavoriteNote;
-    }
-    return;
-  }
-  refreshOpenDetailNoteButton(item);
-  closeNoteDialog();
-  renderCards();
-  showToast(value ? '笔记已保存在当前浏览器' : '空笔记已清除');
-}
-
-function deleteNoteDraft() {
-  const item = state.noteDraft;
-  if (!item) return;
-  const previous = state.personal.notes[item.id];
-  const previousFavoriteNote = state.personal.favorites[item.id]?.note;
-  delete state.personal.notes[item.id];
-  if (state.personal.favorites[item.id]) delete state.personal.favorites[item.id].note;
-  if (!savePersonal()) {
-    if (previous !== undefined) state.personal.notes[item.id] = previous;
-    if (state.personal.favorites[item.id] && previousFavoriteNote !== undefined) {
-      state.personal.favorites[item.id].note = previousFavoriteNote;
-    }
-    return;
-  }
-  refreshOpenDetailNoteButton(item);
-  closeNoteDialog();
-  renderCards();
-  showToast('笔记已删除');
-}
-
 function openDetails(item) {
   markOpened(item);
   const translation = translationFor(item);
@@ -1426,10 +1522,10 @@ function openDetails(item) {
       ${item.doi ? '<button id="copyDoi">复制 DOI</button>' : ''}
       <button id="openCitationFromDetail">Cite</button>
       ${translation ? `<button id="toggleDetailTranslation">${translated ? '查看英文原文' : '查看中文译文'}</button>` : ''}
-      <a class="google-translation-link" href="${text(googleTranslateUrl(item))}" target="_blank" rel="noreferrer">Google 翻译 ↗</a>
-      ${item.type === 'paper' ? `<button id="openDetailNote">📝 ${state.personal.notes[item.id] ? '编辑笔记 · 已保存' : '写笔记'}</button><button id="cycleRead">${text(readingLabel(item.id))}</button>` : ''}
+      <button id="detailGoogleTranslate" class="google-translation-link">${state.googleTranslationOpenIds.has(item.id) ? '收起 Google 译文' : 'Google 翻译'}</button>
+      ${item.type === 'paper' ? `<button id="openDetailNote">📝 ${state.personal.notes[item.id] ? '编辑已有笔记' : '写笔记'}</button><button id="cycleRead">${text(readingLabel(item.id))}</button>` : ''}
     </div>
-    ${item.type === 'paper' ? '<p class="note-privacy">笔记仅保存在当前浏览器，不进入公开收藏。</p>' : ''}
+    ${item.type === 'paper' ? '<p class="note-privacy">笔记提交后将写入 GitHub 并公开展示。</p>' : ''}
     <h4>关联文献</h4>
     <div class="related-list">${related.length ? related.map(({ candidate, score }) => `<a class="related-item" href="${text(candidate.url)}" target="_blank" rel="noreferrer">${text(candidate.title)}<small>${text(candidate.source)} · 关联度 ${score}</small></a>`).join('') : '<p>当前历史库中尚无明显关联文献。</p>'}</div>
   `;
@@ -1442,7 +1538,15 @@ function openDetails(item) {
     openDetails(item);
   });
   $('#openCitationFromDetail', host).addEventListener('click', () => openCitationDialog(item));
-  $('#openDetailNote', host)?.addEventListener('click', () => openNoteDialog(item));
+  $('#detailGoogleTranslate', host).addEventListener('click', () => void toggleGoogleTranslation(item));
+  const googlePanel = googleTranslationPanelFor(item);
+  if (googlePanel) $('.detail-tools', host).after(googlePanel);
+  $('#openDetailNote', host)?.addEventListener('click', () => {
+    $('#detailDialog').close();
+    state.inlineNoteId = item.id;
+    renderCards();
+    focusInlineNote(item);
+  });
   $('#cycleRead', host)?.addEventListener('click', () => {
     cycleReadingStatus(item);
     $('#cycleRead', host).textContent = readingLabel(item.id);
@@ -1498,7 +1602,6 @@ function renderCategories() {
   all.addEventListener('click', () => setCategory('all'));
   renderHiddenCategories(byId);
   renderFilterModuleOrder();
-  savePaperLayout();
 }
 
 function moveCategory(id, direction) {
@@ -1880,7 +1983,10 @@ function homeFeaturedCard(item) {
     <h3><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">${text(localizedTitle(item))}</a></h3>
     ${authors ? `<p class="home-featured-authors">${text(authors)}</p>` : ''}
     <div class="home-featured-abstract"><b>${item.abstract || item.summary ? (usingTranslation(item) ? '中文翻译' : '完整摘要') : '摘要状态'}</b><p>${text(abstract)}</p></div>
-    <div class="home-featured-foot"><div>${categories}</div><span><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">阅读原文 ↗</a><a class="google-translation-link" href="${text(googleTranslateUrl(item))}" target="_blank" rel="noreferrer">Google 翻译 ↗</a></span></div>`;
+    <div class="home-featured-foot"><div>${categories}</div><span><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">阅读原文 ↗</a><button type="button" class="google-translation-link">${state.googleTranslationOpenIds.has(item.id) ? '收起 Google 译文' : 'Google 翻译'}</button></span></div>`;
+  $('.google-translation-link', article).addEventListener('click', () => void toggleGoogleTranslation(item));
+  const googlePanel = googleTranslationPanelFor(item);
+  if (googlePanel) article.append(googlePanel);
   return article;
 }
 
@@ -1942,8 +2048,11 @@ function dailyNoticeCard(item) {
     <p>${text(truncate(localizedAbstract(item), 320) || '官方列表页未提供简介；点开原文可查看申请条件、时间与附件。')}</p>
     <footer>
       <div><b>${text(item.source || '官方来源')}</b><span>${text(item.scope || '')}</span><time>${text(prettyDate(item.published))}</time></div>
-      <span class="daily-notice-links"><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">查看官方原文 ↗</a><a class="google-translation-link" href="${text(googleTranslateUrl(item))}" target="_blank" rel="noreferrer">Google 翻译 ↗</a></span>
+      <span class="daily-notice-links"><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">查看官方原文 ↗</a><button type="button" class="google-translation-link">${state.googleTranslationOpenIds.has(item.id) ? '收起 Google 译文' : 'Google 翻译'}</button></span>
     </footer>`;
+  $('.google-translation-link', article).addEventListener('click', () => void toggleGoogleTranslation(item));
+  const googlePanel = googleTranslationPanelFor(item);
+  if (googlePanel) article.append(googlePanel);
   return article;
 }
 
@@ -2233,8 +2342,7 @@ function renderKeywords() {
     tag.innerHTML = `${text(keyword)}<button type="button" aria-label="删除 ${text(keyword)}">×</button>`;
     $('button', tag).addEventListener('click', () => {
       state.personal.keywords = state.personal.keywords.filter(item => item !== keyword);
-      state.personal.outbox.push({ operation: 'keywords', keywords: state.personal.keywords, at: new Date().toISOString() });
-      savePersonal(); renderKeywords(); renderCards(); tryFavoriteSync();
+      savePersonal(); renderKeywords(); renderCards();
     });
     return tag;
   }));
@@ -2352,44 +2460,7 @@ function saveTranslationGlossary(event) {
   renderTranslationGlossary();
   renderTranslationShelfPanel();
   renderCards();
-  showToast(existing ? '已更新指定译法' : '已保存指定译法');
-}
-
-function exportPersonal() {
-  const blob = new Blob([JSON.stringify(state.personal, null, 2)], { type: 'application/json' });
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = `小康康的物理世界-个人备份-${new Date().toISOString().slice(0, 10)}.json`;
-  link.click();
-  URL.revokeObjectURL(link.href);
-}
-
-async function importPersonal(file) {
-  try {
-    const value = JSON.parse(await file.text());
-    if (!value || typeof value !== 'object') throw new Error('备份格式错误');
-    const favorites = value.favorites && typeof value.favorites === 'object' ? value.favorites : {};
-    const notes = value.notes && typeof value.notes === 'object' ? value.notes : {};
-    Object.entries(favorites).forEach(([id, record]) => {
-      if (!record || typeof record !== 'object') return;
-      if (!notes[id] && typeof record.note === 'string' && record.note.trim()) notes[id] = record.note;
-      delete record.note;
-      record.keywords = uniqueKeywords(record.keywords || []);
-    });
-    state.personal = {
-      favorites, keywords: Array.isArray(value.keywords) ? uniqueKeywords(value.keywords) : [],
-      outbox: Array.isArray(value.outbox) ? value.outbox.map(publicSyncEvent).filter(Boolean) : [],
-      readStatus: value.readStatus || {}, notes,
-      translationFavorites: value.translationFavorites && typeof value.translationFavorites === 'object' ? value.translationFavorites : {},
-      translationGlossary: normalizeTranslationGlossary(value.translationGlossary),
-      codeItems: Array.isArray(value.codeItems) ? value.codeItems : [],
-      resources: Array.isArray(value.resources) ? value.resources : [],
-      hiddenPublicFavorites: Array.isArray(value.hiddenPublicFavorites) ? value.hiddenPublicFavorites : [],
-    };
-    savePersonal(); renderKeywords(); renderCards(); renderHomeHub();
-  } catch (error) {
-    alert(`无法导入备份：${error.message}`);
-  }
+  showToast(existing ? '已更新译法，待提交 GitHub' : '已添加译法，待提交 GitHub');
 }
 
 function openMyItemDialog() {
@@ -2427,7 +2498,7 @@ function saveMyItem(event) {
   closeMyItemDialog();
   renderCards();
   renderHomeHub();
-  showToast('已保存到我的科研空间');
+  showToast('已添加到科研空间，待提交 GitHub');
 }
 
 function bindEvents() {
@@ -2486,21 +2557,13 @@ function bindEvents() {
     const value = input.value.trim();
     if (value && !state.personal.keywords.includes(value)) {
       state.personal.keywords.push(value);
-      state.personal.outbox.push({ operation: 'keywords', keywords: state.personal.keywords, at: new Date().toISOString() });
-      savePersonal(); renderKeywords(); renderCards(); tryFavoriteSync();
+      savePersonal(); renderKeywords(); renderCards();
     }
     input.value = '';
   });
-  $('#exportPersonal').addEventListener('click', exportPersonal);
-  $('#importPersonal').addEventListener('change', event => event.target.files?.[0] && importPersonal(event.target.files[0]));
   $('#favoriteForm').addEventListener('submit', event => { event.preventDefault(); saveFavoriteDraft(); });
   $('#cancelFavorite').addEventListener('click', closeFavoriteDialog);
   $('#cancelFavoriteBottom').addEventListener('click', closeFavoriteDialog);
-  $('#noteForm').addEventListener('submit', event => { event.preventDefault(); saveNoteDraft(); });
-  $('#noteInput').addEventListener('input', updateNoteCount);
-  $('#closeNote').addEventListener('click', closeNoteDialog);
-  $('#cancelNote').addEventListener('click', closeNoteDialog);
-  $('#deleteNote').addEventListener('click', deleteNoteDraft);
   $('#openTranslationGlossary').addEventListener('click', openTranslationGlossaryDialog);
   $('#closeTranslationGlossary').addEventListener('click', () => $('#translationGlossaryDialog').close());
   $('#translationGlossaryForm').addEventListener('submit', saveTranslationGlossary);
@@ -2540,6 +2603,7 @@ function bindEvents() {
     state.noticeVisible += 24;
     renderDailyNotices();
   });
+  $('#submitGitHubSync').addEventListener('click', () => void submitGitHubSync());
   $('#exportReferences').addEventListener('click', exportReferenceSet);
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && document.body.classList.contains('paper-assistant-open')) {
@@ -2552,24 +2616,27 @@ function bindEvents() {
       (state.view === 'notices' ? $('#dailyNoticeSearch') : $('#searchInput')).focus();
     }
   });
-  window.addEventListener('online', tryFavoriteSync);
 }
 
 async function loadData() {
-  const files = ['meta', 'papers', 'featured', 'news', 'notices', 'public-favorites', 'notice-portals', 'translations.zh-CN'];
+  const files = ['meta', 'papers', 'featured', 'news', 'notices', 'public-favorites', 'notice-portals', 'personal-state', 'translations.zh-CN'];
   const responses = await Promise.all(files.map(async name => {
     const response = await fetch(`./data/${name}.json`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
     return response.json();
   }));
   const translationPayload = responses.pop();
+  const personalPayload = responses.pop();
   [state.meta, state.papers, state.featured, state.news, state.notices, state.publicFavorites, state.noticePortals] = responses;
+  applyPublicPersonalState(personalPayload);
+  state.personalDirty = false;
   state.translations = translationPayload.items || {};
   Object.keys(state.translations).forEach(id => state.translatedIds.add(id));
   state.meta.categories.forEach(category => state.categoryMap.set(category.id, category));
   configureDateRangeInputs();
   if (state.meta.site.repository_url) $('#repoLink').href = state.meta.site.repository_url;
   else $('#repoLink').hidden = true;
+  updateCloudSyncUI();
 }
 
 async function initialize() {
@@ -2585,7 +2652,6 @@ async function initialize() {
     } else {
       setView(['home', 'papers', 'featured', 'news', 'notices', 'favorites', 'unread'].includes(hash) ? hash : 'home');
     }
-    tryFavoriteSync();
   } catch (error) {
     console.error(error);
     const hint = location.protocol === 'file:'

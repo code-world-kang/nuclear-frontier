@@ -1,18 +1,12 @@
-name: 每日更新并发布网站
+name: GitHub Issue 个人数据同步
 
 on:
-  schedule:
-    # GitHub 使用 UTC：02:17 对应北京时间 10:17，并避开 arXiv 冬令时公告尚未完成的窗口。
-    - cron: "17 2 * * *"
-  workflow_dispatch:
-  push:
-    branches: [main]
-    paths-ignore:
-      - "data/**"
-      - "site/data/**"
+  issues:
+    types: [opened, edited, reopened]
 
 permissions:
   contents: write
+  issues: write
   pages: write
   id-token: write
 
@@ -21,7 +15,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  update-and-deploy:
+  sync-and-deploy:
+    if: github.actor == github.repository_owner && startsWith(github.event.issue.title, '[个人数据同步]')
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -35,24 +30,27 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: 拉取每日论文、新闻与通知
-        run: python scripts/update_content.py --days 14 --strict
+      - name: 验证 Issue 并写入公开数据
+        run: >-
+          python scripts/sync_github_issue.py
+          --event "$GITHUB_EVENT_PATH"
+          --repository-owner "${{ github.repository_owner }}"
 
       - name: 构建站点数据
         run: python scripts/build_site.py
 
-      - name: 运行数据与代码检查
+      - name: 运行检查
         run: |
           python -m unittest discover -s tests -v
           node --check site/app.js
 
-      - name: 保存当日数据快照
+      - name: 保存个人数据快照
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data site/data
+          git add data/personal/state.json site/data/personal-state.json site/data/public-favorites.json
           if ! git diff --cached --quiet; then
-            git commit -m "data: 每日更新 $(date -u +%F)"
+            git commit -m "data: 同步 GitHub Issue 个人数据"
             git push
           fi
 
@@ -67,3 +65,9 @@ jobs:
       - name: 发布 GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: 关闭已处理的 Issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: gh issue close "$ISSUE_URL" --comment "已同步到网站并完成 GitHub Pages 发布。稍后刷新网站即可看到。"
