@@ -101,16 +101,21 @@
             <div class="home-vertical-feed" id="homeNoticeList" tabindex="0" aria-label="向下滚动浏览官方通知">
               <div class="skeleton mini"></div>
             </div>
-            <nav class="funding-links" aria-label="基金与科研机构入口">
-              <a href="https://www.nsfc.gov.cn/" target="_blank" rel="noreferrer">NSFC</a>
-              <a href="https://service.most.gov.cn/" target="_blank" rel="noreferrer">重点研发计划</a>
-              <a href="https://science.osti.gov/" target="_blank" rel="noreferrer">DOE</a>
-              <a href="https://erc.europa.eu/" target="_blank" rel="noreferrer">ERC</a>
-              <a href="https://www.dfg.de/" target="_blank" rel="noreferrer">DFG</a>
-              <a href="https://www.ukri.org/" target="_blank" rel="noreferrer">UKRI</a>
-              <a href="https://www.jsps.go.jp/english/" target="_blank" rel="noreferrer">JSPS</a>
-              <a href="https://www.iaea.org/" target="_blank" rel="noreferrer">IAEA</a>
-            </nav>
+            <section class="notice-portal-teaser" aria-labelledby="noticePortalTeaserTitle">
+              <div>
+                <span aria-hidden="true">🌱</span>
+                <div><b id="noticePortalTeaserTitle">科研申请与会议入口</b><small>基金·束流·博后·CSC·涉核会议</small></div>
+              </div>
+              <button type="button" id="openNoticePortal">打开全部入口 <span>→</span></button>
+              <nav class="notice-portal-quick" aria-label="通知入口快速分类">
+                <button type="button" data-notice-category="funding-national">国家基金</button>
+                <button type="button" data-notice-category="funding-local">省市基金</button>
+                <button type="button" data-notice-category="talent">博后·CSC</button>
+                <button type="button" data-notice-category="beam-domestic">国内束流</button>
+                <button type="button" data-notice-category="beam-international">国际束流</button>
+                <button type="button" data-notice-category="meetings-nuclear">涉核会议</button>
+              </nav>
+            </section>
           </section>
         </div>
 
@@ -286,6 +291,23 @@
 
   <dialog id="statusDialog">
     <article class="dialog-card"><div class="dialog-head"><div><small>SOURCE HEALTH</small><h3>数据源状态</h3></div><button onclick="this.closest('dialog').close()">×</button></div><div id="statusContent"></div></article>
+  </dialog>
+
+  <dialog id="noticePortalDialog" class="notice-portal-dialog">
+    <article class="dialog-card notice-portal-card">
+      <div class="dialog-head">
+        <div><small>RESEARCH CALLS DIRECTORY</small><h3>科研通知入口</h3></div>
+        <button type="button" id="closeNoticePortal" aria-label="关闭科研通知入口">×</button>
+      </div>
+      <p>集中查找基金申请、人才项目、国内外束流实验和涉核会议。本页只保留官方或主办方入口，截止日期请以原页面为准。</p>
+      <div class="notice-portal-toolbar">
+        <label><span aria-hidden="true">⌕</span><input id="noticePortalSearch" type="search" placeholder="搜索基金、省市、装置或会议…" autocomplete="off"></label>
+        <strong id="noticePortalCount">正在读取…</strong>
+      </div>
+      <nav class="notice-portal-categories" id="noticePortalCategories" aria-label="科研通知分类"></nav>
+      <div class="notice-portal-list" id="noticePortalList" tabindex="0" aria-live="polite" aria-label="向下滚动浏览科研入口"></div>
+      <footer class="notice-portal-foot"><span>✓ 官方入口</span><span>↕ 只需向下滚动</span><span id="noticePortalUpdated"></span></footer>
+    </article>
   </dialog>
 
   <template id="paperCardTemplate">

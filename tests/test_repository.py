@@ -15,12 +15,14 @@ class RepositoryTests(unittest.TestCase):
             ROOT / "config" / "topics.json",
             ROOT / "config" / "sources.json",
             ROOT / "config" / "runtime.json",
+            ROOT / "config" / "notice_portals.json",
             ROOT / "data" / "papers.json",
             ROOT / "data" / "news.json",
             ROOT / "data" / "notices.json",
             ROOT / "data" / "status.json",
             ROOT / "data" / "translations.zh-CN.json",
             ROOT / "site" / "data" / "translations.zh-CN.json",
+            ROOT / "site" / "data" / "notice-portals.json",
         ]:
             with self.subTest(path=path):
                 json.loads(path.read_text(encoding="utf-8"))
@@ -93,6 +95,9 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('id="homeNewsList"', index)
         self.assertIn('id="homeNoticeList"', index)
         self.assertIn('id="homeFeaturedList"', index)
+        self.assertIn('id="noticePortalDialog"', index)
+        self.assertIn('id="noticePortalSearch"', index)
+        self.assertIn('data-notice-category="beam-domestic"', index)
         self.assertIn('Nature Communications', index)
         self.assertEqual(index.count('id="paperCount"'), 1)
         self.assertNotIn('class="paper-figures"', index)
@@ -118,6 +123,41 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("function openNoteDialog", app)
         self.assertIn("不会上传或公开到 GitHub", index)
         self.assertIn("state.scope === 'custom'", app)
+
+    def test_notice_portal_is_official_categorized_and_searchable(self):
+        payload = json.loads((ROOT / "config" / "notice_portals.json").read_text(encoding="utf-8"))
+        categories = {item["id"] for item in payload["categories"]}
+        required = {
+            "funding-national", "funding-local", "talent", "beam-domestic",
+            "beam-international", "meetings-nuclear", "funding-international",
+        }
+        self.assertTrue(required.issubset(categories))
+        self.assertGreaterEqual(len(payload["entries"]), 45)
+        ids = [item["id"] for item in payload["entries"]]
+        self.assertEqual(len(ids), len(set(ids)))
+        searchable_text = " ".join(
+            " ".join([item["name"], item.get("scope", ""), *(item.get("tags") or [])])
+            for item in payload["entries"]
+        )
+        for keyword in ["国家自然科学基金", "博士后", "CSC", "RIBLL", "NUSYS", "核电子学", "核结构"]:
+            self.assertIn(keyword, searchable_text)
+        for item in payload["entries"]:
+            with self.subTest(id=item["id"]):
+                self.assertIn(item["category"], categories)
+                self.assertTrue(item["name"])
+                self.assertTrue(item["description"])
+                parsed = urllib.parse.urlsplit(item["url"])
+                self.assertEqual(parsed.scheme, "https")
+                self.assertTrue(parsed.hostname)
+
+    def test_notice_portal_only_scrolls_vertically(self):
+        styles = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
+        app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        self.assertIn(".notice-portal-list", styles)
+        self.assertIn("overflow-x: hidden", styles)
+        self.assertIn("overflow-y: auto", styles)
+        self.assertIn("function renderNoticePortal", app)
+        self.assertIn("noticePortalQuery", app)
 
 
 if __name__ == "__main__":

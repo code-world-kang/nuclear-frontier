@@ -2,10 +2,10 @@ const PATH = new URL('.', window.location.href).pathname;
 const PERSONAL_KEY = 'nuclear-frontier.personal.v1';
 
 const state = {
-  papers: [], featured: [], news: [], notices: [], publicFavorites: [], translations: {},
+  papers: [], featured: [], news: [], notices: [], publicFavorites: [], translations: {}, noticePortals: { categories: [], entries: [] },
   meta: null, view: 'papers', category: 'all', source: 'all', query: '', searchField: 'all', sort: 'date', scope: 'daily-focus', visible: 20,
   dateFrom: '', dateTo: '', favoriteKeyword: 'all', favoriteDraft: null, noteDraft: null, mySection: 'papers', translatedIds: new Set(),
-  personal: loadPersonal(), categoryMap: new Map(), favoriteSyncInFlight: false,
+  noticePortalCategory: 'all', noticePortalQuery: '', personal: loadPersonal(), categoryMap: new Map(), favoriteSyncInFlight: false,
 };
 
 const PRIMARY_NUCLEAR_CATEGORIES = new Set([
@@ -1200,6 +1200,84 @@ function renderHomeDashboard() {
   if (!featured.length) $('#homeFeaturedList').innerHTML = '<p class="home-feed-empty">五种重点期刊暂时没有可展示的新文章。</p>';
 }
 
+function noticePortalCategory(id) {
+  return state.noticePortals.categories.find(category => category.id === id);
+}
+
+function renderNoticePortal() {
+  const entries = state.noticePortals.entries || [];
+  const categories = state.noticePortals.categories || [];
+  const categoryCounts = new Map(categories.map(category => [
+    category.id,
+    entries.filter(entry => entry.category === category.id).length,
+  ]));
+
+  const categoryButtons = [
+    { id: 'all', label: '全部', icon: '✦', description: '所有官方入口' },
+    ...categories,
+  ].map(category => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = state.noticePortalCategory === category.id ? 'active' : '';
+    button.dataset.category = category.id;
+    button.setAttribute('aria-pressed', String(state.noticePortalCategory === category.id));
+    const count = category.id === 'all' ? entries.length : (categoryCounts.get(category.id) || 0);
+    button.innerHTML = `<span>${text(category.icon || '•')}</span><b>${text(category.label)}</b><small>${count}</small>`;
+    button.title = category.description || category.label;
+    button.addEventListener('click', () => {
+      state.noticePortalCategory = category.id;
+      renderNoticePortal();
+      $('#noticePortalList').scrollTop = 0;
+    });
+    return button;
+  });
+  $('#noticePortalCategories').replaceChildren(...categoryButtons);
+
+  const query = state.noticePortalQuery.trim().toLocaleLowerCase('zh-CN');
+  const filtered = entries.filter(entry => {
+    if (state.noticePortalCategory !== 'all' && entry.category !== state.noticePortalCategory) return false;
+    if (!query) return true;
+    const haystack = [entry.name, entry.scope, entry.description, ...(entry.tags || [])]
+      .join(' ').toLocaleLowerCase('zh-CN');
+    return haystack.includes(query);
+  });
+
+  const cards = filtered.map(entry => {
+    const category = noticePortalCategory(entry.category) || {};
+    const link = document.createElement('a');
+    link.className = 'notice-portal-entry';
+    link.href = entry.url;
+    link.target = '_blank';
+    link.rel = 'noreferrer';
+    link.innerHTML = `
+      <div class="notice-portal-entry-icon" aria-hidden="true">${text(category.icon || '•')}</div>
+      <div class="notice-portal-entry-copy">
+        <small><span>${text(category.label || '官方入口')}</span><b>${text(entry.scope || '')}</b></small>
+        <h4>${text(entry.name)}</h4>
+        <p>${text(entry.description || '')}</p>
+        <div>${(entry.tags || []).slice(0, 5).map(tag => `<span>${text(tag)}</span>`).join('')}</div>
+      </div>
+      <span class="notice-portal-entry-arrow" aria-hidden="true">↗</span>`;
+    return link;
+  });
+
+  $('#noticePortalCount').textContent = `${filtered.length} / ${entries.length} 个入口`;
+  $('#noticePortalList').replaceChildren(...cards);
+  if (!cards.length) {
+    $('#noticePortalList').innerHTML = '<div class="notice-portal-empty"><span>🌱</span><b>没有找到匹配入口</b><p>试试装置缩写、省市名称或会议关键词。</p></div>';
+  }
+  $('#noticePortalUpdated').textContent = state.noticePortals.updated ? `目录核验 ${state.noticePortals.updated}` : '';
+}
+
+function openNoticePortal(category = 'all') {
+  state.noticePortalCategory = noticePortalCategory(category) ? category : 'all';
+  state.noticePortalQuery = '';
+  $('#noticePortalSearch').value = '';
+  renderNoticePortal();
+  $('#noticePortalDialog').showModal();
+  window.requestAnimationFrame(() => $('#noticePortalSearch').focus());
+}
+
 function homeLane({ kicker, title, count, items, view, tone, scope = '' }) {
   const article = document.createElement('article');
   article.className = `home-lane ${tone || ''}`;
@@ -1516,6 +1594,15 @@ function bindEvents() {
   $('#cancelMyItem').addEventListener('click', closeMyItemDialog);
   $('#cancelMyItemBottom').addEventListener('click', closeMyItemDialog);
   $('#showSourceStatus').addEventListener('click', showStatus);
+  $('#openNoticePortal').addEventListener('click', () => openNoticePortal());
+  $$('.notice-portal-quick [data-notice-category]').forEach(button => {
+    button.addEventListener('click', () => openNoticePortal(button.dataset.noticeCategory));
+  });
+  $('#closeNoticePortal').addEventListener('click', () => $('#noticePortalDialog').close());
+  $('#noticePortalSearch').addEventListener('input', event => {
+    state.noticePortalQuery = event.target.value;
+    renderNoticePortal();
+  });
   $('#exportReferences').addEventListener('click', exportReferenceSet);
   document.addEventListener('keydown', event => {
     if (event.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
@@ -1526,14 +1613,14 @@ function bindEvents() {
 }
 
 async function loadData() {
-  const files = ['meta', 'papers', 'featured', 'news', 'notices', 'public-favorites', 'translations.zh-CN'];
+  const files = ['meta', 'papers', 'featured', 'news', 'notices', 'public-favorites', 'notice-portals', 'translations.zh-CN'];
   const responses = await Promise.all(files.map(async name => {
     const response = await fetch(`./data/${name}.json`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
     return response.json();
   }));
   const translationPayload = responses.pop();
-  [state.meta, state.papers, state.featured, state.news, state.notices, state.publicFavorites] = responses;
+  [state.meta, state.papers, state.featured, state.news, state.notices, state.publicFavorites, state.noticePortals] = responses;
   state.translations = translationPayload.items || {};
   state.meta.categories.forEach(category => state.categoryMap.set(category.id, category));
   configureDateRangeInputs();
@@ -1545,7 +1632,7 @@ async function initialize() {
   bindEvents();
   try {
     await loadData();
-    renderCategories(); renderSourceOptions(); renderHomeHub(); renderRadar(); renderBriefing(); renderMetrics(); renderKeywords(); renderHomeDashboard();
+    renderCategories(); renderSourceOptions(); renderHomeHub(); renderRadar(); renderBriefing(); renderMetrics(); renderKeywords(); renderHomeDashboard(); renderNoticePortal();
     const hash = location.hash.slice(1);
     const myMatch = hash.match(/^favorites-(papers|code|references)$/);
     if (myMatch) {

@@ -26,6 +26,7 @@ def main() -> None:
         "translations.zh-CN.json",
     ):
         shutil.copy2(DATA / name, PUBLIC_DATA / name)
+    shutil.copy2(CONFIG / "notice_portals.json", PUBLIC_DATA / "notice-portals.json")
     favorites = DATA / "personal" / "favorites.json"
     shutil.copy2(favorites, PUBLIC_DATA / "public-favorites.json")
 

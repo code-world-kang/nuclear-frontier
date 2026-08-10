@@ -1,0 +1,216 @@
+{
+  "updated": "2026-08-10",
+  "categories": [
+    {"id": "funding-national", "label": "国家基金", "icon": "🌱", "description": "国家自然科学基金、重点研发与国家级项目"},
+    {"id": "funding-local", "label": "省市基金", "icon": "🗺", "description": "全国地方科技厅局与主要省市项目申报"},
+    {"id": "talent", "label": "博后·CSC·人才", "icon": "🎓", "description": "博士后基金、国家留学基金委与人才项目"},
+    {"id": "beam-domestic", "label": "国内束流", "icon": "⚛", "description": "HIRFL、RIBLL、CSNS 等国内大科学装置用户入口"},
+    {"id": "beam-international", "label": "国际束流", "icon": "🌍", "description": "FRIB、RIBF、FAIR、TRIUMF、GANIL、ISOLDE 等束流申请"},
+    {"id": "meetings-nuclear", "label": "涉核会议", "icon": "🌼", "description": "核电子学、NUSYS、核物理、核结构与 RIBLL 等会议"},
+    {"id": "funding-international", "label": "国际基金", "icon": "🤝", "description": "DOE、ERC、DFG、UKRI、JSPS 等国际合作与资助入口"}
+  ],
+  "entries": [
+    {
+      "id": "nsfc-home", "category": "funding-national", "name": "国家自然科学基金委 NSFC", "scope": "项目指南·通知·结果",
+      "description": "国家自然科学基金官方总入口，查看项目指南、申请通知、评审与资助结果。", "url": "https://www.nsfc.gov.cn/", "tags": ["NSFC", "面上", "青年", "重点", "重大"]
+    },
+    {
+      "id": "nsfc-guide", "category": "funding-national", "name": "NSFC 项目指南与申请", "scope": "年度指南",
+      "description": "集中查看年度项目指南、限项要求和申请时间。", "url": "https://www.nsfc.gov.cn/p1/4201/sqzz.html", "tags": ["指南", "申请", "截止日期"]
+    },
+    {
+      "id": "nsfc-math-physics", "category": "funding-national", "name": "NSFC 数理科学部", "scope": "物理学科通知",
+      "description": "核物理及其他物理方向的专项指南、通知和学部动态。", "url": "https://www.nsfc.gov.cn/p1/2851/3084/tzgg111.html", "tags": ["数理学部", "核物理", "物理"]
+    },
+    {
+      "id": "most-service", "category": "funding-national", "name": "国家科技管理信息系统", "scope": "重点研发·项目申报",
+      "description": "国家重点研发计划等国家科技项目的申报指南、通知和在线服务。", "url": "https://service.most.gov.cn/", "tags": ["重点研发", "国家专项", "申报系统"]
+    },
+    {
+      "id": "most-home", "category": "funding-national", "name": "科学技术部", "scope": "政策·项目·通知",
+      "description": "国家科技政策、政务公开与重要项目通知。", "url": "https://www.most.gov.cn/", "tags": ["科技部", "政策", "国家项目"]
+    },
+    {
+      "id": "cas-notices", "category": "funding-national", "name": "中国科学院通知公告", "scope": "院级项目·开放课题",
+      "description": "中科院院级项目、人才计划、开放基金及所级通知的官方入口。", "url": "https://www.cas.cn/tz/", "tags": ["中科院", "CAS", "开放课题"]
+    },
+    {
+      "id": "cast-home", "category": "funding-national", "name": "中国科学技术协会", "scope": "学会项目·青年人才",
+      "description": "全国学会项目、青年人才托举和国际交流类通知。", "url": "https://www.cast.org.cn/", "tags": ["中国科协", "学会", "青年人才"]
+    },
+
+    {
+      "id": "local-directory", "category": "funding-local", "name": "全国地方科技厅局官方目录", "scope": "31 省区市统一入口",
+      "description": "由科技部系统提供的地方科技厅、科技局网站目录，适合快速定位所在省市的申报通知。", "url": "https://www.cistc.gov.cn/chinese/local", "tags": ["北京", "天津", "河北", "山西", "内蒙古", "辽宁", "吉林", "黑龙江", "上海", "江苏", "浙江", "安徽", "福建", "江西", "山东", "河南", "湖北", "湖南", "广东", "广西", "海南", "重庆", "四川", "贵州", "云南", "西藏", "陕西", "甘肃", "青海", "宁夏", "新疆"]
+    },
+    {"id": "beijing-st", "category": "funding-local", "name": "北京市科委、中关村管委会", "scope": "北京", "description": "北京市科技计划、自然科学基金及项目申报通知。", "url": "https://kw.beijing.gov.cn/", "tags": ["北京市自然科学基金", "中关村"]},
+    {"id": "shanghai-st", "category": "funding-local", "name": "上海市科学技术委员会", "scope": "上海", "description": "上海市科技计划项目、自然科学基金和申报通知。", "url": "https://stcsm.sh.gov.cn/", "tags": ["上海市自然科学基金"]},
+    {"id": "jiangsu-st", "category": "funding-local", "name": "江苏省科学技术厅", "scope": "江苏", "description": "江苏省科技计划、自然科学基金和项目指南。", "url": "https://kxjst.jiangsu.gov.cn/", "tags": ["江苏省自然科学基金"]},
+    {"id": "zhejiang-st", "category": "funding-local", "name": "浙江省科学技术厅", "scope": "浙江", "description": "浙江省基础公益项目、自然科学基金与重点研发通知。", "url": "https://kjt.zj.gov.cn/", "tags": ["浙江省自然科学基金"]},
+    {"id": "anhui-st", "category": "funding-local", "name": "安徽省科学技术厅", "scope": "安徽", "description": "安徽省自然科学基金、科技攻坚和重点研发通知。", "url": "https://kjt.ah.gov.cn/", "tags": ["安徽省自然科学基金"]},
+    {"id": "guangdong-st", "category": "funding-local", "name": "广东省科学技术厅", "scope": "广东", "description": "广东省基础与应用基础研究基金、重点领域研发计划。", "url": "https://gdstc.gd.gov.cn/", "tags": ["广东省自然科学基金", "粤港澳"]},
+    {"id": "hubei-st", "category": "funding-local", "name": "湖北省科学技术厅", "scope": "湖北", "description": "湖北省自然科学基金、重点研发和人才项目通知。", "url": "https://kjt.hubei.gov.cn/", "tags": ["湖北省自然科学基金"]},
+    {"id": "hunan-st", "category": "funding-local", "name": "湖南省科学技术厅", "scope": "湖南", "description": "湖南省自然科学基金、重点研发和创新计划通知。", "url": "https://kjt.hunan.gov.cn/", "tags": ["湖南省自然科学基金"]},
+    {"id": "henan-st", "category": "funding-local", "name": "河南省科学技术厅", "scope": "河南", "description": "河南省自然科学基金、科技攻关和重点项目通知。", "url": "https://kjt.henan.gov.cn/", "tags": ["河南省自然科学基金"]},
+    {"id": "sichuan-st", "category": "funding-local", "name": "四川省科学技术厅", "scope": "四川", "description": "四川省自然科学基金、重点研发和区域创新项目。", "url": "https://kjt.sc.gov.cn/", "tags": ["四川省自然科学基金"]},
+    {"id": "shaanxi-st", "category": "funding-local", "name": "陕西省科学技术厅", "scope": "陕西", "description": "陕西省自然科学基金、重点研发和科技计划。", "url": "https://kjt.shaanxi.gov.cn/", "tags": ["陕西省自然科学基金"]},
+    {"id": "gansu-st", "category": "funding-local", "name": "甘肃省科学技术厅", "scope": "甘肃", "description": "甘肃省自然科学基金、重大科技专项和科技计划。", "url": "https://kjt.gansu.gov.cn/", "tags": ["甘肃省自然科学基金", "兰州"]},
+
+    {
+      "id": "postdoc-foundation", "category": "talent", "name": "中国博士后科学基金会", "scope": "面上·特别资助·国香计划",
+      "description": "博士后科学基金申报、评审结果、国香计划及博士后相关通知。", "url": "https://www.chinapostdoctor.org.cn/", "tags": ["博后基金", "面上资助", "特别资助", "博新计划"]
+    },
+    {
+      "id": "postdoc-apply", "category": "talent", "name": "博士后基金申报系统", "scope": "在线申报",
+      "description": "中国博士后科学基金申报与管理入口。", "url": "https://jj.chinapostdoctor.org.cn/auth/login.html?usertype=bsh", "tags": ["博后", "申报系统"]
+    },
+    {
+      "id": "csc-guide", "category": "talent", "name": "国家留学基金委 CSC 申报指南", "scope": "留学·访学·联合培养",
+      "description": "国家公派留学、访问学者、博士后、联合培养博士生等项目指南。", "url": "https://origin-bg.csc.edu.cn/chuguo/shenbaozhinan", "tags": ["CSC", "公派留学", "联合培养", "访问学者"]
+    },
+    {
+      "id": "csc-apply", "category": "talent", "name": "CSC 国家公派留学管理信息平台", "scope": "在线申报",
+      "description": "国家公派留学项目的网上报名、材料提交和进度查询入口。", "url": "https://sa.csc.edu.cn/student/", "tags": ["CSC", "申报系统"]
+    },
+    {
+      "id": "nsfc-talent", "category": "talent", "name": "NSFC 人才资助项目", "scope": "青年·优青·杰青",
+      "description": "自然科学基金年度指南中的青年、优青、杰青等人才类项目入口。", "url": "https://www.nsfc.gov.cn/p1/4201/sqzz.html", "tags": ["青年基金", "优青", "杰青"]
+    },
+    {
+      "id": "cas-talent", "category": "talent", "name": "中国科学院人才与教育", "scope": "人才计划·招聘",
+      "description": "中科院人才计划、青年人才、博士后与招聘信息入口。", "url": "https://www.cas.cn/rcjy/", "tags": ["中科院", "人才", "招聘"]
+    },
+
+    {
+      "id": "hirfl-user", "category": "beam-domestic", "name": "HIRFL 用户指南", "scope": "重离子束·RIBLL·CSR",
+      "description": "兰州重离子研究装置束流申请、用户注册和实验准备指南。", "url": "https://english.imp.cas.cn/hirfl/for_users/user_guide/", "tags": ["HIRFL", "RIBLL1", "RIBLL2", "CSR", "兰州"]
+    },
+    {
+      "id": "cas-lssf", "category": "beam-domestic", "name": "中科院大型科研仪器开放共享平台", "scope": "HIRFL 等装置申请",
+      "description": "中科院大科学装置和大型仪器开放共享入口；HIRFL 用户通常由此提交束流申请。", "url": "https://lssf.cas.cn/", "tags": ["大装置", "束流申请", "中科院"]
+    },
+    {
+      "id": "imp-notices", "category": "beam-domestic", "name": "中科院近代物理所通知公告", "scope": "HIRFL·HIAF·低能平台",
+      "description": "追踪 HIRFL 束流征集、低能重离子平台、开放课题和用户会通知。", "url": "https://imp.cas.cn/tzgg2017/", "tags": ["HIRFL", "HIAF", "RIBLL", "低能重离子"]
+    },
+    {
+      "id": "csns-user", "category": "beam-domestic", "name": "中国散裂中子源 CSNS 用户系统", "scope": "中子束流申请",
+      "description": "CSNS 用户注册、课题申请、束流时间申请与实验管理平台。", "url": "https://user.csns.ihep.ac.cn/", "tags": ["CSNS", "中子", "散裂中子源"]
+    },
+    {
+      "id": "csns-guide", "category": "beam-domestic", "name": "CSNS 用户服务", "scope": "指南·装置·日程",
+      "description": "查看谱仪能力、用户办公室、课题申请指南及相关通知。", "url": "https://english.ihep.cas.cn/csns/ui/uo/202109/t20210908_282796.html", "tags": ["CSNS", "用户指南"]
+    },
+    {
+      "id": "ssrf-user", "category": "beam-domestic", "name": "上海光源 SSRF 用户入口", "scope": "同步辐射束流",
+      "description": "上海光源课题申请、用户指南和开放运行信息。", "url": "https://ssrf.sari.ac.cn/", "tags": ["SSRF", "同步辐射", "上海光源"]
+    },
+
+    {
+      "id": "frib-user", "category": "beam-international", "name": "FRIB Scientific User Portal", "scope": "稀有同位素束",
+      "description": "FRIB 科学用户注册、PAC 束流建议和实验管理入口。", "url": "https://userportal.frib.msu.edu/", "tags": ["FRIB", "PAC", "rare isotope", "稀有同位素"]
+    },
+    {
+      "id": "frib-calls", "category": "beam-international", "name": "FRIB Call for Proposals", "scope": "PAC 束流征集",
+      "description": "FRIB 官方束流征集、提案指南、束流列表和 PAC 时间线。", "url": "https://frib.msu.edu/user-facilities/requesting-beam-time", "tags": ["FRIB", "call for proposals", "PAC"]
+    },
+    {
+      "id": "riken-ribf", "category": "beam-international", "name": "RIKEN RIBF Users", "scope": "RIBF·BigRIPS·SAMURAI",
+      "description": "理化学研究所 RIBF 束流、用户指南、课题申请与排期信息。", "url": "https://ribf.riken.jp/", "tags": ["RIBF", "RIKEN", "BigRIPS", "SAMURAI"]
+    },
+    {
+      "id": "gsi-gate", "category": "beam-international", "name": "GSI/FAIR GATE", "scope": "FAIR Phase-0·NUSTAR",
+      "description": "GSI/FAIR 实验基础设施通用申请平台，用于束流建议、实验准备和用户访问。", "url": "https://gate.gsi.de/", "tags": ["GSI", "FAIR", "GATE", "NUSTAR", "R3B"]
+    },
+    {
+      "id": "gsi-gpac", "category": "beam-international", "name": "GSI/FAIR G-PAC", "scope": "束流征集·PAC",
+      "description": "GSI/FAIR 定期束流征集、G-PAC 评审、提案指南与时间安排。", "url": "https://www.gsi.de/work/organisation/wissenschaftliche_gremien/pac/g_pac", "tags": ["GSI", "FAIR", "G-PAC"]
+    },
+    {
+      "id": "triumf-experiment", "category": "beam-international", "name": "TRIUMF Experimenter Portal", "scope": "ISAC·ARIEL·稳定/放射性束",
+      "description": "TRIUMF 实验提案、EEC 评审、束流申请和访问准备入口。", "url": "https://triumf.ca/experimenter-portal/", "tags": ["TRIUMF", "ISAC", "ARIEL", "EEC"]
+    },
+    {
+      "id": "ganil-users", "category": "beam-international", "name": "GANIL-SPIRAL2 Users", "scope": "GANIL·SPIRAL2",
+      "description": "GANIL-SPIRAL2 科学用户、实验建议、征集通知与束流信息。", "url": "https://www.ganil-spiral2.eu/scientists/", "tags": ["GANIL", "SPIRAL2", "PAC"]
+    },
+    {
+      "id": "cern-isolde", "category": "beam-international", "name": "CERN ISOLDE", "scope": "ISOLDE·HIE-ISOLDE·n_TOF",
+      "description": "CERN 放射性核束装置信息；新实验建议由 INTC 评审。", "url": "https://home.cern/science/experiments/isolde/", "tags": ["CERN", "ISOLDE", "HIE-ISOLDE", "INTC", "n_TOF"]
+    },
+    {
+      "id": "ornl-neutrons", "category": "beam-international", "name": "ORNL Neutron Sciences Users", "scope": "SNS·HFIR",
+      "description": "美国橡树岭国家实验室 SNS/HFIR 中子束流建议、征集和用户入口。", "url": "https://neutrons.ornl.gov/users", "tags": ["ORNL", "SNS", "HFIR", "neutron"]
+    },
+    {
+      "id": "jparc-user", "category": "beam-international", "name": "J-PARC User Information", "scope": "MLF·Hadron·Neutrino",
+      "description": "J-PARC 中子、介子、强子与中微子实验的用户和课题申请入口。", "url": "https://is.j-parc.jp/uo/en/Status.html", "tags": ["J-PARC", "MLF", "hadron", "neutron"]
+    },
+    {
+      "id": "jlab-pac", "category": "beam-international", "name": "Jefferson Lab Experiment Proposals", "scope": "CEBAF·PAC",
+      "description": "Jefferson Lab 实验提案、PAC 评审、实验排期和束流时间申请。", "url": "https://www.jlab.org/physics/experiments/scheduling", "tags": ["Jefferson Lab", "JLab", "CEBAF", "PAC"]
+    },
+    {
+      "id": "argonne-atlas", "category": "beam-international", "name": "Argonne ATLAS Users", "scope": "ATLAS·CARIBU·nuCARIBU",
+      "description": "阿贡国家实验室 ATLAS 低能核物理用户、PAC 提案和束流信息。", "url": "https://www.phy.anl.gov/atlas/pac/", "tags": ["ATLAS", "Argonne", "CARIBU"]
+    },
+
+    {
+      "id": "cps-meetings", "category": "meetings-nuclear", "name": "中国物理学会会议通知", "scope": "核物理分会·全国会议",
+      "description": "中国物理学会及各分会、专业委员会的学术会议通知入口。", "url": "https://www.cps-net.org.cn/Meeting/Content/index/cateid/61.do", "tags": ["中国物理学会", "核物理分会", "核物理大会"]
+    },
+    {
+      "id": "cns-home", "category": "meetings-nuclear", "name": "中国核学会", "scope": "学术年会·专业分会",
+      "description": "中国核学会及核电子学、核技术、核工程等专业分会通知。", "url": "https://ns.kejie.org.cn/", "tags": ["中国核学会", "学术年会"]
+    },
+    {
+      "id": "ihep-indico", "category": "meetings-nuclear", "name": "高能所 Indico 会议平台", "scope": "核物理·核数据·核探测",
+      "description": "国内核物理大会、核电子学、核数据、粒子与核物理会议的重要发布平台。", "url": "https://indico.ihep.ac.cn/", "tags": ["核物理大会", "核数据", "核电子学", "IHEP"]
+    },
+    {
+      "id": "imp-indico", "category": "meetings-nuclear", "name": "近代物理所 Indico", "scope": "NUSYS·RIBLL·HIRFL·HIAF",
+      "description": "兰州重离子、放射性核束、核结构与青年学校等会议的主办方平台。", "url": "https://indico.impcas.ac.cn/", "tags": ["NUSYS", "RIBLL", "HIRFL", "HIAF", "IMP"]
+    },
+    {
+      "id": "nusys-2026", "category": "meetings-nuclear", "name": "NUSYS 青年核物理学校", "scope": "NUclear physics School for Young Scientists",
+      "description": "NUSYS 系列青年核物理学校的当届会议、日程、注册与讲义入口。", "url": "https://indico.impcas.ac.cn/event/187/", "tags": ["NUSYS", "青年学校", "核物理"]
+    },
+    {
+      "id": "ned-branch", "category": "meetings-nuclear", "name": "核电子学与核探测技术分会", "scope": "NED 学术年会",
+      "description": "中国核学会核电子学与核探测技术分会的学会动态与会议通知。", "url": "https://www.ihep.cas.cn/xh/hdzx/", "tags": ["核电子学", "核探测器", "NED"]
+    },
+    {
+      "id": "ned-2026", "category": "meetings-nuclear", "name": "全国核电子学与核探测技术学术年会", "scope": "NED2026",
+      "description": "核电子学、前端读出、DAQ、辐射探测器与数据处理等专题会议。", "url": "https://indico.ihep.ac.cn/event/29142/", "tags": ["NED2026", "核电子学", "DAQ", "探测器"]
+    },
+    {
+      "id": "nuclear-structure-cn", "category": "meetings-nuclear", "name": "全国核结构大会", "scope": "第二十届·2026",
+      "description": "国内核结构实验与理论、奇异核、超重核、核谱学与模型研究交流。", "url": "https://indico.pku.edu.cn/event/69/", "tags": ["核结构大会", "核谱学", "超重核"]
+    },
+    {
+      "id": "ieee-nss", "category": "meetings-nuclear", "name": "IEEE NSS/MIC/RTSD", "scope": "国际核科学与探测器",
+      "description": "IEEE 核科学年会、医学成像会议与室温半导体探测器研讨会。", "url": "https://ieee-npss.org/nss-mic-conference-links/", "tags": ["IEEE", "NSS", "MIC", "RTSD", "detector"]
+    },
+    {
+      "id": "nuclear-structure-intl", "category": "meetings-nuclear", "name": "Nuclear Structure Conference", "scope": "国际核结构系列会议",
+      "description": "双年国际核结构大会，涵盖稀有同位素、核谱学、反应与理论模型。", "url": "https://indico.triumf.ca/event/745/", "tags": ["Nuclear Structure", "spectroscopy", "rare isotopes"]
+    },
+    {
+      "id": "imp-events", "category": "meetings-nuclear", "name": "近代物理所会议与学术活动", "scope": "RIBLL 合作体·用户会",
+      "description": "追踪 RIBLL 合作体、HIRFL/HIAF 用户会、重离子核物理研讨会等通知。", "url": "https://english.imp.cas.cn/news/ue/", "tags": ["RIBLL", "HIRFL", "HIAF", "用户会"]
+    },
+    {
+      "id": "iaea-events", "category": "meetings-nuclear", "name": "IAEA Meetings and Events", "scope": "核科学·核技术·核数据",
+      "description": "国际原子能机构技术会议、协调研究项目和培训活动日历。", "url": "https://www.iaea.org/events", "tags": ["IAEA", "核数据", "培训", "conference"]
+    },
+
+    {"id": "doe-science", "category": "funding-international", "name": "U.S. DOE Office of Science", "scope": "Nuclear Physics·Fusion·User Facilities", "description": "美国能源部科学办公室资助机会、核物理项目与用户装置入口。", "url": "https://science.osti.gov/grants", "tags": ["DOE", "Nuclear Physics", "Fusion"]},
+    {"id": "erc", "category": "funding-international", "name": "European Research Council", "scope": "ERC Grants", "description": "ERC Starting、Consolidator、Advanced 和 Synergy Grants 官方入口。", "url": "https://erc.europa.eu/apply-grant", "tags": ["ERC", "Starting Grant", "Advanced Grant"]},
+    {"id": "eu-funding", "category": "funding-international", "name": "EU Funding & Tenders Portal", "scope": "Horizon Europe·MSCA·EURATOM", "description": "欧盟框架计划、玛丽·居里行动与 EURATOM 项目检索和申报平台。", "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home", "tags": ["Horizon Europe", "MSCA", "EURATOM"]},
+    {"id": "dfg", "category": "funding-international", "name": "German Research Foundation DFG", "scope": "德国基础研究资助", "description": "DFG 个人项目、合作研究中心与国际合作资助。", "url": "https://www.dfg.de/en/research-funding/funding-opportunities", "tags": ["DFG", "Germany"]},
+    {"id": "ukri", "category": "funding-international", "name": "UK Research and Innovation", "scope": "STFC·EPSRC·Fellowships", "description": "英国 UKRI 及 STFC/EPSRC 物理、加速器、核聚变和人才项目。", "url": "https://www.ukri.org/opportunity/", "tags": ["UKRI", "STFC", "EPSRC"]},
+    {"id": "jsps", "category": "funding-international", "name": "Japan Society for the Promotion of Science", "scope": "JSPS Fellowships·KAKENHI", "description": "日本 JSPS 外国人特别研究员、国际合作与科研费项目。", "url": "https://www.jsps.go.jp/english/e-fellow/", "tags": ["JSPS", "KAKENHI", "Japan"]},
+    {"id": "humboldt", "category": "funding-international", "name": "Alexander von Humboldt Foundation", "scope": "洪堡研究奖学金", "description": "德国洪堡基金会博后、资深研究者奖学金和合作项目。", "url": "https://www.humboldt-foundation.de/en/apply/sponsorship-programmes", "tags": ["Humboldt", "fellowship", "Germany"]},
+    {"id": "snsf", "category": "funding-international", "name": "Swiss National Science Foundation", "scope": "SNSF Projects·Fellowships", "description": "瑞士国家科学基金会研究项目、人才资助与国际合作。", "url": "https://www.snf.ch/en/ORgUpoSFePiH6QCp/page/get-a-grant", "tags": ["SNSF", "Switzerland"]}
+  ]
+}
