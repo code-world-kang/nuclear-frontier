@@ -23,6 +23,7 @@ from update_content import (  # noqa: E402
     extract_deadline,
     extract_english_notice_date,
     extract_notice_date,
+    indico_event_metadata,
     merge_records,
     notice_is_physics_relevant,
     normalize_title,
@@ -211,6 +212,28 @@ class PipelineTests(unittest.TestCase):
         raw = b'<rss><channel><item><title>A\x0b title</title><link>https://example.org/a</link></item></channel></rss>'
         items = parse_feed_items(raw)
         self.assertEqual(items[0]["title"], "A title")
+
+    def test_feed_parser_keeps_nested_description_text(self):
+        raw = b'''<?xml version="1.0"?><rss><channel><item><title>Physics news</title>
+        <link>https://example.org/news</link><description><p>First <b>complete</b> introduction.</p></description>
+        </item></channel></rss>'''
+        items = parse_feed_items(raw)
+        self.assertEqual(items[0]["summary"], "First complete introduction.")
+
+    def test_indico_export_provides_clean_event_description(self):
+        payload = {
+            "results": [{
+                "title": "Nuclear school",
+                "description": "<p>A school for <strong>experimental nuclear physics</strong>.</p>",
+                "startDate": {"date": "2026-08-09"},
+                "endDate": {"date": "2026-08-16"},
+            }]
+        }
+        with patch("update_content.fetch", return_value=json.dumps(payload).encode()):
+            result = indico_event_metadata("https://indico.example.org/event/187/")
+        self.assertIn("experimental nuclear physics", result["content"])
+        self.assertNotIn("Indico style", result["summary"])
+        self.assertEqual(result["published"], "2026-08-16")
 
     def test_notice_date_supports_chinese_date(self):
         self.assertEqual(extract_notice_date("发布日期：2026年8月10日"), "2026-08-10")

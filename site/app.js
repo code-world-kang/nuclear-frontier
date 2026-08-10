@@ -13,11 +13,13 @@ const state = {
   dateFrom: '', dateTo: '', favoriteKeyword: 'all', favoriteDraft: null, inlineNoteId: '', citationDraft: null, mySection: 'papers', translatedIds: new Set(),
   googleTranslations: new Map(), googleTranslationOpenIds: new Set(), googleTranslationLoadingIds: new Set(), googleTranslationErrors: new Map(),
   selectedPaperId: '',
+  selectedNoticeId: '', expandedNoticeIds: new Set(),
   cloudUpdatedAt: '',
   personalDirty: false,
   noticeCategory: 'all', noticeTiming: 'all', noticeQuery: '', noticeVisible: 24,
   noticePortalCategory: 'all', noticePortalQuery: '', personal: loadPersonal(), paperLayout: loadPaperLayout(),
   layoutEditing: false, draggedCategory: '', categoryMap: new Map(),
+  categorySelections: { papers: 'all', news: 'all' },
 };
 const citationMetadataRequests = new Map();
 const PRIMARY_NUCLEAR_CATEGORIES = new Set([
@@ -45,6 +47,13 @@ const NUCLEAR_PRIORITY = new Map([
   ['nuclear-general', 9], ['accelerators', 5], ['nuclear-data-applications', 5], ['high-energy-nuclear', 4],
   ['nuclear-astrophysics', 4], ['fusion', 3], ['particle-cross', 1], ['ai-science', 0],
 ]);
+
+const NOTICE_GROUPS = [
+  { id: 'all', label: '全部通知', icon: '◎', description: '会议、基金和束流申请' },
+  { id: 'meeting', label: '会议通知', icon: '🌼', description: '核物理会议、学校与学术年会' },
+  { id: 'funding', label: '科研基金', icon: '🌱', description: '国家、地方、国际与人才项目' },
+  { id: 'beam', label: '束流申请', icon: '⚛', description: '国内外束流和大科学装置' },
+];
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -306,7 +315,7 @@ function currentItems() {
       ...Object.keys(state.personal.favorites),
       ...state.publicFavorites.map(item => typeof item === 'string' ? item : item.id).filter(id => !hidden.has(id)),
     ]);
-    return state.papers.filter(item => ids.has(item.id));
+    return [...state.papers, ...state.news, ...state.notices].filter(item => ids.has(item.id));
   }
   if (state.view === 'unread') return state.papers.filter(item => state.personal.readStatus[item.id] !== 'read');
   return state.papers;
@@ -539,14 +548,23 @@ function usingTranslation(item) {
 
 function localizedTitle(item) {
   const translation = translationFor(item);
-  return usingTranslation(item) ? applyTranslationGlossary(translation.title_zh) : item.title;
+  return usingTranslation(item) && translation.title_zh ? applyTranslationGlossary(translation.title_zh) : item.title;
 }
 
 function localizedAbstract(item) {
   const translation = translationFor(item);
-  return usingTranslation(item)
+  return usingTranslation(item) && translation.abstract_zh
     ? applyTranslationGlossary(translation.abstract_zh)
     : (item.abstract || item.summary || '');
+}
+
+function localizedDescription(item) {
+  const value = localizedAbstract(item);
+  if (value) return value;
+  if (item.type === 'news') {
+    return `${item.source || '官方来源'}发布的科研新闻，主题为“${item.title}”。当前官方订阅源未附简介，可从原文查看完整报道。`;
+  }
+  return '';
 }
 
 function googleTranslationChunks(value = '', maxLength = 1400) {
@@ -766,12 +784,13 @@ function cardFor(item) {
   if (!item.authors?.length && item.type !== 'paper') authors.hidden = true;
 
   const abstractValue = item.abstract || item.summary || '';
+  const hasTranslatedAbstract = Boolean(translated && translation?.abstract_zh);
   const abstract = $('.abstract', card);
-  abstract.textContent = translated
+  abstract.textContent = hasTranslatedAbstract
     ? applyTranslationGlossary(translation.abstract_zh)
-    : (abstractValue || '该数据源未公开摘要；本站不生成或杜撰摘要。');
-  $('.abstract-label', card).textContent = abstractValue
-    ? (translated ? '完整摘要（Codex 中文译文）' : (item.type === 'paper' ? '完整摘要（原文）' : '完整介绍（原始来源）'))
+    : (localizedDescription(item) || '该数据源未公开摘要；本站不生成或杜撰摘要。');
+  $('.abstract-label', card).textContent = (abstractValue || item.type === 'news')
+    ? (hasTranslatedAbstract ? '完整摘要（Codex 中文译文）' : (item.type === 'paper' ? '完整摘要（原文）' : '完整介绍（原始来源）'))
     : (item.type === 'paper' ? '摘要状态' : '介绍状态');
 
   const tags = $('.tag-row', card);
@@ -885,13 +904,22 @@ function cardFor(item) {
     info.textContent = '论文信息';
     info.addEventListener('click', () => selectPaperForAssistant(item));
     actions.append(info);
+  } else if (item.type === 'news') {
+    const info = document.createElement('button');
+    info.type = 'button';
+    info.className = 'paper-info-button';
+    info.textContent = '新闻信息';
+    info.addEventListener('click', () => selectPaperForAssistant(item));
+    actions.append(info);
   }
-  const related = document.createElement('button');
-  related.type = 'button';
-  related.className = 'related-button';
-  related.textContent = '关联文献';
-  related.addEventListener('click', () => openDetails(item));
-  actions.append(related);
+  if (item.type === 'paper') {
+    const related = document.createElement('button');
+    related.type = 'button';
+    related.className = 'related-button';
+    related.textContent = '关联文献';
+    related.addEventListener('click', () => openDetails(item));
+    actions.append(related);
+  }
   if (item.type === 'paper') {
     const reading = document.createElement('button');
     reading.type = 'button';
@@ -906,12 +934,9 @@ function cardFor(item) {
   if (noteEditor) $('.paper-copy', card).append(noteEditor);
 
   const favorite = $('.favorite-button', card);
-  if (item.type !== 'paper') {
-    favorite.hidden = true;
-    return card;
-  }
+  if (!['paper', 'news'].includes(item.type)) return card;
   card.tabIndex = 0;
-  card.setAttribute('aria-label', `论文：${item.title}。按回车在右侧查看论文信息`);
+  card.setAttribute('aria-label', `${item.type === 'paper' ? '论文' : '新闻'}：${item.title}。按回车在右侧查看详细信息`);
   card.addEventListener('click', event => {
     if (event.target.closest('a, button, input, select, textarea')) return;
     selectPaperForAssistant(item);
@@ -1068,11 +1093,12 @@ function updateMySpaceUI() {
   $('#addMyItem').hidden = !(isMy && !isPaperShelf);
   $('#myKeywordsPanel').hidden = !(isMy && state.mySection === 'papers');
   $('#translationShelfPanel').hidden = !(isMy && state.mySection === 'translations');
-  const isPaperWorkspace = ['papers', 'featured', 'unread'].includes(state.view) || (isMy && isPaperShelf);
+  const isPaperWorkspace = ['papers', 'featured', 'unread', 'news'].includes(state.view) || (isMy && isPaperShelf);
   $('#openPaperAssistant').hidden = !isPaperWorkspace;
   $('#paperAssistant').hidden = !isPaperWorkspace;
   $('#assistantBackdrop').hidden = !isPaperWorkspace;
   if (!isPaperWorkspace) closePaperAssistant();
+  $('#openPaperAssistant').lastChild.textContent = state.view === 'news' ? '新闻详情' : '论文助手';
   $('#searchInput').placeholder = isMy
     ? ({ papers: '搜索收藏论文、作者或关键词…', translations: '搜索收藏译文、作者或术语…', code: '搜索我的代码与项目…', references: '搜索参考资料…' }[state.mySection])
     : '搜索题目、作者、期刊、DOI 或关键词…';
@@ -1101,7 +1127,11 @@ function setMySection(section) {
 function setView(view) {
   closePaperAssistant();
   state.selectedPaperId = '';
+  const previousCategoryGroup = state.view === 'news' ? 'news' : 'papers';
+  state.categorySelections[previousCategoryGroup] = state.category;
   state.view = view;
+  const nextCategoryGroup = view === 'news' ? 'news' : 'papers';
+  state.category = state.categorySelections[nextCategoryGroup] || 'all';
   state.visible = 20;
   const labels = {
     home: ['HOME', '首页', '今日科研简报、新闻、通知与重点文章'],
@@ -1134,6 +1164,7 @@ function setView(view) {
     history.replaceState(null, '', `${PATH}#notices`);
     return;
   }
+  renderCategories();
   if (view === 'favorites') {
     setMySection(state.mySection);
     return;
@@ -1144,6 +1175,7 @@ function setView(view) {
 
 function setCategory(id) {
   state.category = id;
+  state.categorySelections[state.view === 'news' ? 'news' : 'papers'] = id;
   state.visible = 20;
   $$('.category-button').forEach(button => button.classList.toggle('active', button.dataset.category === id));
   renderCards();
@@ -1241,7 +1273,8 @@ async function saveFavoriteDraft() {
   savePersonal();
   closeFavoriteDialog();
   renderKeywords();
-  renderCards();
+  if (state.view === 'notices') renderDailyNotices();
+  else renderCards();
   renderHomeHub();
   showToast(`已收藏，关键词：${keywords.join('、')}`);
 }
@@ -1257,7 +1290,8 @@ async function toggleFavorite(item, button) {
     button.textContent = active ? '★' : '☆';
     button.classList.toggle('active', active);
     button.setAttribute('aria-pressed', String(active));
-    renderCards();
+    if (state.view === 'notices') renderDailyNotices();
+    else renderCards();
     renderHomeHub();
     showToast('已取消收藏，请提交到 GitHub');
     return;
@@ -1265,7 +1299,8 @@ async function toggleFavorite(item, button) {
   if (hasPublicFavorite(item.id) && !state.personal.hiddenPublicFavorites.includes(item.id)) {
     state.personal.hiddenPublicFavorites.push(item.id);
     savePersonal();
-    renderCards();
+    if (state.view === 'notices') renderDailyNotices();
+    else renderCards();
     renderHomeHub();
     showToast('已隐藏，请提交到 GitHub');
     return;
@@ -1556,13 +1591,15 @@ function openDetails(item) {
 
 function renderCategories() {
   const counts = new Map();
-  state.papers.forEach(item => (item.categories || []).forEach(id => counts.set(id, (counts.get(id) || 0) + 1)));
+  const categoryItems = state.view === 'news' ? state.news : state.papers;
+  categoryItems.forEach(item => (item.categories || []).forEach(id => counts.set(id, (counts.get(id) || 0) + 1)));
+  $('#researchFieldTitle').textContent = state.view === 'news' ? '新闻领域' : '研究领域';
   const host = $('#categoryList');
   host.replaceChildren();
   const all = document.createElement('button');
   all.className = 'category-button';
   all.dataset.category = 'all';
-  all.innerHTML = `<span class="cat-icon">◎</span><span>全部领域</span><span class="cat-count">${state.papers.length}</span>`;
+  all.innerHTML = `<span class="cat-icon">◎</span><span>${state.view === 'news' ? '全部新闻' : '全部领域'}</span><span class="cat-count">${categoryItems.length}</span>`;
   all.classList.toggle('active', state.category === 'all');
   host.append(all);
 
@@ -1577,7 +1614,7 @@ function renderCategories() {
   const hidden = new Set(state.paperLayout.hiddenCategories);
   const byId = new Map(state.meta.categories.map(category => [category.id, category]));
 
-  orderedIds.filter(id => !hidden.has(id)).forEach(id => {
+  orderedIds.filter(id => !hidden.has(id) && (state.view !== 'news' || counts.get(id))).forEach(id => {
     const category = byId.get(id);
     if (!category) return;
     const row = document.createElement('div');
@@ -1820,7 +1857,52 @@ function paperFactRow(label, values) {
   return `<div class="paper-fact-row"><dt>${text(label)}</dt><dd>${items.map(value => `<span${value === '未从摘要识别' ? ' class="missing"' : ''}>${text(value)}</span>`).join('')}</dd></div>`;
 }
 
+function renderAssistantNewsDetail(item) {
+  const host = $('#assistantPaperDetail');
+  const related = state.news
+    .filter(candidate => candidate.id !== item.id)
+    .map(candidate => ({ candidate, score: similarity(item, candidate) }))
+    .filter(entry => entry.score > 0)
+    .sort((a, b) => b.score - a.score || (b.candidate.published || '').localeCompare(a.candidate.published || ''))
+    .slice(0, 5);
+  const reasons = (item.score_reasons || []).slice(0, 4);
+  host.innerHTML = `
+    <header class="selected-paper-head selected-news-head">
+      <span>${text(item.source || '官方新闻')} · ${text(prettyDate(item.published))}</span>
+      <h3>${text(localizedTitle(item))}</h3>
+    </header>
+    <section class="assistant-section paper-detail-section">
+      <div class="assistant-section-head"><span>新闻信息</span><small>来自官方原始页面</small></div>
+      <dl class="paper-meta-grid">
+        <div><dt>类型</dt><dd>官方科研新闻</dd></div>
+        <div><dt>重要性</dt><dd>${Number(item.importance || 0)}</dd></div>
+        <div><dt>发布日期</dt><dd>${text(prettyDate(item.published))}</dd></div>
+        <div><dt>收藏状态</dt><dd>${isFavorite(item.id) ? '已收藏' : '未收藏'}</dd></div>
+      </dl>
+      <div class="tag-row">${(item.categories || []).map(id => `<span class="tag category">${text(categoryName(id))}</span>`).join('')}</div>
+    </section>
+    <section class="assistant-section paper-detail-section">
+      <div class="assistant-section-head"><span>完整介绍</span><small>优先显示中文译文</small></div>
+      <p class="assistant-news-summary">${text(localizedDescription(item))}</p>
+      <div class="assistant-news-actions"><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">阅读官方原文 ↗</a><button type="button" data-news-favorite>${isFavorite(item.id) ? '★ 已收藏' : '☆ 收藏'}</button></div>
+    </section>
+    <section class="assistant-section paper-detail-section">
+      <div class="assistant-section-head"><span>为什么值得关注</span><small>可解释评分</small></div>
+      <ul class="paper-reason-list">${reasons.length ? reasons.map(reason => `<li>${text(reason)}</li>`).join('') : '<li>当前暂无评分理由。</li>'}</ul>
+    </section>
+    <section class="assistant-section paper-detail-section">
+      <div class="assistant-section-head"><span>相关新闻</span><small>按领域与标签匹配</small></div>
+      <div class="assistant-related-list">${related.length ? related.map(({ candidate, score }) => `<button type="button" data-related-news="${text(candidate.id)}"><span>${text(localizedTitle(candidate))}</span><small>${text(candidate.source)} · 关联度 ${score}</small></button>`).join('') : '<p>暂无明显相关新闻。</p>'}</div>
+    </section>`;
+  $('[data-news-favorite]', host).addEventListener('click', event => void toggleFavorite(item, event.currentTarget));
+  $$('[data-related-news]', host).forEach(button => button.addEventListener('click', () => {
+    const candidate = state.news.find(value => value.id === button.dataset.relatedNews);
+    if (candidate) selectPaperForAssistant(candidate);
+  }));
+}
+
 function renderAssistantPaperDetail(item) {
+  if (item.type === 'news') return renderAssistantNewsDetail(item);
   const host = $('#assistantPaperDetail');
   const facts = extractPaperFacts(item);
   const related = state.papers
@@ -1900,13 +1982,15 @@ function renderPaperAssistant(items = filteredItems()) {
   $('#assistantUnreadTotal').textContent = state.papers.filter(item => state.personal.readStatus[item.id] !== 'read').length.toLocaleString('zh-CN');
   $('#assistantDailyTotal').textContent = `${state.notices.length + state.news.length}`;
 
-  const selected = state.selectedPaperId ? state.papers.find(item => item.id === state.selectedPaperId) : null;
+  const selected = state.selectedPaperId ? [...state.papers, ...state.news].find(item => item.id === state.selectedPaperId) : null;
   $('#assistantOverview').hidden = Boolean(selected);
   $('#assistantPaperDetail').hidden = !selected;
   $('#assistantBackToOverview').hidden = !selected;
-  $('#assistantKicker').textContent = selected ? 'SELECTED PAPER' : 'PAPER COMPANION';
-  $('#assistantTitle').textContent = selected ? '论文信息' : '论文助手';
-  $('#assistantIntro').textContent = selected ? '右侧只展示原始元数据与从题目、摘要中明确识别的科研要素。' : '只解释当前论文结果，不再重复首页新闻。';
+  $('#assistantKicker').textContent = selected ? (selected.type === 'news' ? 'SELECTED NEWS' : 'SELECTED PAPER') : 'PAPER COMPANION';
+  $('#assistantTitle').textContent = selected ? (selected.type === 'news' ? '新闻信息' : '论文信息') : '论文助手';
+  $('#assistantIntro').textContent = selected
+    ? (selected.type === 'news' ? '右侧展示官方来源、完整介绍、分类与相关新闻。' : '右侧只展示原始元数据与从题目、摘要中明确识别的科研要素。')
+    : '解释当前筛选结果与已选内容。';
   if (selected) renderAssistantPaperDetail(selected);
 }
 
@@ -1987,6 +2071,15 @@ function homeFeaturedCard(item) {
   $('.google-translation-link', article).addEventListener('click', () => void toggleGoogleTranslation(item));
   const googlePanel = googleTranslationPanelFor(item);
   if (googlePanel) article.append(googlePanel);
+  article.tabIndex = 0;
+  article.setAttribute('aria-label', `通知：${item.title}。按回车在右侧查看详细信息`);
+  article.addEventListener('click', event => {
+    if (event.target.closest('a, button')) return;
+    selectNotice(item);
+  });
+  article.addEventListener('keydown', event => {
+    if (event.key === 'Enter' && event.target === article) selectNotice(item);
+  });
   return article;
 }
 
@@ -2026,6 +2119,46 @@ function renderHomeDashboard() {
   if (!featured.length) $('#homeFeaturedList').innerHTML = '<p class="home-feed-empty">五种重点期刊暂时没有可展示的新文章。</p>';
 }
 
+function noticeGroup(item) {
+  const category = String(item.notice_category || '');
+  if (category.startsWith('meetings')) return 'meeting';
+  if (category.startsWith('beam')) return 'beam';
+  return 'funding';
+}
+
+function noticeOfficialText(item) {
+  return String(item.content || item.summary || '').trim();
+}
+
+function selectNotice(item) {
+  state.selectedNoticeId = item.id;
+  renderDailyNotices();
+}
+
+function renderNoticeDetail(item) {
+  const host = $('#noticeDetailPanel');
+  if (!item) {
+    host.innerHTML = '<div class="notice-detail-empty"><span>✿</span><b>通知详细信息</b><p>选择一条通知后，这里将显示官方介绍、时间与链接。</p></div>';
+    return;
+  }
+  const group = NOTICE_GROUPS.find(value => value.id === noticeGroup(item)) || NOTICE_GROUPS[0];
+  const category = noticeCategoryInfo(item.notice_category);
+  const original = noticeOfficialText(item) || '官方列表页暂未提供可提取的介绍，请打开原文核对。';
+  const translated = translationFor(item);
+  host.innerHTML = `
+    <header class="notice-detail-head"><span>${text(group.icon)} ${text(group.label)}</span><small>${text(category.label)}</small></header>
+    <h2>${text(localizedTitle(item))}</h2>
+    <div class="notice-detail-meta"><b>${text(item.source || '官方来源')}</b><time>${text(prettyDate(item.published))}</time>${item.deadline ? `<strong>截止 ${text(prettyDate(item.deadline))}</strong>` : ''}</div>
+    ${translated?.abstract_zh ? `<section><h3>中文介绍</h3><p>${text(applyTranslationGlossary(translated.abstract_zh))}</p></section>` : ''}
+    <section><h3>官方原文信息</h3><p>${text(original)}</p></section>
+    <div class="notice-detail-tags">${(item.categories || []).map(id => `<span>${text(categoryName(id))}</span>`).join('')}<span>${text(item.scope || category.description || '')}</span></div>
+    <div class="notice-detail-actions"><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">查看官方原文 ↗</a><button type="button" data-notice-favorite>${isFavorite(item.id) ? '★ 已收藏' : '☆ 收藏'}</button><button type="button" data-notice-google>Google 翻译</button></div>`;
+  $('[data-notice-favorite]', host).addEventListener('click', event => void toggleFavorite(item, event.currentTarget));
+  $('[data-notice-google]', host).addEventListener('click', () => void toggleGoogleTranslation(item));
+  const googlePanel = googleTranslationPanelFor(item);
+  if (googlePanel) host.append(googlePanel);
+}
+
 function dailyNoticeCard(item) {
   const article = document.createElement('article');
   article.className = 'daily-notice-card';
@@ -2039,17 +2172,31 @@ function dailyNoticeCard(item) {
       : deadline.days === 1 ? '明日截止'
         : deadline.days !== null ? `还有 ${deadline.days} 天截止` : '';
   article.dataset.category = category.id;
+  article.classList.toggle('selected', state.selectedNoticeId === item.id);
+  const original = noticeOfficialText(item);
+  const expanded = state.expandedNoticeIds.has(item.id);
+  const excerpt = original
+    ? (expanded ? original : truncate(original, 360))
+    : '官方列表页暂未提供介绍，请打开原文查看申请条件、时间和附件。';
   article.innerHTML = `
     <div class="daily-notice-card-top">
-      <span class="notice-kind">${text(category.icon)} ${text(category.label)}</span>
-      <div>${isFresh ? '<b class="notice-fresh">今日发现</b>' : ''}${deadlineLabel ? `<b class="notice-deadline ${text(deadline.kind)}">${text(deadlineLabel)}</b>` : ''}</div>
+      <span class="notice-kind">${text((NOTICE_GROUPS.find(value => value.id === noticeGroup(item)) || NOTICE_GROUPS[0]).icon)} ${text((NOTICE_GROUPS.find(value => value.id === noticeGroup(item)) || NOTICE_GROUPS[0]).label)} · ${text(category.label)}</span>
+      <div>${isFresh ? '<b class="notice-fresh">今日发现</b>' : ''}${deadlineLabel ? `<b class="notice-deadline ${text(deadline.kind)}">${text(deadlineLabel)}</b>` : ''}<button type="button" class="notice-favorite-button" aria-label="收藏通知">${isFavorite(item.id) ? '★' : '☆'}</button></div>
     </div>
-    <h3><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">${text(localizedTitle(item))}</a></h3>
-    <p>${text(truncate(localizedAbstract(item), 320) || '官方列表页未提供简介；点开原文可查看申请条件、时间与附件。')}</p>
+    <h3><button type="button" class="notice-title-button">${text(localizedTitle(item))}</button></h3>
+    <div class="notice-original-preview"><b>官方原文信息</b><p>${text(excerpt)}</p>${original.length > 360 ? `<button type="button" class="notice-expand">${expanded ? '收起原文' : '展开全部信息'}</button>` : ''}</div>
     <footer>
       <div><b>${text(item.source || '官方来源')}</b><span>${text(item.scope || '')}</span><time>${text(prettyDate(item.published))}</time></div>
-      <span class="daily-notice-links"><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">查看官方原文 ↗</a><button type="button" class="google-translation-link">${state.googleTranslationOpenIds.has(item.id) ? '收起 Google 译文' : 'Google 翻译'}</button></span>
+      <span class="daily-notice-links"><button type="button" class="notice-detail-button">右侧查看详情</button><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">官方原文 ↗</a><button type="button" class="google-translation-link">${state.googleTranslationOpenIds.has(item.id) ? '收起 Google 译文' : 'Google 翻译'}</button></span>
     </footer>`;
+  $('.notice-title-button', article).addEventListener('click', () => selectNotice(item));
+  $('.notice-detail-button', article).addEventListener('click', () => selectNotice(item));
+  $('.notice-favorite-button', article).addEventListener('click', event => void toggleFavorite(item, event.currentTarget));
+  $('.notice-expand', article)?.addEventListener('click', () => {
+    if (expanded) state.expandedNoticeIds.delete(item.id);
+    else state.expandedNoticeIds.add(item.id);
+    renderDailyNotices();
+  });
   $('.google-translation-link', article).addEventListener('click', () => void toggleGoogleTranslation(item));
   const googlePanel = googleTranslationPanelFor(item);
   if (googlePanel) article.append(googlePanel);
@@ -2064,13 +2211,13 @@ function filteredDailyNotices() {
   const weekDay = weekStart.toISOString().slice(0, 10);
   const query = state.noticeQuery.trim().toLocaleLowerCase('zh-CN');
   return [...state.notices].filter(item => {
-    if (state.noticeCategory !== 'all' && item.notice_category !== state.noticeCategory) return false;
+    if (state.noticeCategory !== 'all' && noticeGroup(item) !== state.noticeCategory) return false;
     if (state.noticeTiming === 'today' && noticeFirstSeenDay(item) !== runDay) return false;
     if (state.noticeTiming === 'open' && !['open', 'soon'].includes(deadlineState(item).kind)) return false;
     if (state.noticeTiming === '7days' && noticePublishedDay(item) < weekDay) return false;
     if (query) {
       const translation = translationFor(item);
-      const haystack = [item.title, item.summary, translation?.title_zh, translation?.abstract_zh, item.source, item.scope, noticeCategoryInfo(item.notice_category).label]
+      const haystack = [item.title, item.summary, item.content, translation?.title_zh, translation?.abstract_zh, item.source, item.scope, noticeCategoryInfo(item.notice_category).label]
         .join(' ').toLocaleLowerCase('zh-CN');
       if (!query.split(/\s+/).every(term => haystack.includes(term))) return false;
     }
@@ -2082,16 +2229,15 @@ function filteredDailyNotices() {
 
 function renderDailyNoticeCategories() {
   const host = $('#dailyNoticeCategories');
-  const categories = [{ id: 'all', label: '全部通知', icon: '🌿' }, ...(state.noticePortals.categories || [])];
   const counts = new Map();
-  state.notices.forEach(item => counts.set(item.notice_category, (counts.get(item.notice_category) || 0) + 1));
-  host.replaceChildren(...categories.map(category => {
+  state.notices.forEach(item => counts.set(noticeGroup(item), (counts.get(noticeGroup(item)) || 0) + 1));
+  host.replaceChildren(...NOTICE_GROUPS.map(category => {
     const button = document.createElement('button');
     const count = category.id === 'all' ? state.notices.length : (counts.get(category.id) || 0);
     button.type = 'button';
     button.className = state.noticeCategory === category.id ? 'active' : '';
     button.setAttribute('aria-pressed', String(state.noticeCategory === category.id));
-    button.innerHTML = `<span>${text(category.icon)}</span><b>${text(category.label)}</b><small>${count}</small>`;
+    button.innerHTML = `<span>${text(category.icon)}</span><b>${text(category.label)}</b><em>${text(category.description)}</em><small>${count}</small>`;
     button.addEventListener('click', () => {
       state.noticeCategory = category.id;
       state.noticeVisible = 24;
@@ -2122,15 +2268,17 @@ function renderDailyNotices() {
   renderDailyNoticeCategories();
 
   const items = filteredDailyNotices();
+  if (!items.some(item => item.id === state.selectedNoticeId)) state.selectedNoticeId = items[0]?.id || '';
   $('#dailyNoticeResultCount').textContent = `共 ${items.length.toLocaleString('zh-CN')} 条`;
   $('#dailyNoticeList').replaceChildren(...items.slice(0, state.noticeVisible).map(dailyNoticeCard));
   if (!items.length) {
     $('#dailyNoticeList').innerHTML = '<div class="daily-notice-empty"><span>🌱</span><b>暂无匹配通知</b><p>可切换分类或清空搜索条件。</p></div>';
   }
   $('#dailyNoticeMore').hidden = items.length <= state.noticeVisible;
+  renderNoticeDetail(items.find(item => item.id === state.selectedNoticeId));
 
   const deadlineItems = openItems
-    .filter(item => state.noticeCategory === 'all' || item.notice_category === state.noticeCategory)
+    .filter(item => state.noticeCategory === 'all' || noticeGroup(item) === state.noticeCategory)
     .sort((a, b) => (a.deadline || '').localeCompare(b.deadline || ''))
     .slice(0, 8);
   $('#deadlineBoard').hidden = !deadlineItems.length;

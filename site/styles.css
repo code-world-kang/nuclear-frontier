@@ -1542,3 +1542,93 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .deadline-item { grid-template-columns: 54px minmax(0, 1fr); }
   .deadline-item i { display: none; }
 }
+
+/* 通知中心：三类导航 + 纸张式列表 + 右侧详情 */
+.daily-notice-dashboard { width: min(1500px, calc(100% - 42px)); }
+.daily-notice-layout { display: grid; grid-template-columns: 178px minmax(520px, 1fr) 330px; gap: 16px; align-items: start; margin-top: 22px; }
+.daily-notice-main { min-width: 0; }
+.notice-group-panel,
+.notice-detail-panel { position: sticky; top: 82px; min-width: 0; border: 1px solid #dce5d7; border-radius: 18px; background: rgba(255, 255, 251, .94); box-shadow: 0 10px 28px rgba(72, 103, 69, .055); }
+.notice-group-panel { padding: 18px 14px; }
+.notice-group-panel h2 { margin: 4px 0 7px; color: #466c4d; font-family: Georgia, "Noto Serif SC", serif; font-size: 19px; font-weight: 560; }
+.notice-group-panel > p { margin: 0 0 15px; color: #849086; font-size: 8px; line-height: 1.6; }
+.notice-group-panel .daily-notice-categories { display: grid; gap: 7px; margin: 0; }
+.notice-group-panel .daily-notice-categories button { position: relative; display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 1px 5px; width: 100%; padding: 10px 8px; border-radius: 12px; text-align: left; }
+.notice-group-panel .daily-notice-categories button > span { grid-row: 1 / 3; align-self: center; font-size: 15px; }
+.notice-group-panel .daily-notice-categories button b { align-self: end; font-size: 10px; }
+.notice-group-panel .daily-notice-categories button em { grid-column: 2 / 4; overflow: hidden; color: #8b978d; font-size: 7px; font-style: normal; line-height: 1.4; text-overflow: ellipsis; }
+.notice-group-panel .daily-notice-categories button small { grid-column: 3; grid-row: 1; }
+
+.daily-notice-feed { padding: 18px; }
+.daily-notice-list { gap: 12px; }
+.daily-notice-card { position: relative; padding: 18px 19px; border-left: 4px solid #b9d5b2; border-radius: 15px; background: #fffefa; box-shadow: 0 5px 16px rgba(81, 108, 73, .035); transition: border-color .16s ease, box-shadow .16s ease, transform .16s ease; }
+.daily-notice-card:hover,
+.daily-notice-card.selected { border-color: #83b17f; box-shadow: 0 10px 25px rgba(71, 105, 66, .09); transform: translateY(-1px); }
+.daily-notice-card h3 { margin: 10px 0 9px; font-size: 17px; }
+.notice-title-button { width: 100%; padding: 0; border: 0; color: #405e47; background: transparent; cursor: pointer; font: inherit; font-weight: inherit; line-height: inherit; text-align: left; }
+.notice-title-button:hover { color: #2f7842; }
+.notice-favorite-button { display: grid; width: 27px; height: 27px; place-items: center; border: 1px solid #d8e2d4; border-radius: 9px; color: #9a752f; background: #fffdf7; cursor: pointer; font-size: 15px; }
+.notice-original-preview { padding: 11px 13px; border: 1px solid #e5eadf; border-radius: 11px; background: #fbfcf7; }
+.notice-original-preview > b { display: block; margin-bottom: 5px; color: #708172; font-size: 8px; letter-spacing: .05em; }
+.notice-original-preview p { margin: 0; color: #66756a; font-size: 10px; line-height: 1.72; white-space: pre-line; }
+.notice-expand,
+.notice-detail-button { margin-top: 7px; padding: 0; border: 0; color: #438054; background: transparent; cursor: pointer; font: inherit; font-size: 8px; font-weight: 700; }
+.notice-detail-button { margin-top: 0; }
+.daily-notice-card footer { align-items: center; background: transparent; }
+.daily-notice-links { align-items: center; gap: 7px; }
+.daily-notice-links a,
+.daily-notice-links button {
+  margin: 0;
+  padding: 5px 8px;
+  border: 1px solid #d8e4d4;
+  border-radius: 99px;
+  color: #4b7855 !important;
+  background: #f7fbf4;
+  cursor: pointer;
+  font: inherit;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+}
+.daily-notice-links .google-translation-link { color: #52736c !important; }
+.daily-notice-links a:hover,
+.daily-notice-links button:hover { border-color: #aecaac; color: #2f7040 !important; background: #edf7e9; }
+
+.notice-detail-panel { max-height: calc(100vh - 100px); overflow: auto; padding: 19px; }
+.notice-detail-empty { display: grid; justify-items: center; gap: 7px; padding: 45px 12px; color: #829085; text-align: center; }
+.notice-detail-empty span { font-size: 27px; }
+.notice-detail-empty b { color: #54715a; font-family: Georgia, "Noto Serif SC", serif; }
+.notice-detail-empty p { margin: 0; font-size: 9px; line-height: 1.65; }
+.notice-detail-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; color: #53765b; font-size: 9px; font-weight: 700; }
+.notice-detail-head small { color: #8a968c; font-size: 7px; }
+.notice-detail-panel > h2 { margin: 11px 0 10px; color: #3f6247; font-family: Georgia, "Noto Serif SC", serif; font-size: 20px; font-weight: 560; line-height: 1.4; }
+.notice-detail-meta { display: flex; flex-wrap: wrap; gap: 5px 10px; padding-bottom: 12px; border-bottom: 1px solid #e5e9e0; color: #829085; font-size: 8px; }
+.notice-detail-meta b { color: #5e7563; }
+.notice-detail-meta strong { color: #a3653a; }
+.notice-detail-panel section { margin-top: 15px; }
+.notice-detail-panel section h3 { margin: 0 0 7px; color: #607864; font-size: 9px; }
+.notice-detail-panel section p { margin: 0; color: #65746a; font-size: 9px; line-height: 1.75; white-space: pre-line; }
+.notice-detail-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 15px; }
+.notice-detail-tags span { padding: 4px 7px; border-radius: 99px; color: #68806d; background: #edf5e9; font-size: 7px; }
+.notice-detail-actions,
+.assistant-news-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.notice-detail-actions a,
+.notice-detail-actions button,
+.assistant-news-actions a,
+.assistant-news-actions button { padding: 7px 9px; border: 1px solid #d3e0cf; border-radius: 9px; color: #477651; background: #f8fcf5; cursor: pointer; font: inherit; font-size: 8px; font-weight: 700; text-decoration: none; }
+.selected-news-head h3 { margin: 8px 0 0; color: #405e47; font-family: Georgia, "Noto Serif SC", serif; font-size: 16px; line-height: 1.45; }
+.assistant-news-summary { margin: 0; color: #64756a; font-size: 9px; line-height: 1.72; white-space: pre-line; }
+
+@media (max-width: 1120px) {
+  .daily-notice-layout { grid-template-columns: 170px minmax(0, 1fr); }
+  .notice-detail-panel { position: relative; top: auto; grid-column: 2; max-height: none; }
+}
+
+@media (max-width: 720px) {
+  .daily-notice-dashboard { width: calc(100% - 22px); }
+  .daily-notice-layout { grid-template-columns: 1fr; }
+  .notice-group-panel,
+  .notice-detail-panel { position: relative; top: auto; grid-column: 1; }
+  .notice-group-panel .daily-notice-categories { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

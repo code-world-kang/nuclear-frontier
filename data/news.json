@@ -3,7 +3,7 @@
     "id": "0de28bc3b7dc6c14",
     "type": "news",
     "title": "Time-resolved imaging of antiferromagnetic skyrmion interactions",
-    "summary": "",
+    "summary": "Quantifying particle interactions is central to understanding and controlling collective dynamics in particle-based devices such as those comprising skyrmion ensembles. Here we directly visualize, in real time, the nanosecond current-driven dynamics of an antiferromagnetic skyrmion lattice. By tuning the spin–orbit torque relative to local pinning, we identify two regimes: an incoherent flow, where mobile skyrmions are driven toward pinned neighbours undergoing compression followed by a recoil, and a coherent flow regime, where the lattice translates uniformly. We use an inverse analysis method based on the Thiele equation to extract an exponentially decaying antiferromagnetic skyrmion interaction potential, which is in agreement with simulation results. At higher current densities, the lattice exhibits coherent motion free from detectable Hall and inertial effects or dynamical deformation, and this enables robust ultrafast operation. These findings establish a quantitative framework for antiferromagnetic skyrmion interactions and demonstrate deterministic control of their collective dynamics, even in the incoherent flow regime, thereby providing potential applications for multiskyrmion spintronic devices. Understanding the time-resolved dynamics of antiferromagnetic skyrmion interactions remains a challenge, limiting control over their collective behaviour. Now their ultrafast dynamics is visualized in real time in thin-film multilayers.",
     "published": "2026-08-10",
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03383-4",
@@ -11,12 +11,65 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-08-10T10:24:37+00:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
+    "arxiv_id": "",
+    "pdf_url": "",
+    "doi": "",
+    "citation_authors": [],
+    "journal_abbrev": "",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "numpages": "",
+    "publisher": "",
+    "publisher_url": "",
+    "citation_metadata_checked": false,
+    "abstract": "",
+    "abstract_status": "missing",
+    "abstract_source": "",
+    "license": "",
+    "publisher_licenses": [],
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "rights_status": "unknown",
+    "primary_topic": "frontiers",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
+  },
+  {
+    "id": "8aa532bc2ad21e34",
+    "type": "news",
+    "title": "How Rare Events Remember",
+    "summary": "Author(s): Nicolas Levernier A new theory of rare recurrent events dispenses with the simplifying assumption that recent events lack memory of previous ones. [Physics 19, 105] Published Mon Aug 10, 2026",
+    "published": "2026-08-10",
+    "source": "APS Physics",
+    "url": "http://link.aps.org/doi/10.1103/Physics.19.105",
+    "categories": [
+      "frontiers"
+    ],
+    "tags": [],
+    "importance": 34,
+    "score_reasons": [
+      "来源权重 +32",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-10T23:40:26+08:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
+    "primary_topic": "frontiers",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": [],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -42,23 +95,26 @@
     "id": "2ffa83adaf535d81",
     "type": "news",
     "title": "Time-domain identification of distinct mechanisms for competing charge density waves in a rare-earth tritelluride",
-    "summary": "",
+    "summary": "Understanding the origin of phase transitions and the interactions between distinct phases remains a central task in condensed-matter physics. Charge-density-wave (CDW) systems provide a useful setting to investigate these questions. Although the dominant CDW phases in many materials can be explained through electron–phonon interactions, certain CDW phase transitions remain poorly understood, challenging conventional paradigms. One example is the rare-earth tritelluride ErTe3, which hosts two competing CDW orders. Although electron–phonon coupling accounts for the dominant order, the mechanism behind the subdominant order remains unclear. In this study, we combine time- and angle-resolved photoemission spectroscopy and time-dependent Ginzburg–Landau theory to establish a time-domain approach for probing phase transitions in solid-state systems. By analysing the distinct recovery dynamics of the two CDW orders in ErTe3 following light excitation, we reveal a novel nucleation and growth mechanism that probably drives the secondary CDW phase transition. More broadly, this work provides a time-domain framework for studying phase transitions and phase competition in quantum materials. ErTe3 hosts two charge-density-wave orders and the origin of the weaker one remains unclear. Tracking its recovery after light excitation now points to nucleation and growth as the underlying mechanism.",
     "published": "2026-08-07",
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03382-5",
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 50,
+    "tags": [
+      "quantum"
+    ],
+    "importance": 42,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -75,29 +131,42 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "experimental",
+      "theoretical"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
   },
   {
     "id": "41249061aad7d201",
     "type": "news",
     "title": "Perfect particle transmission through duality defects",
-    "summary": "",
+    "summary": "The theory of generalized symmetries has recently clarified how twisted sectors resolve the Callan–Rubakov paradox, where scattering of a charged particle by a magnetic monopole appeared to violate conservation laws. Here we study a more general setting of wavepackets that propagate across topological interfaces in quantum spin systems exhibiting non-invertible symmetries and across duality defects coupling dual theories. In these scenarios, we find that the transmission is always perfect and a particle traversing the interface is converted into a non-local string-like excitation. We give a systematic way of constructing such a defect by identifying its Hilbert space with the virtual bond dimension of the matrix product operator representing defect lines. Our work provides a precise characterization of topological interfaces in perfect transmission phenomena and yields a lattice analogue of the solution to the monopole paradox in quantum field theory. Dualities between different models are an important tool in theoretical many-body physics. Here a constructive recipe is given for topological interfaces between dual models that are transparent to wavepackets but alter their properties.",
     "published": "2026-08-07",
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03390-5",
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 50,
+    "tags": [
+      "quantum",
+      "topological"
+    ],
+    "importance": 42,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -114,13 +183,22 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "quantum",
+      "topological"
+    ]
   },
   {
     "id": "066bcec24415d481",
     "type": "news",
     "title": "Large intra-chromosome heterogeneity leads to emergent nonlinear mechanics",
-    "summary": "",
+    "summary": "Faithful chromosome segregation during mitosis relies on the formation of compact, individualized chromosomes that withstand drag and spindle-generated forces. Structural failure of mitotic chromosomes under force can disrupt the distribution of genetic material to daughter cells, causing aneuploidy or cancer. The overall mechanical properties of mitotic chromosomes have been suggested to arise from their structural heterogeneity. The magnitude and scale of this heterogeneity have not been measured, leaving its impact on chromosome mechanics unresolved. Here we show that chromosomes are highly mechanically heterogeneous: within one chromosome, the local stiffness can vary by up to two orders of magnitude. This extreme mechanical heterogeneity is exemplified by the centromere, which is an order of magnitude softer than the whole chromosome. These results demonstrate how the mechanical complexity of mitotic chromosomes gives rise to their emergent nonlinear mechanical behaviour, distinct from the polymer properties of their constituents. More broadly, we discuss how structural heterogeneity can shape the nonlinear responses of composite materials, with implications for both understanding biological assemblies and designing new synthetic materials. Analysis of the mechanical properties of mitotic chromosomes is key for understanding the robustness of chromosomes during cell division. It is now shown that chromosomes are highly mechanically heterogeneous.",
     "published": "2026-08-07",
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03407-z",
@@ -128,15 +206,16 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 50,
+    "importance": 42,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -153,13 +232,19 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "b50b9ad841ef3a31",
     "type": "news",
     "title": "Braids of light",
-    "summary": "",
+    "summary": "Non-Hermitian systems trace braid-like eigenvalue paths that are difficult to observe directly. Coupled chip-scale lasers now reveal braided spectra, enabling real-time visualization of non-Hermitian topology.",
     "published": "2026-08-07",
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03399-w",
@@ -167,15 +252,16 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 50,
+    "importance": 42,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -192,7 +278,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "79595fcca370c7b8",
@@ -214,7 +304,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-09T03:53:09+00:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -234,7 +324,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
   },
   {
     "id": "c8f80b90f0970ff0",
@@ -248,7 +344,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -257,7 +353,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -274,13 +370,17 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "fc2bf80e9924c5d6",
     "type": "news",
     "title": "Orbitronics becomes disorder-resilient",
-    "summary": "",
+    "summary": "It is unclear whether crystalline disorder can suppress angular momentum transport. Now, a study reveals the disorder resilience of such transport and uncovers distinct orbital relaxation processes across a wide range of disordered thin films.",
     "published": "2026-08-05",
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03388-z",
@@ -288,15 +388,16 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 50,
+    "importance": 42,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -313,7 +414,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "b1adbe4c9b21b698",
@@ -327,7 +432,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -336,7 +441,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -353,7 +458,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "8c143c28ab42b7fd",
@@ -367,7 +476,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -376,7 +485,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -393,7 +502,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "1c1c09a9d1fb0209",
@@ -407,7 +520,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -416,7 +529,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -433,7 +546,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "397e77319f6e0fe4",
@@ -444,13 +563,10 @@
     "source": "APS Physics",
     "url": "http://link.aps.org/doi/10.1103/Physics.19.s94",
     "categories": [
-      "particle-cross",
       "frontiers"
     ],
-    "tags": [
-      "neutrino"
-    ],
-    "importance": 40,
+    "tags": [],
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -459,7 +575,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -476,29 +592,36 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "2ea1989e20d2da89",
     "type": "news",
     "title": "Publisher Correction: Reply to: Conductance measurements cannot distinguish crossed Andreev reflection from elastic co-tunnelling in normal–superconductor–normal junctions",
-    "summary": "",
+    "summary": "| Nature Physics Skip to main content Thank you for visiting nature.com. You are using a browser version with limited support for CSS. To obtain the best experience, we recommend you use a more up to date browser (or turn off compatibility mode in Internet Explorer). In the meantime, to ensure continued support, we are displaying the site without styles and JavaScript. Advertisement View all journals Saved research Search Account Log in Content Explore content About the journal Publish with us Sign up for alerts RSS feed nature nature physics publisher corrections article Publisher Correction: Reply to: Conductance measurements cannot distinguish crossed Andreev reflection from elastic co-tunnelling in normal–superconductor–normal junctions Download PDF Download PDF Publisher Correction Published: 03 August 2026 Publisher Correction: Reply to: Conductance measurements cannot distinguish crossed Andreev reflection from elastic co-tunnelling in normal–superconductor–normal junctions Junya Feng ORCID: orcid.org/0000-0002-8202-0405 1 , Henry F. Legg 2 , 3 , Mahasweta Bagchi 1 , Daniel Loss ORCID: orcid.org/0000-0001-5176-3073 3 , Jelena Klinovaja ORCID: orcid.org/0000-0001-7782-9624 3 & … Yoichi Ando ORCID: orcid.org/0000-0002-3553-3355 1 Show authors Nature Physics ( 2026 ) Cite this article Save article View saved research 2875 Accesses Metrics details The Original Article was published on 28 July 2026 Subjects Topological insulators Superconducting properties and materials Correction to: Nature Physics https://doi.org/10.1038/s41567-026-03376-3 , published online 28 July 2026. In the version of the article initially published, in the second paragraph, the text “…similar in magnitude to the ECT contribution \\({T}_{12}^{{ee}}\\) , such that \\({T}_{12}^{{ee}}\\) ” should hav",
     "published": "2026-08-03",
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03430-0",
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 50,
+    "tags": [
+      "topological"
+    ],
+    "importance": 42,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -515,13 +638,19 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "topological"
+    ]
   },
   {
     "id": "31278ce1710e1693",
     "type": "news",
     "title": "Altermagnetic photonic crystals",
-    "summary": "",
+    "summary": "Altermagnetism is a magnetic phase that combines zero net magnetization with time-reversal-symmetry breaking and momentum-dependent spin splitting, but it has so far been confined to fermionic systems. Here we report a photonic platform capturing the symmetry features of altermagnetism. Using a magnetophotonic crystal with staggered magnetic bias and controlled structural variation, we observe momentum-dependent polarization splitting, spin–momentum locking and vanishing net magnetization in the photonic band structure. By solving Maxwell’s equations, we show that the momentum-dependent splitting is symmetry governed, rather than a consequence of the momentum-independent gyrotropic effect. These results demonstrate a photonic analogue of altermagnetic behaviour and provide a route towards spin-functional photonic devices without net magnetization. Altermagnetism has been experimentally demonstrated in fermionic systems, but not yet in photonic systems. Now it is observed in a magnetophotonic crystal.",
     "published": "2026-08-03",
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03405-1",
@@ -529,15 +658,16 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 50,
+    "importance": 42,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -554,7 +684,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "642e0bc3404d51c6",
@@ -568,7 +702,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -577,7 +711,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -594,13 +728,17 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "7b5f3da7478fd1fc",
     "type": "news",
     "title": "What physics papers don’t tell you",
-    "summary": "",
+    "summary": "Conventional physics publications systematically omit the failed experiments and informal collaborations that contribute to physicists’ knowledge. We propose an inverse seminar format to narrow the gap between published and actual physics.",
     "published": "2026-07-31",
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03380-7",
@@ -608,12 +746,13 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 50,
+    "importance": 42,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
     "last_seen": "2026-08-10T10:03:04+00:00",
@@ -633,7 +772,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "2f86420515bcfcbb",
@@ -647,7 +790,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -656,7 +799,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -673,7 +816,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "88a02bb01fc72196",
@@ -707,7 +854,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "fb7a0efdd4adf9e4",
@@ -718,15 +871,13 @@
     "source": "APS Physics",
     "url": "http://link.aps.org/doi/10.1103/Physics.19.s95",
     "categories": [
-      "fusion",
-      "nuclear-reactions"
+      "fusion"
     ],
     "tags": [
       "tokamak",
-      "fusion reactor",
-      "fusion"
+      "fusion reactor"
     ],
-    "importance": 48,
+    "importance": 38,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -736,7 +887,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -753,7 +904,14 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "fusion",
+    "methods": [],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "tokamak",
+      "fusion reactor"
+    ]
   },
   {
     "id": "10c32bcd89eb3519",
@@ -767,7 +925,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -776,7 +934,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -793,7 +951,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "0bcdc69aa674666d",
@@ -827,7 +989,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "nuclear-data-applications",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "radiotherapy"
+    ]
   },
   {
     "id": "6609a210daa8d44a",
@@ -838,14 +1006,14 @@
     "source": "APS Physics",
     "url": "http://link.aps.org/doi/10.1103/Physics.19.107",
     "categories": [
-      "ai-science",
-      "high-energy-nuclear"
+      "high-energy-nuclear",
+      "ai-science"
     ],
     "tags": [
       "hadron",
       "machine learning"
     ],
-    "importance": 48,
+    "importance": 45,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -856,7 +1024,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -873,7 +1041,14 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "high-energy-nuclear",
+    "methods": [],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "hadron",
+      "machine learning"
+    ]
   },
   {
     "id": "1fb20f8c77b54cc0",
@@ -887,7 +1062,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -896,7 +1071,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -913,7 +1088,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "3c86947316c87e18",
@@ -927,7 +1106,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -936,7 +1115,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -953,7 +1132,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "61f4753dba769c65",
@@ -967,7 +1152,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -976,7 +1161,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -993,7 +1178,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "2f8ee494edbb64ed",
@@ -1009,7 +1198,7 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1018,7 +1207,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1035,7 +1224,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
   },
   {
     "id": "0ab40317ac6b52dd",
@@ -1049,7 +1244,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1058,7 +1253,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1075,7 +1270,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "761f088f3cc74311",
@@ -1093,7 +1292,7 @@
       "neural network",
       "quantum"
     ],
-    "importance": 48,
+    "importance": 40,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1104,7 +1303,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1121,7 +1320,16 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "ai-science",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "neural network",
+      "quantum"
+    ]
   },
   {
     "id": "689342045d233403",
@@ -1135,7 +1343,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1144,7 +1352,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1161,7 +1369,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "7dccf749aef8ac0b",
@@ -1175,10 +1387,9 @@
       "frontiers"
     ],
     "tags": [
-      "quantum",
-      "black hole"
+      "quantum"
     ],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1187,7 +1398,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1204,7 +1415,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
   },
   {
     "id": "c2e5a12b1a0e962a",
@@ -1238,7 +1455,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "2c66d5144c12a37b",
@@ -1252,7 +1475,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1261,7 +1484,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1278,7 +1501,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "b308f0882f3ff2c7",
@@ -1292,7 +1519,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 48,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1301,7 +1528,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1318,7 +1545,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "f29b45a733ee6b22",
@@ -1334,7 +1567,7 @@
     "tags": [
       "topological"
     ],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1343,7 +1576,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1360,7 +1593,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "topological"
+    ]
   },
   {
     "id": "682f54bc040a0c81",
@@ -1374,7 +1613,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1383,7 +1622,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1400,7 +1639,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "38719ef329bb82a0",
@@ -1416,7 +1659,7 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1425,7 +1668,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1442,7 +1685,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
   },
   {
     "id": "990cc10f7fdd366d",
@@ -1456,7 +1705,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1465,7 +1714,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1482,7 +1731,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "1dc24af45a823678",
@@ -1498,7 +1753,7 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1507,7 +1762,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1524,7 +1779,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
   },
   {
     "id": "3d0c0bca7457fd4c",
@@ -1538,7 +1799,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1547,7 +1808,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1564,7 +1825,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "6dae326997602a60",
@@ -1575,13 +1840,10 @@
     "source": "APS Physics",
     "url": "http://link.aps.org/doi/10.1103/Physics.19.s89",
     "categories": [
-      "detectors-daq",
       "frontiers"
     ],
-    "tags": [
-      "detector"
-    ],
-    "importance": 40,
+    "tags": [],
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1590,7 +1852,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1607,7 +1869,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "42880613b90b85d0",
@@ -1621,7 +1887,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1630,7 +1896,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1647,7 +1913,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "0b62a7c0ce63cd48",
@@ -1663,7 +1933,7 @@
     "tags": [
       "standard model"
     ],
-    "importance": 40,
+    "importance": 37,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1673,7 +1943,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1690,7 +1960,15 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "particle-cross",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "standard model"
+    ]
   },
   {
     "id": "2acaa25a257bb943",
@@ -1706,7 +1984,7 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1715,7 +1993,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1732,7 +2010,15 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
   },
   {
     "id": "85157ae952c4d880",
@@ -1746,7 +2032,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1755,7 +2041,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1772,7 +2058,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "9c191b19e7b6235b",
@@ -1786,7 +2076,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1795,7 +2085,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1812,7 +2102,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "1e3dcacac37bbc32",
@@ -1828,7 +2122,7 @@
     "tags": [
       "black hole"
     ],
-    "importance": 48,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1837,7 +2131,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1854,7 +2148,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "black hole"
+    ]
   },
   {
     "id": "6e9521697e60c0b9",
@@ -1868,7 +2168,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1877,7 +2177,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1894,7 +2194,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "c69826c4bfee3cb6",
@@ -1905,13 +2209,10 @@
     "source": "APS Physics",
     "url": "http://link.aps.org/doi/10.1103/Physics.19.s92",
     "categories": [
-      "experimental-nuclear",
       "frontiers"
     ],
-    "tags": [
-      "spectroscopy"
-    ],
-    "importance": 40,
+    "tags": [],
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1920,7 +2221,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -1937,52 +2238,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
-  },
-  {
-    "id": "27cf4afada1f8c88",
-    "type": "news",
-    "title": "Rethinking Mean-Field Theory for Neural Networks",
-    "summary": "Author(s): Ryan Wilkinson An extended version of mean-field theory accurately captures activity patterns seen in networks of biological neurons. [Physics 19, s81] Published Tue Jun 30, 2026",
-    "published": "2026-06-30",
-    "source": "APS Physics",
-    "url": "http://link.aps.org/doi/10.1103/Physics.19.s81",
-    "categories": [
-      "ai-science",
-      "theoretical-nuclear",
-      "frontiers"
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "experimental"
     ],
-    "tags": [
-      "mean-field",
-      "neural network"
-    ],
-    "importance": 49,
-    "arxiv_id": "",
-    "pdf_url": "",
-    "doi": "",
-    "score_reasons": [
-      "来源权重 +32",
-      "完整摘要 +2"
-    ],
-    "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
-    "abstract": "",
-    "abstract_status": "missing",
-    "abstract_source": "",
-    "license": "",
-    "publisher_licenses": [],
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "rights_status": "unknown",
-    "citation_authors": [],
-    "journal_abbrev": "",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
-    "publisher": "",
-    "publisher_url": "",
-    "citation_metadata_checked": false
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "8214fb554a57ccf4",
@@ -1996,7 +2258,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2005,7 +2267,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2022,7 +2284,57 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
+  },
+  {
+    "id": "27cf4afada1f8c88",
+    "type": "news",
+    "title": "Rethinking Mean-Field Theory for Neural Networks",
+    "summary": "Author(s): Ryan Wilkinson An extended version of mean-field theory accurately captures activity patterns seen in networks of biological neurons. [Physics 19, s81] Published Tue Jun 30, 2026",
+    "published": "2026-06-30",
+    "source": "APS Physics",
+    "url": "http://link.aps.org/doi/10.1103/Physics.19.s81",
+    "categories": [
+      "frontiers"
+    ],
+    "tags": [],
+    "importance": 34,
+    "arxiv_id": "",
+    "pdf_url": "",
+    "doi": "",
+    "score_reasons": [
+      "来源权重 +32",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
+    "abstract": "",
+    "abstract_status": "missing",
+    "abstract_source": "",
+    "license": "",
+    "publisher_licenses": [],
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "rights_status": "unknown",
+    "citation_authors": [],
+    "journal_abbrev": "",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "numpages": "",
+    "publisher": "",
+    "publisher_url": "",
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "8fd70503e31e5ebd",
@@ -2036,7 +2348,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2045,7 +2357,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2062,7 +2374,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "756e4c804515bb83",
@@ -2076,7 +2392,15 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 50
+    "importance": 42,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": [],
+    "score_reasons": [
+      "来源权重 +40",
+      "完整摘要 +2"
+    ]
   },
   {
     "id": "2da78c1538df9be4",
@@ -2092,7 +2416,7 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2101,7 +2425,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2118,7 +2442,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
   },
   {
     "id": "7be72ccf0259d42e",
@@ -2132,7 +2462,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2141,7 +2471,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2158,7 +2488,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "b172d5b830af31a1",
@@ -2172,7 +2506,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2181,7 +2515,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2198,7 +2532,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "5693bb1179c1859e",
@@ -2212,7 +2550,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2221,7 +2559,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2238,7 +2576,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "adb4a6dde8b4c5ce",
@@ -2252,7 +2594,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2261,7 +2603,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2278,7 +2620,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "91d07d7cd3ee51b4",
@@ -2312,7 +2660,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "965a74384cb92d75",
@@ -2326,7 +2680,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2335,7 +2689,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2352,7 +2706,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "f276e80f697b78f8",
@@ -2366,7 +2726,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2375,7 +2735,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2392,7 +2752,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "3594f994e0b27eea",
@@ -2403,13 +2769,10 @@
     "source": "APS Physics",
     "url": "http://link.aps.org/doi/10.1103/Physics.19.s80",
     "categories": [
-      "experimental-nuclear",
       "frontiers"
     ],
-    "tags": [
-      "spectroscopy"
-    ],
-    "importance": 48,
+    "tags": [],
+    "importance": 42,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2419,7 +2782,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2436,7 +2799,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "e57b9c60b11d2e97",
@@ -2452,7 +2821,7 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2461,7 +2830,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2478,7 +2847,15 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
   },
   {
     "id": "8e94636e34441738",
@@ -2494,7 +2871,7 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2503,7 +2880,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2520,7 +2897,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
   },
   {
     "id": "003025115ab91877",
@@ -2534,7 +2917,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2543,7 +2926,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2560,7 +2943,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "920bca205c7d4fc1",
@@ -2594,7 +2981,16 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [
+      "theoretical",
+      "review"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "e47f12ebf6d740c5",
@@ -2608,7 +3004,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2617,7 +3013,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2634,7 +3030,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "1744d3df53f1cd05",
@@ -2650,7 +3050,7 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2659,7 +3059,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2676,7 +3076,15 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
   },
   {
     "id": "852d63d8dd1068f8",
@@ -2687,14 +3095,14 @@
     "source": "APS Physics",
     "url": "http://link.aps.org/doi/10.1103/Physics.19.84",
     "categories": [
-      "frontiers",
-      "particle-cross"
+      "particle-cross",
+      "frontiers"
     ],
     "tags": [
       "dark matter",
       "quantum"
     ],
-    "importance": 44,
+    "importance": 39,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2705,7 +3113,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2722,7 +3130,16 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "particle-cross",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "dark matter",
+      "quantum"
+    ]
   },
   {
     "id": "c1cd4f1d315e757a",
@@ -2738,7 +3155,7 @@
     "tags": [
       "neutrino"
     ],
-    "importance": 40,
+    "importance": 37,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2748,7 +3165,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2765,7 +3182,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "particle-cross",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "neutrino"
+    ]
   },
   {
     "id": "61c17de857afdb5f",
@@ -2779,7 +3202,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2788,7 +3211,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2805,7 +3228,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "60bfb1ba63d91b25",
@@ -2819,7 +3246,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2828,7 +3255,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2845,7 +3272,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "66e0d10508ccf3e7",
@@ -2879,7 +3310,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "1a6e24342bf98166",
@@ -2895,7 +3332,7 @@
     "tags": [
       "machine learning"
     ],
-    "importance": 44,
+    "importance": 38,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2905,7 +3342,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2922,7 +3359,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "ai-science",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "machine learning"
+    ]
   },
   {
     "id": "d562b258609bb85c",
@@ -2938,7 +3381,7 @@
     "tags": [
       "black hole"
     ],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2947,7 +3390,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -2964,7 +3407,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "black hole"
+    ]
   },
   {
     "id": "160ecdde5b22e619",
@@ -2975,8 +3424,8 @@
     "source": "GSI/FAIR",
     "url": "https://www.gsi.de/en/start/news/details?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=6265&cHash=ffabe192f09bd884f24ca96bd0d95b91",
     "categories": [
-      "ai-science",
-      "nuclear-astrophysics"
+      "nuclear-astrophysics",
+      "ai-science"
     ],
     "tags": [
       "nucleosynthesis",
@@ -2986,7 +3435,7 @@
       "machine learning",
       "deep learning"
     ],
-    "importance": 58,
+    "importance": 52,
     "score_reasons": [
       "来源权重 +40",
       "核物理研究侧重 +8",
@@ -3005,7 +3454,21 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "nuclear-astrophysics",
+    "methods": [
+      "theoretical",
+      "review"
+    ],
+    "classification_confidence": 0.96,
+    "classification_evidence": [
+      "nucleosynthesis",
+      "neutron star",
+      "r-process",
+      "artificial intelligence",
+      "machine learning",
+      "deep learning"
+    ]
   },
   {
     "id": "87c5956f986ec228",
@@ -3021,7 +3484,7 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3030,7 +3493,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3047,7 +3510,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
   },
   {
     "id": "6be340174d6d2916",
@@ -3061,7 +3530,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 48,
+    "importance": 42,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3071,7 +3540,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3088,7 +3557,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "aca6bc007a8a58ca",
@@ -3102,7 +3575,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3111,7 +3584,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3128,7 +3601,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "bd2d4e0270eb8170",
@@ -3142,7 +3619,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3151,7 +3628,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3168,7 +3645,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "6c28197b9f9c27c3",
@@ -3182,7 +3663,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3191,7 +3672,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3208,7 +3689,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "a288d416aa79d634",
@@ -3222,7 +3709,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3231,7 +3718,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3248,7 +3735,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "b37a91527d3a1177",
@@ -3262,7 +3755,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3271,7 +3764,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3288,7 +3781,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "858e9f7b05e89636",
@@ -3302,7 +3801,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3311,7 +3810,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3328,7 +3827,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "af8ebbb323e49e6a",
@@ -3354,7 +3857,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3371,7 +3874,16 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "theoretical-nuclear",
+    "methods": [
+      "experimental",
+      "theoretical"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "shell model"
+    ]
   },
   {
     "id": "d9c87838e0929919",
@@ -3385,7 +3897,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3394,7 +3906,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3411,50 +3923,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
-  },
-  {
-    "id": "0cac90bc710962d0",
-    "type": "news",
-    "title": "A More Accurate Prediction of Band-Gap Energies",
-    "summary": "Author(s): Rachel Berkowitz A computational framework captures the influence of many-body effects on semiconductor band gaps. [Physics 19, s66] Published Tue May 26, 2026",
-    "published": "2026-05-26",
-    "source": "APS Physics",
-    "url": "http://link.aps.org/doi/10.1103/Physics.19.s66",
-    "categories": [
-      "theoretical-nuclear",
-      "frontiers"
-    ],
-    "tags": [
-      "many-body"
-    ],
-    "importance": 49,
-    "arxiv_id": "",
-    "pdf_url": "",
-    "doi": "",
-    "score_reasons": [
-      "来源权重 +32",
-      "完整摘要 +2"
-    ],
-    "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
-    "abstract": "",
-    "abstract_status": "missing",
-    "abstract_source": "",
-    "license": "",
-    "publisher_licenses": [],
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "rights_status": "unknown",
-    "citation_authors": [],
-    "journal_abbrev": "",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
-    "publisher": "",
-    "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "92f1024c5368754f",
@@ -3468,7 +3941,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3477,7 +3950,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3494,7 +3967,57 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
+  },
+  {
+    "id": "0cac90bc710962d0",
+    "type": "news",
+    "title": "A More Accurate Prediction of Band-Gap Energies",
+    "summary": "Author(s): Rachel Berkowitz A computational framework captures the influence of many-body effects on semiconductor band gaps. [Physics 19, s66] Published Tue May 26, 2026",
+    "published": "2026-05-26",
+    "source": "APS Physics",
+    "url": "http://link.aps.org/doi/10.1103/Physics.19.s66",
+    "categories": [
+      "frontiers"
+    ],
+    "tags": [],
+    "importance": 34,
+    "arxiv_id": "",
+    "pdf_url": "",
+    "doi": "",
+    "score_reasons": [
+      "来源权重 +32",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
+    "abstract": "",
+    "abstract_status": "missing",
+    "abstract_source": "",
+    "license": "",
+    "publisher_licenses": [],
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "rights_status": "unknown",
+    "citation_authors": [],
+    "journal_abbrev": "",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "numpages": "",
+    "publisher": "",
+    "publisher_url": "",
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "2caa780786dfefbe",
@@ -3510,7 +4033,7 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3519,7 +4042,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3536,7 +4059,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
   },
   {
     "id": "2208f438e51b2e04",
@@ -3550,7 +4079,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3559,7 +4088,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3576,7 +4105,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "a04721277c3dc514",
@@ -3590,7 +4123,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3599,7 +4132,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3616,7 +4149,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "f59e0f1bdd2b37e3",
@@ -3630,7 +4167,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3639,7 +4176,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3656,7 +4193,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "9247621166e5bcf0",
@@ -3672,7 +4213,7 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3681,7 +4222,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3698,7 +4239,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
   },
   {
     "id": "bec2145c8944191d",
@@ -3714,7 +4261,7 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3723,7 +4270,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3740,7 +4287,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
   },
   {
     "id": "50d8d887c85ee8af",
@@ -3754,7 +4307,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3763,7 +4316,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3780,7 +4333,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "5223cf94fb51fa70",
@@ -3794,7 +4351,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3803,7 +4360,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3820,7 +4377,11 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "e7276aa2f09fcf31",
@@ -3836,7 +4397,7 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3845,7 +4406,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3862,7 +4423,13 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
   },
   {
     "id": "de67cc7f54261627",
@@ -3873,14 +4440,14 @@
     "source": "APS Physics",
     "url": "http://link.aps.org/doi/10.1103/Physics.19.67",
     "categories": [
+      "nuclear-decay",
       "fusion",
-      "particle-cross",
-      "nuclear-decay"
+      "particle-cross"
     ],
     "tags": [
+      "radioactive decay",
       "tritium",
-      "neutrino",
-      "radioactive decay"
+      "neutrino"
     ],
     "importance": 60,
     "arxiv_id": "",
@@ -3893,7 +4460,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T10:41:39+00:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -3910,7 +4477,17 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "nuclear-decay",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.72,
+    "classification_evidence": [
+      "radioactive decay",
+      "tritium",
+      "neutrino"
+    ]
   },
   {
     "id": "9e13ce0971ef7082",
@@ -3924,7 +4501,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3941,7 +4518,11 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "d015893163f6d261",
@@ -3955,10 +4536,18 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 34,
     "arxiv_id": "",
     "pdf_url": "",
-    "doi": ""
+    "doi": "",
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": [],
+    "score_reasons": [
+      "来源权重 +32",
+      "完整摘要 +2"
+    ]
   },
   {
     "id": "019f55d145b5b036",
@@ -3974,7 +4563,18 @@
     "tags": [
       "particle physics"
     ],
-    "importance": 50
+    "importance": 45,
+    "primary_topic": "particle-cross",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "particle physics"
+    ],
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +3",
+      "完整摘要 +2"
+    ]
   },
   {
     "id": "8dd3ea7911005397",
@@ -3985,13 +4585,10 @@
     "source": "GSI/FAIR",
     "url": "https://www.gsi.de/en/start/news/details?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=6253&cHash=0c4fb3e444615a8006aaaaf40e58fc1f",
     "categories": [
-      "nuclear-reactions",
       "frontiers"
     ],
-    "tags": [
-      "fusion"
-    ],
-    "importance": 50,
+    "tags": [],
+    "importance": 42,
     "score_reasons": [
       "来源权重 +40",
       "完整摘要 +2"
@@ -4008,7 +4605,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "frontiers",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "80cf8fbfa998fa3e",
@@ -4042,7 +4645,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "82a6b642d454d0e3",
@@ -4053,10 +4662,23 @@
     "source": "GSI/FAIR",
     "url": "https://www.gsi.de/en/start/news/details?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=6249&cHash=e42f5bf0ed32c0a622dc8aea60597ace",
     "categories": [
-      "frontiers"
+      "accelerators"
     ],
-    "tags": [],
-    "importance": 50
+    "tags": [
+      "storage ring"
+    ],
+    "importance": 52,
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "storage ring"
+    ],
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +10",
+      "完整摘要 +2"
+    ]
   },
   {
     "id": "9c5d5ed07419de18",
@@ -4090,7 +4712,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "05b8fb784ba393e5",
@@ -4124,7 +4752,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "f8e296844066ae40",
@@ -4158,7 +4792,15 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "b8c30f7903d0d904",
@@ -4174,7 +4816,7 @@
     "tags": [
       "neutrino"
     ],
-    "importance": 58,
+    "importance": 45,
     "score_reasons": [
       "来源权重 +40",
       "核物理研究侧重 +3",
@@ -4192,7 +4834,15 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "particle-cross",
+    "methods": [
+      "review"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "neutrino"
+    ]
   },
   {
     "id": "60becadd4a4b62bd",
@@ -4206,7 +4856,7 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 50,
+    "importance": 42,
     "score_reasons": [
       "来源权重 +40",
       "完整摘要 +2"
@@ -4223,7 +4873,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "frontiers",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "f32e5d1e7fbdba35",
@@ -4234,12 +4890,20 @@
     "source": "GSI/FAIR",
     "url": "https://www.gsi.de/en/start/news/details?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=6236&cHash=b5d028112e79886c2822b6c2c7096da8",
     "categories": [
-      "detectors-daq"
+      "frontiers"
     ],
-    "tags": [
-      "detector"
+    "tags": [],
+    "importance": 42,
+    "primary_topic": "frontiers",
+    "methods": [
+      "experimental"
     ],
-    "importance": 50
+    "classification_confidence": 0.38,
+    "classification_evidence": [],
+    "score_reasons": [
+      "来源权重 +40",
+      "完整摘要 +2"
+    ]
   },
   {
     "id": "c08136bc200f23e6",
@@ -4273,7 +4937,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "9d0260e5c9666054",
@@ -4287,7 +4957,15 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 50
+    "importance": 42,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": [],
+    "score_reasons": [
+      "来源权重 +40",
+      "完整摘要 +2"
+    ]
   },
   {
     "id": "1f3b956a928d9618",
@@ -4321,7 +4999,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "a7d5104795606dc1",
@@ -4332,8 +5016,8 @@
     "source": "GSI/FAIR",
     "url": "https://www.gsi.de/en/start/news/details?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=6221&cHash=c461cb88917da27e60aafd9077b17f36",
     "categories": [
-      "experimental-nuclear",
       "nuclear-structure",
+      "experimental-nuclear",
       "nuclear-general"
     ],
     "tags": [
@@ -4360,7 +5044,15 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "nuclear-structure",
+    "methods": [],
+    "classification_confidence": 0.72,
+    "classification_evidence": [
+      "experimental nuclear",
+      "nuclear structure",
+      "nuclear physics"
+    ]
   },
   {
     "id": "d3f88d231b1e7e8d",
@@ -4376,7 +5068,18 @@
     "tags": [
       "exotic nuclei"
     ],
-    "importance": 50
+    "importance": 62,
+    "primary_topic": "nuclear-structure",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "exotic nuclei"
+    ],
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "完整摘要 +2"
+    ]
   },
   {
     "id": "0fab70ab443b2a23",
@@ -4411,7 +5114,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "0fc9550a0bb2c630",
@@ -4445,7 +5154,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "6f87ab651bfb193a",
@@ -4479,7 +5194,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "21db6916841866ec",
@@ -4513,7 +5234,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "ca8e211a618d31e3",
@@ -4524,13 +5251,10 @@
     "source": "GSI/FAIR",
     "url": "https://www.gsi.de/en/start/news/details?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=6193&cHash=18cf20ef48d21788f6a8da000ec683da",
     "categories": [
-      "nuclear-reactions",
       "frontiers"
     ],
-    "tags": [
-      "fusion"
-    ],
-    "importance": 50,
+    "tags": [],
+    "importance": 42,
     "score_reasons": [
       "来源权重 +40",
       "完整摘要 +2"
@@ -4547,7 +5271,11 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "c3d8f5486f1c3fbf",
@@ -4558,16 +5286,16 @@
     "source": "GSI/FAIR",
     "url": "https://www.gsi.de/en/start/news/details?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=6183&cHash=1c0a0987594f959bbf0e18d7a2a1285f",
     "categories": [
-      "ai-science",
-      "nuclear-general"
+      "nuclear-general",
+      "ai-science"
     ],
     "tags": [
-      "artificial intelligence",
-      "deep learning",
       "nuclear physics",
-      "nuclear matter"
+      "nuclear matter",
+      "artificial intelligence",
+      "deep learning"
     ],
-    "importance": 62,
+    "importance": 60,
     "score_reasons": [
       "来源权重 +40",
       "核物理研究侧重 +8",
@@ -4587,7 +5315,16 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "nuclear-general",
+    "methods": [],
+    "classification_confidence": 0.8,
+    "classification_evidence": [
+      "nuclear physics",
+      "nuclear matter",
+      "artificial intelligence",
+      "deep learning"
+    ]
   },
   {
     "id": "af2950b8076a661c",
@@ -4604,7 +5341,7 @@
       "ALICE",
       "hadron"
     ],
-    "importance": 54,
+    "importance": 51,
     "score_reasons": [
       "来源权重 +40",
       "核物理研究侧重 +9",
@@ -4622,7 +5359,14 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "high-energy-nuclear",
+    "methods": [],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "ALICE",
+      "hadron"
+    ]
   },
   {
     "id": "f2a28d9abab8877c",
@@ -4656,7 +5400,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "0b01a3601bbe4c31",
@@ -4690,7 +5440,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "2689a4d4cbb34796",
@@ -4724,7 +5480,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "0238df75c6cd7a4b",
@@ -4735,14 +5497,12 @@
     "source": "GSI/FAIR",
     "url": "https://www.gsi.de/en/start/news/details?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=6173&cHash=6cb3a556caeb645f4780675bae7b4936",
     "categories": [
-      "detectors-daq",
       "particle-cross"
     ],
     "tags": [
-      "detector",
       "neutrino"
     ],
-    "importance": 54,
+    "importance": 45,
     "score_reasons": [
       "来源权重 +40",
       "核物理研究侧重 +3",
@@ -4760,7 +5520,15 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "particle-cross",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "neutrino"
+    ]
   },
   {
     "id": "702c999f05ce751f",
@@ -4771,12 +5539,20 @@
     "source": "GSI/FAIR",
     "url": "https://www.gsi.de/en/start/news/details?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=6157&cHash=856628ee92df65eea3d0bca860a97411",
     "categories": [
-      "detectors-daq"
+      "frontiers"
     ],
-    "tags": [
-      "detector"
+    "tags": [],
+    "importance": 42,
+    "primary_topic": "frontiers",
+    "methods": [
+      "experimental"
     ],
-    "importance": 50
+    "classification_confidence": 0.38,
+    "classification_evidence": [],
+    "score_reasons": [
+      "来源权重 +40",
+      "完整摘要 +2"
+    ]
   },
   {
     "id": "c42cc73aa348b5ef",
@@ -4810,7 +5586,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "056761a84bf36369",
@@ -4824,7 +5606,17 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 50
+    "importance": 42,
+    "primary_topic": "frontiers",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.38,
+    "classification_evidence": [],
+    "score_reasons": [
+      "来源权重 +40",
+      "完整摘要 +2"
+    ]
   },
   {
     "id": "4f8e28901f6de617",
@@ -4858,7 +5650,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "8aef49da5597b2f1",
@@ -4895,7 +5693,14 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "nuclear-reactions",
+    "methods": [],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "neutron capture",
+      "storage ring"
+    ]
   },
   {
     "id": "8f44b9b6fa15e487",
@@ -4909,7 +5714,15 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 50
+    "importance": 42,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": [],
+    "score_reasons": [
+      "来源权重 +40",
+      "完整摘要 +2"
+    ]
   },
   {
     "id": "2ac7d9d738c91cc7",
@@ -4943,7 +5756,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "9dc163109b65e4e1",
@@ -4977,7 +5796,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "13f6a14cfe36ad22",
@@ -4991,7 +5816,15 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 50
+    "importance": 42,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": [],
+    "score_reasons": [
+      "来源权重 +40",
+      "完整摘要 +2"
+    ]
   },
   {
     "id": "724bff7f92e80c50",
@@ -5002,8 +5835,8 @@
     "source": "GSI/FAIR",
     "url": "https://www.gsi.de/en/start/news/details?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=6123&cHash=5b52aae6b5db8d10b6241e5db838a5c0",
     "categories": [
-      "frontiers",
-      "accelerators"
+      "accelerators",
+      "frontiers"
     ],
     "tags": [
       "accelerator",
@@ -5028,7 +5861,14 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "accelerator",
+      "quantum"
+    ]
   },
   {
     "id": "67f8d3ecb8087abe",
@@ -5062,7 +5902,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "e0ab9dd0caaefc12",
@@ -5096,7 +5942,13 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "93de4f77abf19599",
@@ -5110,7 +5962,15 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 58
+    "importance": 42,
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": [],
+    "score_reasons": [
+      "来源权重 +40",
+      "完整摘要 +2"
+    ]
   },
   {
     "id": "faf030a7d162c507",
@@ -5144,76 +6004,48 @@
     "publisher_licenses": [],
     "figures": [],
     "figure_status": "rights_unknown",
-    "rights_status": "unknown"
+    "rights_status": "unknown",
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ]
   },
   {
     "id": "a2df2f5bd5ec9bb5",
     "type": "news",
     "title": "The Worldwide LHC Computing Grid (WLCG)",
-    "summary": "",
+    "summary": "– Home | CERN CERN | Accelerating science Sign In Directory About About CERN → Who we are Our Mission Our Governance Our Member States Our History Our People What we do Fundamental research Contribute to society Environmentally responsible research Bring nations together Inspire and educate Key achievements Higgs boson W boson: Sunshine and stardust Z boson Large Hadron Collider Birth of the Web Antimatter News News → Press room Media kits Resources Events → Science Science → Physics Antimatter Dark matter The early universe The Higgs boson The Standard Model Accelerators CERN accelerator complex The Antiproton Decelerator Large Hadron Collider HiLumi LHC Future Circular Collider Engineering Accelerating: Radiofrequency cavities Pulling together: Superconducting electromagnets A vacuum as empty as interstellar space Cryogenics: Low temperatures, high performance Powering CERN Computing The CERN Data Centre The Worldwide LHC Computing Grid (WLCG) CERN openlab Open source for open science The birth of the Web Experiments ALICE ATLAS CMS LHCb Long Shutdown 3 Search English English Français The Worldwide LHC Computing Grid (WLCG) Dealing with the LHC data deluge The mission of the Worldwide LHC Computing Grid (WLCG) is to provide global computing resources for the storage, distribution and analysis of the data generated by the LHC. WLCG combines about 1.4 million computer cores and 1.5 exabytes of storage from over 170 sites in 42 countries. This massive distributed computing infrastructure provides more than 12 000 physicists around the world with near real-time access to LHC data, and the power to process it. It runs over 2 million tasks per day and, at the end of the LHC’s LS2, global transfer rates exceeded 260 GB/s. These numbers will increase as time goes on and as c",
     "published": "",
     "deadline": "",
     "source": "CERN News",
     "url": "https://home.cern/science/computing/grid/",
     "categories": [
-      "frontiers"
-    ],
-    "tags": [],
-    "importance": 60,
-    "arxiv_id": "",
-    "pdf_url": "",
-    "doi": "",
-    "score_reasons": [
-      "来源权重 +48"
-    ],
-    "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
-    "abstract": "",
-    "abstract_status": "missing",
-    "abstract_source": "",
-    "license": "",
-    "publisher_licenses": [],
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "rights_status": "unknown",
-    "source_url": "https://home.cern/tag/news/",
-    "notice_category": "meetings-nuclear",
-    "scope": "",
-    "citation_authors": [],
-    "journal_abbrev": "",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
-    "publisher": "",
-    "publisher_url": "",
-    "citation_metadata_checked": false
-  },
-  {
-    "id": "35e0f338802ea247",
-    "type": "news",
-    "title": "CERN accelerator complex",
-    "summary": "",
-    "published": "",
-    "deadline": "",
-    "source": "CERN News",
-    "url": "https://home.cern/science/accelerators/the-accelerator-complex/",
-    "categories": [
-      "accelerators"
+      "accelerators",
+      "high-energy-nuclear",
+      "particle-cross"
     ],
     "tags": [
-      "accelerator"
+      "ALICE",
+      "hadron",
+      "accelerator",
+      "dark matter",
+      "standard model",
+      "LHCb"
     ],
-    "importance": 60,
+    "importance": 64,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
     "score_reasons": [
       "来源权重 +48",
-      "核物理研究侧重 +10"
+      "核物理研究侧重 +10",
+      "跨领域关联 +4",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -5233,33 +6065,119 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.96,
+    "classification_evidence": [
+      "ALICE",
+      "hadron",
+      "accelerator",
+      "dark matter",
+      "standard model",
+      "LHCb"
+    ]
+  },
+  {
+    "id": "35e0f338802ea247",
+    "type": "news",
+    "title": "CERN accelerator complex",
+    "summary": "– Home | CERN CERN | Accelerating science Sign In Directory About About CERN → Who we are Our Mission Our Governance Our Member States Our History Our People What we do Fundamental research Contribute to society Environmentally responsible research Bring nations together Inspire and educate Key achievements Higgs boson W boson: Sunshine and stardust Z boson Large Hadron Collider Birth of the Web Antimatter News News → Press room Media kits Resources Events → Science Science → Physics Antimatter Dark matter The early universe The Higgs boson The Standard Model Accelerators CERN accelerator complex The Antiproton Decelerator Large Hadron Collider HiLumi LHC Future Circular Collider Engineering Accelerating: Radiofrequency cavities Pulling together: Superconducting electromagnets A vacuum as empty as interstellar space Cryogenics: Low temperatures, high performance Powering CERN Computing The CERN Data Centre The Worldwide LHC Computing Grid (WLCG) CERN openlab Open source for open science The birth of the Web Experiments ALICE ATLAS CMS LHCb Long Shutdown 3 Search English English Français CERN’s accelerator complex There’s more to CERN than the Large Hadron Collider. A series of accelerators work together to push particles to nearly the speed of light The accelerator complex at CERN is a succession of machines that accelerate particles to increasingly higher energies. Each machine boosts the energy of a beam of particles before injecting it into the next machine in the sequence. In the Large Hadron Collider (LHC) – the last element in this chain – particle beams are accelerated up to the record energy of 6.8 TeV per beam. Linear accelerator 4 ( Linac4 ) became the source of proton beams for the CERN accelerator complex in 2020 . It accelerates negative hydrogen ions (H-,",
+    "published": "",
+    "deadline": "",
+    "source": "CERN News",
+    "url": "https://home.cern/science/accelerators/the-accelerator-complex/",
+    "categories": [
+      "accelerators",
+      "high-energy-nuclear",
+      "particle-cross"
+    ],
+    "tags": [
+      "ALICE",
+      "hadron",
+      "accelerator",
+      "dark matter",
+      "standard model",
+      "LHCb"
+    ],
+    "importance": 64,
+    "arxiv_id": "",
+    "pdf_url": "",
+    "doi": "",
+    "score_reasons": [
+      "来源权重 +48",
+      "核物理研究侧重 +10",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
+    "abstract": "",
+    "abstract_status": "missing",
+    "abstract_source": "",
+    "license": "",
+    "publisher_licenses": [],
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "rights_status": "unknown",
+    "source_url": "https://home.cern/tag/news/",
+    "notice_category": "meetings-nuclear",
+    "scope": "",
+    "citation_authors": [],
+    "journal_abbrev": "",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "numpages": "",
+    "publisher": "",
+    "publisher_url": "",
+    "citation_metadata_checked": false,
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.96,
+    "classification_evidence": [
+      "ALICE",
+      "hadron",
+      "accelerator",
+      "dark matter",
+      "standard model",
+      "LHCb"
+    ]
   },
   {
     "id": "dd88a71bdde8e3a2",
     "type": "news",
     "title": "Accelerators",
-    "summary": "",
+    "summary": "– Home | CERN CERN | Accelerating science Sign In Directory About About CERN → Who we are Our Mission Our Governance Our Member States Our History Our People What we do Fundamental research Contribute to society Environmentally responsible research Bring nations together Inspire and educate Key achievements Higgs boson W boson: Sunshine and stardust Z boson Large Hadron Collider Birth of the Web Antimatter News News → Press room Media kits Resources Events → Science Science → Physics Antimatter Dark matter The early universe The Higgs boson The Standard Model Accelerators CERN accelerator complex The Antiproton Decelerator Large Hadron Collider HiLumi LHC Future Circular Collider Engineering Accelerating: Radiofrequency cavities Pulling together: Superconducting electromagnets A vacuum as empty as interstellar space Cryogenics: Low temperatures, high performance Powering CERN Computing The CERN Data Centre The Worldwide LHC Computing Grid (WLCG) CERN openlab Open source for open science The birth of the Web Experiments ALICE ATLAS CMS LHCb Long Shutdown 3 Search English English Français Accelerators CERN hosts a gigantic complex of particle accelerators. But what are these machines and how do they work? What is an accelerator? An accelerator propels charged particles, such as protons or electrons, at high speeds, close to the speed of light. They are then smashed either onto a target or against other particles circulating in the opposite direction. By studying these collisions, physicists are able to probe the world of the infinitely small. When the particles are sufficiently energetic, a phenomenon that defies the imagination happens: the energy of the collision is transformed into matter in the form of new particles, the most massive of which existed in the early Uni",
     "published": "",
     "deadline": "",
     "source": "CERN News",
     "url": "https://home.cern/science/accelerators/",
     "categories": [
       "accelerators",
-      "frontiers"
+      "high-energy-nuclear",
+      "particle-cross"
     ],
     "tags": [
-      "accelerator"
+      "ALICE",
+      "hadron",
+      "accelerator",
+      "dark matter",
+      "standard model",
+      "LHCb"
     ],
-    "importance": 60,
+    "importance": 64,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
     "score_reasons": [
-      "来源权重 +48"
+      "来源权重 +48",
+      "核物理研究侧重 +10",
+      "跨领域关联 +4",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-10T15:15:59+00:00",
+    "last_seen": "2026-08-10T23:41:55+08:00",
     "abstract": "",
     "abstract_status": "missing",
     "abstract_source": "",
@@ -5279,7 +6197,18 @@
     "numpages": "",
     "publisher": "",
     "publisher_url": "",
-    "citation_metadata_checked": false
+    "citation_metadata_checked": false,
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.96,
+    "classification_evidence": [
+      "ALICE",
+      "hadron",
+      "accelerator",
+      "dark matter",
+      "standard model",
+      "LHCb"
+    ]
   },
   {
     "id": "205ff862a0f31aee",
@@ -5293,15 +6222,19 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 50,
+    "importance": 40,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
     "score_reasons": [
-      "来源权重 +50"
+      "来源权重 +40"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T00:07:32+08:00"
+    "last_seen": "2026-08-08T00:07:32+08:00",
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "27f1773f40fa4d04",
@@ -5315,10 +6248,17 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 50,
+    "importance": 40,
     "arxiv_id": "",
     "pdf_url": "",
-    "doi": ""
+    "doi": "",
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": [],
+    "score_reasons": [
+      "来源权重 +40"
+    ]
   },
   {
     "id": "1a09fc864cec76b4",
@@ -5332,15 +6272,19 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 50,
+    "importance": 40,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
     "score_reasons": [
-      "来源权重 +50"
+      "来源权重 +40"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T00:07:32+08:00"
+    "last_seen": "2026-08-08T00:07:32+08:00",
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "5d8c416690335dc1",
@@ -5354,15 +6298,19 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 50,
+    "importance": 40,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
     "score_reasons": [
-      "来源权重 +50"
+      "来源权重 +40"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T00:07:32+08:00"
+    "last_seen": "2026-08-08T00:07:32+08:00",
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   },
   {
     "id": "2a0e7fce4d6e2c76",
@@ -5376,14 +6324,18 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 50,
+    "importance": 40,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
     "score_reasons": [
-      "来源权重 +50"
+      "来源权重 +40"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-08T00:07:32+08:00"
+    "last_seen": "2026-08-08T00:07:32+08:00",
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
   }
 ]

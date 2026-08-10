@@ -146,18 +146,31 @@
           </select>
           <button type="button" id="openNoticePortal">查看全部官方来源</button>
         </div>
-        <nav class="daily-notice-categories" id="dailyNoticeCategories" aria-label="每日通知分类"></nav>
+        <div class="daily-notice-layout">
+          <aside class="notice-group-panel" aria-label="通知三类导航">
+            <span class="section-kicker">NOTICE GROUPS</span>
+            <h2>通知分类</h2>
+            <p>会议、基金和束流申请分开展示。</p>
+            <nav class="daily-notice-categories" id="dailyNoticeCategories" aria-label="每日通知分类"></nav>
+          </aside>
 
-        <section class="deadline-board" id="deadlineBoard" aria-labelledby="deadlineBoardTitle">
-          <header><div><span class="section-kicker">DEADLINE WATCH</span><h2 id="deadlineBoardTitle">即将截止</h2></div><small>截止日期由官方原文自动识别，请点开原文复核</small></header>
-          <div class="deadline-list" id="deadlineList"></div>
-        </section>
+          <div class="daily-notice-main">
+            <section class="deadline-board" id="deadlineBoard" aria-labelledby="deadlineBoardTitle">
+              <header><div><span class="section-kicker">DEADLINE WATCH</span><h2 id="deadlineBoardTitle">即将截止</h2></div><small>截止日期由官方原文自动识别，请点开原文复核</small></header>
+              <div class="deadline-list" id="deadlineList"></div>
+            </section>
 
-        <section class="daily-notice-feed" aria-labelledby="dailyNoticeFeedTitle">
-          <header><div><span class="section-kicker">LATEST RELEASES</span><h2 id="dailyNoticeFeedTitle">最新通知</h2></div><strong id="dailyNoticeResultCount">—</strong></header>
-          <div class="daily-notice-list" id="dailyNoticeList" aria-live="polite"></div>
-          <button class="load-more" id="dailyNoticeMore" type="button" hidden>显示更多通知</button>
-        </section>
+            <section class="daily-notice-feed" aria-labelledby="dailyNoticeFeedTitle">
+              <header><div><span class="section-kicker">LATEST RELEASES</span><h2 id="dailyNoticeFeedTitle">最新通知</h2></div><strong id="dailyNoticeResultCount">—</strong></header>
+              <div class="daily-notice-list" id="dailyNoticeList" aria-live="polite"></div>
+              <button class="load-more" id="dailyNoticeMore" type="button" hidden>显示更多通知</button>
+            </section>
+          </div>
+
+          <aside class="notice-detail-panel" id="noticeDetailPanel" aria-live="polite">
+            <div class="notice-detail-empty"><span>✿</span><b>通知详细信息</b><p>点击左侧任一通知，在这里查看完整介绍、截止日期和官方链接。</p></div>
+          </aside>
+        </div>
       </section>
 
       <section class="workspace" id="stream">
@@ -167,7 +180,7 @@
           <div class="filter-modules" id="filterModules">
             <section class="filter-module" data-filter-module="categories">
               <div class="panel-title">
-                <span>研究领域</span>
+                <span id="researchFieldTitle">研究领域</span>
                 <span class="filter-module-actions"><button type="button" data-module-move="-1" aria-label="上移研究领域">↑</button><button type="button" data-module-move="1" aria-label="下移研究领域">↓</button></span>
                 <button id="clearCategory">全部</button>
               </div>

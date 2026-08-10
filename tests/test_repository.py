@@ -239,6 +239,26 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn(".daily-notice-list", styles)
         self.assertIn("overflow-x: hidden", styles)
 
+    def test_papers_news_and_notices_have_separate_left_classifications(self):
+        index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        styles = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn('id="researchFieldTitle"', index)
+        self.assertIn('id="dailyNoticeCategories"', index)
+        self.assertIn('id="noticeDetailPanel"', index)
+        self.assertIn("const categoryItems = state.view === 'news' ? state.news : state.papers", app)
+        self.assertIn("state.categorySelections[state.view === 'news' ? 'news' : 'papers']", app)
+        self.assertIn("NOTICE_GROUPS", app)
+        self.assertIn("会议通知", app)
+        self.assertIn("科研基金", app)
+        self.assertIn("束流申请", app)
+        self.assertIn("function renderAssistantNewsDetail", app)
+        self.assertIn("function renderNoticeDetail", app)
+        self.assertIn("function localizedDescription", app)
+        self.assertIn(".daily-notice-layout", styles)
+        self.assertIn(".notice-detail-panel", styles)
+        self.assertIn(".notice-original-preview", styles)
+
     def test_published_notice_feed_excludes_non_physics_fields(self):
         notices = json.loads((ROOT / "data" / "notices.json").read_text(encoding="utf-8"))
         self.assertGreater(len(notices), 0)

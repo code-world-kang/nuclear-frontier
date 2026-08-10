@@ -351,17 +351,53 @@ def notice_date_from_url(url: str) -> str:
         return ""
 
 
+def html_fragment_text(value: str) -> str:
+    parser = PageMetadataParser()
+    parser.feed(value or "")
+    return parser.visible_text
+
+
+def indico_event_metadata(url: str) -> dict[str, Any] | None:
+    parsed = urllib.parse.urlsplit(url)
+    match = re.search(r"/event/(\d+)(?:/|$)", parsed.path)
+    if not match or "indico" not in (parsed.hostname or "").lower():
+        return None
+    export_url = urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, f"/export/event/{match.group(1)}.json", "", ""))
+    payload = json.loads(fetch(export_url, accept="application/json", attempts=1))
+    results = payload.get("results") if isinstance(payload, dict) else None
+    if not isinstance(results, list) or not results:
+        return None
+    event = results[0] if isinstance(results[0], dict) else {}
+    content = html_fragment_text(str(event.get("description") or ""))[:6000]
+    start = event.get("startDate") if isinstance(event.get("startDate"), dict) else {}
+    end = event.get("endDate") if isinstance(event.get("endDate"), dict) else {}
+    dates = [str(start.get("date") or ""), str(end.get("date") or "")]
+    date_line = " — ".join(value for value in dates if value)
+    summary = clean_text(" ".join(value for value in (date_line, content) if value))
+    return {
+        "summary": summary[:900],
+        "content": content,
+        "published": str(end.get("date") or start.get("date") or ""),
+        "deadline": "",
+        "headings": [str(event.get("title") or "")],
+    }
+
+
 def notice_detail_metadata(url: str, title: str = "") -> dict[str, Any]:
     """读取少量新通知的详情页，失败时安全退回列表页元数据。"""
+    indico = indico_event_metadata(url)
+    if indico:
+        return indico
     raw = fetch(url, accept="text/html", attempts=1).decode("utf-8", errors="replace")
     parser = PageMetadataParser()
     parser.feed(raw)
     visible = parser.visible_text[:30000]
     description = ""
+    content = ""
     if title:
         candidates: list[tuple[int, str]] = []
         for match in re.finditer(re.escape(title), visible, re.I):
-            candidate = clean_text(visible[match.end():match.end() + 900])
+            candidate = clean_text(visible[match.end():match.end() + 6000])
             lowered = candidate[:220].lower()
             if candidate.startswith("|") or "skip to main content" in lowered:
                 continue
@@ -371,25 +407,96 @@ def notice_detail_metadata(url: str, title: str = "") -> dict[str, Any]:
             score -= sum(term in candidate.lower() for term in navigation_terms) * 2
             candidates.append((score, candidate))
         if candidates:
-            description = max(candidates, key=lambda value: value[0])[1]
+            content = max(candidates, key=lambda value: value[0])[1]
+            description = content
     if not description and parser.description:
         title_terms = [term for term in re.split(r"\W+", title.lower()) if len(term) >= 4]
         if not title_terms or any(term in parser.description.lower() for term in title_terms[:5]):
             description = parser.description
+            content = parser.description
     if not description:
         sentences = [clean_text(part) for part in re.split(r"[。！？!?]", visible)]
         description = next((part for part in sentences if 45 <= len(part) <= 420), "")
+        content = description
     deadline = extract_deadline(visible)
     if deadline and not any(term in description.lower() for term in ("截止", "申请时间", "deadline", "submitted")):
         context = re.search(r"[^.。]{0,260}(?:截止|申请时间|deadline|submitted)[^.。]{0,520}[.。]?", visible, re.I)
         if context:
             description = clean_text(context.group(0))
     return {
-        "summary": description[:500],
+        "summary": description[:900],
+        "content": content[:6000],
         "published": notice_date_from_url(url) or extract_notice_date(visible[:5000]) or extract_english_notice_date(visible[:5000]),
         "deadline": deadline,
         "headings": parser.headings,
     }
+
+
+def news_detail_metadata(url: str, title: str = "") -> dict[str, str]:
+    raw = fetch(url, accept="text/html", attempts=1).decode("utf-8", errors="replace")
+    parser = PageMetadataParser()
+    parser.feed(raw)
+    summary = clean_text(parser.description)
+    if len(summary) < 45:
+        visible = parser.visible_text[:16000]
+        if title:
+            match = re.search(re.escape(title), visible, re.I)
+            if match:
+                summary = clean_text(visible[match.end():match.end() + 1800])
+        if len(summary) < 45:
+            summary = next((part for part in re.split(r"[。！？!?]", visible) if 60 <= len(clean_text(part)) <= 1400), "")
+    return {"summary": summary[:1800]}
+
+
+def notice_summary_is_low_quality(value: str) -> bool:
+    lowered = clean_text(value).lower()
+    return len(lowered) < 45 or any(term in lowered for term in (
+        "indico style", "choose timezone", "africa/abidjan", "skip to main content",
+    ))
+
+
+def enrich_missing_news_details(items: list[dict[str, Any]], limit: int = 30) -> dict[str, int]:
+    candidates = [item for item in items if len(clean_text(item.get("summary", ""))) < 45][:max(0, limit)]
+    success = 0
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
+        futures = {pool.submit(news_detail_metadata, item.get("url", ""), item.get("title", "")): item for item in candidates}
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                details = future.result()
+            except Exception:  # noqa: BLE001 - 单个新闻详情失败不影响日更
+                continue
+            summary = clean_text(details.get("summary", ""))
+            if summary:
+                futures[future]["summary"] = summary
+                success += 1
+    return {"attempted": len(candidates), "updated": success}
+
+
+def enrich_notice_details(items: list[dict[str, Any]], limit: int = 60) -> dict[str, int]:
+    candidates = [
+        item for item in items
+        if not item.get("content") or notice_summary_is_low_quality(item.get("summary", ""))
+    ][:max(0, limit)]
+    success = 0
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
+        futures = {pool.submit(notice_detail_metadata, item.get("url", ""), item.get("title", "")): item for item in candidates}
+        for future in concurrent.futures.as_completed(futures):
+            item = futures[future]
+            try:
+                details = future.result()
+            except Exception:  # noqa: BLE001 - 保留原始列表元数据
+                continue
+            summary = clean_text(details.get("summary", ""))
+            content = clean_text(details.get("content", ""))
+            if summary:
+                item["summary"] = summary
+            if content:
+                item["content"] = content
+            item["published"] = item.get("published") or details.get("published", "")
+            item["deadline"] = item.get("deadline") or details.get("deadline", "")
+            if summary or content:
+                success += 1
+    return {"attempted": len(candidates), "updated": success}
 
 
 class ArxivFigureParser(HTMLParser):
@@ -732,8 +839,10 @@ def fetch_crossref(source: dict[str, Any], classifier: Classifier, start: str, e
 def xml_text(element: ET.Element, names: list[str]) -> str:
     for child in element.iter():
         local = child.tag.rsplit("}", 1)[-1].lower()
-        if local in names and child.text:
-            return clean_text(child.text)
+        if local in names:
+            value = clean_text(" ".join(child.itertext()))
+            if value:
+                return value
     return ""
 
 
@@ -1243,6 +1352,7 @@ def fetch_notice(source: dict[str, Any], classifier: Classifier) -> tuple[list[d
             except Exception:  # noqa: BLE001 - 列表元数据仍可用
                 continue
             record["summary"] = details.get("summary", "")
+            record["content"] = details.get("content", "")
             record["published"] = record.get("published") or details.get("published", "")
             record["deadline"] = record.get("deadline") or details.get("deadline", "")
             if source.get("prefer_detail_heading"):
@@ -1482,6 +1592,22 @@ def main() -> int:
     )
     news = merge_records(existing_news, news_new, 1500)
     notices = merge_records(existing_notices, notices_new, 1500)
+    news_detail_stats = enrich_missing_news_details(
+        news, int(runtime.get("news_detail_enrichment_limit", 30))
+    )
+    news_sources = source_config.get("news_feeds", []) + [
+        source for source in source_config.get("notice_pages", []) if source.get("kind") == "news"
+    ]
+    news_weights = {source["name"]: int(source.get("weight", 3)) for source in news_sources}
+    for item in news:
+        classification = classifier.classification_details(
+            item.get("title", ""), item.get("summary", ""), item.get("source", ""), []
+        )
+        item.update(classification)
+        item["importance"], item["score_reasons"] = classifier.importance_details(
+            item.get("title", ""), item.get("summary", ""),
+            news_weights.get(item.get("source", ""), 3), classification["categories"],
+        )
     notice_source_categories = {
         source["name"]: source.get("notice_category", "funding-national")
         for source in source_config.get("notice_pages", []) if source.get("kind", "notice") == "notice"
@@ -1495,6 +1621,10 @@ def main() -> int:
         notice.setdefault("source_url", notice_source_urls.get(notice.get("source", ""), ""))
         notice.setdefault("scope", "")
         notice.setdefault("deadline", "")
+        notice.setdefault("content", "")
+    notice_detail_stats = enrich_notice_details(
+        notices, int(runtime.get("notice_detail_enrichment_limit", 60))
+    )
     notice_terms = {
         source["name"]: [term.lower() for term in source.get("include", [])]
         for source in source_config.get("notice_pages", []) if source.get("kind", "notice") == "notice"
@@ -1561,6 +1691,8 @@ def main() -> int:
         "fetched_counts": {"papers": len(papers_new), "news": len(news_new), "notices": len(notices_new)},
         "figure_enrichment": figure_stats,
         "abstract_enrichment": abstract_stats,
+        "news_detail_enrichment": news_detail_stats,
+        "notice_detail_enrichment": notice_detail_stats,
     }
     write_json(DATA / "status.json", status)
     print(json.dumps(status["counts"], ensure_ascii=False))
