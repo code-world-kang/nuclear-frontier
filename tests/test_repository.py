@@ -97,7 +97,10 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('id="homeFeaturedList"', index)
         self.assertIn('id="noticePortalDialog"', index)
         self.assertIn('id="noticePortalSearch"', index)
-        self.assertIn('data-notice-category="beam-domestic"', index)
+        self.assertIn('id="dailyNoticeDashboard"', index)
+        self.assertIn('id="dailyNoticeCategories"', index)
+        self.assertIn('id="deadlineList"', index)
+        self.assertIn('id="dailyNoticeList"', index)
         self.assertIn('Nature Communications', index)
         self.assertEqual(index.count('id="paperCount"'), 1)
         self.assertNotIn('class="paper-figures"', index)
@@ -158,6 +161,22 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("overflow-y: auto", styles)
         self.assertIn("function renderNoticePortal", app)
         self.assertIn("noticePortalQuery", app)
+
+    def test_daily_notice_sources_and_ui_are_categorized(self):
+        sources = json.loads((ROOT / "config" / "sources.json").read_text(encoding="utf-8"))["notice_pages"]
+        monitored = [item for item in sources if item.get("kind", "notice") == "notice"]
+        self.assertGreaterEqual(len(monitored), 30)
+        categories = {item.get("notice_category") for item in monitored}
+        self.assertTrue({
+            "funding-national", "funding-local", "talent", "beam-domestic",
+            "beam-international", "meetings-nuclear", "funding-international",
+        }.issubset(categories))
+        app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        styles = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn("function renderDailyNotices", app)
+        self.assertIn("function deadlineState", app)
+        self.assertIn(".daily-notice-list", styles)
+        self.assertIn("overflow-x: hidden", styles)
 
 
 if __name__ == "__main__":

@@ -16,6 +16,9 @@ from update_content import (  # noqa: E402
     count_new_records,
     enrich_arxiv_figures,
     enrich_missing_abstracts,
+    extract_deadline,
+    extract_english_notice_date,
+    extract_notice_date,
     merge_records,
     normalize_title,
     parse_arxiv_figures,
@@ -158,6 +161,31 @@ class PipelineTests(unittest.TestCase):
         raw = b'<rss><channel><item><title>A\x0b title</title><link>https://example.org/a</link></item></channel></rss>'
         items = parse_feed_items(raw)
         self.assertEqual(items[0]["title"], "A title")
+
+    def test_notice_date_supports_chinese_date(self):
+        self.assertEqual(extract_notice_date("发布日期：2026年8月10日"), "2026-08-10")
+
+    def test_notice_deadline_supports_chinese_and_english(self):
+        self.assertEqual(extract_deadline("申报截止日期为2026年9月9日。"), "2026-09-09")
+        self.assertEqual(extract_deadline("Proposal deadline: September 9, 2026"), "2026-09-09")
+        self.assertEqual(extract_deadline("All proposals must be submitted online by 11 p.m. EST on 9 September 2026."), "2026-09-09")
+        self.assertEqual(extract_english_notice_date("Published 1 June 2026"), "2026-06-01")
+
+    def test_notice_merge_preserves_verified_metadata(self):
+        old = [{
+            "id": "n", "type": "notice", "title": "Beam time call", "summary": "Official summary",
+            "published": "2026-08-01", "deadline": "2026-09-09", "notice_category": "beam-international",
+            "first_seen": "2026-08-01T00:00:00+08:00", "last_seen": "2026-08-01T00:00:00+08:00",
+        }]
+        incoming = [{
+            "id": "n", "type": "notice", "title": "Beam time call", "summary": "", "published": "",
+            "deadline": "", "notice_category": "beam-international", "first_seen": "2026-08-10T00:00:00+08:00",
+            "last_seen": "2026-08-10T00:00:00+08:00",
+        }]
+        merged = merge_records(old, incoming, 10)[0]
+        self.assertEqual(merged["summary"], "Official summary")
+        self.assertEqual(merged["deadline"], "2026-09-09")
+        self.assertEqual(merged["first_seen"], "2026-08-01T00:00:00+08:00")
 
     def test_arxiv_rss_prefix_is_removed_without_truncating_abstract(self):
         value = "arXiv:2608.00001v1 Announce Type: new Abstract: Full abstract sentence."

@@ -94,28 +94,14 @@
 
           <section class="home-stream-panel home-notice-panel" aria-labelledby="homeNoticeTitle">
             <header class="home-panel-head">
-              <div><span class="section-kicker">OFFICIAL DESK</span><h2 id="homeNoticeTitle">通知与常用入口</h2></div>
+              <div><span class="section-kicker">DAILY NOTICES</span><h2 id="homeNoticeTitle">每日通知</h2></div>
               <strong id="homeNoticeCount">—</strong>
             </header>
             <p class="home-scroll-hint">使用鼠标滚轮向下浏览更多通知</p>
             <div class="home-vertical-feed" id="homeNoticeList" tabindex="0" aria-label="向下滚动浏览官方通知">
               <div class="skeleton mini"></div>
             </div>
-            <section class="notice-portal-teaser" aria-labelledby="noticePortalTeaserTitle">
-              <div>
-                <span aria-hidden="true">🌱</span>
-                <div><b id="noticePortalTeaserTitle">科研申请与会议入口</b><small>基金·束流·博后·CSC·涉核会议</small></div>
-              </div>
-              <button type="button" id="openNoticePortal">打开全部入口 <span>→</span></button>
-              <nav class="notice-portal-quick" aria-label="通知入口快速分类">
-                <button type="button" data-notice-category="funding-national">国家基金</button>
-                <button type="button" data-notice-category="funding-local">省市基金</button>
-                <button type="button" data-notice-category="talent">博后·CSC</button>
-                <button type="button" data-notice-category="beam-domestic">国内束流</button>
-                <button type="button" data-notice-category="beam-international">国际束流</button>
-                <button type="button" data-notice-category="meetings-nuclear">涉核会议</button>
-              </nav>
-            </section>
+            <button type="button" class="home-all-notices" data-view-jump="notices">打开每日通知界面 <span>→</span></button>
           </section>
         </div>
 
@@ -130,6 +116,47 @@
           <div class="home-featured-list" id="homeFeaturedList" tabindex="0" aria-label="向下滚动浏览重点文章">
             <div class="skeleton tall"></div>
           </div>
+        </section>
+      </section>
+
+      <section class="daily-notice-dashboard" id="dailyNoticeDashboard" hidden aria-labelledby="dailyNoticeTitle">
+        <header class="daily-notice-hero">
+          <div>
+            <span class="section-kicker">DAILY RESEARCH NOTICES</span>
+            <h1 id="dailyNoticeTitle">每日科研通知</h1>
+            <p>自动合并基金申报、博后与 CSC、束流实验申请以及涉核会议通知。</p>
+          </div>
+          <div class="daily-notice-sync"><span class="status-pulse"></span><b id="dailyNoticeUpdated">正在读取更新时间…</b></div>
+        </header>
+
+        <section class="daily-notice-metrics" aria-label="通知统计">
+          <article><span>今日发现</span><strong id="noticeTodayCount">—</strong><small>本次自动同步首次发现</small></article>
+          <article><span>申请中</span><strong id="noticeOpenCount">—</strong><small>已识别截止日期且尚未截止</small></article>
+          <article><span>近7日发布</span><strong id="noticeWeekCount">—</strong><small>按官方发布日期计算</small></article>
+          <article><span>自动监测源</span><strong id="noticeSourceCount">—</strong><small id="noticeSourceHint">基金·束流·会议</small></article>
+        </section>
+
+        <div class="daily-notice-tools">
+          <label class="daily-notice-search"><span aria-hidden="true">⌕</span><input id="dailyNoticeSearch" type="search" placeholder="搜索通知、机构、装置或会议…" autocomplete="off"></label>
+          <select id="dailyNoticeTiming" aria-label="通知时间范围">
+            <option value="all">最新全部</option>
+            <option value="today">今日发现</option>
+            <option value="open">申请中</option>
+            <option value="7days">近7日发布</option>
+          </select>
+          <button type="button" id="openNoticePortal">查看全部官方来源</button>
+        </div>
+        <nav class="daily-notice-categories" id="dailyNoticeCategories" aria-label="每日通知分类"></nav>
+
+        <section class="deadline-board" id="deadlineBoard" aria-labelledby="deadlineBoardTitle">
+          <header><div><span class="section-kicker">DEADLINE WATCH</span><h2 id="deadlineBoardTitle">即将截止</h2></div><small>截止日期由官方原文自动识别，请点开原文复核</small></header>
+          <div class="deadline-list" id="deadlineList"></div>
+        </section>
+
+        <section class="daily-notice-feed" aria-labelledby="dailyNoticeFeedTitle">
+          <header><div><span class="section-kicker">LATEST RELEASES</span><h2 id="dailyNoticeFeedTitle">最新通知</h2></div><strong id="dailyNoticeResultCount">—</strong></header>
+          <div class="daily-notice-list" id="dailyNoticeList" aria-live="polite"></div>
+          <button class="load-more" id="dailyNoticeMore" type="button" hidden>显示更多通知</button>
         </section>
       </section>
 

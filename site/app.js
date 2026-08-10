@@ -5,6 +5,7 @@ const state = {
   papers: [], featured: [], news: [], notices: [], publicFavorites: [], translations: {}, noticePortals: { categories: [], entries: [] },
   meta: null, view: 'papers', category: 'all', source: 'all', query: '', searchField: 'all', sort: 'date', scope: 'daily-focus', visible: 20,
   dateFrom: '', dateTo: '', favoriteKeyword: 'all', favoriteDraft: null, noteDraft: null, mySection: 'papers', translatedIds: new Set(),
+  noticeCategory: 'all', noticeTiming: 'all', noticeQuery: '', noticeVisible: 24,
   noticePortalCategory: 'all', noticePortalQuery: '', personal: loadPersonal(), categoryMap: new Map(), favoriteSyncInFlight: false,
 };
 
@@ -134,6 +135,36 @@ function prettyDate(value) {
   const date = new Date(`${value.slice(0, 10)}T00:00:00`);
   if (Number.isNaN(date.getTime())) return value;
   return new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: 'short', day: 'numeric' }).format(date);
+}
+
+function beijingDay(value = new Date()) {
+  const date = value instanceof Date ? value : new Date(value);
+  if (Number.isNaN(date.getTime())) return '';
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', {
+    timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit',
+  }).formatToParts(date).map(part => [part.type, part.value]));
+  return `${parts.year}-${parts.month}-${parts.day}`;
+}
+
+function noticeCategoryInfo(id) {
+  return state.noticePortals.categories.find(category => category.id === id)
+    || { id: id || 'other', label: '其他通知', icon: '🌿' };
+}
+
+function noticePublishedDay(item) {
+  return (item.published || '').slice(0, 10);
+}
+
+function noticeFirstSeenDay(item) {
+  return beijingDay(item.first_seen || '') || (item.first_seen || '').slice(0, 10);
+}
+
+function deadlineState(item) {
+  const deadline = (item.deadline || '').slice(0, 10);
+  if (!deadline) return { kind: 'unknown', days: null };
+  const today = beijingDay();
+  const delta = Math.round((new Date(`${deadline}T00:00:00Z`) - new Date(`${today}T00:00:00Z`)) / 86400000);
+  return { kind: delta < 0 ? 'closed' : (delta <= 14 ? 'soon' : 'open'), days: delta };
 }
 
 function relativeUpdate(value) {
@@ -692,7 +723,7 @@ function setView(view) {
     papers: ['LATEST PAPERS', '最新论文', '题目与摘要保留原文'],
     featured: ['EDITOR\'S RADAR', '重点文献', '基于来源、新颖性与关注词评分'],
     news: ['OFFICIAL NEWS', '科研新闻', '仅保留官方原始链接'],
-    notices: ['OFFICIAL NOTICES', '官方通知', '截止日期请以原始通知为准'],
+    notices: ['DAILY NOTICES', '每日科研通知', '基金·束流·博后·CSC·涉核会议'],
     favorites: ['MY RESEARCH SPACE', '我的科研空间', '我的论文、代码与参考资料集中管理'],
     unread: ['READING QUEUE', '我的未读文献', '点击“未读”可在未读、在读和已读之间切换'],
   };
@@ -702,13 +733,20 @@ function setView(view) {
   $('#viewNote').textContent = note;
   $$('.nav-link, .view-tab').forEach(button => button.classList.toggle('active', button.dataset.view === view));
   const isHome = view === 'home';
+  const isNoticeDashboard = view === 'notices';
   $('#briefing').hidden = !isHome;
   $('#homeDashboard').hidden = !isHome;
-  $('#stream').hidden = isHome;
+  $('#dailyNoticeDashboard').hidden = !isNoticeDashboard;
+  $('#stream').hidden = isHome || isNoticeDashboard;
   updateMySpaceUI();
   if (isHome) {
     renderHomeDashboard();
     history.replaceState(null, '', `${PATH}#home`);
+    return;
+  }
+  if (isNoticeDashboard) {
+    renderDailyNotices();
+    history.replaceState(null, '', `${PATH}#notices`);
     return;
   }
   if (view === 'favorites') {
@@ -1172,7 +1210,8 @@ function renderHomeDashboard() {
       || (b.importance || 0) - (a.importance || 0))
     .slice(0, 30);
   const notices = [...state.notices]
-    .sort((a, b) => (b.published || '').localeCompare(a.published || '')
+    .sort((a, b) => Number(['open', 'soon'].includes(deadlineState(b).kind)) - Number(['open', 'soon'].includes(deadlineState(a).kind))
+      || (b.published || '').localeCompare(a.published || '')
       || (b.importance || 0) - (a.importance || 0))
     .slice(0, 30);
   const seen = new Set();
@@ -1198,6 +1237,122 @@ function renderHomeDashboard() {
   if (!news.length) $('#homeNewsList').innerHTML = '<p class="home-feed-empty">等待下一次自动更新。</p>';
   if (!notices.length) $('#homeNoticeList').innerHTML = '<p class="home-feed-empty">等待下一次自动更新。</p>';
   if (!featured.length) $('#homeFeaturedList').innerHTML = '<p class="home-feed-empty">五种重点期刊暂时没有可展示的新文章。</p>';
+}
+
+function dailyNoticeCard(item) {
+  const article = document.createElement('article');
+  article.className = 'daily-notice-card';
+  const category = noticeCategoryInfo(item.notice_category);
+  const deadline = deadlineState(item);
+  const runDay = beijingDay(state.meta?.status?.last_success || new Date());
+  const isFresh = noticeFirstSeenDay(item) === runDay;
+  const deadlineLabel = deadline.kind === 'closed'
+    ? `已截止 ${prettyDate(item.deadline)}`
+    : deadline.days === 0 ? '今日截止'
+      : deadline.days === 1 ? '明日截止'
+        : deadline.days !== null ? `还有 ${deadline.days} 天截止` : '';
+  article.dataset.category = category.id;
+  article.innerHTML = `
+    <div class="daily-notice-card-top">
+      <span class="notice-kind">${text(category.icon)} ${text(category.label)}</span>
+      <div>${isFresh ? '<b class="notice-fresh">今日发现</b>' : ''}${deadlineLabel ? `<b class="notice-deadline ${text(deadline.kind)}">${text(deadlineLabel)}</b>` : ''}</div>
+    </div>
+    <h3><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">${text(item.title)}</a></h3>
+    <p>${text(truncate(item.summary, 320) || '官方列表页未提供简介；点开原文可查看申请条件、时间与附件。')}</p>
+    <footer>
+      <div><b>${text(item.source || '官方来源')}</b><span>${text(item.scope || '')}</span><time>${text(prettyDate(item.published))}</time></div>
+      <a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">查看官方原文 ↗</a>
+    </footer>`;
+  return article;
+}
+
+function filteredDailyNotices() {
+  const runDay = beijingDay(state.meta?.status?.last_success || new Date());
+  const today = beijingDay();
+  const weekStart = new Date(`${today}T00:00:00Z`);
+  weekStart.setUTCDate(weekStart.getUTCDate() - 6);
+  const weekDay = weekStart.toISOString().slice(0, 10);
+  const query = state.noticeQuery.trim().toLocaleLowerCase('zh-CN');
+  return [...state.notices].filter(item => {
+    if (state.noticeCategory !== 'all' && item.notice_category !== state.noticeCategory) return false;
+    if (state.noticeTiming === 'today' && noticeFirstSeenDay(item) !== runDay) return false;
+    if (state.noticeTiming === 'open' && !['open', 'soon'].includes(deadlineState(item).kind)) return false;
+    if (state.noticeTiming === '7days' && noticePublishedDay(item) < weekDay) return false;
+    if (query) {
+      const haystack = [item.title, item.summary, item.source, item.scope, noticeCategoryInfo(item.notice_category).label]
+        .join(' ').toLocaleLowerCase('zh-CN');
+      if (!query.split(/\s+/).every(term => haystack.includes(term))) return false;
+    }
+    return true;
+  }).sort((a, b) => noticePublishedDay(b).localeCompare(noticePublishedDay(a))
+    || noticeFirstSeenDay(b).localeCompare(noticeFirstSeenDay(a))
+    || (b.importance || 0) - (a.importance || 0));
+}
+
+function renderDailyNoticeCategories() {
+  const host = $('#dailyNoticeCategories');
+  const categories = [{ id: 'all', label: '全部通知', icon: '🌿' }, ...(state.noticePortals.categories || [])];
+  const counts = new Map();
+  state.notices.forEach(item => counts.set(item.notice_category, (counts.get(item.notice_category) || 0) + 1));
+  host.replaceChildren(...categories.map(category => {
+    const button = document.createElement('button');
+    const count = category.id === 'all' ? state.notices.length : (counts.get(category.id) || 0);
+    button.type = 'button';
+    button.className = state.noticeCategory === category.id ? 'active' : '';
+    button.setAttribute('aria-pressed', String(state.noticeCategory === category.id));
+    button.innerHTML = `<span>${text(category.icon)}</span><b>${text(category.label)}</b><small>${count}</small>`;
+    button.addEventListener('click', () => {
+      state.noticeCategory = category.id;
+      state.noticeVisible = 24;
+      renderDailyNotices();
+    });
+    return button;
+  }));
+}
+
+function renderDailyNotices() {
+  const runDay = beijingDay(state.meta?.status?.last_success || new Date());
+  const today = beijingDay();
+  const weekStart = new Date(`${today}T00:00:00Z`);
+  weekStart.setUTCDate(weekStart.getUTCDate() - 6);
+  const weekDay = weekStart.toISOString().slice(0, 10);
+  const todayCount = state.notices.filter(item => noticeFirstSeenDay(item) === runDay).length;
+  const openItems = state.notices.filter(item => ['open', 'soon'].includes(deadlineState(item).kind));
+  const weekCount = state.notices.filter(item => noticePublishedDay(item) >= weekDay).length;
+  const sourceResults = (state.meta?.status?.source_results || []).filter(item => item.kind === 'notice');
+  const healthySources = sourceResults.filter(item => item.ok).length;
+
+  $('#noticeTodayCount').textContent = todayCount.toLocaleString('zh-CN');
+  $('#noticeOpenCount').textContent = openItems.length.toLocaleString('zh-CN');
+  $('#noticeWeekCount').textContent = weekCount.toLocaleString('zh-CN');
+  $('#noticeSourceCount').textContent = `${healthySources}/${sourceResults.length}`;
+  $('#noticeSourceHint').textContent = sourceResults.length ? `${sourceResults.length - healthySources} 个来源待重试` : '等待首次来源检查';
+  $('#dailyNoticeUpdated').textContent = relativeUpdate(state.meta?.status?.last_success || '');
+  renderDailyNoticeCategories();
+
+  const items = filteredDailyNotices();
+  $('#dailyNoticeResultCount').textContent = `共 ${items.length.toLocaleString('zh-CN')} 条`;
+  $('#dailyNoticeList').replaceChildren(...items.slice(0, state.noticeVisible).map(dailyNoticeCard));
+  if (!items.length) {
+    $('#dailyNoticeList').innerHTML = '<div class="daily-notice-empty"><span>🌱</span><b>暂无匹配通知</b><p>可切换分类或清空搜索条件。</p></div>';
+  }
+  $('#dailyNoticeMore').hidden = items.length <= state.noticeVisible;
+
+  const deadlineItems = openItems
+    .filter(item => state.noticeCategory === 'all' || item.notice_category === state.noticeCategory)
+    .sort((a, b) => (a.deadline || '').localeCompare(b.deadline || ''))
+    .slice(0, 8);
+  $('#deadlineBoard').hidden = !deadlineItems.length;
+  $('#deadlineList').replaceChildren(...deadlineItems.map(item => {
+    const link = document.createElement('a');
+    const deadline = deadlineState(item);
+    link.className = 'deadline-item';
+    link.href = item.url || '#';
+    link.target = '_blank';
+    link.rel = 'noreferrer';
+    link.innerHTML = `<time><b>${text((item.deadline || '').slice(5).replace('-', '月'))}日</b><small>${deadline.days === 0 ? '今日' : `还有 ${deadline.days} 天`}</small></time><div><span>${text(noticeCategoryInfo(item.notice_category).label)} · ${text(item.source)}</span><strong>${text(item.title)}</strong></div><i>↗</i>`;
+    return link;
+  }));
 }
 
 function noticePortalCategory(id) {
@@ -1539,7 +1694,9 @@ function bindEvents() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
   $$('[data-view-jump]').forEach(button => button.addEventListener('click', () => {
-    setView(button.dataset.viewJump); $('#stream').scrollIntoView({ behavior: 'smooth' });
+    setView(button.dataset.viewJump);
+    const target = button.dataset.viewJump === 'notices' ? $('#dailyNoticeDashboard') : $('#stream');
+    target?.scrollIntoView({ behavior: 'smooth' });
   }));
   $$('[data-scroll]').forEach(button => button.addEventListener('click', () => $(`#${button.dataset.scroll}`)?.scrollIntoView({ behavior: 'smooth' })));
   $$('.my-space-tab').forEach(button => button.addEventListener('click', () => setMySection(button.dataset.mySection)));
@@ -1603,10 +1760,25 @@ function bindEvents() {
     state.noticePortalQuery = event.target.value;
     renderNoticePortal();
   });
+  $('#dailyNoticeSearch').addEventListener('input', event => {
+    state.noticeQuery = event.target.value;
+    state.noticeVisible = 24;
+    renderDailyNotices();
+  });
+  $('#dailyNoticeTiming').addEventListener('change', event => {
+    state.noticeTiming = event.target.value;
+    state.noticeVisible = 24;
+    renderDailyNotices();
+  });
+  $('#dailyNoticeMore').addEventListener('click', () => {
+    state.noticeVisible += 24;
+    renderDailyNotices();
+  });
   $('#exportReferences').addEventListener('click', exportReferenceSet);
   document.addEventListener('keydown', event => {
     if (event.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
-      event.preventDefault(); $('#searchInput').focus();
+      event.preventDefault();
+      (state.view === 'notices' ? $('#dailyNoticeSearch') : $('#searchInput')).focus();
     }
   });
   window.addEventListener('online', tryFavoriteSync);

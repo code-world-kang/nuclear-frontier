@@ -195,6 +195,162 @@ class AnchorParser(HTMLParser):
             self.current_text = []
 
 
+class PageMetadataParser(HTMLParser):
+    """提取通知详情页中的描述和可见文本。
+
+    只用于识别官方发布日期、截止日期与短介，不保存或镜像原文全文。
+    """
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.description = ""
+        self.parts: list[str] = []
+        self.headings: list[str] = []
+        self.heading_parts: list[str] = []
+        self.heading_depth = 0
+        self.ignored_depth = 0
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        lowered = tag.lower()
+        values = {str(key).lower(): value or "" for key, value in attrs}
+        if lowered in {"script", "style", "svg", "noscript"}:
+            self.ignored_depth += 1
+        if lowered in {"h1", "h2", "h3"}:
+            self.heading_depth += 1
+            self.heading_parts = []
+        if lowered == "meta":
+            key = (values.get("name") or values.get("property") or "").lower()
+            if key in {"description", "og:description"} and not self.description:
+                self.description = clean_text(values.get("content"))
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.lower() in {"script", "style", "svg", "noscript"} and self.ignored_depth:
+            self.ignored_depth -= 1
+        if tag.lower() in {"h1", "h2", "h3"} and self.heading_depth:
+            heading = clean_text(" ".join(self.heading_parts))
+            if heading:
+                self.headings.append(heading)
+            self.heading_depth -= 1
+            self.heading_parts = []
+
+    def handle_data(self, data: str) -> None:
+        if not self.ignored_depth:
+            value = clean_text(data)
+            if value:
+                self.parts.append(value)
+                if self.heading_depth:
+                    self.heading_parts.append(value)
+
+    @property
+    def visible_text(self) -> str:
+        return clean_text(" ".join(self.parts))
+
+
+DATE_PATTERN = re.compile(r"(?<!\d)(20\d{2})\s*[年./-]\s*(\d{1,2})\s*[月./-]\s*(\d{1,2})\s*日?", re.I)
+DEADLINE_PATTERNS = (
+    re.compile(r"(?:截止(?:日期|时间)?|申请截止|申报截止|报名截止|受理时间[^\u3002；;]{0,24}?(?:至|到))\s*[:：为]?\s*(20\d{2}\s*[年./-]\s*\d{1,2}\s*[月./-]\s*\d{1,2}\s*日?)", re.I),
+    re.compile(r"(?:申请|申报|受理|报名)时间[^\u3002；;]{0,80}?(?:至|到|[-–—])\s*(20\d{2}\s*[年./-]\s*\d{1,2}\s*[月./-]\s*\d{1,2}\s*日?)", re.I),
+    re.compile(r"(?:deadline|closes?|due\s+date|applications?\s+(?:are\s+)?due|proposal\s+submission\s+deadline)\s*(?:is|on|:)?\s*((?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\s+\d{1,2}(?:st|nd|rd|th)?[,]?\s+20\d{2}|\d{1,2}(?:st|nd|rd|th)?\s+(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\s+20\d{2}|20\d{2}[-/.]\d{1,2}[-/.]\d{1,2})", re.I),
+    re.compile(r"(?:submitted|received|apply)[^.]{0,100}?(?:by|before|until)\s*(?:\d{1,2}(?::\d{2})?\s*(?:a\.?m\.?|p\.?m\.?)?\s*[A-Z]{2,5}\s*(?:on)?)?\s*(\d{1,2}(?:st|nd|rd|th)?\s+(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\s+20\d{2}|(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\s+\d{1,2},?\s+20\d{2})", re.I),
+)
+
+
+def extract_notice_date(value: str) -> str:
+    matches = list(DATE_PATTERN.finditer(value or ""))
+    if not matches:
+        return iso_date(value)
+    # 很多列表项的排列为“截止时间 发布时间 标题”，发布日期通常是最后一个。
+    match = matches[-1]
+    try:
+        return dt.date(int(match.group(1)), int(match.group(2)), int(match.group(3))).isoformat()
+    except ValueError:
+        return ""
+
+
+def extract_deadline(value: str) -> str:
+    """从中英文官方通知中识别明确的截止日期。"""
+    text_value = clean_text(value)
+    for pattern in DEADLINE_PATTERNS:
+        match = pattern.search(text_value)
+        if not match:
+            continue
+        candidate = re.sub(r"(\d)(?:st|nd|rd|th)\b", r"\1", match.group(1), flags=re.I)
+        parsed = extract_notice_date(candidate)
+        if parsed:
+            return parsed
+        for fmt in ("%B %d, %Y", "%B %d %Y", "%b %d, %Y", "%b %d %Y", "%d %B %Y", "%d %b %Y"):
+            try:
+                return dt.datetime.strptime(candidate, fmt).date().isoformat()
+            except ValueError:
+                pass
+    return ""
+
+
+def extract_english_notice_date(value: str) -> str:
+    month = r"(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)"
+    match = re.search(rf"\b(\d{{1,2}}\s+{month}\s+20\d{{2}}|{month}\s+\d{{1,2}},?\s+20\d{{2}})\b", value or "", re.I)
+    if not match:
+        return ""
+    candidate = match.group(1).replace(",", "")
+    for fmt in ("%d %B %Y", "%d %b %Y", "%B %d %Y", "%b %d %Y"):
+        try:
+            return dt.datetime.strptime(candidate, fmt).date().isoformat()
+        except ValueError:
+            pass
+    return ""
+
+
+def notice_date_from_url(url: str) -> str:
+    match = re.search(r"(?:^|[/_-])t?(20\d{2})(\d{2})(\d{2})(?:[_/.-]|$)", url, re.I)
+    if not match:
+        return ""
+    try:
+        return dt.date(int(match.group(1)), int(match.group(2)), int(match.group(3))).isoformat()
+    except ValueError:
+        return ""
+
+
+def notice_detail_metadata(url: str, title: str = "") -> dict[str, Any]:
+    """读取少量新通知的详情页，失败时安全退回列表页元数据。"""
+    raw = fetch(url, accept="text/html", attempts=1).decode("utf-8", errors="replace")
+    parser = PageMetadataParser()
+    parser.feed(raw)
+    visible = parser.visible_text[:30000]
+    description = ""
+    if title:
+        candidates: list[tuple[int, str]] = []
+        for match in re.finditer(re.escape(title), visible, re.I):
+            candidate = clean_text(visible[match.end():match.end() + 900])
+            lowered = candidate[:220].lower()
+            if candidate.startswith("|") or "skip to main content" in lowered:
+                continue
+            content_terms = ("申请", "申报", "截止", "受理", "用户", "issued", "invites", "submitted", "deadline")
+            navigation_terms = ("search the site", "downloads", "resources", "leadership", "careers")
+            score = sum(term in candidate.lower() for term in content_terms) * 3
+            score -= sum(term in candidate.lower() for term in navigation_terms) * 2
+            candidates.append((score, candidate))
+        if candidates:
+            description = max(candidates, key=lambda value: value[0])[1]
+    if not description and parser.description:
+        title_terms = [term for term in re.split(r"\W+", title.lower()) if len(term) >= 4]
+        if not title_terms or any(term in parser.description.lower() for term in title_terms[:5]):
+            description = parser.description
+    if not description:
+        sentences = [clean_text(part) for part in re.split(r"[。！？!?]", visible)]
+        description = next((part for part in sentences if 45 <= len(part) <= 420), "")
+    deadline = extract_deadline(visible)
+    if deadline and not any(term in description.lower() for term in ("截止", "申请时间", "deadline", "submitted")):
+        context = re.search(r"[^.。]{0,260}(?:截止|申请时间|deadline|submitted)[^.。]{0,520}[.。]?", visible, re.I)
+        if context:
+            description = clean_text(context.group(0))
+    return {
+        "summary": description[:500],
+        "published": notice_date_from_url(url) or extract_notice_date(visible[:5000]) or extract_english_notice_date(visible[:5000]),
+        "deadline": deadline,
+        "headings": parser.headings,
+    }
+
+
 class ArxivFigureParser(HTMLParser):
     """提取 arXiv HTML 中的原始图与图注；许可判定在上层完成。"""
 
@@ -937,21 +1093,40 @@ def fetch_news(source: dict[str, Any], classifier: Classifier) -> tuple[list[dic
 
 def fetch_notice(source: dict[str, Any], classifier: Classifier) -> tuple[list[dict[str, Any]], SourceResult]:
     try:
-        raw = fetch(source["url"], accept="text/html").decode("utf-8", errors="replace")
+        raw = fetch(
+            source["url"], accept="text/html", attempts=max(1, int(source.get("attempts", 2)))
+        ).decode("utf-8", errors="replace")
         parser = AnchorParser()
         parser.feed(raw)
         include = [term.lower() for term in source["include"]]
         records: list[dict[str, Any]] = []
         seen: set[str] = set()
         for href, title in parser.links:
-            if len(title) < 12 or not any(term in title.lower() for term in include):
+            if len(title) < int(source.get("min_title_length", 12)) or not any(term in title.lower() for term in include):
+                continue
+            required = [value.lower() for value in source.get("require_any", [])]
+            if required and not any(term in title.lower() for term in required):
                 continue
             url = urllib.parse.urljoin(source["url"], href)
+            parsed_url = urllib.parse.urlsplit(url)
+            if parsed_url.scheme not in {"http", "https"} or not parsed_url.hostname:
+                continue
+            if any(term in title.lower() for term in [value.lower() for value in source.get("exclude", [])]):
+                continue
             if url in seen:
                 continue
             seen.add(url)
+            title_dates = [extract_notice_date(match.group(0)) for match in DATE_PATTERN.finditer(title)]
+            published = notice_date_from_url(url) or extract_notice_date(title)
+            title_deadline = ""
+            if source.get("title_date_order") == "deadline-published" and len(title_dates) >= 2:
+                title_deadline, published = title_dates[0], title_dates[-1]
+                cleaned_title = re.sub(
+                    r"^(?:20\d{2}[-/.]\d{1,2}[-/.]\d{1,2}(?:\s+\d{1,2}:\d{2}(?::\d{2})?)?\s*){2}",
+                    "", title,
+                ).strip()
+                title = cleaned_title or title
             categories, tags = classifier.classify(title, "", source["name"])
-            published = iso_date(title)
             record_kind = source.get("kind", "notice")
             importance, score_reasons = classifier.importance_details(title, "", source["weight"], categories)
             records.append({
@@ -960,16 +1135,41 @@ def fetch_notice(source: dict[str, Any], classifier: Classifier) -> tuple[list[d
                 "title": title,
                 "summary": "",
                 "published": published,
-                "deadline": "",
+                "deadline": title_deadline,
                 "source": source["name"],
+                "source_url": source["url"],
                 "url": url,
+                "notice_category": source.get("notice_category", "funding-national"),
+                "scope": source.get("scope", ""),
                 "categories": categories,
                 "tags": tags,
                 "importance": importance,
                 "score_reasons": score_reasons,
             })
-            if len(records) >= 30:
+            if len(records) >= int(source.get("limit", 30)):
                 break
+        # 仅读取每个来源最新的少量详情页，提取截止日期与官方简介。
+        detail_limit = max(0, int(source.get("detail_limit", 2)))
+        detail_candidates = sorted(
+            records,
+            key=lambda item: (item.get("published", ""), item.get("importance", 0)),
+            reverse=True,
+        )[:detail_limit]
+        for record in detail_candidates:
+            try:
+                details = notice_detail_metadata(record["url"], record["title"])
+            except Exception:  # noqa: BLE001 - 列表元数据仍可用
+                continue
+            record["summary"] = details.get("summary", "")
+            record["published"] = record.get("published") or details.get("published", "")
+            record["deadline"] = record.get("deadline") or details.get("deadline", "")
+            if source.get("prefer_detail_heading"):
+                heading = next((
+                    value for value in details.get("headings", [])
+                    if len(value) >= 12 and any(term in value.lower() for term in include)
+                ), "")
+                if heading:
+                    record["title"] = heading
         return records, SourceResult(source["name"], source.get("kind", "notice"), True, len(records))
     except Exception as exc:  # noqa: BLE001
         return [], SourceResult(source["name"], source.get("kind", "notice"), False, 0, str(exc)[:240])
@@ -1029,6 +1229,10 @@ def merge_records(existing: list[dict[str, Any]], incoming: list[dict[str, Any]]
             combined["importance"] = max(old.get("importance", 0), item.get("importance", 0))
             combined["first_seen"] = old.get("first_seen") or item.get("first_seen", "")
             combined["last_seen"] = item.get("last_seen") or old.get("last_seen", "")
+            if combined.get("type") == "notice":
+                # 详情页偶尔受限时，空值不得覆盖之前已核验的元数据。
+                for field in ("summary", "published", "deadline", "notice_category", "source_url", "scope"):
+                    combined[field] = item.get(field) or old.get(field, "")
             merged[target_id] = combined
         else:
             merged[target_id] = item
@@ -1184,8 +1388,29 @@ def main() -> int:
     )
     news = merge_records(existing_news, news_new, 1500)
     notices = merge_records(existing_notices, notices_new, 1500)
+    notice_source_categories = {
+        source["name"]: source.get("notice_category", "funding-national")
+        for source in source_config.get("notice_pages", []) if source.get("kind", "notice") == "notice"
+    }
+    notice_source_urls = {
+        source["name"]: source.get("url", "")
+        for source in source_config.get("notice_pages", []) if source.get("kind", "notice") == "notice"
+    }
+    for notice in notices:
+        notice.setdefault("notice_category", notice_source_categories.get(notice.get("source", ""), "funding-national"))
+        notice.setdefault("source_url", notice_source_urls.get(notice.get("source", ""), ""))
+        notice.setdefault("scope", "")
+        notice.setdefault("deadline", "")
     notice_terms = {
         source["name"]: [term.lower() for term in source.get("include", [])]
+        for source in source_config.get("notice_pages", []) if source.get("kind", "notice") == "notice"
+    }
+    notice_exclude_terms = {
+        source["name"]: [term.lower() for term in source.get("exclude", [])]
+        for source in source_config.get("notice_pages", []) if source.get("kind", "notice") == "notice"
+    }
+    notice_required_terms = {
+        source["name"]: [term.lower() for term in source.get("require_any", [])]
         for source in source_config.get("notice_pages", []) if source.get("kind", "notice") == "notice"
     }
     # 通知来源收紧规则后，同步清理历史中的导航链接和普通新闻页。
@@ -1193,6 +1418,15 @@ def main() -> int:
         notice for notice in notices
         if notice.get("source") not in notice_terms
         or any(term in notice.get("title", "").lower() for term in notice_terms[notice.get("source")])
+    ]
+    notices = [
+        notice for notice in notices
+        if not any(term in notice.get("title", "").lower() for term in notice_exclude_terms.get(notice.get("source", ""), []))
+    ]
+    notices = [
+        notice for notice in notices
+        if not notice_required_terms.get(notice.get("source", ""))
+        or any(term in notice.get("title", "").lower() for term in notice_required_terms[notice.get("source", "")])
     ]
     latest_day = max((paper.get("published", "")[:10] for paper in papers), default=today.isoformat())
     featured_cutoff = (dt.date.fromisoformat(latest_day) - dt.timedelta(days=14)).isoformat()

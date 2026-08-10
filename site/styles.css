@@ -1056,3 +1056,149 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .notice-portal-entry-icon { display: none; }
   .notice-portal-foot { justify-content: flex-start; }
 }
+
+/* 每日通知：主界面展示已合并的通知，官方入口仅作备查。 */
+.home-all-notices {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 10px 13px;
+  border: 1px solid #d7e4d1;
+  border-radius: 12px;
+  color: #4f7757;
+  background: linear-gradient(135deg, #edf7e8, #fff4df);
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+}
+.home-all-notices:hover { border-color: #a8c7a2; box-shadow: 0 7px 18px rgba(78, 113, 72, .08); }
+
+.daily-notice-dashboard {
+  width: min(1220px, calc(100% - 48px));
+  margin: 46px auto 90px;
+  color: #425b47;
+}
+.daily-notice-hero,
+.daily-notice-metrics,
+.deadline-board,
+.daily-notice-feed {
+  border: 1px solid #dce4d4;
+  box-shadow: 0 14px 36px rgba(80, 105, 70, .06);
+}
+.daily-notice-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 30px 34px;
+  border-radius: 25px 25px 0 0;
+  background:
+    radial-gradient(circle at 92% 10%, rgba(243, 198, 126, .22), transparent 12rem),
+    radial-gradient(circle at 7% 88%, rgba(161, 211, 149, .22), transparent 15rem),
+    linear-gradient(135deg, #f7fbee, #fff8e9);
+}
+.daily-notice-hero h1 { margin: 5px 0 8px; color: #3e6848; font-family: Georgia, "Noto Serif SC", serif; font-size: clamp(28px, 4vw, 46px); font-weight: 560; }
+.daily-notice-hero p { max-width: 720px; margin: 0; color: #6c7f6f; font-size: 12px; line-height: 1.75; }
+.daily-notice-sync { display: flex; flex: 0 0 auto; align-items: center; gap: 8px; padding: 9px 12px; border: 1px solid #d8e4d2; border-radius: 99px; color: #69806d; background: rgba(255, 255, 251, .78); font-size: 9px; }
+
+.daily-notice-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 0; border-radius: 0 0 22px 22px; overflow: hidden; background: rgba(255, 255, 251, .86); }
+.daily-notice-metrics article { min-width: 0; padding: 20px 24px; }
+.daily-notice-metrics article + article { border-left: 1px solid #e2e6da; }
+.daily-notice-metrics span { display: block; color: #728176; font-size: 10px; font-weight: 650; }
+.daily-notice-metrics strong { display: block; margin: 4px 0; color: #4f7956; font-family: Georgia, serif; font-size: 30px; font-weight: 500; }
+.daily-notice-metrics small { display: block; color: #89958b; font-size: 8px; line-height: 1.45; }
+
+.daily-notice-tools { display: grid; grid-template-columns: minmax(260px, 1fr) auto auto; gap: 10px; margin-top: 24px; }
+.daily-notice-search { display: flex; align-items: center; gap: 8px; min-width: 0; padding: 0 14px; border: 1px solid #d7e2d2; border-radius: 13px; background: #fffefa; }
+.daily-notice-search span { color: #7e977f; font-size: 18px; }
+.daily-notice-search input { width: 100%; min-width: 0; height: 44px; border: 0; outline: 0; color: #405b46; background: transparent; font: inherit; font-size: 11px; }
+.daily-notice-tools select,
+.daily-notice-tools button { min-height: 44px; padding: 0 14px; border: 1px solid #d7e2d2; border-radius: 13px; color: #54715a; background: #fffefa; cursor: pointer; font: inherit; font-size: 10px; font-weight: 650; }
+.daily-notice-tools button { background: linear-gradient(135deg, #edf7e8, #fff2da); }
+.daily-notice-search:focus-within,
+.daily-notice-tools select:focus,
+.daily-notice-tools button:hover { border-color: #9dc298; box-shadow: 0 0 0 3px rgba(111, 164, 105, .10); }
+
+.daily-notice-categories { display: flex; flex-wrap: wrap; gap: 7px; margin: 13px 0 24px; overflow-x: hidden; }
+.daily-notice-categories button { display: inline-flex; align-items: center; gap: 5px; padding: 7px 10px; border: 1px solid #dce5d7; border-radius: 99px; color: #627667; background: rgba(255, 255, 251, .9); cursor: pointer; }
+.daily-notice-categories button b { font-size: 9px; font-weight: 650; }
+.daily-notice-categories button small { display: grid; min-width: 19px; height: 19px; place-items: center; border-radius: 99px; color: #758478; background: #eef3ea; font-size: 8px; }
+.daily-notice-categories button:hover,
+.daily-notice-categories button.active { border-color: #a9c9a1; color: #3e7048; background: linear-gradient(135deg, #e8f5e2, #fff1d9); }
+.daily-notice-categories button.active small { color: #fff; background: #709d70; }
+
+.deadline-board,
+.daily-notice-feed { padding: 25px; border-radius: 21px; background: rgba(255, 255, 251, .91); }
+.deadline-board { margin-bottom: 18px; background: linear-gradient(135deg, rgba(255, 248, 232, .96), rgba(248, 252, 240, .96)); }
+.deadline-board > header,
+.daily-notice-feed > header { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 15px; }
+.deadline-board h2,
+.daily-notice-feed h2 { margin: 3px 0 0; color: #466c4d; font-family: Georgia, "Noto Serif SC", serif; font-size: 23px; font-weight: 560; }
+.deadline-board > header > small { max-width: 450px; color: #8a8a78; font-size: 8px; line-height: 1.55; text-align: right; }
+.daily-notice-feed > header > strong { color: #708175; font-size: 10px; }
+.deadline-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.deadline-item { display: grid; grid-template-columns: 62px minmax(0, 1fr) auto; gap: 12px; min-width: 0; align-items: center; padding: 13px; border: 1px solid #eadfc9; border-radius: 14px; color: inherit; background: rgba(255, 255, 252, .9); text-decoration: none; }
+.deadline-item:hover { border-color: #d1b985; transform: translateY(-1px); }
+.deadline-item time { display: grid; align-self: stretch; place-content: center; border-right: 1px solid #eee4d2; color: #a36a35; text-align: center; }
+.deadline-item time b { font-family: Georgia, serif; font-size: 14px; }
+.deadline-item time small { color: #997e65; font-size: 8px; }
+.deadline-item div { min-width: 0; }
+.deadline-item div span { display: block; overflow: hidden; color: #7b897c; font-size: 8px; white-space: nowrap; text-overflow: ellipsis; }
+.deadline-item div strong { display: -webkit-box; margin-top: 4px; overflow: hidden; color: #4d6251; font-family: Georgia, "Noto Serif SC", serif; font-size: 12px; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.deadline-item i { color: #91a38f; font-size: 12px; font-style: normal; }
+
+.daily-notice-list { display: grid; grid-template-columns: 1fr; gap: 10px; min-width: 0; overflow-x: hidden; }
+.daily-notice-card { min-width: 0; padding: 20px 21px; border: 1px solid #dfe6da; border-radius: 17px; background: #fffefa; box-shadow: 0 7px 20px rgba(81, 108, 73, .035); }
+.daily-notice-card:hover { border-color: #b8cfb2; box-shadow: 0 10px 24px rgba(81, 108, 73, .065); }
+.daily-notice-card-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.daily-notice-card-top > div { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 5px; }
+.notice-kind { color: #598064; font-size: 9px; font-weight: 700; }
+.notice-fresh,
+.notice-deadline { padding: 4px 7px; border-radius: 99px; font-size: 8px; font-weight: 700; }
+.notice-fresh { color: #4e794f; background: #e7f5df; }
+.notice-deadline { color: #87715f; background: #f5eee3; }
+.notice-deadline.soon { color: #a35b35; background: #fff0df; }
+.notice-deadline.closed { color: #888; background: #eee; }
+.daily-notice-card h3 { margin: 9px 0 7px; font-family: Georgia, "Noto Serif SC", serif; font-size: 18px; font-weight: 560; line-height: 1.45; }
+.daily-notice-card h3 a { color: #405e47; text-decoration: none; }
+.daily-notice-card h3 a:hover { color: #337545; }
+.daily-notice-card > p { margin: 0; color: #6d7b70; font-size: 10px; line-height: 1.72; }
+.daily-notice-card footer { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; margin-top: 13px; padding-top: 11px; border-top: 1px solid #e8ebe2; }
+.daily-notice-card footer > div { display: flex; flex-wrap: wrap; gap: 5px 10px; color: #859087; font-size: 8px; }
+.daily-notice-card footer b { color: #617765; }
+.daily-notice-card footer a { flex: 0 0 auto; color: #478052; font-size: 9px; text-decoration: none; }
+.daily-notice-empty { display: grid; justify-items: center; gap: 5px; padding: 55px 20px; color: #718076; text-align: center; }
+.daily-notice-empty span { font-size: 25px; }
+.daily-notice-empty p { margin: 0; font-size: 10px; }
+
+@media (max-width: 860px) {
+  .daily-notice-dashboard { width: min(100% - 30px, 760px); }
+  .daily-notice-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .daily-notice-metrics article:nth-child(3) { border-left: 0; border-top: 1px solid #e2e6da; }
+  .daily-notice-metrics article:nth-child(4) { border-top: 1px solid #e2e6da; }
+  .daily-notice-tools { grid-template-columns: minmax(0, 1fr) auto; }
+  .daily-notice-tools button { grid-column: 1 / -1; }
+  .deadline-list { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .daily-notice-dashboard { width: calc(100% - 22px); margin-top: 24px; }
+  .daily-notice-hero { display: grid; padding: 23px 19px; }
+  .daily-notice-sync { justify-self: start; white-space: normal; }
+  .daily-notice-metrics article { padding: 16px; }
+  .daily-notice-metrics strong { font-size: 25px; }
+  .daily-notice-tools { grid-template-columns: 1fr; }
+  .daily-notice-tools button { grid-column: auto; }
+  .daily-notice-categories { flex-wrap: wrap; overflow-x: hidden; }
+  .deadline-board, .daily-notice-feed { padding: 17px; }
+  .deadline-board > header, .daily-notice-feed > header { display: grid; gap: 7px; }
+  .deadline-board > header > small { text-align: left; }
+  .daily-notice-card { padding: 16px; }
+  .daily-notice-card-top, .daily-notice-card footer { align-items: flex-start; }
+  .daily-notice-card footer { display: grid; }
+  .daily-notice-card h3 { font-size: 16px; }
+  .deadline-item { grid-template-columns: 54px minmax(0, 1fr); }
+  .deadline-item i { display: none; }
+}
