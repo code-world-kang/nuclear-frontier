@@ -32,15 +32,15 @@
 <body>
   <div class="shell">
     <header class="topbar">
-      <a class="brand" href="./#papers" aria-label="小康康的物理世界首页">
+      <a class="brand" href="./#home" aria-label="小康康的物理世界首页">
         <span class="brand-mark" aria-hidden="true"><i></i><i></i><b></b></span>
         <span><strong>小康康的物理世界</strong><small>XIAO KANG'S PHYSICS WORLD</small></span>
       </a>
       <nav class="topnav" aria-label="主导航">
-        <button class="nav-link active" data-view="papers">论文</button>
+        <button class="nav-link active" data-view="home">首页</button>
+        <button class="nav-link" data-view="papers">论文</button>
         <button class="nav-link" data-view="news">新闻</button>
         <button class="nav-link" data-view="notices">通知</button>
-        <button class="nav-link" data-scroll="briefing">简报</button>
         <button class="nav-link" data-view="favorites">我的</button>
       </nav>
       <div class="top-actions">
@@ -60,6 +60,12 @@
           <div class="briefing-status"><span class="status-pulse"></span><span id="lastUpdated">正在读取更新状态…</span><b id="briefingDate">正在整理今日数据…</b></div>
         </div>
         <p class="briefing-summary" id="briefingSummary">正在生成基于原始元数据的可核验摘要。</p>
+        <section class="metrics briefing-metrics briefing-daily-metrics" aria-label="今日论文统计">
+          <article><span>今日新增论文</span><strong id="dailyPaperCount">—</strong><small>最新发布日期</small></article>
+          <article><span>核物理相关</span><strong id="dailyNuclearCount">—</strong><small>核心核物理分类</small></article>
+          <article><span>期刊论文</span><strong id="dailyJournalCount">—</strong><small>正式期刊来源</small></article>
+          <article><span>预印本</span><strong id="dailyPreprintCount">—</strong><small>开放预印本来源</small></article>
+        </section>
         <section class="metrics briefing-metrics" aria-label="科研简报数据统计">
           <article><span>历史论文</span><strong id="paperCount">—</strong><small>持续累积</small></article>
           <article><span>最新日论文</span><strong id="featuredCount">—</strong><small>按发布日期计数</small></article>
@@ -71,6 +77,55 @@
           <article><span>主要来源</span><div id="sourceBrief" class="brief-list"></div></article>
           <article><span>今日核物理焦点</span><div id="topBrief" class="brief-top"></div></article>
         </div>
+      </section>
+
+      <section class="home-dashboard" id="homeDashboard" aria-label="首页科研信息">
+        <div class="home-upper-grid">
+          <section class="home-stream-panel home-news-panel" aria-labelledby="homeNewsTitle">
+            <header class="home-panel-head">
+              <div><span class="section-kicker">NEWS EXPRESS</span><h2 id="homeNewsTitle">新闻速递</h2></div>
+              <strong id="homeNewsCount">—</strong>
+            </header>
+            <p class="home-scroll-hint">使用鼠标滚轮向下浏览更多新闻</p>
+            <div class="home-vertical-feed" id="homeNewsList" tabindex="0" aria-label="向下滚动浏览新闻">
+              <div class="skeleton mini"></div>
+            </div>
+          </section>
+
+          <section class="home-stream-panel home-notice-panel" aria-labelledby="homeNoticeTitle">
+            <header class="home-panel-head">
+              <div><span class="section-kicker">OFFICIAL DESK</span><h2 id="homeNoticeTitle">通知与常用入口</h2></div>
+              <strong id="homeNoticeCount">—</strong>
+            </header>
+            <p class="home-scroll-hint">使用鼠标滚轮向下浏览更多通知</p>
+            <div class="home-vertical-feed" id="homeNoticeList" tabindex="0" aria-label="向下滚动浏览官方通知">
+              <div class="skeleton mini"></div>
+            </div>
+            <nav class="funding-links" aria-label="基金与科研机构入口">
+              <a href="https://www.nsfc.gov.cn/" target="_blank" rel="noreferrer">NSFC</a>
+              <a href="https://service.most.gov.cn/" target="_blank" rel="noreferrer">重点研发计划</a>
+              <a href="https://science.osti.gov/" target="_blank" rel="noreferrer">DOE</a>
+              <a href="https://erc.europa.eu/" target="_blank" rel="noreferrer">ERC</a>
+              <a href="https://www.dfg.de/" target="_blank" rel="noreferrer">DFG</a>
+              <a href="https://www.ukri.org/" target="_blank" rel="noreferrer">UKRI</a>
+              <a href="https://www.jsps.go.jp/english/" target="_blank" rel="noreferrer">JSPS</a>
+              <a href="https://www.iaea.org/" target="_blank" rel="noreferrer">IAEA</a>
+            </nav>
+          </section>
+        </div>
+
+        <section class="home-featured-panel" aria-labelledby="homeFeaturedTitle">
+          <header class="home-featured-head">
+            <div><span class="section-kicker">SELECTED PAPERS</span><h2 id="homeFeaturedTitle">重点文章</h2></div>
+            <div class="featured-journal-list" aria-label="重点文章期刊范围">
+              <span>PRL</span><span>Nature</span><span>Science</span><span>Nature Physics</span><span>Nature Communications</span>
+            </div>
+          </header>
+          <p class="home-scroll-hint">仅显示以上五种期刊；使用鼠标滚轮向下浏览</p>
+          <div class="home-featured-list" id="homeFeaturedList" tabindex="0" aria-label="向下滚动浏览重点文章">
+            <div class="skeleton tall"></div>
+          </div>
+        </section>
       </section>
 
       <section class="workspace" id="stream">

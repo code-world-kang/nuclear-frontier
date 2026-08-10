@@ -18,6 +18,15 @@ const CORE_CATEGORIES = new Set([
   'fusion', 'nuclear-data-applications',
 ]);
 
+const HOME_FEATURED_JOURNALS = new Map([
+  ['physical review letters', 'PRL'],
+  ['prl', 'PRL'],
+  ['nature', 'Nature'],
+  ['science', 'Science'],
+  ['nature physics', 'Nature Physics'],
+  ['nature communications', 'Nature Communications'],
+]);
+
 const NUCLEAR_PRIORITY = new Map([
   ['experimental-nuclear', 12], ['nuclear-structure', 12], ['nuclear-decay', 12],
   ['theoretical-nuclear', 11], ['nuclear-reactions', 10], ['detectors-daq', 10],
@@ -679,6 +688,7 @@ function setView(view) {
   state.view = view;
   state.visible = 20;
   const labels = {
+    home: ['HOME', '首页', '今日科研简报、新闻、通知与重点文章'],
     papers: ['LATEST PAPERS', '最新论文', '题目与摘要保留原文'],
     featured: ['EDITOR\'S RADAR', '重点文献', '基于来源、新颖性与关注词评分'],
     news: ['OFFICIAL NEWS', '科研新闻', '仅保留官方原始链接'],
@@ -691,7 +701,16 @@ function setView(view) {
   $('#sectionTitle').textContent = title;
   $('#viewNote').textContent = note;
   $$('.nav-link, .view-tab').forEach(button => button.classList.toggle('active', button.dataset.view === view));
+  const isHome = view === 'home';
+  $('#briefing').hidden = !isHome;
+  $('#homeDashboard').hidden = !isHome;
+  $('#stream').hidden = isHome;
   updateMySpaceUI();
+  if (isHome) {
+    renderHomeDashboard();
+    history.replaceState(null, '', `${PATH}#home`);
+    return;
+  }
   if (view === 'favorites') {
     setMySection(state.mySection);
     return;
@@ -1107,6 +1126,80 @@ function renderRadar() {
   }));
 }
 
+function homeJournalLabel(item) {
+  const values = [item.source, item.source_short].map(value => String(value || '').trim().toLowerCase());
+  for (const value of values) {
+    if (HOME_FEATURED_JOURNALS.has(value)) return HOME_FEATURED_JOURNALS.get(value);
+  }
+  return '';
+}
+
+function homeFeedCard(item, type) {
+  const link = document.createElement('a');
+  link.className = `home-feed-card ${type}`;
+  link.href = item.url || '#';
+  link.target = '_blank';
+  link.rel = 'noreferrer';
+  const timing = type === 'notice' && item.deadline
+    ? `截止 ${prettyDate(item.deadline)}`
+    : prettyDate(item.published);
+  link.innerHTML = `
+    <small><span>${text(timing || '日期待确认')}</span><b>${text(item.source || '官方来源')}</b></small>
+    <h3>${text(item.title)}</h3>
+    ${(item.summary || item.abstract) ? `<p>${text(item.summary || item.abstract)}</p>` : ''}`;
+  return link;
+}
+
+function homeFeaturedCard(item) {
+  const article = document.createElement('article');
+  article.className = 'home-featured-card';
+  const categories = (item.categories || []).slice(0, 3).map(id => `<span>${text(categoryName(id))}</span>`).join('');
+  const authors = item.authors?.length ? item.authors.join(', ') : '';
+  const abstract = item.abstract || item.summary || '该原始来源暂未公开摘要；本站不会生成或杜撰摘要。';
+  article.innerHTML = `
+    <div class="home-featured-meta"><strong>${text(homeJournalLabel(item))}</strong><span>${text(prettyDate(item.published))}</span></div>
+    <h3><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">${text(item.title)}</a></h3>
+    ${authors ? `<p class="home-featured-authors">${text(authors)}</p>` : ''}
+    <div class="home-featured-abstract"><b>${item.abstract || item.summary ? '完整摘要' : '摘要状态'}</b><p>${text(abstract)}</p></div>
+    <div class="home-featured-foot"><div>${categories}</div><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">阅读原文 ↗</a></div>`;
+  return article;
+}
+
+function renderHomeDashboard() {
+  const news = [...state.news]
+    .sort((a, b) => (b.published || '').localeCompare(a.published || '')
+      || Number(isPrimaryNuclear(b)) - Number(isPrimaryNuclear(a))
+      || (b.importance || 0) - (a.importance || 0))
+    .slice(0, 30);
+  const notices = [...state.notices]
+    .sort((a, b) => (b.published || '').localeCompare(a.published || '')
+      || (b.importance || 0) - (a.importance || 0))
+    .slice(0, 30);
+  const seen = new Set();
+  const featured = [...state.papers, ...state.news]
+    .filter(item => homeJournalLabel(item))
+    .filter(item => {
+      const key = item.doi || item.id || `${item.source}:${item.title}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .sort((a, b) => (b.published || '').localeCompare(a.published || '')
+      || Number(isPrimaryNuclear(b)) - Number(isPrimaryNuclear(a))
+      || (b.importance || 0) - (a.importance || 0))
+    .slice(0, 24);
+
+  $('#homeNewsCount').textContent = `${state.news.length.toLocaleString('zh-CN')} 条`;
+  $('#homeNoticeCount').textContent = `${state.notices.length.toLocaleString('zh-CN')} 条`;
+  $('#homeNewsList').replaceChildren(...news.map(item => homeFeedCard(item, 'news')));
+  $('#homeNoticeList').replaceChildren(...notices.map(item => homeFeedCard(item, 'notice')));
+  $('#homeFeaturedList').replaceChildren(...featured.map(homeFeaturedCard));
+
+  if (!news.length) $('#homeNewsList').innerHTML = '<p class="home-feed-empty">等待下一次自动更新。</p>';
+  if (!notices.length) $('#homeNoticeList').innerHTML = '<p class="home-feed-empty">等待下一次自动更新。</p>';
+  if (!featured.length) $('#homeFeaturedList').innerHTML = '<p class="home-feed-empty">五种重点期刊暂时没有可展示的新文章。</p>';
+}
+
 function homeLane({ kicker, title, count, items, view, tone, scope = '' }) {
   const article = document.createElement('article');
   article.className = `home-lane ${tone || ''}`;
@@ -1170,13 +1263,16 @@ function renderBriefing() {
   const topics = [...categoryCounts.entries()].sort((a, b) => (NUCLEAR_PRIORITY.get(b[0]) || 0) - (NUCLEAR_PRIORITY.get(a[0]) || 0) || b[1] - a[1]).slice(0, 5);
   const sources = [...sourceCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
   const topItems = [...items].sort(compareNuclearFirst).slice(0, 3);
-  $('#briefingDate').textContent = latest ? `${prettyDate(latest)} · 核物理焦点 ${items.length} 篇` : '等待今日数据';
-  const topicNames = topics.slice(0, 3).map(([id]) => categoryName(id));
+  $('#briefingDate').textContent = latest ? `${prettyDate(latest)} · 核物理相关 ${items.length} 篇` : '等待今日数据';
   const journalCount = items.filter(item => item.source_type === 'journal').length;
   const preprintCount = items.filter(item => item.source_type === 'preprint').length;
   const translatedCount = Object.keys(state.translations).length;
+  $('#dailyPaperCount').textContent = allItems.length.toLocaleString('zh-CN');
+  $('#dailyNuclearCount').textContent = items.length.toLocaleString('zh-CN');
+  $('#dailyJournalCount').textContent = journalCount.toLocaleString('zh-CN');
+  $('#dailyPreprintCount').textContent = preprintCount.toLocaleString('zh-CN');
   $('#briefingSummary').textContent = items.length
-    ? `今日共收录 ${allItems.length} 篇论文，其中 ${items.length} 篇进入核物理焦点：期刊论文 ${journalCount} 篇、预印本 ${preprintCount} 篇。优先呈现${topicNames.join('、')}；聚变、AI 等交叉方向仍可在论文分类中查看。当前已有 ${translatedCount} 篇 Codex 中文译文。`
+    ? `今日共收录 ${allItems.length} 篇论文，其中 ${items.length} 篇属于核物理相关分类：期刊论文 ${journalCount} 篇、预印本 ${preprintCount} 篇。重点文章仅从 PRL、Nature、Science、Nature Physics 与 Nature Communications 中筛选。当前已有 ${translatedCount} 篇 Codex 中文译文。`
     : '尚无可用的当日元数据。';
 
   const renderBars = (host, values, labelFor) => {
@@ -1361,7 +1457,7 @@ function bindEvents() {
   $$('.nav-link[data-view], .view-tab[data-view]').forEach(button => button.addEventListener('click', () => setView(button.dataset.view)));
   $('.brand').addEventListener('click', event => {
     event.preventDefault();
-    setView('papers');
+    setView('home');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
   $$('[data-view-jump]').forEach(button => button.addEventListener('click', () => {
@@ -1449,14 +1545,14 @@ async function initialize() {
   bindEvents();
   try {
     await loadData();
-    renderCategories(); renderSourceOptions(); renderHomeHub(); renderRadar(); renderBriefing(); renderMetrics(); renderKeywords();
+    renderCategories(); renderSourceOptions(); renderHomeHub(); renderRadar(); renderBriefing(); renderMetrics(); renderKeywords(); renderHomeDashboard();
     const hash = location.hash.slice(1);
     const myMatch = hash.match(/^favorites-(papers|code|references)$/);
     if (myMatch) {
       state.mySection = myMatch[1];
       setView('favorites');
     } else {
-      setView(['papers', 'featured', 'news', 'notices', 'favorites', 'unread'].includes(hash) ? hash : 'papers');
+      setView(['home', 'papers', 'featured', 'news', 'notices', 'favorites', 'unread'].includes(hash) ? hash : 'home');
     }
     tryFavoriteSync();
   } catch (error) {
