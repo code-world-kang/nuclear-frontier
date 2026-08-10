@@ -113,7 +113,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("小康康的物理世界", index)
         self.assertIn("window.location.protocol === 'file:'", index)
         self.assertIn('dataset.dayTheme', index)
-        self.assertIn('src="./app.js"', index)
+        self.assertIn('src="./app.js?v=', index)
 
     def test_reader_ui_is_text_first_and_private_note_safe(self):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
