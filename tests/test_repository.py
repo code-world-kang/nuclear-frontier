@@ -113,6 +113,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('data-my-section="translations"', index)
         self.assertIn('id="translationShelfPanel"', index)
         self.assertIn('id="translationGlossaryDialog"', index)
+        self.assertIn('id="citationDialog"', index)
         self.assertIn("小康康的物理世界", index)
         self.assertIn("window.location.protocol === 'file:'", index)
         self.assertIn('dataset.dayTheme', index)
@@ -151,6 +152,20 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('id="translationPhraseSource"', index)
         self.assertIn('id="translationPhraseTarget"', index)
         self.assertIn(".translation-shelf-panel", styles)
+
+    def test_single_paper_citation_supports_bibtex_and_gbt_7714_2025(self):
+        index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        styles = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn('value="bibtex"', index)
+        self.assertIn('value="gbt7714-2025"', index)
+        self.assertIn("function toBibTeX", app)
+        self.assertIn("function toGBT7714_2025", app)
+        self.assertIn("function openCitationDialog", app)
+        self.assertIn("[PP/OL]", app)
+        self.assertIn("[J/OL]", app)
+        self.assertIn(".paper-actions .cite-button", styles)
+        self.assertIn("std.samr.gov.cn/gb/search/gbDetailed", index)
 
     def test_notice_portal_is_official_categorized_and_searchable(self):
         payload = json.loads((ROOT / "config" / "notice_portals.json").read_text(encoding="utf-8"))

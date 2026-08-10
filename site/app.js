@@ -12,7 +12,7 @@ const DEFAULT_FILTER_MODULE_ORDER = ['categories', 'keywords'];
 const state = {
   papers: [], featured: [], news: [], notices: [], publicFavorites: [], translations: {}, noticePortals: { categories: [], entries: [] },
   meta: null, view: 'papers', category: 'all', source: 'all', query: '', searchField: 'all', sort: 'date', scope: 'daily-focus', visible: 20,
-  dateFrom: '', dateTo: '', favoriteKeyword: 'all', favoriteDraft: null, noteDraft: null, mySection: 'papers', translatedIds: new Set(),
+  dateFrom: '', dateTo: '', favoriteKeyword: 'all', favoriteDraft: null, noteDraft: null, citationDraft: null, mySection: 'papers', translatedIds: new Set(),
   selectedPaperId: '',
   noticeCategory: 'all', noticeTiming: 'all', noticeQuery: '', noticeVisible: 24,
   noticePortalCategory: 'all', noticePortalQuery: '', personal: loadPersonal(), paperLayout: loadPaperLayout(),
@@ -608,6 +608,14 @@ function cardFor(item) {
     actions.append(doi);
   }
   if (item.type === 'paper') {
+    const cite = document.createElement('button');
+    cite.type = 'button';
+    cite.className = 'cite-button';
+    cite.textContent = 'Cite';
+    cite.setAttribute('aria-label', `引用论文《${item.title}》`);
+    cite.addEventListener('click', () => openCitationDialog(item));
+    actions.append(cite);
+
     const translate = document.createElement('button');
     translate.type = 'button';
     translate.className = 'translation-button';
@@ -1084,15 +1092,51 @@ function citationKey(item) {
 }
 
 function toBibTeX(item) {
+  const isPreprint = item.source_type === 'preprint' || Boolean(item.arxiv_id && !item.doi);
   const fields = [
-    `  title = {${(item.title || '').replace(/[{}]/g, '')}}`,
+    `  title = {${String(item.title || '').replace(/\s+/g, ' ').trim()}}`,
     item.authors?.length ? `  author = {${item.authors.join(' and ')}}` : '',
-    item.source ? `  journal = {${item.source}}` : '',
+    !isPreprint && item.source ? `  journal = {${item.source}}` : '',
     item.published ? `  year = {${item.published.slice(0, 4)}}` : '',
     item.doi ? `  doi = {${item.doi}}` : '',
+    isPreprint && item.arxiv_id ? `  eprint = {${item.arxiv_id}}` : '',
+    isPreprint && item.arxiv_id ? '  archivePrefix = {arXiv}' : '',
+    isPreprint && /^arxiv\s+/i.test(item.source || '') ? `  primaryClass = {${item.source.replace(/^arxiv\s+/i, '')}}` : '',
     item.url ? `  url = {${item.url}}` : '',
   ].filter(Boolean);
-  return `@article{${citationKey(item)},\n${fields.join(',\n')}\n}`;
+  return `@${isPreprint ? 'misc' : 'article'}{${citationKey(item)},\n${fields.join(',\n')}\n}`;
+}
+
+function plainCitationText(value) {
+  const accentMarks = { '"': '\u0308', "'": '\u0301', '`': '\u0300', '^': '\u0302', '~': '\u0303', '=': '\u0304', u: '\u0306', '.': '\u0307', v: '\u030c', H: '\u030b', c: '\u0327', k: '\u0328', r: '\u030a', b: '\u0331' };
+  return String(value || '')
+    .replace(/\\(["'`^~=\.uvHckrb])\{?([A-Za-z])\}?/g, (_, accent, letter) => `${letter}${accentMarks[accent] || ''}`.normalize('NFC'))
+    .replace(/\\ss\b/g, 'ß')
+    .replace(/\\([oOlL])\b/g, (_, letter) => ({ o: 'ø', O: 'Ø', l: 'ł', L: 'Ł' })[letter]);
+}
+
+function gbtCitationAuthors(item) {
+  const authors = (item.authors || []).map(plainCitationText);
+  if (!authors.length) return item.source || '责任者不详';
+  if (authors.length <= 3) return authors.join(', ');
+  const chinese = authors.slice(0, 3).some(author => /[\u3400-\u9fff]/.test(author));
+  return `${authors.slice(0, 3).join(', ')}, ${chinese ? '等' : 'et al'}`;
+}
+
+function toGBT7714_2025(item) {
+  const authors = gbtCitationAuthors(item);
+  const title = String(item.title || '题名不详').replace(/\s+/g, ' ').trim();
+  const published = (item.published || '').slice(0, 10);
+  const year = published.slice(0, 4) || '日期不详';
+  const accessed = beijingDay();
+  const url = item.doi ? `https://doi.org/${item.doi}` : (item.url || '获取地址不详');
+  const isPreprint = item.source_type === 'preprint' || Boolean(item.arxiv_id && !item.doi);
+  if (isPreprint) {
+    const platform = /^arxiv\b/i.test(item.source || '') ? 'arXiv' : (item.source || '预印本平台');
+    const identifier = item.arxiv_id ? `arXiv:${item.arxiv_id}` : '';
+    return `${authors}. ${title}[PP/OL]. ${platform}${published ? `(${published})` : ''}[${accessed}]. ${url}${identifier ? `. ${identifier}` : ''}.`;
+  }
+  return `${authors}. ${title}[J/OL]. ${item.source || '刊名不详'}, ${year}[${accessed}]. ${url}.`;
 }
 
 function toRIS(item) {
@@ -1114,6 +1158,46 @@ function downloadText(name, content, mime = 'text/plain') {
   link.download = name;
   link.click();
   URL.revokeObjectURL(link.href);
+}
+
+function citationValue(item, format = $('#citationFormat')?.value || 'bibtex') {
+  return format === 'gbt7714-2025' ? toGBT7714_2025(item) : toBibTeX(item);
+}
+
+function renderCitationDialog() {
+  const item = state.citationDraft;
+  if (!item) return;
+  const format = $('#citationFormat').value;
+  $('#citationOutput').value = citationValue(item, format);
+  $('#citationHint').textContent = format === 'gbt7714-2025'
+    ? '按 GB/T 7714—2025 和现有元数据生成；预印本使用 PP/OL，缺失的卷、期和页码不会虚构。'
+    : 'BibTeX 会区分期刊论文与 arXiv 预印本，并保留 DOI、URL 和 eprint 信息。';
+}
+
+function openCitationDialog(item) {
+  state.citationDraft = item;
+  $('#citationPaperTitle').textContent = item.title;
+  $('#citationFormat').value = 'bibtex';
+  renderCitationDialog();
+  $('#citationDialog').showModal();
+}
+
+function closeCitationDialog() {
+  $('#citationDialog').close();
+  state.citationDraft = null;
+}
+
+function downloadCitation() {
+  const item = state.citationDraft;
+  if (!item) return;
+  const format = $('#citationFormat').value;
+  const isBibTeX = format === 'bibtex';
+  downloadText(
+    `${citationKey(item)}.${isBibTeX ? 'bib' : 'txt'}`,
+    citationValue(item, format),
+    isBibTeX ? 'application/x-bibtex' : 'text/plain',
+  );
+  showToast(`已下载${isBibTeX ? ' BibTeX' : ' GB/T 7714—2025 引用'}`);
 }
 
 async function copyText(value, message) {
@@ -1227,7 +1311,7 @@ function openDetails(item) {
       <a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">打开原文 ↗</a>
       ${item.pdf_url ? `<a href="${text(item.pdf_url)}" target="_blank" rel="noreferrer">PDF ↗</a>` : ''}
       ${item.doi ? '<button id="copyDoi">复制 DOI</button>' : ''}
-      <button id="exportBib">导出 BibTeX</button>
+      <button id="openCitationFromDetail">Cite</button>
       ${translation ? `<button id="toggleDetailTranslation">${translated ? '查看英文原文' : '查看中文译文'}</button>` : ''}
       ${item.type === 'paper' ? `<button id="openDetailNote">📝 ${state.personal.notes[item.id] ? '编辑笔记 · 已保存' : '写笔记'}</button><button id="cycleRead">${text(readingLabel(item.id))}</button>` : ''}
     </div>
@@ -1243,10 +1327,7 @@ function openDetails(item) {
     renderCards();
     openDetails(item);
   });
-  $('#exportBib', host).addEventListener('click', () => {
-    downloadText(`${citationKey(item)}.bib`, toBibTeX(item), 'application/x-bibtex');
-    showToast('BibTeX 已导出');
-  });
+  $('#openCitationFromDetail', host).addEventListener('click', () => openCitationDialog(item));
   $('#openDetailNote', host)?.addEventListener('click', () => openNoteDialog(item));
   $('#cycleRead', host)?.addEventListener('click', () => {
     cycleReadingStatus(item);
@@ -2306,6 +2387,14 @@ function bindEvents() {
   $('#openTranslationGlossary').addEventListener('click', openTranslationGlossaryDialog);
   $('#closeTranslationGlossary').addEventListener('click', () => $('#translationGlossaryDialog').close());
   $('#translationGlossaryForm').addEventListener('submit', saveTranslationGlossary);
+  $('#closeCitation').addEventListener('click', closeCitationDialog);
+  $('#citationDialog').addEventListener('close', () => { state.citationDraft = null; });
+  $('#citationFormat').addEventListener('change', renderCitationDialog);
+  $('#copyCitation').addEventListener('click', () => {
+    const item = state.citationDraft;
+    if (item) copyText(citationValue(item), '引用格式已复制');
+  });
+  $('#downloadCitation').addEventListener('click', downloadCitation);
   $('#addMyItem').addEventListener('click', openMyItemDialog);
   $('#myItemForm').addEventListener('submit', saveMyItem);
   $('#cancelMyItem').addEventListener('click', closeMyItemDialog);

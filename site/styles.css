@@ -764,6 +764,7 @@ body {
 .paper-meta .source-badge { color: #376e49; background: #e8f5e3; }
 .paper-actions .translation-button { color: #3c7f52; font-weight: 700; }
 .paper-actions .translation-button:disabled { color: #9baa9e; cursor: not-allowed; font-weight: 500; }
+.paper-actions .cite-button { padding: 4px 9px; border: 1px solid #c8ddc4; border-radius: 99px; color: #356f47; background: #eef7e9; font-weight: 800; letter-spacing: .04em; }
 .paper-actions .translation-favorite-button { color: #9a6a2d; font-weight: 700; }
 .paper-actions .translation-favorite-button.active { border-color: #e2c58c; color: #8a5c1d; background: #fff3d7; }
 .translation-term-tag { color: #7a5c2e !important; background: #fff1d7 !important; }
@@ -819,6 +820,18 @@ body {
 .translation-glossary-item i { color: #c0914a; font-style: normal; }
 .translation-glossary-item strong { color: #7c632f; }
 .translation-glossary-item button { border: 0; color: #a26f65; background: transparent; cursor: pointer; font: inherit; font-size: 9px; }
+#citationDialog { width: min(760px, calc(100% - 32px)); }
+.citation-dialog-card { width: 100%; max-width: 100%; box-sizing: border-box; overflow-x: hidden; }
+.citation-paper-title { margin: 4px 0 16px; color: #55705c; overflow-wrap: anywhere; font-family: Georgia, "Noto Serif SC", serif; font-size: 14px; line-height: 1.5; }
+.citation-format-field { display: grid; grid-template-columns: auto minmax(220px, 1fr); gap: 10px; align-items: center; margin-bottom: 10px; color: #617468; font-size: 10px; }
+.citation-format-field select { border: 1px solid #d0e1cb; border-radius: 9px; padding: 9px 11px; color: #45614d; background: #fbfef9; font: inherit; }
+.citation-output { width: 100%; min-height: 210px; resize: vertical; border: 1px solid #d6e3d1; border-radius: 12px; padding: 14px; color: #3f5445; background: #f8fbf5; font: 11px/1.65 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+.citation-output:focus { border-color: #8db88e; outline: 3px solid rgba(103,157,105,.12); }
+.citation-hint { margin: 8px 0 0; color: #899087; font-size: 9px; line-height: 1.5; }
+.citation-dialog-actions { display: grid; grid-template-columns: auto 1fr auto auto; gap: 9px; align-items: center; margin-top: 16px; padding-top: 13px; border-top: 1px solid #e1e8db; }
+.citation-dialog-actions a { color: #5b7c62; font-size: 9px; text-decoration: none; }
+.citation-dialog-actions button { border: 1px solid #d0dfcb; border-radius: 9px; padding: 8px 13px; color: #4d6754; background: #fffefb; cursor: pointer; font: inherit; font-size: 10px; }
+.citation-dialog-actions .primary-form-button { border-color: #568f61; color: #fff; background: #568f61; }
 
 .source-status-card, .search-box, .toolbar select, .my-keywords-panel { border-color: #d5e7d2; }
 .my-keyword-button:hover, .my-keyword-button.active { background: #5b9c67; border-color: #5b9c67; }
@@ -847,6 +860,9 @@ footer { color: #58735f; background: linear-gradient(135deg, #e3f2dc, #f3faef); 
   .translation-shelf-panel { grid-template-columns: 1fr; }
   .translation-shelf-tools { justify-content: flex-start; }
   .translation-glossary-form { grid-template-columns: 1fr; }
+  .citation-dialog-actions { grid-template-columns: 1fr 1fr; }
+  .citation-dialog-actions span { display: none; }
+  .citation-dialog-actions a { grid-column: 1 / -1; }
 }
 @media (max-width: 560px) {
   .top-actions .icon-button { display: none; }

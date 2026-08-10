@@ -27,7 +27,7 @@
   </script>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20260810-translation-shelf">
+  <link rel="stylesheet" href="./styles.css?v=20260810-citation-formats">
 </head>
 <body>
   <div class="shell">
@@ -346,6 +346,17 @@
     </article>
   </dialog>
 
+  <dialog id="citationDialog">
+    <article class="dialog-card citation-dialog-card">
+      <div class="dialog-head"><div><small>CITE THIS PAPER</small><h3>引用论文</h3></div><button type="button" id="closeCitation" aria-label="关闭引用窗口">×</button></div>
+      <p class="citation-paper-title" id="citationPaperTitle"></p>
+      <label class="citation-format-field"><span>输出格式</span><select id="citationFormat"><option value="bibtex">BibTeX</option><option value="gbt7714-2025">GB/T 7714—2025</option></select></label>
+      <textarea id="citationOutput" class="citation-output" readonly spellcheck="false" aria-label="引用内容"></textarea>
+      <p class="citation-hint" id="citationHint">按论文现有元数据生成，不虚构缺失的卷、期和页码。</p>
+      <div class="citation-dialog-actions"><a href="https://std.samr.gov.cn/gb/search/gbDetailed?id=4507EFE13D37CB6AE06397BE0A0A601F" target="_blank" rel="noreferrer">查看国家标准 ↗</a><span></span><button type="button" id="copyCitation">复制</button><button type="button" class="primary-form-button" id="downloadCitation">下载</button></div>
+    </article>
+  </dialog>
+
   <dialog id="myItemDialog">
     <form class="dialog-card" id="myItemForm">
       <div class="dialog-head"><div><small>MY RESEARCH SPACE</small><h3 id="myItemDialogTitle">添加内容</h3></div><button type="button" id="cancelMyItem" aria-label="关闭">×</button></div>
@@ -398,6 +409,6 @@
     </article>
   </template>
 
-  <script type="module" src="./app.js?v=20260810-translation-shelf"></script>
+  <script type="module" src="./app.js?v=20260810-citation-formats"></script>
 </body>
 </html>
