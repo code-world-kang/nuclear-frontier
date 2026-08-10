@@ -482,6 +482,18 @@ function usingTranslation(item) {
   return state.translatedIds.has(item.id) && Boolean(translationFor(item));
 }
 
+function localizedTitle(item) {
+  const translation = translationFor(item);
+  return usingTranslation(item) ? applyTranslationGlossary(translation.title_zh) : item.title;
+}
+
+function localizedAbstract(item) {
+  const translation = translationFor(item);
+  return usingTranslation(item)
+    ? applyTranslationGlossary(translation.abstract_zh)
+    : (item.abstract || item.summary || '');
+}
+
 function toggleTranslation(item) {
   if (!translationFor(item)) return showToast('这篇论文暂时还没有 Codex 中文译文');
   if (state.translatedIds.has(item.id)) state.translatedIds.delete(item.id);
@@ -616,18 +628,20 @@ function cardFor(item) {
     cite.setAttribute('aria-label', `引用论文《${item.title}》`);
     cite.addEventListener('click', () => openCitationDialog(item));
     actions.append(cite);
+  }
 
-    const translate = document.createElement('button');
-    translate.type = 'button';
-    translate.className = 'translation-button';
-    translate.textContent = translation ? (translated ? '查看英文原文' : '中文译文') : '暂未翻译';
-    translate.disabled = !translation;
-    translate.title = translation
-      ? '在英文原文与 Codex 中文译文之间切换'
-      : '最新核心论文将由 Codex 分批翻译';
-    translate.addEventListener('click', () => toggleTranslation(item));
-    actions.append(translate);
+  const translate = document.createElement('button');
+  translate.type = 'button';
+  translate.className = 'translation-button';
+  translate.textContent = translation ? (translated ? '查看英文原文' : '查看中文译文') : '翻译排队中';
+  translate.disabled = !translation;
+  translate.title = translation
+    ? '中文译文优先显示，可随时切换回原文'
+    : 'Codex 将在自动翻译队列中补全这条内容';
+  translate.addEventListener('click', () => toggleTranslation(item));
+  actions.append(translate);
 
+  if (item.type === 'paper') {
     if (translation) {
       const saveTranslation = document.createElement('button');
       saveTranslation.type = 'button';
@@ -1706,6 +1720,7 @@ function renderAssistantPaperDetail(item) {
         <div><dt>阅读状态</dt><dd>${text(readingLabel(item.id))}</dd></div>
       </dl>
       <div class="paper-identifiers">${identifiers.length ? identifiers.map(value => `<span>${text(value)}</span>`).join('') : '<span>暂无 DOI/arXiv 编号</span>'}</div>
+      <button type="button" class="assistant-cite-button" data-assistant-cite>Cite</button>
     </section>
     <section class="assistant-section paper-detail-section">
       <div class="assistant-section-head"><span>核物理要素</span><small>仅提取题目与摘要明确内容</small></div>
@@ -1726,6 +1741,7 @@ function renderAssistantPaperDetail(item) {
       <div class="assistant-section-head"><span>关联论文</span><small>按分类、标签、作者匹配</small></div>
       <div class="assistant-related-list">${related.length ? related.map(({ candidate, score }) => `<button type="button" data-related-paper="${text(candidate.id)}"><span>${text(candidate.title)}</span><small>${text(candidate.source_short || candidate.source)} · 关联度 ${score}</small></button>`).join('') : '<p>历史库中暂无明显关联论文。</p>'}</div>
     </section>`;
+  $('[data-assistant-cite]', host).addEventListener('click', () => openCitationDialog(item));
   $$('[data-related-paper]', host).forEach(button => button.addEventListener('click', () => {
     const candidate = state.papers.find(value => value.id === button.dataset.relatedPaper);
     if (candidate) selectPaperForAssistant(candidate);
@@ -1826,8 +1842,8 @@ function homeFeedCard(item, type) {
     : prettyDate(item.published);
   link.innerHTML = `
     <small><span>${text(timing || '日期待确认')}</span><b>${text(item.source || '官方来源')}</b></small>
-    <h3>${text(item.title)}</h3>
-    ${(item.summary || item.abstract) ? `<p>${text(item.summary || item.abstract)}</p>` : ''}`;
+    <h3>${text(localizedTitle(item))}</h3>
+    ${(item.summary || item.abstract) ? `<p>${text(localizedAbstract(item))}</p>` : ''}`;
   return link;
 }
 
@@ -1836,12 +1852,12 @@ function homeFeaturedCard(item) {
   article.className = 'home-featured-card';
   const categories = (item.categories || []).slice(0, 3).map(id => `<span>${text(categoryName(id))}</span>`).join('');
   const authors = item.authors?.length ? item.authors.join(', ') : '';
-  const abstract = item.abstract || item.summary || '该原始来源暂未公开摘要；本站不会生成或杜撰摘要。';
+  const abstract = localizedAbstract(item) || '该原始来源暂未公开摘要；本站不会生成或杜撰摘要。';
   article.innerHTML = `
     <div class="home-featured-meta"><strong>${text(homeJournalLabel(item))}</strong><span>${text(prettyDate(item.published))}</span></div>
-    <h3><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">${text(item.title)}</a></h3>
+    <h3><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">${text(localizedTitle(item))}</a></h3>
     ${authors ? `<p class="home-featured-authors">${text(authors)}</p>` : ''}
-    <div class="home-featured-abstract"><b>${item.abstract || item.summary ? '完整摘要' : '摘要状态'}</b><p>${text(abstract)}</p></div>
+    <div class="home-featured-abstract"><b>${item.abstract || item.summary ? (usingTranslation(item) ? '中文翻译' : '完整摘要') : '摘要状态'}</b><p>${text(abstract)}</p></div>
     <div class="home-featured-foot"><div>${categories}</div><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">阅读原文 ↗</a></div>`;
   return article;
 }
@@ -1900,8 +1916,8 @@ function dailyNoticeCard(item) {
       <span class="notice-kind">${text(category.icon)} ${text(category.label)}</span>
       <div>${isFresh ? '<b class="notice-fresh">今日发现</b>' : ''}${deadlineLabel ? `<b class="notice-deadline ${text(deadline.kind)}">${text(deadlineLabel)}</b>` : ''}</div>
     </div>
-    <h3><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">${text(item.title)}</a></h3>
-    <p>${text(truncate(item.summary, 320) || '官方列表页未提供简介；点开原文可查看申请条件、时间与附件。')}</p>
+    <h3><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">${text(localizedTitle(item))}</a></h3>
+    <p>${text(truncate(localizedAbstract(item), 320) || '官方列表页未提供简介；点开原文可查看申请条件、时间与附件。')}</p>
     <footer>
       <div><b>${text(item.source || '官方来源')}</b><span>${text(item.scope || '')}</span><time>${text(prettyDate(item.published))}</time></div>
       <a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">查看官方原文 ↗</a>
@@ -1922,7 +1938,8 @@ function filteredDailyNotices() {
     if (state.noticeTiming === 'open' && !['open', 'soon'].includes(deadlineState(item).kind)) return false;
     if (state.noticeTiming === '7days' && noticePublishedDay(item) < weekDay) return false;
     if (query) {
-      const haystack = [item.title, item.summary, item.source, item.scope, noticeCategoryInfo(item.notice_category).label]
+      const translation = translationFor(item);
+      const haystack = [item.title, item.summary, translation?.title_zh, translation?.abstract_zh, item.source, item.scope, noticeCategoryInfo(item.notice_category).label]
         .join(' ').toLocaleLowerCase('zh-CN');
       if (!query.split(/\s+/).every(term => haystack.includes(term))) return false;
     }
@@ -2082,7 +2099,7 @@ function homeLane({ kicker, title, count, items, view, tone, scope = '' }) {
   const list = items.slice(0, 4).map((item, index) => `
     <a class="home-lane-item" href="${text(item.url || '#')}" target="_blank" rel="noreferrer">
       <span>${String(index + 1).padStart(2, '0')}</span>
-      <div><b>${text(item.title)}</b><small>${text(item.source_short || item.source || '')}${item.published ? ` · ${text(prettyDate(item.published))}` : ''}</small></div>
+      <div><b>${text(localizedTitle(item))}</b><small>${text(item.source_short || item.source || '')}${item.published ? ` · ${text(prettyDate(item.published))}` : ''}</small></div>
     </a>`).join('');
   article.innerHTML = `
     <header><div><small>${text(kicker)}</small><h3>${text(title)}</h3></div><strong>${count}</strong></header>
@@ -2526,6 +2543,7 @@ async function loadData() {
   const translationPayload = responses.pop();
   [state.meta, state.papers, state.featured, state.news, state.notices, state.publicFavorites, state.noticePortals] = responses;
   state.translations = translationPayload.items || {};
+  Object.keys(state.translations).forEach(id => state.translatedIds.add(id));
   state.meta.categories.forEach(category => state.categoryMap.set(category.id, category));
   configureDateRangeInputs();
   if (state.meta.site.repository_url) $('#repoLink').href = state.meta.site.repository_url;
