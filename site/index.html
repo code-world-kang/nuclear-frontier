@@ -27,7 +27,7 @@
   </script>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20260810-paper-workspace">
+  <link rel="stylesheet" href="./styles.css?v=20260810-translation-shelf">
 </head>
 <body>
   <div class="shell">
@@ -204,6 +204,7 @@
 
           <section class="my-space-nav" id="mySpaceNav" hidden aria-label="我的科研空间">
             <button class="my-space-tab active" type="button" data-my-section="papers"><span>📚</span><b>我的论文</b><small>收藏、关键词与阅读笔记</small></button>
+            <button class="my-space-tab" type="button" data-my-section="translations"><span>译</span><b>翻译收藏</b><small>收藏译文与自定义术语</small></button>
             <button class="my-space-tab" type="button" data-my-section="code"><span>💻</span><b>我的代码</b><small>GitHub 项目与分析工具</small></button>
             <button class="my-space-tab" type="button" data-my-section="references"><span>🧭</span><b>参考资料</b><small>数据库、手册与常用链接</small></button>
           </section>
@@ -251,6 +252,11 @@
             <div><span class="section-kicker">MY KEYWORDS</span><h3 id="myKeywordsTitle">我的收藏关键词</h3></div>
             <p>选择一个关键词，筛选已收藏的论文。</p>
             <div class="my-keyword-list" id="myKeywordList"></div>
+          </section>
+          <section class="translation-shelf-panel" id="translationShelfPanel" hidden aria-labelledby="translationShelfTitle">
+            <div><span class="section-kicker">MY TRANSLATIONS</span><h3 id="translationShelfTitle">我的翻译收藏</h3><p>收藏重要中文译文；自定义术语会优先替换 Codex 译文中的对应短语。</p></div>
+            <div class="translation-shelf-tools"><span><b id="translationFavoriteCount">0</b> 篇译文</span><span><b id="translationGlossaryCount">0</b> 条指定译法</span><button id="openTranslationGlossary" type="button">管理指定译法</button></div>
+            <div class="translation-glossary-preview" id="translationGlossaryPreview"></div>
           </section>
           <div class="results-meta"><span id="resultCount">正在载入…</span><span id="viewNote">原文与 Codex 中文译文可切换</span><button id="addMyItem" hidden>+ 添加内容</button><button id="exportReferences">导出 Zotero / RIS</button></div>
           <div class="card-list" id="cardList">
@@ -327,6 +333,19 @@
     </form>
   </dialog>
 
+  <dialog id="translationGlossaryDialog">
+    <article class="dialog-card translation-glossary-card">
+      <div class="dialog-head"><div><small>PERSONAL TRANSLATION GLOSSARY</small><h3>我的指定译法</h3></div><button type="button" id="closeTranslationGlossary" aria-label="关闭指定译法">×</button></div>
+      <p>输入原短语和你希望显示的中文译法。规则只保存在当前浏览器，并随私人备份一起导入或导出。</p>
+      <form id="translationGlossaryForm" class="translation-glossary-form">
+        <label><span>原短语</span><input id="translationPhraseSource" required maxlength="160" placeholder="例如：knockout reaction"></label>
+        <label><span>指定译法</span><input id="translationPhraseTarget" required maxlength="160" placeholder="例如：敲出反应"></label>
+        <button type="submit">保存译法</button>
+      </form>
+      <div class="translation-glossary-list" id="translationGlossaryList"></div>
+    </article>
+  </dialog>
+
   <dialog id="myItemDialog">
     <form class="dialog-card" id="myItemForm">
       <div class="dialog-head"><div><small>MY RESEARCH SPACE</small><h3 id="myItemDialogTitle">添加内容</h3></div><button type="button" id="cancelMyItem" aria-label="关闭">×</button></div>
@@ -379,6 +398,6 @@
     </article>
   </template>
 
-  <script type="module" src="./app.js?v=20260810-paper-workspace"></script>
+  <script type="module" src="./app.js?v=20260810-translation-shelf"></script>
 </body>
 </html>

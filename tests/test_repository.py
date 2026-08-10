@@ -110,6 +110,9 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('id="myKeywordList"', index)
         self.assertIn('id="mySpaceNav"', index)
         self.assertIn('id="myItemDialog"', index)
+        self.assertIn('data-my-section="translations"', index)
+        self.assertIn('id="translationShelfPanel"', index)
+        self.assertIn('id="translationGlossaryDialog"', index)
         self.assertIn("小康康的物理世界", index)
         self.assertIn("window.location.protocol === 'file:'", index)
         self.assertIn('dataset.dayTheme', index)
@@ -126,6 +129,28 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("function openNoteDialog", app)
         self.assertIn("不会上传或公开到 GitHub", index)
         self.assertIn("state.scope === 'custom'", app)
+
+    def test_paper_information_panel_omits_title_and_reading_actions(self):
+        app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        panel = app.split("function renderAssistantPaperDetail(item) {", 1)[1].split(
+            "function renderPaperAssistant", 1
+        )[0]
+        self.assertNotIn('<h3>${text(item.title)}</h3>', panel)
+        self.assertNotIn('<span>阅读操作</span>', panel)
+        self.assertNotIn('id="assistantReadAction"', panel)
+
+    def test_translation_collection_and_custom_glossary_are_persistent(self):
+        index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        styles = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn("translationFavorites", app)
+        self.assertIn("translationGlossary", app)
+        self.assertIn("function applyTranslationGlossary", app)
+        self.assertIn("function toggleTranslationFavorite", app)
+        self.assertIn("function saveTranslationGlossary", app)
+        self.assertIn('id="translationPhraseSource"', index)
+        self.assertIn('id="translationPhraseTarget"', index)
+        self.assertIn(".translation-shelf-panel", styles)
 
     def test_notice_portal_is_official_categorized_and_searchable(self):
         payload = json.loads((ROOT / "config" / "notice_portals.json").read_text(encoding="utf-8"))

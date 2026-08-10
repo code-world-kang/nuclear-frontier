@@ -64,12 +64,14 @@ function loadPersonal() {
       outbox: Array.isArray(parsed.outbox) ? parsed.outbox : [],
       readStatus: parsed.readStatus || {},
       notes,
+      translationFavorites: parsed.translationFavorites && typeof parsed.translationFavorites === 'object' ? parsed.translationFavorites : {},
+      translationGlossary: normalizeTranslationGlossary(parsed.translationGlossary),
       codeItems: Array.isArray(parsed.codeItems) ? parsed.codeItems : [],
       resources: Array.isArray(parsed.resources) ? parsed.resources : [],
       hiddenPublicFavorites: Array.isArray(parsed.hiddenPublicFavorites) ? parsed.hiddenPublicFavorites : [],
     };
   } catch {
-    return { favorites: {}, keywords: [], outbox: [], readStatus: {}, notes: {}, codeItems: [], resources: [], hiddenPublicFavorites: [] };
+    return { favorites: {}, keywords: [], outbox: [], readStatus: {}, notes: {}, translationFavorites: {}, translationGlossary: [], codeItems: [], resources: [], hiddenPublicFavorites: [] };
   }
 }
 
@@ -108,6 +110,22 @@ function savePaperLayout() {
 
 function normalizeKeyword(value = '') {
   return String(value).replace(/\s+/g, ' ').trim();
+}
+
+function normalizeTranslationGlossary(values = []) {
+  if (!Array.isArray(values)) return [];
+  const seen = new Set();
+  return values.map((entry, index) => ({
+    id: String(entry?.id || `term-${index}-${Date.now()}`),
+    source: normalizeKeyword(entry?.source || ''),
+    target: normalizeKeyword(entry?.target || ''),
+    added_at: entry?.added_at || '',
+  })).filter(entry => {
+    const key = entry.source.toLocaleLowerCase('zh-CN');
+    if (!key || !entry.target || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 function keywordKey(value = '') {
@@ -223,6 +241,10 @@ function currentItems() {
   if (state.view === 'news') return state.news;
   if (state.view === 'notices') return state.notices;
   if (state.view === 'favorites') {
+    if (state.mySection === 'translations') {
+      const ids = new Set(Object.keys(state.personal.translationFavorites));
+      return state.papers.filter(item => ids.has(item.id) && Boolean(translationFor(item)));
+    }
     const hidden = new Set(state.personal.hiddenPublicFavorites);
     const ids = new Set([
       ...Object.keys(state.personal.favorites),
@@ -352,21 +374,24 @@ function filteredItems() {
     if (!inPaperScope(item, focusIds, latest)) return false;
     if (state.category !== 'all' && !(item.categories || []).includes(state.category)) return false;
     if (!['news', 'notices'].includes(state.view) && state.source !== 'all' && item.source !== state.source) return false;
-    if (state.view === 'favorites' && state.favoriteKeyword !== 'all') {
+    if (state.view === 'favorites' && state.mySection === 'papers' && state.favoriteKeyword !== 'all') {
       const keywords = favoriteKeywords(item.id);
       if (state.favoriteKeyword === 'missing' && keywords.length) return false;
       if (state.favoriteKeyword.startsWith('kw:') && !keywords.some(value => keywordKey(value) === state.favoriteKeyword.slice(3))) return false;
     }
     if (!query) return true;
+    const translated = translationFor(item);
+    const customTerms = translationGlossaryMatches(item).flatMap(rule => [rule.source, rule.target]);
     const fields = {
-      title: [item.title],
-      abstract: [item.abstract, item.summary],
+      title: [item.title, translated?.title_zh],
+      abstract: [item.abstract, item.summary, translated?.abstract_zh],
       author: item.authors || [],
       identifier: [item.doi, item.arxiv_id],
       all: [
-        item.title, item.abstract, item.summary, item.source, item.source_short,
+        item.title, item.abstract, item.summary, translated?.title_zh, translated?.abstract_zh, item.source, item.source_short,
         item.doi, item.arxiv_id, ...(item.authors || []), ...(item.tags || []),
         ...favoriteKeywords(item.id),
+        ...customTerms,
         ...(item.categories || []).map(id => state.categoryMap.get(id)?.name || id),
       ],
     };
@@ -415,6 +440,41 @@ function markOpened(item) {
 
 function translationFor(item) {
   return state.translations[item.id] || null;
+}
+
+function escapeRegExp(value = '') {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function applyTranslationGlossary(value = '') {
+  return [...state.personal.translationGlossary]
+    .sort((a, b) => b.source.length - a.source.length)
+    .reduce((result, rule) => result.replace(new RegExp(escapeRegExp(rule.source), 'giu'), () => rule.target), String(value));
+}
+
+function translationGlossaryMatches(item) {
+  const haystack = [item.title, item.abstract, item.summary, translationFor(item)?.title_zh, translationFor(item)?.abstract_zh]
+    .join(' ').toLocaleLowerCase('zh-CN');
+  return state.personal.translationGlossary.filter(rule => haystack.includes(rule.source.toLocaleLowerCase('zh-CN')));
+}
+
+function isTranslationFavorite(id) {
+  return Boolean(state.personal.translationFavorites[id]);
+}
+
+function toggleTranslationFavorite(item) {
+  if (!translationFor(item)) return showToast('这篇论文暂时还没有可收藏的中文译文');
+  if (isTranslationFavorite(item.id)) {
+    delete state.personal.translationFavorites[item.id];
+    showToast('已取消收藏译文');
+  } else {
+    state.personal.translationFavorites[item.id] = { id: item.id, added_at: new Date().toISOString() };
+    state.translatedIds.add(item.id);
+    showToast('已收藏中文译文');
+  }
+  savePersonal();
+  renderCards();
+  renderHomeHub();
 }
 
 function usingTranslation(item) {
@@ -476,7 +536,7 @@ function cardFor(item) {
   titleLink.rel = 'noreferrer';
   const translation = translationFor(item);
   const translated = usingTranslation(item);
-  titleLink.textContent = translated ? translation.title_zh : item.title;
+  titleLink.textContent = translated ? applyTranslationGlossary(translation.title_zh) : item.title;
   heading.append(titleLink);
 
   const authors = $('.authors', card);
@@ -486,7 +546,7 @@ function cardFor(item) {
   const abstractValue = item.abstract || item.summary || '';
   const abstract = $('.abstract', card);
   abstract.textContent = translated
-    ? translation.abstract_zh
+    ? applyTranslationGlossary(translation.abstract_zh)
     : (abstractValue || '该数据源未公开摘要；本站不生成或杜撰摘要。');
   $('.abstract-label', card).textContent = abstractValue
     ? (translated ? '完整摘要（Codex 中文译文）' : (item.type === 'paper' ? '完整摘要（原文）' : '完整介绍（原始来源）'))
@@ -516,6 +576,12 @@ function cardFor(item) {
     const tag = document.createElement('span');
     tag.className = 'tag favorite-keyword-tag';
     tag.textContent = `# ${value}`;
+    tags.append(tag);
+  });
+  translationGlossaryMatches(item).slice(0, 3).forEach(rule => {
+    const tag = document.createElement('span');
+    tag.className = 'tag translation-term-tag';
+    tag.textContent = `译法：${rule.source} → ${rule.target}`;
     tags.append(tag);
   });
 
@@ -552,6 +618,16 @@ function cardFor(item) {
       : '最新核心论文将由 Codex 分批翻译';
     translate.addEventListener('click', () => toggleTranslation(item));
     actions.append(translate);
+
+    if (translation) {
+      const saveTranslation = document.createElement('button');
+      saveTranslation.type = 'button';
+      saveTranslation.className = `translation-favorite-button${isTranslationFavorite(item.id) ? ' active' : ''}`;
+      saveTranslation.textContent = isTranslationFavorite(item.id) ? '★ 已收藏译文' : '☆ 收藏译文';
+      saveTranslation.setAttribute('aria-pressed', String(isTranslationFavorite(item.id)));
+      saveTranslation.addEventListener('click', () => toggleTranslationFavorite(item));
+      actions.append(saveTranslation);
+    }
 
     const hasNote = Boolean((state.personal.notes[item.id] || '').trim());
     const note = document.createElement('button');
@@ -659,7 +735,7 @@ function renderMyCollection() {
 }
 
 function renderCards() {
-  if (state.view === 'favorites' && state.mySection !== 'papers') {
+  if (state.view === 'favorites' && ['code', 'references'].includes(state.mySection)) {
     renderMyCollection();
     return;
   }
@@ -671,6 +747,7 @@ function renderCards() {
   $('#loadMore').hidden = items.length <= state.visible;
   renderActiveFilters();
   renderMyKeywordsPanel();
+  renderTranslationShelfPanel();
   renderPaperAssistant(items);
 }
 
@@ -732,7 +809,7 @@ function renderActiveFilters() {
 
 function updateMySpaceUI() {
   const isMy = state.view === 'favorites';
-  const isPaperShelf = !isMy || state.mySection === 'papers';
+  const isPaperShelf = !isMy || ['papers', 'translations'].includes(state.mySection);
   $('#mySpaceNav').hidden = !isMy;
   $('.view-tabs').hidden = isMy;
   $$('.my-space-tab').forEach(button => button.classList.toggle('active', button.dataset.mySection === state.mySection));
@@ -744,26 +821,29 @@ function updateMySpaceUI() {
   $('#sortSelect').hidden = !isPaperShelf;
   $('#exportReferences').hidden = ['news', 'notices'].includes(state.view) || !isPaperShelf;
   $('#addMyItem').hidden = !(isMy && !isPaperShelf);
-  $('#myKeywordsPanel').hidden = !(isMy && isPaperShelf);
+  $('#myKeywordsPanel').hidden = !(isMy && state.mySection === 'papers');
+  $('#translationShelfPanel').hidden = !(isMy && state.mySection === 'translations');
   const isPaperWorkspace = ['papers', 'featured', 'unread'].includes(state.view) || (isMy && isPaperShelf);
   $('#openPaperAssistant').hidden = !isPaperWorkspace;
   $('#paperAssistant').hidden = !isPaperWorkspace;
   $('#assistantBackdrop').hidden = !isPaperWorkspace;
   if (!isPaperWorkspace) closePaperAssistant();
-  $('#searchInput').placeholder = isMy && !isPaperShelf
-    ? (state.mySection === 'code' ? '搜索我的代码与项目…' : '搜索参考资料…')
+  $('#searchInput').placeholder = isMy
+    ? ({ papers: '搜索收藏论文、作者或关键词…', translations: '搜索收藏译文、作者或术语…', code: '搜索我的代码与项目…', references: '搜索参考资料…' }[state.mySection])
     : '搜索题目、作者、期刊、DOI 或关键词…';
 }
 
 function setMySection(section) {
-  if (!['papers', 'code', 'references'].includes(section)) return;
+  if (!['papers', 'translations', 'code', 'references'].includes(section)) return;
   state.mySection = section;
   state.visible = 20;
   const labels = {
     papers: ['MY PAPERS', '我的论文', '按收藏关键词筛选论文、阅读状态与笔记'],
+    translations: ['TRANSLATION SHELF', '翻译收藏', '收藏重要中文译文，并用个人术语表指定特殊短语的译法'],
     code: ['MY CODE', '我的代码', '连接 GitHub 项目与常用分析代码'],
     references: ['REFERENCE SHELF', '参考资料', '数据库、官方手册与个人资料入口'],
   };
+  if (section === 'translations') Object.keys(state.personal.translationFavorites).forEach(id => state.translatedIds.add(id));
   const [kicker, title, note] = labels[section];
   $('#sectionKicker').textContent = kicker;
   $('#sectionTitle').textContent = title;
@@ -784,7 +864,7 @@ function setView(view) {
     featured: ['EDITOR\'S RADAR', '重点文献', '基于来源、新颖性与关注词评分'],
     news: ['OFFICIAL NEWS', '科研新闻', '仅保留官方原始链接'],
     notices: ['DAILY NOTICES', '每日科研通知', '基金·束流·博后·CSC·涉核会议'],
-    favorites: ['MY RESEARCH SPACE', '我的科研空间', '我的论文、代码与参考资料集中管理'],
+    favorites: ['MY RESEARCH SPACE', '我的科研空间', '论文、翻译收藏、代码与参考资料集中管理'],
     unread: ['READING QUEUE', '我的未读文献', '点击“未读”可在未读、在读和已读之间切换'],
   };
   const [kicker, title, note] = labels[view] || labels.papers;
@@ -1137,12 +1217,12 @@ function openDetails(item) {
   const scoreReasons = (item.score_reasons || []).map(reason => `<span>${text(reason)}</span>`).join('');
   host.innerHTML = `
     <div class="dialog-head"><div><small>${text(item.source || '')}</small><h3>文献详情与关联</h3></div><button aria-label="关闭">×</button></div>
-    <h2>${text(translated ? translation.title_zh : item.title)}</h2>
+    <h2>${text(translated ? applyTranslationGlossary(translation.title_zh) : item.title)}</h2>
     <p class="detail-meta">${text((item.authors || []).join(', ') || item.source || '')}<br>${text(prettyDate(item.published))}${item.doi ? ` · DOI ${text(item.doi)}` : ''}</p>
     <div class="tag-row">${(item.categories || []).map(id => `<span class="tag category">${text(categoryName(id))}</span>`).join('')}</div>
     <div class="score-box"><b>重要性 ${item.importance || 0}</b><div>${scoreReasons || '<span>基于来源与主题计算</span>'}</div></div>
     <h4>${translated ? 'Codex 中文译文' : '原文摘要'}</h4>
-    <p class="detail-abstract">${text(translated ? translation.abstract_zh : (item.abstract || item.summary || '该来源未提供可公开摘要。'))}</p>
+    <p class="detail-abstract">${text(translated ? applyTranslationGlossary(translation.abstract_zh) : (item.abstract || item.summary || '该来源未提供可公开摘要。'))}</p>
     <div class="detail-tools">
       <a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">打开原文 ↗</a>
       ${item.pdf_url ? `<a href="${text(item.pdf_url)}" target="_blank" rel="noreferrer">PDF ↗</a>` : ''}
@@ -1456,7 +1536,6 @@ function renderAssistantPaperDetail(item) {
   host.innerHTML = `
     <header class="selected-paper-head">
       <span>${text(item.source_short || item.source)} · ${text(prettyDate(item.published))}</span>
-      <h3>${text(item.title)}</h3>
       <p>${text((item.authors || []).slice(0, 5).join(', ') || '作者信息未提供')}${(item.authors || []).length > 5 ? ` 等 ${item.authors.length} 人` : ''}</p>
     </header>
     <section class="assistant-section paper-detail-section">
@@ -1485,27 +1564,9 @@ function renderAssistantPaperDetail(item) {
       <ul class="paper-reason-list">${scoreReasons.length ? scoreReasons.map(reason => `<li>${text(reason)}</li>`).join('') : '<li>当前暂无评分理由。</li>'}</ul>
     </section>
     <section class="assistant-section paper-detail-section">
-      <div class="assistant-section-head"><span>阅读操作</span></div>
-      <div class="paper-detail-actions">
-        <button type="button" id="assistantFavoriteAction">${isFavorite(item.id) ? '★ 已收藏' : '☆ 收藏'}</button>
-        <button type="button" id="assistantNoteAction">${state.personal.notes[item.id] ? '📝 编辑笔记' : '📝 写笔记'}</button>
-        <button type="button" id="assistantReadAction">${text(readingLabel(item.id))}</button>
-        <button type="button" id="assistantBibAction">导出 BibTeX</button>
-        <a href="${text(item.url)}" target="_blank" rel="noreferrer">原始页面 ↗</a>
-        ${item.pdf_url ? `<a href="${text(item.pdf_url)}" target="_blank" rel="noreferrer">PDF ↗</a>` : ''}
-      </div>
-    </section>
-    <section class="assistant-section paper-detail-section">
       <div class="assistant-section-head"><span>关联论文</span><small>按分类、标签、作者匹配</small></div>
       <div class="assistant-related-list">${related.length ? related.map(({ candidate, score }) => `<button type="button" data-related-paper="${text(candidate.id)}"><span>${text(candidate.title)}</span><small>${text(candidate.source_short || candidate.source)} · 关联度 ${score}</small></button>`).join('') : '<p>历史库中暂无明显关联论文。</p>'}</div>
     </section>`;
-  $('#assistantFavoriteAction', host).addEventListener('click', event => toggleFavorite(item, event.currentTarget));
-  $('#assistantNoteAction', host).addEventListener('click', () => openNoteDialog(item));
-  $('#assistantReadAction', host).addEventListener('click', () => cycleReadingStatus(item));
-  $('#assistantBibAction', host).addEventListener('click', () => {
-    downloadText(`${citationKey(item)}.bib`, toBibTeX(item), 'application/x-bibtex');
-    showToast('BibTeX 已导出');
-  });
   $$('[data-related-paper]', host).forEach(button => button.addEventListener('click', () => {
     const candidate = state.papers.find(value => value.id === button.dataset.relatedPaper);
     if (candidate) selectPaperForAssistant(candidate);
@@ -1894,10 +1955,11 @@ function renderHomeHub() {
   ]);
   const myItems = [
     ...state.papers.filter(item => favoriteIds.has(item.id)).slice(0, 2).map(item => ({ ...item, source_short: '我的论文' })),
+    ...state.papers.filter(item => state.personal.translationFavorites[item.id]).slice(0, 1).map(item => ({ ...item, source_short: '翻译收藏' })),
     ...myCollectionItems('code').slice(0, 1).map(item => ({ ...item, source_short: '我的代码' })),
     ...myCollectionItems('references').slice(0, 1).map(item => ({ ...item, source_short: '参考资料' })),
   ];
-  const myCount = favoriteIds.size + myCollectionItems('code').length + myCollectionItems('references').length;
+  const myCount = favoriteIds.size + Object.keys(state.personal.translationFavorites).length + myCollectionItems('code').length + myCollectionItems('references').length;
   host.replaceChildren(
     homeLane({ kicker: 'TODAY', title: '今日核物理', count: todayNuclear.length, items: todayNuclear, view: 'papers', tone: 'papers-lane', scope: 'daily-focus' }),
     homeLane({ kicker: 'NEWS', title: '科研新闻', count: state.news.length, items: news, view: 'news', tone: 'news-lane' }),
@@ -2036,6 +2098,65 @@ function renderMyKeywordsPanel() {
   }
 }
 
+function renderTranslationShelfPanel() {
+  const panel = $('#translationShelfPanel');
+  const visible = state.view === 'favorites' && state.mySection === 'translations';
+  panel.hidden = !visible;
+  if (!visible) return;
+  const rules = state.personal.translationGlossary;
+  $('#translationFavoriteCount').textContent = Object.keys(state.personal.translationFavorites).length.toLocaleString('zh-CN');
+  $('#translationGlossaryCount').textContent = rules.length.toLocaleString('zh-CN');
+  $('#translationGlossaryPreview').innerHTML = rules.length
+    ? rules.slice(0, 8).map(rule => `<span><b>${text(rule.source)}</b><i>→</i>${text(rule.target)}</span>`).join('')
+    : '<small>尚未添加指定译法。例如：knockout reaction → 敲出反应。</small>';
+}
+
+function renderTranslationGlossary() {
+  const host = $('#translationGlossaryList');
+  const rules = state.personal.translationGlossary;
+  host.innerHTML = rules.length ? rules.map(rule => `
+    <div class="translation-glossary-item" data-translation-rule="${text(rule.id)}">
+      <span><b>${text(rule.source)}</b><i>→</i><strong>${text(rule.target)}</strong></span>
+      <button type="button" aria-label="删除译法 ${text(rule.source)}">删除</button>
+    </div>`).join('') : '<p>尚未添加指定译法。</p>';
+  $$('[data-translation-rule] button', host).forEach(button => button.addEventListener('click', () => {
+    const id = button.closest('[data-translation-rule]').dataset.translationRule;
+    state.personal.translationGlossary = state.personal.translationGlossary.filter(rule => rule.id !== id);
+    savePersonal();
+    renderTranslationGlossary();
+    renderTranslationShelfPanel();
+    renderCards();
+    showToast('已删除指定译法');
+  }));
+}
+
+function openTranslationGlossaryDialog() {
+  renderTranslationGlossary();
+  $('#translationGlossaryDialog').showModal();
+  $('#translationPhraseSource').focus();
+}
+
+function saveTranslationGlossary(event) {
+  event.preventDefault();
+  const source = normalizeKeyword($('#translationPhraseSource').value);
+  const target = normalizeKeyword($('#translationPhraseTarget').value);
+  if (!source || !target) return showToast('请同时填写原短语和指定译法');
+  const key = source.toLocaleLowerCase('zh-CN');
+  const existing = state.personal.translationGlossary.find(rule => rule.source.toLocaleLowerCase('zh-CN') === key);
+  if (existing) {
+    existing.source = source;
+    existing.target = target;
+  } else {
+    state.personal.translationGlossary.unshift({ id: `term-${Date.now()}`, source, target, added_at: new Date().toISOString() });
+  }
+  savePersonal();
+  event.currentTarget.reset();
+  renderTranslationGlossary();
+  renderTranslationShelfPanel();
+  renderCards();
+  showToast(existing ? '已更新指定译法' : '已保存指定译法');
+}
+
 function exportPersonal() {
   const blob = new Blob([JSON.stringify(state.personal, null, 2)], { type: 'application/json' });
   const link = document.createElement('a');
@@ -2061,6 +2182,8 @@ async function importPersonal(file) {
       favorites, keywords: Array.isArray(value.keywords) ? uniqueKeywords(value.keywords) : [],
       outbox: Array.isArray(value.outbox) ? value.outbox.map(publicSyncEvent).filter(Boolean) : [],
       readStatus: value.readStatus || {}, notes,
+      translationFavorites: value.translationFavorites && typeof value.translationFavorites === 'object' ? value.translationFavorites : {},
+      translationGlossary: normalizeTranslationGlossary(value.translationGlossary),
       codeItems: Array.isArray(value.codeItems) ? value.codeItems : [],
       resources: Array.isArray(value.resources) ? value.resources : [],
       hiddenPublicFavorites: Array.isArray(value.hiddenPublicFavorites) ? value.hiddenPublicFavorites : [],
@@ -2180,6 +2303,9 @@ function bindEvents() {
   $('#closeNote').addEventListener('click', closeNoteDialog);
   $('#cancelNote').addEventListener('click', closeNoteDialog);
   $('#deleteNote').addEventListener('click', deleteNoteDraft);
+  $('#openTranslationGlossary').addEventListener('click', openTranslationGlossaryDialog);
+  $('#closeTranslationGlossary').addEventListener('click', () => $('#translationGlossaryDialog').close());
+  $('#translationGlossaryForm').addEventListener('submit', saveTranslationGlossary);
   $('#addMyItem').addEventListener('click', openMyItemDialog);
   $('#myItemForm').addEventListener('submit', saveMyItem);
   $('#cancelMyItem').addEventListener('click', closeMyItemDialog);
@@ -2245,7 +2371,7 @@ async function initialize() {
     await loadData();
     renderCategories(); renderSourceOptions(); renderHomeHub(); renderBriefing(); renderMetrics(); renderKeywords(); renderHomeDashboard(); renderNoticePortal();
     const hash = location.hash.slice(1);
-    const myMatch = hash.match(/^favorites-(papers|code|references)$/);
+    const myMatch = hash.match(/^favorites-(papers|translations|code|references)$/);
     if (myMatch) {
       state.mySection = myMatch[1];
       setView('favorites');
