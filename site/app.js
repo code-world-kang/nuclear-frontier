@@ -19,6 +19,9 @@ const state = {
   noticePortalCategory: 'all', noticePortalQuery: '', personal: loadPersonal(), paperLayout: loadPaperLayout(),
   layoutEditing: false, draggedCategory: '', categoryMap: new Map(),
   categorySelections: { papers: 'all', news: 'all' },
+  historyManifest: null, globalKeyword: '', historyResults: [], historyMatchEntries: [],
+  historyMonthQueue: [], historyLoadedMonths: new Set(), historySearching: false,
+  historyProgress: '', historyRequestToken: 0, historyTotalMatches: 0,
 };
 const citationMetadataRequests = new Map();
 const PRIMARY_NUCLEAR_CATEGORIES = new Set([
@@ -334,7 +337,14 @@ function currentItems() {
     return [...state.papers, ...state.news, ...state.notices].filter(item => ids.has(item.id));
   }
   if (state.view === 'unread') return state.papers.filter(item => state.personal.readStatus[item.id] !== 'read');
+  if (state.view === 'papers' && state.globalKeyword) return state.historyResults;
   return state.papers;
+}
+
+function allKnownPapers() {
+  const values = new Map();
+  [...state.papers, ...state.historyResults].forEach(item => values.set(item.id, item));
+  return [...values.values()];
 }
 
 function isPrimaryNuclear(item) {
@@ -490,6 +500,222 @@ function filteredItems() {
     return (b.published || '').localeCompare(a.published || '') || (b.importance || 0) - (a.importance || 0);
   });
   return values;
+}
+
+function historyCoverageLabel() {
+  const manifest = state.historyManifest;
+  if (!manifest) return '历史索引信息载入中';
+  const start = manifest.start_month || '2001-01';
+  const through = manifest.backfill_complete_through;
+  const coverage = through ? `${start} 至 ${through} 已连续完成` : `正在从 ${start} 开始回填`;
+  return `${coverage} · 已索引 ${Number(manifest.indexed_papers || 0).toLocaleString('zh-CN')} 篇 / ${Number(manifest.indexed_months || 0)} 个月`;
+}
+
+function clearGlobalKeywordSearch({ render = true } = {}) {
+  state.historyRequestToken += 1;
+  state.globalKeyword = '';
+  state.historyResults = [];
+  state.historyMatchEntries = [];
+  state.historyMonthQueue = [];
+  state.historyLoadedMonths = new Set();
+  state.historySearching = false;
+  state.historyProgress = '';
+  state.historyTotalMatches = 0;
+  state.visible = 20;
+  if (render) {
+    renderGlobalKeywordPanel();
+    renderSourceOptions();
+    renderCards();
+  }
+}
+
+function historyMonthEnd(month) {
+  const [year, value] = month.split('-').map(Number);
+  return new Date(Date.UTC(year, value, 0)).toISOString().slice(0, 10);
+}
+
+async function loadHistoryMonths(months, token) {
+  const wantedByMonth = new Map();
+  state.historyMatchEntries.forEach(item => {
+    if (!months.includes(item.month)) return;
+    const values = wantedByMonth.get(item.month) || new Set();
+    values.add(item.id);
+    wantedByMonth.set(item.month, values);
+  });
+  const loaded = [];
+  for (let index = 0; index < months.length; index += 3) {
+    if (token !== state.historyRequestToken) return;
+    const batch = months.slice(index, index + 3);
+    const results = await Promise.all(batch.map(async month => {
+      const [year, number] = month.split('-');
+      const response = await fetch(`./data/history/papers/${year}/${number}.json`);
+      if (!response.ok) throw new Error(`${month} 论文分片 HTTP ${response.status}`);
+      const values = await response.json();
+      const wanted = wantedByMonth.get(month) || new Set();
+      return values.filter(item => wanted.has(item.id));
+    }));
+    results.forEach(values => loaded.push(...values));
+    state.historyProgress = `正在载入论文详情 ${Math.min(index + 3, months.length)} / ${months.length} 个月…`;
+    renderGlobalKeywordPanel();
+  }
+  if (token !== state.historyRequestToken) return;
+  const merged = new Map(state.historyResults.map(item => [item.id, item]));
+  loaded.forEach(item => merged.set(item.id, item));
+  state.historyResults = [...merged.values()].sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.importance || 0) - (a.importance || 0));
+  months.forEach(month => state.historyLoadedMonths.add(month));
+  state.historyMonthQueue = state.historyMonthQueue.filter(month => !state.historyLoadedMonths.has(month));
+}
+
+async function loadNextHistoryBatch() {
+  if (!state.globalKeyword || state.historySearching || !state.historyMonthQueue.length) return;
+  const token = state.historyRequestToken;
+  state.historySearching = true;
+  const months = state.historyMonthQueue.slice(0, 6);
+  try {
+    await loadHistoryMonths(months, token);
+    if (token !== state.historyRequestToken) return;
+    state.visible = Math.max(state.visible, state.historyResults.length);
+    state.historyProgress = state.historyMonthQueue.length
+      ? `已载入 ${state.historyLoadedMonths.size} 个月，继续向下可载入更早结果`
+      : '全部命中月份已载入';
+  } catch (error) {
+    console.error(error);
+    state.historyProgress = `部分历史详情载入失败：${error.message}`;
+  } finally {
+    if (token === state.historyRequestToken) {
+      state.historySearching = false;
+      renderCategories();
+      renderSourceOptions();
+      renderGlobalKeywordPanel();
+      renderCards();
+    }
+  }
+}
+
+async function searchAllHistory(keyword) {
+  const normalized = normalizeKeyword(keyword);
+  if (!normalized) return clearGlobalKeywordSearch();
+  const token = state.historyRequestToken + 1;
+  state.historyRequestToken = token;
+  state.globalKeyword = normalized;
+  state.historyResults = [];
+  state.historyMatchEntries = [];
+  state.historyMonthQueue = [];
+  state.historyLoadedMonths = new Set();
+  state.historyTotalMatches = 0;
+  state.historySearching = true;
+  state.historyProgress = '正在准备全库索引…';
+  state.scope = 'all';
+  state.category = 'all';
+  state.source = 'all';
+  state.query = '';
+  state.visible = 20;
+  $('#scopeSelect').value = 'all';
+  $('#sourceSelect').value = 'all';
+  $('#searchInput').value = '';
+  renderCategories();
+  renderGlobalKeywordPanel();
+  renderCards();
+  const terms = normalized.toLocaleLowerCase('zh-CN').split(/\s+/).filter(Boolean);
+  const years = [...(state.historyManifest?.years || [])].sort((a, b) => b.year - a.year);
+  const matched = new Map();
+  try {
+    for (let index = 0; index < years.length; index += 1) {
+      if (token !== state.historyRequestToken) return;
+      const year = years[index].year;
+      state.historyProgress = `正在检索 ${year} 年 · ${index + 1} / ${years.length}`;
+      renderGlobalKeywordPanel();
+      const response = await fetch(`./data/history/search/${year}.json`);
+      if (!response.ok) throw new Error(`${year} 年索引 HTTP ${response.status}`);
+      const payload = await response.json();
+      (payload.items || []).forEach(item => {
+        const haystack = String(item.search_text || '');
+        if (terms.every(term => haystack.includes(term))) matched.set(item.id, item);
+      });
+      // 每次只保留命中项；完整年度索引会在下一轮被浏览器回收。
+    }
+    if (token !== state.historyRequestToken) return;
+    state.historyMatchEntries = [...matched.values()];
+    state.historyTotalMatches = state.historyMatchEntries.length;
+    state.historyMonthQueue = [...new Set(state.historyMatchEntries.map(item => item.month))].sort().reverse();
+    state.historyProgress = state.historyTotalMatches ? '索引检索完成，正在载入最新命中月份…' : '全库暂未找到匹配论文';
+    if (state.historyMonthQueue.length) await loadHistoryMonths(state.historyMonthQueue.slice(0, 6), token);
+    if (token !== state.historyRequestToken) return;
+    state.historyProgress = state.historyMonthQueue.length
+      ? `已载入最新 ${state.historyLoadedMonths.size} 个月；点击“继续载入”查看更早结果`
+      : (state.historyTotalMatches ? '全部命中月份已载入' : '可更换关键词后重试');
+  } catch (error) {
+    console.error(error);
+    state.historyProgress = `全库检索失败：${error.message}`;
+  } finally {
+    if (token === state.historyRequestToken) {
+      state.historySearching = false;
+      renderCategories();
+      renderSourceOptions();
+      renderGlobalKeywordPanel();
+      renderCards();
+    }
+  }
+}
+
+function historyMonthStats() {
+  const counts = new Map();
+  state.historyMatchEntries.forEach(item => counts.set(item.month, (counts.get(item.month) || 0) + 1));
+  return [...counts.entries()].sort((a, b) => b[0].localeCompare(a[0]));
+}
+
+function renderGlobalKeywordPanel() {
+  const panel = $('#historyKeywordPanel');
+  if (!panel) return;
+  panel.hidden = state.view !== 'papers';
+  if (panel.hidden) return;
+  $('#historyCoverage').textContent = historyCoverageLabel();
+  const values = uniqueKeywords(state.personal.keywords);
+  const chipHost = $('#historyKeywordChips');
+  chipHost.replaceChildren(...values.map(keyword => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'history-keyword-chip';
+    button.classList.toggle('active', keywordKey(keyword) === keywordKey(state.globalKeyword));
+    button.textContent = keyword;
+    button.addEventListener('click', () => void searchAllHistory(keyword));
+    return button;
+  }));
+  if (!values.length) {
+    const hint = document.createElement('small');
+    hint.textContent = '先添加个人关键词，或在右侧输入任意关键词。';
+    chipHost.append(hint);
+  }
+  $('#historyKeywordInput').value = state.globalKeyword;
+  $('#clearHistoryKeyword').hidden = !state.globalKeyword;
+  $('#historySearchStatus').textContent = state.globalKeyword
+    ? `“${state.globalKeyword}”全库命中 ${state.historyTotalMatches.toLocaleString('zh-CN')} 篇；网页仅按月分批载入详情，不一次占满内存。${state.historyProgress ? ` ${state.historyProgress}` : ''}`
+    : '选择关键词后，会逐年检索轻量索引，并按月分批载入论文详情。';
+  const stats = historyMonthStats();
+  const max = Math.max(1, ...stats.map(([, count]) => count));
+  $('#historyMonthStats').innerHTML = stats.length ? stats.map(([month, count]) => `
+    <button type="button" data-history-month="${text(month)}" class="${state.historyLoadedMonths.has(month) ? 'loaded' : ''}">
+      <span>${text(month)}</span><i><em style="width:${Math.max(6, count / max * 100).toFixed(1)}%"></em></i><b>${count}</b>
+    </button>`).join('') : '';
+  $$('[data-history-month]', $('#historyMonthStats')).forEach(button => button.addEventListener('click', async () => {
+    const month = button.dataset.historyMonth;
+    if (!state.historyLoadedMonths.has(month)) {
+      state.historySearching = true;
+      state.historyProgress = `正在载入 ${month} 的命中论文…`;
+      renderGlobalKeywordPanel();
+      await loadHistoryMonths([month], state.historyRequestToken);
+      state.historySearching = false;
+    }
+    state.scope = 'custom';
+    state.dateFrom = `${month}-01`;
+    state.dateTo = historyMonthEnd(month);
+    $('#scopeSelect').value = 'custom';
+    $('#dateFrom').value = state.dateFrom;
+    $('#dateTo').value = state.dateTo;
+    updateMySpaceUI();
+    renderGlobalKeywordPanel();
+    renderCards();
+  }));
 }
 
 function categoryName(id) {
@@ -1032,10 +1258,18 @@ function renderCards() {
   const items = filteredItems();
   const list = $('#cardList');
   list.replaceChildren(...items.slice(0, state.visible).map(cardFor));
-  $('#resultCount').textContent = `共 ${items.length.toLocaleString('zh-CN')} 条结果`;
+  $('#resultCount').textContent = state.view === 'papers' && state.globalKeyword
+    ? `全库命中 ${state.historyTotalMatches.toLocaleString('zh-CN')} 篇 · 已载入 ${items.length.toLocaleString('zh-CN')} 篇详情`
+    : `共 ${items.length.toLocaleString('zh-CN')} 条结果`;
   $('#emptyState').hidden = items.length !== 0;
-  $('#loadMore').hidden = items.length <= state.visible;
+  const hasQueuedHistory = state.view === 'papers' && state.globalKeyword && state.historyMonthQueue.length;
+  $('#loadMore').hidden = items.length <= state.visible && !hasQueuedHistory;
+  $('#loadMore').disabled = state.historySearching;
+  $('#loadMore').textContent = hasQueuedHistory
+    ? (state.historySearching ? '正在载入…' : '继续载入更早月份')
+    : '显示更多';
   renderActiveFilters();
+  renderGlobalKeywordPanel();
   renderMyKeywordsPanel();
   renderTranslationShelfPanel();
   renderPaperAssistant(items);
@@ -1112,6 +1346,7 @@ function updateMySpaceUI() {
   $('#exportReferences').hidden = ['news', 'notices'].includes(state.view) || !isPaperShelf;
   $('#addMyItem').hidden = !(isMy && !isPaperShelf);
   $('#myKeywordsPanel').hidden = !(isMy && state.mySection === 'papers');
+  $('#historyKeywordPanel').hidden = state.view !== 'papers';
   $('#translationShelfPanel').hidden = !(isMy && state.mySection === 'translations');
   $('#referenceGroupPanel').hidden = !(isMy && state.mySection === 'references');
   const isPaperWorkspace = ['home', 'papers', 'featured', 'unread', 'ignored', 'news'].includes(state.view) || (isMy && isPaperShelf);
@@ -1194,6 +1429,7 @@ function setView(view) {
     setMySection(state.mySection);
     return;
   }
+  renderGlobalKeywordPanel();
   renderCards();
   history.replaceState(null, '', `${PATH}#${view}`);
 }
@@ -1208,7 +1444,8 @@ function setCategory(id) {
 
 function renderSourceOptions() {
   const counts = new Map();
-  state.papers.forEach(item => counts.set(item.source, (counts.get(item.source) || 0) + 1));
+  const values = state.view === 'papers' && state.globalKeyword ? state.historyResults : state.papers;
+  values.forEach(item => counts.set(item.source, (counts.get(item.source) || 0) + 1));
   const select = $('#sourceSelect');
   select.replaceChildren(new Option('所有来源', 'all'));
   [...counts.entries()].sort((a, b) => a[0].localeCompare(b[0], 'en', { sensitivity: 'base', numeric: true })).forEach(([source, count]) => {
@@ -1618,7 +1855,7 @@ function openDetails(item) {
   markOpened(item);
   const translation = translationFor(item);
   const translated = usingTranslation(item);
-  const related = state.papers
+  const related = allKnownPapers()
     .map(candidate => ({ candidate, score: similarity(item, candidate) }))
     .filter(entry => entry.score > 0)
     .sort((a, b) => b.score - a.score || (b.candidate.published || '').localeCompare(a.candidate.published || ''))
@@ -1672,7 +1909,8 @@ function openDetails(item) {
 
 function renderCategories() {
   const counts = new Map();
-  const categoryItems = state.view === 'news' ? state.news : state.papers;
+  const categoryItems = state.view === 'news' ? state.news
+    : (state.view === 'papers' && state.globalKeyword ? state.historyResults : state.papers);
   categoryItems.forEach(item => (item.categories || []).forEach(id => counts.set(id, (counts.get(id) || 0) + 1)));
   $('#researchFieldTitle').textContent = state.view === 'news' ? '新闻领域' : '研究领域';
   const host = $('#categoryList');
@@ -1862,6 +2100,7 @@ function assistantFilterLabels() {
   if (state.category !== 'all') labels.push(categoryName(state.category));
   if (state.source !== 'all') labels.push(state.source);
   if (state.query.trim()) labels.push(`搜索：${state.query.trim()}`);
+  if (state.globalKeyword && state.view === 'papers') labels.push(`全库关键词：${state.globalKeyword}`);
   if (state.view === 'papers') labels.push($('#scopeSelect')?.selectedOptions[0]?.textContent || '全部时间');
   if (state.searchField !== 'all') labels.push($('#searchFieldSelect')?.selectedOptions[0]?.textContent || '指定字段');
   return labels;
@@ -1986,7 +2225,7 @@ function renderAssistantPaperDetail(item) {
   if (item.type === 'news') return renderAssistantNewsDetail(item);
   const host = $('#assistantPaperDetail');
   const facts = extractPaperFacts(item);
-  const related = state.papers
+  const related = allKnownPapers()
     .map(candidate => ({ candidate, score: similarity(item, candidate) }))
     .filter(entry => entry.score > 0)
     .sort((a, b) => b.score - a.score || (b.candidate.published || '').localeCompare(a.candidate.published || ''))
@@ -2050,7 +2289,7 @@ function renderAssistantPaperDetail(item) {
   });
   $('[data-assistant-ignore]', host).addEventListener('click', () => toggleIgnored(item));
   $$('[data-related-paper]', host).forEach(button => button.addEventListener('click', () => {
-    const candidate = state.papers.find(value => value.id === button.dataset.relatedPaper);
+    const candidate = allKnownPapers().find(value => value.id === button.dataset.relatedPaper);
     if (candidate) selectPaperForAssistant(candidate);
   }));
 }
@@ -2082,7 +2321,7 @@ function renderPaperAssistant(items = filteredItems()) {
   $('#assistantUnreadTotal').textContent = state.papers.filter(item => state.personal.readStatus[item.id] !== 'read').length.toLocaleString('zh-CN');
   $('#assistantDailyTotal').textContent = `${state.notices.length + state.news.length}`;
 
-  const selected = state.selectedPaperId ? [...state.papers, ...state.news].find(item => item.id === state.selectedPaperId) : null;
+  const selected = state.selectedPaperId ? [...allKnownPapers(), ...state.news].find(item => item.id === state.selectedPaperId) : null;
   $('#assistantOverview').hidden = Boolean(selected);
   $('#assistantPaperDetail').hidden = !selected;
   $('#assistantBackToOverview').hidden = !selected;
@@ -2130,7 +2369,9 @@ function clearPaperFilters() {
   $('#searchFieldSelect').value = 'all';
   $('#scopeSelect').value = 'all';
   $('#sourceSelect').value = 'all';
+  clearGlobalKeywordSearch({ render: false });
   renderCategories();
+  renderSourceOptions();
   updateMySpaceUI();
   renderCards();
   showToast('已清除论文筛选');
@@ -2786,7 +3027,19 @@ function bindEvents() {
     renderCards();
   });
   $('#sourceSelect').addEventListener('change', event => { state.source = event.target.value; state.visible = 20; renderCards(); });
-  $('#loadMore').addEventListener('click', () => { state.visible += 20; renderCards(); });
+  $('#loadMore').addEventListener('click', () => {
+    if (state.view === 'papers' && state.globalKeyword && state.historyMonthQueue.length) {
+      void loadNextHistoryBatch();
+      return;
+    }
+    state.visible += 20;
+    renderCards();
+  });
+  $('#historyKeywordForm').addEventListener('submit', event => {
+    event.preventDefault();
+    void searchAllHistory($('#historyKeywordInput').value);
+  });
+  $('#clearHistoryKeyword').addEventListener('click', () => clearGlobalKeywordSearch());
   $('#keywordButton').addEventListener('click', () => $('#keywordDialog').showModal());
   $('#addKeywordAside').addEventListener('click', () => $('#keywordDialog').showModal());
   $('#keywordForm').addEventListener('submit', event => {
@@ -2795,7 +3048,7 @@ function bindEvents() {
     const value = input.value.trim();
     if (value && !state.personal.keywords.includes(value)) {
       state.personal.keywords.push(value);
-      savePersonal(); renderKeywords(); renderCards();
+      savePersonal(); renderKeywords(); renderGlobalKeywordPanel(); renderCards();
     }
     input.value = '';
   });
@@ -2858,16 +3111,20 @@ function bindEvents() {
 
 async function loadData() {
   const files = ['meta', 'papers', 'featured', 'news', 'notices', 'public-favorites', 'notice-portals', 'reference-resources', 'personal-state', 'translations.zh-CN'];
-  const responses = await Promise.all(files.map(async name => {
+  const [responses, historyManifest] = await Promise.all([Promise.all(files.map(async name => {
     const response = await fetch(`./data/${name}.json`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
     return response.json();
-  }));
+  })), fetch('./data/history/manifest.json', { cache: 'no-store' }).then(response => {
+    if (!response.ok) throw new Error(`history manifest: HTTP ${response.status}`);
+    return response.json();
+  })]);
   const translationPayload = responses.pop();
   const personalPayload = responses.pop();
   const referencePayload = responses.pop();
   [state.meta, state.papers, state.featured, state.news, state.notices, state.publicFavorites, state.noticePortals] = responses;
   state.referenceResources = Array.isArray(referencePayload?.items) ? referencePayload.items : [];
+  state.historyManifest = historyManifest;
   applyPublicPersonalState(personalPayload);
   state.personalDirty = false;
   state.translations = translationPayload.items || {};
@@ -2883,7 +3140,7 @@ async function initialize() {
   bindEvents();
   try {
     await loadData();
-    renderCategories(); renderSourceOptions(); renderHomeHub(); renderBriefing(); renderMetrics(); renderKeywords(); renderHomeDashboard(); renderNoticePortal();
+    renderCategories(); renderSourceOptions(); renderHomeHub(); renderBriefing(); renderMetrics(); renderKeywords(); renderGlobalKeywordPanel(); renderHomeDashboard(); renderNoticePortal();
     const hash = location.hash.slice(1);
     const myMatch = hash.match(/^favorites-(papers|translations|code|references)$/);
     if (myMatch) {

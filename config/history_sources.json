@@ -1,0 +1,67 @@
+{
+  "start_month": "2001-01",
+  "sources": [
+    {
+      "name": "Physical Review C",
+      "short": "PRC",
+      "issn": "0556-2813",
+      "mode": "all",
+      "weight": 5,
+      "default_categories": ["nuclear-general"]
+    },
+    {
+      "name": "Nuclear Instruments and Methods in Physics Research A",
+      "short": "NIMA",
+      "issn": "0168-9002",
+      "mode": "all",
+      "weight": 5,
+      "default_categories": ["detectors-daq"]
+    },
+    {
+      "name": "Nuclear Physics A",
+      "short": "NPA",
+      "issn": "0375-9474",
+      "mode": "all",
+      "weight": 5,
+      "default_categories": ["nuclear-general"]
+    },
+    {
+      "name": "Physics Letters B",
+      "short": "PLB",
+      "issn": "0370-2693",
+      "mode": "all",
+      "weight": 5
+    },
+    {
+      "name": "Physical Review Letters",
+      "short": "PRL",
+      "issn": "1079-7114",
+      "mode": "filtered",
+      "weight": 6
+    },
+    {
+      "name": "The European Physical Journal A",
+      "short": "EPJ A",
+      "issn": "1434-601X",
+      "mode": "all",
+      "weight": 4,
+      "default_categories": ["nuclear-general"]
+    },
+    {
+      "name": "Journal of Physics G",
+      "short": "J. Phys. G",
+      "issn": "1361-6471",
+      "mode": "all",
+      "weight": 4,
+      "default_categories": ["nuclear-general"]
+    },
+    {
+      "name": "Nuclear Fusion",
+      "short": "NF",
+      "issn": "0029-5515",
+      "mode": "all",
+      "weight": 5,
+      "default_categories": ["fusion"]
+    }
+  ]
+}

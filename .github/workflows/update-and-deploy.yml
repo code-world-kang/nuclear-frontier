@@ -38,6 +38,9 @@ jobs:
       - name: 拉取每日论文、新闻与通知
         run: python scripts/update_content.py --days 14 --strict
 
+      - name: 逐月扩展 2001 年以来的历史论文库
+        run: python scripts/backfill_history.py --next 1 --max-workers 4
+
       - name: 构建站点数据
         run: python scripts/build_site.py
 

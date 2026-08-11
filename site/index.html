@@ -276,6 +276,26 @@
           </div>
 
           <div class="active-filters" id="activeFilters"></div>
+          <section class="history-keyword-panel" id="historyKeywordPanel" aria-labelledby="historyKeywordTitle">
+            <header>
+              <div><span class="section-kicker">2001—NOW · MONTHLY INDEX</span><h3 id="historyKeywordTitle">按我的关键词检索全部历史论文</h3></div>
+              <small id="historyCoverage">历史索引信息载入中</small>
+            </header>
+            <p>点选个人关键词即可跨年份检索。系统先逐年读取轻量索引，再按月分批载入命中的完整论文，不会一次把全部历史库塞进浏览器。</p>
+            <div class="history-keyword-tools">
+              <div class="history-keyword-chips" id="historyKeywordChips"></div>
+              <form id="historyKeywordForm">
+                <input id="historyKeywordInput" type="search" placeholder="也可输入核素、反应道或装置…" autocomplete="off">
+                <button type="submit">检索全库</button>
+                <button type="button" id="clearHistoryKeyword" hidden>返回最新论文</button>
+              </form>
+            </div>
+            <div class="history-search-status" id="historySearchStatus" aria-live="polite">选择关键词后，会逐年检索轻量索引，并按月分批载入论文详情。</div>
+            <details class="history-month-details">
+              <summary>按月份查看命中统计</summary>
+              <div class="history-month-stats" id="historyMonthStats"></div>
+            </details>
+          </section>
           <section class="my-keywords-panel" id="myKeywordsPanel" hidden aria-labelledby="myKeywordsTitle">
             <div><span class="section-kicker">MY KEYWORDS</span><h3 id="myKeywordsTitle">我的收藏关键词</h3></div>
             <p>选择一个关键词，筛选已收藏的论文。</p>

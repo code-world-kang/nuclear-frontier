@@ -16,6 +16,7 @@ class RepositoryTests(unittest.TestCase):
             ROOT / "config" / "sources.json",
             ROOT / "config" / "runtime.json",
             ROOT / "config" / "notice_portals.json",
+            ROOT / "config" / "history_sources.json",
             ROOT / "data" / "papers.json",
             ROOT / "data" / "news.json",
             ROOT / "data" / "notices.json",
@@ -27,6 +28,7 @@ class RepositoryTests(unittest.TestCase):
             ROOT / "site" / "data" / "personal-state.json",
             ROOT / "site" / "data" / "notice-portals.json",
             ROOT / "site" / "data" / "reference-resources.json",
+            ROOT / "site" / "data" / "history" / "manifest.json",
         ]:
             with self.subTest(path=path):
                 json.loads(path.read_text(encoding="utf-8"))
@@ -108,9 +110,12 @@ class RepositoryTests(unittest.TestCase):
         for record_id, item in translations["items"].items():
             with self.subTest(id=record_id):
                 self.assertIn(record_id, record_ids)
-                if item.get("title_zh") or item.get("abstract_zh"):
+                if item.get("title_zh") and item.get("abstract_zh"):
                     self.assertTrue(item.get("title_zh"))
                     self.assertTrue(item.get("abstract_zh"))
+                elif item.get("title_zh"):
+                    self.assertIn("未提供 abstract/summary", item.get("note", ""))
+                    self.assertFalse(item.get("abstract_zh"))
                 else:
                     self.assertIn("跳过翻译", item.get("note", ""))
 
@@ -152,6 +157,8 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('id="referenceGroupPanel"', index)
         self.assertIn('id="referenceGroupList"', index)
         self.assertIn('id="translationGlossaryDialog"', index)
+        self.assertIn('id="historyKeywordPanel"', index)
+        self.assertIn('id="historyMonthStats"', index)
         self.assertIn('id="citationDialog"', index)
         self.assertIn("小康康的物理世界", index)
         self.assertIn("window.location.protocol === 'file:'", index)
@@ -167,6 +174,30 @@ class RepositoryTests(unittest.TestCase):
             workflow = (ROOT / ".github" / "workflows" / workflow_name).read_text(encoding="utf-8")
             self.assertIn("git rebase origin/main", workflow)
             self.assertIn("for attempt in 1 2 3", workflow)
+
+    def test_monthly_history_index_is_reconciled_and_lazy(self):
+        manifest = json.loads((ROOT / "site" / "data" / "history" / "manifest.json").read_text(encoding="utf-8"))
+        status = json.loads((ROOT / "data" / "history" / "status.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["start_month"], "2001-01")
+        self.assertGreaterEqual(manifest["indexed_papers"], 1)
+        self.assertGreaterEqual(manifest["indexed_months"], 1)
+        self.assertGreaterEqual(manifest["backfill_complete_through"], "2001-03")
+        self.assertTrue(all(status["months"][month]["complete"] for month in ["2001-01", "2001-02", "2001-03"]))
+        yearly_count = 0
+        for year in manifest["years"]:
+            search = json.loads((ROOT / "site" / "data" / "history" / "search" / f"{year['year']}.json").read_text(encoding="utf-8"))
+            stats = json.loads((ROOT / "site" / "data" / "history" / "stats" / f"{year['year']}.json").read_text(encoding="utf-8"))
+            self.assertEqual(search["count"], len(search["items"]))
+            self.assertEqual(stats["count"], sum(month["count"] for month in stats["months"]))
+            yearly_count += search["count"]
+        self.assertEqual(yearly_count, manifest["indexed_papers"])
+        app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        self.assertIn("async function searchAllHistory", app)
+        self.assertIn("async function loadHistoryMonths", app)
+        self.assertIn("state.historyMonthQueue.slice(0, 6)", app)
+        self.assertNotIn("Promise.all(years", app)
+        workflow = (ROOT / ".github" / "workflows" / "update-and-deploy.yml").read_text(encoding="utf-8")
+        self.assertIn("backfill_history.py --next 1", workflow)
 
     def test_home_featured_papers_reuse_paper_page_cards(self):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
@@ -330,7 +361,8 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('id="researchFieldTitle"', index)
         self.assertIn('id="dailyNoticeCategories"', index)
         self.assertIn('id="noticeDetailPanel"', index)
-        self.assertIn("const categoryItems = state.view === 'news' ? state.news : state.papers", app)
+        self.assertIn("const categoryItems = state.view === 'news' ? state.news", app)
+        self.assertIn("state.view === 'papers' && state.globalKeyword ? state.historyResults : state.papers", app)
         self.assertIn("state.categorySelections[state.view === 'news' ? 'news' : 'papers']", app)
         self.assertIn("NOTICE_GROUPS", app)
         self.assertIn("会议通知", app)

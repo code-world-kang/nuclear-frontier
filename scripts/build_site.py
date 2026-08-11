@@ -8,6 +8,8 @@ import shutil
 from collections import Counter
 from pathlib import Path
 
+from build_history import build_history_site
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -66,7 +68,9 @@ def main() -> None:
         json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     (ROOT / "site" / ".nojekyll").touch()
+    history_manifest = build_history_site()
     print(f"站点数据已构建：{PUBLIC_DATA}")
+    print(f"历史索引：{history_manifest['indexed_papers']} 篇 / {history_manifest['indexed_months']} 个月份")
 
 
 if __name__ == "__main__":
