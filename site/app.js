@@ -2794,7 +2794,10 @@ function renderBriefing() {
 
 function renderMetrics() {
   const status = state.meta.status;
-  $('#paperCount').textContent = state.papers.length.toLocaleString('zh-CN');
+  const indexedPapers = Number(state.historyManifest?.indexed_papers || state.papers.length);
+  const indexedMonths = Number(state.historyManifest?.indexed_months || 0);
+  $('#paperCount').textContent = indexedPapers.toLocaleString('zh-CN');
+  $('#paperCountHint').textContent = indexedMonths ? `${indexedMonths} 个月已建索引` : '持续累积';
   $('#featuredCount').textContent = (state.meta.insights?.latest_count ?? state.featured.length).toLocaleString('zh-CN');
   $('#newsCount').textContent = state.news.length.toLocaleString('zh-CN');
   const results = status.source_results || [];

@@ -144,6 +144,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('id="dailyNoticeList"', index)
         self.assertIn('Nature Communications', index)
         self.assertEqual(index.count('id="paperCount"'), 1)
+        self.assertIn('id="paperCountHint"', index)
         self.assertNotIn('class="paper-figures"', index)
         self.assertNotIn('id="noteDialog"', index)
         self.assertIn('id="cloudSyncBar"', index)
