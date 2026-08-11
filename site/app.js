@@ -493,7 +493,7 @@ function cycleReadingStatus(item) {
   else state.personal.readStatus[item.id] = next;
   savePersonal();
   showToast(`已标记为${readingLabel(item.id)}`);
-  renderCards();
+  refreshPaperCardViews();
 }
 
 function markOpened(item) {
@@ -538,7 +538,7 @@ function toggleTranslationFavorite(item) {
     showToast('已收藏中文译文');
   }
   savePersonal();
-  renderCards();
+  refreshPaperCardViews();
   renderHomeHub();
 }
 
@@ -600,9 +600,13 @@ async function requestGoogleTranslation(value = '') {
   return translated.join('\n\n');
 }
 
-function refreshGoogleTranslationViews(item) {
+function refreshPaperCardViews() {
   renderCards();
   if (state.view === 'home') renderHomeDashboard();
+}
+
+function refreshGoogleTranslationViews(item) {
+  refreshPaperCardViews();
   if (state.view === 'notices') renderDailyNotices();
   if ($('#detailDialog')?.open && $('#detailContent')?.dataset.id === item.id) openDetails(item);
 }
@@ -666,7 +670,7 @@ function focusInlineNote(item) {
 
 function openInlineNote(item) {
   state.inlineNoteId = state.inlineNoteId === item.id ? '' : item.id;
-  renderCards();
+  refreshPaperCardViews();
   if (state.inlineNoteId) focusInlineNote(item);
 }
 
@@ -681,7 +685,7 @@ function saveInlineNote(item, value) {
     return;
   }
   state.inlineNoteId = '';
-  renderCards();
+  refreshPaperCardViews();
   showToast(noteValue ? '笔记已更新，请提交到 GitHub' : '空笔记已清除');
 }
 
@@ -693,7 +697,7 @@ function deleteInlineNote(item) {
     return;
   }
   state.inlineNoteId = '';
-  renderCards();
+  refreshPaperCardViews();
   showToast('笔记已删除');
 }
 
@@ -716,7 +720,7 @@ function inlineNoteEditorFor(item) {
     }
   });
   $('.save', section).addEventListener('click', () => saveInlineNote(item, input.value));
-  $('.cancel', section).addEventListener('click', () => { state.inlineNoteId = ''; renderCards(); });
+  $('.cancel', section).addEventListener('click', () => { state.inlineNoteId = ''; refreshPaperCardViews(); });
   $('.delete', section)?.addEventListener('click', () => deleteInlineNote(item));
   return section;
 }
@@ -725,7 +729,7 @@ function toggleTranslation(item) {
   if (!translationFor(item)) return showToast('这篇论文暂时还没有 Codex 中文译文');
   if (state.translatedIds.has(item.id)) state.translatedIds.delete(item.id);
   else state.translatedIds.add(item.id);
-  renderCards();
+  refreshPaperCardViews();
 }
 
 function cardFor(item) {
@@ -1274,7 +1278,7 @@ async function saveFavoriteDraft() {
   closeFavoriteDialog();
   renderKeywords();
   if (state.view === 'notices') renderDailyNotices();
-  else renderCards();
+  else refreshPaperCardViews();
   renderHomeHub();
   showToast(`已收藏，关键词：${keywords.join('、')}`);
 }
@@ -1291,7 +1295,7 @@ async function toggleFavorite(item, button) {
     button.classList.toggle('active', active);
     button.setAttribute('aria-pressed', String(active));
     if (state.view === 'notices') renderDailyNotices();
-    else renderCards();
+    else refreshPaperCardViews();
     renderHomeHub();
     showToast('已取消收藏，请提交到 GitHub');
     return;
@@ -1300,7 +1304,7 @@ async function toggleFavorite(item, button) {
     state.personal.hiddenPublicFavorites.push(item.id);
     savePersonal();
     if (state.view === 'notices') renderDailyNotices();
-    else renderCards();
+    else refreshPaperCardViews();
     renderHomeHub();
     showToast('已隐藏，请提交到 GitHub');
     return;
@@ -1996,13 +2000,13 @@ function renderPaperAssistant(items = filteredItems()) {
 
 function selectPaperForAssistant(item) {
   state.selectedPaperId = item.id;
-  renderCards();
+  refreshPaperCardViews();
   openPaperAssistant();
 }
 
 function showAssistantOverview() {
   state.selectedPaperId = '';
-  renderCards();
+  refreshPaperCardViews();
 }
 
 function openPaperAssistant() {
@@ -2057,29 +2061,8 @@ function homeFeedCard(item, type) {
 }
 
 function homeFeaturedCard(item) {
-  const article = document.createElement('article');
-  article.className = 'home-featured-card';
-  const categories = (item.categories || []).slice(0, 3).map(id => `<span>${text(categoryName(id))}</span>`).join('');
-  const authors = item.authors?.length ? item.authors.join(', ') : '';
-  const abstract = localizedAbstract(item) || '该原始来源暂未公开摘要；本站不会生成或杜撰摘要。';
-  article.innerHTML = `
-    <div class="home-featured-meta"><strong>${text(homeJournalLabel(item))}</strong><span>${text(prettyDate(item.published))}</span></div>
-    <h3><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">${text(localizedTitle(item))}</a></h3>
-    ${authors ? `<p class="home-featured-authors">${text(authors)}</p>` : ''}
-    <div class="home-featured-abstract"><b>${item.abstract || item.summary ? (usingTranslation(item) ? '中文翻译' : '完整摘要') : '摘要状态'}</b><p>${text(abstract)}</p></div>
-    <div class="home-featured-foot"><div>${categories}</div><span><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">阅读原文 ↗</a><button type="button" class="google-translation-link">${state.googleTranslationOpenIds.has(item.id) ? '收起 Google 译文' : 'Google 翻译'}</button></span></div>`;
-  $('.google-translation-link', article).addEventListener('click', () => void toggleGoogleTranslation(item));
-  const googlePanel = googleTranslationPanelFor(item);
-  if (googlePanel) article.append(googlePanel);
-  article.tabIndex = 0;
-  article.setAttribute('aria-label', `通知：${item.title}。按回车在右侧查看详细信息`);
-  article.addEventListener('click', event => {
-    if (event.target.closest('a, button')) return;
-    selectNotice(item);
-  });
-  article.addEventListener('keydown', event => {
-    if (event.key === 'Enter' && event.target === article) selectNotice(item);
-  });
+  const article = cardFor(item);
+  article.classList.add('home-featured-paper-card');
   return article;
 }
 
@@ -2095,7 +2078,7 @@ function renderHomeDashboard() {
       || (b.importance || 0) - (a.importance || 0))
     .slice(0, 30);
   const seen = new Set();
-  const featured = [...state.papers, ...state.news]
+  const featured = [...state.papers]
     .filter(item => homeJournalLabel(item))
     .filter(item => {
       const key = item.doi || item.id || `${item.source}:${item.title}`;

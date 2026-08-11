@@ -70,15 +70,17 @@ class RepositoryTests(unittest.TestCase):
         ]:
             self.assertIn(category, ids)
 
-    def test_codex_translations_match_existing_papers(self):
-        papers = json.loads((ROOT / "data" / "papers.json").read_text(encoding="utf-8"))
+    def test_codex_translations_match_existing_records(self):
+        records = []
+        for filename in ["papers.json", "news.json", "notices.json"]:
+            records.extend(json.loads((ROOT / "data" / filename).read_text(encoding="utf-8")))
         translations = json.loads((ROOT / "data" / "translations.zh-CN.json").read_text(encoding="utf-8"))
-        paper_ids = {paper["id"] for paper in papers}
+        record_ids = {record["id"] for record in records}
         self.assertEqual(translations.get("provider"), "Codex")
         self.assertGreaterEqual(len(translations.get("items", {})), 1)
-        for paper_id, item in translations["items"].items():
-            with self.subTest(id=paper_id):
-                self.assertIn(paper_id, paper_ids)
+        for record_id, item in translations["items"].items():
+            with self.subTest(id=record_id):
+                self.assertIn(record_id, record_ids)
                 self.assertTrue(item.get("title_zh"))
                 self.assertTrue(item.get("abstract_zh"))
 
@@ -88,6 +90,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('id="scopeSelect"', index)
         self.assertIn('value="custom"', index)
         self.assertIn('id="customDateRange"', index)
+
         self.assertIn('id="dateFrom"', index)
         self.assertIn('id="dateTo"', index)
         self.assertNotIn('id="homeHubGrid"', index)
@@ -121,6 +124,15 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("window.location.protocol === 'file:'", index)
         self.assertIn('dataset.dayTheme', index)
         self.assertIn('src="./app.js?v=', index)
+
+    def test_home_featured_papers_reuse_paper_page_cards(self):
+        app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        styles = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn("const article = cardFor(item);", app)
+        self.assertIn("article.classList.add('home-featured-paper-card');", app)
+        self.assertIn("const featured = [...state.papers]", app)
+        self.assertIn(".home-featured-list {", styles)
+        self.assertIn("display: grid", styles)
 
     def test_reader_ui_is_text_first_and_notes_are_inline_and_public(self):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
