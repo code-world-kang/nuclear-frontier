@@ -22,6 +22,7 @@ const state = {
   historyManifest: null, globalKeyword: '', historyResults: [], historyMatchEntries: [],
   historyMonthQueue: [], historyLoadedMonths: new Set(), historySearching: false,
   historyProgress: '', historyRequestToken: 0, historyTotalMatches: 0,
+  zoteroStatusById: new Map(),
 };
 const citationMetadataRequests = new Map();
 const PRIMARY_NUCLEAR_CATEGORIES = new Set([
@@ -856,6 +857,100 @@ function googleTranslationPageUrl(item) {
   return url.href;
 }
 
+const ZOTERO_BRIDGE_URL = 'http://127.0.0.1:43119';
+
+function zoteroPayload(item) {
+  const translation = translationFor(item) || {};
+  return {
+    id: item.id,
+    title: item.title,
+    title_zh: translation.title_zh || '',
+    authors: item.authors || [],
+    abstract: item.abstract || item.summary || '',
+    source: item.source || '',
+    source_short: item.source_short || '',
+    source_type: item.source_type || 'journal',
+    published: item.published || '',
+    volume: item.volume || '',
+    issue: item.issue || '',
+    pages: item.pages || '',
+    doi: item.doi || '',
+    arxiv_id: item.arxiv_id || '',
+    url: item.url || '',
+    pdf_url: item.pdf_url || '',
+    language: item.language || 'en',
+    categories: (item.categories || []).map(categoryName),
+    tags: item.tags || [],
+    keywords: favoriteKeywords(item.id),
+    note: state.personal.notes[item.id] || '',
+    remarks: favoriteKeywords(item.id).length ? `网站收藏关键词：${favoriteKeywords(item.id).join('、')}` : '',
+  };
+}
+
+function zoteroButtonLabel(item) {
+  const status = state.zoteroStatusById.get(item.id);
+  if (!status) return '📗 保存到 Zotero';
+  if (status.kind === 'saving') return '正在保存…';
+  if (status.kind === 'existing') return '✓ Zotero 已有';
+  if (status.kind === 'saved') return status.pdfSaved ? '✓ Zotero + PDF' : '✓ Zotero（无 PDF）';
+  return '重试 Zotero';
+}
+
+function updateZoteroButtons(item) {
+  const status = state.zoteroStatusById.get(item.id);
+  $$('[data-zotero-save]').filter(button => button.dataset.zoteroSave === item.id).forEach(button => {
+    button.textContent = zoteroButtonLabel(item);
+    button.disabled = status?.kind === 'saving';
+    button.classList.toggle('saving', status?.kind === 'saving');
+    button.classList.toggle('saved', ['saved', 'existing'].includes(status?.kind));
+    button.classList.toggle('failed', status?.kind === 'failed');
+    button.title = status?.message || '保存到 Zotero 当前选中的收藏夹，并尝试附加 PDF 和网站笔记';
+  });
+}
+
+function zoteroButtonFor(item) {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'zotero-button';
+  button.dataset.zoteroSave = item.id;
+  button.textContent = zoteroButtonLabel(item);
+  button.setAttribute('aria-label', `将论文《${item.title}》、PDF 和笔记保存到 Zotero`);
+  button.addEventListener('click', () => void saveToZotero(item));
+  requestAnimationFrame(() => updateZoteroButtons(item));
+  return button;
+}
+
+async function saveToZotero(item) {
+  if (state.zoteroStatusById.get(item.id)?.kind === 'saving') return;
+  state.zoteroStatusById.set(item.id, { kind: 'saving', message: '正在连接本机 Zotero…' });
+  updateZoteroButtons(item);
+  try {
+    const response = await fetch(`${ZOTERO_BRIDGE_URL}/save`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Nuclear-Frontier-Bridge': '1' },
+      body: JSON.stringify({ item: zoteroPayload(item) }),
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || !result.ok) throw new Error(result.message || `本机桥返回 ${response.status}`);
+    const kind = result.already_exists ? 'existing' : 'saved';
+    state.zoteroStatusById.set(item.id, {
+      kind,
+      pdfSaved: Boolean(result.pdf_saved),
+      message: result.message || '已保存到 Zotero',
+    });
+    updateZoteroButtons(item);
+    showToast(result.message || '已保存到 Zotero');
+  } catch (error) {
+    const reason = error instanceof Error ? error.message : String(error);
+    const message = reason.includes('Failed to fetch')
+      ? '无法连接本机 Zotero：请打开 Zotero，并确认本机桥已启动'
+      : reason;
+    state.zoteroStatusById.set(item.id, { kind: 'failed', message });
+    updateZoteroButtons(item);
+    showToast(message);
+  }
+}
+
 function refreshPaperCardViews() {
   renderCards();
   if (state.view === 'home') renderHomeDashboard();
@@ -1069,6 +1164,7 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
     cite.setAttribute('aria-expanded', String(state.inlineCitationId === item.id));
     cite.addEventListener('click', () => toggleInlineCitation(item));
     actions.append(cite);
+    actions.append(zoteroButtonFor(item));
   }
 
   const translate = document.createElement('button');
@@ -2255,6 +2351,7 @@ function renderAssistantPaperDetail(item) {
       <div class="assistant-paper-actions">
         <a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">原始页面 ↗</a>
         ${item.pdf_url ? `<a href="${text(item.pdf_url)}" target="_blank" rel="noreferrer">PDF ↗</a>` : ''}
+        <button type="button" class="zotero-button" data-zotero-save="${text(item.id)}">${text(zoteroButtonLabel(item))}</button>
         <button type="button" data-assistant-note>📝 ${state.personal.notes[item.id] ? '编辑笔记' : '写笔记'}</button>
         <button type="button" class="ignore-button${isIgnored(item.id) ? ' active' : ''}" data-assistant-ignore>${isIgnored(item.id) ? '恢复论文' : '忽略'}</button>
       </div>
@@ -2281,6 +2378,8 @@ function renderAssistantPaperDetail(item) {
       <div class="assistant-related-list">${related.length ? related.map(({ candidate, score }) => `<button type="button" data-related-paper="${text(candidate.id)}"><span>${text(candidate.title)}</span><small>${text(candidate.source_short || candidate.source)} · 关联度 ${score}</small></button>`).join('') : '<p>历史库中暂无明显关联论文。</p>'}</div>
     </section>`;
   $('[data-assistant-cite]', host).addEventListener('click', event => toggleCitationPanelInHost(item, $('[data-assistant-citation]', host), event.currentTarget));
+  $('[data-zotero-save]', host).addEventListener('click', () => void saveToZotero(item));
+  updateZoteroButtons(item);
   $('[data-assistant-note]', host).addEventListener('click', () => {
     closePaperAssistant();
     state.inlineNoteId = item.id;

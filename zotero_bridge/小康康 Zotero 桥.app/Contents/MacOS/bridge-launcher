@@ -1,0 +1,8 @@
+#!/bin/zsh
+set -euo pipefail
+
+BRIDGE_DIR="${0:A:h:h:h:h}"
+if /usr/bin/nc -z 127.0.0.1 43119 >/dev/null 2>&1; then
+  exit 0
+fi
+exec /usr/bin/python3 "$BRIDGE_DIR/bridge.py" >>/tmp/nuclear-frontier-zotero.log 2>>/tmp/nuclear-frontier-zotero-error.log

@@ -829,6 +829,23 @@ body {
 .google-translation-link { color: #477a9d !important; font-weight: 700; }
 .google-translation-link:hover { color: #285e83 !important; }
 .paper-actions .cite-button { padding: 4px 9px; border: 1px solid #c8ddc4; border-radius: 99px; color: #356f47; background: #eef7e9; font-weight: 800; letter-spacing: .04em; }
+.paper-actions .zotero-button,
+.assistant-paper-actions .zotero-button {
+  padding: 4px 10px;
+  border: 1px solid #c7ddce;
+  border-radius: 99px;
+  color: #35684e;
+  background: #eef7ef;
+  font-weight: 800;
+}
+.paper-actions .zotero-button:hover,
+.assistant-paper-actions .zotero-button:hover { border-color: #80b28d; color: #245f40; background: #e3f3e6; }
+.paper-actions .zotero-button.saving,
+.assistant-paper-actions .zotero-button.saving { color: #777e71; background: #f2f3ed; cursor: wait; }
+.paper-actions .zotero-button.saved,
+.assistant-paper-actions .zotero-button.saved { border-color: #9cc797; color: #2e7646; background: #e8f6e4; }
+.paper-actions .zotero-button.failed,
+.assistant-paper-actions .zotero-button.failed { border-color: #e3b5a7; color: #9a5545; background: #fff1eb; }
 .paper-actions .translation-favorite-button { color: #9a6a2d; font-weight: 700; }
 .paper-actions .translation-favorite-button.active { border-color: #e2c58c; color: #8a5c1d; background: #fff3d7; }
 .paper-actions .ignore-button, .detail-tools .ignore-button { color: #9a6d65; }

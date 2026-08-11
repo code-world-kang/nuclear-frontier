@@ -58,6 +58,7 @@ GitHub Actions 在每天北京时间 10:17 左右执行（预留 arXiv 冬令时
 - 论文、新闻与通知统一进入 Codex 中文翻译队列；已有译文默认优先显示中文题目与完整摘要，并可随时切回原文；Google 翻译在当前卡片内直接显示题目与摘要，不打开新页面；
 - 每篇论文都有网页内嵌笔记框，并支持未读/在读/已读与个人关注词；笔记、收藏、关键词、指定译法和排列可通过 GitHub Issue 公开同步；
 - 一键导出 Zotero 可导入的 RIS；每篇论文提供 Cite，可复制或下载 BibTeX 与 GB/T 7714—2025，并在来源提供时包含卷、期、页码、总页数、月份与出版社；
+- 每篇论文可一键保存到本机 Zotero：保存完整元数据、网站笔记、备注和收藏关键词，并优先下载公开 PDF，失败时再交给 Zotero 的开放获取解析器；
 - 桌面端、平板和手机端响应式布局。
 
 工作流也支持在 GitHub Actions 页面使用 `workflow_dispatch` 立即更新。
@@ -79,6 +80,17 @@ python3 -m http.server 4173 --directory site
 ```
 
 打开 `http://127.0.0.1:4173`。
+
+## Zotero 本机连接
+
+网站是公开的静态页面，不保存 Zotero API Key。macOS 上需要一次性启用只监听本机回环地址的轻量桥：
+
+```bash
+chmod +x zotero_bridge/install.sh zotero_bridge/uninstall.sh
+./zotero_bridge/install.sh
+```
+
+安装器会把“小康康 Zotero 桥”加入 macOS 登录项，以后不需要手动运行。只要 Zotero 桌面端已打开，点击论文卡片或右侧论文信息中的“保存到 Zotero”即可。条目会进入 Zotero 当前选中的收藏夹。本机桥只允许正式 GitHub Pages 和本地开发站点访问，不记录论文题名或个人笔记，不绕过付费墙。
 
 ## 检查
 

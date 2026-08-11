@@ -392,6 +392,24 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("只展示物理领域通知", index)
         self.assertIn("自动排除生物、医学和化学主题", index)
 
+    def test_papers_can_be_saved_to_local_zotero_with_notes_and_pdf(self):
+        app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        styles = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
+        bridge = (ROOT / "zotero_bridge" / "bridge.py").read_text(encoding="utf-8")
+        self.assertIn("function saveToZotero", app)
+        self.assertIn("function zoteroPayload", app)
+        self.assertIn("data-zotero-save", app)
+        self.assertIn("X-Nuclear-Frontier-Bridge", app)
+        self.assertIn("http://127.0.0.1:43119", app)
+        self.assertIn(".zotero-button", styles)
+        self.assertIn('"/connector/saveItems"', bridge)
+        self.assertIn('"/connector/saveAttachment"', bridge)
+        self.assertIn('"/connector/saveAttachmentFromResolver"', bridge)
+        self.assertIn("ALLOWED_ORIGINS", bridge)
+        self.assertIn('BRIDGE_HOST = "127.0.0.1"', bridge)
+        self.assertNotIn("api_key", bridge.lower())
+        self.assertNotIn("localStorage", app)
+
 
 if __name__ == "__main__":
     unittest.main()
