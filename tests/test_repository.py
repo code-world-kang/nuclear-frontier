@@ -35,11 +35,13 @@ class RepositoryTests(unittest.TestCase):
         payload = json.loads((ROOT / "data" / "reference-resources.json").read_text(encoding="utf-8"))
         self.assertEqual(payload["source_repository"], "https://github.com/code-world-kang/Note_github")
         self.assertEqual(payload["source_file"], "网址记录.md")
-        self.assertGreaterEqual(len(payload["items"]), 60)
+        self.assertGreaterEqual(len(payload["items"]), 64)
         ids = [item["id"] for item in payload["items"]]
         self.assertEqual(len(ids), len(set(ids)))
         titles = {item["title"] for item in payload["items"]}
-        self.assertTrue({"CERN ROOT 官网", "Geant4 官网", "NNDC核数据库", "Nature Physics"}.issubset(titles))
+        self.assertTrue({"CERN ROOT 官网", "Geant4 官网", "NNDC核数据库", "Nature Physics", "ChatGPT", "OpenAI Developers"}.issubset(titles))
+        groups = {item["group"] for item in payload["items"]}
+        self.assertTrue({"official", "collaborations", "chatgpt", "data-analysis", "github-following"}.issubset(groups))
         for item in payload["items"]:
             with self.subTest(id=item["id"]):
                 parsed = urllib.parse.urlsplit(item["url"])
@@ -47,9 +49,12 @@ class RepositoryTests(unittest.TestCase):
                 self.assertTrue(parsed.hostname)
                 self.assertTrue(item["description"])
                 self.assertTrue(item["keywords"])
+                self.assertTrue(item["group"])
         app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         self.assertIn("reference-resources", app)
         self.assertIn("state.referenceResources", app)
+        self.assertIn("REFERENCE_GROUPS", app)
+        self.assertIn("function renderReferenceGroups", app)
 
     def test_every_paper_has_traceable_source(self):
         papers = json.loads((ROOT / "data" / "papers.json").read_text(encoding="utf-8"))
@@ -140,6 +145,8 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('id="myItemDialog"', index)
         self.assertIn('data-my-section="translations"', index)
         self.assertIn('id="translationShelfPanel"', index)
+        self.assertIn('id="referenceGroupPanel"', index)
+        self.assertIn('id="referenceGroupList"', index)
         self.assertIn('id="translationGlossaryDialog"', index)
         self.assertIn('id="citationDialog"', index)
         self.assertIn("小康康的物理世界", index)
@@ -151,7 +158,7 @@ class RepositoryTests(unittest.TestCase):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
         app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         styles = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
-        self.assertIn("const article = cardFor(item, { onSelect: openDetails });", app)
+        self.assertIn("const article = cardFor(item);", app)
         self.assertIn("article.classList.add('home-featured-paper-card');", app)
         self.assertIn("const featured = [...state.papers]", app)
         self.assertIn('id="translationProgressTrack"', index)
@@ -175,6 +182,8 @@ class RepositoryTests(unittest.TestCase):
         styles = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
         self.assertIn("function googleTranslationErrorMessage", app)
         self.assertIn("function googleTranslationPageUrl", app)
+        self.assertIn("GOOGLE_TRANSLATION_STATIC_LIMIT", app)
+        self.assertNotIn("const titleZh = await requestGoogleTranslation", app)
         self.assertIn("在 Google 翻译官网打开", app)
         self.assertIn(".inline-google-fallback", styles)
 
@@ -225,6 +234,10 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("function toBibTeX", app)
         self.assertIn("function toGBT7714_2025", app)
         self.assertIn("function openCitationDialog", app)
+        self.assertIn("function citationPanelFor", app)
+        self.assertIn("function toggleInlineCitation", app)
+        self.assertIn("function toggleCitationPanelInHost", app)
+        self.assertNotIn("cite.addEventListener('click', () => openCitationDialog(item))", app)
         self.assertIn("function enrichCitationMetadata", app)
         self.assertIn("Object.keys(state.translations).forEach", app)
         self.assertIn("function localizedTitle", app)
@@ -234,13 +247,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertNotIn("renderDailyNoticeDashboard", app)
         self.assertIn("Google 翻译", app)
         self.assertIn("data-assistant-cite", app)
+        self.assertIn("data-assistant-citation", app)
         self.assertIn("[PP/OL]", app)
         self.assertIn("[J/OL]", app)
         self.assertIn("item.volume", app)
         self.assertIn("item.numpages", app)
         self.assertIn(".paper-actions .cite-button", styles)
         self.assertIn(".assistant-cite-button", styles)
-        self.assertNotIn("data-assistant-citation-output", app)
+        self.assertIn(".inline-citation-panel", styles)
         self.assertIn("localeCompare(b[0], 'en'", app)
         self.assertIn("std.samr.gov.cn/gb/search/gbDetailed", index)
 

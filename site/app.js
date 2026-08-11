@@ -10,7 +10,7 @@ const DEFAULT_FILTER_MODULE_ORDER = ['categories', 'keywords'];
 const state = {
   papers: [], featured: [], news: [], notices: [], publicFavorites: [], translations: {}, referenceResources: [], noticePortals: { categories: [], entries: [] },
   meta: null, view: 'papers', category: 'all', source: 'all', query: '', searchField: 'all', sort: 'date', scope: 'daily-focus', visible: 20,
-  dateFrom: '', dateTo: '', favoriteKeyword: 'all', favoriteDraft: null, inlineNoteId: '', citationDraft: null, mySection: 'papers', translatedIds: new Set(),
+  dateFrom: '', dateTo: '', favoriteKeyword: 'all', favoriteDraft: null, inlineNoteId: '', inlineCitationId: '', citationDraft: null, mySection: 'papers', referenceGroup: 'all', translatedIds: new Set(),
   googleTranslations: new Map(), googleTranslationOpenIds: new Set(), googleTranslationLoadingIds: new Set(), googleTranslationErrors: new Map(),
   selectedPaperId: '',
   selectedNoticeId: '', expandedNoticeIds: new Set(),
@@ -22,6 +22,7 @@ const state = {
   categorySelections: { papers: 'all', news: 'all' },
 };
 const citationMetadataRequests = new Map();
+const GOOGLE_TRANSLATION_STATIC_LIMIT = 'Google 不允许静态网页直接读取翻译结果，本站已停止发起会失败的跨域请求';
 const PRIMARY_NUCLEAR_CATEGORIES = new Set([
   'experimental-nuclear', 'theoretical-nuclear', 'nuclear-structure', 'nuclear-decay', 'nuclear-reactions',
   'detectors-daq', 'nuclear-general', 'high-energy-nuclear', 'nuclear-astrophysics',
@@ -53,6 +54,18 @@ const NOTICE_GROUPS = [
   { id: 'meeting', label: '会议通知', icon: '🌼', description: '核物理会议、学校与学术年会' },
   { id: 'funding', label: '科研基金', icon: '🌱', description: '国家、地方、国际与人才项目' },
   { id: 'beam', label: '束流申请', icon: '⚛', description: '国内外束流和大科学装置' },
+];
+
+const REFERENCE_GROUPS = [
+  { id: 'all', label: '全部资料', icon: '◎', description: '查看所有收录网站' },
+  { id: 'official', label: '官方网站', icon: '◉', description: '学校、机构与项目官网' },
+  { id: 'collaborations', label: '合作组', icon: '⚛', description: '实验合作组、课题组与内部入口' },
+  { id: 'chatgpt', label: 'ChatGPT', icon: '✦', description: 'ChatGPT 与 OpenAI 官方开发资料' },
+  { id: 'data-analysis', label: '数据分析', icon: '⌑', description: 'ROOT、Geant4、Jupyter 等分析工具' },
+  { id: 'github-following', label: 'GitHub 跟随', icon: '⌘', description: '个人、合作者与关注的 GitHub 项目' },
+  { id: 'journals-data', label: '期刊与数据库', icon: '▤', description: '期刊、预印本、核数据与学术检索' },
+  { id: 'software', label: '科研软件', icon: '◇', description: '编程、写作、网络与效率工具' },
+  { id: 'other', label: '其他', icon: '·', description: '其他已收录的常用网站' },
 ];
 
 const $ = (selector, root = document) => root.querySelector(selector);
@@ -656,23 +669,12 @@ async function toggleGoogleTranslation(item) {
     return;
   }
   state.googleTranslationOpenIds.add(item.id);
-  refreshGoogleTranslationViews(item);
-  if (state.googleTranslations.has(item.id) || state.googleTranslationLoadingIds.has(item.id)) return;
-
-  state.googleTranslationLoadingIds.add(item.id);
-  state.googleTranslationErrors.delete(item.id);
-  refreshGoogleTranslationViews(item);
-  try {
-    const titleZh = await requestGoogleTranslation(item.title || '');
-    const abstractZh = await requestGoogleTranslation(item.abstract || item.summary || '');
-    state.googleTranslations.set(item.id, { title_zh: titleZh, abstract_zh: abstractZh });
-    savePersonal();
-  } catch (error) {
-    state.googleTranslationErrors.set(item.id, googleTranslationErrorMessage(error));
-  } finally {
-    state.googleTranslationLoadingIds.delete(item.id);
+  if (state.googleTranslations.has(item.id) || state.googleTranslationLoadingIds.has(item.id)) {
     refreshGoogleTranslationViews(item);
+    return;
   }
+  state.googleTranslationErrors.set(item.id, GOOGLE_TRANSLATION_STATIC_LIMIT);
+  refreshGoogleTranslationViews(item);
 }
 
 function googleTranslationPanelFor(item) {
@@ -685,11 +687,12 @@ function googleTranslationPanelFor(item) {
   if (state.googleTranslationLoadingIds.has(item.id)) {
     panel.innerHTML = '<div class="inline-panel-head"><b>Google 中文翻译</b><small>正在翻译题目与摘要…</small></div><p class="inline-translation-status">🌱 译文生成中，请稍候。</p>';
   } else if (error) {
-    panel.innerHTML = `<div class="inline-panel-head"><b>Google 中文翻译</b><small>网页直连受限</small></div><p class="inline-translation-error">${text(error)}。本站是静态 GitHub Pages，无法安全保存 Google Cloud API 凭据；可优先使用 Codex 中文译文，或从 Google 翻译官网继续。</p><div class="inline-google-fallback"><button type="button" class="inline-google-retry">重新翻译</button><a href="${text(googleTranslationPageUrl(item))}" target="_blank" rel="noreferrer">在 Google 翻译官网打开 ↗</a></div>`;
-    $('.inline-google-retry', panel).addEventListener('click', () => {
+    const hasCodexTranslation = Boolean(translationFor(item));
+    panel.innerHTML = `<div class="inline-panel-head"><b>Google 中文翻译</b><small>网页直连受限</small></div><p class="inline-translation-error">${text(error)}。本站是静态 GitHub Pages，无法安全保存 Google Cloud API 凭据；因此不再发起无效请求。</p><div class="inline-google-fallback">${hasCodexTranslation ? '<button type="button" class="show-codex-translation">查看 Codex 中文译文</button>' : ''}<a href="${text(googleTranslationPageUrl(item))}" target="_blank" rel="noreferrer">在 Google 翻译官网打开 ↗</a></div>`;
+    $('.show-codex-translation', panel)?.addEventListener('click', () => {
+      state.translatedIds.add(item.id);
       state.googleTranslationOpenIds.delete(item.id);
-      state.googleTranslationErrors.delete(item.id);
-      void toggleGoogleTranslation(item);
+      refreshGoogleTranslationViews(item);
     });
   } else if (result) {
     panel.innerHTML = `<div class="inline-panel-head"><b>Google 中文翻译</b><small>题目与摘要</small></div><h4>${text(result.title_zh || item.title)}</h4><p>${text(result.abstract_zh || '原始来源未提供可翻译的摘要。')}</p>`;
@@ -894,9 +897,10 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
     const cite = document.createElement('button');
     cite.type = 'button';
     cite.className = 'cite-button';
-    cite.textContent = 'Cite';
+    cite.textContent = state.inlineCitationId === item.id ? '收起 Cite' : 'Cite';
     cite.setAttribute('aria-label', `引用论文《${item.title}》`);
-    cite.addEventListener('click', () => openCitationDialog(item));
+    cite.setAttribute('aria-expanded', String(state.inlineCitationId === item.id));
+    cite.addEventListener('click', () => toggleInlineCitation(item));
     actions.append(cite);
   }
 
@@ -971,6 +975,10 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
     related.addEventListener('click', () => openDetails(item));
     actions.append(related);
   }
+  if (state.inlineCitationId === item.id) {
+    const citationPanel = citationPanelFor(item);
+    $('.paper-copy', card).append(citationPanel);
+  }
   const googlePanel = googleTranslationPanelFor(item);
   if (googlePanel) $('.paper-copy', card).append(googlePanel);
   const noteEditor = inlineNoteEditorFor(item);
@@ -1006,10 +1014,10 @@ const DEFAULT_CODE_ITEMS = [
 ];
 
 const DEFAULT_RESOURCES = [
-  { id: 'default-arxiv-nucl-ex', title: 'arXiv · Nuclear Experiment', url: 'https://arxiv.org/list/nucl-ex/recent', description: '实验核物理最新预印本。', keywords: ['nucl-ex', '预印本'], builtin: true },
-  { id: 'default-nndc', title: 'NNDC · Nuclear Data', url: 'https://www.nndc.bnl.gov/', description: '核结构、核衰变与反应数据入口。', keywords: ['核数据', 'ENSDF'], builtin: true },
-  { id: 'default-iaea-nds', title: 'IAEA Nuclear Data Services', url: 'https://www-nds.iaea.org/', description: 'IAEA 核数据服务与数据库。', keywords: ['IAEA', '核数据'], builtin: true },
-  { id: 'default-root-docs', title: 'CERN ROOT Documentation', url: 'https://root.cern/manual/', description: 'ROOT 数据分析框架官方手册。', keywords: ['ROOT', '数据分析'], builtin: true },
+  { id: 'default-arxiv-nucl-ex', title: 'arXiv · Nuclear Experiment', url: 'https://arxiv.org/list/nucl-ex/recent', description: '实验核物理最新预印本。', keywords: ['nucl-ex', '预印本'], group: 'journals-data', builtin: true },
+  { id: 'default-nndc', title: 'NNDC · Nuclear Data', url: 'https://www.nndc.bnl.gov/', description: '核结构、核衰变与反应数据入口。', keywords: ['核数据', 'ENSDF'], group: 'journals-data', builtin: true },
+  { id: 'default-iaea-nds', title: 'IAEA Nuclear Data Services', url: 'https://www-nds.iaea.org/', description: 'IAEA 核数据服务与数据库。', keywords: ['IAEA', '核数据'], group: 'journals-data', builtin: true },
+  { id: 'default-root-docs', title: 'CERN ROOT Documentation', url: 'https://root.cern/manual/', description: 'ROOT 数据分析框架官方手册。', keywords: ['ROOT', '数据分析'], group: 'data-analysis', builtin: true },
 ];
 
 function myCollectionItems(section = state.mySection) {
@@ -1018,13 +1026,39 @@ function myCollectionItems(section = state.mySection) {
   return [];
 }
 
+function referenceGroupInfo(id) {
+  return REFERENCE_GROUPS.find(group => group.id === id) || REFERENCE_GROUPS.find(group => group.id === 'other');
+}
+
+function renderReferenceGroups() {
+  const host = $('#referenceGroupList');
+  if (!host) return;
+  const items = myCollectionItems('references');
+  const counts = new Map();
+  items.forEach(item => {
+    const group = item.group || 'other';
+    counts.set(group, (counts.get(group) || 0) + 1);
+  });
+  host.replaceChildren(...REFERENCE_GROUPS.filter(group => group.id === 'all' || counts.get(group.id)).map(group => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = `reference-group-button${state.referenceGroup === group.id ? ' active' : ''}`;
+    button.innerHTML = `<span>${text(group.icon)}</span><b>${text(group.label)}</b><small>${text(group.description)}</small><i>${group.id === 'all' ? items.length : (counts.get(group.id) || 0)}</i>`;
+    button.addEventListener('click', () => {
+      state.referenceGroup = group.id;
+      renderMyCollection();
+    });
+    return button;
+  }));
+}
+
 function personalCollectionCard(item, section) {
   const card = document.createElement('article');
   card.className = 'personal-card';
   const tags = uniqueKeywords(item.keywords || []).map(value => `<span>${text(value)}</span>`).join('');
   card.innerHTML = `
     <div class="personal-card-icon" aria-hidden="true">${section === 'code' ? '⌘' : '↗'}</div>
-    <div><small>${section === 'code' ? 'CODE & PROJECT' : 'REFERENCE'}</small><h3><a href="${text(item.url)}" target="_blank" rel="noreferrer">${text(item.title)}</a></h3>
+    <div><small>${section === 'code' ? 'CODE & PROJECT' : text(referenceGroupInfo(item.group).label)}</small><h3><a href="${text(item.url)}" target="_blank" rel="noreferrer">${text(item.title)}</a></h3>
     <p>${text(item.description || '尚未填写说明。')}</p><div class="personal-card-tags">${tags}</div></div>
     <div class="personal-card-actions"><a href="${text(item.url)}" target="_blank" rel="noreferrer">打开 ↗</a>${item.builtin ? '' : '<button type="button">删除</button>'}</div>`;
   if (!item.builtin) $('button', card)?.addEventListener('click', () => {
@@ -1037,13 +1071,16 @@ function personalCollectionCard(item, section) {
 
 function renderMyCollection() {
   const query = state.query.trim().toLowerCase();
-  const items = myCollectionItems().filter(item => !query || [item.title, item.description, ...(item.keywords || [])].join(' ').toLowerCase().includes(query));
+  const items = myCollectionItems()
+    .filter(item => state.mySection !== 'references' || state.referenceGroup === 'all' || (item.group || 'other') === state.referenceGroup)
+    .filter(item => !query || [item.title, item.description, referenceGroupInfo(item.group).label, ...(item.keywords || [])].join(' ').toLowerCase().includes(query));
   $('#cardList').replaceChildren(...items.map(item => personalCollectionCard(item, state.mySection)));
   $('#resultCount').textContent = `共 ${items.length} 项`;
   $('#emptyState').hidden = items.length !== 0;
   $('#loadMore').hidden = true;
   $('#activeFilters').replaceChildren();
   $('#myKeywordsPanel').hidden = true;
+  renderReferenceGroups();
   closePaperAssistant();
 }
 
@@ -1136,7 +1173,8 @@ function updateMySpaceUI() {
   $('#addMyItem').hidden = !(isMy && !isPaperShelf);
   $('#myKeywordsPanel').hidden = !(isMy && state.mySection === 'papers');
   $('#translationShelfPanel').hidden = !(isMy && state.mySection === 'translations');
-  const isPaperWorkspace = ['papers', 'featured', 'unread', 'ignored', 'news'].includes(state.view) || (isMy && isPaperShelf);
+  $('#referenceGroupPanel').hidden = !(isMy && state.mySection === 'references');
+  const isPaperWorkspace = ['home', 'papers', 'featured', 'unread', 'ignored', 'news'].includes(state.view) || (isMy && isPaperShelf);
   $('#openPaperAssistant').hidden = !isPaperWorkspace;
   $('#paperAssistant').hidden = !isPaperWorkspace;
   $('#assistantBackdrop').hidden = !isPaperWorkspace;
@@ -1150,6 +1188,7 @@ function updateMySpaceUI() {
 function setMySection(section) {
   if (!['papers', 'translations', 'code', 'references'].includes(section)) return;
   state.mySection = section;
+  if (section === 'references') state.referenceGroup = 'all';
   state.visible = 20;
   const labels = {
     papers: ['MY PAPERS', '我的论文', '按收藏关键词筛选论文、阅读状态与笔记'],
@@ -1170,6 +1209,7 @@ function setMySection(section) {
 function setView(view) {
   closePaperAssistant();
   state.selectedPaperId = '';
+  state.inlineCitationId = '';
   const previousCategoryGroup = state.view === 'news' ? 'news' : 'papers';
   state.categorySelections[previousCategoryGroup] = state.category;
   state.view = view;
@@ -1516,6 +1556,64 @@ function citationValue(item, format = $('#citationFormat')?.value || 'bibtex') {
   return format === 'gbt7714-2025' ? toGBT7714_2025(item) : toBibTeX(item);
 }
 
+function citationPanelFor(item, { compact = false } = {}) {
+  const panel = document.createElement('section');
+  panel.className = `inline-citation-panel${compact ? ' compact' : ''}`;
+  panel.dataset.inlineCitation = item.id;
+  panel.innerHTML = `
+    <div class="inline-panel-head"><b>Cite / 引用</b><small>引用内容在当前位置展开</small></div>
+    <label class="inline-citation-format"><span>输出格式</span><select aria-label="引用输出格式"><option value="bibtex">BibTeX</option><option value="gbt7714-2025">GB/T 7714—2025</option></select></label>
+    <textarea class="inline-citation-output" readonly spellcheck="false" aria-label="引用内容"></textarea>
+    <p class="inline-citation-hint"></p>
+    <div class="inline-citation-actions"><a href="https://std.samr.gov.cn/gb/search/gbDetailed?id=4507EFE13D37CB6AE06397BE0A0A601F" target="_blank" rel="noreferrer">查看国家标准 ↗</a><span></span><button type="button" data-copy-citation>复制</button><button type="button" data-download-citation>下载</button></div>`;
+  const format = $('select', panel);
+  const output = $('.inline-citation-output', panel);
+  const hint = $('.inline-citation-hint', panel);
+  const render = () => {
+    output.value = citationValue(item, format.value);
+    hint.textContent = format.value === 'gbt7714-2025'
+      ? '按 GB/T 7714—2025 和现有元数据生成；缺失的卷、期和页码不会虚构。'
+      : 'BibTeX 优先包含作者、期刊、卷期、页码、出版社与 DOI；数据源没有的字段不会虚构。';
+  };
+  format.addEventListener('change', render);
+  $('[data-copy-citation]', panel).addEventListener('click', () => copyText(citationValue(item, format.value), '引用格式已复制'));
+  $('[data-download-citation]', panel).addEventListener('click', () => {
+    const isBibTeX = format.value === 'bibtex';
+    downloadText(`${citationKey(item)}.${isBibTeX ? 'bib' : 'txt'}`, citationValue(item, format.value), isBibTeX ? 'application/x-bibtex' : 'text/plain');
+    showToast(`已下载${isBibTeX ? ' BibTeX' : ' GB/T 7714—2025 引用'}`);
+  });
+  render();
+  return panel;
+}
+
+function enrichInlineCitation(item, rerender) {
+  if (!item.doi || item.citation_metadata_checked) return;
+  void enrichCitationMetadata(item).then(rerender);
+}
+
+function toggleInlineCitation(item) {
+  state.inlineCitationId = state.inlineCitationId === item.id ? '' : item.id;
+  refreshPaperCardViews();
+  if (state.inlineCitationId === item.id) {
+    enrichInlineCitation(item, () => {
+      if (state.inlineCitationId === item.id) refreshPaperCardViews();
+    });
+  }
+}
+
+function toggleCitationPanelInHost(item, host, button) {
+  const isOpen = Boolean($('[data-inline-citation]', host));
+  host.replaceChildren();
+  button.textContent = isOpen ? 'Cite' : '收起 Cite';
+  button.setAttribute('aria-expanded', String(!isOpen));
+  if (isOpen) return;
+  host.append(citationPanelFor(item, { compact: true }));
+  enrichInlineCitation(item, () => {
+    if (!$('[data-inline-citation]', host)) return;
+    host.replaceChildren(citationPanelFor(item, { compact: true }));
+  });
+}
+
 function renderCitationDialog() {
   const item = state.citationDraft;
   if (!item) return;
@@ -1604,6 +1702,7 @@ function openDetails(item) {
       <button id="detailGoogleTranslate" class="google-translation-link">${state.googleTranslationOpenIds.has(item.id) ? '收起 Google 译文' : 'Google 翻译'}</button>
       ${item.type === 'paper' ? `<button id="openDetailNote">📝 ${state.personal.notes[item.id] ? '编辑已有笔记' : '写笔记'}</button><button id="toggleDetailIgnore" class="ignore-button${isIgnored(item.id) ? ' active' : ''}">${isIgnored(item.id) ? '恢复论文' : '忽略论文'}</button>` : ''}
     </div>
+    <div class="detail-inline-citation" data-detail-citation></div>
     ${item.type === 'paper' ? '<p class="note-privacy">笔记提交后将写入 GitHub 并公开展示。</p>' : ''}
     <h4>关联文献</h4>
     <div class="related-list">${related.length ? related.map(({ candidate, score }) => `<a class="related-item" href="${text(candidate.url)}" target="_blank" rel="noreferrer">${text(candidate.title)}<small>${text(candidate.source)} · 关联度 ${score}</small></a>`).join('') : '<p>当前历史库中尚无明显关联文献。</p>'}</div>
@@ -1616,7 +1715,7 @@ function openDetails(item) {
     refreshPaperCardViews();
     openDetails(item);
   });
-  $('#openCitationFromDetail', host).addEventListener('click', () => openCitationDialog(item));
+  $('#openCitationFromDetail', host).addEventListener('click', event => toggleCitationPanelInHost(item, $('[data-detail-citation]', host), event.currentTarget));
   $('#detailGoogleTranslate', host).addEventListener('click', () => void toggleGoogleTranslation(item));
   const googlePanel = googleTranslationPanelFor(item);
   if (googlePanel) $('.detail-tools', host).after(googlePanel);
@@ -1971,7 +2070,18 @@ function renderAssistantPaperDetail(item) {
         <div><dt>阅读状态</dt><dd>${text(readingLabel(item.id))}</dd></div>
       </dl>
       <div class="paper-identifiers">${identifiers.length ? identifiers.map(value => `<span>${text(value)}</span>`).join('') : '<span>暂无 DOI/arXiv 编号</span>'}</div>
-      <button type="button" class="assistant-cite-button" data-assistant-cite>Cite</button>
+    </section>
+    <section class="assistant-section paper-detail-section">
+      <div class="assistant-section-head"><span>摘要与操作</span><small>优先展示已有中文译文</small></div>
+      <p class="assistant-paper-summary">${text(localizedAbstract(item) || '该数据源未公开摘要；本站不生成或杜撰摘要。')}</p>
+      <div class="assistant-paper-actions">
+        <a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">原始页面 ↗</a>
+        ${item.pdf_url ? `<a href="${text(item.pdf_url)}" target="_blank" rel="noreferrer">PDF ↗</a>` : ''}
+        <button type="button" data-assistant-note>📝 ${state.personal.notes[item.id] ? '编辑笔记' : '写笔记'}</button>
+        <button type="button" class="ignore-button${isIgnored(item.id) ? ' active' : ''}" data-assistant-ignore>${isIgnored(item.id) ? '恢复论文' : '忽略'}</button>
+      </div>
+      <button type="button" class="assistant-cite-button" data-assistant-cite aria-expanded="false">Cite</button>
+      <div class="assistant-inline-citation" data-assistant-citation></div>
     </section>
     <section class="assistant-section paper-detail-section">
       <div class="assistant-section-head"><span>核物理要素</span><small>仅提取题目与摘要明确内容</small></div>
@@ -1992,7 +2102,14 @@ function renderAssistantPaperDetail(item) {
       <div class="assistant-section-head"><span>关联论文</span><small>按分类、标签、作者匹配</small></div>
       <div class="assistant-related-list">${related.length ? related.map(({ candidate, score }) => `<button type="button" data-related-paper="${text(candidate.id)}"><span>${text(candidate.title)}</span><small>${text(candidate.source_short || candidate.source)} · 关联度 ${score}</small></button>`).join('') : '<p>历史库中暂无明显关联论文。</p>'}</div>
     </section>`;
-  $('[data-assistant-cite]', host).addEventListener('click', () => openCitationDialog(item));
+  $('[data-assistant-cite]', host).addEventListener('click', event => toggleCitationPanelInHost(item, $('[data-assistant-citation]', host), event.currentTarget));
+  $('[data-assistant-note]', host).addEventListener('click', () => {
+    closePaperAssistant();
+    state.inlineNoteId = item.id;
+    refreshPaperCardViews();
+    focusInlineNote(item);
+  });
+  $('[data-assistant-ignore]', host).addEventListener('click', () => toggleIgnored(item));
   $$('[data-related-paper]', host).forEach(button => button.addEventListener('click', () => {
     const candidate = state.papers.find(value => value.id === button.dataset.relatedPaper);
     if (candidate) selectPaperForAssistant(candidate);
@@ -2101,7 +2218,7 @@ function homeFeedCard(item, type) {
 }
 
 function homeFeaturedCard(item) {
-  const article = cardFor(item, { onSelect: openDetails });
+  const article = cardFor(item);
   article.classList.add('home-featured-paper-card');
   return article;
 }

@@ -286,6 +286,10 @@
             <div class="translation-shelf-tools"><span><b id="translationFavoriteCount">0</b> 篇译文</span><span><b id="translationGlossaryCount">0</b> 条指定译法</span><button id="openTranslationGlossary" type="button">管理指定译法</button></div>
             <div class="translation-glossary-preview" id="translationGlossaryPreview"></div>
           </section>
+          <section class="reference-group-panel" id="referenceGroupPanel" hidden aria-labelledby="referenceGroupTitle">
+            <div><span class="section-kicker">REFERENCE GROUPS</span><h3 id="referenceGroupTitle">参考资料分类</h3><p>按用途查看官方网站、合作组、ChatGPT、数据分析和 GitHub 跟随。</p></div>
+            <div class="reference-group-list" id="referenceGroupList"></div>
+          </section>
           <div class="results-meta"><span id="resultCount">正在载入…</span><span id="viewNote">原文与 Codex 中文译文可切换</span><button id="addMyItem" hidden>+ 添加内容</button><button id="exportReferences">导出 Zotero / RIS</button></div>
           <div class="card-list" id="cardList">
             <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
@@ -296,6 +300,8 @@
             <p>请尝试其他关键词或清除分类筛选。</p>
           </div>
         </div>
+
+      </section>
 
         <aside class="radar-panel" id="paperAssistant" aria-label="论文助手">
           <div class="radar-head"><div><small id="assistantKicker">PAPER COMPANION</small><span id="assistantTitle">论文助手</span></div><span class="assistant-head-actions"><button id="assistantBackToOverview" type="button" aria-label="返回论文概览" hidden>←</button><button id="closePaperAssistant" type="button" aria-label="关闭论文助手">×</button></span></div>
@@ -315,7 +321,6 @@
           <article class="assistant-paper-detail" id="assistantPaperDetail" hidden aria-live="polite"></article>
         </aside>
         <button class="assistant-backdrop" id="assistantBackdrop" type="button" aria-label="关闭论文助手" tabindex="-1"></button>
-      </section>
     </main>
 
     <footer>
