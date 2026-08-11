@@ -8,7 +8,7 @@ const DEFAULT_CATEGORY_ORDER = [
 const DEFAULT_FILTER_MODULE_ORDER = ['categories', 'keywords'];
 
 const state = {
-  papers: [], featured: [], news: [], notices: [], publicFavorites: [], translations: {}, noticePortals: { categories: [], entries: [] },
+  papers: [], featured: [], news: [], notices: [], publicFavorites: [], translations: {}, referenceResources: [], noticePortals: { categories: [], entries: [] },
   meta: null, view: 'papers', category: 'all', source: 'all', query: '', searchField: 'all', sort: 'date', scope: 'daily-focus', visible: 20,
   dateFrom: '', dateTo: '', favoriteKeyword: 'all', favoriteDraft: null, inlineNoteId: '', citationDraft: null, mySection: 'papers', translatedIds: new Set(),
   googleTranslations: new Map(), googleTranslationOpenIds: new Set(), googleTranslationLoadingIds: new Set(), googleTranslationErrors: new Map(),
@@ -1014,7 +1014,7 @@ const DEFAULT_RESOURCES = [
 
 function myCollectionItems(section = state.mySection) {
   if (section === 'code') return [...DEFAULT_CODE_ITEMS, ...state.personal.codeItems];
-  if (section === 'references') return [...DEFAULT_RESOURCES, ...state.personal.resources];
+  if (section === 'references') return [...DEFAULT_RESOURCES, ...state.referenceResources, ...state.personal.resources];
   return [];
 }
 
@@ -2803,7 +2803,7 @@ function bindEvents() {
 }
 
 async function loadData() {
-  const files = ['meta', 'papers', 'featured', 'news', 'notices', 'public-favorites', 'notice-portals', 'personal-state', 'translations.zh-CN'];
+  const files = ['meta', 'papers', 'featured', 'news', 'notices', 'public-favorites', 'notice-portals', 'reference-resources', 'personal-state', 'translations.zh-CN'];
   const responses = await Promise.all(files.map(async name => {
     const response = await fetch(`./data/${name}.json`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
@@ -2811,7 +2811,9 @@ async function loadData() {
   }));
   const translationPayload = responses.pop();
   const personalPayload = responses.pop();
+  const referencePayload = responses.pop();
   [state.meta, state.papers, state.featured, state.news, state.notices, state.publicFavorites, state.noticePortals] = responses;
+  state.referenceResources = Array.isArray(referencePayload?.items) ? referencePayload.items : [];
   applyPublicPersonalState(personalPayload);
   state.personalDirty = false;
   state.translations = translationPayload.items || {};

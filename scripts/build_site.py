@@ -23,7 +23,7 @@ def main() -> None:
     PUBLIC_DATA.mkdir(parents=True, exist_ok=True)
     for name in (
         "papers.json", "news.json", "notices.json", "featured.json", "status.json",
-        "translations.zh-CN.json",
+        "translations.zh-CN.json", "reference-resources.json",
     ):
         shutil.copy2(DATA / name, PUBLIC_DATA / name)
     shutil.copy2(CONFIG / "notice_portals.json", PUBLIC_DATA / "notice-portals.json")

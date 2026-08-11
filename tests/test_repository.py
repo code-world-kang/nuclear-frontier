@@ -21,13 +21,35 @@ class RepositoryTests(unittest.TestCase):
             ROOT / "data" / "notices.json",
             ROOT / "data" / "status.json",
             ROOT / "data" / "translations.zh-CN.json",
+            ROOT / "data" / "reference-resources.json",
             ROOT / "data" / "personal" / "state.json",
             ROOT / "site" / "data" / "translations.zh-CN.json",
             ROOT / "site" / "data" / "personal-state.json",
             ROOT / "site" / "data" / "notice-portals.json",
+            ROOT / "site" / "data" / "reference-resources.json",
         ]:
             with self.subTest(path=path):
                 json.loads(path.read_text(encoding="utf-8"))
+
+    def test_note_github_urls_are_available_in_my_references(self):
+        payload = json.loads((ROOT / "data" / "reference-resources.json").read_text(encoding="utf-8"))
+        self.assertEqual(payload["source_repository"], "https://github.com/code-world-kang/Note_github")
+        self.assertEqual(payload["source_file"], "网址记录.md")
+        self.assertGreaterEqual(len(payload["items"]), 60)
+        ids = [item["id"] for item in payload["items"]]
+        self.assertEqual(len(ids), len(set(ids)))
+        titles = {item["title"] for item in payload["items"]}
+        self.assertTrue({"CERN ROOT 官网", "Geant4 官网", "NNDC核数据库", "Nature Physics"}.issubset(titles))
+        for item in payload["items"]:
+            with self.subTest(id=item["id"]):
+                parsed = urllib.parse.urlsplit(item["url"])
+                self.assertIn(parsed.scheme, {"http", "https"})
+                self.assertTrue(parsed.hostname)
+                self.assertTrue(item["description"])
+                self.assertTrue(item["keywords"])
+        app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        self.assertIn("reference-resources", app)
+        self.assertIn("state.referenceResources", app)
 
     def test_every_paper_has_traceable_source(self):
         papers = json.loads((ROOT / "data" / "papers.json").read_text(encoding="utf-8"))
