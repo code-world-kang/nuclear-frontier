@@ -15,6 +15,7 @@ import email.utils
 import hashlib
 import html
 import json
+import os
 import re
 import sys
 import threading
@@ -193,6 +194,43 @@ def fetch_document(
                 continue
             break
     raise RuntimeError(str(last_error) if last_error else "unknown network error")
+
+
+def post_json(url: str, payload: dict[str, Any], *, attempts: int = 2) -> Any:
+    headers = {
+        "User-Agent": USER_AGENT,
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+    }
+    api_key = os.environ.get("S2_API_KEY", "").strip()
+    if api_key:
+        headers["x-api-key"] = api_key
+    request = urllib.request.Request(
+        url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST"
+    )
+    last_error: Exception | None = None
+    for attempt in range(attempts):
+        try:
+            with urllib.request.urlopen(request, timeout=25) as response:
+                value = json.loads(response.read())
+                if isinstance(value, dict) and value.get("message") and value.get("code"):
+                    raise RuntimeError(f"API error {value.get('code')}: {value.get('message')}")
+                return value
+        except urllib.error.HTTPError as exc:
+            last_error = exc
+            if attempt + 1 < attempts and exc.code in (429, 500, 502, 503, 504):
+                retry_after = exc.headers.get("Retry-After", "") if exc.headers else ""
+                delay = float(retry_after) if retry_after.isdigit() else 4.0 * (attempt + 1)
+                time.sleep(min(delay, 15))
+                continue
+            break
+        except (urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError, RuntimeError) as exc:
+            last_error = exc
+            if attempt + 1 < attempts:
+                time.sleep(2.0 * (attempt + 1))
+                continue
+            break
+    raise RuntimeError(str(last_error) if last_error else "POST API request failed")
 
 
 def fetch_arxiv_resource(url: str, *, accept: str = "*/*", attempts: int = 3) -> bytes:
@@ -1455,6 +1493,179 @@ def extract_abstract_from_citation(
     return next((abstract for candidate in candidates if (abstract := valid_publisher_abstract(candidate, title))), "")
 
 
+def reconstruct_openalex_abstract(inverted_index: Any) -> str:
+    """按 OpenAlex 的位置索引重建摘要，同一位置只保留一个词。"""
+    if not isinstance(inverted_index, dict):
+        return ""
+    positions: dict[int, str] = {}
+    for word, indices in inverted_index.items():
+        if not isinstance(word, str) or not isinstance(indices, list):
+            continue
+        for position in indices:
+            if isinstance(position, int) and 0 <= position <= 100_000:
+                positions.setdefault(position, word)
+    return clean_text(" ".join(positions[position] for position in sorted(positions)))
+
+
+def enrich_missing_abstracts_from_openalex(
+    papers: list[dict[str, Any]], run_at: str, limit: int = 500, batch_size: int = 40
+) -> dict[str, int]:
+    """OpenAlex DOI 批量元数据备用源，用少量请求覆盖全部缺失记录。"""
+    now = dt.datetime.fromisoformat(run_at)
+
+    def due(paper: dict[str, Any]) -> bool:
+        if paper.get("abstract") or not paper.get("doi"):
+            return False
+        checked = paper.get("openalex_abstract_enrichment", {}).get("checked_at", "")
+        if not checked:
+            return True
+        try:
+            return now - dt.datetime.fromisoformat(checked) >= dt.timedelta(days=30)
+        except ValueError:
+            return True
+
+    all_candidates = sorted(
+        [paper for paper in papers if due(paper)],
+        key=lambda paper: (paper.get("published", ""), paper.get("importance", 0)),
+        reverse=True,
+    )
+    candidates = all_candidates[:max(0, limit)]
+    stats = {
+        "checked": 0,
+        "enriched": 0,
+        "not_found": 0,
+        "failed_batches": 0,
+        "deferred": max(0, len(all_candidates) - len(candidates)),
+        "remaining": 0,
+    }
+    for offset in range(0, len(candidates), max(1, batch_size)):
+        batch = candidates[offset:offset + max(1, batch_size)]
+        dois = [normalized_doi(paper.get("doi", "")) for paper in batch]
+        url = "https://api.openalex.org/works?" + urllib.parse.urlencode({
+            "filter": "doi:" + "|".join(dois),
+            "per-page": min(100, len(dois)),
+            "select": "doi,title,abstract_inverted_index",
+        })
+        try:
+            payload = json.loads(fetch(url, accept="application/json", attempts=2))
+            results = payload.get("results", [])
+            if not isinstance(results, list):
+                raise ValueError("OpenAlex response has no results list")
+        except Exception:  # noqa: BLE001 - 批次失败不标记，下次可继续重试
+            stats["failed_batches"] += 1
+            continue
+        found: dict[str, str] = {}
+        for work in results:
+            if not isinstance(work, dict):
+                continue
+            doi = normalized_doi(work.get("doi", ""))
+            abstract = valid_publisher_abstract(
+                reconstruct_openalex_abstract(work.get("abstract_inverted_index")),
+                work.get("title", ""),
+            )
+            if doi and abstract:
+                found[doi] = abstract
+        for paper in batch:
+            stats["checked"] += 1
+            doi = normalized_doi(paper.get("doi", ""))
+            abstract = found.get(doi, "")
+            if abstract:
+                paper["abstract"] = abstract
+                paper["abstract_status"] = "full"
+                paper["abstract_source"] = "OpenAlex"
+                paper["openalex_abstract_enrichment"] = {
+                    "status": "ready", "checked_at": run_at, "source": "OpenAlex"
+                }
+                stats["enriched"] += 1
+            else:
+                paper["openalex_abstract_enrichment"] = {
+                    "status": "not_found", "checked_at": run_at, "source": "OpenAlex"
+                }
+                stats["not_found"] += 1
+        if offset + batch_size < len(candidates):
+            time.sleep(0.15)
+    stats["remaining"] = sum(1 for paper in papers if due(paper))
+    return stats
+
+
+def enrich_missing_abstracts_from_semantic_scholar(
+    papers: list[dict[str, Any]], run_at: str, limit: int = 100, batch_size: int = 10,
+    delay_seconds: float = 1.1,
+) -> dict[str, int]:
+    """Semantic Scholar DOI 批量备用源；小批次串行以避免公共限流。"""
+    now = dt.datetime.fromisoformat(run_at)
+
+    def due(paper: dict[str, Any]) -> bool:
+        if paper.get("abstract") or not paper.get("doi"):
+            return False
+        checked = paper.get("semantic_scholar_abstract_enrichment", {}).get("checked_at", "")
+        if not checked:
+            return True
+        try:
+            return now - dt.datetime.fromisoformat(checked) >= dt.timedelta(days=30)
+        except ValueError:
+            return True
+
+    all_candidates = sorted(
+        [paper for paper in papers if due(paper)],
+        key=lambda paper: (paper.get("published", ""), paper.get("importance", 0)),
+        reverse=True,
+    )
+    candidates = all_candidates[:max(0, limit)]
+    stats = {
+        "checked": 0,
+        "enriched": 0,
+        "not_found": 0,
+        "failed_batches": 0,
+        "deferred": max(0, len(all_candidates) - len(candidates)),
+        "remaining": 0,
+    }
+    endpoint = "https://api.semanticscholar.org/graph/v1/paper/batch?fields=externalIds,title,abstract"
+    for offset in range(0, len(candidates), max(1, batch_size)):
+        batch = candidates[offset:offset + max(1, batch_size)]
+        try:
+            results = post_json(
+                endpoint,
+                {"ids": [f"DOI:{normalized_doi(paper.get('doi', ''))}" for paper in batch]},
+                attempts=2,
+            )
+            if not isinstance(results, list):
+                raise ValueError("Semantic Scholar response is not a list")
+        except Exception:  # noqa: BLE001 - 公共限流不阻断日更，下次重试
+            stats["failed_batches"] += 1
+            if delay_seconds > 0:
+                time.sleep(delay_seconds)
+            continue
+        found: dict[str, str] = {}
+        for work in results:
+            if not isinstance(work, dict):
+                continue
+            doi = normalized_doi((work.get("externalIds") or {}).get("DOI", ""))
+            abstract = valid_publisher_abstract(work.get("abstract", ""), work.get("title", ""))
+            if doi and abstract:
+                found[doi] = abstract
+        for paper in batch:
+            stats["checked"] += 1
+            abstract = found.get(normalized_doi(paper.get("doi", "")), "")
+            if abstract:
+                paper["abstract"] = abstract
+                paper["abstract_status"] = "full"
+                paper["abstract_source"] = "Semantic Scholar"
+                paper["semantic_scholar_abstract_enrichment"] = {
+                    "status": "ready", "checked_at": run_at, "source": "Semantic Scholar"
+                }
+                stats["enriched"] += 1
+            else:
+                paper["semantic_scholar_abstract_enrichment"] = {
+                    "status": "not_found", "checked_at": run_at, "source": "Semantic Scholar"
+                }
+                stats["not_found"] += 1
+        if delay_seconds > 0 and offset + batch_size < len(candidates):
+            time.sleep(delay_seconds)
+    stats["remaining"] = sum(1 for paper in papers if due(paper))
+    return stats
+
+
 def enrich_missing_abstracts_from_publishers(
     papers: list[dict[str, Any]], run_at: str, limit: int = 30, delay_seconds: float = 0.1,
     max_workers: int = 4,
@@ -1636,6 +1847,23 @@ def enrich_missing_abstracts(
             time.sleep(0.8)
     stats["remaining"] = sum(1 for paper in papers if due(paper))
     return stats
+
+
+def update_abstract_availability(paper: dict[str, Any]) -> None:
+    sources = (
+        ("publisher_abstract_enrichment", "期刊官网/Cite"),
+        ("openalex_abstract_enrichment", "OpenAlex"),
+        ("semantic_scholar_abstract_enrichment", "Semantic Scholar"),
+        ("abstract_enrichment", "INSPIRE"),
+    )
+    checked = [label for field, label in sources if paper.get(field, {}).get("checked_at")]
+    paper["abstract_checked_sources"] = checked
+    if paper.get("abstract"):
+        paper["abstract_status"] = "full"
+    elif paper.get("doi") and len(checked) == len(sources):
+        paper["abstract_status"] = "unavailable"
+    else:
+        paper["abstract_status"] = "missing"
 
 
 def fetch_arxiv(source: dict[str, Any], classifier: Classifier) -> tuple[list[dict[str, Any]], SourceResult]:
@@ -2006,6 +2234,16 @@ def main() -> int:
         int(runtime.get("publisher_abstract_enrichment_limit", 30)),
         max_workers=int(runtime.get("publisher_abstract_enrichment_workers", 4)),
     )
+    openalex_abstract_stats = enrich_missing_abstracts_from_openalex(
+        papers,
+        run_at,
+        int(runtime.get("openalex_abstract_enrichment_limit", 500)),
+    )
+    semantic_scholar_abstract_stats = enrich_missing_abstracts_from_semantic_scholar(
+        papers,
+        run_at,
+        int(runtime.get("semantic_scholar_abstract_enrichment_limit", 100)),
+    )
     abstract_stats = enrich_missing_abstracts(
         papers, run_at, int(runtime.get("abstract_enrichment_limit", 240))
     )
@@ -2022,8 +2260,8 @@ def main() -> int:
         paper["importance"], paper["score_reasons"] = classifier.importance_details(
             paper.get("title", ""), paper.get("abstract", ""), source_weights.get(paper.get("source"), 3), categories
         )
-        paper["abstract_status"] = "full" if paper.get("abstract") else "missing"
         paper.setdefault("abstract_source", "arXiv RSS" if paper.get("source_type") == "preprint" and paper.get("abstract") else "")
+        update_abstract_availability(paper)
         paper.setdefault("license", "")
         paper.setdefault("publisher_licenses", [])
         original_figures = paper.get("figures", [])
@@ -2145,6 +2383,8 @@ def main() -> int:
         "fetched_counts": {"papers": len(papers_new), "news": len(news_new), "notices": len(notices_new)},
         "figure_enrichment": figure_stats,
         "publisher_abstract_enrichment": publisher_abstract_stats,
+        "openalex_abstract_enrichment": openalex_abstract_stats,
+        "semantic_scholar_abstract_enrichment": semantic_scholar_abstract_stats,
         "abstract_enrichment": abstract_stats,
         "news_detail_enrichment": news_detail_stats,
         "notice_detail_enrichment": notice_detail_stats,

@@ -22,6 +22,8 @@ from update_content import (  # noqa: E402
     crossref_url,
     enrich_arxiv_figures,
     enrich_missing_abstracts,
+    enrich_missing_abstracts_from_openalex,
+    enrich_missing_abstracts_from_semantic_scholar,
     enrich_missing_abstracts_from_publishers,
     extract_abstract_from_citation,
     extract_deadline,
@@ -36,6 +38,8 @@ from update_content import (  # noqa: E402
     publisher_citation_links,
     publisher_metadata_abstract,
     reusable_license,
+    reconstruct_openalex_abstract,
+    update_abstract_availability,
 )
 from sync_github_issue import MARKER, clean_state, extract_state, state_from_event  # noqa: E402
 
@@ -524,6 +528,60 @@ class PipelineTests(unittest.TestCase):
             )
         self.assertEqual(stats["blocked"], 1)
         self.assertEqual(papers[0]["publisher_abstract_enrichment"]["status"], "blocked")
+
+    def test_openalex_abstract_reconstruction_respects_word_positions(self):
+        inverted = {"detector": [2], "A": [0], "nuclear": [1], "works.": [3]}
+        self.assertEqual(reconstruct_openalex_abstract(inverted), "A nuclear detector works.")
+
+    def test_openalex_enrichment_batches_dois_and_preserves_provenance(self):
+        papers = [{
+            "id": "p", "title": "Detector paper", "doi": "10.1234/openalex", "abstract": "",
+            "published": "2026-08-08", "importance": 50,
+        }]
+        words = "This complete indexed abstract describes nuclear detector calibration resolution and experimental performance with sufficient methodological and scientific detail.".split()
+        inverted = {word: [index] for index, word in enumerate(words)}
+        payload = {"results": [{
+            "doi": "https://doi.org/10.1234/openalex",
+            "title": "Detector paper",
+            "abstract_inverted_index": inverted,
+        }]}
+        with patch("update_content.fetch", return_value=json.dumps(payload).encode()):
+            stats = enrich_missing_abstracts_from_openalex(
+                papers, "2026-08-08T08:00:00+08:00", limit=500
+            )
+        self.assertEqual(stats["enriched"], 1)
+        self.assertIn("detector calibration", papers[0]["abstract"])
+        self.assertEqual(papers[0]["abstract_source"], "OpenAlex")
+        self.assertEqual(papers[0]["openalex_abstract_enrichment"]["status"], "ready")
+
+    def test_semantic_scholar_enrichment_uses_batch_doi_lookup(self):
+        papers = [{
+            "id": "p", "title": "Detector paper", "doi": "10.1234/semantic", "abstract": "",
+            "published": "2026-08-08", "importance": 50,
+        }]
+        payload = [{
+            "externalIds": {"DOI": "10.1234/semantic"},
+            "title": "Detector paper",
+            "abstract": "This complete Semantic Scholar abstract describes nuclear detector calibration, resolution, methodology, and measured experimental performance.",
+        }]
+        with patch("update_content.post_json", return_value=payload):
+            stats = enrich_missing_abstracts_from_semantic_scholar(
+                papers, "2026-08-08T08:00:00+08:00", limit=100, delay_seconds=0
+            )
+        self.assertEqual(stats["enriched"], 1)
+        self.assertEqual(papers[0]["abstract_source"], "Semantic Scholar")
+        self.assertEqual(papers[0]["semantic_scholar_abstract_enrichment"]["status"], "ready")
+
+    def test_exhausted_abstract_sources_are_marked_unavailable(self):
+        paper = {"doi": "10.1234/missing", "abstract": ""}
+        for field in (
+            "publisher_abstract_enrichment", "openalex_abstract_enrichment",
+            "semantic_scholar_abstract_enrichment", "abstract_enrichment",
+        ):
+            paper[field] = {"status": "not_found", "checked_at": "2026-08-11T08:00:00+08:00"}
+        update_abstract_availability(paper)
+        self.assertEqual(paper["abstract_status"], "unavailable")
+        self.assertEqual(len(paper["abstract_checked_sources"]), 4)
 
 
 if __name__ == "__main__":

@@ -608,9 +608,19 @@ function abstractSourceLabel(item) {
   if (source.startsWith('Publisher Cite')) return '期刊 Cite 导出';
   if (source.startsWith('Publisher metadata')) return '期刊官网元数据';
   if (source === 'Crossref') return 'Crossref';
+  if (source === 'OpenAlex') return 'OpenAlex';
+  if (source === 'Semantic Scholar') return 'Semantic Scholar';
   if (source === 'INSPIRE') return 'INSPIRE';
   if (source.includes('arXiv')) return 'arXiv';
   return source;
+}
+
+function missingAbstractMessage(item) {
+  const sources = item.abstract_checked_sources || [];
+  if (item.abstract_status === 'unavailable' || sources.length >= 4) {
+    return `已查询${sources.join('、') || '期刊官网/Cite、OpenAlex、Semantic Scholar、INSPIRE'}，当前均无公开摘要；本站不生成或杜撰摘要。`;
+  }
+  return '该数据源暂未公开摘要，其他元数据源仍在补全队列中。';
 }
 
 function googleTranslationPageUrl(item) {
@@ -764,7 +774,7 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
   const abstract = $('.abstract', card);
   abstract.textContent = hasTranslatedAbstract
     ? applyTranslationGlossary(translation.abstract_zh)
-    : (localizedDescription(item) || '该数据源未公开摘要；本站不生成或杜撰摘要。');
+    : (localizedDescription(item) || missingAbstractMessage(item));
   $('.abstract-label', card).textContent = (abstractValue || item.type === 'news')
     ? (hasTranslatedAbstract ? '完整摘要（Codex 中文译文）' : (item.type === 'paper' ? '完整摘要（原文）' : '完整介绍（原始来源）'))
     : (item.type === 'paper' ? '摘要状态' : '介绍状态');
@@ -2002,7 +2012,7 @@ function renderAssistantPaperDetail(item) {
     </section>
     <section class="assistant-section paper-detail-section">
       <div class="assistant-section-head"><span>摘要与操作</span><small>优先展示已有中文译文</small></div>
-      <p class="assistant-paper-summary">${text(localizedAbstract(item) || '该数据源未公开摘要；本站不生成或杜撰摘要。')}</p>
+      <p class="assistant-paper-summary">${text(localizedAbstract(item) || missingAbstractMessage(item))}</p>
       <div class="assistant-paper-actions">
         <a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">原始页面 ↗</a>
         ${item.pdf_url ? `<a href="${text(item.pdf_url)}" target="_blank" rel="noreferrer">PDF ↗</a>` : ''}

@@ -831,20 +831,20 @@
     "skipped": 72
   },
   "publisher_abstract_enrichment": {
-    "checked": 30,
-    "enriched": 0,
-    "from_metadata": 0,
+    "checked": 333,
+    "enriched": 37,
+    "from_metadata": 37,
     "from_citation": 0,
-    "not_found": 11,
-    "blocked": 19,
-    "failed": 0,
-    "deferred": 333,
-    "remaining": 333
+    "not_found": 155,
+    "blocked": 138,
+    "failed": 3,
+    "deferred": 0,
+    "remaining": 0
   },
   "abstract_enrichment": {
-    "checked": 0,
-    "enriched": 0,
-    "not_found": 0,
+    "checked": 296,
+    "enriched": 6,
+    "not_found": 290,
     "failed_batches": 0,
     "remaining": 0
   },
@@ -855,5 +855,21 @@
   "notice_detail_enrichment": {
     "attempted": 5,
     "updated": 4
+  },
+  "openalex_abstract_enrichment": {
+    "checked": 388,
+    "enriched": 55,
+    "not_found": 333,
+    "failed_batches": 0,
+    "deferred": 0,
+    "remaining": 0
+  },
+  "semantic_scholar_abstract_enrichment": {
+    "checked": 279,
+    "enriched": 23,
+    "not_found": 256,
+    "failed_batches": 23,
+    "deferred": 0,
+    "remaining": 11
   }
 }

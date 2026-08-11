@@ -33,7 +33,7 @@ GitHub Actions 在每天北京时间 10:17 左右执行（预留 arXiv 冬令时
 1. 获取最新元数据；
 2. 按 DOI、arXiv ID 和标题去重；
 3. 执行主题、方法与技术标签分类，优先核实验、核理论、核结构、核衰变和核探测器；
-4. 对缺失摘要的 DOI 记录，依次尝试期刊官网元数据、官方 Cite/RIS/BibTeX/EndNote 导出和 INSPIRE 元数据，并保留摘要来源；
+4. 对缺失摘要的 DOI 记录，依次尝试期刊官网元数据、官方 Cite/RIS/BibTeX/EndNote 导出、OpenAlex、Semantic Scholar 和 INSPIRE，并保留摘要来源与查询记录；
 5. 不抓取或展示论文图片，将站点流量与版面聚焦在题目、完整摘要和原始链接；
 6. 保留历史数据；
 7. 运行测试；
