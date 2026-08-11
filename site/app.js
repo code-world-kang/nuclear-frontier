@@ -11,7 +11,6 @@ const state = {
   papers: [], featured: [], news: [], notices: [], publicFavorites: [], translations: {}, referenceResources: [], noticePortals: { categories: [], entries: [] },
   meta: null, view: 'papers', category: 'all', source: 'all', query: '', searchField: 'all', sort: 'date', scope: 'daily-focus', visible: 20,
   dateFrom: '', dateTo: '', favoriteKeyword: 'all', favoriteDraft: null, inlineNoteId: '', inlineCitationId: '', citationDraft: null, mySection: 'papers', referenceGroup: 'all', translatedIds: new Set(),
-  googleTranslations: new Map(), googleTranslationOpenIds: new Set(), googleTranslationLoadingIds: new Set(), googleTranslationErrors: new Map(),
   selectedPaperId: '',
   selectedNoticeId: '', expandedNoticeIds: new Set(),
   cloudUpdatedAt: '',
@@ -22,7 +21,6 @@ const state = {
   categorySelections: { papers: 'all', news: 'all' },
 };
 const citationMetadataRequests = new Map();
-const GOOGLE_TRANSLATION_STATIC_LIMIT = 'Google 不允许静态网页直接读取翻译结果，本站已停止发起会失败的跨域请求';
 const PRIMARY_NUCLEAR_CATEGORIES = new Set([
   'experimental-nuclear', 'theoretical-nuclear', 'nuclear-structure', 'nuclear-decay', 'nuclear-reactions',
   'detectors-daq', 'nuclear-general', 'high-energy-nuclear', 'nuclear-astrophysics',
@@ -603,39 +601,6 @@ function localizedDescription(item) {
   return '';
 }
 
-function googleTranslationChunks(value = '', maxLength = 1400) {
-  const paragraphs = String(value).split(/\n+/).map(part => part.trim()).filter(Boolean);
-  const chunks = [];
-  paragraphs.forEach(paragraph => {
-    let remaining = paragraph;
-    while (remaining.length > maxLength) {
-      let cut = remaining.lastIndexOf('. ', maxLength);
-      if (cut < maxLength * .45) cut = remaining.lastIndexOf(' ', maxLength);
-      if (cut < maxLength * .45) cut = maxLength;
-      chunks.push(remaining.slice(0, cut + (remaining[cut] === '.' ? 1 : 0)).trim());
-      remaining = remaining.slice(cut + (remaining[cut] === '.' ? 1 : 0)).trim();
-    }
-    if (remaining) chunks.push(remaining);
-  });
-  return chunks;
-}
-
-async function requestGoogleTranslation(value = '') {
-  const chunks = googleTranslationChunks(value);
-  const translated = [];
-  for (const chunk of chunks) {
-    const url = new URL('https://translate.googleapis.com/translate_a/single');
-    url.search = new URLSearchParams({ client: 'gtx', sl: 'auto', tl: 'zh-CN', dt: 't', q: chunk });
-    const response = await fetch(url, { headers: { Accept: 'application/json' }, referrerPolicy: 'no-referrer' });
-    if (!response.ok) throw new Error(`Google 翻译请求失败（${response.status}）`);
-    const payload = await response.json();
-    const textValue = Array.isArray(payload?.[0]) ? payload[0].map(part => part?.[0] || '').join('') : '';
-    if (!textValue) throw new Error('Google 翻译未返回有效内容');
-    translated.push(textValue);
-  }
-  return translated.join('\n\n');
-}
-
 function googleTranslationPageUrl(item) {
   const source = [item.title, item.abstract || item.summary || ''].filter(Boolean).join('\n\n').slice(0, 4500);
   const url = new URL('https://translate.google.com/');
@@ -643,61 +608,9 @@ function googleTranslationPageUrl(item) {
   return url.href;
 }
 
-function googleTranslationErrorMessage(error) {
-  const message = String(error?.message || error || '');
-  if (/failed to fetch|networkerror|load failed/i.test(message)) {
-    return 'Google 拒绝了本站的网页直连请求，浏览器也无法跨域读取翻译结果';
-  }
-  return message || 'Google 翻译暂时不可用';
-}
-
 function refreshPaperCardViews() {
   renderCards();
   if (state.view === 'home') renderHomeDashboard();
-}
-
-function refreshGoogleTranslationViews(item) {
-  refreshPaperCardViews();
-  if (state.view === 'notices') renderDailyNotices();
-  if ($('#detailDialog')?.open && $('#detailContent')?.dataset.id === item.id) openDetails(item);
-}
-
-async function toggleGoogleTranslation(item) {
-  if (state.googleTranslationOpenIds.has(item.id)) {
-    state.googleTranslationOpenIds.delete(item.id);
-    refreshGoogleTranslationViews(item);
-    return;
-  }
-  state.googleTranslationOpenIds.add(item.id);
-  if (state.googleTranslations.has(item.id) || state.googleTranslationLoadingIds.has(item.id)) {
-    refreshGoogleTranslationViews(item);
-    return;
-  }
-  state.googleTranslationErrors.set(item.id, GOOGLE_TRANSLATION_STATIC_LIMIT);
-  refreshGoogleTranslationViews(item);
-}
-
-function googleTranslationPanelFor(item) {
-  if (!state.googleTranslationOpenIds.has(item.id)) return null;
-  const panel = document.createElement('section');
-  panel.className = 'inline-google-translation';
-  panel.dataset.googleTranslation = item.id;
-  const result = state.googleTranslations.get(item.id);
-  const error = state.googleTranslationErrors.get(item.id);
-  if (state.googleTranslationLoadingIds.has(item.id)) {
-    panel.innerHTML = '<div class="inline-panel-head"><b>Google 中文翻译</b><small>正在翻译题目与摘要…</small></div><p class="inline-translation-status">🌱 译文生成中，请稍候。</p>';
-  } else if (error) {
-    const hasCodexTranslation = Boolean(translationFor(item));
-    panel.innerHTML = `<div class="inline-panel-head"><b>Google 中文翻译</b><small>网页直连受限</small></div><p class="inline-translation-error">${text(error)}。本站是静态 GitHub Pages，无法安全保存 Google Cloud API 凭据；因此不再发起无效请求。</p><div class="inline-google-fallback">${hasCodexTranslation ? '<button type="button" class="show-codex-translation">查看 Codex 中文译文</button>' : ''}<a href="${text(googleTranslationPageUrl(item))}" target="_blank" rel="noreferrer">在 Google 翻译官网打开 ↗</a></div>`;
-    $('.show-codex-translation', panel)?.addEventListener('click', () => {
-      state.translatedIds.add(item.id);
-      state.googleTranslationOpenIds.delete(item.id);
-      refreshGoogleTranslationViews(item);
-    });
-  } else if (result) {
-    panel.innerHTML = `<div class="inline-panel-head"><b>Google 中文翻译</b><small>题目与摘要</small></div><h4>${text(result.title_zh || item.title)}</h4><p>${text(result.abstract_zh || '原始来源未提供可翻译的摘要。')}</p>`;
-  }
-  return panel;
 }
 
 function focusInlineNote(item) {
@@ -915,13 +828,14 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
   translate.addEventListener('click', () => toggleTranslation(item));
   actions.append(translate);
 
-  const googleTranslate = document.createElement('button');
-  googleTranslate.type = 'button';
+  const googleTranslate = document.createElement('a');
   googleTranslate.className = 'google-translation-link';
-  googleTranslate.textContent = state.googleTranslationOpenIds.has(item.id) ? '收起 Google 译文' : 'Google 翻译';
-  googleTranslate.title = '在当前文章中翻译题目与摘要';
+  googleTranslate.href = googleTranslationPageUrl(item);
+  googleTranslate.target = '_blank';
+  googleTranslate.rel = 'noreferrer';
+  googleTranslate.textContent = 'Google 翻译官网 ↗';
+  googleTranslate.title = '打开已填入论文题目与摘要的 Google 翻译页面';
   googleTranslate.setAttribute('aria-label', `使用 Google 翻译查看《${item.title}》`);
-  googleTranslate.addEventListener('click', () => void toggleGoogleTranslation(item));
   actions.append(googleTranslate);
 
   if (item.type === 'paper') {
@@ -979,8 +893,6 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
     const citationPanel = citationPanelFor(item);
     $('.paper-copy', card).append(citationPanel);
   }
-  const googlePanel = googleTranslationPanelFor(item);
-  if (googlePanel) $('.paper-copy', card).append(googlePanel);
   const noteEditor = inlineNoteEditorFor(item);
   if (noteEditor) $('.paper-copy', card).append(noteEditor);
 
@@ -1699,7 +1611,7 @@ function openDetails(item) {
       ${item.doi ? '<button id="copyDoi">复制 DOI</button>' : ''}
       <button id="openCitationFromDetail">Cite</button>
       ${translation ? `<button id="toggleDetailTranslation">${translated ? '查看英文原文' : '查看中文译文'}</button>` : ''}
-      <button id="detailGoogleTranslate" class="google-translation-link">${state.googleTranslationOpenIds.has(item.id) ? '收起 Google 译文' : 'Google 翻译'}</button>
+      <a id="detailGoogleTranslate" class="google-translation-link" href="${text(googleTranslationPageUrl(item))}" target="_blank" rel="noreferrer">Google 翻译官网 ↗</a>
       ${item.type === 'paper' ? `<button id="openDetailNote">📝 ${state.personal.notes[item.id] ? '编辑已有笔记' : '写笔记'}</button><button id="toggleDetailIgnore" class="ignore-button${isIgnored(item.id) ? ' active' : ''}">${isIgnored(item.id) ? '恢复论文' : '忽略论文'}</button>` : ''}
     </div>
     <div class="detail-inline-citation" data-detail-citation></div>
@@ -1716,9 +1628,6 @@ function openDetails(item) {
     openDetails(item);
   });
   $('#openCitationFromDetail', host).addEventListener('click', event => toggleCitationPanelInHost(item, $('[data-detail-citation]', host), event.currentTarget));
-  $('#detailGoogleTranslate', host).addEventListener('click', () => void toggleGoogleTranslation(item));
-  const googlePanel = googleTranslationPanelFor(item);
-  if (googlePanel) $('.detail-tools', host).after(googlePanel);
   $('#openDetailNote', host)?.addEventListener('click', () => {
     $('#detailDialog').close();
     state.inlineNoteId = item.id;
@@ -2294,11 +2203,8 @@ function renderNoticeDetail(item) {
     ${translated?.abstract_zh ? `<section><h3>中文介绍</h3><p>${text(applyTranslationGlossary(translated.abstract_zh))}</p></section>` : ''}
     <section><h3>官方原文信息</h3><p>${text(original)}</p></section>
     <div class="notice-detail-tags">${(item.categories || []).map(id => `<span>${text(categoryName(id))}</span>`).join('')}<span>${text(item.scope || category.description || '')}</span></div>
-    <div class="notice-detail-actions"><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">查看官方原文 ↗</a><button type="button" data-notice-favorite>${isFavorite(item.id) ? '★ 已收藏' : '☆ 收藏'}</button><button type="button" data-notice-google>Google 翻译</button></div>`;
+    <div class="notice-detail-actions"><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">查看官方原文 ↗</a><button type="button" data-notice-favorite>${isFavorite(item.id) ? '★ 已收藏' : '☆ 收藏'}</button><a href="${text(googleTranslationPageUrl(item))}" target="_blank" rel="noreferrer">Google 翻译官网 ↗</a></div>`;
   $('[data-notice-favorite]', host).addEventListener('click', event => void toggleFavorite(item, event.currentTarget));
-  $('[data-notice-google]', host).addEventListener('click', () => void toggleGoogleTranslation(item));
-  const googlePanel = googleTranslationPanelFor(item);
-  if (googlePanel) host.append(googlePanel);
 }
 
 function dailyNoticeCard(item) {
@@ -2329,7 +2235,7 @@ function dailyNoticeCard(item) {
     <div class="notice-original-preview"><b>官方原文信息</b><p>${text(excerpt)}</p>${original.length > 360 ? `<button type="button" class="notice-expand">${expanded ? '收起原文' : '展开全部信息'}</button>` : ''}</div>
     <footer>
       <div><b>${text(item.source || '官方来源')}</b><span>${text(item.scope || '')}</span><time>${text(prettyDate(item.published))}</time></div>
-      <span class="daily-notice-links"><button type="button" class="notice-detail-button">右侧查看详情</button><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">官方原文 ↗</a><button type="button" class="google-translation-link">${state.googleTranslationOpenIds.has(item.id) ? '收起 Google 译文' : 'Google 翻译'}</button></span>
+      <span class="daily-notice-links"><button type="button" class="notice-detail-button">右侧查看详情</button><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">官方原文 ↗</a><a href="${text(googleTranslationPageUrl(item))}" target="_blank" rel="noreferrer" class="google-translation-link">Google 翻译官网 ↗</a></span>
     </footer>`;
   $('.notice-title-button', article).addEventListener('click', () => selectNotice(item));
   $('.notice-detail-button', article).addEventListener('click', () => selectNotice(item));
@@ -2339,9 +2245,6 @@ function dailyNoticeCard(item) {
     else state.expandedNoticeIds.add(item.id);
     renderDailyNotices();
   });
-  $('.google-translation-link', article).addEventListener('click', () => void toggleGoogleTranslation(item));
-  const googlePanel = googleTranslationPanelFor(item);
-  if (googlePanel) article.append(googlePanel);
   return article;
 }
 

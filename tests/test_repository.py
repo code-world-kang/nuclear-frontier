@@ -177,15 +177,13 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('data-view="ignored"', index)
         self.assertIn('"ignoredItems"', sync)
 
-    def test_google_translation_failure_has_clear_fallback(self):
+    def test_google_translation_uses_prefilled_official_page(self):
         app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
-        styles = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
-        self.assertIn("function googleTranslationErrorMessage", app)
         self.assertIn("function googleTranslationPageUrl", app)
-        self.assertIn("GOOGLE_TRANSLATION_STATIC_LIMIT", app)
-        self.assertNotIn("const titleZh = await requestGoogleTranslation", app)
-        self.assertIn("在 Google 翻译官网打开", app)
-        self.assertIn(".inline-google-fallback", styles)
+        self.assertIn("Google 翻译官网 ↗", app)
+        self.assertIn("https://translate.google.com/", app)
+        self.assertNotIn("https://translate.googleapis.com/translate_a/single", app)
+        self.assertNotIn("function requestGoogleTranslation", app)
 
     def test_reader_ui_is_text_first_and_notes_are_inline_and_public(self):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
@@ -241,11 +239,8 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("function enrichCitationMetadata", app)
         self.assertIn("Object.keys(state.translations).forEach", app)
         self.assertIn("function localizedTitle", app)
-        self.assertIn("function requestGoogleTranslation", app)
-        self.assertIn("https://translate.googleapis.com/translate_a/single", app)
-        self.assertIn("function googleTranslationPanelFor", app)
         self.assertNotIn("renderDailyNoticeDashboard", app)
-        self.assertIn("Google 翻译", app)
+        self.assertIn("Google 翻译官网", app)
         self.assertIn("data-assistant-cite", app)
         self.assertIn("data-assistant-citation", app)
         self.assertIn("[PP/OL]", app)
