@@ -5941,6 +5941,12 @@
       "status": "not_found",
       "checked_at": "2026-08-11T04:01:53+00:00",
       "source": "INSPIRE"
+    },
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
     }
   },
   {
@@ -6164,7 +6170,13 @@
     "numpages": "",
     "publisher": "American Physical Society (APS)",
     "publisher_url": "https://link.aps.org/doi/10.1103/9vfy-1c91",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "d5e954240606cf2c",
@@ -6582,6 +6594,12 @@
       "status": "not_found",
       "checked_at": "2026-08-10T23:40:26+08:00",
       "source": "INSPIRE"
+    },
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
     }
   },
   {
@@ -6960,6 +6978,12 @@
       "status": "not_found",
       "checked_at": "2026-08-10T23:40:26+08:00",
       "source": "INSPIRE"
+    },
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
     }
   },
   {
@@ -8073,9 +8097,9 @@
     "id": "d5cf83eb6a611ef5",
     "type": "paper",
     "title": "Systematics of fission time scales for $$^{16,18}$$O+$$^{194,198}$$Pt reactions",
-    "abstract": "",
-    "abstract_status": "missing",
-    "abstract_source": "",
+    "abstract": "Statistical code (PACE) calculations were used to obtain the fission time scales using the experimental M $$^{pre}$$ values for $$^{16,18}$$ O+ $$^{194,198}$$ Pt reactions (experiment was performed at the 15 UD Pelletron accelerator facility of the Inter University Accelerator Centre (IUAC), New Delhi) [1]. PACE provides baseline statistical (non-dissipative) prediction and the excess neutrons relative to PACE are interpreted as due to dynamical/transient effects. The extracted results are also combined with the results obtained from nearby systems available in the literature. Combining all these results systematics of fission time scales is presented here and an enhanced delay was observed for the shell-closed compound nucleus $$^{212}$$ Rn (N = 126) in the present data. The extracted effective fission delay times are further discussed in connection with previously measured evaporation residue and fission observables for the same reaction systems. The combined analysis provides a phenomenological framework for examining the dependence of effective fission delay times on fissility and N/Z. Also the present extracted fission delay times from excess pre-scission neutron multiplicities were interpreted in conjunction with the previously measured ER behaviour.",
+    "abstract_status": "full",
+    "abstract_source": "Publisher metadata (Springer)",
     "authors": [
       "Rohit Sandal"
     ],
@@ -8130,7 +8154,13 @@
     "numpages": "",
     "publisher": "Springer Science and Business Media LLC",
     "publisher_url": "https://link.springer.com/10.1140/epja/s10050-026-01934-0",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher metadata (Springer)",
+      "url": "https://link.springer.com/article/10.1140/epja/s10050-026-01934-0?error=cookies_not_supported&code=dbea5131-2b40-4bc2-8f6e-c43796325e21"
+    }
   },
   {
     "id": "c4d038d2ae66d94e",
@@ -8576,7 +8606,13 @@
     "numpages": "",
     "publisher": "American Physical Society (APS)",
     "publisher_url": "https://link.aps.org/doi/10.1103/7g19-974w",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "8d091cd339f1b312",
@@ -8676,7 +8712,13 @@
     "numpages": "",
     "publisher": "American Physical Society (APS)",
     "publisher_url": "https://link.aps.org/doi/10.1103/bmw2-h889",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "d50efda94d53268d",
@@ -8737,6 +8779,12 @@
       "status": "not_found",
       "checked_at": "2026-08-11T04:01:53+00:00",
       "source": "INSPIRE"
+    },
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
     }
   },
   {
@@ -8798,6 +8846,12 @@
       "status": "not_found",
       "checked_at": "2026-08-10T23:40:26+08:00",
       "source": "INSPIRE"
+    },
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
     }
   },
   {
@@ -8863,6 +8917,12 @@
       "status": "not_found",
       "checked_at": "2026-08-10T23:40:26+08:00",
       "source": "INSPIRE"
+    },
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
     }
   },
   {
@@ -8970,7 +9030,13 @@
     "numpages": "",
     "publisher": "American Physical Society (APS)",
     "publisher_url": "https://link.aps.org/doi/10.1103/lqlg-b7cx",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "c725a2819f5d5f9c",
@@ -9033,7 +9099,13 @@
     "numpages": "",
     "publisher": "American Physical Society (APS)",
     "publisher_url": "https://link.aps.org/doi/10.1103/ypj3-p6kw",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "8e92ad1432031003",
@@ -10117,6 +10189,12 @@
       "status": "not_found",
       "checked_at": "2026-08-10T23:40:26+08:00",
       "source": "INSPIRE"
+    },
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
     }
   },
   {
@@ -10182,6 +10260,12 @@
       "status": "not_found",
       "checked_at": "2026-08-10T23:40:26+08:00",
       "source": "INSPIRE"
+    },
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
     }
   },
   {
@@ -10243,6 +10327,12 @@
       "status": "not_found",
       "checked_at": "2026-08-11T04:01:53+00:00",
       "source": "INSPIRE"
+    },
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
     }
   },
   {
@@ -10813,9 +10903,9 @@
     "id": "2cfce5fe8387b462",
     "type": "paper",
     "title": "Constraining the quark-hadron phase transition with GW170817: implications for tidal deformability and post-merger signatures",
-    "abstract": "",
-    "abstract_status": "missing",
-    "abstract_source": "",
+    "abstract": "The internal composition of neutron stars remains one of the most significant uncertainties in nuclear astrophysics, specifically regarding the possible existence of deconfined quark matter at extremely high nuclear densities. We aim to identify robust multi-messenger signatures of a hadron-quark phase transition by analyzing the relationship between static stellar properties, tidal deformability, and post-merger gravitational-wave dynamics. Utilization of a suite of hybrid Equations of State (EoS), including the JJ(VQCD) and OOS(DD2_FRG) models, and comparing them against purely nucleonic baselines. Using a Python-based pipeline, we model the mass–radius relationship as well as calculate dimensionless tidal deformability $$(\\Lambda )$$ . Further employment of universal relations to predict the peak post-merger frequency $$(f_2)$$ and dynamical ejecta properties for a GW170817-like event. Hybrid models naturally reconcile the high-mass constraint of $$M \\ge 2.01 M_{\\odot }$$ with the “soft” tidal response $$(\\tilde{\\Lambda } \\approx 300)$$ observed in GW170817. A significant finding is a characteristic shift in the post-merger regime: hybrid remnants exhibit $$f_2$$ frequencies 300–500 Hz lower than hadronic models. This spectral softening is accompanied by an increase in dynamical ejecta mass, resulting in a kilonova transient up to 0.5 magnitudes brighter than those predicted by standard hadronic EoS. The strong correlation $$(r \\approx -0.99)$$ between inspiral tidal parameters and post-merger frequency provides a “smoking gun” for identifying quark matter. These signatures offer a definitive diagnostic for detectors which are third generation like the Einstein Telescope to probe the QCD phase diagram.",
+    "abstract_status": "full",
+    "abstract_source": "Publisher metadata (Springer)",
     "authors": [
       "S. Suhani",
       "P. Priyanka"
@@ -10872,15 +10962,21 @@
     "numpages": "",
     "publisher": "Springer Science and Business Media LLC",
     "publisher_url": "https://link.springer.com/10.1140/epja/s10050-026-01923-3",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher metadata (Springer)",
+      "url": "https://link.springer.com/article/10.1140/epja/s10050-026-01923-3?error=cookies_not_supported&code=467b8fc7-6406-464b-b45c-cc8ebff0be6f"
+    }
   },
   {
     "id": "c809ed3e32ed7f5b",
     "type": "paper",
     "title": "A quark–hadron crossover study in $$\\beta $$-stable stellar matter",
-    "abstract": "",
-    "abstract_status": "missing",
-    "abstract_source": "",
+    "abstract": "We develop several equations of state (EOSs) for $$\\beta $$ -stable dense hadronic matter at both zero and finite temperatures, considering the potential occurrence of a quark–hadron crossover transition. These scenarios can actually occur in various astrophysical contexts, such as in the postmerger compact object formed during binary neutron star (BNS) mergers, in core-collapse supernovae (CCSNe), or in the early stages of a newly formed neutron star (protoneutron star, PNS). In order to describe the hadronic phase we use the DDME2 model which is based on a relativistic-mean-field (RMF) theory, while for the quark phase we employ a popular version of the three-flavors Nambu–Jona–Lasinio (NJL) model. In the hadronic phase, in addition to nucleons and leptons, we examine the effects and implications of potential hyperon formation. The crossover transition is modeled on existing data from low density lattice Quantum Chromodynamics (QCD) calculations. For each model we study thermal and neutrino trapping effects on the matter composition and consequently on the EOS. We ultimately determine the PNS static structure integrating the Tolman–Oppenheimer–Volkoff (TOV) equations. Our findings indicate that the presence of hyperons significantly hinders the development of quark matter during a crossover transition. In fact, with hyperonic matter, it becomes quite challenging to differentiate between EOSs with and without a crossover. Conversely, if only nucleons are present in the hadronic phase, the EOS with a crossover transition is notably softer compared to the pure nucleonic one, making it theoretically possible to distinguish between the two EOSs. Additionally, we observe that in the presence of a crossover transition, neutrino trapping results in a stiffer EOS. This outcome is independent of the particle composition of the hadronic phase, whether hyperons are included or not.",
+    "abstract_status": "full",
+    "abstract_source": "Publisher metadata (Springer)",
     "authors": [
       "Domenico Logoteta"
     ],
@@ -10935,6 +11031,12 @@
       "status": "not_found",
       "checked_at": "2026-08-10T09:32:10+00:00",
       "source": "INSPIRE"
+    },
+    "publisher_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher metadata (Springer)",
+      "url": "https://link.springer.com/article/10.1140/epja/s10050-026-01920-6?error=cookies_not_supported&code=6c0a8d87-0581-4e6a-8df3-bb662a596385"
     }
   },
   {
@@ -13650,7 +13752,13 @@
     "numpages": "",
     "publisher": "American Physical Society (APS)",
     "publisher_url": "https://link.aps.org/doi/10.1103/c1xc-2hdz",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "3c1a019c77dc5d6e",
@@ -15267,7 +15375,13 @@
     "numpages": "",
     "publisher": "American Physical Society (APS)",
     "publisher_url": "https://link.aps.org/doi/10.1103/cbbm-417f",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "d927bde45ef03d2f",
@@ -15332,7 +15446,13 @@
     "numpages": "",
     "publisher": "American Physical Society (APS)",
     "publisher_url": "https://link.aps.org/doi/10.1103/9gxh-spl6",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "91a2aeb5d38c6cae",
@@ -15393,7 +15513,13 @@
     "numpages": "",
     "publisher": "American Physical Society (APS)",
     "publisher_url": "https://link.aps.org/doi/10.1103/rxh5-w9xk",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "1dd3c22129d5dbb7",
@@ -15454,7 +15580,13 @@
     "numpages": "",
     "publisher": "American Physical Society (APS)",
     "publisher_url": "https://link.aps.org/doi/10.1103/hsjg-f6kr",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "f0af9ccbad0102fa",
@@ -15519,7 +15651,13 @@
     "numpages": "",
     "publisher": "American Physical Society (APS)",
     "publisher_url": "https://link.aps.org/doi/10.1103/stw9-xhkh",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "35f24205dcf37bf8",
@@ -15662,7 +15800,13 @@
     "numpages": "",
     "publisher": "American Physical Society (APS)",
     "publisher_url": "https://link.aps.org/doi/10.1103/wtjz-3gjx",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "66d9d371a1324149",
@@ -15809,7 +15953,13 @@
     "numpages": "",
     "publisher": "American Physical Society (APS)",
     "publisher_url": "https://link.aps.org/doi/10.1103/5mc1-gbjx",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "3b285c79aec5236b",
@@ -15949,7 +16099,13 @@
     "numpages": "",
     "publisher": "American Physical Society (APS)",
     "publisher_url": "https://link.aps.org/doi/10.1103/21nh-lrvx",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "62bdbbab6ac7da27",
@@ -16057,7 +16213,13 @@
     "numpages": "",
     "publisher": "American Physical Society (APS)",
     "publisher_url": "https://link.aps.org/doi/10.1103/x8xt-y8dr",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "0160ebd173994059",
@@ -17056,7 +17218,13 @@
     "numpages": "",
     "publisher": "American Physical Society (APS)",
     "publisher_url": "https://link.aps.org/doi/10.1103/klg7-36x7",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "686c203f82ad54cc",
@@ -17135,7 +17303,7 @@
     "id": "3a8459f3a4ee7c7e",
     "type": "paper",
     "title": "The combined AGATA-DSSD set-up for the measurement of very small heavy-ion fusion cross sections",
-    "abstract": "",
+    "abstract": "We describe the data analysis methods and the characteristics of the combined set-up of the $$\\gamma $$ -ray tracking spectrometer AGATA with two annular double sided silicon strip detectors (DSSD) (4” diameter) placed 5.65 cm upstream and downstream of the target, for the measurement of $$\\gamma $$ -light particle coincidences in near- and sub-barrier heavy-ion fusion reactions. The DSSD cover the angular ranges $$\\theta _{lab}=139.6^o$$ – $$162.7^o$$ and $$=23.0^o$$ – $$40.4^o$$ , corresponding to a total solid angle $$\\simeq 26\\%$$ of 4 $$\\pi $$ . The ohmic side of the DSSD is turned towards the target, so protons and $$\\alpha $$ particles can be clearly identified. We show the relevant results obtained for the two systems $$^{28}$$ Si+ $$^{12}$$ C and $$^{16}$$ O+ $$^{12}$$ C down to very small cross sections in the tenths of nb range. Particle identification allows us to observe well-separated groups of protons and $$\\alpha $$ ’s populating low-energy levels of the various fusion-evaporation residues (ER). Relative fusion cross sections are obtained with a procedure described in detail, and the absolute cross section scale is fixed by complementary measurements using an electrostatic beam deflector set-up where the ER are directly detected down to a few $$\\upmu $$ b. The AGATA+DSSD set-up is subject to significant improvements thanks to the scheduled increase of the number of $$\\gamma $$ detectors, and to the possibility of installing silicon detector arrays covering a larger solid angle. This will open the possibility of measuring fusion cross sections near, and possibly below, 1nb.",
     "authors": [
       "M. Del Fabbro",
       "G. Montagnoli",
@@ -17180,8 +17348,8 @@
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
     "last_seen": "2026-08-11T07:01:54+00:00",
-    "abstract_status": "missing",
-    "abstract_source": "",
+    "abstract_status": "full",
+    "abstract_source": "Publisher metadata (Springer)",
     "primary_topic": "nuclear-general",
     "methods": [
       "experimental"
@@ -17230,13 +17398,19 @@
     "numpages": "",
     "publisher": "Springer Science and Business Media LLC",
     "publisher_url": "https://link.springer.com/10.1140/epja/s10050-026-01941-1",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher metadata (Springer)",
+      "url": "https://link.springer.com/article/10.1140/epja/s10050-026-01941-1?error=cookies_not_supported&code=f364866a-282b-43da-ad56-344e37d430c5"
+    }
   },
   {
     "id": "325b4338fa1bb67f",
     "type": "paper",
     "title": "Scission neutron emission for $$^{252}$$Cf(sf), within the sudden approximation framework",
-    "abstract": "",
+    "abstract": "At scission, a highly deformed nucleus splits into two fragments that can sometimes be accompanied by emission of a third, much lighter, partner. Experimentally, proton and alpha emission at times close to scission has been observed but scission neutrons have not been clearly identified so far. In this study, we focus, using a theoretical microscopic model, on the emission of neutrons at the moment of scission of $$^{252}$$ Cf. For this, approximate description of the scission process is proposed based on the solution of the bi-dimensional stationary Schrödinger equation, for the most probable mass division of $$^{252}$$ Cf(sf): $$A_L/A_H = 109/143$$ . It considers a diabatic coupling between the neutron degree of freedom and the sudden changing neutron-nucleus potential during the scission process which is supposed to start when the radius of the neck separating the two fragments is $$\\approx $$ 2 fm. The physical quantities analyzed in this work reveal that scission neutrons have specific characteristics. These neutrons are mainly emitted from the neck region. The sudden approximation used gives, for $$^{252}$$ Cf, an upper limit for the scission neutron multiplicity of 0.89 and 0.91 n/fission, depending on the type of neutron correlation considered (Independent or BCS). They should represent, at most, a quarter of the total prompt neutrons (3.69 n/fission) observed experimentally. Furthermore, the mean kinetic energy distribution of scission neutrons reveals the presence of a long high-energy tail extending far beyond the limit of evaporated neutrons. This study thus highlights a potential signature of the scission neutron component of prompt fission neutrons.",
     "authors": [
       "F. Guezet",
       "N. Carjan",
@@ -17263,8 +17437,8 @@
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
     "last_seen": "2026-08-11T07:01:54+00:00",
-    "abstract_status": "missing",
-    "abstract_source": "",
+    "abstract_status": "full",
+    "abstract_source": "Publisher metadata (Springer)",
     "primary_topic": "nuclear-general",
     "methods": [],
     "classification_confidence": 0.38,
@@ -17293,7 +17467,13 @@
     "numpages": "",
     "publisher": "Springer Science and Business Media LLC",
     "publisher_url": "https://link.springer.com/10.1140/epja/s10050-026-01927-z",
-    "citation_metadata_checked": true
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-11T16:33:33+08:00",
+      "source": "Publisher metadata (Springer)",
+      "url": "https://link.springer.com/article/10.1140/epja/s10050-026-01927-z?error=cookies_not_supported&code=285c9722-fa17-4cde-933e-0110a99a5f1c"
+    }
   },
   {
     "id": "f83a57c666e9de0d",

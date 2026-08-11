@@ -219,6 +219,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .paper-copy { min-width: 0; }
 .paper-meta { display: flex; align-items: center; gap: 8px; color: #78878a; font-size: 9px; text-transform: uppercase; letter-spacing: .06em; flex-wrap: wrap; }
 .paper-meta .source-badge { color: #226f60; background: var(--mint-soft); border-radius: 4px; padding: 2px 6px; font-weight: 750; }
+.paper-meta .abstract-source-badge { color: #63785f; background: #f0f6e9; border: 1px solid #dce9d2; border-radius: 4px; padding: 2px 6px; font-weight: 700; text-transform: none; letter-spacing: 0; }
 .paper-meta .importance-badge { color: #9b5c13; background: var(--amber-soft); border-radius: 4px; padding: 2px 6px; }
 .paper-meta .new-badge { color: #fff; background: #278c77; border-radius: 4px; padding: 2px 6px; font-weight: 800; letter-spacing: .1em; }
 .paper-card h3 { font-family: Georgia, "Times New Roman", serif; font-size: 18px; line-height: 1.35; margin: 8px 0 6px; font-weight: 600; overflow-wrap: anywhere; }

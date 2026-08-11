@@ -11,6 +11,8 @@
       "issue_title_prefix": "[个人数据同步]"
     },
     "figure_enrichment_limit": 0,
+    "publisher_abstract_enrichment_limit": 30,
+    "publisher_abstract_enrichment_workers": 4,
     "abstract_enrichment_limit": 240,
     "news_detail_enrichment_limit": 30,
     "notice_detail_enrichment_limit": 60
@@ -1238,6 +1240,17 @@
     "notice_detail_enrichment": {
       "attempted": 4,
       "updated": 3
+    },
+    "publisher_abstract_enrichment": {
+      "checked": 30,
+      "enriched": 5,
+      "from_metadata": 5,
+      "from_citation": 0,
+      "not_found": 0,
+      "blocked": 25,
+      "failed": 0,
+      "deferred": 363,
+      "remaining": 363
     }
   },
   "insights": {

@@ -601,6 +601,17 @@ function localizedDescription(item) {
   return '';
 }
 
+function abstractSourceLabel(item) {
+  const source = String(item.abstract_source || '');
+  if (!source) return item.abstract ? '原始数据源' : '未提供';
+  if (source.startsWith('Publisher Cite')) return '期刊 Cite 导出';
+  if (source.startsWith('Publisher metadata')) return '期刊官网元数据';
+  if (source === 'Crossref') return 'Crossref';
+  if (source === 'INSPIRE') return 'INSPIRE';
+  if (source.includes('arXiv')) return 'arXiv';
+  return source;
+}
+
 function googleTranslationPageUrl(item) {
   const source = [item.title, item.abstract || item.summary || ''].filter(Boolean).join('\n\n').slice(0, 4500);
   const url = new URL('https://translate.google.com/');
@@ -700,6 +711,12 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
   source.className = 'source-badge';
   source.textContent = item.source_short || item.source || '官方来源';
   meta.append(source);
+  if (item.type === 'paper' && item.abstract) {
+    const abstractSource = document.createElement('span');
+    abstractSource.className = 'abstract-source-badge';
+    abstractSource.textContent = `摘要：${abstractSourceLabel(item)}`;
+    meta.append(abstractSource);
+  }
   const date = document.createElement('span');
   date.textContent = prettyDate(item.published);
   meta.append(date);
@@ -1978,6 +1995,7 @@ function renderAssistantPaperDetail(item) {
         <div><dt>重要性</dt><dd>${Number(item.importance || 0)}</dd></div>
         <div><dt>开放状态</dt><dd>${text(access)}</dd></div>
         <div><dt>阅读状态</dt><dd>${text(readingLabel(item.id))}</dd></div>
+        <div><dt>摘要来源</dt><dd>${text(abstractSourceLabel(item))}</dd></div>
       </dl>
       <div class="paper-identifiers">${identifiers.length ? identifiers.map(value => `<span>${text(value)}</span>`).join('') : '<span>暂无 DOI/arXiv 编号</span>'}</div>
     </section>

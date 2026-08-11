@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 import datetime as dt
+import difflib
 import email.utils
 import hashlib
 import html
@@ -96,6 +97,13 @@ class SourceResult:
     duration_ms: int = 0
 
 
+@dataclass
+class FetchDocument:
+    payload: bytes
+    final_url: str
+    content_type: str
+
+
 def read_json(path: Path, default: Any) -> Any:
     try:
         return json.loads(path.read_text(encoding="utf-8"))
@@ -138,6 +146,52 @@ def fetch(url: str, *, accept: str = "*/*", attempts: int = 3) -> bytes:
             last_error = exc
             if attempt + 1 < attempts:
                 time.sleep(1.5 * (attempt + 1))
+    raise RuntimeError(str(last_error) if last_error else "unknown network error")
+
+
+def fetch_document(
+    url: str,
+    *,
+    accept: str = "*/*",
+    attempts: int = 2,
+    max_bytes: int = 2_000_000,
+    timeout_seconds: float = 20,
+) -> FetchDocument:
+    """获取小型官方元数据文档，同时保留重定向地址和内容类型。"""
+    request = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": USER_AGENT,
+            "Accept": accept,
+            "Accept-Encoding": "identity",
+        },
+    )
+    last_error: Exception | None = None
+    for attempt in range(attempts):
+        try:
+            with urllib.request.urlopen(request, timeout=timeout_seconds) as response:
+                payload = response.read(max_bytes + 1)
+                if len(payload) > max_bytes:
+                    raise RuntimeError(f"metadata document exceeds {max_bytes} bytes")
+                return FetchDocument(
+                    payload=payload,
+                    final_url=response.geturl(),
+                    content_type=response.headers.get("Content-Type", ""),
+                )
+        except urllib.error.HTTPError as exc:
+            last_error = exc
+            if attempt + 1 < attempts and exc.code in (429, 500, 502, 503, 504):
+                retry_after = exc.headers.get("Retry-After", "") if exc.headers else ""
+                delay = float(retry_after) if retry_after.isdigit() else 2.5 * (attempt + 1)
+                time.sleep(min(delay, 15))
+                continue
+            break
+        except (urllib.error.URLError, TimeoutError, OSError, RuntimeError) as exc:
+            last_error = exc
+            if attempt + 1 < attempts and "exceeds" not in str(exc):
+                time.sleep(1.5 * (attempt + 1))
+                continue
+            break
     raise RuntimeError(str(last_error) if last_error else "unknown network error")
 
 
@@ -285,6 +339,88 @@ class PageMetadataParser(HTMLParser):
     @property
     def visible_text(self) -> str:
         return clean_text(" ".join(self.parts))
+
+
+PUBLISHER_ABSTRACT_META_KEYS = (
+    "citation_abstract",
+    "dc.description",
+    "dcterms.description",
+    "eprints.abstract",
+    "prism.teaser",
+    "og:description",
+    "twitter:description",
+    "description",
+)
+PUBLISHER_CITATION_HOSTS = frozenset({
+    "citation-needed.springer.com",
+    "link.springer.com",
+    "journals.aps.org",
+    "link.aps.org",
+    "www.sciencedirect.com",
+    "sciencedirect.com",
+    "iopscience.iop.org",
+    "academic.oup.com",
+    "www.nature.com",
+    "nature.com",
+})
+
+
+class PublisherMetadataParser(HTMLParser):
+    """只提取期刊官网声明的学术元数据与 Cite 导出入口。
+
+    不把页面正文、推荐文章或参考文献列表当作摘要。
+    """
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.metadata: dict[str, list[str]] = {}
+        self.links: list[dict[str, str]] = []
+        self.current_link: dict[str, str] | None = None
+        self.current_link_text: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        lowered = tag.lower()
+        values = {str(key).lower(): value or "" for key, value in attrs}
+        if lowered == "meta":
+            key = clean_text(values.get("name") or values.get("property") or values.get("http-equiv")).lower()
+            content = clean_text(values.get("content"))
+            if key and content:
+                self.metadata.setdefault(key, []).append(content)
+        if lowered == "link" and values.get("href"):
+            self.links.append({
+                "href": values["href"],
+                "text": clean_text(values.get("title")),
+                "type": values.get("type", ""),
+                "rel": values.get("rel", ""),
+            })
+        if lowered == "a" and values.get("href"):
+            self.current_link = {
+                "href": values["href"],
+                "text": clean_text(values.get("title") or values.get("aria-label")),
+                "type": values.get("type", ""),
+                "rel": values.get("rel", ""),
+            }
+            self.current_link_text = []
+
+    def handle_data(self, data: str) -> None:
+        if self.current_link is not None:
+            self.current_link_text.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.lower() == "a" and self.current_link is not None:
+            visible = clean_text(" ".join(self.current_link_text))
+            if visible:
+                self.current_link["text"] = clean_text(f"{self.current_link.get('text', '')} {visible}")
+            self.links.append(self.current_link)
+            self.current_link = None
+            self.current_link_text = []
+
+    def first(self, *keys: str) -> str:
+        for key in keys:
+            values = self.metadata.get(key.lower(), [])
+            if values:
+                return values[0]
+        return ""
 
 
 DATE_PATTERN = re.compile(r"(?<!\d)(20\d{2})\s*[年./-]\s*(\d{1,2})\s*[月./-]\s*(\d{1,2})\s*日?", re.I)
@@ -1123,6 +1259,318 @@ def normalized_doi(value: str) -> str:
     return re.sub(r"^https?://(?:dx\.)?doi\.org/", "", (value or "").strip(), flags=re.I).lower()
 
 
+def decode_metadata_payload(payload: bytes, content_type: str = "") -> str:
+    match = re.search(r"charset\s*=\s*['\"]?([\w.-]+)", content_type or "", re.I)
+    encodings = [match.group(1)] if match else []
+    for encoding in encodings + ["utf-8", "latin-1"]:
+        try:
+            return payload.decode(encoding)
+        except (LookupError, UnicodeDecodeError):
+            continue
+    return payload.decode("utf-8", errors="replace")
+
+
+def valid_publisher_abstract(value: str, title: str = "") -> str:
+    abstract = clean_text(value)
+    lowered = abstract.casefold()
+    rejection_terms = (
+        "enable javascript", "access denied", "request unsuccessful", "verify you are human",
+        "checking your browser", "cookie policy", "page not found", "no abstract available",
+        "abstract not available", "temporarily unavailable",
+    )
+    if len(abstract) < 50 or len(abstract) > 20_000 or any(term in lowered for term in rejection_terms):
+        return ""
+    if title:
+        title_key = normalize_title(title)
+        abstract_key = normalize_title(abstract)
+        if title_key and (abstract_key == title_key or abstract_key.startswith(title_key) and len(abstract) < len(title) + 35):
+            return ""
+    return abstract
+
+
+def publisher_name(url: str) -> str:
+    host = (urllib.parse.urlparse(url).hostname or "").lower()
+    labels = (
+        ("springer", "Springer"),
+        ("aps.org", "APS"),
+        ("sciencedirect", "ScienceDirect"),
+        ("elsevier", "Elsevier"),
+        ("iopscience", "IOP"),
+        ("nature.com", "Nature"),
+        ("oup.com", "Oxford Academic"),
+    )
+    return next((label for marker, label in labels if marker in host), "期刊官网")
+
+
+def publisher_metadata_abstract(
+    parser: PublisherMetadataParser, paper: dict[str, Any], landing_url: str
+) -> tuple[str, str]:
+    expected_doi = normalized_doi(paper.get("doi", ""))
+    page_doi = normalized_doi(parser.first("citation_doi", "dc.identifier", "prism.doi"))
+    if page_doi and expected_doi and page_doi != expected_doi:
+        return "", ""
+    page_title = parser.first("citation_title", "dc.title", "dcterms.title", "og:title")
+    if page_title and paper.get("title"):
+        expected_title = normalize_title(paper["title"])
+        actual_title = normalize_title(page_title)
+        similarity = difflib.SequenceMatcher(None, expected_title, actual_title).ratio()
+        if expected_title and actual_title and similarity < 0.45 and not page_doi:
+            return "", ""
+    for key in PUBLISHER_ABSTRACT_META_KEYS:
+        for candidate in parser.metadata.get(key, []):
+            abstract = valid_publisher_abstract(candidate, paper.get("title", ""))
+            if abstract:
+                return abstract, f"Publisher metadata ({publisher_name(landing_url)})"
+    return "", ""
+
+
+def citation_link_allowed(url: str, landing_url: str) -> bool:
+    parsed = urllib.parse.urlparse(url)
+    landing = urllib.parse.urlparse(landing_url)
+    if parsed.scheme not in {"http", "https"} or not parsed.hostname:
+        return False
+    host = parsed.hostname.lower()
+    landing_host = (landing.hostname or "").lower()
+    if host == landing_host or host in PUBLISHER_CITATION_HOSTS:
+        return True
+    trusted_suffixes = (".springer.com", ".aps.org", ".sciencedirect.com", ".iop.org", ".nature.com", ".oup.com")
+    return any(host.endswith(suffix) for suffix in trusted_suffixes)
+
+
+def publisher_citation_links(parser: PublisherMetadataParser, landing_url: str) -> list[str]:
+    links: list[str] = []
+    for entry in parser.links:
+        href = entry.get("href", "").strip()
+        combined = " ".join((href, entry.get("text", ""), entry.get("type", ""), entry.get("rel", ""))).casefold()
+        if not href or "flavour=references" in combined or "download references" in combined:
+            continue
+        is_citation = any(marker in combined for marker in (
+            "citation", "cite", "bibtex", "research-info-systems", "refman", "endnote", ".ris", ".bib", ".enw",
+        ))
+        if not is_citation:
+            continue
+        absolute = urllib.parse.urljoin(landing_url, href)
+        if citation_link_allowed(absolute, landing_url) and absolute not in links:
+            links.append(absolute)
+
+    # Elsevier 的 DOI 入口会跳到 linkinghub，Cite 端点需要由 PII 构造。
+    pii_match = re.search(r"/pii/([A-Z0-9]+)", landing_url, re.I)
+    if pii_match:
+        query = urllib.parse.urlencode({
+            "pii": pii_match.group(1),
+            "format": "application/x-research-info-systems",
+            "withabstract": "true",
+        })
+        cite_url = f"https://www.sciencedirect.com/sdfe/arp/cite?{query}"
+        if cite_url not in links:
+            links.append(cite_url)
+    return links[:3]
+
+
+def extract_bibtex_abstract(value: str) -> str:
+    match = re.search(r"\babstract\s*=\s*", value, re.I)
+    if not match:
+        return ""
+    cursor = match.end()
+    while cursor < len(value) and value[cursor].isspace():
+        cursor += 1
+    if cursor >= len(value):
+        return ""
+    opener = value[cursor]
+    if opener not in {'{', '"'}:
+        return ""
+    if opener == '"':
+        cursor += 1
+        parts: list[str] = []
+        escaped = False
+        while cursor < len(value):
+            char = value[cursor]
+            if char == '"' and not escaped:
+                break
+            parts.append(char)
+            escaped = char == "\\" and not escaped
+            if char != "\\":
+                escaped = False
+            cursor += 1
+        return "".join(parts)
+    depth = 1
+    cursor += 1
+    parts = []
+    while cursor < len(value) and depth:
+        char = value[cursor]
+        if char == "{" and (cursor == 0 or value[cursor - 1] != "\\"):
+            depth += 1
+        elif char == "}" and (cursor == 0 or value[cursor - 1] != "\\"):
+            depth -= 1
+            if depth == 0:
+                break
+        parts.append(char)
+        cursor += 1
+    return "".join(parts) if depth == 0 else ""
+
+
+def extract_tagged_citation_abstract(value: str) -> str:
+    lines = value.replace("\r\n", "\n").replace("\r", "\n").split("\n")
+    for prefix_pattern in (r"^(?:AB|N2)\s{0,2}-\s?(.*)$", r"^%X\s+(.*)$"):
+        parts: list[str] = []
+        collecting = False
+        for line in lines:
+            match = re.match(prefix_pattern, line, re.I)
+            if match:
+                collecting = True
+                parts.append(match.group(1).strip())
+                continue
+            if collecting:
+                if re.match(r"^(?:[A-Z0-9]{2}\s{0,2}-|%[A-Z0-9])", line, re.I):
+                    break
+                if line.strip():
+                    parts.append(line.strip())
+        if parts:
+            return " ".join(parts)
+    return ""
+
+
+def extract_xml_abstract(value: str) -> str:
+    try:
+        root = ET.fromstring(value)
+    except ET.ParseError:
+        return ""
+    for element in root.iter():
+        if element.tag.rsplit("}", 1)[-1].lower() in {"abstract", "abstracttext"}:
+            return clean_text(" ".join(element.itertext()))
+    return ""
+
+
+def extract_abstract_from_citation(
+    payload: bytes, content_type: str = "", url: str = "", title: str = ""
+) -> str:
+    value = decode_metadata_payload(payload, content_type)
+    hint = f"{content_type} {url}".casefold()
+    candidates: list[str] = []
+    if "bibtex" in hint or re.search(r"@\w+\s*\{", value):
+        candidates.append(extract_bibtex_abstract(value))
+    candidates.append(extract_tagged_citation_abstract(value))
+    if "xml" in hint or value.lstrip().startswith("<"):
+        candidates.append(extract_xml_abstract(value))
+    return next((abstract for candidate in candidates if (abstract := valid_publisher_abstract(candidate, title))), "")
+
+
+def enrich_missing_abstracts_from_publishers(
+    papers: list[dict[str, Any]], run_at: str, limit: int = 30, delay_seconds: float = 0.1,
+    max_workers: int = 4,
+) -> dict[str, int]:
+    """先从 DOI 对应的期刊官网元数据和 Cite 导出补齐摘要。
+
+    官网限流或拒绝访问时不阻断日更；随后仍会交给 INSPIRE 备用。
+    """
+    now = dt.datetime.fromisoformat(run_at)
+    cooldowns = {
+        "blocked": dt.timedelta(days=7),
+        "not_found": dt.timedelta(days=30),
+        "failed": dt.timedelta(days=1),
+    }
+
+    def due(paper: dict[str, Any]) -> bool:
+        if paper.get("abstract") or not paper.get("doi"):
+            return False
+        attempt = paper.get("publisher_abstract_enrichment", {})
+        checked = attempt.get("checked_at", "")
+        status = attempt.get("status", "")
+        if not checked:
+            return True
+        try:
+            return now - dt.datetime.fromisoformat(checked) >= cooldowns.get(status, dt.timedelta(days=30))
+        except ValueError:
+            return True
+
+    all_candidates = sorted(
+        [paper for paper in papers if due(paper)],
+        # 先覆盖从未尝试的记录，避免少数失败 DOI 每天占满队列。
+        key=lambda paper: (
+            not bool(paper.get("publisher_abstract_enrichment", {}).get("checked_at")),
+            paper.get("published", ""),
+            paper.get("importance", 0),
+        ),
+        reverse=True,
+    )
+    candidates = all_candidates[:max(0, limit)]
+    stats = {
+        "checked": 0,
+        "enriched": 0,
+        "from_metadata": 0,
+        "from_citation": 0,
+        "not_found": 0,
+        "blocked": 0,
+        "failed": 0,
+        "deferred": max(0, len(all_candidates) - len(candidates)),
+        "remaining": 0,
+    }
+    def enrich_one(paper: dict[str, Any]) -> str:
+        doi_url = f"https://doi.org/{urllib.parse.quote(normalized_doi(paper['doi']), safe='/')}"
+        record = {"status": "not_found", "checked_at": run_at, "source": "Publisher"}
+        outcome = "not_found"
+        try:
+            document = fetch_document(
+                doi_url,
+                accept="text/html,application/xhtml+xml",
+                attempts=1,
+                timeout_seconds=12,
+            )
+            record["url"] = document.final_url
+            parser = PublisherMetadataParser()
+            parser.feed(decode_metadata_payload(document.payload, document.content_type))
+            abstract, source = publisher_metadata_abstract(parser, paper, document.final_url)
+            citation_url = ""
+            if not abstract:
+                for candidate_url in publisher_citation_links(parser, document.final_url):
+                    try:
+                        citation = fetch_document(
+                            candidate_url,
+                            accept="application/x-research-info-systems,application/x-bibtex,text/plain,application/xml;q=0.8,*/*;q=0.2",
+                            attempts=1,
+                            max_bytes=512_000,
+                            timeout_seconds=12,
+                        )
+                    except Exception:  # noqa: BLE001 - 单个 Cite 入口失败时继续尝试下一个
+                        continue
+                    abstract = extract_abstract_from_citation(
+                        citation.payload, citation.content_type, citation.final_url, paper.get("title", "")
+                    )
+                    if abstract:
+                        source = f"Publisher Cite ({publisher_name(citation.final_url)})"
+                        citation_url = citation.final_url
+                        break
+            if abstract:
+                paper["abstract"] = abstract
+                paper["abstract_status"] = "full"
+                paper["abstract_source"] = source
+                record.update({"status": "ready", "source": source})
+                if citation_url:
+                    record["citation_url"] = citation_url
+                    outcome = "from_citation"
+                else:
+                    outcome = "from_metadata"
+        except Exception as exc:  # noqa: BLE001 - 官网摘要增强不阻断日更
+            message = str(exc)
+            outcome = "blocked" if re.search(r"\b(?:401|403|429)\b", message) else "failed"
+            record.update({"status": outcome, "error": clean_text(message)[:180]})
+        paper["publisher_abstract_enrichment"] = record
+        if delay_seconds > 0:
+            time.sleep(delay_seconds)
+        return outcome
+
+    if candidates:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, min(max_workers, 6))) as pool:
+            outcomes = list(pool.map(enrich_one, candidates))
+        stats["checked"] = len(outcomes)
+        for outcome in outcomes:
+            stats[outcome] += 1
+            if outcome in {"from_metadata", "from_citation"}:
+                stats["enriched"] += 1
+    stats["remaining"] = sum(1 for paper in papers if due(paper))
+    return stats
+
+
 def enrich_missing_abstracts(
     papers: list[dict[str, Any]], run_at: str, limit: int = 240, batch_size: int = 20
 ) -> dict[str, int]:
@@ -1552,6 +2000,12 @@ def main() -> int:
     ]
     history_cutoff = (today - dt.timedelta(days=int(runtime.get("history_days", 3650)))).isoformat()
     papers = [paper for paper in papers if not paper.get("published") or paper.get("published", "")[:10] >= history_cutoff]
+    publisher_abstract_stats = enrich_missing_abstracts_from_publishers(
+        papers,
+        run_at,
+        int(runtime.get("publisher_abstract_enrichment_limit", 30)),
+        max_workers=int(runtime.get("publisher_abstract_enrichment_workers", 4)),
+    )
     abstract_stats = enrich_missing_abstracts(
         papers, run_at, int(runtime.get("abstract_enrichment_limit", 240))
     )
@@ -1690,6 +2144,7 @@ def main() -> int:
         "new_counts": true_new_counts,
         "fetched_counts": {"papers": len(papers_new), "news": len(news_new), "notices": len(notices_new)},
         "figure_enrichment": figure_stats,
+        "publisher_abstract_enrichment": publisher_abstract_stats,
         "abstract_enrichment": abstract_stats,
         "news_detail_enrichment": news_detail_stats,
         "notice_detail_enrichment": notice_detail_stats,

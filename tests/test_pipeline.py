@@ -14,12 +14,16 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from update_content import (  # noqa: E402
     Classifier,
+    FetchDocument,
+    PublisherMetadataParser,
     clean_arxiv_abstract,
     count_new_records,
     crossref_citation_fields,
     crossref_url,
     enrich_arxiv_figures,
     enrich_missing_abstracts,
+    enrich_missing_abstracts_from_publishers,
+    extract_abstract_from_citation,
     extract_deadline,
     extract_english_notice_date,
     extract_notice_date,
@@ -29,6 +33,8 @@ from update_content import (  # noqa: E402
     normalize_title,
     parse_arxiv_figures,
     parse_feed_items,
+    publisher_citation_links,
+    publisher_metadata_abstract,
     reusable_license,
 )
 from sync_github_issue import MARKER, clean_state, extract_state, state_from_event  # noqa: E402
@@ -448,6 +454,76 @@ class PipelineTests(unittest.TestCase):
             stats = enrich_missing_abstracts(papers, "2026-08-08T08:00:00+08:00", limit=20)
         mocked.assert_not_called()
         self.assertEqual(stats["checked"], 0)
+
+    def test_publisher_metadata_prefers_full_dc_abstract(self):
+        parser = PublisherMetadataParser()
+        parser.feed("""
+          <meta name="citation_title" content="Pixelated detector for nuclear spectroscopy">
+          <meta name="citation_doi" content="10.1007/example">
+          <meta name="description" content="Enable JavaScript to continue.">
+          <meta name="dc.description" content="A complete official abstract describing the detector design, calibration procedure, measured resolution, and nuclear spectroscopy results.">
+        """)
+        abstract, source = publisher_metadata_abstract(
+            parser,
+            {"title": "Pixelated detector for nuclear spectroscopy", "doi": "10.1007/example"},
+            "https://link.springer.com/article/10.1007/example",
+        )
+        self.assertIn("calibration procedure", abstract)
+        self.assertEqual(source, "Publisher metadata (Springer)")
+
+    def test_publisher_citation_links_ignore_reference_exports_and_external_hosts(self):
+        parser = PublisherMetadataParser()
+        parser.feed("""
+          <a href="https://citation-needed.springer.com/v2/references/10.1007/example?format=refman&amp;flavour=citation">Download citation</a>
+          <a href="https://citation-needed.springer.com/v2/references/10.1007/example?format=refman&amp;flavour=references">Download references</a>
+          <a href="https://attacker.example/export.bib">Download citation</a>
+        """)
+        links = publisher_citation_links(parser, "https://link.springer.com/article/10.1007/example")
+        self.assertEqual(len(links), 1)
+        self.assertIn("flavour=citation", links[0])
+
+    def test_citation_export_extracts_ris_endnote_and_bibtex_abstracts(self):
+        ris = b"TY  - JOUR\nTI  - Detector paper\nAB  - This official RIS abstract describes a nuclear detector,\n      its calibration, resolution, and experimental performance in sufficient detail.\nER  -\n"
+        endnote = b"%0 Journal Article\n%T Detector paper\n%X This official EndNote abstract describes the detector calibration and complete experimental nuclear-physics performance.\n"
+        bibtex = b'''@article{x,\n title={Detector paper},\n abstract={This official BibTeX abstract preserves {nested fields} and describes the full nuclear detector measurement.}\n}'''
+        self.assertIn("experimental performance", extract_abstract_from_citation(ris, "application/x-research-info-systems"))
+        self.assertIn("EndNote abstract", extract_abstract_from_citation(endnote, "text/plain"))
+        self.assertIn("nested fields", extract_abstract_from_citation(bibtex, "application/x-bibtex"))
+
+    def test_publisher_enrichment_uses_cite_export_when_meta_is_missing(self):
+        papers = [{
+            "id": "p", "title": "Detector paper", "doi": "10.1007/example", "abstract": "",
+            "published": "2026-08-08", "importance": 50,
+        }]
+        landing = b'''<html><head><meta name="citation_title" content="Detector paper"></head>
+          <body><a href="https://citation-needed.springer.com/cite.ris">Download citation</a></body></html>'''
+        ris = b"TY  - JOUR\nTI  - Detector paper\nAB  - This complete official citation abstract explains the detector design, calibration, resolution, and experimental results.\nER  -\n"
+
+        def fake_fetch(url, **_kwargs):
+            if url.startswith("https://doi.org/"):
+                return FetchDocument(landing, "https://link.springer.com/article/example", "text/html; charset=utf-8")
+            return FetchDocument(ris, url, "application/x-research-info-systems")
+
+        with patch("update_content.fetch_document", side_effect=fake_fetch):
+            stats = enrich_missing_abstracts_from_publishers(
+                papers, "2026-08-08T08:00:00+08:00", limit=20, delay_seconds=0
+            )
+        self.assertEqual(stats["from_citation"], 1)
+        self.assertIn("detector design", papers[0]["abstract"])
+        self.assertEqual(papers[0]["abstract_source"], "Publisher Cite (Springer)")
+        self.assertIn("citation_url", papers[0]["publisher_abstract_enrichment"])
+
+    def test_publisher_enrichment_records_blocked_without_crashing(self):
+        papers = [{
+            "id": "p", "title": "Paper", "doi": "10.1103/example", "abstract": "",
+            "published": "2026-08-08", "importance": 50,
+        }]
+        with patch("update_content.fetch_document", side_effect=RuntimeError("HTTP Error 403: Forbidden")):
+            stats = enrich_missing_abstracts_from_publishers(
+                papers, "2026-08-08T08:00:00+08:00", limit=20, delay_seconds=0
+            )
+        self.assertEqual(stats["blocked"], 1)
+        self.assertEqual(papers[0]["publisher_abstract_enrichment"]["status"], "blocked")
 
 
 if __name__ == "__main__":
