@@ -246,9 +246,91 @@
         }
       ],
       "complete": true
+    },
+    "2001-04": {
+      "month": "2001-04",
+      "updated_at": "2026-08-11T14:12:38+00:00",
+      "count": 527,
+      "new_or_refetched": 534,
+      "abstracts": 0,
+      "openalex": {
+        "checked": 0,
+        "enriched": 0,
+        "not_found": 0,
+        "failed_batches": 0,
+        "deferred": 0,
+        "remaining": 0
+      },
+      "sources": [
+        {
+          "name": "Journal of Physics G",
+          "kind": "paper",
+          "ok": true,
+          "count": 4,
+          "message": "",
+          "duration_ms": 0
+        },
+        {
+          "name": "Nuclear Fusion",
+          "kind": "paper",
+          "ok": true,
+          "count": 13,
+          "message": "",
+          "duration_ms": 0
+        },
+        {
+          "name": "Nuclear Instruments and Methods in Physics Research A",
+          "kind": "paper",
+          "ok": true,
+          "count": 252,
+          "message": "",
+          "duration_ms": 0
+        },
+        {
+          "name": "Nuclear Physics A",
+          "kind": "paper",
+          "ok": true,
+          "count": 85,
+          "message": "",
+          "duration_ms": 0
+        },
+        {
+          "name": "Physical Review C",
+          "kind": "paper",
+          "ok": true,
+          "count": 60,
+          "message": "",
+          "duration_ms": 0
+        },
+        {
+          "name": "Physical Review Letters",
+          "kind": "paper",
+          "ok": true,
+          "count": 9,
+          "message": "",
+          "duration_ms": 0
+        },
+        {
+          "name": "Physics Letters B",
+          "kind": "paper",
+          "ok": true,
+          "count": 96,
+          "message": "",
+          "duration_ms": 0
+        },
+        {
+          "name": "The European Physical Journal A",
+          "kind": "paper",
+          "ok": true,
+          "count": 15,
+          "message": "",
+          "duration_ms": 0
+        }
+      ],
+      "complete": true
     }
   },
-  "last_success": "2026-08-11T21:55:23+08:00",
+  "last_success": "2026-08-11T14:12:38+00:00",
   "configured_start": "2001-01",
   "source_count": 8
 }
