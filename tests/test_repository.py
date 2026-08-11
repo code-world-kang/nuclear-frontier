@@ -203,12 +203,17 @@ class RepositoryTests(unittest.TestCase):
 
     def test_paper_information_panel_omits_title_and_reading_actions(self):
         app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        styles = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
         panel = app.split("function renderAssistantPaperDetail(item) {", 1)[1].split(
             "function renderPaperAssistant", 1
         )[0]
         self.assertNotIn('<h3>${text(item.title)}</h3>', panel)
         self.assertNotIn('<span>阅读操作</span>', panel)
         self.assertNotIn('id="assistantReadAction"', panel)
+        self.assertIn("paper-assistant-available", app)
+        self.assertIn("@media (min-width: 561px)", styles)
+        self.assertIn("body.paper-assistant-available main { padding-right: var(--assistant-sidebar-width); }", styles)
+        self.assertIn("transform: none", styles)
 
     def test_translation_collection_and_custom_glossary_are_persistent(self):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")

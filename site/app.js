@@ -1087,6 +1087,7 @@ function updateMySpaceUI() {
   $('#translationShelfPanel').hidden = !(isMy && state.mySection === 'translations');
   $('#referenceGroupPanel').hidden = !(isMy && state.mySection === 'references');
   const isPaperWorkspace = ['home', 'papers', 'featured', 'unread', 'ignored', 'news'].includes(state.view) || (isMy && isPaperShelf);
+  document.body.classList.toggle('paper-assistant-available', isPaperWorkspace);
   $('#openPaperAssistant').hidden = !isPaperWorkspace;
   $('#paperAssistant').hidden = !isPaperWorkspace;
   $('#assistantBackdrop').hidden = !isPaperWorkspace;
@@ -2076,6 +2077,10 @@ function showAssistantOverview() {
 }
 
 function openPaperAssistant() {
+  if (window.matchMedia('(min-width: 561px)').matches) {
+    $('#openPaperAssistant').setAttribute('aria-expanded', 'true');
+    return;
+  }
   document.body.classList.add('paper-assistant-open');
   $('#openPaperAssistant').setAttribute('aria-expanded', 'true');
   window.setTimeout(() => $('#closePaperAssistant').focus(), 30);

@@ -593,6 +593,28 @@ dialog::backdrop { background: rgba(5,20,26,.72); backdrop-filter: blur(3px); }
 .assistant-related-list button small { color: #879088; font-size: 7px; }
 .assistant-related-list p { color: #888f86; font-size: 9px; }
 
+/* 宽屏下论文信息始终固定在右侧，不使用弹层或遮罩。 */
+@media (min-width: 561px) {
+  body.paper-assistant-available { --assistant-sidebar-width: clamp(320px, 28vw, 390px); }
+  body.paper-assistant-available main { padding-right: var(--assistant-sidebar-width); }
+  body.paper-assistant-available .radar-panel {
+    display: block;
+    z-index: 42;
+    top: 74px;
+    width: var(--assistant-sidebar-width);
+    height: calc(100dvh - 74px);
+    padding: 24px 22px 32px;
+    border-left: 1px solid #dce4d2;
+    background: linear-gradient(180deg, #fbfff7, #fffaf0 72%);
+    box-shadow: none;
+    transform: none;
+    transition: none;
+  }
+  body.paper-assistant-available .assistant-backdrop,
+  body.paper-assistant-available #openPaperAssistant,
+  body.paper-assistant-available #closePaperAssistant { display: none !important; }
+}
+
 @media (max-width: 1180px) {
   .toolbar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .toolbar .search-box { grid-column: 1 / -1; }
