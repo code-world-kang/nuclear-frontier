@@ -198,7 +198,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("state.historyMonthQueue.slice(0, 6)", app)
         self.assertNotIn("Promise.all(years", app)
         workflow = (ROOT / ".github" / "workflows" / "update-and-deploy.yml").read_text(encoding="utf-8")
-        self.assertIn("backfill_history.py --next 1", workflow)
+        self.assertIn("backfill_history.py --next 6", workflow)
 
     def test_home_featured_papers_reuse_paper_page_cards(self):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
