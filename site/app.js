@@ -538,7 +538,8 @@ function markOpened(item) {
 }
 
 function translationFor(item) {
-  return state.translations[item.id] || null;
+  const translation = state.translations[item.id] || null;
+  return translation && (translation.title_zh || translation.abstract_zh) ? translation : null;
 }
 
 function escapeRegExp(value = '') {

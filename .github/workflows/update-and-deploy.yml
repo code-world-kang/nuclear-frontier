@@ -53,7 +53,22 @@ jobs:
           git add data site/data
           if ! git diff --cached --quiet; then
             git commit -m "data: 每日更新 $(date -u +%F)"
-            git push
+            for attempt in 1 2 3; do
+              git fetch origin main
+              git rebase origin/main
+              python scripts/build_site.py
+              git add site/data
+              if ! git diff --cached --quiet; then
+                git commit --amend --no-edit
+              fi
+              if git push origin HEAD:main; then
+                break
+              fi
+              if [ "$attempt" -eq 3 ]; then
+                exit 1
+              fi
+              sleep $((attempt * 3))
+            done
           fi
 
       - name: 配置 GitHub Pages

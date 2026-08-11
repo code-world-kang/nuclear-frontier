@@ -108,14 +108,18 @@ class RepositoryTests(unittest.TestCase):
         for record_id, item in translations["items"].items():
             with self.subTest(id=record_id):
                 self.assertIn(record_id, record_ids)
-                self.assertTrue(item.get("title_zh"))
-                self.assertTrue(item.get("abstract_zh"))
+                if item.get("title_zh") or item.get("abstract_zh"):
+                    self.assertTrue(item.get("title_zh"))
+                    self.assertTrue(item.get("abstract_zh"))
+                else:
+                    self.assertIn("跳过翻译", item.get("note", ""))
 
     def test_site_entrypoint_exists(self):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
         self.assertIn('id="cardList"', index)
         self.assertIn('id="scopeSelect"', index)
         self.assertIn('value="custom"', index)
+
         self.assertIn('id="customDateRange"', index)
 
         self.assertIn('id="dateFrom"', index)
@@ -153,6 +157,16 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("window.location.protocol === 'file:'", index)
         self.assertIn('dataset.dayTheme', index)
         self.assertIn('src="./app.js?v=', index)
+
+    def test_publisher_abstract_provenance_and_push_retry_are_wired(self):
+        app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        self.assertIn("function abstractSourceLabel", app)
+        self.assertIn("期刊 Cite 导出", app)
+        self.assertIn("期刊官网元数据", app)
+        for workflow_name in ["update-and-deploy.yml", "sync-personal.yml"]:
+            workflow = (ROOT / ".github" / "workflows" / workflow_name).read_text(encoding="utf-8")
+            self.assertIn("git rebase origin/main", workflow)
+            self.assertIn("for attempt in 1 2 3", workflow)
 
     def test_home_featured_papers_reuse_paper_page_cards(self):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
