@@ -51,12 +51,13 @@ class PipelineTests(unittest.TestCase):
     def test_github_issue_personal_state_is_schema_limited(self):
         payload = clean_state({
             "updated_at": "2026-08-10T00:00:00Z",
-            "personal": {"notes": {"paper-1": "公开笔记"}, "keywords": ["核结构"], "unexpected": "drop"},
+            "personal": {"notes": {"paper-1": "公开笔记"}, "keywords": ["核结构"], "ignoredItems": ["paper-2"], "unexpected": "drop"},
             "paperLayout": {"categoryOrder": ["nuclear-structure"]},
             "googleTranslations": {"paper-1": {"title_zh": "题目", "abstract_zh": "摘要"}},
             "secret": "drop",
         })
         self.assertEqual(payload["personal"]["notes"]["paper-1"], "公开笔记")
+        self.assertEqual(payload["personal"]["ignoredItems"], ["paper-2"])
         self.assertEqual(payload["paperLayout"]["categoryOrder"], ["nuclear-structure"])
         self.assertNotIn("unexpected", payload["personal"])
         self.assertNotIn("secret", payload)

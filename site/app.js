@@ -59,7 +59,7 @@ const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
 function emptyPersonal() {
-  return { favorites: {}, keywords: [], readStatus: {}, notes: {}, translationFavorites: {}, translationGlossary: [], codeItems: [], resources: [], hiddenPublicFavorites: [] };
+  return { favorites: {}, keywords: [], readStatus: {}, notes: {}, translationFavorites: {}, translationGlossary: [], codeItems: [], resources: [], hiddenPublicFavorites: [], ignoredItems: [] };
 }
 
 function loadPersonal() {
@@ -110,6 +110,7 @@ function normalizePublicPersonalState(payload = {}) {
   normalized.codeItems = Array.isArray(personal.codeItems) ? personal.codeItems : [];
   normalized.resources = Array.isArray(personal.resources) ? personal.resources : [];
   normalized.hiddenPublicFavorites = Array.isArray(personal.hiddenPublicFavorites) ? personal.hiddenPublicFavorites.map(String) : [];
+  normalized.ignoredItems = Array.isArray(personal.ignoredItems) ? personal.ignoredItems.map(String) : [];
   const layout = payload.paperLayout && typeof payload.paperLayout === 'object' ? payload.paperLayout : {};
   const paperLayout = {
     categoryOrder: Array.isArray(layout.categoryOrder) && layout.categoryOrder.length ? layout.categoryOrder.map(String) : [...DEFAULT_CATEGORY_ORDER],
@@ -305,6 +306,10 @@ function currentItems() {
   if (state.view === 'featured') return state.featured;
   if (state.view === 'news') return state.news;
   if (state.view === 'notices') return state.notices;
+  if (state.view === 'ignored') {
+    const ignored = new Set(state.personal.ignoredItems);
+    return state.papers.filter(item => ignored.has(item.id));
+  }
   if (state.view === 'favorites') {
     if (state.mySection === 'translations') {
       const ids = new Set(Object.keys(state.personal.translationFavorites));
@@ -435,7 +440,9 @@ function filteredItems() {
   const query = state.query.trim().toLowerCase();
   const latest = latestPaperDay();
   const focusIds = state.scope === 'daily-focus' ? dailyFocusIds() : new Set();
+  const ignored = new Set(state.personal.ignoredItems);
   const values = currentItems().filter(item => {
+    if (state.view !== 'ignored' && ignored.has(item.id)) return false;
     if (!inPaperScope(item, focusIds, latest)) return false;
     if (state.category !== 'all' && !(item.categories || []).includes(state.category)) return false;
     if (!['news', 'notices'].includes(state.view) && state.source !== 'all' && item.source !== state.source) return false;
@@ -480,6 +487,22 @@ function categoryName(id) {
 
 function isFavorite(id) {
   return Boolean(state.personal.favorites[id]) || (hasPublicFavorite(id) && !state.personal.hiddenPublicFavorites.includes(id));
+}
+
+function isIgnored(id) {
+  return state.personal.ignoredItems.includes(id);
+}
+
+function toggleIgnored(item) {
+  if (isIgnored(item.id)) {
+    state.personal.ignoredItems = state.personal.ignoredItems.filter(id => id !== item.id);
+    showToast('已恢复这篇论文');
+  } else {
+    state.personal.ignoredItems.push(item.id);
+    showToast('已忽略这篇论文，可在“已忽略”中恢复');
+  }
+  savePersonal();
+  refreshPaperCardViews();
 }
 
 function readingLabel(id) {
@@ -600,6 +623,21 @@ async function requestGoogleTranslation(value = '') {
   return translated.join('\n\n');
 }
 
+function googleTranslationPageUrl(item) {
+  const source = [item.title, item.abstract || item.summary || ''].filter(Boolean).join('\n\n').slice(0, 4500);
+  const url = new URL('https://translate.google.com/');
+  url.search = new URLSearchParams({ sl: 'auto', tl: 'zh-CN', text: source, op: 'translate' });
+  return url.href;
+}
+
+function googleTranslationErrorMessage(error) {
+  const message = String(error?.message || error || '');
+  if (/failed to fetch|networkerror|load failed/i.test(message)) {
+    return 'Google 拒绝了本站的网页直连请求，浏览器也无法跨域读取翻译结果';
+  }
+  return message || 'Google 翻译暂时不可用';
+}
+
 function refreshPaperCardViews() {
   renderCards();
   if (state.view === 'home') renderHomeDashboard();
@@ -630,7 +668,7 @@ async function toggleGoogleTranslation(item) {
     state.googleTranslations.set(item.id, { title_zh: titleZh, abstract_zh: abstractZh });
     savePersonal();
   } catch (error) {
-    state.googleTranslationErrors.set(item.id, error.message || 'Google 翻译暂时不可用');
+    state.googleTranslationErrors.set(item.id, googleTranslationErrorMessage(error));
   } finally {
     state.googleTranslationLoadingIds.delete(item.id);
     refreshGoogleTranslationViews(item);
@@ -647,7 +685,7 @@ function googleTranslationPanelFor(item) {
   if (state.googleTranslationLoadingIds.has(item.id)) {
     panel.innerHTML = '<div class="inline-panel-head"><b>Google 中文翻译</b><small>正在翻译题目与摘要…</small></div><p class="inline-translation-status">🌱 译文生成中，请稍候。</p>';
   } else if (error) {
-    panel.innerHTML = `<div class="inline-panel-head"><b>Google 中文翻译</b><small>没有打开新页面</small></div><p class="inline-translation-error">${text(error)}。可稍后再试。</p><button type="button" class="inline-google-retry">重新翻译</button>`;
+    panel.innerHTML = `<div class="inline-panel-head"><b>Google 中文翻译</b><small>网页直连受限</small></div><p class="inline-translation-error">${text(error)}。本站是静态 GitHub Pages，无法安全保存 Google Cloud API 凭据；可优先使用 Codex 中文译文，或从 Google 翻译官网继续。</p><div class="inline-google-fallback"><button type="button" class="inline-google-retry">重新翻译</button><a href="${text(googleTranslationPageUrl(item))}" target="_blank" rel="noreferrer">在 Google 翻译官网打开 ↗</a></div>`;
     $('.inline-google-retry', panel).addEventListener('click', () => {
       state.googleTranslationOpenIds.delete(item.id);
       state.googleTranslationErrors.delete(item.id);
@@ -732,7 +770,7 @@ function toggleTranslation(item) {
   refreshPaperCardViews();
 }
 
-function cardFor(item) {
+function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
   const template = $('#paperCardTemplate');
   const card = template.content.firstElementChild.cloneNode(true);
   const primary = item.categories?.[0] || 'frontiers';
@@ -906,15 +944,24 @@ function cardFor(item) {
     info.type = 'button';
     info.className = 'paper-info-button';
     info.textContent = '论文信息';
-    info.addEventListener('click', () => selectPaperForAssistant(item));
+    info.addEventListener('click', () => onSelect(item));
     actions.append(info);
   } else if (item.type === 'news') {
     const info = document.createElement('button');
     info.type = 'button';
     info.className = 'paper-info-button';
     info.textContent = '新闻信息';
-    info.addEventListener('click', () => selectPaperForAssistant(item));
+    info.addEventListener('click', () => onSelect(item));
     actions.append(info);
+  }
+  if (item.type === 'paper') {
+    const ignore = document.createElement('button');
+    ignore.type = 'button';
+    ignore.className = `ignore-button${isIgnored(item.id) ? ' active' : ''}`;
+    ignore.textContent = isIgnored(item.id) ? '恢复论文' : '忽略';
+    ignore.title = isIgnored(item.id) ? '重新显示这篇论文' : '以后不再显示这篇论文';
+    ignore.addEventListener('click', () => toggleIgnored(item));
+    actions.append(ignore);
   }
   if (item.type === 'paper') {
     const related = document.createElement('button');
@@ -923,14 +970,6 @@ function cardFor(item) {
     related.textContent = '关联文献';
     related.addEventListener('click', () => openDetails(item));
     actions.append(related);
-  }
-  if (item.type === 'paper') {
-    const reading = document.createElement('button');
-    reading.type = 'button';
-    reading.className = 'reading-button';
-    reading.textContent = readingLabel(item.id);
-    reading.addEventListener('click', () => cycleReadingStatus(item));
-    actions.append(reading);
   }
   const googlePanel = googleTranslationPanelFor(item);
   if (googlePanel) $('.paper-copy', card).append(googlePanel);
@@ -943,12 +982,12 @@ function cardFor(item) {
   card.setAttribute('aria-label', `${item.type === 'paper' ? '论文' : '新闻'}：${item.title}。按回车在右侧查看详细信息`);
   card.addEventListener('click', event => {
     if (event.target.closest('a, button, input, select, textarea')) return;
-    selectPaperForAssistant(item);
+    onSelect(item);
   });
   card.addEventListener('keydown', event => {
     if (event.key !== 'Enter' || event.target !== card) return;
     event.preventDefault();
-    selectPaperForAssistant(item);
+    onSelect(item);
   });
   favorite.textContent = isFavorite(item.id) ? '★' : '☆';
   favorite.classList.toggle('active', isFavorite(item.id));
@@ -1097,7 +1136,7 @@ function updateMySpaceUI() {
   $('#addMyItem').hidden = !(isMy && !isPaperShelf);
   $('#myKeywordsPanel').hidden = !(isMy && state.mySection === 'papers');
   $('#translationShelfPanel').hidden = !(isMy && state.mySection === 'translations');
-  const isPaperWorkspace = ['papers', 'featured', 'unread', 'news'].includes(state.view) || (isMy && isPaperShelf);
+  const isPaperWorkspace = ['papers', 'featured', 'unread', 'ignored', 'news'].includes(state.view) || (isMy && isPaperShelf);
   $('#openPaperAssistant').hidden = !isPaperWorkspace;
   $('#paperAssistant').hidden = !isPaperWorkspace;
   $('#assistantBackdrop').hidden = !isPaperWorkspace;
@@ -1145,6 +1184,7 @@ function setView(view) {
     notices: ['DAILY NOTICES', '每日科研通知', '基金·束流·博后·CSC·涉核会议'],
     favorites: ['MY RESEARCH SPACE', '我的科研空间', '论文、翻译收藏、代码与参考资料集中管理'],
     unread: ['READING QUEUE', '我的未读文献', '点击“未读”可在未读、在读和已读之间切换'],
+    ignored: ['IGNORED PAPERS', '已忽略论文', '不感兴趣的论文集中放在这里，可随时恢复'],
   };
   const [kicker, title, note] = labels[view] || labels.papers;
   $('#sectionKicker').textContent = kicker;
@@ -1562,7 +1602,7 @@ function openDetails(item) {
       <button id="openCitationFromDetail">Cite</button>
       ${translation ? `<button id="toggleDetailTranslation">${translated ? '查看英文原文' : '查看中文译文'}</button>` : ''}
       <button id="detailGoogleTranslate" class="google-translation-link">${state.googleTranslationOpenIds.has(item.id) ? '收起 Google 译文' : 'Google 翻译'}</button>
-      ${item.type === 'paper' ? `<button id="openDetailNote">📝 ${state.personal.notes[item.id] ? '编辑已有笔记' : '写笔记'}</button><button id="cycleRead">${text(readingLabel(item.id))}</button>` : ''}
+      ${item.type === 'paper' ? `<button id="openDetailNote">📝 ${state.personal.notes[item.id] ? '编辑已有笔记' : '写笔记'}</button><button id="toggleDetailIgnore" class="ignore-button${isIgnored(item.id) ? ' active' : ''}">${isIgnored(item.id) ? '恢复论文' : '忽略论文'}</button>` : ''}
     </div>
     ${item.type === 'paper' ? '<p class="note-privacy">笔记提交后将写入 GitHub 并公开展示。</p>' : ''}
     <h4>关联文献</h4>
@@ -1573,7 +1613,7 @@ function openDetails(item) {
   $('#toggleDetailTranslation', host)?.addEventListener('click', () => {
     if (translated) state.translatedIds.delete(item.id);
     else state.translatedIds.add(item.id);
-    renderCards();
+    refreshPaperCardViews();
     openDetails(item);
   });
   $('#openCitationFromDetail', host).addEventListener('click', () => openCitationDialog(item));
@@ -1583,12 +1623,12 @@ function openDetails(item) {
   $('#openDetailNote', host)?.addEventListener('click', () => {
     $('#detailDialog').close();
     state.inlineNoteId = item.id;
-    renderCards();
+    refreshPaperCardViews();
     focusInlineNote(item);
   });
-  $('#cycleRead', host)?.addEventListener('click', () => {
-    cycleReadingStatus(item);
-    $('#cycleRead', host).textContent = readingLabel(item.id);
+  $('#toggleDetailIgnore', host)?.addEventListener('click', () => {
+    $('#detailDialog').close();
+    toggleIgnored(item);
   });
   if (!$('#detailDialog').open) $('#detailDialog').showModal();
 }
@@ -2061,7 +2101,7 @@ function homeFeedCard(item, type) {
 }
 
 function homeFeaturedCard(item) {
-  const article = cardFor(item);
+  const article = cardFor(item, { onSelect: openDetails });
   article.classList.add('home-featured-paper-card');
   return article;
 }
@@ -2078,7 +2118,9 @@ function renderHomeDashboard() {
       || (b.importance || 0) - (a.importance || 0))
     .slice(0, 30);
   const seen = new Set();
+  const ignored = new Set(state.personal.ignoredItems);
   const featured = [...state.papers]
+    .filter(item => !ignored.has(item.id))
     .filter(item => homeJournalLabel(item))
     .filter(item => {
       const key = item.doi || item.id || `${item.source}:${item.title}`;
@@ -2422,14 +2464,25 @@ function renderBriefing() {
   $('#briefingDate').textContent = latest ? `${prettyDate(latest)} · 核物理相关 ${items.length} 篇` : '等待今日数据';
   const journalCount = items.filter(item => item.source_type === 'journal').length;
   const preprintCount = items.filter(item => item.source_type === 'preprint').length;
-  const translatedCount = Object.keys(state.translations).length;
+  const translationGroups = [
+    ['论文', state.papers], ['新闻', state.news], ['通知', state.notices],
+  ].map(([label, records]) => ({ label, total: records.length, translated: records.filter(item => Boolean(state.translations[item.id])).length }));
+  const translationTotal = translationGroups.reduce((sum, group) => sum + group.total, 0);
+  const translatedCount = translationGroups.reduce((sum, group) => sum + group.translated, 0);
+  const translationPercent = translationTotal ? translatedCount / translationTotal * 100 : 0;
+  const translationPercentLabel = translationPercent >= 100 ? '100%' : `${translationPercent.toFixed(1)}%`;
   $('#dailyPaperCount').textContent = allItems.length.toLocaleString('zh-CN');
   $('#dailyNuclearCount').textContent = items.length.toLocaleString('zh-CN');
   $('#dailyJournalCount').textContent = journalCount.toLocaleString('zh-CN');
   $('#dailyPreprintCount').textContent = preprintCount.toLocaleString('zh-CN');
   $('#briefingSummary').textContent = items.length
-    ? `今日共收录 ${allItems.length} 篇论文，其中 ${items.length} 篇属于核物理相关分类：期刊论文 ${journalCount} 篇、预印本 ${preprintCount} 篇。重点文章仅从 PRL、Nature、Science、Nature Physics 与 Nature Communications 中筛选。当前已有 ${translatedCount} 篇 Codex 中文译文。`
+    ? `今日共收录 ${allItems.length} 篇论文，其中 ${items.length} 篇属于核物理相关分类：期刊论文 ${journalCount} 篇、预印本 ${preprintCount} 篇。重点文章仅从 PRL、Nature、Science、Nature Physics 与 Nature Communications 中筛选。`
     : '尚无可用的当日元数据。';
+  $('#translationProgressPercent').textContent = translationPercentLabel;
+  $('#translationProgressCount').textContent = `${translatedCount.toLocaleString('zh-CN')} / ${translationTotal.toLocaleString('zh-CN')} 条已有中文译文`;
+  $('#translationProgressBar').style.width = `${Math.min(100, translationPercent).toFixed(2)}%`;
+  $('#translationProgressTrack').setAttribute('aria-valuenow', translationPercent.toFixed(1));
+  $('#translationProgressStats').innerHTML = `${translationGroups.map(group => `<span>${group.label} <b>${group.translated.toLocaleString('zh-CN')}</b> / ${group.total.toLocaleString('zh-CN')}</span>`).join('')}<small>尚待翻译 ${(translationTotal - translatedCount).toLocaleString('zh-CN')} 条</small>`;
 
   const renderBars = (host, values, labelFor) => {
     const max = Math.max(...values.map(([, count]) => count), 1);
@@ -2781,7 +2834,7 @@ async function initialize() {
       state.mySection = myMatch[1];
       setView('favorites');
     } else {
-      setView(['home', 'papers', 'featured', 'news', 'notices', 'favorites', 'unread'].includes(hash) ? hash : 'home');
+      setView(['home', 'papers', 'featured', 'news', 'notices', 'favorites', 'unread', 'ignored'].includes(hash) ? hash : 'home');
     }
   } catch (error) {
     console.error(error);

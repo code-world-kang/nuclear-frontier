@@ -723,6 +723,26 @@ body {
 .briefing-status b { grid-column: 1 / -1; color: #487057; font-size: 12px; }
 .status-pulse, .live-dot { background: #70bc77; box-shadow: 0 0 0 5px rgba(112,188,119,.14); }
 .briefing-summary { color: #557264; font-size: 14px; line-height: 1.8; position: relative; z-index: 1; }
+.home-translation-progress {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 20px;
+  padding: 17px 19px;
+  border: 1px solid #cfe2c8;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(239, 249, 232, .92), rgba(255, 249, 232, .86));
+}
+.home-translation-progress-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+.home-translation-progress-head h2 { margin: 3px 0 0; color: #416b49; font-family: Georgia, "Noto Serif SC", serif; font-size: 20px; font-weight: 550; }
+.home-translation-progress-head > div:last-child { display: grid; justify-items: end; gap: 2px; }
+.home-translation-progress-head strong { color: #438653; font-family: Georgia, serif; font-size: 26px; font-weight: 550; }
+.home-translation-progress-head > div:last-child span { color: #748078; font-size: 9px; }
+.home-translation-progress-track { height: 9px; margin-top: 13px; overflow: hidden; border: 1px solid rgba(174, 202, 166, .45); border-radius: 99px; background: rgba(255,255,255,.78); }
+.home-translation-progress-track i { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #78b982, #c3ce78 64%, #efbc78); transition: width .45s ease; }
+.home-translation-progress-stats { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; margin-top: 10px; color: #637267; font-size: 9px; }
+.home-translation-progress-stats span { padding: 4px 7px; border-radius: 99px; background: rgba(255,255,255,.62); }
+.home-translation-progress-stats b { color: #3f7b4c; }
+.home-translation-progress-stats small { margin-left: auto; color: #8a806b; font-size: 9px; }
 .briefing-grid { position: relative; z-index: 1; }
 .briefing-grid > article { padding: 17px 18px; border: 1px solid rgba(199, 224, 193, .82); border-radius: 17px; background: rgba(255,255,255,.62); }
 .brief-row em { background: linear-gradient(90deg, #78c98a, #a7d879); }
@@ -771,6 +791,9 @@ body {
 .paper-actions .cite-button { padding: 4px 9px; border: 1px solid #c8ddc4; border-radius: 99px; color: #356f47; background: #eef7e9; font-weight: 800; letter-spacing: .04em; }
 .paper-actions .translation-favorite-button { color: #9a6a2d; font-weight: 700; }
 .paper-actions .translation-favorite-button.active { border-color: #e2c58c; color: #8a5c1d; background: #fff3d7; }
+.paper-actions .ignore-button, .detail-tools .ignore-button { color: #9a6d65; }
+.paper-actions .ignore-button:hover, .detail-tools .ignore-button:hover { color: #a44f43; }
+.paper-actions .ignore-button.active, .detail-tools .ignore-button.active { color: #4d7a57; }
 .translation-term-tag { color: #7a5c2e !important; background: #fff1d7 !important; }
 .favorite-button.active { color: #ab741e; background: #fff1ce; }
 
@@ -815,6 +838,9 @@ body {
 .inline-google-translation > p { margin: 0; color: #5f7167; white-space: pre-wrap; font-size: 11px; line-height: 1.72; }
 .inline-translation-status { color: #668069 !important; }
 .inline-translation-error { color: #976057 !important; }
+.inline-google-fallback { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.inline-google-fallback button, .inline-google-fallback a { border: 1px solid #bfd2dc; border-radius: 9px; padding: 7px 10px; color: #476f87; background: #f7fbfd; cursor: pointer; font: inherit; font-size: 9px; text-decoration: none; }
+.inline-google-fallback a { border-color: #d8d7c5; color: #647059; background: #fffdf6; }
 .inline-google-retry { margin-top: 9px; border: 1px solid #bed2dd; border-radius: 8px; padding: 6px 10px; color: #3c718d; background: #f7fbfd; cursor: pointer; font: inherit; font-size: 9px; }
 .inline-note-editor textarea { width: 100%; min-height: 150px; resize: vertical; border: 1px solid #cfe0c9; border-radius: 10px; padding: 12px; color: #405b47; background: rgba(255,255,255,.9); outline: none; font: 12px/1.65 inherit; }
 .inline-note-editor textarea:focus { border-color: #76a97c; box-shadow: 0 0 0 3px rgba(91,145,99,.12); }
@@ -883,6 +909,9 @@ footer { color: #58735f; background: linear-gradient(135deg, #e3f2dc, #f3faef); 
   .briefing-head { display: grid; padding-right: 0; }
   .briefing-status { text-align: left; }
   .briefing-welcome { display: none; }
+  .home-translation-progress-head { display: grid; gap: 8px; }
+  .home-translation-progress-head > div:last-child { justify-items: start; }
+  .home-translation-progress-stats small { width: 100%; margin-left: 0; }
   .metrics { margin-top: 14px; }
   .category-button { padding: 8px 10px; font-size: 12px; }
   .category-button .cat-icon { font-size: 13px; }

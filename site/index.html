@@ -27,7 +27,7 @@
   </script>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20260810-chinese-first">
+  <link rel="stylesheet" href="./styles.css?v=20260811-translation-progress">
 </head>
 <body>
   <div class="shell">
@@ -60,6 +60,14 @@
           <div class="briefing-status"><span class="status-pulse"></span><span id="lastUpdated">正在读取更新状态…</span><b id="briefingDate">正在整理今日数据…</b></div>
         </div>
         <p class="briefing-summary" id="briefingSummary">正在生成基于原始元数据的可核验摘要。</p>
+        <section class="home-translation-progress" aria-labelledby="translationProgressTitle">
+          <div class="home-translation-progress-head">
+            <div><span class="section-kicker">CHINESE TRANSLATION</span><h2 id="translationProgressTitle">中文翻译进度</h2></div>
+            <div><strong id="translationProgressPercent">—</strong><span id="translationProgressCount">正在统计…</span></div>
+          </div>
+          <div class="home-translation-progress-track" role="progressbar" aria-label="中文翻译完成比例" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="translationProgressTrack"><i id="translationProgressBar"></i></div>
+          <div class="home-translation-progress-stats" id="translationProgressStats"><span>论文 —</span><span>新闻 —</span><span>通知 —</span><small>正在读取翻译数据</small></div>
+        </section>
         <section class="metrics briefing-metrics briefing-daily-metrics" aria-label="今日论文统计">
           <article><span>今日新增论文</span><strong id="dailyPaperCount">—</strong><small>最新发布日期</small></article>
           <article><span>核物理相关</span><strong id="dailyNuclearCount">—</strong><small>核心核物理分类</small></article>
@@ -211,6 +219,7 @@
               <button class="view-tab" data-view="featured">重点</button>
               <button class="view-tab" data-view="unread">未读</button>
               <button class="view-tab" data-view="favorites">已收藏</button>
+              <button class="view-tab" data-view="ignored">已忽略</button>
             </div>
             <button class="assistant-trigger" id="openPaperAssistant" type="button" aria-controls="paperAssistant" aria-expanded="false"><span aria-hidden="true">✿</span>论文助手</button>
           </div>
@@ -417,6 +426,6 @@
     </article>
   </template>
 
-  <script type="module" src="./app.js?v=20260811-home-paper-cards"></script>
+  <script type="module" src="./app.js?v=20260811-progress-detail-google-fallback"></script>
 </body>
 </html>

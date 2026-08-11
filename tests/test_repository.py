@@ -126,13 +126,35 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('src="./app.js?v=', index)
 
     def test_home_featured_papers_reuse_paper_page_cards(self):
+        index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
         app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
         styles = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
-        self.assertIn("const article = cardFor(item);", app)
+        self.assertIn("const article = cardFor(item, { onSelect: openDetails });", app)
         self.assertIn("article.classList.add('home-featured-paper-card');", app)
         self.assertIn("const featured = [...state.papers]", app)
+        self.assertIn('id="translationProgressTrack"', index)
+        self.assertIn("translationProgressPercent", app)
         self.assertIn(".home-featured-list {", styles)
+        self.assertIn(".home-translation-progress", styles)
         self.assertIn("display: grid", styles)
+
+    def test_papers_can_be_ignored_and_restored(self):
+        index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+        app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        sync = (ROOT / "scripts" / "sync_github_issue.py").read_text(encoding="utf-8")
+        self.assertIn("ignoredItems", app)
+        self.assertIn("function toggleIgnored", app)
+        self.assertIn("state.view === 'ignored'", app)
+        self.assertIn('data-view="ignored"', index)
+        self.assertIn('"ignoredItems"', sync)
+
+    def test_google_translation_failure_has_clear_fallback(self):
+        app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        styles = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn("function googleTranslationErrorMessage", app)
+        self.assertIn("function googleTranslationPageUrl", app)
+        self.assertIn("在 Google 翻译官网打开", app)
+        self.assertIn(".inline-google-fallback", styles)
 
     def test_reader_ui_is_text_first_and_notes_are_inline_and_public(self):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")

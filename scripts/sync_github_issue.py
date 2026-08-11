@@ -20,7 +20,7 @@ PERSONAL_OBJECT_FIELDS = (
     "favorites", "readStatus", "notes", "translationFavorites",
 )
 PERSONAL_LIST_FIELDS = (
-    "keywords", "translationGlossary", "codeItems", "resources", "hiddenPublicFavorites",
+    "keywords", "translationGlossary", "codeItems", "resources", "hiddenPublicFavorites", "ignoredItems",
 )
 LAYOUT_LIST_FIELDS = ("categoryOrder", "hiddenCategories", "moduleOrder")
 
