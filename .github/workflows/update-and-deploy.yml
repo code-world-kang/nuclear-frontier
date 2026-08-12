@@ -36,9 +36,11 @@ jobs:
           python-version: "3.12"
 
       - name: 拉取每日论文、新闻与通知
+        if: github.event_name != 'push'
         run: python scripts/update_content.py --days 14 --strict
 
       - name: 逐月扩展 2001 年以来的历史论文库
+        if: github.event_name != 'push'
         run: python scripts/backfill_history.py --next 6 --max-workers 4
 
       - name: 构建站点数据

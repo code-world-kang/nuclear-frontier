@@ -65,3 +65,7 @@ class MiniProgramTests(unittest.TestCase):
         preview_script = (MINI / "preview" / "preview.js").read_text(encoding="utf-8")
         self.assertIn("PUBLIC_MINIPROGRAM_PREVIEW", build_script)
         self.assertIn("/miniprogram-preview/", preview_script)
+
+    def test_interface_push_does_not_repeat_daily_collection(self):
+        workflow = (ROOT / ".github" / "workflows" / "update-and-deploy.yml").read_text(encoding="utf-8")
+        self.assertGreaterEqual(workflow.count("if: github.event_name != 'push'"), 2)
