@@ -73,7 +73,7 @@ GitHub Actions 在每天北京时间 10:17 左右执行（预留 arXiv 冬令时
 - 简报每次数据更新与网站构建时自动生成，只作为可选周报、月报或特别推送，不自动发布到公众号。
 - 小程序代码继续保留，暂不作为当前首发渠道。
 
-自动写入公众号草稿箱需要账户具备相应 API 权限。`AppSecret` 只能放在 GitHub Actions Secrets 中，不得写入公开仓库。
+已接入可选的公众号自动发布流程：每日数据更新后可自动复用封面、写入草稿箱并提交发布，同时检查同名草稿与已发布记录以防止重复。此功能只在账户具备素材、草稿箱和发布 API 权限且 GitHub Secrets 明确启用时运行。`AppSecret` 只能放在 GitHub Actions Secrets 中，不得写入公开仓库。
 
 工作流也支持在 GitHub Actions 页面使用 `workflow_dispatch` 立即更新。
 

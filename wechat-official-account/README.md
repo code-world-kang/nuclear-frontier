@@ -30,4 +30,18 @@ python3 scripts/build_wechat_digest.py
 
 ## 与公众号账户连接
 
-后续可使用公众号的草稿箱/发布能力实现自动入库。密钥只应保存在 GitHub Actions Secrets，不得写入本仓库。是否能自动发布取决于账户类型、认证状态与当前接口权限。
+已接入公众号草稿箱和发布 API。当账户具备“素材管理、草稿箱、发布能力”权限时，每日 GitHub Actions 可自动：
+
+1. 使用已生成的中文简报；
+2. 复用或上传绿色封面；
+3. 查找当日同名草稿/已发布记录，防止重复发布；
+4. 写入草稿箱并提交发布。
+
+仓库不保存任何公众号凭据。需在 GitHub 仓库的 `Settings → Secrets and variables → Actions` 中配置：
+
+- Secret `WECHAT_OFFICIAL_APP_ID`：公众号 AppID。
+- Secret `WECHAT_OFFICIAL_APP_SECRET`：公众号 AppSecret。
+- Secret `WECHAT_OFFICIAL_PUBLISH_ENABLED`：确认权限与首篇测试后设为 `true`。
+- Variable `WECHAT_OFFICIAL_AUTHOR`：可选，默认“小康康”。
+
+正式启用前，应先在公众号后台核对接口权限和 IP 白名单要求。`AppSecret` 只能放在 GitHub Actions Secrets 中，不得写入公开仓库。

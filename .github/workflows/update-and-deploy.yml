@@ -78,6 +78,24 @@ jobs:
             done
           fi
 
+      - name: 自动发布公众号科研简报
+        if: github.event_name != 'push'
+        env:
+          WECHAT_OFFICIAL_PUBLISH_ENABLED: ${{ secrets.WECHAT_OFFICIAL_PUBLISH_ENABLED }}
+          WECHAT_OFFICIAL_APP_ID: ${{ secrets.WECHAT_OFFICIAL_APP_ID }}
+          WECHAT_OFFICIAL_APP_SECRET: ${{ secrets.WECHAT_OFFICIAL_APP_SECRET }}
+          WECHAT_OFFICIAL_AUTHOR: ${{ vars.WECHAT_OFFICIAL_AUTHOR }}
+        run: |
+          if [ "$WECHAT_OFFICIAL_PUBLISH_ENABLED" != "true" ]; then
+            echo "公众号自动发布尚未启用，本次仅生成简报。"
+            exit 0
+          fi
+          if [ -z "$WECHAT_OFFICIAL_APP_ID" ] || [ -z "$WECHAT_OFFICIAL_APP_SECRET" ]; then
+            echo "已启用公众号发布，但 GitHub Secrets 中缺少公众号凭据。" >&2
+            exit 1
+          fi
+          python scripts/publish_wechat_official.py --publish
+
       - name: 配置 GitHub Pages
         uses: actions/configure-pages@v5
 
