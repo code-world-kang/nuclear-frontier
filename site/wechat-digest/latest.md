@@ -1,15 +1,15 @@
 # 小康康的物理世界 · 2026-08-12 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 11/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 13/18 条已有中文内容。
 
 ## 今日重点论文
 
 1. **[首次测量 K 介子氘原子 X 射线跃迁](https://arxiv.org/abs/2608.10749)**  
    arXiv nucl-ex · 2026-08-12  
    由于强子间低能强相互作用具有非微扰性质，其理论描述强烈依赖于实验输入，因此对它的研究仍是基础物理中的关键挑战之一。尽管涉及上夸克和下夸克的体系已取得实质进展，奇异数扇区的理论模型仍因缺乏实验数据而受到限制。K 介子原子可通过其最低原子能级上诱导的能量位移和宽度，成为研究含奇异数低能强相互作用的有力工具。在此背景下，由于其 X 射线产额极低，K 介子氘原子 X 射线谱学长期以来一直是强子原子物理中的主要开放挑战之一。该测量尤其重要，因为它能够获得在阈值能量处实验上不可及的 $K^-n$ 相互作用。本文报告在 DA$\Phi$NE 对撞机上利用 SIDDHARTA-2 实验首次观测到 K 介子氘原子 X 射线跃迁。我们测得 $1s$ 能级的强相互作用位移和宽度分别为 $\varepsilon_{1s}=-810.…
-2. **[The role of momentum transfer in the detachment front response to power transients for reactor scale tokamaks](https://doi.org/10.1088/1741-4326/ae91f8)**  
+2. **[反应堆尺度托卡马克中动量转移对脱靶前沿响应功率瞬变的作用](https://doi.org/10.1088/1741-4326/ae91f8)**  
    Nuclear Fusion · 2026-08-12  
-   Abstract We have investigated the response of detached plasmas to multi-ms timescale power transients using 1D simulations of the scrape-off layer on a scale and parameter range relevant for reactor-scale tokamaks, such as the Spherical Tokamak for Energy Production (STEP). Simulations were performed using the fluid code Hermes-3, employing the solver CVODE…
+   摘要 我们使用与 Spherical Tokamak for Energy Production（STEP）等反应堆尺度托卡马克相关的尺度和参数范围上的一维刮削层模拟，研究脱靶等离子体对多毫秒时间尺度功率瞬变的响应。模拟使用流体代码 Hermes-3，并采用求解器 CVODE 进行稳健时间积分。研究发现，在模拟中纳入或忽略中性气体通过电荷交换反应接收的动量，会显著影响脱靶前沿的响应。分析中，脱靶等离子体电离前沿的运动由两种不同机制决定：中性云迅速受压时快速的初始压力主导响应，以及云被电离时缓慢的烧穿主导响应。前者只有在保留向中性粒子的动量转移时才会出现。禁用向中性粒子转移动量后，等离子体仅通过电离和复合与中性粒子相互作用，因此瞬变期间的前沿速度仅由中性粒子烧穿率决定。我们将模拟与近期半经验再附着模型（Hend…
 3. **[激光光谱揭示 $N=32$ 壳层闭合](https://arxiv.org/abs/2608.10943)**  
    arXiv nucl-th · 2026-08-12  
    原子核是强关联量子多体系统，其壳层结构如何随中子过剩的增加而演化，仍是核物理中的核心开放问题。钙同位素是理想的检验平台：除传统幻数 $N=20,28$ 外，在 $N=32,34$（$^{52,54}\mathrm{Ca}$）处还提出了新的壳层闭合。尽管电荷半径在趋近 $N=32$ 时快速增大，但由于每秒仅产生几个离子的低产额，同位素链中更高阶矩和半径一直难以测量。这里我们采用一种高度灵敏的共线激光光谱技术，揭示出一种引人注目的简单行为：向 $^{52}\mathrm{Ca}$ 添加一个中子，会在 $^{53}\mathrm{Ca}$ 中产生纯单粒子磁偶极矩；而趋近 $^{54}\mathrm{Ca}$ 的电荷半径斜率超过趋近 $^{52}\mathrm{Ca}$ 的斜率。这为稳健的 $N=32$ 壳层闭合提供…
@@ -25,9 +25,9 @@
 7. **[Mg 同位素的中子半径及中子分布的半唯象处理](https://arxiv.org/abs/2608.09429)**  
    arXiv nucl-th · 2026-08-12  
    结合使用连续谱变形相对论 Hartree-Bogoliubov 理论（DRHBc）计算得到的 \rm Mg 同位素电荷半径，我们在 Glauber 模型框架下通过研究 $^{12}$\rm C 在 240 MeV/nucleon 下的反应截面（$\sigma_{R}$），提取了 $^{24-38}$\rm Mg 同位素的中子半径。计算采用：(i) 用包含谐振子单粒子波函数的 Slater 行列式描述原子核（SDHO）；以及 (ii) 密度分布的双参数 Fermi（2pF）形状，旨在评估 $^{24-38}$\rm Mg 同位素中子皮的密度依赖性。为理解中子分布的渐近行为（展宽），我们建议对稳定和不稳定同位素均引入核芯+n（$S_{n} S_{2n}$）描述；$S_{n}$（$S_{2n}$）是所考虑同位素的一…
-8. **[Graph transformer and mixture of experts for rare signal detection in calorimeter data](https://doi.org/10.1088/2632-2153/ae8e31)**  
+8. **[用于量能器数据中稀有信号探测的图 Transformer 与专家混合模型](https://doi.org/10.1088/2632-2153/ae8e31)**  
    Machine Learning Science and Technology · 2026-08-12  
-   Abstract This work investigates graph-based deep learning approaches for the identification of rare and non-standard particle signatures in the ATLAS experiment at CERN focusing on dark photons, new particles predicted by beyond standard model theories, as a representative case. Such signatures arise from displaced decays and produce highly heterogeneous an…
+   摘要 本工作研究基于图的深度学习方法，以识别 CERN ATLAS 实验中的稀有和非标准粒子特征，并以超越标准模型理论预言的新粒子——暗光子——作为代表性案例。此类特征源于移位衰变，并在 ATLAS 探测器的量能器等部分产生高度异质且不规则的能量沉积模式，传统方法难以对其建模。图神经网络为模拟这些数据的稀疏和关系结构提供了自然框架。我们评估了多种架构，包括消息传递网络、基于注意力的模型和图 Transformer。在此基础上，我们引入一种以专家混合（MoE）机制增强的图 Transformer，旨在通过模块化表征更好地捕捉这些特征的内禀异质性。我们在公开的 ATLAS 模拟量能器数据上对模型进行基准测试，并使用物理动机的可观测量分析其行为。结果表明，基于图的方法，特别是 MoE 增强图 Transformer…
 
 ## 物理新闻
 
