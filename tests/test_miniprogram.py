@@ -66,7 +66,7 @@ class MiniProgramTests(unittest.TestCase):
         cloud_function = (MINI / "cloudfunctions/researchSync/index.js").read_text(encoding="utf-8")
         self.assertEqual(project["appid"], "wxe859c9b09ae5c60d")
         self.assertEqual(project["cloudfunctionRoot"], "cloudfunctions/")
-        self.assertIn("envId: ''", cloud_config)
+        self.assertIn("envId: 'cloudbase-d7gerpnvld62554ff'", cloud_config)
         self.assertIn("cloud.DYNAMIC_CURRENT_ENV", cloud_function)
         self.assertIn("context.OPENID", cloud_function)
         self.assertIn("ALLOWED_TYPES", cloud_function)

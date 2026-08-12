@@ -20,11 +20,12 @@
 
 ## 微信云端同步
 
-1. 在微信开发者工具中点击“云开发”并开通环境。
-2. 将云环境 ID 填入 `config/cloud.js` 的 `envId`。环境 ID 不是 AppSecret，可以公开；AppSecret 不得写入项目。
-3. 在云开发数据库中创建 `research_user_states` 和 `zotero_queue` 两个集合，权限设为“仅管理员可读写”。小程序不直接访问数据库，全部读写由云函数按当前用户 OPENID 隔离。
-4. 右键 `cloudfunctions/researchSync`，选择“上传并部署：云端安装依赖”。
-5. 在“我的”页面点击“立即同步”验证收藏、笔记、关键词和 Zotero 队列。
+1. 云环境已绑定为 `cloudbase-d7gerpnvld62554ff`。
+2. 在云开发数据库中创建 `research_user_states` 和 `zotero_queue` 两个集合，权限设为“仅管理员可读写”。小程序不直接访问数据库，全部读写由云函数按当前用户 OPENID 隔离。
+3. 右键 `cloudfunctions/researchSync`，选择“上传并部署：云端安装依赖”。
+4. 在“我的”页面点击“立即同步”验证收藏、笔记、关键词和 Zotero 队列。
+
+环境 ID 不是 AppSecret，可以公开；AppSecret 不得写入项目。
 
 本地仍保留离线待同步队列，以便断网时继续记录；云环境恢复后会补传到云端队列。Mac Zotero 助手只读取 `zotero_queue`，任何 Zotero 密钥均不得写入小程序或公开 GitHub。
 
