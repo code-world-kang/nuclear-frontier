@@ -4,9 +4,10 @@
     <view><view class="eyebrow">MY RESEARCH SPACE</view><view class="mine-title">我的科研空间</view><view class="mine-note">论文、代码、资料与 Zotero 同步任务集中管理</view></view>
   </view>
 
-  <view class="preview-banner" bindtap="showCloudInfo">
-    <view><text class="preview-dot"></text><text>当前为本地预览模式</text></view><text>云同步待配置 ›</text>
+  <view class="preview-banner {{cloudReady ? 'cloud-ready' : ''}}" bindtap="onTapCloudSync">
+    <view><text class="preview-dot"></text><text>{{cloudStatusText}}</text></view><text>{{cloudSyncing ? '同步中…' : (cloudReady ? '立即同步 ›' : '待配置 ›')}}</text>
   </view>
+  <view wx:if="{{lastCloudSyncAt}}" class="sync-time">上次云端同步：{{lastCloudSyncAt}}</view>
 
   <view class="mine-stats soft-card">
     <view><text>{{favoriteItems.length}}</text><small>收藏</small></view>

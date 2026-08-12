@@ -2,6 +2,7 @@ const { requestJson, localizedItem, categoryMap, findById } = require('../../uti
 const { compactText, displayDate, shortAuthors } = require('../../utils/format');
 const { bibtex, gbt } = require('../../utils/citation');
 const { itemState, queueZotero, saveNote, setKeywords, toggleFavorite, toggleIgnored } = require('../../utils/personal');
+const cloudSync = require('../../utils/cloud-sync');
 
 Page({
   data: {
@@ -19,7 +20,8 @@ Page({
     citation: '',
     zoteroOpen: false,
     zoteroCollection: '待读论文',
-    zoteroTagsInput: ''
+    zoteroTagsInput: '',
+    cloudReady: false
   },
 
   onLoad(options) {
@@ -65,7 +67,8 @@ Page({
       note: state.note,
       keywords: state.keywords,
       zoteroTagsInput: defaultTags.join('、'),
-      citation: bibtex(item)
+      citation: bibtex(item),
+      cloudReady: cloudSync.status().enabled
     });
   },
 
@@ -73,18 +76,21 @@ Page({
   toggleFavorite() {
     const active = toggleFavorite(this._item);
     this.setData({ favorite: active });
-    wx.showToast({ title: active ? '已暂存收藏' : '已取消收藏', icon: 'none' });
+    this.scheduleCloudSync();
+    wx.showToast({ title: active ? '已收藏' : '已取消收藏', icon: 'none' });
   },
   toggleIgnored() {
     const active = toggleIgnored(this._item);
     this.setData({ ignored: active });
+    this.scheduleCloudSync();
     wx.showToast({ title: active ? '已加入忽略' : '已恢复显示', icon: 'none' });
   },
   onNoteInput(event) { this.setData({ note: event.detail.value }); },
   saveNote() {
     const value = saveNote(this._item, this.data.note);
     this.setData({ note: value });
-    wx.showToast({ title: '笔记已暂存', icon: 'success' });
+    this.scheduleCloudSync();
+    wx.showToast({ title: this.data.cloudReady ? '笔记已保存' : '笔记已进入待同步队列', icon: 'none' });
   },
   onKeywordInput(event) { this.setData({ keywordInput: event.detail.value }); },
   addKeyword() {
@@ -92,11 +98,13 @@ Page({
     if (!values.length) return;
     const keywords = setKeywords(this._item, [...this.data.keywords, ...values]);
     this.setData({ keywords, keywordInput: '' });
+    this.scheduleCloudSync();
   },
   removeKeyword(event) {
     const keywords = this.data.keywords.filter((_, index) => index !== Number(event.currentTarget.dataset.index));
     setKeywords(this._item, keywords);
     this.setData({ keywords });
+    this.scheduleCloudSync();
   },
   toggleCite() { this.setData({ citeOpen: !this.data.citeOpen }); },
   chooseCiteFormat(event) {
@@ -113,11 +121,22 @@ Page({
     if (!tags.length) return wx.showToast({ title: '请至少设置 1 个分类标签', icon: 'none' });
     queueZotero(this._item, { collection: this.data.zoteroCollection, tags, note: this.data.note });
     this.setData({ zoteroOpen: false });
+    this.scheduleCloudSync();
     wx.showModal({
-      title: '已加入预览队列',
-      content: '当前尚未配置云端同步，此记录仅用于小程序预览。接入 AppID 和云端后，将同步 PDF、笔记和分类到 Zotero。',
+      title: '已加入 Zotero 队列',
+      content: this.data.cloudReady
+        ? '论文、PDF 链接、笔记和分类将同步到微信云端队列，供电脑端 Zotero 助手处理。'
+        : '云环境尚未开通，记录已进入待同步队列；云端启用后会自动补传。',
       showCancel: false
     });
+  },
+  scheduleCloudSync() {
+    if (!cloudSync.status().enabled) return;
+    if (this._syncTimer) clearTimeout(this._syncTimer);
+    this._syncTimer = setTimeout(() => cloudSync.syncNow().catch(() => {}), 700);
+  },
+  onUnload() {
+    if (this._syncTimer) clearTimeout(this._syncTimer);
   },
   copySourceLink() { wx.setClipboardData({ data: this._item.url || this._item.source_url || '' }); },
   copyPdfLink() { wx.setClipboardData({ data: this._item.pdf_url || '' }); }

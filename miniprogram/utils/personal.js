@@ -1,7 +1,7 @@
 const STORAGE_KEY = 'nuclear-frontier-preview-personal';
 
 function emptyState() {
-  return { favorites: {}, ignored: {}, notes: {}, keywords: {}, pendingOperations: [] };
+  return { favorites: {}, ignored: {}, notes: {}, keywords: {}, pendingOperations: [], lastCloudSyncAt: '' };
 }
 
 function readState() {
@@ -17,16 +17,23 @@ function writeState(state) {
   return state;
 }
 
+function operationId() {
+  return `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+}
+
 function queueOperation(state, type, itemId, payload = {}) {
   state.pendingOperations = (state.pendingOperations || []).filter(item => !(item.type === type && item.itemId === itemId));
-  state.pendingOperations.push({ type, itemId, payload, createdAt: new Date().toISOString(), status: 'preview-only' });
+  state.pendingOperations.push({ id: operationId(), type, itemId, payload, createdAt: new Date().toISOString(), status: 'pending' });
 }
 
 function toggleFavorite(item) {
   const state = readState();
   if (state.favorites[item.id]) delete state.favorites[item.id];
   else state.favorites[item.id] = { id: item.id, type: item.type || 'paper', title: item.title, addedAt: new Date().toISOString() };
-  queueOperation(state, 'favorite', item.id, { active: Boolean(state.favorites[item.id]) });
+  queueOperation(state, 'favorite', item.id, {
+    active: Boolean(state.favorites[item.id]),
+    record: state.favorites[item.id] || null
+  });
   writeState(state);
   return Boolean(state.favorites[item.id]);
 }
@@ -35,7 +42,10 @@ function toggleIgnored(item) {
   const state = readState();
   if (state.ignored[item.id]) delete state.ignored[item.id];
   else state.ignored[item.id] = { id: item.id, title: item.title, ignoredAt: new Date().toISOString() };
-  queueOperation(state, 'ignored', item.id, { active: Boolean(state.ignored[item.id]) });
+  queueOperation(state, 'ignored', item.id, {
+    active: Boolean(state.ignored[item.id]),
+    record: state.ignored[item.id] || null
+  });
   writeState(state);
   return Boolean(state.ignored[item.id]);
 }
@@ -83,4 +93,14 @@ function itemState(id) {
   };
 }
 
-module.exports = { itemState, queueZotero, readState, saveNote, setKeywords, toggleFavorite, toggleIgnored };
+function mergeCloudState(cloudState, pendingOperations = []) {
+  const clean = emptyState();
+  ['favorites', 'ignored', 'notes', 'keywords'].forEach(key => {
+    if (cloudState[key] && typeof cloudState[key] === 'object') clean[key] = cloudState[key];
+  });
+  clean.pendingOperations = pendingOperations;
+  clean.lastCloudSyncAt = cloudState.updatedAt || '';
+  return clean;
+}
+
+module.exports = { itemState, mergeCloudState, queueZotero, readState, saveNote, setKeywords, toggleFavorite, toggleIgnored, writeState };

@@ -56,9 +56,21 @@ class MiniProgramTests(unittest.TestCase):
     def test_preview_mode_is_explicit_about_cloud_boundary(self):
         detail = (MINI / "pages/detail/detail.wxml").read_text(encoding="utf-8")
         readme = (MINI / "README.md").read_text(encoding="utf-8")
-        self.assertIn("预览版暂存于本机", detail)
+        self.assertIn("待同步队列", detail)
         self.assertIn("云端队列", readme)
         self.assertIn("不得写入小程序或公开 GitHub", readme)
+
+    def test_personal_appid_and_cloud_sync_skeleton_are_configured(self):
+        project = json.loads((MINI / "project.config.json").read_text(encoding="utf-8"))
+        cloud_config = (MINI / "config/cloud.js").read_text(encoding="utf-8")
+        cloud_function = (MINI / "cloudfunctions/researchSync/index.js").read_text(encoding="utf-8")
+        self.assertEqual(project["appid"], "wxe859c9b09ae5c60d")
+        self.assertEqual(project["cloudfunctionRoot"], "cloudfunctions/")
+        self.assertIn("envId: ''", cloud_config)
+        self.assertIn("cloud.DYNAMIC_CURRENT_ENV", cloud_function)
+        self.assertIn("context.OPENID", cloud_function)
+        self.assertIn("ALLOWED_TYPES", cloud_function)
+        self.assertNotIn("AppSecret", cloud_config)
 
     def test_mobile_preview_is_published_with_github_pages(self):
         build_script = (ROOT / "scripts" / "build_site.py").read_text(encoding="utf-8")

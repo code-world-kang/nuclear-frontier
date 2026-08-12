@@ -55,7 +55,7 @@
       <view class="detail-section-title">我的笔记</view>
       <textarea class="note-area" value="{{note}}" bindinput="onNoteInput" auto-height="true" maxlength="-1" placeholder="直接在这里记录想法、实验联系或待办事项…" />
       <button class="primary-button note-save" bindtap="saveNote">保存笔记</button>
-      <view class="preview-warning">预览版暂存于本机；正式版将改为云端同步，不会假装已上传 GitHub。</view>
+      <view class="preview-warning">{{cloudReady ? '保存后将自动同步到您的微信云端科研空间。' : '云环境尚未开通，当前内容会进入待同步队列；开通后自动补传。'}}</view>
     </view>
 
     <view class="detail-section info-card soft-card">

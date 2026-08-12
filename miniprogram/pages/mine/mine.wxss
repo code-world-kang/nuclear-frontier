@@ -4,6 +4,9 @@
 .mine-note { margin-top: 8rpx; color: #7c897f; font-size: 21rpx; }
 .preview-banner { display: flex; align-items: center; justify-content: space-between; margin-top: 18rpx; padding: 20rpx 24rpx; border-radius: 20rpx; background: #fff1d9; color: #8a6d43; font-size: 21rpx; }
 .preview-dot { display: inline-block; width: 13rpx; height: 13rpx; margin-right: 12rpx; border-radius: 50%; background: #e6ae5d; }
+.preview-banner.cloud-ready { background: #e8f4e3; color: #477154; }
+.preview-banner.cloud-ready .preview-dot { background: #71a87c; }
+.sync-time { margin: 9rpx 6rpx 0; color: #97a099; font-size: 18rpx; text-align: right; }
 .mine-stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 18rpx; }
 .mine-stats view { display: flex; flex-direction: column; align-items: center; padding: 23rpx 6rpx; border-right: 2rpx solid #e8ece3; }
 .mine-stats view:last-child { border-right: 0; }
