@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>小康康的物理世界·小程序预览</title>
+  <link rel="icon" href="../../site/favicon.svg">
+  <link rel="stylesheet" href="preview.css">
+</head>
+<body>
+  <main class="phone" aria-label="微信小程序手机预览">
+    <header class="wx-head"><button id="back" hidden aria-label="返回">‹</button><strong id="navTitle">今日科研简报</strong><span>•••</span></header>
+    <section id="screen" class="screen" aria-live="polite"></section>
+    <nav id="tabbar" class="tabbar">
+      <button class="active" data-page="home"><i>⌂</i><span>首页</span></button>
+      <button data-page="papers"><i>◇</i><span>论文</span></button>
+      <button data-page="news"><i>◌</i><span>新闻</span></button>
+      <button data-page="notices"><i>⌑</i><span>通知</span></button>
+      <button data-page="mine"><i>☺</i><span>我的</span></button>
+    </nav>
+  </main>
+  <script src="preview.js"></script>
+</body>
+</html>

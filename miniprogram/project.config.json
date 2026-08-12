@@ -1,0 +1,25 @@
+{
+  "description": "小康康的物理世界·微信小程序预览版",
+  "packOptions": {
+    "ignore": [
+      "README.md",
+      "preview"
+    ]
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "coverView": true,
+    "showShadowRootInWxmlPanel": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "3.7.12",
+  "appid": "touristappid",
+  "projectname": "nuclear-frontier-miniprogram",
+  "miniprogramRoot": "./",
+  "simulatorType": "wechat",
+  "condition": {}
+}

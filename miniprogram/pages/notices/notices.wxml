@@ -1,0 +1,17 @@
+<view class="page-shell">
+  <view class="eyebrow">DAILY RESEARCH OPPORTUNITIES</view>
+  <view class="page-title">每日通知</view>
+  <view class="page-note">合并展示涉核会议、科研基金与国内外束流实验申请，不杂糅医学、生物或化学通知。</view>
+  <view class="group-grid">
+    <view wx:for="{{groups}}" wx:key="id" class="group-card {{activeGroup === item.id ? 'active' : ''}}" data-id="{{item.id}}" bindtap="chooseGroup">
+      <text class="group-icon">{{item.icon}}</text><text class="group-name">{{item.name}}</text><text class="group-count">{{item.count}}</text>
+    </view>
+  </view>
+  <view class="search-box"><text class="search-icon">⌕</text><input class="search-input" bindinput="onSearch" placeholder="搜索会议、基金、装置或申请单位" /></view>
+  <view class="notice-count">共 {{resultCount}} 条可查看通知</view>
+  <view wx:if="{{loading}}" class="loading-state">正在汇总今日通知…</view>
+  <view wx:elif="{{error}}" class="error-state">{{error}}</view>
+  <view wx:elif="{{!items.length}}" class="empty-state">暂无匹配通知。</view>
+  <block wx:else="true"><item-card wx:for="{{items}}" wx:key="id" item="{{item}}" kind="notice" badge="{{item.noticeGroupLabel}}" bind:open="openItem" /></block>
+  <view class="footer-space"></view>
+</view>

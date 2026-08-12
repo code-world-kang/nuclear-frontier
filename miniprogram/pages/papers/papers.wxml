@@ -1,0 +1,32 @@
+<view class="page-shell">
+  <view class="eyebrow">NUCLEAR PHYSICS LIBRARY</view>
+  <view class="page-title">论文</view>
+  <view class="page-note">核结构、核反应、实验核物理、核衰变与探测器优先，按时间向下浏览。</view>
+
+  <view class="search-box">
+    <text class="search-icon">⌕</text>
+    <input class="search-input" value="{{query}}" bindinput="onSearch" placeholder="搜索题目、摘要、作者、期刊或关键词" confirm-type="search" />
+  </view>
+
+  <scroll-view class="chip-scroll" scroll-x="true" enhanced="true" show-scrollbar="false">
+    <view class="chip-row">
+      <view wx:for="{{categories}}" wx:key="id" class="chip {{activeCategory === item.id ? 'active' : ''}}" data-id="{{item.id}}" bindtap="chooseCategory">
+        {{item.name}} <text class="chip-count">{{item.count}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="result-line">
+    <text>找到 {{resultCount}} 篇</text>
+    <text>已忽略的论文不在此列表显示</text>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading-state">正在读取论文数据…</view>
+  <view wx:elif="{{error}}" class="error-state">{{error}}</view>
+  <view wx:elif="{{!items.length}}" class="empty-state">没有找到匹配的论文，试试更换关键词或研究领域。</view>
+  <block wx:else="true">
+    <item-card wx:for="{{items}}" wx:key="id" item="{{item}}" kind="paper" bind:open="openItem" />
+    <button wx:if="{{hasMore}}" class="load-more secondary-button" bindtap="loadMore">继续向下加载</button>
+  </block>
+  <view class="footer-space"></view>
+</view>

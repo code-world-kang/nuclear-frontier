@@ -1,0 +1,57 @@
+<view class="page-shell">
+  <view class="hero soft-card">
+    <view class="hero-leaf">🌿</view>
+    <view class="eyebrow">DAILY RESEARCH BRIEF</view>
+    <view class="hero-title">今日科研简报</view>
+    <view class="hero-note">为核物理研究者整理的论文、新闻与科研机会</view>
+    <view wx:if="{{updatedAt}}" class="updated-at">数据更新于 {{updatedAt}}</view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading-state">正在收集今日的物理世界…</view>
+  <view wx:elif="{{error}}" class="error-state">{{error}}</view>
+
+  <block wx:else="true">
+    <view class="stats-grid soft-card">
+      <view wx:for="{{stats}}" wx:key="label" class="stat-cell">
+        <text class="stat-label">{{item.label}}</text>
+        <text class="stat-value">{{item.value}}</text>
+      </view>
+    </view>
+
+    <view class="translation-card soft-card">
+      <view class="translation-head">
+        <view><text class="translation-flower">🌼</text><text class="translation-title">中文翻译进度</text></view>
+        <text class="translation-percent">{{translationProgress}}%</text>
+      </view>
+      <view class="progress-track"><view class="progress-value" style="width: {{translationProgress}}%;"></view></view>
+      <view class="translation-note">{{translationText}}，已有译文将优先显示中文。</view>
+    </view>
+
+    <view class="home-split">
+      <view class="feed-column">
+        <view class="section-head">
+          <view class="section-head-title">新闻速递</view>
+          <button class="head-link" data-page="news" bindtap="switchTab">全部 ›</button>
+        </view>
+        <item-card wx:for="{{news}}" wx:key="id" item="{{item}}" kind="news" badge="新闻" compact="true" bind:open="openItem" />
+      </view>
+      <view class="feed-column">
+        <view class="section-head">
+          <view class="section-head-title">每日通知</view>
+          <button class="head-link" data-page="notices" bindtap="switchTab">全部 ›</button>
+        </view>
+        <item-card wx:for="{{notices}}" wx:key="id" item="{{item}}" kind="notice" badge="{{item.noticeGroupLabel || '通知'}}" compact="true" bind:open="openItem" />
+      </view>
+    </view>
+
+    <view class="section-head featured-head">
+      <view>
+        <view class="section-head-title">重点论文</view>
+        <view class="section-head-note">PRL · Nature · Science · Nature Physics · Nature Communications</view>
+      </view>
+      <button class="head-link" data-page="papers" bindtap="switchTab">全部 ›</button>
+    </view>
+    <item-card wx:for="{{featured}}" wx:key="id" item="{{item}}" kind="paper" badge="重点" bind:open="openItem" />
+  </block>
+  <view class="footer-space"></view>
+</view>

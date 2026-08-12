@@ -1,0 +1,52 @@
+<view class="page-shell">
+  <view class="mine-hero soft-card">
+    <view class="mine-avatar">🌱</view>
+    <view><view class="eyebrow">MY RESEARCH SPACE</view><view class="mine-title">我的科研空间</view><view class="mine-note">论文、代码、资料与 Zotero 同步任务集中管理</view></view>
+  </view>
+
+  <view class="preview-banner" bindtap="showCloudInfo">
+    <view><text class="preview-dot"></text><text>当前为本地预览模式</text></view><text>云同步待配置 ›</text>
+  </view>
+
+  <view class="mine-stats soft-card">
+    <view><text>{{favoriteItems.length}}</text><small>收藏</small></view>
+    <view><text>{{noteCount}}</text><small>笔记</small></view>
+    <view><text>{{keywordStats.length}}</text><small>关键词</small></view>
+    <view><text>{{pendingCount}}</text><small>待同步</small></view>
+  </view>
+
+  <view class="section-tabs">
+    <button class="{{activeSection === 'papers' ? 'active' : ''}}" data-section="papers" bindtap="chooseSection">我的论文</button>
+    <button class="{{activeSection === 'code' ? 'active' : ''}}" data-section="code" bindtap="chooseSection">我的代码</button>
+    <button class="{{activeSection === 'resources' ? 'active' : ''}}" data-section="resources" bindtap="chooseSection">参考资料</button>
+  </view>
+
+  <block wx:if="{{activeSection === 'papers'}}">
+    <view wx:if="{{keywordStats.length}}" class="keyword-cloud soft-card">
+      <view class="card-title">我的关键词</view>
+      <view class="keyword-list"><view wx:for="{{keywordStats}}" wx:key="name" class="keyword-pill">{{item.name}} <text>{{item.count}}</text></view></view>
+    </view>
+    <view class="section-head"><view class="section-head-title">收藏论文</view><view class="section-head-note">{{favoriteItems.length}} 篇</view></view>
+    <view wx:if="{{!favoriteItems.length}}" class="empty-state">还没有收藏。在论文、新闻或通知详情页点击“收藏”即可加入。</view>
+    <view wx:for="{{favoriteItems}}" wx:key="id" class="favorite-row soft-card"><view>{{item.title}}</view><text>{{item.type}}</text></view>
+  </block>
+
+  <block wx:elif="{{activeSection === 'code'}}">
+    <view class="code-card soft-card">
+      <view class="code-icon">Git</view><view class="card-title">nuclear-frontier</view>
+      <view class="code-note">科研网站、每日数据采集、中文翻译与小程序源码。</view>
+      <button class="secondary-button" bindtap="copyRepository">复制 GitHub 仓库链接</button>
+    </view>
+  </block>
+
+  <block wx:else="true">
+    <scroll-view class="chip-scroll" scroll-x="true" enhanced="true" show-scrollbar="false"><view class="chip-row">
+      <view wx:for="{{resourceGroups}}" wx:key="id" class="chip {{activeResourceGroup === item.id ? 'active' : ''}}" data-id="{{item.id}}" bindtap="chooseResourceGroup">{{item.name}}</view>
+    </view></scroll-view>
+    <view wx:if="{{!resources.length}}" class="empty-state">暂无参考资料。</view>
+    <view wx:for="{{resources}}" wx:key="id" class="resource-card soft-card" data-url="{{item.url}}" bindtap="copyResource">
+      <view class="resource-title">{{item.title}}</view><view class="resource-note">{{item.description}}</view><view class="resource-foot">点击复制链接 · {{item.section}}</view>
+    </view>
+  </block>
+  <view class="footer-space"></view>
+</view>

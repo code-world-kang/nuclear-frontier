@@ -1,0 +1,16 @@
+<view class="item-card {{compact ? 'compact' : ''}}" bindtap="open" hover-class="item-card-hover">
+  <view class="item-topline">
+    <view class="item-source">{{item.sourceLabel}}</view>
+    <view class="item-badges">
+      <text wx:if="{{item.hasTranslation}}" class="translation-badge">中译</text>
+      <text wx:if="{{badge}}" class="kind-badge {{kind}}">{{badge}}</text>
+    </view>
+  </view>
+  <view class="item-title">{{item.displayTitle}}</view>
+  <view wx:if="{{!compact}}" class="item-description">{{item.cardDescription || item.displayDescription}}</view>
+  <view class="item-footer">
+    <text>{{item.dateLabel || '日期待补充'}}</text>
+    <text wx:if="{{item.categoryNames.length}}">{{item.categoryNames[0]}}</text>
+    <text class="detail-link">查看详情 ›</text>
+  </view>
+</view>

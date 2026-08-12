@@ -1,0 +1,7 @@
+.group-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14rpx; margin-top: 26rpx; }
+.group-card { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10rpx; min-height: 92rpx; padding: 18rpx 20rpx; border: 2rpx solid #e0e8d8; border-radius: 22rpx; background: #fffef9; }
+.group-card.active { border-color: #95c88a; background: #eaf6e2; box-shadow: 0 8rpx 18rpx rgba(83, 126, 80, .08); }
+.group-icon { font-size: 29rpx; }
+.group-name { color: #5a7262; font-size: 23rpx; font-weight: 700; }
+.group-count { color: #819488; font-family: Georgia, serif; font-size: 25rpx; }
+.notice-count { margin: 24rpx 4rpx 18rpx; color: #849289; font-size: 22rpx; }

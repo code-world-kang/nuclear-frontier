@@ -1,0 +1,73 @@
+<view class="page-shell detail-page">
+  <view wx:if="{{loading}}" class="loading-state">正在整理详细信息…</view>
+  <view wx:elif="{{error}}" class="error-state">{{error}}</view>
+  <block wx:elif="{{item}}">
+    <view class="detail-hero soft-card">
+      <view class="detail-source-line"><text>{{item.sourceText}}</text><text wx:if="{{item.hasTranslation}}" class="translation-pill">中文译文</text></view>
+      <view class="detail-title">{{showOriginal ? item.title : item.displayTitle}}</view>
+      <view class="detail-meta">{{item.authorsText}}</view>
+      <view class="detail-meta">{{item.publishedText}} · {{item.categoryText}}</view>
+      <button wx:if="{{item.hasTranslation}}" class="language-toggle" bindtap="toggleOriginal">{{showOriginal ? '返回中文译文' : '查看英文原文'}}</button>
+    </view>
+
+    <view class="detail-actions">
+      <button class="action-button {{favorite ? 'active' : ''}}" bindtap="toggleFavorite">{{favorite ? '★ 已收藏' : '☆ 收藏'}}</button>
+      <button class="action-button {{ignored ? 'danger-active' : ''}}" bindtap="toggleIgnored">{{ignored ? '恢复' : '忽略'}}</button>
+      <button class="action-button" bindtap="toggleCite">Cite</button>
+      <button wx:if="{{item.type === 'paper'}}" class="action-button zotero" bindtap="toggleZotero">存入 Zotero</button>
+    </view>
+
+    <view class="detail-section soft-card">
+      <view class="detail-section-title">{{showOriginal ? '原文摘要 / 介绍' : (item.descriptionZh ? '中文摘要 / 介绍' : '原文摘要 / 介绍')}}</view>
+      <text class="detail-abstract" selectable="true">{{showOriginal ? item.originalDescription : item.displayDescription}}</text>
+      <view wx:if="{{!showOriginal &amp;&amp; item.descriptionZh}}" class="translation-note">下方“查看英文原文”可用于对照核验。</view>
+    </view>
+
+    <view wx:if="{{citeOpen}}" class="inline-panel soft-card">
+      <view class="inline-title">Cite / 引用</view>
+      <view class="format-tabs">
+        <button class="format-tab {{citeFormat === 'bibtex' ? 'active' : ''}}" data-format="bibtex" bindtap="chooseCiteFormat">BibTeX</button>
+        <button class="format-tab {{citeFormat === 'gbt' ? 'active' : ''}}" data-format="gbt" bindtap="chooseCiteFormat">GB/T 7714—2025</button>
+      </view>
+      <text class="citation-box" selectable="true">{{citation}}</text>
+      <button class="secondary-button panel-submit" bindtap="copyCitation">复制引用</button>
+    </view>
+
+    <view wx:if="{{zoteroOpen}}" class="inline-panel zotero-panel soft-card">
+      <view class="inline-title">保存到 Zotero</view>
+      <view class="panel-note">选择集合与分类标签；发布版将通过云端队列同步 PDF、笔记和备注。</view>
+      <view class="field-label">Zotero 集合</view>
+      <input class="panel-input" value="{{zoteroCollection}}" bindinput="onZoteroCollection" placeholder="例如：核结构/待读" />
+      <view class="field-label">分类标签（至少 1 个）</view>
+      <input class="panel-input" value="{{zoteroTagsInput}}" bindinput="onZoteroTags" placeholder="用逗号分隔" />
+      <button class="primary-button panel-submit" bindtap="submitZotero">加入同步队列</button>
+    </view>
+
+    <view class="detail-section soft-card">
+      <view class="detail-section-title">我的关键词</view>
+      <view class="keyword-list">
+        <view wx:for="{{keywords}}" wx:key="*this" class="keyword-pill">{{item}}<text data-index="{{index}}" bindtap="removeKeyword">×</text></view>
+      </view>
+      <view class="keyword-entry"><input value="{{keywordInput}}" bindinput="onKeywordInput" bindconfirm="addKeyword" placeholder="如：DSSD、核衰变、14C(p,2p)" /><button bindtap="addKeyword">添加</button></view>
+    </view>
+
+    <view class="detail-section soft-card">
+      <view class="detail-section-title">我的笔记</view>
+      <textarea class="note-area" value="{{note}}" bindinput="onNoteInput" auto-height="true" maxlength="-1" placeholder="直接在这里记录想法、实验联系或待办事项…" />
+      <button class="primary-button note-save" bindtap="saveNote">保存笔记</button>
+      <view class="preview-warning">预览版暂存于本机；正式版将改为云端同步，不会假装已上传 GitHub。</view>
+    </view>
+
+    <view class="detail-section info-card soft-card">
+      <view class="detail-section-title">条目信息</view>
+      <view class="info-row"><text>来源</text><text>{{item.sourceText}}</text></view>
+      <view class="info-row"><text>DOI</text><text selectable="true">{{item.doiText}}</text></view>
+      <view class="info-row"><text>分类</text><text>{{item.categoryText}}</text></view>
+      <view class="source-actions">
+        <button class="secondary-button" bindtap="copySourceLink">复制官方原文链接</button>
+        <button wx:if="{{item.pdf_url}}" class="secondary-button" bindtap="copyPdfLink">复制 PDF 链接</button>
+      </view>
+    </view>
+  </block>
+  <view class="footer-space"></view>
+</view>

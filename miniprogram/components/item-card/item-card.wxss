@@ -1,0 +1,25 @@
+.item-card {
+  margin-bottom: 18rpx;
+  padding: 28rpx;
+  border: 2rpx solid rgba(133, 168, 119, 0.22);
+  border-radius: 26rpx;
+  background: rgba(255, 255, 251, 0.96);
+  box-shadow: 0 12rpx 28rpx rgba(66, 94, 71, 0.07);
+  transition: transform 0.18s ease;
+}
+
+.item-card-hover { transform: scale(0.985); }
+.item-card.compact { min-height: 180rpx; }
+.item-topline, .item-footer, .item-badges { display: flex; align-items: center; }
+.item-topline, .item-footer { justify-content: space-between; gap: 16rpx; }
+.item-source { overflow: hidden; color: #6e8b75; font-size: 22rpx; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.item-badges { flex-shrink: 0; gap: 8rpx; }
+.translation-badge, .kind-badge { padding: 6rpx 12rpx; border-radius: 999rpx; font-size: 19rpx; font-weight: 700; }
+.translation-badge { background: #e3f3dc; color: #397150; }
+.kind-badge { background: #fff0d5; color: #9a6a2f; }
+.kind-badge.news { background: #e5f1f5; color: #477386; }
+.kind-badge.notice { background: #f5e9ee; color: #8a5c70; }
+.item-title { margin-top: 17rpx; color: #345f43; font-family: Georgia, "Songti SC", serif; font-size: 31rpx; font-weight: 800; line-height: 1.42; }
+.item-description { display: -webkit-box; overflow: hidden; margin-top: 15rpx; color: #6f7f74; font-size: 24rpx; line-height: 1.68; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+.item-footer { margin-top: 20rpx; padding-top: 17rpx; border-top: 2rpx solid #edf1e8; color: #92a096; font-size: 20rpx; }
+.detail-link { margin-left: auto; color: #4d8661; font-weight: 700; }

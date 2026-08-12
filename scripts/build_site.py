@@ -15,6 +15,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 CONFIG = ROOT / "config"
 PUBLIC_DATA = ROOT / "site" / "data"
+MINIPROGRAM_PREVIEW = ROOT / "miniprogram" / "preview"
+PUBLIC_MINIPROGRAM_PREVIEW = ROOT / "site" / "miniprogram-preview"
 
 
 def load(path: Path):
@@ -68,6 +70,10 @@ def main() -> None:
         json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     (ROOT / "site" / ".nojekyll").touch()
+    if MINIPROGRAM_PREVIEW.is_dir():
+        PUBLIC_MINIPROGRAM_PREVIEW.mkdir(parents=True, exist_ok=True)
+        for name in ("index.html", "preview.css", "preview.js"):
+            shutil.copy2(MINIPROGRAM_PREVIEW / name, PUBLIC_MINIPROGRAM_PREVIEW / name)
     history_manifest = build_history_site()
     print(f"站点数据已构建：{PUBLIC_DATA}")
     print(f"历史索引：{history_manifest['indexed_papers']} 篇 / {history_manifest['indexed_months']} 个月份")

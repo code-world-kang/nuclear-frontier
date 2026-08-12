@@ -1,0 +1,15 @@
+<view class="page-shell">
+  <view class="eyebrow">OFFICIAL PHYSICS NEWS</view>
+  <view class="page-title">新闻速递</view>
+  <view class="page-note">只展示物理与核物理相关的科研新闻，官方来源、中文优先、原文可核验。</view>
+  <view class="search-box"><text class="search-icon">⌕</text><input class="search-input" bindinput="onSearch" placeholder="搜索新闻题目、介绍或来源" /></view>
+  <scroll-view class="chip-scroll" scroll-x="true" enhanced="true" show-scrollbar="false"><view class="chip-row">
+    <view wx:for="{{categories}}" wx:key="id" class="chip {{activeCategory === item.id ? 'active' : ''}}" data-id="{{item.id}}" bindtap="chooseCategory">{{item.name}} · {{item.count}}</view>
+  </view></scroll-view>
+  <view class="news-count">共 {{resultCount}} 条新闻</view>
+  <view wx:if="{{loading}}" class="loading-state">正在读取物理新闻…</view>
+  <view wx:elif="{{error}}" class="error-state">{{error}}</view>
+  <view wx:elif="{{!items.length}}" class="empty-state">暂无匹配新闻。</view>
+  <block wx:else="true"><item-card wx:for="{{items}}" wx:key="id" item="{{item}}" kind="news" badge="新闻" bind:open="openItem" /></block>
+  <view class="footer-space"></view>
+</view>

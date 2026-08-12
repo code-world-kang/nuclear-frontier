@@ -1,0 +1,30 @@
+.mine-hero { display: flex; align-items: center; gap: 24rpx; padding: 30rpx; background: linear-gradient(140deg, #eef8e5, #fff5e6); }
+.mine-avatar { display: grid; place-items: center; width: 100rpx; height: 100rpx; flex-shrink: 0; border-radius: 50%; background: #fffef9; box-shadow: 0 10rpx 24rpx rgba(60, 96, 67, .1); font-size: 51rpx; }
+.mine-title { margin-top: 7rpx; color: #355f43; font-family: Georgia, "Songti SC", serif; font-size: 35rpx; font-weight: 800; }
+.mine-note { margin-top: 8rpx; color: #7c897f; font-size: 21rpx; }
+.preview-banner { display: flex; align-items: center; justify-content: space-between; margin-top: 18rpx; padding: 20rpx 24rpx; border-radius: 20rpx; background: #fff1d9; color: #8a6d43; font-size: 21rpx; }
+.preview-dot { display: inline-block; width: 13rpx; height: 13rpx; margin-right: 12rpx; border-radius: 50%; background: #e6ae5d; }
+.mine-stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 18rpx; }
+.mine-stats view { display: flex; flex-direction: column; align-items: center; padding: 23rpx 6rpx; border-right: 2rpx solid #e8ece3; }
+.mine-stats view:last-child { border-right: 0; }
+.mine-stats text { color: #4b7957; font-family: Georgia, serif; font-size: 34rpx; font-weight: 700; }
+.mine-stats small { margin-top: 5rpx; color: #8a978e; font-size: 19rpx; }
+.section-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9rpx; margin-top: 24rpx; padding: 8rpx; border-radius: 20rpx; background: #eaeee5; }
+.section-tabs button { min-height: 66rpx; padding: 0 8rpx; border-radius: 16rpx; background: transparent; color: #748278; font-size: 22rpx; line-height: 66rpx; }
+.section-tabs button::after { border: 0; }
+.section-tabs button.active { background: #fffef9; color: #3f704f; font-weight: 700; box-shadow: 0 6rpx 14rpx rgba(67, 92, 70, .08); }
+.keyword-cloud, .code-card { margin-top: 20rpx; padding: 28rpx; }
+.card-title { color: #3c6649; font-family: Georgia, "Songti SC", serif; font-size: 28rpx; font-weight: 800; }
+.keyword-list { display: flex; flex-wrap: wrap; gap: 10rpx; margin-top: 18rpx; }
+.keyword-pill { padding: 10rpx 16rpx; border-radius: 99rpx; background: #e8f3e1; color: #4d7359; font-size: 21rpx; }
+.keyword-pill text { margin-left: 7rpx; color: #8a9a8e; }
+.favorite-row { display: flex; align-items: center; justify-content: space-between; gap: 20rpx; margin-bottom: 14rpx; padding: 24rpx; }
+.favorite-row view { color: #456650; font-size: 24rpx; line-height: 1.5; }
+.favorite-row text { flex-shrink: 0; color: #95a198; font-size: 19rpx; }
+.code-icon { display: grid; place-items: center; width: 76rpx; height: 76rpx; margin-bottom: 20rpx; border-radius: 22rpx; background: #e5f2de; color: #427052; font-family: Georgia, serif; font-weight: 800; }
+.code-note { margin: 16rpx 0 22rpx; color: #748178; font-size: 23rpx; line-height: 1.65; }
+.code-card button { width: 100%; }
+.resource-card { margin-top: 15rpx; padding: 25rpx; }
+.resource-title { color: #3f684b; font-size: 27rpx; font-weight: 700; }
+.resource-note { margin-top: 11rpx; color: #748379; font-size: 22rpx; line-height: 1.6; }
+.resource-foot { margin-top: 15rpx; color: #96a198; font-size: 19rpx; }

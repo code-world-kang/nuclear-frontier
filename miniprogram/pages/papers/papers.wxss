@@ -1,0 +1,5 @@
+.chip-count { margin-left: 10rpx; color: #9aa79e; font-size: 19rpx; }
+.chip.active .chip-count { color: #5b8a68; }
+.result-line { display: flex; justify-content: space-between; margin: 24rpx 4rpx 18rpx; color: #839187; font-size: 21rpx; }
+.result-line text:last-child { max-width: 58%; text-align: right; }
+.load-more { width: 100%; margin-top: 12rpx; }
