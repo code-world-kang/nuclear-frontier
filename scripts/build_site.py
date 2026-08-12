@@ -9,6 +9,7 @@ from collections import Counter
 from pathlib import Path
 
 from build_history import build_history_site
+from build_wechat_digest import build_digest
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -75,8 +76,15 @@ def main() -> None:
         for name in ("index.html", "preview.css", "preview.js"):
             shutil.copy2(MINIPROGRAM_PREVIEW / name, PUBLIC_MINIPROGRAM_PREVIEW / name)
     history_manifest = build_history_site()
+    wechat_digest = build_digest()
     print(f"站点数据已构建：{PUBLIC_DATA}")
     print(f"历史索引：{history_manifest['indexed_papers']} 篇 / {history_manifest['indexed_months']} 个月份")
+    print(
+        "公众号简报："
+        f"{wechat_digest['counts']['papers']} 论文 / "
+        f"{wechat_digest['counts']['news']} 新闻 / "
+        f"{wechat_digest['counts']['notices']} 通知"
+    )
 
 
 if __name__ == "__main__":

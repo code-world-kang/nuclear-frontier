@@ -48,14 +48,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/personal/state.json site/data/personal-state.json site/data/public-favorites.json
+          git add data/personal/state.json site/data/personal-state.json site/data/public-favorites.json site/wechat-digest wechat-official-account
           if ! git diff --cached --quiet; then
             git commit -m "data: 同步 GitHub Issue 个人数据"
             for attempt in 1 2 3; do
               git fetch origin main
               git rebase origin/main
               python scripts/build_site.py
-              git add site/data
+              git add site/data site/wechat-digest wechat-official-account
               if ! git diff --cached --quiet; then
                 git commit --amend --no-edit
               fi

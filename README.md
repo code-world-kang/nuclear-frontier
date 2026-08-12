@@ -60,6 +60,18 @@ GitHub Actions 在每天北京时间 10:17 左右执行（预留 arXiv 冬令时
 - 一键导出 Zotero 可导入的 RIS；每篇论文提供 Cite，可复制或下载 BibTeX 与 GB/T 7714—2025，并在来源提供时包含卷、期、页码、总页数、月份与出版社；
 - 每篇论文可一键保存到本机 Zotero：保存前必须选择 Zotero 收藏夹和至少一个研究分类，分类同时写入 Zotero 标签；保存完整元数据、网站笔记、备注和收藏关键词，并优先下载公开 PDF，失败时再交给 Zotero 的开放获取解析器；
 - 桌面端、平板和手机端响应式布局。
+- 每日自动生成适合微信公众号编辑器的中文科研简报，公众号负责推送，网站保留完整数据库与交互功能。
+
+## 微信公众号
+
+当前发布策略已调整为“公众号简报 + GitHub Pages 完整网站”：
+
+- 公众号每日简报预览：<https://code-world-kang.github.io/nuclear-frontier/wechat-digest/>
+- 可复制的发布稿：[`wechat-official-account/index.html`](wechat-official-account/index.html)
+- 每次数据更新与网站构建时自动生成，中文优先、原文作为补充。
+- 小程序代码继续保留，暂不作为当前首发渠道。
+
+自动写入公众号草稿箱需要账户具备相应 API 权限。`AppSecret` 只能放在 GitHub Actions Secrets 中，不得写入公开仓库。
 
 工作流也支持在 GitHub Actions 页面使用 `workflow_dispatch` 立即更新。
 
