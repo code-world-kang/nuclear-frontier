@@ -73,7 +73,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-reactions",
@@ -146,6 +146,111 @@
     "abstract_checked_sources": []
   },
   {
+    "id": "fa8a2ae1e3765163",
+    "type": "paper",
+    "title": "Radiative Corrections to Two-Neutrino Double-Beta Decay",
+    "abstract": "We use heavy-nucleus effective field theory to compute radiative corrections to two-neutrino double-$\\beta$ decay ($2\\nu\\beta\\beta$). Our main result is the first derivation of a universal radiative-correction factor for double-weak decays -- the analogue of the Sirlin function in single-$\\beta$ decay -- independent of nuclear matrix elements and excitation energies. This\"double-weak Sirlin function\"depends on the individual electron energies as well as their relative angle and differs significantly from the approximation obtained by summing two single-$\\beta$ decay Sirlin functions. In addition, we calculate the nuclear-structure-dependent component of the radiative corrections and find that they can still be neglected at current experimental sensitivities. On the other hand, the double-weak Sirlin function induces distortions of the electron energies and angular spectra that are comparable in size to the leading nuclear-structure corrections parametrized by the ratio of nuclear matrix elements, $\\xi_{31}$. Our results indicate that extractions of nuclear structure information and tests of the Standard Model from high-precision $2\\nu\\beta\\beta$ measurements must include double-weak radiative corrections, implying that recent extractions of $\\xi_{31}$ should be revisited.",
+    "abstract_status": "full",
+    "abstract_source": "Semantic Scholar",
+    "authors": [
+      "Jordy de Vries",
+      "Emanuele Mereghetti",
+      "Saad el Morabit",
+      "Stefan Sandner"
+    ],
+    "published": "2026-08-11",
+    "updated": "2026-08-11",
+    "source": "Physical Review Letters",
+    "source_short": "PRL",
+    "source_type": "journal",
+    "doi": "10.1103/gbjc-wsdn",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1103/gbjc-wsdn",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-decay",
+      "nuclear-structure",
+      "particle-cross"
+    ],
+    "tags": [
+      "nuclear structure",
+      "beta decay",
+      "neutrino",
+      "standard model"
+    ],
+    "primary_topic": "nuclear-decay",
+    "methods": [
+      "theoretical",
+      "review"
+    ],
+    "classification_confidence": 0.8,
+    "classification_evidence": [
+      "nuclear structure",
+      "beta decay",
+      "neutrino",
+      "standard model"
+    ],
+    "importance": 76,
+    "score_reasons": [
+      "来源权重 +48",
+      "核物理研究侧重 +22",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://link.aps.org/licenses/aps-default-license",
+      "https://link.aps.org/licenses/aps-default-accepted-manuscript-license"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "de Vries, Jordy",
+      "Mereghetti, Emanuele",
+      "el Morabit, Saad",
+      "Sandner, Stefan"
+    ],
+    "journal_abbrev": "Phys. Rev. Lett.",
+    "volume": "137",
+    "issue": "7",
+    "pages": "072501",
+    "numpages": "",
+    "publisher": "American Physical Society (APS)",
+    "publisher_url": "https://link.aps.org/doi/10.1103/gbjc-wsdn",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-08-12T04:12:38+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-12T04:12:38+00:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-08-12T04:12:38+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-08-12T04:12:38+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ],
+    "semantic_scholar_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-12T12:46:34+00:00",
+      "source": "Semantic Scholar"
+    }
+  },
+  {
     "id": "5a6079d97fa79d10",
     "type": "paper",
     "title": "Sensitivity of neutrinoless double beta decays from a combined analysis of ground and excited states",
@@ -184,7 +289,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-decay",
@@ -224,98 +329,6 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326004752",
     "citation_metadata_checked": true,
     "abstract_checked_sources": [
-      "INSPIRE"
-    ]
-  },
-  {
-    "id": "fa8a2ae1e3765163",
-    "type": "paper",
-    "title": "Radiative Corrections to Two-Neutrino Double-Beta Decay",
-    "abstract": "",
-    "abstract_status": "missing",
-    "abstract_source": "",
-    "authors": [
-      "Jordy de Vries",
-      "Emanuele Mereghetti",
-      "Saad el Morabit",
-      "Stefan Sandner"
-    ],
-    "published": "2026-08-11",
-    "updated": "2026-08-11",
-    "source": "Physical Review Letters",
-    "source_short": "PRL",
-    "source_type": "journal",
-    "doi": "10.1103/gbjc-wsdn",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/gbjc-wsdn",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-decay",
-      "particle-cross"
-    ],
-    "tags": [
-      "beta decay",
-      "neutrino"
-    ],
-    "primary_topic": "nuclear-decay",
-    "methods": [
-      "review"
-    ],
-    "classification_confidence": 0.64,
-    "classification_evidence": [
-      "beta decay",
-      "neutrino"
-    ],
-    "importance": 72,
-    "score_reasons": [
-      "来源权重 +48",
-      "核物理研究侧重 +22",
-      "跨领域关联 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license",
-      "https://link.aps.org/licenses/aps-default-accepted-manuscript-license"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "de Vries, Jordy",
-      "Mereghetti, Emanuele",
-      "el Morabit, Saad",
-      "Sandner, Stefan"
-    ],
-    "journal_abbrev": "Phys. Rev. Lett.",
-    "volume": "137",
-    "issue": "7",
-    "pages": "072501",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/gbjc-wsdn",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-08-12T04:12:38+00:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "blocked",
-      "checked_at": "2026-08-12T04:12:38+00:00",
-      "source": "Publisher",
-      "error": "HTTP Error 403: Forbidden"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-08-12T04:12:38+00:00",
-      "source": "OpenAlex"
-    },
-    "abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-08-12T04:12:38+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
       "INSPIRE"
     ]
   },
@@ -370,7 +383,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -545,7 +558,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "OpenAlex",
     "primary_topic": "nuclear-decay",
@@ -644,7 +657,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-reactions",
@@ -769,7 +782,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/7cw1-f5dj",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-11T04:01:53+00:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-11T16:57:44+08:00",
@@ -838,7 +851,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "OpenAlex",
     "primary_topic": "nuclear-decay",
@@ -932,7 +945,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-decay",
@@ -1021,7 +1034,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-decay",
@@ -1107,7 +1120,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "OpenAlex",
     "primary_topic": "nuclear-decay",
@@ -1203,7 +1216,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-decay",
@@ -1307,7 +1320,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -1443,7 +1456,7 @@
     "figures": [],
     "figure_status": "license_blocked",
     "first_seen": "2026-08-12T04:12:38+00:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_checked_sources": [],
     "citation_authors": [],
     "journal_abbrev": "",
@@ -1496,7 +1509,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -1589,7 +1602,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-structure",
@@ -1672,7 +1685,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -1757,7 +1770,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -1846,7 +1859,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -1951,7 +1964,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "Publisher metadata (Springer)",
     "primary_topic": "nuclear-reactions",
@@ -2091,7 +2104,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-decay",
@@ -2200,7 +2213,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-decay",
@@ -2394,7 +2407,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -2512,7 +2525,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -2601,7 +2614,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -2688,7 +2701,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "Semantic Scholar",
     "primary_topic": "nuclear-structure",
@@ -2785,7 +2798,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-structure",
@@ -2869,7 +2882,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -2956,7 +2969,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -3057,7 +3070,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-reactions",
@@ -3160,7 +3173,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "frontiers",
@@ -3183,10 +3196,10 @@
       "Radaelli, P. G."
     ],
     "journal_abbrev": "Nature",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
+    "volume": "656",
+    "issue": "8127",
+    "pages": "338-342",
+    "numpages": "5",
     "publisher": "Springer Science and Business Media LLC",
     "publisher_url": "https://www.nature.com/articles/s41586-026-10845-5",
     "citation_metadata_checked": true,
@@ -3330,7 +3343,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "detectors-daq",
@@ -3418,7 +3431,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "detectors-daq",
@@ -3623,7 +3636,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "detectors-daq",
@@ -3754,7 +3767,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/fsh5-b73x",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-11T15:32:07+00:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -3797,7 +3810,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-12T04:17:43+00:00",
+    "last_seen": "2026-08-12T12:46:34+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "theoretical-nuclear",
