@@ -122,6 +122,53 @@ def zotero_health() -> dict[str, Any]:
     }
 
 
+def zotero_targets() -> dict[str, Any]:
+    """返回 Zotero 当前可写的文库/收藏夹树。"""
+    _, body, _ = zotero_request(
+        "/connector/getSelectedCollection",
+        payload={"switchToReadableLibrary": False},
+        method="POST",
+    )
+    try:
+        raw = json.loads(body.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise BridgeError("Zotero 未返回可用的收藏夹列表", 502) from exc
+    targets = []
+    for value in raw.get("targets", []):
+        target_id = compact(value.get("id"), 30)
+        if not re.fullmatch(r"[LC]\d+", target_id):
+            continue
+        targets.append(
+            {
+                "id": target_id,
+                "name": compact(value.get("name"), 500),
+                "level": max(0, min(int(value.get("level") or 0), 12)),
+                "recent": bool(value.get("recent")),
+                "files_editable": bool(value.get("filesEditable", True)),
+            }
+        )
+    current_id = f"C{raw['id']}" if raw.get("id") else f"L{raw.get('libraryID', 1)}"
+    if not any(value["id"] == current_id for value in targets) and targets:
+        current_id = targets[0]["id"]
+    return {
+        "ok": True,
+        "current_id": current_id,
+        "current_name": compact(raw.get("name") or raw.get("libraryName"), 500),
+        "targets": targets,
+    }
+
+
+def validated_target(value: Any) -> str:
+    requested = compact(value, 30)
+    available = zotero_targets()
+    ids = {target["id"] for target in available["targets"]}
+    if not requested:
+        return available["current_id"]
+    if requested not in ids:
+        raise BridgeError("选定的 Zotero 收藏夹已不存在，请重新选择")
+    return requested
+
+
 def local_items(query: str) -> list[dict[str, Any]]:
     params = urllib.parse.urlencode(
         {"q": query, "itemType": "-attachment", "format": "json", "limit": 100}
@@ -297,8 +344,19 @@ def save_resolved_pdf(session_id: str, connector_id: str) -> bool:
     return status == 201
 
 
-def save_to_zotero(item: dict[str, Any]) -> dict[str, Any]:
+def save_to_zotero(item: dict[str, Any], *, target: Any = "", classification: Any = None) -> dict[str, Any]:
     zotero_health()
+    target_id = validated_target(target)
+    class_tags = []
+    seen_class_tags = set()
+    for value in classification if isinstance(classification, list) else []:
+        value = compact(value, 200)
+        key = value.casefold()
+        if value and key not in seen_class_tags:
+            seen_class_tags.add(key)
+            class_tags.append(value)
+    if not class_tags:
+        raise BridgeError("请至少选择一个研究分类")
     existing = find_existing(item)
     if existing:
         return {
@@ -321,6 +379,14 @@ def save_to_zotero(item: dict[str, Any]) -> dict[str, Any]:
     status, _, _ = zotero_request("/connector/saveItems", payload=payload, method="POST", timeout=45)
     if status != 201:
         raise BridgeError("Zotero 未能创建论文条目", 502)
+
+    # SaveItems 先写入 Zotero 当前位置；UpdateSession 再把新条目
+    # 移到用户选定的收藏夹，并将本次分类作为 Zotero 标签。
+    zotero_request(
+        "/connector/updateSession",
+        payload={"sessionID": session_id, "target": target_id, "tags": class_tags, "note": ""},
+        method="POST",
+    )
 
     pdf_saved = False
     pdf_method = "none"
@@ -349,6 +415,8 @@ def save_to_zotero(item: dict[str, Any]) -> dict[str, Any]:
         "pdf_saved": pdf_saved,
         "pdf_method": pdf_method,
         "pdf_error": pdf_error,
+        "target": target_id,
+        "classification": class_tags,
         "message": (
             "已保存论文、笔记和 PDF 到 Zotero"
             if pdf_saved
@@ -398,14 +466,14 @@ class BridgeHandler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:  # noqa: N802
         origin = self.allowed_origin()
-        if self.path != "/health":
+        if self.path not in {"/health", "/collections"}:
             self.send_json(404, {"ok": False, "message": "未找到该接口"}, origin)
             return
         if self.headers.get("Origin") and not origin:
             self.send_json(403, {"ok": False, "message": "未授权的网站来源"})
             return
         try:
-            result = {"bridge": True, **zotero_health()}
+            result = zotero_targets() if self.path == "/collections" else {"bridge": True, **zotero_health()}
             self.send_json(200, result, origin)
         except BridgeError as exc:
             self.send_json(exc.status, {"ok": False, "bridge": True, "message": str(exc)}, origin)
@@ -425,7 +493,11 @@ class BridgeHandler(BaseHTTPRequestHandler):
             payload = json.loads(self.rfile.read(length).decode("utf-8"))
             if not isinstance(payload, dict) or not isinstance(payload.get("item"), dict):
                 raise BridgeError("论文数据格式不正确")
-            result = save_to_zotero(payload["item"])
+            result = save_to_zotero(
+                payload["item"],
+                target=payload.get("target", ""),
+                classification=payload.get("classification", []),
+            )
             self.send_json(200, result, origin)
         except (UnicodeDecodeError, json.JSONDecodeError):
             self.send_json(400, {"ok": False, "message": "JSON 数据格式不正确"}, origin)

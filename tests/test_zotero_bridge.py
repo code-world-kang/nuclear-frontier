@@ -66,14 +66,18 @@ class ZoteroBridgeTests(unittest.TestCase):
             calls.append((path, kwargs))
             if path == "/connector/saveItems":
                 return 201, b"", {}
+            if path == "/connector/updateSession":
+                return 200, b"{}", {}
             if path == "/connector/hasAttachmentResolvers":
                 return 200, b"false", {}
             raise AssertionError(path)
 
         with mock.patch.object(BRIDGE, "zotero_health", return_value={"ok": True}), mock.patch.object(
+            BRIDGE, "validated_target", return_value="C78"
+        ), mock.patch.object(
             BRIDGE, "find_existing", return_value=None
         ), mock.patch.object(BRIDGE, "zotero_request", side_effect=fake_request):
-            result = BRIDGE.save_to_zotero(sample)
+            result = BRIDGE.save_to_zotero(sample, target="C78", classification=["核结构", "重点参考"])
 
         self.assertTrue(result["metadata_saved"])
         self.assertTrue(result["note_saved"])
@@ -81,12 +85,18 @@ class ZoteroBridgeTests(unittest.TestCase):
         save_payload = next(kwargs["payload"] for path, kwargs in calls if path == "/connector/saveItems")
         self.assertEqual(save_payload["items"][0]["id"], "paper-1")
         self.assertTrue(save_payload["items"][0]["notes"])
+        update_payload = next(kwargs["payload"] for path, kwargs in calls if path == "/connector/updateSession")
+        self.assertEqual(update_payload["target"], "C78")
+        self.assertEqual(update_payload["tags"], ["核结构", "重点参考"])
+        self.assertEqual(result["classification"], ["核结构", "重点参考"])
 
     def test_duplicate_is_not_created(self):
         with mock.patch.object(BRIDGE, "zotero_health", return_value={"ok": True}), mock.patch.object(
+            BRIDGE, "validated_target", return_value="L1"
+        ), mock.patch.object(
             BRIDGE, "find_existing", return_value={"key": "ABC123"}
         ):
-            result = BRIDGE.save_to_zotero(self.sample())
+            result = BRIDGE.save_to_zotero(self.sample(), target="L1", classification=["核结构"])
         self.assertTrue(result["already_exists"])
         self.assertIn("未重复创建", result["message"])
 
@@ -97,6 +107,33 @@ class ZoteroBridgeTests(unittest.TestCase):
             existing = BRIDGE.find_existing(sample)
         self.assertIsNotNone(existing)
         lookup.assert_called_once_with(sample["title"].casefold())
+
+    def test_classification_is_required(self):
+        with mock.patch.object(BRIDGE, "zotero_health", return_value={"ok": True}), mock.patch.object(
+            BRIDGE, "validated_target", return_value="L1"
+        ):
+            with self.assertRaisesRegex(BRIDGE.BridgeError, "至少选择一个"):
+                BRIDGE.save_to_zotero(self.sample(), target="L1", classification=[])
+
+    def test_collection_targets_keep_tree_levels(self):
+        response = {
+            "libraryID": 1,
+            "libraryName": "我的文库",
+            "id": 78,
+            "name": "Detector",
+            "targets": [
+                {"id": "L1", "name": "我的文库", "level": 0, "filesEditable": True},
+                {"id": "C78", "name": "Detector", "level": 1, "filesEditable": True, "recent": True},
+                {"id": "S9", "name": "已保存搜索", "level": 1},
+            ],
+        }
+        with mock.patch.object(
+            BRIDGE, "zotero_request", return_value=(200, __import__("json").dumps(response).encode(), {})
+        ):
+            result = BRIDGE.zotero_targets()
+        self.assertEqual(result["current_id"], "C78")
+        self.assertEqual([value["id"] for value in result["targets"]], ["L1", "C78"])
+        self.assertEqual(result["targets"][1]["level"], 1)
 
 
 if __name__ == "__main__":

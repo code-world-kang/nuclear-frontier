@@ -23,6 +23,7 @@ const state = {
   historyMonthQueue: [], historyLoadedMonths: new Set(), historySearching: false,
   historyProgress: '', historyRequestToken: 0, historyTotalMatches: 0,
   zoteroStatusById: new Map(),
+  zoteroDraft: null,
 };
 const citationMetadataRequests = new Map();
 const PRIMARY_NUCLEAR_CATEGORIES = new Set([
@@ -915,20 +916,134 @@ function zoteroButtonFor(item) {
   button.dataset.zoteroSave = item.id;
   button.textContent = zoteroButtonLabel(item);
   button.setAttribute('aria-label', `将论文《${item.title}》、PDF 和笔记保存到 Zotero`);
-  button.addEventListener('click', () => void saveToZotero(item));
+  button.addEventListener('click', () => void openZoteroClassification(item));
   requestAnimationFrame(() => updateZoteroButtons(item));
   return button;
 }
 
+function defaultZoteroClassification(item) {
+  return uniqueKeywords([
+    ...(item.categories || []).map(categoryName),
+    ...favoriteKeywords(item.id),
+  ]);
+}
+
+async function loadZoteroTargets(item) {
+  try {
+    const response = await fetch(`${ZOTERO_BRIDGE_URL}/collections`, {
+      headers: { 'X-Nuclear-Frontier-Bridge': '1' },
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || !result.ok) throw new Error(result.message || `本机桥返回 ${response.status}`);
+    if (state.zoteroDraft?.itemId !== item.id) return;
+    state.zoteroDraft.targets = result.targets || [];
+    state.zoteroDraft.targetId = result.current_id || result.targets?.[0]?.id || '';
+    state.zoteroDraft.loading = false;
+    state.zoteroDraft.error = '';
+  } catch (error) {
+    if (state.zoteroDraft?.itemId !== item.id) return;
+    const reason = error instanceof Error ? error.message : String(error);
+    state.zoteroDraft.loading = false;
+    state.zoteroDraft.error = reason.includes('Failed to fetch')
+      ? '无法连接本机 Zotero，请确认 Zotero 和本机桥已启动'
+      : reason;
+  }
+  refreshPaperCardViews();
+}
+
+function openZoteroClassification(item) {
+  state.zoteroDraft = {
+    itemId: item.id,
+    targets: [],
+    targetId: '',
+    classification: new Set(defaultZoteroClassification(item)),
+    loading: true,
+    error: '',
+  };
+  refreshPaperCardViews();
+  void loadZoteroTargets(item);
+}
+
+function closeZoteroClassification() {
+  state.zoteroDraft = null;
+  refreshPaperCardViews();
+}
+
+function zoteroClassificationPanelFor(item) {
+  const draft = state.zoteroDraft;
+  if (!draft || draft.itemId !== item.id) return null;
+  const panel = document.createElement('section');
+  panel.className = 'zotero-classification-panel';
+  panel.dataset.zoteroClassification = item.id;
+
+  const choices = uniqueKeywords([
+    ...defaultZoteroClassification(item),
+    ...draft.classification,
+    '重点参考', '待阅论文', '实验方法', '理论模型', '探测器',
+  ]);
+  panel.innerHTML = `
+    <div class="inline-panel-head"><b>🗂 保存前分类</b><small>分类会同时保存为 Zotero 标签</small></div>
+    <label class="zotero-target-field"><span>Zotero 收藏夹</span><select aria-label="Zotero 收藏夹" ${draft.loading ? 'disabled' : ''}></select></label>
+    <div class="zotero-classification-label"><span>研究分类（至少选一项）</span><small>已根据论文内容预选</small></div>
+    <div class="zotero-classification-tags">${choices.map(value => `<button type="button" class="${draft.classification.has(value) ? 'active' : ''}" data-zotero-class="${text(value)}" aria-pressed="${draft.classification.has(value)}">${text(value)}</button>`).join('')}</div>
+    <div class="zotero-custom-class"><input maxlength="80" placeholder="自定义分类，如 14C(p,2p)、DSSD…" aria-label="自定义 Zotero 分类"><button type="button">添加</button></div>
+    ${draft.loading ? '<p class="zotero-panel-status">正在读取 Zotero 收藏夹…</p>' : ''}
+    ${draft.error ? `<p class="zotero-panel-status error">${text(draft.error)}</p>` : ''}
+    <div class="zotero-classification-actions"><button type="button" class="cancel">取消</button><button type="button" class="confirm" ${draft.loading || draft.error || !draft.classification.size ? 'disabled' : ''}>确认分类并保存</button></div>`;
+
+  const select = $('select', panel);
+  if (draft.targets.length) {
+    draft.targets.forEach(target => {
+      const option = document.createElement('option');
+      option.value = target.id;
+      option.textContent = `${'　'.repeat(Math.max(0, target.level))}${target.name}${target.recent ? ' · 最近' : ''}`;
+      option.selected = target.id === draft.targetId;
+      select.append(option);
+    });
+  } else {
+    const option = document.createElement('option');
+    option.textContent = draft.loading ? '读取中…' : '暂无可用收藏夹';
+    select.append(option);
+  }
+  select.addEventListener('change', () => { if (state.zoteroDraft?.itemId === item.id) state.zoteroDraft.targetId = select.value; });
+  $$('[data-zotero-class]', panel).forEach(button => button.addEventListener('click', () => {
+    if (state.zoteroDraft?.itemId !== item.id) return;
+    const value = button.dataset.zoteroClass;
+    if (state.zoteroDraft.classification.has(value)) state.zoteroDraft.classification.delete(value);
+    else state.zoteroDraft.classification.add(value);
+    refreshPaperCardViews();
+  }));
+  const input = $('.zotero-custom-class input', panel);
+  const addCustom = () => {
+    const value = normalizeKeyword(input.value);
+    if (!value || state.zoteroDraft?.itemId !== item.id) return;
+    state.zoteroDraft.classification.add(value);
+    refreshPaperCardViews();
+  };
+  $('.zotero-custom-class button', panel).addEventListener('click', addCustom);
+  input.addEventListener('keydown', event => { if (event.key === 'Enter') { event.preventDefault(); addCustom(); } });
+  $('.cancel', panel).addEventListener('click', closeZoteroClassification);
+  $('.confirm', panel).addEventListener('click', () => void saveToZotero(item));
+  return panel;
+}
+
 async function saveToZotero(item) {
   if (state.zoteroStatusById.get(item.id)?.kind === 'saving') return;
+  const draft = state.zoteroDraft;
+  if (!draft || draft.itemId !== item.id || !draft.targetId || !draft.classification.size) {
+    return openZoteroClassification(item);
+  }
   state.zoteroStatusById.set(item.id, { kind: 'saving', message: '正在连接本机 Zotero…' });
   updateZoteroButtons(item);
   try {
     const response = await fetch(`${ZOTERO_BRIDGE_URL}/save`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'X-Nuclear-Frontier-Bridge': '1' },
-      body: JSON.stringify({ item: zoteroPayload(item) }),
+      body: JSON.stringify({
+        item: zoteroPayload(item),
+        target: draft.targetId,
+        classification: [...draft.classification],
+      }),
     });
     const result = await response.json().catch(() => ({}));
     if (!response.ok || !result.ok) throw new Error(result.message || `本机桥返回 ${response.status}`);
@@ -938,6 +1053,7 @@ async function saveToZotero(item) {
       pdfSaved: Boolean(result.pdf_saved),
       message: result.message || '已保存到 Zotero',
     });
+    state.zoteroDraft = null;
     updateZoteroButtons(item);
     showToast(result.message || '已保存到 Zotero');
   } catch (error) {
@@ -1245,6 +1361,8 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
   }
   const noteEditor = inlineNoteEditorFor(item);
   if (noteEditor) $('.paper-copy', card).append(noteEditor);
+  const zoteroPanel = zoteroClassificationPanelFor(item);
+  if (zoteroPanel) $('.paper-copy', card).append(zoteroPanel);
 
   const favorite = $('.favorite-button', card);
   if (!['paper', 'news'].includes(item.type)) return card;
@@ -2355,6 +2473,7 @@ function renderAssistantPaperDetail(item) {
         <button type="button" data-assistant-note>📝 ${state.personal.notes[item.id] ? '编辑笔记' : '写笔记'}</button>
         <button type="button" class="ignore-button${isIgnored(item.id) ? ' active' : ''}" data-assistant-ignore>${isIgnored(item.id) ? '恢复论文' : '忽略'}</button>
       </div>
+      <div data-zotero-panel-host></div>
       <button type="button" class="assistant-cite-button" data-assistant-cite aria-expanded="false">Cite</button>
       <div class="assistant-inline-citation" data-assistant-citation></div>
     </section>
@@ -2378,7 +2497,9 @@ function renderAssistantPaperDetail(item) {
       <div class="assistant-related-list">${related.length ? related.map(({ candidate, score }) => `<button type="button" data-related-paper="${text(candidate.id)}"><span>${text(candidate.title)}</span><small>${text(candidate.source_short || candidate.source)} · 关联度 ${score}</small></button>`).join('') : '<p>历史库中暂无明显关联论文。</p>'}</div>
     </section>`;
   $('[data-assistant-cite]', host).addEventListener('click', event => toggleCitationPanelInHost(item, $('[data-assistant-citation]', host), event.currentTarget));
-  $('[data-zotero-save]', host).addEventListener('click', () => void saveToZotero(item));
+  $('[data-zotero-save]', host).addEventListener('click', () => void openZoteroClassification(item));
+  const assistantZoteroPanel = zoteroClassificationPanelFor(item);
+  if (assistantZoteroPanel) $('[data-zotero-panel-host]', host).append(assistantZoteroPanel);
   updateZoteroButtons(item);
   $('[data-assistant-note]', host).addEventListener('click', () => {
     closePaperAssistant();
