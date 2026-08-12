@@ -43,6 +43,10 @@ class MiniProgramTests(unittest.TestCase):
             with self.subTest(path=path):
                 ET.fromstring(source)
 
+    def test_miniprogram_wxml_avoids_encoded_logical_operators(self):
+        text = "\n".join(path.read_text(encoding="utf-8") for path in MINI.rglob("*.wxml"))
+        self.assertNotIn("&amp;&amp;", text)
+
     def test_miniprogram_has_no_embedded_secrets(self):
         text = "\n".join(path.read_text(encoding="utf-8") for path in MINI.rglob("*") if path.is_file())
         suspicious = [
@@ -71,6 +75,7 @@ class MiniProgramTests(unittest.TestCase):
         self.assertIn("context.OPENID", cloud_function)
         self.assertIn("ALLOWED_TYPES", cloud_function)
         self.assertNotIn("AppSecret", cloud_config)
+        self.assertTrue(all(isinstance(item, dict) for item in project["packOptions"]["ignore"]))
 
     def test_mobile_preview_is_published_with_github_pages(self):
         build_script = (ROOT / "scripts" / "build_site.py").read_text(encoding="utf-8")

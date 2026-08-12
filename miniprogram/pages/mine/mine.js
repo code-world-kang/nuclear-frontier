@@ -13,6 +13,13 @@ const RESOURCE_GROUPS = {
   'data-analysis': '数据分析', 'github-following': 'GitHub 跟随', software: '科研软件'
 };
 
+function formatLocalTime(value) {
+  const date = new Date(value);
+  if (!value || Number.isNaN(date.getTime())) return '';
+  const pad = number => String(number).padStart(2, '0');
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
+}
+
 Page({
   data: {
     activeSection: 'papers',
@@ -48,7 +55,7 @@ Page({
       noteCount: Object.keys(state.notes || {}).length,
       cloudReady: current.enabled,
       cloudStatusText: current.enabled ? '微信云端科研空间已连接' : '正式 AppID 已绑定，云环境待开通',
-      lastCloudSyncAt: state.lastCloudSyncAt ? state.lastCloudSyncAt.replace('T', ' ').slice(0, 19) : ''
+      lastCloudSyncAt: formatLocalTime(state.lastCloudSyncAt)
     });
   },
 

@@ -20,7 +20,9 @@
     <view class="detail-section soft-card">
       <view class="detail-section-title">{{showOriginal ? '原文摘要 / 介绍' : (item.descriptionZh ? '中文摘要 / 介绍' : '原文摘要 / 介绍')}}</view>
       <text class="detail-abstract" selectable="true">{{showOriginal ? item.originalDescription : item.displayDescription}}</text>
-      <view wx:if="{{!showOriginal &amp;&amp; item.descriptionZh}}" class="translation-note">下方“查看英文原文”可用于对照核验。</view>
+      <block wx:if="{{item.descriptionZh}}">
+        <view wx:if="{{!showOriginal}}" class="translation-note">下方“查看英文原文”可用于对照核验。</view>
+      </block>
     </view>
 
     <view wx:if="{{citeOpen}}" class="inline-panel soft-card">

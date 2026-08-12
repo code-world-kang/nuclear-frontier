@@ -2,9 +2,16 @@
   "description": "小康康的物理世界·微信小程序预览版",
   "packOptions": {
     "ignore": [
-      "README.md",
-      "preview"
-    ]
+      {
+        "type": "file",
+        "value": "README.md"
+      },
+      {
+        "type": "folder",
+        "value": "preview"
+      }
+    ],
+    "include": []
   },
   "setting": {
     "urlCheck": false,
@@ -16,7 +23,7 @@
     "showShadowRootInWxmlPanel": true
   },
   "compileType": "miniprogram",
-  "libVersion": "3.7.12",
+  "libVersion": "3.7.11",
   "appid": "wxe859c9b09ae5c60d",
   "projectname": "nuclear-frontier-miniprogram",
   "miniprogramRoot": "./",
