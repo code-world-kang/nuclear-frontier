@@ -43,6 +43,17 @@ class WechatDigestTests(unittest.TestCase):
         self.assertIn("wechat-official-account", workflow)
         self.assertIn("path: site", workflow)
 
+    def test_fixed_wechat_entry_and_menu_are_complete(self):
+        entry = (ROOT / "site" / "wechat-entry" / "index.html").read_text(encoding="utf-8")
+        menu = json.loads((ROOT / "wechat-official-account" / "menu.json").read_text(encoding="utf-8"))
+        self.assertIn("公众号无需每天发布文章", entry)
+        for fragment in ("#papers", "#featured", "#news", "#notices", "#favorites-papers"):
+            self.assertIn(fragment, entry)
+        self.assertEqual(len(menu["button"]), 3)
+        urls = [child["url"] for button in menu["button"] for child in button["sub_button"]]
+        self.assertTrue(all(url.startswith("https://code-world-kang.github.io/nuclear-frontier/") for url in urls))
+        self.assertGreaterEqual(len(urls), 8)
+
 
 if __name__ == "__main__":
     unittest.main()

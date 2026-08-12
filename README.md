@@ -66,9 +66,11 @@ GitHub Actions 在每天北京时间 10:17 左右执行（预留 arXiv 冬令时
 
 当前发布策略已调整为“公众号简报 + GitHub Pages 完整网站”：
 
+- 公众号固定入口：<https://code-world-kang.github.io/nuclear-frontier/wechat-entry/>
+- 公众号底部菜单可直接打开论文、新闻、通知和“我的科研”，不需要每天发布文章。
 - 公众号每日简报预览：<https://code-world-kang.github.io/nuclear-frontier/wechat-digest/>
 - 可复制的发布稿：[`wechat-official-account/index.html`](wechat-official-account/index.html)
-- 每次数据更新与网站构建时自动生成，中文优先、原文作为补充。
+- 简报每次数据更新与网站构建时自动生成，只作为可选周报、月报或特别推送，不自动发布到公众号。
 - 小程序代码继续保留，暂不作为当前首发渠道。
 
 自动写入公众号草稿箱需要账户具备相应 API 权限。`AppSecret` 只能放在 GitHub Actions Secrets 中，不得写入公开仓库。

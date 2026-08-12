@@ -10,6 +10,8 @@ on:
     paths-ignore:
       - "data/**"
       - "site/data/**"
+      - "site/wechat-digest/**"
+      - "wechat-official-account/**"
 
 permissions:
   contents: write

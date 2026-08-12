@@ -194,6 +194,7 @@ def build_digest(output_dir: Path = OUTPUT, public_dir: Path = PUBLIC_OUTPUT) ->
     papers = load_json(DATA / "papers.json")
     news = load_json(DATA / "news.json")
     notices = load_json(DATA / "notices.json")
+    status_payload = load_json(DATA / "status.json")
     translation_payload = load_json(DATA / "translations.zh-CN.json")
     translations = translation_payload.get("items", {})
 
@@ -266,7 +267,10 @@ def build_digest(output_dir: Path = OUTPUT, public_dir: Path = PUBLIC_OUTPUT) ->
     metadata = {
         "title": title,
         "issue_date": issue_date,
-        "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
+        # 使用数据管线时间而不是构建时间，避免只构建一次就产生无意义的 Git 变更。
+        "generated_at": status_payload.get("last_success")
+        or translation_payload.get("generated_at")
+        or f"{issue_date}T00:00:00+08:00",
         "site_url": SITE_URL,
         "counts": {
             "papers": len(selected_papers),
