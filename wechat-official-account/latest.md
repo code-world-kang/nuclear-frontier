@@ -1,33 +1,33 @@
 # 小康康的物理世界 · 2026-08-13 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 6/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 13/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[Impact of perturbative tensor interactions on the spontaneous fission half-lives of superheavy nuclei](https://arxiv.org/abs/2608.12199)**  
+1. **[微扰张量相互作用对超重核自发裂变半衰期的影响](https://arxiv.org/abs/2608.12199)**  
    arXiv nucl-th · 2026-08-13  
-   The standard microscopic description of fission, based on the mean-field Hartree-Fock-Bogoliubov approximation and a semi-classical description of tunneling through the fission barrier, has been used to analyse the impact of introducing a (perturbative) tensor term along with the well known Gogny-D1S force in the spontaneous fission half-lives. Calculations…
-2. **[Quasi-real photons as a probe of exotic nuclei](https://arxiv.org/abs/2608.12118)**  
+   基于平均场 Hartree-Fock-Bogoliubov 近似和裂变势垒隧穿的半经典描述，标准的裂变微观描述方法被用于分析：在著名的 Gogny-D1S 力中引入一个（微扰）张量项后，会对自发裂变半衰期产生何种影响。我们对从锘到𬭊的一系列偶偶超重核同位素进行了计算。结果表明，张量项只影响第一裂变势垒的高度，而配对性质以及由此决定的集体惯量基本不受影响。由于势垒高度降低，纳入张量项后得到的自发裂变寿命显著短于未纳入该项时的结果，使理论预测与实验数据更加一致。
+2. **[准实光子作为奇异核探针](https://arxiv.org/abs/2608.12118)**  
    arXiv nucl-th · 2026-08-13  
-   Coulomb excitation is an inelastic process in which either the target or the projectile is excited by the Coulomb interaction, which can equivalently be described as the absorption of a virtual photon. We discuss Coulomb excitation at relativistic energies, with particular emphasis on Coulomb dissociation, in which an excited projectile subsequently breaks…
-3. **[On energy-dependent scaling factor for the charge-changing cross sections of light elements](https://arxiv.org/abs/2506.22859)**  
+   Coulomb 激发是一种非弹性过程，其中靶或弹丸通过 Coulomb 相互作用被激发；该过程也可等价地描述为吸收一个虚光子。我们讨论相对论能量下的 Coulomb 激发，特别强调 Coulomb 解离，即被激发的弹丸随后发生破裂。
+3. **[轻元素电荷改变截面的能量依赖标度因子](https://arxiv.org/abs/2506.22859)**  
    arXiv nucl-th · 2026-08-13  
-   In this study, the scaling factor for $^{28}$\rm Si + $^{12}$\rm C charge-changing cross sections (CCCSs) at 90-1296 MeV/nucleon has been used as a basis to introduce the energy dependence in the scaling factor for the light elements. To test the extracted scaling factor, we predict the charge-changing cross sections for $^{7,9-12,14}$\rm Be, $^{10-15,17}$\…
-4. **[Measurement of the average transverse momentum of forward prompt charged particles in $pp$ and $p\mathrm{Pb}$ collisions at $\sqrt{s_{NN}} = 5.02\; \mathrm{TeV}$](https://arxiv.org/abs/2607.26783)**  
+   本研究以 90-1296 MeV/nucleon 下 $^{28}$\rm Si + $^{12}$\rm C 电荷改变截面（CCCS）的标度因子为基础，在轻元素标度因子中引入能量依赖性。为检验提取出的标度因子，我们在 Glauber 模型框架内预测了 200-991 MeV/nucleon 下 $^{7,9-12,14}$\rm Be、$^{10-15,17}$\rm B、$^{11-19}$\rm C、$^{13-22}$\rm N、$^{15-24}$\rm O 和 $^{18-21,23-26}$\rm F 同位素的电荷改变截面。计算使用 Slater 行列式来描述原子核，其中包含谐振子单粒子波函数，可再现早先得到的电荷半径 [Phys. Rev. C {\bf 110} (2024) 014623;…
+4. **[$\sqrt{s_{NN}} = 5.02\; \mathrm{TeV}$ 下 $pp$ 和 $p\mathrm{Pb}$ 碰撞中前向瞬发带电粒子平均横动量的测量](https://arxiv.org/abs/2607.26783)**  
    arXiv nucl-ex · 2026-08-13  
-   This letter presents the first measurements of the average transverse momentum of prompt charged particles in $pp$ and $p\mathrm{Pb}$ collisions as a function of collision multiplicity and pseudorapidity. The data were recorded at nucleon-nucleon centre-of-mass energy $\sqrt{s_{NN}} = 5.02\; \mathrm{TeV}$ with the LHCb experiment. The pseudorapidity depende…
-5. **[Spatial Entanglement Entropy in Nuclear Fission](https://arxiv.org/abs/2608.12120)**  
+   本快报首次测量了 $pp$ 和 $p\mathrm{Pb}$ 碰撞中瞬发带电粒子的平均横动量随碰撞多重性和赝快度的变化。数据由 LHCb 实验在核子—核子质心能量 $\sqrt{s_{NN}} = 5.02\; \mathrm{TeV}$ 下记录。还测量了多重性分布对赝快度的依赖。平均横动量结果随赝快度呈下降趋势，该趋势在高多重性事例中更为明显，与所产生物质的集体行为一致。最先进的 (3+1D) 流体动力学计算能够再现实验测量，而饱和模型与数据不相容。
+5. **[核裂变中的空间纠缠熵](https://arxiv.org/abs/2608.12120)**  
    arXiv nucl-th · 2026-08-13  
-   Nuclear fission provides a unique manifestation of spatially nonlocal many-body entanglement. We compute the bipartite spatial entanglement entropy exactly along dynamical fission trajectories, by leveraging the fermionic Gaussian state formulation. Across seven representative fissioning channels, the final entanglement entropy correlates strongly with the…
+   核裂变为具有空间非局域性的多体纠缠提供了一种独特表现形式。借助费米子高斯态表述，我们沿动力学裂变轨迹精确计算了二分空间纠缠熵。在七个代表性裂变道中，最终纠缠熵与碎片的内禀粒子数方差具有强相关性，但对断裂几何没有简单依赖。最值得注意的是，当碎片为幻核时，纠缠受到显著抑制，揭示了一种壳层反纠缠效应。本工作确立了纠缠熵这一新视角，拓展了核裂变的传统概念。
 6. **[采用半不可知先验的核参数推断](https://doi.org/10.1051/0004-6361/202558416)**  
    Astronomy and Astrophysics · 2026-08-13  
    至少包含一颗中子星的双星并合的射电脉冲星计时、X 射线脉冲轮廓建模和引力波探测，能够探测核实验室无法到达的热力学状态区间内稠密富中子物质的性质。此类推断依赖于构建合适的状态方程先验，例如最近引入的半不可知构造；这些构造结合了低至中等密度区间可获得的核理论和实验信息，同时在高密度下提供必要的灵活性。在本文中，我们评估了低质量或高质量中子星的质量、半径和潮汐形变性探测，如何有助于约束基于半不可知状态方程先验推断中的核经验参数。我们首先评估了不同密度区间中核经验参数与零温、beta 平衡压强之间的相关因子。随后，我们为三种核子状态方程模拟观测，以检验相应核经验参数的恢复。我们表明，并非所有核经验参数都与压强显著相关，并发现它们在高密度区间相互竞争，这给它们的推断带来挑战。我们还发现，与假设中子星核心最高密度处都具有…
-7. **[Background decomposition of the CONUS+ run 1 data](https://arxiv.org/abs/2608.12065)**  
+7. **[CONUS+ 第 1 轮数据的本底分解](https://arxiv.org/abs/2608.12065)**  
    arXiv physics.ins-det · 2026-08-13  
-   The CONUS+ experiment is measuring the coherent elastic neutrino nucleus scattering (CE$\nu$NS) process using reactor anti-neutrinos as a source and four low energy threshold point-contact high-purity germanium spectrometers for their detection. It achieved the first measurement of coherent neutrino scattering at a nuclear reactor in run 1 of the experiment…
-8. **[Spectroscopy and Dissociation of Tetraquarks in Anisotropic Plasma within the Generalized Fractional Derivatives Framework](https://arxiv.org/abs/2606.23732)**  
+   CONUS+ 实验以反应堆反中微子为源，使用四台低能阈点接触式高纯锗谱仪进行探测，测量相干弹性中微子—原子核散射（CE$\nu$NS）过程。该实验在第 1 轮运行中以 160 eV$_{ee}$ 的探测能阈，实现了核反应堆上相干中微子散射的首次测量。本工作给出了第 1 轮分析所用三台探测器本底谱的分解，并利用基于 Geant4 的蒙特卡洛模拟建立相应的本底模型。该本底模型作为分析中似然拟合的基础输入。结果表明，反应堆相关本底在所有能区均为次要成分，特别是在低于 350 eV$_{ee}$ 的 CE$\nu$NS 搜寻感兴趣区，其贡献比预期 CE$\nu$NS 信号低一个数量级。此外，宇宙线 μ 子和中子被识别为低于 1 keV$_{ee}$ 的主要本底源，约占记录本底率的 75 - 90 \%。最终本底模型预…
+8. **[广义分数阶导数框架下各向异性等离子体中四夸克态的谱学与解离](https://arxiv.org/abs/2606.23732)**  
    arXiv nucl-th · 2026-08-13  
-   Investigating the spectroscopy and thermal stability of exotic multiquark states provides crucial insights into the fundamental confinement mechanisms of quantum chromodynamics (QCD) under extreme regimes. This work presents an innovative study of the spectroscopy and dissociation of fully-heavy tetraquarks in an anisotropic plasma via the generalized fract…
+   研究奇异多夸克态的谱学和热稳定性，可为理解极端条件下量子色动力学（QCD）的基本禁闭机制提供关键见解。本工作通过广义分数阶导数（GFD）结构，对各向异性等离子体中全重四夸克态的谱学和解离开展创新研究。采用参数化广义分数阶 Nikiforov-Uvarov（PGFNU）技术，求解带有扩展 Cornell 势的径向 Schr\"odinger 方程（SE），该势计入了 Debye 屏蔽和等离子体各向异性。对 $cc\bar c\bar c$ 和 $bb\bar{b}\bar{b}$ 系统的分析表明，系统的束缚势和解离能随各向异性参数增大而增加，随温度升高而减小。分数阶范式还表明，当分数阶阶数较低时，系统的束缚强于经典量子力学中的情况。此外，还计算了所有所考虑四夸克构型的基态和激发态质量谱，包括 $cc\bar{c…
 
 ## 物理新闻
 
