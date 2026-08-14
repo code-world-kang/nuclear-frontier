@@ -1,33 +1,33 @@
 # 小康康的物理世界 · 2026-08-14 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 7/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 13/18 条已有中文内容。
 
 ## 今日重点论文
 
 1. **[首次测量 K 介子氘原子 X 射线跃迁](https://arxiv.org/abs/2608.10749)**  
    arXiv nucl-ex · 2026-08-14  
    由于强子间低能强相互作用具有非微扰性质，其理论描述强烈依赖于实验输入，因此对它的研究仍是基础物理中的关键挑战之一。尽管涉及上夸克和下夸克的体系已取得实质进展，奇异数扇区的理论模型仍因缺乏实验数据而受到限制。K 介子原子可通过其最低原子能级上诱导的能量位移和宽度，成为研究含奇异数低能强相互作用的有力工具。在此背景下，由于其 X 射线产额极低，K 介子氘原子 X 射线谱学长期以来一直是强子原子物理中的主要开放挑战之一。该测量尤其重要，因为它能够获得在阈值能量处实验上不可及的 $K^-n$ 相互作用。本文报告在 DA$\Phi$NE 对撞机上利用 SIDDHARTA-2 实验首次观测到 K 介子氘原子 X 射线跃迁。我们测得 $1s$ 能级的强相互作用位移和宽度分别为 $\varepsilon_{1s}=-810.…
-2. **[Relativistic dynamical effects in proton emission: the Wentzel-Kramers-Brillouin method for 1+1 dimensional Dirac equation](https://arxiv.org/abs/2608.12767)**  
+2. **[质子发射中的相对论动力学效应：用于 1+1 维 Dirac 方程的 Wentzel-Kramers-Brillouin 方法](https://arxiv.org/abs/2608.12767)**  
    arXiv nucl-th · 2026-08-14  
-   Starting from the $1+1$ dimensional (one spatial and one temporal dimension) Dirac equation, we employ the Wentzel-Kramers-Brillouin (WKB) approximation to derive the corresponding relativistic penetration probability. The derivation shows that the semiclassical momentum is determined by the Schr\"odinger-equivalent potential $ U_{\text{eff}}(r) = S(r) + \f…
-3. **[Polarized Deep-Inelastic Scattering with Spin Correlations in Herwig 7](https://arxiv.org/abs/2606.23845)**  
+   从 $1+1$ 维（一个空间维和一个时间维）Dirac 方程出发，我们采用 Wentzel-Kramers-Brillouin（WKB）近似推导相应的相对论穿透概率。推导表明，半经典动量由与 Schr\"odinger 方程等效的势 $ U_{\text{eff}}(r) = S(r) + \frac{E}{m}V(r) + \frac{S^{2}(r)-V^{2}(r)}{2m}$ 决定，而不是由标量势与矢量势的简单和 $S(r)+V(r)$ 决定；后者已被广泛用于相对论量子隧穿研究。随后，我们通过比较使用 $U_{\text{eff}}(r)$ 得到的结果与使用 $S(r)+V(r)$ 得到的结果，定量研究质子发射中的相对论动力学效应。引入 $U_{\text{eff}}(r)$ 会系统性地降低穿透概率和…
+3. **[Herwig 7 中包含自旋关联的极化深度非弹性散射](https://arxiv.org/abs/2606.23845)**  
    arXiv nucl-th · 2026-08-14  
-   We investigate polarized deep-inelastic scattering (DIS) in the context of fully exclusive Monte Carlo simulations for the Electron-Ion Collider (EIC). We present a next-to-leading-order (NLO) treatment of polarized DIS in HERWIG 7 using the POWHEG matching scheme, including neutral-current $\gamma/Z$ exchange and charged-current scattering. We also constru…
-4. **[Parametric Matrix Models for Emulation in Nuclear and Many-Body Physics](https://arxiv.org/abs/2608.12837)**  
+   我们在电子-离子对撞机（EIC）的完全排他 Monte Carlo 模拟背景下研究极化深度非弹性散射（DIS）。我们使用 POWHEG 匹配方案，在 HERWIG 7 中给出极化 DIS 的次领阶（NLO）处理，包括中性流 $\gamma/Z$ 交换和带电流散射。我们还为 NLO 匹配事件构建了自旋关联处理：首先利用极化 DIS Born 过程的自旋密度矩阵初始化簇射，随后传播所接受的实发射构型的自旋密度矩阵，同时不改变 POWHEG 事件权重或最硬发射的选择。我们以固定阶计算验证积分截面，采用不进行后续簇射演化的部分子级比较来分离所接受的 POWHEG 实发射运动学，并使用簇射级观测量检验 Born 级和实发射自旋信息在数值上的重要性。我们发现，Born 级自旋密度初始化会对簇射敏感观测量产生可见影响；而对…
+4. **[用于核物理与多体物理仿真的参数化矩阵模型](https://arxiv.org/abs/2608.12837)**  
    arXiv nucl-th · 2026-08-14  
-   Progress in nuclear and many-body physics today is predicated on the ability to solve large-scale, strongly correlated quantum many-body problems. As the theoretical models become more sophisticated, they also become more computationally complex. Simultaneously, quantifying uncertainty in model predictions and fitting free parameters to experimental observa…
-5. **[Scalable production of nuclear battery alpha emitters using fusion neutrons](https://arxiv.org/abs/2608.12963)**  
+   当今核物理与多体物理的进展以求解大规模、强关联量子多体问题的能力为基础。随着理论模型日益精细，其计算复杂度也随之增加。与此同时，量化模型预测的不确定性以及利用实验观测拟合自由参数，都需要反复评估这些高成本模型。替代模型——亦称仿真器——为实现这些目标提供了手段。本论文介绍了核物理与多体物理仿真的当前发展状况，讨论了目前常用仿真方法的动机、目标和起源，并给出若干示例。我们看到，许多方法在数学上密切相关，并会通过权衡来优化特定性质或应用。本论文的核心工作是参数化矩阵模型（PMM）方法，这是一种将传统降阶基方法的若干方面与现代参数化机器学习相结合的仿真及通用机器学习框架。PMM 可以按需保留底层系统中任意多或任意少的物理信息，因此不仅具有优异性能，而且作为一种仿真方法，在适应性、可解释性和可信度方面几乎无可匹敌。本…
+5. **[利用聚变中子规模化生产核电池 α 发射体](https://arxiv.org/abs/2608.12963)**  
    arXiv physics.plasm-ph · 2026-08-14  
-   Nuclear batteries powered by alpha decay have been deployed successfully for over 60 years, on a worldwide $^{238}$Pu supply of kilograms per year. We show that the 14 MeV neutrons of a single deuterium-tritium fusion plant can produce alpha emitter battery fuels up to tons per year, in three classes: fuels with completely new production pathways ($^{236}$P…
+   由 α 衰变供能的核电池已经成功应用了 60 多年，其所依赖的全球 $^{238}$Pu 供应量为每年数千克。我们表明，一座氘氚聚变电站产生的 14 MeV 中子可将 α 发射体电池燃料的年产量提高到吨级，并分为三类：具有全新生产路径的燃料（$^{236}$Pu、$^{227}$Ac、$^{210}$Pb）；此前已被提出、而同一生产路径如今可规模化增殖其稀缺原料的燃料（$^{232}$U、$^{228}$Th）；以及成熟的 $^{238}$Pu。对托卡马克包层中锕系元素反应道的 OpenMC 模拟显示，每 GW yr 聚变能可产生 11 至 57 kg 的 $^{236}$Pu，其衰变链在一个世纪内每克释放 18 GJ 能量，最终成为稳定的 $^{208}$Pb；同时还可副产多达 5.2 t 的 $^{238…
 6. **[广义分数阶导数框架下各向异性等离子体中四夸克态的谱学与解离](https://arxiv.org/abs/2606.23732)**  
    arXiv nucl-th · 2026-08-14  
    研究奇异多夸克态的谱学和热稳定性，可为理解极端条件下量子色动力学（QCD）的基本禁闭机制提供关键见解。本工作通过广义分数阶导数（GFD）结构，对各向异性等离子体中全重四夸克态的谱学和解离开展创新研究。采用参数化广义分数阶 Nikiforov-Uvarov（PGFNU）技术，求解带有扩展 Cornell 势的径向 Schr\"odinger 方程（SE），该势计入了 Debye 屏蔽和等离子体各向异性。对 $cc\bar c\bar c$ 和 $bb\bar{b}\bar{b}$ 系统的分析表明，系统的束缚势和解离能随各向异性参数增大而增加，随温度升高而减小。分数阶范式还表明，当分数阶阶数较低时，系统的束缚强于经典量子力学中的情况。此外，还计算了所有所考虑四夸克构型的基态和激发态质量谱，包括 $cc\bar{c…
-7. **[Solution to the uncertainty problem of nuclear matrix element for neutrinoless double-$\beta$ decay](https://arxiv.org/abs/2509.16605)**  
+7. **[无中微子双-$\beta$ 衰变核矩阵元不确定性问题的解决方案](https://arxiv.org/abs/2509.16605)**  
    arXiv hep-ph · 2026-08-14  
-   The neutrinoless double-$\beta$ decay ($0\nu\beta\beta$) of nuclei is one of the major research subjects of neutrino physics nowadays because of its influence on particle physics and astrophysics. The predicted nuclear matrix elements (NMEs) for the $0\nu\beta\beta$ decay exhibit large uncertainties depending on the models employed. This problem has affecte…
-8. **[Effective field theory of quasi-hydrodynamics from kinetic theory](https://arxiv.org/abs/2608.13542)**  
+   原子核的无中微子双-$\beta$ 衰变（$0\nu\beta\beta$）因其对粒子物理和天体物理的影响，是当今中微子物理的主要研究课题之一。对 $0\nu\beta\beta$ 衰变所预测的核矩阵元（NME）会因所采用的模型而呈现很大的不确定性。多年来，这一问题一直影响着中微子物理的发展。我们最近利用微扰跃迁算符计算了 $0\nu\beta\beta$ 和双中微子双-$\beta$ 衰变（$2\nu\beta\beta$）模式的 NME，并发现两种衰变模式的有效轴矢量流耦合 $g_A^\mathrm{eff}$ 相近。基于这一发现，我们采用能够再现 $2\nu\beta\beta$ 衰变实测半衰期的唯象 $g_A^\mathrm{eff}$ 来计算 $0\nu\beta\beta$ NME。我们将此方法应…
+8. **[从动力学理论导出的准流体动力学有效场论](https://arxiv.org/abs/2608.13542)**  
    arXiv nucl-th · 2026-08-14  
-   Quasi-hydrodynamics describes systems with quasi-conserved degrees of freedom, namely observables that relax on timescales that are finite but parametrically longer than microscopic relaxation times. Examples include kinetic chemistry and linear viscoelasticity. Here, we develop a rigorous effective-field-theory framework for linear quasi-hydrodynamics from…
+   准流体动力学描述具有准守恒自由度的系统，即其中某些观测量在有限时间尺度上弛豫，但该尺度在参数上长于微观弛豫时间。其例子包括动力学化学和线性黏弹性。在此，我们从动力学型理论出发，为线性准流体动力学发展一个严格的有效场论框架。以任何具有慢自由度的线性化、因果动力学型理论为起点，我们证明，守恒和准守恒观测量的精确动力学可以按照快速弛豫时间尺度进行系统展开。在零阶，所得方程构成一种因果、对称双曲理论，属于相应的瞬态流体动力学普适类，由此确立了类 Israel-Stewart 动力学是慢弛豫模的普适描述。高阶修正可被系统计算，并从底层微观理论继承普适的对称性、Onsager、正定性和因果性约束。
 
 ## 物理新闻
 
