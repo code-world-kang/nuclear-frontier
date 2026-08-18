@@ -1,6 +1,6 @@
 # 小康康的物理世界 · 2026-08-17 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 12/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 11/18 条已有中文内容。
 
 ## 今日重点论文
 
@@ -47,22 +47,22 @@
 ## 科研通知
 
 - **[青年核物理学者学校（NUSYS）](https://indico.impcas.ac.cn/event/187/)**  
-   NUSYS 青年核物理学校 · 2026-08-16  
+   近代物理所 Indico 全量 · 2026-03-17  
    2026-08-09 — 2026-08-16 第六届“NUclear physics School for Young Scientists（NUSYS2026）”将于 2026 年 8 月 9 日至 8 月 16 日在中国北京举行，由北京航空航天大学主办（9 日报到，16 日离校）。预计参与者于 8 月 9 日到达并办理报到手续。本学校的目标是通过介绍核物理的各个方面及其在核科学技术中的应用，以及亚洲即将建成的核设施的未来前景，激励博士研究生和博士后/青年研究人员。来自世界各地的专家受邀介绍实验和理论核物理领域当前正在开展活动的丰富多样性，并利用当前或下一代核物理设施，特别是亚洲的此类设施所创造的机遇，例如 HIAF（High
-- **[关于发布2026年度理论物理专款项目指南的通告 2026-07-31](https://www.nsfc.gov.cn/p1/3381/2824/139818.html)**  
-   国家自然科学基金委数理科学部 · 2026-07-31  
-   关于发布2026年度理论物理专款项目指南的通告 当前位置： 首页 > 项目指南 项目指南 关于发布2026年度理论物理专款项目指南的通告 日期： 2026-07-31 来源： 作者： 字号：【 大 中 小 】 打印 国家自然科学基金委员会现发布2026年度理论物理专款项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请
-- **[关于发布2026年度国家自然科学基金委员会-湖北省“联合基金量子重大专项”项目指南的通告 2026-06-23](https://www.nsfc.gov.cn/p1/3381/2824/137662.html)**  
-   国家自然科学基金委数理科学部 · 2026-06-23  
-   关于发布2026年度国家自然科学基金委员会-湖北省 “联合基金量子重大专项”项目指南的通告 当前位置： 首页 > 项目指南 项目指南 关于发布2026年度国家自然科学基金委员会-湖北省 “联合基金量子重大专项”项目指南的通告 日期： 2026-06-23 来源： 作者： 字号：【 大 中 小 】 打印 2026年度国家自然科学基金委员会-湖北省“联合基金量子重大专项”项目指南已通过科学基金网络信息系统(https://grants.nsfc.gov.cn)予以发布，请依托单位和申请人登录科学基金网络信息系统，在“项目管理-项目指南”模块查看
-- **[PAC 第 4 期非专有研究提案征集](https://frib.msu.edu/user-facilities/requesting-beam-time)**  
-   FRIB Calls · 2026-06-01  
-   FRIB 于 2026 年 6 月 1 日发布了第四次提案征集。所有提交评审的提案必须在 2026 年 9 月 9 日美国东部标准时间晚上 11 点前在线提交。阅读征集通知。密歇根州立大学（MSU）作为美国能源部科学办公室（DOE SC）的用户设施运营稀有同位素束流设施（FRIB），并获得 DOE‑SC 核物理办公室的财政支持，推进其使命。FRIB 已通过 ISO 9001、ISO 14001、ISO 27001 和 ISO 45001 注册。页脚 联系方式 资金致谢 网站地图 隐私声明 网站无障碍访问 行为准则
-- **[关于发布国家自然科学基金委员会数学物理科学部2026年度第一期专项项目（科技活动项目）申请指南的通告 2026-03-25](https://www.nsfc.gov.cn/p1/3381/2824/121308.html)**  
-   国家自然科学基金委数理科学部 · 2026-03-25  
-   关于发布国家自然科学基金委员会数学物理科学部 2026年度第一期专项项目（科技活动项目）申请指南的通告 当前位置： 首页 > 项目指南 项目指南 关于发布国家自然科学基金委员会数学物理科学部 2026年度第一期专项项目（科技活动项目）申请指南的通告 日期： 2026-03-25 来源： 作者： 字号：【 大 中 小 】 打印 国家自然科学基金委员会数学物理科学部2026年度第一期专项项目（科技活动项目）申请指南已通过科学基金网络信息系统（https://grants.nsfc.gov.cn）予以发布，请依托单位和申请人登录科学基金网络信息系统，在“项目管理-项目指南”模块查看
-- **[关于发布2025年度国家自然科学基金指南引导类原创探索计划项目“莫尔平带体系关联和拓扑量子物态的前沿探索”申请指南的通告 2025-09-23](https://www.nsfc.gov.cn/p1/3381/2824/96064.html)**  
-   国家自然科学基金委数理科学部 · 2025-09-23  
-   关于发布2025年度国家自然科学基金指南引导类原创探索计划项目 “莫尔平带体系关联和拓扑量子物态的前沿探索”申请指南的通告 当前位置： 首页 > 项目指南 项目指南 关于发布2025年度国家自然科学基金指南引导类原创探索计划项目 “莫尔平带体系关联和拓扑量子物态的前沿探索”申请指南的通告 日期： 2025-09-23 来源： 作者： 字号：【 大 中 小 】 打印 2025年度国家自然科学基金指南引导类原创探索计划项目——“莫尔平带体系关联和拓扑量子物态的前沿探索”申请指南已通过科学基金网络信息系统（https://grants.nsfc.gov.cn）发布，请依托单位和申请人登录科学基金网络信息系统，在“项目管理-项目指南”模块查看，按项目指南所述要求和注意事项申请
+- **[Intersection of nuclear structure and high-energy nuclear collisions: 2025 Program and Workshop](https://napp.fudan.edu.cn/event/45/)**  
+   复旦大学核物理 Indico · 2025-01-31  
+   Introduction: The purpose of this one-week program and three-day workshop is to gather together experts from high-energy and low-energy nuclear physics communities to report on the latest experimental and theoretical advances at the intersection of these fields. Discussions will focus on the interplay between low-energy nuclear experiments, modern nuclear s…
+- **[Nuclear Astrophysics Experiments with HIAF](https://indico.impcas.ac.cn/event/172/)**  
+   近代物理所 Indico 全量 · 2025-07-08  
+   HIAF is about to come online soon. We are going to organize a mini-workshop to discuss the possible nuclear astrophysics related experiments at HIAF in Huizhou from Sept. 3 to Sept. 5. This workshop will focus on decay, mass, active target, fission and charge exchange experiments. We sincerely invite you to Huizhou, where HIAF is located, to share the inter…
+- **[C3NT workshop: Quantum Information Science in High Energy Nuclear Physics (QIS-HENP)](https://indico.ihep.ac.cn/event/27301/)**  
+   高能所 Indico 核物理全量 · 2025-09-13  
+   Quantum simulation of high-energy physics (HEP) was one of the original motivations for the development of quantum computers and remains a source of ongoing proposals for achieving quantum advantage. As experimental platforms grow in size and fidelity and classical algorithms near their limits, novel quantum‑information tools are poised to revolutionize how…
+- **[Frontiers in high-energy nuclear physics](https://indico.ihep.ac.cn/event/28839/)**  
+   高能所 Indico 核物理全量 · 2026-02-11  
+   The international workshop " Frontiers in high-energy nuclear physics " is organized by The Department of Physics, Tsinghua University and will take place in Beijing from July 19th to 23rd of 2026 ( 19th is for registration ). Conference venue: Marriott Hotel , Building 12, No. 3 Courtyard, Yongle North First Street , Huairou District, Beijing. Address in C…
+- **[第一届中微子、原子核物理和新物理研讨会(νNN2025)](https://indico.impcas.ac.cn/event/162/)**  
+   近代物理所 Indico 全量 · 2025-03-26  
+   为了促进以无中微子双贝塔衰变为核心的原子核物理、粒子物理与超出标准模型新物理研究的交叉融合与突破创新，我们将举办“中微子、原子核物理与新物理研讨会”系列会议（Neutrino, Nuclear Physics, and New Physics Symposium, νNN Series）。第一届会议（νNN2025）将于2025年7月21号－25号在兰州举行，由近代物理研究所承办，诚挚邀请并期待您的参与！ 近年来，作为探索中微子马约拉纳属性、轻子数破坏等超越标准模型新物理的核心探针，无中微子双贝塔衰变研究已在实验探测、核结构计算、新物理参数提取及模型构建等领域取得显著进展，但其理论诠释与实验验证仍面临重大挑战。在这一进程中，原子核结构的高精度计算、新型探测器技术、无中微子双贝塔衰变在探测新物理方面的独特优势以…
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)
