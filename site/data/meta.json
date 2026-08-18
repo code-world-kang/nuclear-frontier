@@ -556,6 +556,14 @@
         "duration_ms": 3071
       },
       {
+        "name": "RIBLL合作组公开通知",
+        "kind": "notice",
+        "ok": true,
+        "count": 7,
+        "message": "",
+        "duration_ms": 0
+      },
+      {
         "name": "TRIUMF Experimenter Portal",
         "kind": "notice",
         "ok": true,
@@ -604,12 +612,28 @@
         "duration_ms": 1294
       },
       {
+        "name": "中国核学会会议（官方承办单位）",
+        "kind": "notice",
+        "ok": true,
+        "count": 1,
+        "message": "",
+        "duration_ms": 0
+      },
+      {
         "name": "中国物理学会会议",
         "kind": "notice",
         "ok": false,
         "count": 0,
         "message": "<urlopen error timed out>",
         "duration_ms": 52310
+      },
+      {
+        "name": "中国科大粒子与核物理 Indico",
+        "kind": "notice",
+        "ok": true,
+        "count": 0,
+        "message": "",
+        "duration_ms": 0
       },
       {
         "name": "中国科学院人才与教育",
@@ -628,12 +652,28 @@
         "duration_ms": 1997
       },
       {
+        "name": "全国先进气体探测器 Indico",
+        "kind": "notice",
+        "ok": true,
+        "count": 3,
+        "message": "",
+        "duration_ms": 0
+      },
+      {
         "name": "全国核结构大会",
         "kind": "notice",
         "ok": true,
         "count": 1,
         "message": "",
         "duration_ms": 3809
+      },
+      {
+        "name": "北京大学 Indico 核物理会议",
+        "kind": "notice",
+        "ok": true,
+        "count": 4,
+        "message": "",
+        "duration_ms": 0
       },
       {
         "name": "北京市科委",
@@ -666,6 +706,14 @@
         "count": 1,
         "message": "",
         "duration_ms": 4676
+      },
+      {
+        "name": "复旦大学核物理 Indico",
+        "kind": "notice",
+        "ok": true,
+        "count": 3,
+        "message": "",
+        "duration_ms": 0
       },
       {
         "name": "安徽省科技厅",
@@ -748,6 +796,14 @@
         "duration_ms": 1818
       },
       {
+        "name": "近代物理所 Indico 全量",
+        "kind": "notice",
+        "ok": true,
+        "count": 4,
+        "message": "",
+        "duration_ms": 0
+      },
+      {
         "name": "近代物理所学术活动",
         "kind": "notice",
         "ok": true,
@@ -778,6 +834,14 @@
         "count": 4,
         "message": "",
         "duration_ms": 2759
+      },
+      {
+        "name": "高能所 Indico 核物理全量",
+        "kind": "notice",
+        "ok": true,
+        "count": 11,
+        "message": "",
+        "duration_ms": 0
       },
       {
         "name": "Annals of Nuclear Energy",
@@ -1207,7 +1271,7 @@
     "counts": {
       "papers": 1791,
       "news": 168,
-      "notices": 27,
+      "notices": 56,
       "featured": 40
     },
     "new_counts": {
@@ -1269,7 +1333,8 @@
     "notice_detail_enrichment": {
       "attempted": 9,
       "updated": 8
-    }
+    },
+    "notice_last_success": "2026-08-19T00:08:38+08:00"
   },
   "insights": {
     "latest_day": "2026-08-18",

@@ -70,6 +70,24 @@ NOTICE_PHYSICS_TERMS = (
 )
 NOTICE_TRUSTED_PHYSICS_CATEGORIES = frozenset({"beam-domestic", "beam-international", "meetings-nuclear"})
 
+NOTICE_ORGANIZATION_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("中国核学会", ("中国核学会", "核电子学与核探测技术分会", "全国核电子学与核探测技术学术年会", "三核论坛")),
+    ("中国核物理学会", ("中国核物理学会",)),
+    ("RIBLL 合作组", ("ribll合作组", "ribll 合作组")),
+)
+
+NOTICE_MEETING_SERIES_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("气体探测器", ("气体探测器", "gaseous detector", "gas detector", "mpgd", "micromegas")),
+    ("RIBLL 合作组", ("ribll",)),
+    ("HIAF 科学", ("hiaf",)),
+    ("核物理 × AI", ("核物理以及核数据中的人工智能", "核物理及核数据中的机器学习", "ai agents for nuclear physics", "ai for nuclear", "ai 智能体赋能核物理")),
+    ("全国核物理大会", ("全国核物理大会", "全国中高能核物理大会")),
+    ("全国核结构大会", ("全国核结构大会",)),
+    ("全国核数据大会", ("全国核数据大会",)),
+    ("核探测与电子学", ("核电子学与核探测", "测试束流与先进探测", "nuclear electronics and detector")),
+    ("全国重点实验室", ("核物理与核技术全国重点实验室", "重离子科学与技术全国重点实验室", "核数据全国重点实验室", "核探测与核电子学国家重点实验室")),
+)
+
 
 def notice_is_physics_relevant(
     title: str,
@@ -81,11 +99,37 @@ def notice_is_physics_relevant(
     """严格筛选物理通知；明确的生物、医学和化学主题直接排除。"""
     title_text = unicodedata.normalize("NFKC", title or "").lower()
     detail_text = unicodedata.normalize("NFKC", " ".join([title or "", summary or "", scope or ""])).lower()
-    if any(term in detail_text for term in NOTICE_NON_PHYSICS_TERMS):
+    # 标题明确属于核物理/学会系列时，不因承办单位或议题列表中偶然出现
+    # “医学/化学”而丢弃整场会议；标题本身属于非物理方向仍严格排除。
+    if any(term in title_text for term in NOTICE_NON_PHYSICS_TERMS):
         return False
     if notice_category in NOTICE_TRUSTED_PHYSICS_CATEGORIES:
+        title_is_physics = any(term in title_text for term in NOTICE_PHYSICS_TERMS)
+        title_is_nuclear_society = any(
+            marker in title_text
+            for marker in ("中国核学会", "中国核物理学会", "三核论坛", "ribll", "hiaf")
+        )
+        if title_is_physics or title_is_nuclear_society:
+            return True
+        if any(term in detail_text for term in NOTICE_NON_PHYSICS_TERMS):
+            return False
         return True
+    if any(term in detail_text for term in NOTICE_NON_PHYSICS_TERMS):
+        return False
     return any(term in title_text for term in NOTICE_PHYSICS_TERMS)
+
+
+def notice_labels(item: dict[str, Any]) -> tuple[list[str], list[str]]:
+    """为会议补充可见的学会与系列标签，让 Indico 托管页不再遮住真实组织方。"""
+    organization_haystack = unicodedata.normalize("NFKC", " ".join(str(item.get(key) or "") for key in (
+        "title", "summary", "content", "organizer",
+    ))).lower()
+    series_haystack = unicodedata.normalize("NFKC", " ".join(str(item.get(key) or "") for key in (
+        "title", "summary", "content", "organizer",
+    ))).lower()
+    organizations = [label for label, markers in NOTICE_ORGANIZATION_RULES if any(marker in organization_haystack for marker in markers)]
+    series = [label for label, markers in NOTICE_MEETING_SERIES_RULES if any(marker in series_haystack for marker in markers)]
+    return list(dict.fromkeys(organizations)), list(dict.fromkeys(series))
 
 
 @dataclass
@@ -121,7 +165,7 @@ def write_json(path: Path, value: Any) -> None:
     temporary.replace(path)
 
 
-def fetch(url: str, *, accept: str = "*/*", attempts: int = 3) -> bytes:
+def fetch(url: str, *, accept: str = "*/*", attempts: int = 3, timeout: float = 25) -> bytes:
     request = urllib.request.Request(
         url,
         headers={
@@ -133,7 +177,7 @@ def fetch(url: str, *, accept: str = "*/*", attempts: int = 3) -> bytes:
     last_error: Exception | None = None
     for attempt in range(attempts):
         try:
-            with urllib.request.urlopen(request, timeout=25) as response:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
                 return response.read()
         except urllib.error.HTTPError as exc:
             last_error = exc
@@ -545,13 +589,16 @@ def indico_event_metadata(url: str) -> dict[str, Any] | None:
     content = html_fragment_text(str(event.get("description") or ""))[:6000]
     start = event.get("startDate") if isinstance(event.get("startDate"), dict) else {}
     end = event.get("endDate") if isinstance(event.get("endDate"), dict) else {}
+    created = event.get("creationDate") if isinstance(event.get("creationDate"), dict) else {}
     dates = [str(start.get("date") or ""), str(end.get("date") or "")]
     date_line = " — ".join(value for value in dates if value)
     summary = clean_text(" ".join(value for value in (date_line, content) if value))
     return {
         "summary": summary[:900],
         "content": content,
-        "published": str(end.get("date") or start.get("date") or ""),
+        "published": str(created.get("date") or start.get("date") or ""),
+        "event_start": str(start.get("date") or ""),
+        "event_end": str(end.get("date") or ""),
         "deadline": "",
         "headings": [str(event.get("title") or "")],
     }
@@ -668,6 +715,8 @@ def enrich_notice_details(items: list[dict[str, Any]], limit: int = 60) -> dict[
                 item["content"] = content
             item["published"] = item.get("published") or details.get("published", "")
             item["deadline"] = item.get("deadline") or details.get("deadline", "")
+            item["event_start"] = item.get("event_start") or details.get("event_start", "")
+            item["event_end"] = item.get("event_end") or details.get("event_end", "")
             if summary or content:
                 success += 1
     return {"attempted": len(candidates), "updated": success}
@@ -1952,7 +2001,98 @@ def fetch_news(source: dict[str, Any], classifier: Classifier) -> tuple[list[dic
         return [], SourceResult(source["name"], "news", False, 0, str(exc)[:240])
 
 
+def fetch_indico_notices(source: dict[str, Any], classifier: Classifier) -> tuple[list[dict[str, Any]], SourceResult]:
+    """通过 Indico 公开 JSON 导出抓取会议。
+
+    相比只读首页，导出接口能保留已发布但未在首页出现的气体探测器、
+    核结构、核数据、RIBLL/HIAF 和核物理人工智能会议。
+    """
+    try:
+        today = dt.datetime.now(dt.timezone.utc).date()
+        date_from = (today - dt.timedelta(days=max(0, int(source.get("past_days", 550))))).isoformat()
+        date_to = (today + dt.timedelta(days=max(0, int(source.get("future_days", 550))))).isoformat()
+        url = source["url"]
+        separator = "&" if urllib.parse.urlsplit(url).query else "?"
+        export_url = f"{url}{separator}{urllib.parse.urlencode({'from': date_from, 'to': date_to})}"
+        payload = json.loads(fetch(
+            export_url,
+            accept="application/json",
+            attempts=max(1, int(source.get("attempts", 2))),
+            timeout=float(source.get("timeout", 35)),
+        ))
+        events = payload.get("results", []) if isinstance(payload, dict) else []
+        include = [str(term).lower() for term in source.get("include", [])]
+        exclude = [str(term).lower() for term in source.get("exclude", [])]
+        records: list[dict[str, Any]] = []
+        seen: set[str] = set()
+        for event in events:
+            if not isinstance(event, dict):
+                continue
+            title = clean_text(str(event.get("title") or ""))
+            description = html_fragment_text(str(event.get("description") or ""))[:6000]
+            match_parts = (title, description) if source.get("match_description") else (title,)
+            match_text = unicodedata.normalize("NFKC", " ".join(match_parts)).lower()
+            if not title or (include and not any(term in match_text for term in include)):
+                continue
+            if exclude and any(term in title.lower() for term in exclude):
+                continue
+            if not notice_is_physics_relevant(
+                title,
+                description,
+                notice_category=source.get("notice_category", "meetings-nuclear"),
+                scope=source.get("scope", ""),
+            ):
+                continue
+            event_url = str(event.get("url") or "").strip()
+            if not event_url:
+                event_id = str(event.get("id") or "").strip()
+                base = urllib.parse.urlsplit(source["url"])
+                event_url = urllib.parse.urlunsplit((base.scheme, base.netloc, f"/event/{event_id}/", "", ""))
+            if event_url in seen:
+                continue
+            seen.add(event_url)
+            start = event.get("startDate") if isinstance(event.get("startDate"), dict) else {}
+            end = event.get("endDate") if isinstance(event.get("endDate"), dict) else {}
+            created = event.get("creationDate") if isinstance(event.get("creationDate"), dict) else {}
+            published = str(created.get("date") or start.get("date") or "")
+            categories, tags = classifier.classify(title, description, source["name"])
+            importance, score_reasons = classifier.importance_details(
+                title, description, source.get("weight", 6), categories
+            )
+            record = {
+                "id": stable_id("notice", event_url),
+                "type": "notice",
+                "title": title,
+                "summary": clean_text(description)[:900],
+                "content": clean_text(description),
+                "published": published,
+                "event_start": str(start.get("date") or ""),
+                "event_end": str(end.get("date") or ""),
+                "deadline": "",
+                "source": source["name"],
+                "source_url": source["url"],
+                "url": event_url,
+                "notice_category": source.get("notice_category", "meetings-nuclear"),
+                "scope": source.get("scope", ""),
+                "organizer": clean_text(str(event.get("organizer") or "")),
+                "location": clean_text(" ".join(str(event.get(key) or "") for key in ("location", "room", "address"))),
+                "categories": categories,
+                "tags": tags,
+                "importance": importance,
+                "score_reasons": score_reasons,
+            }
+            record["organizations"], record["meeting_series"] = notice_labels(record)
+            records.append(record)
+        records.sort(key=lambda item: (item.get("event_start", ""), item.get("published", "")), reverse=True)
+        records = records[:max(1, int(source.get("limit", 80)))]
+        return records, SourceResult(source["name"], "notice", True, len(records))
+    except Exception as exc:  # noqa: BLE001
+        return [], SourceResult(source["name"], "notice", False, 0, str(exc)[:240])
+
+
 def fetch_notice(source: dict[str, Any], classifier: Classifier) -> tuple[list[dict[str, Any]], SourceResult]:
+    if source.get("format") == "indico-json":
+        return fetch_indico_notices(source, classifier)
     try:
         raw = fetch(
             source["url"], accept="text/html", attempts=max(1, int(source.get("attempts", 2)))
@@ -1996,7 +2136,7 @@ def fetch_notice(source: dict[str, Any], classifier: Classifier) -> tuple[list[d
             categories, tags = classifier.classify(title, "", source["name"])
             record_kind = source.get("kind", "notice")
             importance, score_reasons = classifier.importance_details(title, "", source["weight"], categories)
-            records.append({
+            record = {
                 "id": stable_id("notice", url),
                 "type": record_kind,
                 "title": title,
@@ -2012,7 +2152,9 @@ def fetch_notice(source: dict[str, Any], classifier: Classifier) -> tuple[list[d
                 "tags": tags,
                 "importance": importance,
                 "score_reasons": score_reasons,
-            })
+            }
+            record["organizations"], record["meeting_series"] = notice_labels(record)
+            records.append(record)
             if len(records) >= int(source.get("limit", 30)):
                 break
         # 仅读取每个来源最新的少量详情页，提取截止日期与官方简介。
@@ -2038,6 +2180,9 @@ def fetch_notice(source: dict[str, Any], classifier: Classifier) -> tuple[list[d
                 ), "")
                 if heading:
                     record["title"] = heading
+            record["event_start"] = record.get("event_start") or details.get("event_start", "")
+            record["event_end"] = record.get("event_end") or details.get("event_end", "")
+            record["organizations"], record["meeting_series"] = notice_labels(record)
         records = [
             record for record in records
             if notice_is_physics_relevant(
@@ -2314,9 +2459,13 @@ def main() -> int:
         notice.setdefault("scope", "")
         notice.setdefault("deadline", "")
         notice.setdefault("content", "")
+        notice.setdefault("event_start", "")
+        notice.setdefault("event_end", "")
     notice_detail_stats = enrich_notice_details(
         notices, int(runtime.get("notice_detail_enrichment_limit", 60))
     )
+    for notice in notices:
+        notice["organizations"], notice["meeting_series"] = notice_labels(notice)
     notice_terms = {
         source["name"]: [term.lower() for term in source.get("include", [])]
         for source in source_config.get("notice_pages", []) if source.get("kind", "notice") == "notice"

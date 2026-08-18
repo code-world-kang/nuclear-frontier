@@ -1633,6 +1633,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .daily-notice-card-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
 .daily-notice-card-top > div { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 5px; }
 .notice-kind { color: #598064; font-size: 9px; font-weight: 700; }
+.notice-card-organizations { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
+.notice-organization { display: inline-flex; align-items: center; padding: 4px 8px; border: 1px solid #cfe0c8; border-radius: 99px; color: #47714f; background: linear-gradient(135deg, #edf8e8, #fff3df); font-size: 8px; font-weight: 700; }
 .notice-fresh,
 .notice-deadline { padding: 4px 7px; border-radius: 99px; font-size: 8px; font-weight: 700; }
 .notice-fresh { color: #4e794f; background: #e7f5df; }
@@ -1646,6 +1648,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .daily-notice-card footer { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; margin-top: 13px; padding-top: 11px; border-top: 1px solid #e8ebe2; }
 .daily-notice-card footer > div { display: flex; flex-wrap: wrap; gap: 5px 10px; color: #859087; font-size: 8px; }
 .daily-notice-card footer b { color: #617765; }
+.daily-notice-card footer strong { color: #9a6a3b; font-weight: 700; }
 .daily-notice-card footer a { flex: 0 0 auto; color: #478052; font-size: 9px; text-decoration: none; }
 .daily-notice-links { display: flex; flex: 0 0 auto; flex-wrap: wrap; justify-content: flex-end; gap: 6px 12px; }
 .daily-notice-empty { display: grid; justify-items: center; gap: 5px; padding: 55px 20px; color: #718076; text-align: center; }
@@ -1745,6 +1748,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .notice-detail-meta { display: flex; flex-wrap: wrap; gap: 5px 10px; padding-bottom: 12px; border-bottom: 1px solid #e5e9e0; color: #829085; font-size: 8px; }
 .notice-detail-meta b { color: #5e7563; }
 .notice-detail-meta strong { color: #a3653a; }
+.notice-detail-meta .notice-event-date { color: #477851; }
 .notice-detail-panel section { margin-top: 15px; }
 .notice-detail-panel section h3 { margin: 0 0 7px; color: #607864; font-size: 9px; }
 .notice-detail-panel section p { margin: 0; color: #65746a; font-size: 9px; line-height: 1.75; white-space: pre-line; }

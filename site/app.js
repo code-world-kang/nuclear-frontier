@@ -2676,6 +2676,24 @@ function noticeOfficialText(item) {
   return String(item.content || item.summary || '').trim();
 }
 
+function noticeLastSuccess() {
+  return state.meta?.status?.notice_last_success || state.meta?.status?.last_success || '';
+}
+
+function noticeLabelBadges(item) {
+  return [...new Set([...(item.organizations || []), ...(item.meeting_series || [])])]
+    .filter(Boolean)
+    .map(label => `<span class="notice-organization">${text(label)}</span>`)
+    .join('');
+}
+
+function noticeEventDate(item) {
+  if (!item.event_start) return '';
+  const start = prettyDate(item.event_start);
+  const end = item.event_end && item.event_end !== item.event_start ? prettyDate(item.event_end) : '';
+  return end ? `会期 ${start} — ${end}` : `会期 ${start}`;
+}
+
 function selectNotice(item) {
   state.selectedNoticeId = item.id;
   renderDailyNotices();
@@ -2694,10 +2712,10 @@ function renderNoticeDetail(item) {
   host.innerHTML = `
     <header class="notice-detail-head"><span>${text(group.icon)} ${text(group.label)}</span><small>${text(category.label)}</small></header>
     <h2>${text(localizedTitle(item))}</h2>
-    <div class="notice-detail-meta"><b>${text(item.source || '官方来源')}</b><time>${text(prettyDate(item.published))}</time>${item.deadline ? `<strong>截止 ${text(prettyDate(item.deadline))}</strong>` : ''}</div>
+    <div class="notice-detail-meta"><b>${text(item.source || '官方来源')}</b><time>${text(prettyDate(item.published))}</time>${noticeEventDate(item) ? `<strong class="notice-event-date">${text(noticeEventDate(item))}</strong>` : ''}${item.deadline ? `<strong>截止 ${text(prettyDate(item.deadline))}</strong>` : ''}</div>
     ${translated?.abstract_zh ? `<section><h3>中文介绍</h3><p>${text(applyTranslationGlossary(translated.abstract_zh))}</p></section>` : ''}
     <section><h3>官方原文信息</h3><p>${text(original)}</p></section>
-    <div class="notice-detail-tags">${(item.categories || []).map(id => `<span>${text(categoryName(id))}</span>`).join('')}<span>${text(item.scope || category.description || '')}</span></div>
+    <div class="notice-detail-tags">${noticeLabelBadges(item)}${(item.categories || []).map(id => `<span>${text(categoryName(id))}</span>`).join('')}<span>${text(item.scope || category.description || '')}</span></div>
     <div class="notice-detail-actions"><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">查看官方原文 ↗</a><button type="button" data-notice-favorite>${isFavorite(item.id) ? '★ 已收藏' : '☆ 收藏'}</button><a href="${text(googleTranslationPageUrl(item))}" target="_blank" rel="noreferrer">Google 翻译官网 ↗</a></div>`;
   $('[data-notice-favorite]', host).addEventListener('click', event => void toggleFavorite(item, event.currentTarget));
 }
@@ -2707,7 +2725,7 @@ function dailyNoticeCard(item) {
   article.className = 'daily-notice-card';
   const category = noticeCategoryInfo(item.notice_category);
   const deadline = deadlineState(item);
-  const runDay = beijingDay(state.meta?.status?.last_success || new Date());
+  const runDay = beijingDay(noticeLastSuccess() || new Date());
   const isFresh = noticeFirstSeenDay(item) === runDay;
   const deadlineLabel = deadline.kind === 'closed'
     ? `已截止 ${prettyDate(item.deadline)}`
@@ -2726,10 +2744,11 @@ function dailyNoticeCard(item) {
       <span class="notice-kind">${text((NOTICE_GROUPS.find(value => value.id === noticeGroup(item)) || NOTICE_GROUPS[0]).icon)} ${text((NOTICE_GROUPS.find(value => value.id === noticeGroup(item)) || NOTICE_GROUPS[0]).label)} · ${text(category.label)}</span>
       <div>${isFresh ? '<b class="notice-fresh">今日发现</b>' : ''}${deadlineLabel ? `<b class="notice-deadline ${text(deadline.kind)}">${text(deadlineLabel)}</b>` : ''}<button type="button" class="notice-favorite-button" aria-label="收藏通知">${isFavorite(item.id) ? '★' : '☆'}</button></div>
     </div>
+    ${noticeLabelBadges(item) ? `<div class="notice-card-organizations">${noticeLabelBadges(item)}</div>` : ''}
     <h3><button type="button" class="notice-title-button">${text(localizedTitle(item))}</button></h3>
     <div class="notice-original-preview"><b>官方原文信息</b><p>${text(excerpt)}</p>${original.length > 360 ? `<button type="button" class="notice-expand">${expanded ? '收起原文' : '展开全部信息'}</button>` : ''}</div>
     <footer>
-      <div><b>${text(item.source || '官方来源')}</b><span>${text(item.scope || '')}</span><time>${text(prettyDate(item.published))}</time></div>
+      <div><b>${text(item.source || '官方来源')}</b><span>${text(item.scope || '')}</span><time>${text(prettyDate(item.published))}</time>${noticeEventDate(item) ? `<strong>${text(noticeEventDate(item))}</strong>` : ''}</div>
       <span class="daily-notice-links"><button type="button" class="notice-detail-button">右侧查看详情</button><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">官方原文 ↗</a><a href="${text(googleTranslationPageUrl(item))}" target="_blank" rel="noreferrer" class="google-translation-link">Google 翻译官网 ↗</a></span>
     </footer>`;
   $('.notice-title-button', article).addEventListener('click', () => selectNotice(item));
@@ -2744,7 +2763,7 @@ function dailyNoticeCard(item) {
 }
 
 function filteredDailyNotices() {
-  const runDay = beijingDay(state.meta?.status?.last_success || new Date());
+  const runDay = beijingDay(noticeLastSuccess() || new Date());
   const today = beijingDay();
   const weekStart = new Date(`${today}T00:00:00Z`);
   weekStart.setUTCDate(weekStart.getUTCDate() - 6);
@@ -2757,7 +2776,7 @@ function filteredDailyNotices() {
     if (state.noticeTiming === '7days' && noticePublishedDay(item) < weekDay) return false;
     if (query) {
       const translation = translationFor(item);
-      const haystack = [item.title, item.summary, item.content, translation?.title_zh, translation?.abstract_zh, item.source, item.scope, noticeCategoryInfo(item.notice_category).label]
+      const haystack = [item.title, item.summary, item.content, translation?.title_zh, translation?.abstract_zh, item.source, item.scope, ...(item.organizations || []), ...(item.meeting_series || []), noticeCategoryInfo(item.notice_category).label]
         .join(' ').toLocaleLowerCase('zh-CN');
       if (!query.split(/\s+/).every(term => haystack.includes(term))) return false;
     }
@@ -2788,7 +2807,7 @@ function renderDailyNoticeCategories() {
 }
 
 function renderDailyNotices() {
-  const runDay = beijingDay(state.meta?.status?.last_success || new Date());
+  const runDay = beijingDay(noticeLastSuccess() || new Date());
   const today = beijingDay();
   const weekStart = new Date(`${today}T00:00:00Z`);
   weekStart.setUTCDate(weekStart.getUTCDate() - 6);
@@ -2804,7 +2823,7 @@ function renderDailyNotices() {
   $('#noticeWeekCount').textContent = weekCount.toLocaleString('zh-CN');
   $('#noticeSourceCount').textContent = `${healthySources}/${sourceResults.length}`;
   $('#noticeSourceHint').textContent = sourceResults.length ? `${sourceResults.length - healthySources} 个来源待重试` : '等待首次来源检查';
-  $('#dailyNoticeUpdated').textContent = relativeUpdate(state.meta?.status?.last_success || '');
+  $('#dailyNoticeUpdated').textContent = relativeUpdate(noticeLastSuccess());
   renderDailyNoticeCategories();
 
   const items = filteredDailyNotices();

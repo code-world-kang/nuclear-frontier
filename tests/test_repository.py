@@ -355,6 +355,30 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn(".daily-notice-list", styles)
         self.assertIn("overflow-x: hidden", styles)
 
+    def test_nuclear_meeting_series_are_monitored_and_visible(self):
+        sources = json.loads((ROOT / "config" / "sources.json").read_text(encoding="utf-8"))["notice_pages"]
+        names = {item.get("name") for item in sources}
+        self.assertTrue({
+            "中国核学会会议（官方承办单位）", "全国先进气体探测器 Indico",
+            "北京大学 Indico 核物理会议", "近代物理所 Indico 全量", "高能所 Indico 核物理全量",
+        }.issubset(names))
+        searchable = " ".join(
+            " ".join([item.get("name", ""), item.get("scope", ""), *(item.get("include") or [])])
+            for item in sources if item.get("notice_category") == "meetings-nuclear"
+        )
+        for keyword in ["中国核学会", "气体探测器", "RIBLL", "HIAF", "核物理及核数据中的机器学习", "全国核物理大会", "全国核结构大会", "全国重点实验室"]:
+            self.assertIn(keyword, searchable)
+        indico_sources = [item for item in sources if item.get("format") == "indico-json"]
+        self.assertGreaterEqual(len(indico_sources), 6)
+        self.assertTrue(all("/export/categ/" in item["url"] for item in indico_sources))
+
+        app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+        styles = (ROOT / "site" / "styles.css").read_text(encoding="utf-8")
+        self.assertIn("function noticeLabelBadges", app)
+        self.assertIn("function noticeEventDate", app)
+        self.assertIn("...(item.organizations || [])", app)
+        self.assertIn(".notice-organization", styles)
+
     def test_papers_news_and_notices_have_separate_left_classifications(self):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
         app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
@@ -385,8 +409,10 @@ class RepositoryTests(unittest.TestCase):
         ]
         for item in notices:
             with self.subTest(title=item.get("title")):
-                value = " ".join([item.get("title", ""), item.get("summary", "")]).lower()
-                self.assertFalse(any(term in value for term in forbidden))
+                # 核物理会议的承办单位可能合法包含“核物理与化学研究所”，
+                # 所以主题排除以标题为准，不因机构全称误删核物理会议。
+                title_value = item.get("title", "").lower()
+                self.assertFalse(any(term in title_value for term in forbidden))
 
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
         self.assertIn("只展示物理领域通知", index)

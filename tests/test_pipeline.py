@@ -32,6 +32,7 @@ from update_content import (  # noqa: E402
     indico_event_metadata,
     merge_records,
     notice_is_physics_relevant,
+    notice_labels,
     normalize_title,
     parse_arxiv_figures,
     parse_feed_items,
@@ -244,7 +245,32 @@ class PipelineTests(unittest.TestCase):
             result = indico_event_metadata("https://indico.example.org/event/187/")
         self.assertIn("experimental nuclear physics", result["content"])
         self.assertNotIn("Indico style", result["summary"])
-        self.assertEqual(result["published"], "2026-08-16")
+        self.assertEqual(result["published"], "2026-08-09")
+        self.assertEqual(result["event_start"], "2026-08-09")
+        self.assertEqual(result["event_end"], "2026-08-16")
+
+    def test_nuclear_society_and_meeting_series_labels_are_explicit(self):
+        organizations, series = notice_labels({
+            "title": "第二十三届全国核电子学与核探测技术学术年会（NED2026）",
+            "summary": "中国核学会核电子学与核探测技术分会主办。",
+        })
+        self.assertIn("中国核学会", organizations)
+        self.assertIn("核探测与电子学", series)
+
+        organizations, series = notice_labels({
+            "title": "202307-RIBLL合作组2023年第17次会议第二轮通知",
+            "scope": "RIBLL合作组·HIAF·核物理学校",
+        })
+        self.assertEqual(organizations, ["RIBLL 合作组"])
+        self.assertEqual(series, ["RIBLL 合作组"])
+
+    def test_source_scope_does_not_mislabel_unrelated_meeting_series(self):
+        organizations, series = notice_labels({
+            "title": "Nuclear physics School for Young Scientists",
+            "scope": "RIBLL合作组·HIAF·核物理学校",
+        })
+        self.assertEqual(organizations, [])
+        self.assertEqual(series, [])
 
     def test_notice_date_supports_chinese_date(self):
         self.assertEqual(extract_notice_date("发布日期：2026年8月10日"), "2026-08-10")
