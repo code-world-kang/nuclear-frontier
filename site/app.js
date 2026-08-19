@@ -17,6 +17,9 @@ const state = {
   selectedPaperId: '',
   selectedNoticeId: '', expandedNoticeIds: new Set(),
   cloudUpdatedAt: '',
+  cloudSyncAvailable: false,
+  cloudSyncBusy: false,
+  cloudSyncToken: '',
   localDraftUpdatedAt: '',
   personalDirty: false,
   noticeCategory: 'all', noticeTiming: 'all', noticeQuery: '', noticeVisible: 24,
@@ -30,6 +33,7 @@ const state = {
   zoteroDraft: null,
 };
 const citationMetadataRequests = new Map();
+let cloudSyncTimer = 0;
 const PRIMARY_NUCLEAR_CATEGORIES = new Set([
   'experimental-nuclear', 'theoretical-nuclear', 'nuclear-structure', 'nuclear-decay', 'nuclear-reactions',
   'detectors-daq', 'nuclear-general', 'high-energy-nuclear', 'nuclear-astrophysics',
@@ -93,11 +97,14 @@ function loadPaperLayout() {
 function savePaperLayout() {
   markPersonalDirty();
   persistPersonalDraft();
+  scheduleCloudSync();
 }
 
 function savePersonal() {
   markPersonalDirty();
-  return persistPersonalDraft();
+  const saved = persistPersonalDraft();
+  scheduleCloudSync();
+  return saved;
 }
 
 function normalizeKeyword(value = '') {
@@ -245,13 +252,20 @@ function updateCloudSyncUI(message = '') {
   const bar = $('#cloudSyncBar');
   const button = $('#submitGitHubSync');
   if (!bar || !button) return;
-  bar.classList.toggle('connected', !state.personalDirty);
-  button.disabled = !state.personalDirty;
-  button.textContent = state.personalDirty ? '提交到 GitHub' : '已同步';
-  const publicTime = state.cloudUpdatedAt ? `公开快照：${prettyDate(state.cloudUpdatedAt)}` : '尚无公开个人数据';
-  $('#cloudSyncStatus').textContent = message || (state.personalDirty
-    ? '已保留本地安全副本，但尚未公开同步；请提交到 GitHub。'
-    : `已从 GitHub 读取 · ${publicTime}`);
+  bar.classList.toggle('connected', state.cloudSyncAvailable && !state.personalDirty);
+  button.disabled = state.cloudSyncBusy || !state.personalDirty;
+  if (!state.personalDirty) button.textContent = '已同步';
+  else if (state.cloudSyncBusy) button.textContent = '保存中…';
+  else if (state.cloudSyncAvailable && !state.cloudSyncToken) button.textContent = '连接云端';
+  else button.textContent = state.cloudSyncAvailable ? '立即同步' : '提交到 GitHub';
+  const cloudTime = state.cloudUpdatedAt ? `云端快照：${prettyDate(state.cloudUpdatedAt)}` : '尚无云端快照';
+  $('#cloudSyncStatus').textContent = message || (state.cloudSyncAvailable
+    ? (state.personalDirty
+      ? (state.cloudSyncToken ? '变更将自动保存到 EdgeOne。' : '输入一次同步密码后，本次会话内将自动保存。')
+      : `EdgeOne 云端已连接 · ${cloudTime}`)
+    : (state.personalDirty
+      ? '当前仍为 GitHub Pages，可继续使用 GitHub 提交同步。'
+      : `已从 GitHub 读取 · ${cloudTime}`));
 }
 
 function markPersonalDirty() {
@@ -316,6 +330,101 @@ async function submitGitHubSync() {
   popup.location.replace(issueUrl.href);
   updateCloudSyncUI('已打开 GitHub：请确认创建 Issue，约 1–2 分钟后刷新本站。');
   showToast('请在 GitHub 页面确认提交');
+}
+
+function showCloudSyncAuth(message = '') {
+  const form = $('#cloudSyncAuth');
+  if (!form) return;
+  form.hidden = false;
+  if (message) updateCloudSyncUI(message);
+  $('#cloudSyncSecret').focus();
+}
+
+function hideCloudSyncAuth() {
+  const form = $('#cloudSyncAuth');
+  if (!form) return;
+  form.hidden = true;
+  $('#cloudSyncSecret').value = '';
+}
+
+function cloudSyncEndpoint() {
+  return state.meta?.site?.cloud_sync?.endpoint || '/api/personal-state';
+}
+
+async function loadCloudPersonalState() {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 6000);
+  try {
+    const response = await fetch(cloudSyncEndpoint(), {
+      cache: 'no-store',
+      signal: controller.signal,
+      headers: { Accept: 'application/json' },
+    });
+    if (response.headers.get('X-Nuclear-Frontier-Cloud') !== 'edgeone') return false;
+    state.cloudSyncAvailable = true;
+    if (!response.ok) return true;
+    const payload = await response.json();
+    if (payload.updated_at || hasPersonalContent(payload.personal || {})) applyPublicPersonalState(payload);
+    return true;
+  } catch {
+    return false;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function savePersonalToCloud({ interactive = false } = {}) {
+  if (!state.cloudSyncAvailable || !state.personalDirty || state.cloudSyncBusy) return false;
+  if (!state.cloudSyncToken) {
+    if (interactive) showCloudSyncAuth();
+    return false;
+  }
+  state.cloudSyncBusy = true;
+  updateCloudSyncUI('正在安全保存到 EdgeOne…');
+  try {
+    const response = await fetch(cloudSyncEndpoint(), {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${state.cloudSyncToken}`,
+      },
+      body: JSON.stringify(publicPersonalPayload()),
+    });
+    const result = await response.json().catch(() => ({}));
+    if (response.status === 401) {
+      state.cloudSyncToken = '';
+      showCloudSyncAuth(result.error || '同步密码不正确');
+      return false;
+    }
+    if (!response.ok) throw new Error(result.error || `HTTP ${response.status}`);
+    state.cloudUpdatedAt = result.state?.updated_at || new Date().toISOString();
+    state.personalDirty = false;
+    try { localStorage.removeItem(PERSONAL_DRAFT_KEY); } catch { /* 云端已保存，本地清理失败不影响使用 */ }
+    hideCloudSyncAuth();
+    updateCloudSyncUI('已自动保存到 EdgeOne 云端');
+    return true;
+  } catch (error) {
+    console.error(error);
+    updateCloudSyncUI(`云端保存失败：${error.message}；本地安全副本仍在。`);
+    return false;
+  } finally {
+    state.cloudSyncBusy = false;
+    updateCloudSyncUI();
+  }
+}
+
+function scheduleCloudSync() {
+  clearTimeout(cloudSyncTimer);
+  if (!state.cloudSyncAvailable || !state.cloudSyncToken) return;
+  cloudSyncTimer = setTimeout(() => void savePersonalToCloud(), 900);
+}
+
+async function submitPersonalSync() {
+  if (state.cloudSyncAvailable) {
+    await savePersonalToCloud({ interactive: true });
+    return;
+  }
+  await submitGitHubSync();
 }
 
 function keywordKey(value = '') {
@@ -3450,7 +3559,15 @@ function bindEvents() {
     state.noticeVisible += 24;
     renderDailyNotices();
   });
-  $('#submitGitHubSync').addEventListener('click', () => void submitGitHubSync());
+  $('#submitGitHubSync').addEventListener('click', () => void submitPersonalSync());
+  $('#cloudSyncAuth').addEventListener('submit', event => {
+    event.preventDefault();
+    const secret = $('#cloudSyncSecret').value;
+    if (!secret) return;
+    state.cloudSyncToken = secret;
+    void savePersonalToCloud({ interactive: true });
+  });
+  $('#cancelCloudSyncAuth').addEventListener('click', hideCloudSyncAuth);
   $('#exportReferences').addEventListener('click', exportReferenceSet);
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && document.body.classList.contains('paper-assistant-open')) {
@@ -3485,6 +3602,7 @@ async function loadData() {
   state.translations = translationPayload.items || {};
   Object.keys(state.translations).forEach(id => state.translatedIds.add(id));
   state.meta.categories.forEach(category => state.categoryMap.set(category.id, category));
+  await loadCloudPersonalState();
   configureDateRangeInputs();
   if (state.meta.site.repository_url) $('#repoLink').href = state.meta.site.repository_url;
   else $('#repoLink').hidden = true;

@@ -233,8 +233,14 @@
 
           <section class="cloud-sync-bar" id="cloudSyncBar" aria-live="polite">
             <span class="cloud-sync-icon" aria-hidden="true">☁</span>
-            <div><b>GitHub 公开同步</b><small id="cloudSyncStatus">正在读取同步状态…</small></div>
+            <div><b>EdgeOne 云端同步</b><small id="cloudSyncStatus">正在读取同步状态…</small></div>
             <button type="button" id="submitGitHubSync" disabled>已同步</button>
+            <form class="cloud-sync-auth" id="cloudSyncAuth" hidden>
+              <label for="cloudSyncSecret">同步密码</label>
+              <input id="cloudSyncSecret" type="password" autocomplete="current-password" placeholder="仅用于本次浏览器会话">
+              <button type="submit">连接并保存</button>
+              <button type="button" id="cancelCloudSyncAuth">取消</button>
+            </form>
           </section>
 
           <div class="toolbar">
