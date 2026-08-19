@@ -243,7 +243,11 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("function submitGitHubSync", app)
         self.assertIn("GitHub 公开同步", index)
         self.assertIn("nuclear-frontier-personal-state:v1", app)
-        self.assertNotIn("localStorage", app)
+        self.assertIn("PERSONAL_DRAFT_KEY", app)
+        self.assertIn("function persistPersonalDraft", app)
+        self.assertIn("兼容 2026-08-10 之前站点保存的收藏", app)
+        self.assertIn("function favoriteSnapshotItem", app)
+        self.assertIn("known.get(id) || favoriteSnapshotItem", app)
         self.assertNotIn("OneDrive", index + app)
         self.assertIn("state.scope === 'custom'", app)
 
@@ -440,7 +444,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("ALLOWED_ORIGINS", bridge)
         self.assertIn('BRIDGE_HOST = "127.0.0.1"', bridge)
         self.assertNotIn("api_key", bridge.lower())
-        self.assertNotIn("localStorage", app)
+        self.assertIn("本地安全副本", app)
 
 
 if __name__ == "__main__":

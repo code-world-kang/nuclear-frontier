@@ -115,7 +115,8 @@ node --check site/app.js
 
 ## GitHub 公开同步
 
-- 网站不使用 `localStorage`，也不在网页源码中保存 Token、密码或其他秘密；
+- GitHub 是个人数据的最终来源；浏览器仅保留一份未提交的安全副本，防止刷新或误关页面后丢失，GitHub 同步成功后自动丢弃该副本；
+- 网页源码不保存 Token、密码或其他秘密；
 - 修改收藏、笔记、关键词或排列后，点击“提交到 GitHub”会打开预填好的 Issue；用户只需确认创建；
 - GitHub Actions 仅接受仓库所有者创建的 `[个人数据同步]` Issue，校验 JSON 模式后更新 `data/personal/state.json`、重新发布网站并自动关闭 Issue；
 - 同步内容是公开数据，不应写入密码、Token、未公开实验数据或其他敏感信息；

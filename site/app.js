@@ -1,4 +1,7 @@
 const PATH = new URL('.', window.location.href).pathname;
+// GitHub 仍是个人数据的最终来源；本地副本只用来防止“已点收藏、未提交 GitHub”时刷新丢失。
+const PERSONAL_DRAFT_KEY = 'nuclear-frontier.personal.v1';
+const LEGACY_LAYOUT_KEY = 'nuclear-frontier.paper-layout.v1';
 
 const DEFAULT_CATEGORY_ORDER = [
   'experimental-nuclear', 'nuclear-structure', 'nuclear-reactions', 'nuclear-decay', 'detectors-daq',
@@ -14,6 +17,7 @@ const state = {
   selectedPaperId: '',
   selectedNoticeId: '', expandedNoticeIds: new Set(),
   cloudUpdatedAt: '',
+  localDraftUpdatedAt: '',
   personalDirty: false,
   noticeCategory: 'all', noticeTiming: 'all', noticeQuery: '', noticeVisible: 24,
   noticePortalCategory: 'all', noticePortalQuery: '', personal: loadPersonal(), paperLayout: loadPaperLayout(),
@@ -88,11 +92,12 @@ function loadPaperLayout() {
 
 function savePaperLayout() {
   markPersonalDirty();
+  persistPersonalDraft();
 }
 
 function savePersonal() {
   markPersonalDirty();
-  return true;
+  return persistPersonalDraft();
 }
 
 function normalizeKeyword(value = '') {
@@ -137,12 +142,78 @@ function normalizePublicPersonalState(payload = {}) {
   return { personal: normalized, paperLayout, googleTranslations, updatedAt: String(payload.updated_at || '') };
 }
 
+function hasPersonalContent(personal = {}) {
+  return ['favorites', 'readStatus', 'notes', 'translationFavorites'].some(key => Object.keys(personal[key] || {}).length)
+    || ['keywords', 'translationGlossary', 'codeItems', 'resources', 'hiddenPublicFavorites', 'ignoredItems'].some(key => (personal[key] || []).length);
+}
+
+function readPersonalDraft() {
+  try {
+    const raw = localStorage.getItem(PERSONAL_DRAFT_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (parsed?.personal && typeof parsed.personal === 'object') {
+      return { ...normalizePublicPersonalState(parsed), legacy: false };
+    }
+    // 兼容 2026-08-10 之前站点保存的收藏，尽可能帮用户找回旧数据。
+    let paperLayout = {};
+    try { paperLayout = JSON.parse(localStorage.getItem(LEGACY_LAYOUT_KEY) || '{}'); } catch { paperLayout = {}; }
+    return { ...normalizePublicPersonalState({ personal: parsed, paperLayout }), legacy: true };
+  } catch (error) {
+    console.error('读取本地安全副本失败', error);
+    return null;
+  }
+}
+
+function mergePersonal(remote, local) {
+  const merged = emptyPersonal();
+  ['favorites', 'readStatus', 'notes', 'translationFavorites'].forEach(key => {
+    merged[key] = { ...(remote[key] || {}), ...(local[key] || {}) };
+  });
+  merged.keywords = uniqueKeywords([...(remote.keywords || []), ...(local.keywords || [])]);
+  merged.translationGlossary = normalizeTranslationGlossary([...(remote.translationGlossary || []), ...(local.translationGlossary || [])]);
+  ['codeItems', 'resources'].forEach(key => {
+    const records = new Map();
+    [...(remote[key] || []), ...(local[key] || [])].forEach((item, index) => {
+      const identity = String(item?.id || item?.url || item?.title || `${key}-${index}`);
+      records.set(identity, item);
+    });
+    merged[key] = [...records.values()];
+  });
+  merged.hiddenPublicFavorites = [...new Set([...(remote.hiddenPublicFavorites || []), ...(local.hiddenPublicFavorites || [])].map(String))];
+  merged.ignoredItems = [...new Set([...(remote.ignoredItems || []), ...(local.ignoredItems || [])].map(String))];
+  return merged;
+}
+
 function applyPublicPersonalState(payload = {}) {
-  const normalized = normalizePublicPersonalState(payload);
-  state.personal = normalized.personal;
-  state.paperLayout = normalized.paperLayout;
-  state.googleTranslations = new Map(Object.entries(normalized.googleTranslations));
-  state.cloudUpdatedAt = normalized.updatedAt;
+  const remote = normalizePublicPersonalState(payload);
+  const local = readPersonalDraft();
+  const remoteTime = Date.parse(remote.updatedAt) || 0;
+  const localTime = Date.parse(local?.updatedAt || '') || 0;
+  const recoverLegacy = Boolean(local?.legacy && hasPersonalContent(local.personal));
+  const useLocal = Boolean(local && !local.legacy && localTime > remoteTime);
+
+  if (recoverLegacy) {
+    state.personal = mergePersonal(remote.personal, local.personal);
+    state.paperLayout = local.paperLayout;
+    state.googleTranslations = new Map(Object.entries({ ...remote.googleTranslations, ...local.googleTranslations }));
+    state.localDraftUpdatedAt = new Date().toISOString();
+    state.personalDirty = true;
+    persistPersonalDraft(state.localDraftUpdatedAt);
+  } else if (useLocal) {
+    state.personal = local.personal;
+    state.paperLayout = local.paperLayout;
+    state.googleTranslations = new Map(Object.entries(local.googleTranslations));
+    state.localDraftUpdatedAt = local.updatedAt;
+    state.personalDirty = true;
+  } else {
+    state.personal = remote.personal;
+    state.paperLayout = remote.paperLayout;
+    state.googleTranslations = new Map(Object.entries(remote.googleTranslations));
+    state.personalDirty = false;
+    try { localStorage.removeItem(PERSONAL_DRAFT_KEY); } catch { /* 无痕模式可能拒绝存储 */ }
+  }
+  state.cloudUpdatedAt = remote.updatedAt;
 }
 
 function publicPersonalPayload() {
@@ -155,6 +226,21 @@ function publicPersonalPayload() {
   };
 }
 
+function persistPersonalDraft(updatedAt = new Date().toISOString()) {
+  try {
+    state.localDraftUpdatedAt = updatedAt;
+    localStorage.setItem(PERSONAL_DRAFT_KEY, JSON.stringify({
+      ...publicPersonalPayload(),
+      updated_at: updatedAt,
+    }));
+    return true;
+  } catch (error) {
+    console.error(error);
+    showToast('本地安全副本保存失败，请立即提交到 GitHub');
+    return false;
+  }
+}
+
 function updateCloudSyncUI(message = '') {
   const bar = $('#cloudSyncBar');
   const button = $('#submitGitHubSync');
@@ -164,7 +250,7 @@ function updateCloudSyncUI(message = '') {
   button.textContent = state.personalDirty ? '提交到 GitHub' : '已同步';
   const publicTime = state.cloudUpdatedAt ? `公开快照：${prettyDate(state.cloudUpdatedAt)}` : '尚无公开个人数据';
   $('#cloudSyncStatus').textContent = message || (state.personalDirty
-    ? '本页有待提交修改；点击右侧按钮后，在 GitHub 确认创建 Issue。'
+    ? '已保留本地安全副本，但尚未公开同步；请提交到 GitHub。'
     : `已从 GitHub 读取 · ${publicTime}`);
 }
 
@@ -336,7 +422,8 @@ function currentItems() {
       ...Object.keys(state.personal.favorites),
       ...state.publicFavorites.map(item => typeof item === 'string' ? item : item.id).filter(id => !hidden.has(id)),
     ]);
-    return [...state.papers, ...state.news, ...state.notices].filter(item => ids.has(item.id));
+    const known = new Map([...state.papers, ...state.news, ...state.notices].map(item => [item.id, item]));
+    return [...ids].map(id => known.get(id) || favoriteSnapshotItem(favoriteRecord(id))).filter(Boolean);
   }
   if (state.view === 'unread') return state.papers.filter(item => state.personal.readStatus[item.id] !== 'read');
   if (state.view === 'papers' && state.globalKeyword) return state.historyResults;
@@ -366,6 +453,29 @@ function favoriteRecord(id) {
   const local = state.personal.favorites[id];
   if (local && typeof local === 'object') return local;
   return publicFavoriteRecord(id);
+}
+
+function favoriteSnapshotItem(record) {
+  if (!record || typeof record !== 'object' || !record.id || !record.title) return null;
+  return {
+    id: record.id,
+    type: record.type || 'paper',
+    title: record.title,
+    authors: Array.isArray(record.authors) ? record.authors : [],
+    published: record.published || record.added_at || '',
+    source: record.source || '已收藏论文',
+    source_short: record.source_short || '',
+    source_type: record.source_type || '',
+    doi: record.doi || '',
+    arxiv_id: record.arxiv_id || '',
+    url: record.url || '',
+    pdf_url: record.pdf_url || '',
+    categories: Array.isArray(record.categories) ? record.categories : [],
+    tags: Array.isArray(record.tags) ? record.tags : [],
+    methods: Array.isArray(record.methods) ? record.methods : [],
+    importance: Number(record.importance || 0),
+    abstract_status: 'snapshot-only',
+  };
 }
 
 function favoriteKeywords(id) {
@@ -1740,8 +1850,12 @@ async function saveFavoriteDraft() {
   }
   const item = draft.item;
   state.personal.favorites[item.id] = {
-    id: item.id, doi: item.doi || '', arxiv_id: item.arxiv_id || '', title: item.title,
-    url: item.url, categories: item.categories || [], tags: item.tags || [], keywords,
+    id: item.id, type: item.type || 'paper', title: item.title,
+    authors: item.authors || [], published: item.published || '', source: item.source || '',
+    source_short: item.source_short || '', source_type: item.source_type || '',
+    doi: item.doi || '', arxiv_id: item.arxiv_id || '', url: item.url, pdf_url: item.pdf_url || '',
+    categories: item.categories || [], tags: item.tags || [], methods: item.methods || [],
+    importance: item.importance || 0, keywords,
     added_at: new Date().toISOString(),
   };
   state.personal.hiddenPublicFavorites = state.personal.hiddenPublicFavorites.filter(id => id !== item.id);
@@ -3368,7 +3482,6 @@ async function loadData() {
   state.referenceResources = Array.isArray(referencePayload?.items) ? referencePayload.items : [];
   state.historyManifest = historyManifest;
   applyPublicPersonalState(personalPayload);
-  state.personalDirty = false;
   state.translations = translationPayload.items || {};
   Object.keys(state.translations).forEach(id => state.translatedIds.add(id));
   state.meta.categories.forEach(category => state.categoryMap.set(category.id, category));
