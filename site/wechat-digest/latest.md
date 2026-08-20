@@ -1,33 +1,33 @@
-# 小康康的物理世界 · 2026-08-18 科研简报
+# 小康康的物理世界 · 2026-08-20 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 10/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 4/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[First Nb 94 ( n , γ ) Measurement: Constraining the Nucleosynthetic Origin of Mo 94 in Presolar Grains](https://doi.org/10.1103/538w-rhqb)**  
-   Physical Review Letters · 2026-08-18  
-   Isotopic measurements of presolar silicon carbide grains from dying stars have revealed a puzzling overabundance of Mo 94 that stellar nucleosynthesis models have failed to reproduce for two decades. This discrepancy challenged our understanding of the slow neutron-capture process ( s -process) that forges approximately half of the elements heavier than iro…
-2. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
-   Physical Review Letters · 2026-08-04  
-   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
-3. **[双中微子双 β 衰变的辐射修正](https://doi.org/10.1103/gbjc-wsdn)**  
-   Physical Review Letters · 2026-08-11  
-   We use heavy-nucleus effective field theory to compute radiative corrections to two-neutrino double-$\beta$ decay ($2\nu\beta\beta$). Our main result is the first derivation of a universal radiative-correction factor for double-weak decays -- the analogue of the Sirlin function in single-$\beta$ decay -- independent of nuclear matrix elements and excitation…
-4. **[通过基态与激发态联合分析研究无中微子双 β 衰变的灵敏度](https://doi.org/10.1016/j.physletb.2026.140623)**  
-   Physics Letters B · 2026-08-01  
-   下一代无中微子双 β（0νββ）衰变实验预计半衰期灵敏度将接近 10 28 年，其目标是在轻中微子交换情景中探测反转中微子质量排序的整个参数空间。然而，由于核矩阵元（NMEs）具有显著的模型依赖性，这一探测能力仍存在不确定性。在本工作中，我们提出一种联合分析 0νββ 衰变至子核基态和第一个激发 0 + 态的策略。我们表明，这种多道方法可显著提高实验灵敏度，具体幅度取决于所采用的 NME 预测。该方法尤其适合大型液氙探测器，例如拟议的 PandaX-xT 和 XLZD 实验，因为它们能够高效识别 136 Xe 向激发态的跃迁。我们的结果突出说明，在未来的 0νββ 搜寻中利用多个衰变道，对于最大化其发现潜力十分重要。
-5. **[Observation of Long-Range Collective Flow in O + O and Ne + Ne Collisions and Implications for Nuclear Structure Studies](https://doi.org/10.1103/26wx-tg6f)**  
-   Physical Review Letters · 2026-08-17  
-   The long-range collective flow of particles produced in oxygen-oxygen ( O + O ) and neon-neon ( Ne + Ne ) collisions is measured with the CMS detector at the CERN LHC. The data samples were collected at a center-of-mass energy per nucleon pair of 5.36 TeV, with integrated luminosities of 7 nb − 1 and 0.8 nb − 1 for O + O and Ne + Ne collisions, respectively…
-6. **[通过 Coulomb 激发首次测量 90Zr 中的 B(E3;31−→01+)：重新审视 Zr 链中的八极集体性](https://doi.org/10.1016/j.physletb.2026.140670)**  
-   Physics Letters B · 2026-08-01  
-   通过 32 S+ 90 Zr 体系中的安全 Coulomb 激发，研究了 N=50 半幻数核 90 Zr 中激发能为 2748 keV 的 3 1 − 态。使用半经典最小二乘搜索代码 gosia 和 gosia2 拟合实测 γ 射线强度，提取八极跃迁强度 B ( E 3 ; 3 1 − → 0 1 + )。所得 E3 强度显著，为 19 . 6 − 1.6 + 1.7 W.u.，表明该态具有集体八极特征。最先进的壳模型计算通过将该激发描述为植根于微观组态混合的涌现集体性，再现了这一结果，而纯谐振动模型往往高估该强度。此外，在同步分析中，将靶激发归一到 32 S 弹丸的 Coulomb 激发强度，确定 90 Zr 中 2 1 + 态的谱学四极矩为 + 0.09 ( 10 ) eb。该值与半幻数核预期的近球形结构…
-7. **[利用 N = 82 壳闭合附近从头算核质量研究 r 过程核合成](https://doi.org/10.1103/k4lv-436c)**  
-   Physical Review Letters · 2026-07-28  
-   我们对铁以上重元素起源的理解依赖快速中子俘获过程（r 过程），该过程约占其宇宙丰度的一半。然而，r 过程所需的极端富中子条件涉及许多实验仍无法触及的原子核，因此理论预测至关重要。我们探索用从头算价空间 in-medium similarity renormalization group 计算的核质量所产生的影响，重点关注 N = 82 壳闭合附近区域。我们首次表明，相比全局但更为唯象的质量模型，这类从头算质量计算可用于改进 r 过程预测。采用从头算质量后，第二个 r 过程峰的等待点得到加强，从而导致整体核合成流更慢、峰后核丰度更低，以及第三个 r 过程峰位移更强。
-8. **[新同位素 Am 231](https://doi.org/10.1103/2clj-zh3s)**  
-   Physical Review C · 2026-07-15  
-   本工作旨在分别通过熔合反应 Ca 48 + Re 187 和 Ca 48 + Re 185 的 4 n 蒸发道，合成此前未知的 Am 231 和已知的 Am 229 同位素。根据观测到的五条 α 衰变链，识别出半衰期为 47 − 19 + 85 s 的新同位素 Am 231。它发射能量为 7.11(2) MeV 的 α 粒子。估计 Am 231 电子俘获衰变分支的上限为 0.66。未观测到来自 Am 229 的 α 衰变链；这对应探测单个事例时 0.03 nb 的截面水平。本文在 Geiger-Nuttall 经验关系框架内讨论 Am 231 的 α 衰变性质。
+1. **[Evolution and coexistence of low-lying configurations in the N = 80 isotones](https://doi.org/10.1103/d6vm-5jfl)**  
+   Physical Review C · 2026-08-20  
+   Background: The N = 80 isotones offer an important opportunity for studying nuclear structure evolution and the interplay between single-particle motion and collective behavior near the N = 82 shell closure. Although the nuclear shell model is a powerful and predictive framework, progress for the open-shell nuclei has been limited by the rapidly increasing…
+2. **[Measurement of π 0 -hadron correlations relative to the event plane in semicentral Pb-Pb collisions at s N N = 5.02 TeV](https://doi.org/10.1103/tqp4-kwrt)**  
+   Physical Review C · 2026-08-20  
+   Per-trigger yields of π 0 − hadron correlations were measured in semicentral Pb-Pb collisions at s NN = 5.02 TeV in ALICE at the CERN Large Hadron Collider. The reconstructed π 0 → γ γ , with a transverse momentum of 11 GeV / c < p T ( π 0 ) < 14 GeV / c , is used as the trigger particle to calculate yields of associated charged particles on the near- and a…
+3. **[Centrality dependence of strange particle production in Pb-Pb collisions at s N N = 5.02 TeV](https://doi.org/10.1103/j21y-pqd6)**  
+   Physical Review C · 2026-08-20  
+   The centrality dependence of strange ( K S 0 , Λ + Λ ¯ ) and multistrange ( Ξ − + Ξ ¯ + , Ω − + Ω ¯ + ) hadron production is measured by ALICE in the Large Hadron Collider (LHC) lead-lead (Pb-Pb) collisions at a center-of-mass energy per nucleon pair s N N = 5.02 TeV, using the full dataset collected during the LHC Run 2 campaign in the years 2015 and 2018.…
+4. **[Reaction Cross Sections and $\alpha$-Cluster Geometry in $^{12}$C and Be Isotopes](https://arxiv.org/abs/2608.18538)**  
+   arXiv nucl-th · 2026-08-20  
+   Reaction cross sections $\sigma_{\rm R}$ are widely used to infer matter radii, yet their sensitivity to nuclear structure beyond radial one-body distributions is less well understood. We combine complete $A$-body nucleon configurations sampled from \textit{ab initio} nuclear lattice effective field theory (NLEFT) with event-by-event Monte Carlo Glauber cal…
+5. **[Improved $^{94}$Mo neutron resonance parameters from neutron capture and transmission measurements at n_TOF and GELINA](https://arxiv.org/abs/2608.18775)**  
+   arXiv nucl-ex · 2026-08-20  
+   We report high-resolution measurements of the $^{94}\mathrm{Mo}(\mathrm{n},\gamma)^{95}\mathrm{Mo}$ cross section in the neutron energy range from a few eV up to about 250 keV, performed at the n_TOF facility (CERN), and of the $^{94}\mathrm{Mo}(\mathrm{n},\mathrm{tot})$ cross section up to 32 keV, measured at GELINA (JRC Geel). A combined R-matrix analysis…
+6. **[Description of nucleon elastic scattering off 6 Li with the four-body continuum-discretized coupled-channels method](https://doi.org/10.1103/w9k5-h5lj)**  
+   Physical Review C · 2026-08-20  
+   数据源暂未提供详细介绍。
+7. **[Nonrelativistic Conformal Collider Physics of Multiparticle Point Production](https://arxiv.org/abs/2608.18202)**  
+   arXiv nucl-th · 2026-08-20  
+   We define detector operators in the nonrelativistic conformal field theory describing fermions at unitarity. We reduce the problem of computing the momentum distribution and correlation between final particles produced by a local source ("point-produced") to the computation of correlation functions involving the detector operators. The general formalism is…
+8. **[Fourier Transforms of Color Glass Condensate Multi-Wilson-Line Correlators via Filon Quadrature](https://arxiv.org/abs/2608.18589)**  
+   arXiv nucl-th · 2026-08-20  
+   Calculating cross sections in the Color Glass Condensate effective theory requires Fourier transforms of multi-Wilson-line correlators from transverse coordinate space to transverse momentum space. Under the common assumption of impact-parameter independence, each transform reduces to a set of Hankel transforms whose Bessel-function kernels oscillate rapidl…
 
 ## 物理新闻
 
