@@ -2,8 +2,8 @@ name: 每日更新并发布网站
 
 on:
   schedule:
-    # GitHub 使用 UTC：02:17 对应北京时间 10:17，并避开 arXiv 冬令时公告尚未完成的窗口。
-    - cron: "17 2 * * *"
+    # GitHub 使用 UTC：前一日 22:00 对应北京时间当日 06:00。
+    - cron: "0 22 * * *"
   workflow_dispatch:
   push:
     branches: [main]
