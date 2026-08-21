@@ -1,33 +1,33 @@
-# 小康康的物理世界 · 2026-08-20 科研简报
+# 小康康的物理世界 · 2026-08-21 科研简报
 
 >今日精选 8 篇论文、4 条新闻、6 条通知；其中 4/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[Evolution and coexistence of low-lying configurations in the N = 80 isotones](https://doi.org/10.1103/d6vm-5jfl)**  
-   Physical Review C · 2026-08-20  
-   Background: The N = 80 isotones offer an important opportunity for studying nuclear structure evolution and the interplay between single-particle motion and collective behavior near the N = 82 shell closure. Although the nuclear shell model is a powerful and predictive framework, progress for the open-shell nuclei has been limited by the rapidly increasing…
-2. **[Measurement of π 0 -hadron correlations relative to the event plane in semicentral Pb-Pb collisions at s N N = 5.02 TeV](https://doi.org/10.1103/tqp4-kwrt)**  
-   Physical Review C · 2026-08-20  
-   Per-trigger yields of π 0 − hadron correlations were measured in semicentral Pb-Pb collisions at s NN = 5.02 TeV in ALICE at the CERN Large Hadron Collider. The reconstructed π 0 → γ γ , with a transverse momentum of 11 GeV / c < p T ( π 0 ) < 14 GeV / c , is used as the trigger particle to calculate yields of associated charged particles on the near- and a…
-3. **[Centrality dependence of strange particle production in Pb-Pb collisions at s N N = 5.02 TeV](https://doi.org/10.1103/j21y-pqd6)**  
-   Physical Review C · 2026-08-20  
-   The centrality dependence of strange ( K S 0 , Λ + Λ ¯ ) and multistrange ( Ξ − + Ξ ¯ + , Ω − + Ω ¯ + ) hadron production is measured by ALICE in the Large Hadron Collider (LHC) lead-lead (Pb-Pb) collisions at a center-of-mass energy per nucleon pair s N N = 5.02 TeV, using the full dataset collected during the LHC Run 2 campaign in the years 2015 and 2018.…
-4. **[Reaction Cross Sections and $\alpha$-Cluster Geometry in $^{12}$C and Be Isotopes](https://arxiv.org/abs/2608.18538)**  
-   arXiv nucl-th · 2026-08-20  
-   Reaction cross sections $\sigma_{\rm R}$ are widely used to infer matter radii, yet their sensitivity to nuclear structure beyond radial one-body distributions is less well understood. We combine complete $A$-body nucleon configurations sampled from \textit{ab initio} nuclear lattice effective field theory (NLEFT) with event-by-event Monte Carlo Glauber cal…
-5. **[Improved $^{94}$Mo neutron resonance parameters from neutron capture and transmission measurements at n_TOF and GELINA](https://arxiv.org/abs/2608.18775)**  
-   arXiv nucl-ex · 2026-08-20  
-   We report high-resolution measurements of the $^{94}\mathrm{Mo}(\mathrm{n},\gamma)^{95}\mathrm{Mo}$ cross section in the neutron energy range from a few eV up to about 250 keV, performed at the n_TOF facility (CERN), and of the $^{94}\mathrm{Mo}(\mathrm{n},\mathrm{tot})$ cross section up to 32 keV, measured at GELINA (JRC Geel). A combined R-matrix analysis…
-6. **[Description of nucleon elastic scattering off 6 Li with the four-body continuum-discretized coupled-channels method](https://doi.org/10.1103/w9k5-h5lj)**  
-   Physical Review C · 2026-08-20  
-   数据源暂未提供详细介绍。
-7. **[Nonrelativistic Conformal Collider Physics of Multiparticle Point Production](https://arxiv.org/abs/2608.18202)**  
-   arXiv nucl-th · 2026-08-20  
-   We define detector operators in the nonrelativistic conformal field theory describing fermions at unitarity. We reduce the problem of computing the momentum distribution and correlation between final particles produced by a local source ("point-produced") to the computation of correlation functions involving the detector operators. The general formalism is…
-8. **[Fourier Transforms of Color Glass Condensate Multi-Wilson-Line Correlators via Filon Quadrature](https://arxiv.org/abs/2608.18589)**  
-   arXiv nucl-th · 2026-08-20  
-   Calculating cross sections in the Color Glass Condensate effective theory requires Fourier transforms of multi-Wilson-line correlators from transverse coordinate space to transverse momentum space. Under the common assumption of impact-parameter independence, each transform reduces to a set of Hankel transforms whose Bessel-function kernels oscillate rapidl…
+1. **[Next-to-Next-to-Leading-Order QCD Corrections to Hadron Production in Deep-Inelastic Scattering at Finite Transverse Momentum](https://doi.org/10.1103/bf1g-9hq7)**  
+   Physical Review Letters · 2026-08-21  
+   We present the calculation of hadron production in deep-inelastic scattering (DIS) at finite transverse momentum to next-to-next-to-leading order (NNLO) in perturbative QCD. To overcome the long-standing challenge of infrared divergences in semi-inclusive processes with identified final state hadrons at finite transverse momentum, we implement the recently…
+2. **[First Measurement of the Decay-Time-Integrated C P Asymmetry in B s 0 → D s − π + Decays](https://doi.org/10.1103/ljtv-y278)**  
+   Physical Review Letters · 2026-08-21  
+   A measurement of the flavor-untagged decay-time-integrated C P asymmetry in the flavor-specific decay B s 0 → D s − π + , ⟨ A untagged s ⟩ , is performed using proton-proton collision data collected by the LHCb experiment between 2016 and 2018 at a center-of-mass energy of 13 TeV, corresponding to a total integrated luminosity of 5.4 fb − 1 . The C P asymme…
+3. **[Proton emission half-lives and shape coexistence for $71 \leq Z \leq 83$ odd-$Z$ nuclei](https://arxiv.org/abs/2608.19601)**  
+   arXiv nucl-th · 2026-08-21  
+   One-proton emission is a direct probe of nuclear structure near the proton drip line and plays a critical role in understanding exotic decay modes and nucleosynthesis processes. In this study, we investigate the half-lives of one-proton emitters for $71 \leq Z \leq 83$ odd-$Z$ nuclei by employing the WKB approximation with nuclear potentials obtained from t…
+4. **[Back-to-back dijet production in DIS at arbitrary Bjorken x : TMD gluon distributions to twist-3 accuracy](https://doi.org/10.1103/nnhn-jvz7)**  
+   Physical Review D · 2026-08-21  
+   We derive the gluon transverse-momentum-dependent (TMD) operator structure of back-to-back quark-antiquark dijet production in deep inelastic scattering at arbitrary Bjorken- x to twist-3 accuracy. Working at leading order in the strong coupling and in the kinematic regime where the transverse momentum imbalance of the jets is much smaller than their indivi…
+5. **[Polarization-dependent mass modifications of ϕ meson with finite momentum in nuclear matter](https://doi.org/10.1103/wlvt-szn4)**  
+   Physical Review D · 2026-08-21  
+   We investigate the in-medium properties of the ϕ meson with finite momentum, going beyond the commonly studied case at rest. In a nuclear medium, Lorentz invariance is broken, leading to distinct longitudinal and transverse polarization modes that evolve differently with density and momentum. Within an effective Lagrangian approach, we calculate the polariz…
+6. **[Discovery of Three Glitches in the previously quiet pulsar PSR J1637$-$4642](https://arxiv.org/abs/2608.19555)**  
+   arXiv nucl-th · 2026-08-21  
+   We present the discovery and analysis of three rotational glitches in the young pulsar PSR J1637$-$4642. The timing observations span from 19 February 2009 to 6 October 2024 (MJD 54881$-$60589) from the Murriyang radio telescope of the Parkes Observatory. The first and strongest glitch occurred around MJD 58352 with a fractional frequency change of $\Delta\…
+7. **[The renormalization of the shell-model neutrinoless double-beta decay operator starting from effective field theory (I)](https://arxiv.org/abs/2606.25486)**  
+   arXiv nucl-th · 2026-08-21  
+   In this work, we approach for the first time the task to perform a shell-model calculation of the matrix element for the neutrinoless double-beta decay, within a fully-consistent framework where the expressions of the nuclear Hamiltonian and of the decay operators have been derived through chiral perturbation theory. More precisely, the effective shell-mode…
+8. **[Size and Distance Scales in the Nucleon and in Dense Baryonic Matter](https://arxiv.org/abs/2608.19792)**  
+   arXiv nucl-th · 2026-08-21  
+   This memorial tribute to Mannque Rho follows a line of thoughts and ideas that he continuously inspired and shaped over many decades: from the two-scales picture of low-energy nucleon structure to dense and cold baryonic matter as it is realized in the cores of neutron stars. Early groundbreaking concepts are recalled and updated by recent advanced analyses…
 
 ## 物理新闻
 
