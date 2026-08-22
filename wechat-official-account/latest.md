@@ -1,33 +1,33 @@
-# 小康康的物理世界 · 2026-08-21 科研简报
+# 小康康的物理世界 · 2026-08-22 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 4/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 5/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[Next-to-Next-to-Leading-Order QCD Corrections to Hadron Production in Deep-Inelastic Scattering at Finite Transverse Momentum](https://doi.org/10.1103/bf1g-9hq7)**  
-   Physical Review Letters · 2026-08-21  
-   We present the calculation of hadron production in deep-inelastic scattering (DIS) at finite transverse momentum to next-to-next-to-leading order (NNLO) in perturbative QCD. To overcome the long-standing challenge of infrared divergences in semi-inclusive processes with identified final state hadrons at finite transverse momentum, we implement the recently…
-2. **[First Measurement of the Decay-Time-Integrated C P Asymmetry in B s 0 → D s − π + Decays](https://doi.org/10.1103/ljtv-y278)**  
-   Physical Review Letters · 2026-08-21  
-   A measurement of the flavor-untagged decay-time-integrated C P asymmetry in the flavor-specific decay B s 0 → D s − π + , ⟨ A untagged s ⟩ , is performed using proton-proton collision data collected by the LHCb experiment between 2016 and 2018 at a center-of-mass energy of 13 TeV, corresponding to a total integrated luminosity of 5.4 fb − 1 . The C P asymme…
-3. **[Proton emission half-lives and shape coexistence for $71 \leq Z \leq 83$ odd-$Z$ nuclei](https://arxiv.org/abs/2608.19601)**  
-   arXiv nucl-th · 2026-08-21  
-   One-proton emission is a direct probe of nuclear structure near the proton drip line and plays a critical role in understanding exotic decay modes and nucleosynthesis processes. In this study, we investigate the half-lives of one-proton emitters for $71 \leq Z \leq 83$ odd-$Z$ nuclei by employing the WKB approximation with nuclear potentials obtained from t…
-4. **[Back-to-back dijet production in DIS at arbitrary Bjorken x : TMD gluon distributions to twist-3 accuracy](https://doi.org/10.1103/nnhn-jvz7)**  
-   Physical Review D · 2026-08-21  
-   We derive the gluon transverse-momentum-dependent (TMD) operator structure of back-to-back quark-antiquark dijet production in deep inelastic scattering at arbitrary Bjorken- x to twist-3 accuracy. Working at leading order in the strong coupling and in the kinematic regime where the transverse momentum imbalance of the jets is much smaller than their indivi…
-5. **[Polarization-dependent mass modifications of ϕ meson with finite momentum in nuclear matter](https://doi.org/10.1103/wlvt-szn4)**  
-   Physical Review D · 2026-08-21  
-   We investigate the in-medium properties of the ϕ meson with finite momentum, going beyond the commonly studied case at rest. In a nuclear medium, Lorentz invariance is broken, leading to distinct longitudinal and transverse polarization modes that evolve differently with density and momentum. Within an effective Lagrangian approach, we calculate the polariz…
-6. **[Discovery of Three Glitches in the previously quiet pulsar PSR J1637$-$4642](https://arxiv.org/abs/2608.19555)**  
-   arXiv nucl-th · 2026-08-21  
-   We present the discovery and analysis of three rotational glitches in the young pulsar PSR J1637$-$4642. The timing observations span from 19 February 2009 to 6 October 2024 (MJD 54881$-$60589) from the Murriyang radio telescope of the Parkes Observatory. The first and strongest glitch occurred around MJD 58352 with a fractional frequency change of $\Delta\…
-7. **[The renormalization of the shell-model neutrinoless double-beta decay operator starting from effective field theory (I)](https://arxiv.org/abs/2606.25486)**  
-   arXiv nucl-th · 2026-08-21  
-   In this work, we approach for the first time the task to perform a shell-model calculation of the matrix element for the neutrinoless double-beta decay, within a fully-consistent framework where the expressions of the nuclear Hamiltonian and of the decay operators have been derived through chiral perturbation theory. More precisely, the effective shell-mode…
-8. **[Size and Distance Scales in the Nucleon and in Dense Baryonic Matter](https://arxiv.org/abs/2608.19792)**  
-   arXiv nucl-th · 2026-08-21  
-   This memorial tribute to Mannque Rho follows a line of thoughts and ideas that he continuously inspired and shaped over many decades: from the two-scales picture of low-energy nucleon structure to dense and cold baryonic matter as it is realized in the cores of neutron stars. Early groundbreaking concepts are recalled and updated by recent advanced analyses…
+1. **[Beyond $\Delta m^2$: Absolute Mass Sensitivity in Neutrino Oscillations](https://arxiv.org/abs/2608.13736)**  
+   arXiv hep-ex · 2026-08-22  
+   Conventional wisdom says that neutrino oscillations measure only mass-squared differences and not the absolute neutrino mass scale. This is true, however, only at leading order in the expansion parameters $m_i/E$, the ratios of the neutrino masses $m_i$ ($i=1,2,3$) to the neutrino energy $E$. At next-to-leading order, the oscillation phase includes terms pr…
+2. **[NJL-chiral soliton and the nucleon equation of state at supra-saturation density: impact of chiral symmetry restoration](https://doi.org/10.1140/epja/s10050-026-01944-y)**  
+   The European Physical Journal A · 2026-08-22  
+   数据源暂未提供详细介绍。
+3. **[Heavy-flavour production and correlations in pp collisions: precision tests of pQCD and hadronisation with ALICE](https://arxiv.org/abs/2608.19714)**  
+   arXiv hep-ex · 2026-08-22  
+   Heavy quarks (charm and beauty) are predominantly produced in hard partonic scatterings, making their cross sections in proton--proton (pp) collisions calculable in perturbative quantum chromodynamics (pQCD) and thus providing stringent tests of pQCD. Furthermore, the associated production of two charm hadrons in a single collision offers a sensitive probe…
+4. **[带缪子标记的 $D_{s1}(2460)^+$ 和 $D_{s1}(2536)^+$ 衰变至 $D_s^{+}\pi^+\pi^-$ 末态的研究](https://arxiv.org/abs/2608.10826)**  
+   arXiv hep-ex · 2026-08-22  
+   我们研究了赝矢量 $D_{s1}(2460)^+$ 和 $D_{s1}(2536)^+$ 介子衰变至三体 $D_{s}^+\pi^+\pi^-$ 末态的过程。数据样本基于 LHCb 探测器在 2016--2018 年期间收集的美强子衰变至 $D_{s1}^+$ 态并伴随一个来自 $b$ 强子衰变链的缪子的事例，对应积分亮度为 5.4 fb${}^{-1}$。以 $D_{s1}(2536)^+\to D^+K^+\pi^-$ 衰变作为参考，首次测量了 \mbox{$D_{s1}(2536)^+\to D_s^+\pi^+\pi^-$} 的分支比。我们对 $D_{s1}(2460)^+$ 和 $D_{s1}(2536)^+\to D_s^+\pi^+\pi^-$ 衰变进行了联合振幅分析。发现两种衰变的 Dalit…
+5. **[Distilling Normalizing Flows for Real-Time Anomaly Detection at the LHC](https://arxiv.org/abs/2608.19912)**  
+   arXiv hep-ex · 2026-08-22  
+   Normalizing flows are principled anomaly detectors, selecting anomalies using a probabilistic per-event likelihood. Extreme latency and resource constraints have prevented the deployment of flow likelihoods within the hardware triggers at the Large Hadron Collider. We bypass these limitations by distilling the likelihood from a large normalizing flow into l…
+6. **[Comparison of Silvaco and Synopsys TCAD Predictions Including the Perugia Radiation Damage Model in Silicon Pixel Detectors for the HL-LHC](https://arxiv.org/abs/2604.26386)**  
+   arXiv hep-ex · 2026-08-22  
+   At the High Luminosity Large Hadron Collider (HL-LHC), silicon pixel detectors will be exposed to radiation fluences about 5 to 10 times larger than those experienced by the current innermost pixel layers up to today. Due to radiation damage to bulk of pixel detectors, leakage current and depletion voltage will increase significantly over time, posing sever…
+7. **[A rating quality methodology for the theoretical description of experimental data in heavy-ion collisions](https://doi.org/10.1140/epja/s10050-026-01951-z)**  
+   The European Physical Journal A · 2026-08-22  
+   数据源暂未提供详细介绍。
+8. **[WavePID: Low-energy flavor identification using single-PMT time series in IceCube](https://arxiv.org/abs/2607.02078)**  
+   arXiv hep-ex · 2026-08-22  
+   The IceCube Neutrino Observatory, a cubic-kilometer detector at the South Pole, identifies neutrino flavor through event morphology. Sparse photon detection makes this classification particularly challenging in the 5--100~GeV regime, the energy range relevant for oscillation measurements and searches for physics beyond the Standard Model. We introduce WaveP…
 
 ## 物理新闻
 
