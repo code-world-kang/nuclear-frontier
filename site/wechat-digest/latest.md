@@ -1,33 +1,33 @@
-# 小康康的物理世界 · 2026-08-22 科研简报
+# 小康康的物理世界 · 2026-08-24 科研简报
 
 >今日精选 8 篇论文、4 条新闻、6 条通知；其中 5/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[A rating quality methodology for the theoretical description of experimental data in heavy-ion collisions](https://doi.org/10.1140/epja/s10050-026-01951-z)**  
-   The European Physical Journal A · 2026-08-22  
-   We introduce a multi-parameter rating methodology for objective comparison of theoretical models with experimental data in heavy-ion collisions, addressing fundamental limitations of the traditional global χ2\documentclass[12pt]{minimal} \usepackage{amsmath} \usepackage{wasysym} \usepackage{amsfonts} \usepackage{amssymb} \usepackage{amsbsy} \usepackage{math…
-2. **[Beyond $\Delta m^2$: Absolute Mass Sensitivity in Neutrino Oscillations](https://arxiv.org/abs/2608.13736)**  
-   arXiv hep-ex · 2026-08-22  
-   Conventional wisdom says that neutrino oscillations measure only mass-squared differences and not the absolute neutrino mass scale. This is true, however, only at leading order in the expansion parameters $m_i/E$, the ratios of the neutrino masses $m_i$ ($i=1,2,3$) to the neutrino energy $E$. At next-to-leading order, the oscillation phase includes terms pr…
-3. **[NJL-chiral soliton and the nucleon equation of state at supra-saturation density: impact of chiral symmetry restoration](https://doi.org/10.1140/epja/s10050-026-01944-y)**  
-   The European Physical Journal A · 2026-08-22  
-   It has been conjectured that, at sufficiently high baryon densities, the equation of state (EoS) of bulk nuclear matter can be identified with that of the nucleon core. In this work, we illustrate how the energy density and pressure distributions inside individual nucleons can be utilized to construct the EoS of supra-dense matter. In our framework, nucleon…
-4. **[Heavy-flavour production and correlations in pp collisions: precision tests of pQCD and hadronisation with ALICE](https://arxiv.org/abs/2608.19714)**  
-   arXiv hep-ex · 2026-08-22  
-   Heavy quarks (charm and beauty) are predominantly produced in hard partonic scatterings, making their cross sections in proton--proton (pp) collisions calculable in perturbative quantum chromodynamics (pQCD) and thus providing stringent tests of pQCD. Furthermore, the associated production of two charm hadrons in a single collision offers a sensitive probe…
-5. **[带缪子标记的 $D_{s1}(2460)^+$ 和 $D_{s1}(2536)^+$ 衰变至 $D_s^{+}\pi^+\pi^-$ 末态的研究](https://arxiv.org/abs/2608.10826)**  
-   arXiv hep-ex · 2026-08-22  
-   我们研究了赝矢量 $D_{s1}(2460)^+$ 和 $D_{s1}(2536)^+$ 介子衰变至三体 $D_{s}^+\pi^+\pi^-$ 末态的过程。数据样本基于 LHCb 探测器在 2016--2018 年期间收集的美强子衰变至 $D_{s1}^+$ 态并伴随一个来自 $b$ 强子衰变链的缪子的事例，对应积分亮度为 5.4 fb${}^{-1}$。以 $D_{s1}(2536)^+\to D^+K^+\pi^-$ 衰变作为参考，首次测量了 \mbox{$D_{s1}(2536)^+\to D_s^+\pi^+\pi^-$} 的分支比。我们对 $D_{s1}(2460)^+$ 和 $D_{s1}(2536)^+\to D_s^+\pi^+\pi^-$ 衰变进行了联合振幅分析。发现两种衰变的 Dalit…
-6. **[Distilling Normalizing Flows for Real-Time Anomaly Detection at the LHC](https://arxiv.org/abs/2608.19912)**  
-   arXiv hep-ex · 2026-08-22  
-   Normalizing flows are principled anomaly detectors, selecting anomalies using a probabilistic per-event likelihood. Extreme latency and resource constraints have prevented the deployment of flow likelihoods within the hardware triggers at the Large Hadron Collider. We bypass these limitations by distilling the likelihood from a large normalizing flow into l…
-7. **[Comparison of Silvaco and Synopsys TCAD Predictions Including the Perugia Radiation Damage Model in Silicon Pixel Detectors for the HL-LHC](https://arxiv.org/abs/2604.26386)**  
-   arXiv hep-ex · 2026-08-22  
-   At the High Luminosity Large Hadron Collider (HL-LHC), silicon pixel detectors will be exposed to radiation fluences about 5 to 10 times larger than those experienced by the current innermost pixel layers up to today. Due to radiation damage to bulk of pixel detectors, leakage current and depletion voltage will increase significantly over time, posing sever…
-8. **[WavePID: Low-energy flavor identification using single-PMT time series in IceCube](https://arxiv.org/abs/2607.02078)**  
-   arXiv hep-ex · 2026-08-22  
-   The IceCube Neutrino Observatory, a cubic-kilometer detector at the South Pole, identifies neutrino flavor through event morphology. Sparse photon detection makes this classification particularly challenging in the 5--100~GeV regime, the energy range relevant for oscillation measurements and searches for physics beyond the Standard Model. We introduce WaveP…
+1. **[Simulation to a Newborn Supernova Remnant from a Low-mass Iron Core Star](https://doi.org/10.3847/1538-4357/ae8a44)**  
+   The Astrophysical Journal · 2026-08-24  
+   Abstract Supernova remnant observations show a high degree of asymmetry, mixing, and inhomogeneity. These asymmetries are seeded during the early seconds of the explosion and are further enhanced and modified as the shock and ejecta move through the stellar progenitor and into the circumstellar medium. We present simulations of a 9.6 M ⊙ zero-metallicity pr…
+2. **[Leptophilic scalar dark matter in U ( 1 ) L μ − L τ : Evading direct detection and prospective neutron star heating](https://doi.org/10.1103/99hk-ddqf)**  
+   Physical Review D · 2026-08-24  
+   Leptophilic dark matter (DM) is a well-motivated thermal weakly interacting massive particle framework that can evade stringent nuclear-recoil searches while remaining testable via DM-induced heating of neutron stars (NSs). In this work, we study leptophilic scalar DM in a U ( 1 ) L μ − L τ gauge extension of the Standard Model, which provides a common lept…
+3. **[40 < A < 90 质量区的变形中子晕核与软偶极激发](https://doi.org/10.1103/prxh-9vjg)**  
+   Physical Review C · 2026-08-24  
+   基于连续区变形相对论 Hartree-Bogoliubov 理论（DRHBc），我们研究质量区 $40<A<90$ 的变形中子晕核及其软电偶极（$E1$）激发。选取 $^{43}$Si、$^{69}$Ti 和 $^{75}$Cr 三个候选核进行详细分析。在该质量区可能的 $s$ 波和 $p$ 波变形晕核解耦密度中，识别出受大高-$l$ 构型影响的独特特征。结果表明，偶极响应是探测变形晕核单粒子波函数晕组分的高度灵敏可观测量，并有助于识别 $40<A<90$ 质量区晕核的构型和形变量级。非常希望实验确认低能区的偶极强度，以探索中重质量区可能的变形晕候选核。
+4. **[Evaluation of Phenomenological Characteristics of the Two-Proton Decay of the 45Fe Nucleus](https://arxiv.org/abs/2608.20826)**  
+   arXiv nucl-th · 2026-08-24  
+   A Green-function formalism describing sequential and virtual two-proton (2p) radi-oactivity is developed on the basis of the multiparticle theory of one-proton decay. In the proposed approach, two-proton emission is treated as two consecutive one-proton transitions connected by the Green's function of the intermediate nucleus, al-lowing both on-shell and of…
+5. **[Efficient production of $^{229m,g}$Th via neutron capture in VUV-transparent crystals](https://arxiv.org/abs/2608.20866)**  
+   arXiv nucl-ex · 2026-08-24  
+   The low-lying isomeric state of $^{229m}$Th, owing to its unique nuclear energy structure, has been widely regarded as one of the most promising candidates for the development of a nuclear clock. However, the limited availability of suitable $^{229}$Th sources with sufficiently high activity remains a major challenge for experimental investigations of the $…
+6. **[Extraction of Neutron-Skin Parameters in Zr+Zr and Ru+Ru Collisions at $\sqrt{s_{\text{NN}}}$ = 200 GeV](https://arxiv.org/abs/2608.13935)**  
+   arXiv nucl-ex · 2026-08-24  
+   The initial nuclear geometry of colliding nuclei, manifested in proton and neutron density profiles, plays a key role in determining final-state effects in high-energy heavy-ion collisions. We study ${^{96}\text{Ru}}+{^{96}\text{Ru}}$ and ${^{96}\text{Zr}}+{^{96}\text{Zr}}$ collisions at $\sqrt{s_{\text{NN}}}=200$ GeV incorporating an isospin-dependent Wood…
+7. **[Survival of pairing correlations and shell effects at scission in finite-temperature nuclear fission: Implications for odd-even staggering](https://doi.org/10.1103/w4z5-wbc2)**  
+   Physical Review C · 2026-08-24  
+   数据源暂未提供详细介绍。
+8. **[Measurement of the forward angle 12 C+ 12 C fragmentation differential cross sections at 62 MeV/nucleon](https://doi.org/10.1103/g18c-kwp9)**  
+   Physical Review C · 2026-08-24  
+   数据源暂未提供详细介绍。
 
 ## 物理新闻
 
