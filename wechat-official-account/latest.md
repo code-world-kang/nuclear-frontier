@@ -1,33 +1,33 @@
-# 小康康的物理世界 · 2026-08-24 科研简报
+# 小康康的物理世界 · 2026-08-25 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 5/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 7/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[Simulation to a Newborn Supernova Remnant from a Low-mass Iron Core Star](https://doi.org/10.3847/1538-4357/ae8a44)**  
-   The Astrophysical Journal · 2026-08-24  
-   Abstract Supernova remnant observations show a high degree of asymmetry, mixing, and inhomogeneity. These asymmetries are seeded during the early seconds of the explosion and are further enhanced and modified as the shock and ejecta move through the stellar progenitor and into the circumstellar medium. We present simulations of a 9.6 M ⊙ zero-metallicity pr…
-2. **[Leptophilic scalar dark matter in U ( 1 ) L μ − L τ : Evading direct detection and prospective neutron star heating](https://doi.org/10.1103/99hk-ddqf)**  
-   Physical Review D · 2026-08-24  
-   Leptophilic dark matter (DM) is a well-motivated thermal weakly interacting massive particle framework that can evade stringent nuclear-recoil searches while remaining testable via DM-induced heating of neutron stars (NSs). In this work, we study leptophilic scalar DM in a U ( 1 ) L μ − L τ gauge extension of the Standard Model, which provides a common lept…
-3. **[40 < A < 90 质量区的变形中子晕核与软偶极激发](https://doi.org/10.1103/prxh-9vjg)**  
-   Physical Review C · 2026-08-24  
-   基于连续区变形相对论 Hartree-Bogoliubov 理论（DRHBc），我们研究质量区 $40<A<90$ 的变形中子晕核及其软电偶极（$E1$）激发。选取 $^{43}$Si、$^{69}$Ti 和 $^{75}$Cr 三个候选核进行详细分析。在该质量区可能的 $s$ 波和 $p$ 波变形晕核解耦密度中，识别出受大高-$l$ 构型影响的独特特征。结果表明，偶极响应是探测变形晕核单粒子波函数晕组分的高度灵敏可观测量，并有助于识别 $40<A<90$ 质量区晕核的构型和形变量级。非常希望实验确认低能区的偶极强度，以探索中重质量区可能的变形晕候选核。
-4. **[Evaluation of Phenomenological Characteristics of the Two-Proton Decay of the 45Fe Nucleus](https://arxiv.org/abs/2608.20826)**  
-   arXiv nucl-th · 2026-08-24  
-   A Green-function formalism describing sequential and virtual two-proton (2p) radi-oactivity is developed on the basis of the multiparticle theory of one-proton decay. In the proposed approach, two-proton emission is treated as two consecutive one-proton transitions connected by the Green's function of the intermediate nucleus, al-lowing both on-shell and of…
-5. **[Efficient production of $^{229m,g}$Th via neutron capture in VUV-transparent crystals](https://arxiv.org/abs/2608.20866)**  
-   arXiv nucl-ex · 2026-08-24  
-   The low-lying isomeric state of $^{229m}$Th, owing to its unique nuclear energy structure, has been widely regarded as one of the most promising candidates for the development of a nuclear clock. However, the limited availability of suitable $^{229}$Th sources with sufficiently high activity remains a major challenge for experimental investigations of the $…
-6. **[Extraction of Neutron-Skin Parameters in Zr+Zr and Ru+Ru Collisions at $\sqrt{s_{\text{NN}}}$ = 200 GeV](https://arxiv.org/abs/2608.13935)**  
-   arXiv nucl-ex · 2026-08-24  
-   The initial nuclear geometry of colliding nuclei, manifested in proton and neutron density profiles, plays a key role in determining final-state effects in high-energy heavy-ion collisions. We study ${^{96}\text{Ru}}+{^{96}\text{Ru}}$ and ${^{96}\text{Zr}}+{^{96}\text{Zr}}$ collisions at $\sqrt{s_{\text{NN}}}=200$ GeV incorporating an isospin-dependent Wood…
-7. **[Survival of pairing correlations and shell effects at scission in finite-temperature nuclear fission: Implications for odd-even staggering](https://doi.org/10.1103/w4z5-wbc2)**  
-   Physical Review C · 2026-08-24  
+1. **[用于量子计算的改进准粒子核 Hamiltonian](https://doi.org/10.1103/yl3n-3tbf)**  
+   Physical Review C · 2026-08-25  
+   量子计算正日益为核结构模拟提供具体解决方案，有望克服经典对角化方法在大空间中的指数标度限制。一种基于同类核子集体配对模的特别高效编码方案，可将 qubit 需求减半，并避免标准费米子到 qubit 映射中的非局域算符串。尽管该准粒子框架能为半幻数核提供精确结果，却无法充分描述质子—中子关联变得重要的开壳层体系。在本工作中，我们应用 Brillouin-Wigner 微扰理论，系统改善 $sd$ 壳中开壳层核的准粒子描述；与核壳模型相比，能量相对误差低于 $0.2\%$。此外，为使有效 Hamiltonian 适于量子模拟，我们对非准粒子预解式引入平均场 Hartree-Fock 近似，所得基态能量通常与精确壳模型结果相差不到 $2\%$。这相对于裸准粒子 Hamiltonian 是一种系统改善，同时仍处于近期…
+2. **[作为 Markov 过程的核 γ 射线级联](https://doi.org/10.1103/2463-2jfv)**  
+   Physical Review C · 2026-08-25  
+   本文提出一种基于吸收 Markov 链计算核衰变方案中 $γ$ 射线馈入概率的框架。在该方法中，激发核态被视为瞬态，长寿命能级被视为吸收态，从而可从转移矩阵中精确获得馈入比例。实验不确定度通过从 Dirichlet 分布进行 Monte Carlo 采样来传播，这会自然保持分支比矢量单位归一化的物理约束。该框架应用于 $^{25}$Mg(p,$γ$)$^{26}$Al 反应（$E_x = 6398$ keV）中关键的 $E_r= 92$ keV 共振；它控制氢燃烧环境中 $^{26}$Al 的产生。在分层 Bayesian 框架内结合多个实验数据集后，得到基态馈入概率 $f_0 = 0.68 \pm 0.06~(1σ) \pm 0.13~(2σ)$，并首次识别对其不确定度贡献最大的主导 $γ$ 衰变跃迁。该形…
+3. **[Dissecting the Nuclear Structure of NGC 5548 with XRISM. I. Physical Properties of the Highly Ionized Outflows](https://doi.org/10.3847/1538-4357/ae95ff)**  
+   The Astrophysical Journal · 2026-08-25  
+   Abstract We present a detailed spectral analysis of an X-Ray Imaging and Spectroscopy Mission (XRISM) observation of the prototypical Seyfert 1 galaxy NGC 5548. XRISM’s Resolve microcalorimeter reveals, for the first time, highly ionized outflows in this active galactic nucleus (AGN) through the detection of Fe xxv and Fe xxvi absorption lines in the Fe K b…
+4. **[DCM 与统计模型在说明核衰变道方面的对比分析](https://doi.org/10.1142/s0218301326300031)**  
+   International Journal of Modern Physics E · 2026-08-25  
+   在低能核物理中，对复合核形成和衰变进行理论阐释仍是一项主要挑战，特别是预测稀有衰变道和超重元素合成的截面。人们已建立许多模型，但大多数模型会独立描述熔合与衰变，并需要针对具体系统拟合。本文综述比较了动力学团簇衰变模型（DCM）与三种广泛使用的理论方法 HIVAP、PACE4 和 DNS 的预测能力。DCM 提供一个集中的动力学结构，通过质量不对称度和相对分离坐标中的集体运动描述复合核的俘获、熔合与退激，并直接依赖温度和角动量。相比之下，HIVAP 和 PACE4 是统计蒸发模型，而 DNS 聚焦熔合动力学和存活概率。比较依据是在不作任何进一步拟合的情况下再现数据的程度，以及这种能力对激发能和入射道的依赖程度。分析表明，尽管统计模型在研究充分的质量区域表现更好，DCM 凭借其动力学处理和较低参数依赖，为未探索体…
+5. **[Ab initio anatomy of quadrupole correlations in $^{16}$O and $^{20}$Ne](https://arxiv.org/abs/2608.22699)**  
+   arXiv nucl-th · 2026-08-25  
+   Azimuthal hadronic flow measured in ultra-relativistic ion--ion collisions provides a new means of imaging multipole correlations in the ground state of atomic nuclei. Early interpretations largely relied on a classical-rotor picture, in which the measured mean-square elliptic flow is directly related to an intrinsic quadrupole deformation. Atomic nuclei, h…
+6. **[Emergence of quadrupole and octupole collectivity near N = 50 and Z = 40 : Coulomb excitation of Mo 92](https://doi.org/10.1103/n2jr-6c42)**  
+   Physical Review C · 2026-08-25  
    数据源暂未提供详细介绍。
-8. **[Measurement of the forward angle 12 C+ 12 C fragmentation differential cross sections at 62 MeV/nucleon](https://doi.org/10.1103/g18c-kwp9)**  
-   Physical Review C · 2026-08-24  
-   数据源暂未提供详细介绍。
+7. **[Mesonic modes in a confining model at finite temperature](https://doi.org/10.1103/78wl-8f1q)**  
+   Physical Review D · 2026-08-25  
+   The mass spectrum of pseudoscalar and scalar mesons at finite temperature is studied within a nonlocal quark model with Polyakov loop extension. The analysis is performed in the leading order of the 1 / N c expansion. To suppress unphysical quark production thresholds in meson polarization loops in the hadronic phase, the quark propagator is modified after…
+8. **[Systematic study of bottomonium production in proton-proton collisions at LHC energies](https://arxiv.org/abs/2604.16019)**  
+   arXiv nucl-ex · 2026-08-25  
+   We present a comprehensive study of $\Upsilon(nS)$ ($n=1,2,3$) production in proton-proton ($pp$) collisions at various LHC energies and rapidity ranges within the framework of leading-order non-relativistic quantum chromodynamics (NRQCD) factorization. The transverse momentum ($p_{\rm T}$)-dependent production cross sections are calculated, incorporating b…
 
 ## 物理新闻
 
