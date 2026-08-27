@@ -1,33 +1,33 @@
-# 小康康的物理世界 · 2026-08-25 科研简报
+# 小康康的物理世界 · 2026-08-18 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 7/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 10/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[用于量子计算的改进准粒子核 Hamiltonian](https://doi.org/10.1103/yl3n-3tbf)**  
-   Physical Review C · 2026-08-25  
-   量子计算正日益为核结构模拟提供具体解决方案，有望克服经典对角化方法在大空间中的指数标度限制。一种基于同类核子集体配对模的特别高效编码方案，可将 qubit 需求减半，并避免标准费米子到 qubit 映射中的非局域算符串。尽管该准粒子框架能为半幻数核提供精确结果，却无法充分描述质子—中子关联变得重要的开壳层体系。在本工作中，我们应用 Brillouin-Wigner 微扰理论，系统改善 $sd$ 壳中开壳层核的准粒子描述；与核壳模型相比，能量相对误差低于 $0.2\%$。此外，为使有效 Hamiltonian 适于量子模拟，我们对非准粒子预解式引入平均场 Hartree-Fock 近似，所得基态能量通常与精确壳模型结果相差不到 $2\%$。这相对于裸准粒子 Hamiltonian 是一种系统改善，同时仍处于近期…
-2. **[作为 Markov 过程的核 γ 射线级联](https://doi.org/10.1103/2463-2jfv)**  
-   Physical Review C · 2026-08-25  
-   本文提出一种基于吸收 Markov 链计算核衰变方案中 $γ$ 射线馈入概率的框架。在该方法中，激发核态被视为瞬态，长寿命能级被视为吸收态，从而可从转移矩阵中精确获得馈入比例。实验不确定度通过从 Dirichlet 分布进行 Monte Carlo 采样来传播，这会自然保持分支比矢量单位归一化的物理约束。该框架应用于 $^{25}$Mg(p,$γ$)$^{26}$Al 反应（$E_x = 6398$ keV）中关键的 $E_r= 92$ keV 共振；它控制氢燃烧环境中 $^{26}$Al 的产生。在分层 Bayesian 框架内结合多个实验数据集后，得到基态馈入概率 $f_0 = 0.68 \pm 0.06~(1σ) \pm 0.13~(2σ)$，并首次识别对其不确定度贡献最大的主导 $γ$ 衰变跃迁。该形…
-3. **[Dissecting the Nuclear Structure of NGC 5548 with XRISM. I. Physical Properties of the Highly Ionized Outflows](https://doi.org/10.3847/1538-4357/ae95ff)**  
-   The Astrophysical Journal · 2026-08-25  
-   Abstract We present a detailed spectral analysis of an X-Ray Imaging and Spectroscopy Mission (XRISM) observation of the prototypical Seyfert 1 galaxy NGC 5548. XRISM’s Resolve microcalorimeter reveals, for the first time, highly ionized outflows in this active galactic nucleus (AGN) through the detection of Fe xxv and Fe xxvi absorption lines in the Fe K b…
-4. **[DCM 与统计模型在说明核衰变道方面的对比分析](https://doi.org/10.1142/s0218301326300031)**  
-   International Journal of Modern Physics E · 2026-08-25  
-   在低能核物理中，对复合核形成和衰变进行理论阐释仍是一项主要挑战，特别是预测稀有衰变道和超重元素合成的截面。人们已建立许多模型，但大多数模型会独立描述熔合与衰变，并需要针对具体系统拟合。本文综述比较了动力学团簇衰变模型（DCM）与三种广泛使用的理论方法 HIVAP、PACE4 和 DNS 的预测能力。DCM 提供一个集中的动力学结构，通过质量不对称度和相对分离坐标中的集体运动描述复合核的俘获、熔合与退激，并直接依赖温度和角动量。相比之下，HIVAP 和 PACE4 是统计蒸发模型，而 DNS 聚焦熔合动力学和存活概率。比较依据是在不作任何进一步拟合的情况下再现数据的程度，以及这种能力对激发能和入射道的依赖程度。分析表明，尽管统计模型在研究充分的质量区域表现更好，DCM 凭借其动力学处理和较低参数依赖，为未探索体…
-5. **[Ab initio anatomy of quadrupole correlations in $^{16}$O and $^{20}$Ne](https://arxiv.org/abs/2608.22699)**  
-   arXiv nucl-th · 2026-08-25  
-   Azimuthal hadronic flow measured in ultra-relativistic ion--ion collisions provides a new means of imaging multipole correlations in the ground state of atomic nuclei. Early interpretations largely relied on a classical-rotor picture, in which the measured mean-square elliptic flow is directly related to an intrinsic quadrupole deformation. Atomic nuclei, h…
-6. **[Emergence of quadrupole and octupole collectivity near N = 50 and Z = 40 : Coulomb excitation of Mo 92](https://doi.org/10.1103/n2jr-6c42)**  
-   Physical Review C · 2026-08-25  
-   数据源暂未提供详细介绍。
-7. **[Mesonic modes in a confining model at finite temperature](https://doi.org/10.1103/78wl-8f1q)**  
-   Physical Review D · 2026-08-25  
-   The mass spectrum of pseudoscalar and scalar mesons at finite temperature is studied within a nonlocal quark model with Polyakov loop extension. The analysis is performed in the leading order of the 1 / N c expansion. To suppress unphysical quark production thresholds in meson polarization loops in the hadronic phase, the quark propagator is modified after…
-8. **[Systematic study of bottomonium production in proton-proton collisions at LHC energies](https://arxiv.org/abs/2604.16019)**  
-   arXiv nucl-ex · 2026-08-25  
-   We present a comprehensive study of $\Upsilon(nS)$ ($n=1,2,3$) production in proton-proton ($pp$) collisions at various LHC energies and rapidity ranges within the framework of leading-order non-relativistic quantum chromodynamics (NRQCD) factorization. The transverse momentum ($p_{\rm T}$)-dependent production cross sections are calculated, incorporating b…
+1. **[First Nb 94 ( n , γ ) Measurement: Constraining the Nucleosynthetic Origin of Mo 94 in Presolar Grains](https://doi.org/10.1103/538w-rhqb)**  
+   Physical Review Letters · 2026-08-18  
+   Isotopic measurements of presolar silicon carbide grains from dying stars have revealed a puzzling overabundance of Mo 94 that stellar nucleosynthesis models have failed to reproduce for two decades. This discrepancy challenged our understanding of the slow neutron-capture process ( s -process) that forges approximately half of the elements heavier than iro…
+2. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
+   Physical Review Letters · 2026-08-04  
+   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
+3. **[双中微子双 β 衰变的辐射修正](https://doi.org/10.1103/gbjc-wsdn)**  
+   Physical Review Letters · 2026-08-11  
+   We use heavy-nucleus effective field theory to compute radiative corrections to two-neutrino double-$\beta$ decay ($2\nu\beta\beta$). Our main result is the first derivation of a universal radiative-correction factor for double-weak decays -- the analogue of the Sirlin function in single-$\beta$ decay -- independent of nuclear matrix elements and excitation…
+4. **[通过基态与激发态联合分析研究无中微子双 β 衰变的灵敏度](https://doi.org/10.1016/j.physletb.2026.140623)**  
+   Physics Letters B · 2026-08-01  
+   下一代无中微子双 β（0νββ）衰变实验预计半衰期灵敏度将接近 10 28 年，其目标是在轻中微子交换情景中探测反转中微子质量排序的整个参数空间。然而，由于核矩阵元（NMEs）具有显著的模型依赖性，这一探测能力仍存在不确定性。在本工作中，我们提出一种联合分析 0νββ 衰变至子核基态和第一个激发 0 + 态的策略。我们表明，这种多道方法可显著提高实验灵敏度，具体幅度取决于所采用的 NME 预测。该方法尤其适合大型液氙探测器，例如拟议的 PandaX-xT 和 XLZD 实验，因为它们能够高效识别 136 Xe 向激发态的跃迁。我们的结果突出说明，在未来的 0νββ 搜寻中利用多个衰变道，对于最大化其发现潜力十分重要。
+5. **[Observation of Long-Range Collective Flow in O + O and Ne + Ne Collisions and Implications for Nuclear Structure Studies](https://doi.org/10.1103/26wx-tg6f)**  
+   Physical Review Letters · 2026-08-17  
+   The long-range collective flow of particles produced in oxygen-oxygen ( O + O ) and neon-neon ( Ne + Ne ) collisions is measured with the CMS detector at the CERN LHC. The data samples were collected at a center-of-mass energy per nucleon pair of 5.36 TeV, with integrated luminosities of 7 nb − 1 and 0.8 nb − 1 for O + O and Ne + Ne collisions, respectively…
+6. **[通过 Coulomb 激发首次测量 90Zr 中的 B(E3;31−→01+)：重新审视 Zr 链中的八极集体性](https://doi.org/10.1016/j.physletb.2026.140670)**  
+   Physics Letters B · 2026-08-01  
+   通过 32 S+ 90 Zr 体系中的安全 Coulomb 激发，研究了 N=50 半幻数核 90 Zr 中激发能为 2748 keV 的 3 1 − 态。使用半经典最小二乘搜索代码 gosia 和 gosia2 拟合实测 γ 射线强度，提取八极跃迁强度 B ( E 3 ; 3 1 − → 0 1 + )。所得 E3 强度显著，为 19 . 6 − 1.6 + 1.7 W.u.，表明该态具有集体八极特征。最先进的壳模型计算通过将该激发描述为植根于微观组态混合的涌现集体性，再现了这一结果，而纯谐振动模型往往高估该强度。此外，在同步分析中，将靶激发归一到 32 S 弹丸的 Coulomb 激发强度，确定 90 Zr 中 2 1 + 态的谱学四极矩为 + 0.09 ( 10 ) eb。该值与半幻数核预期的近球形结构…
+7. **[利用 N = 82 壳闭合附近从头算核质量研究 r 过程核合成](https://doi.org/10.1103/k4lv-436c)**  
+   Physical Review Letters · 2026-07-28  
+   我们对铁以上重元素起源的理解依赖快速中子俘获过程（r 过程），该过程约占其宇宙丰度的一半。然而，r 过程所需的极端富中子条件涉及许多实验仍无法触及的原子核，因此理论预测至关重要。我们探索用从头算价空间 in-medium similarity renormalization group 计算的核质量所产生的影响，重点关注 N = 82 壳闭合附近区域。我们首次表明，相比全局但更为唯象的质量模型，这类从头算质量计算可用于改进 r 过程预测。采用从头算质量后，第二个 r 过程峰的等待点得到加强，从而导致整体核合成流更慢、峰后核丰度更低，以及第三个 r 过程峰位移更强。
+8. **[新同位素 Am 231](https://doi.org/10.1103/2clj-zh3s)**  
+   Physical Review C · 2026-07-15  
+   本工作旨在分别通过熔合反应 Ca 48 + Re 187 和 Ca 48 + Re 185 的 4 n 蒸发道，合成此前未知的 Am 231 和已知的 Am 229 同位素。根据观测到的五条 α 衰变链，识别出半衰期为 47 − 19 + 85 s 的新同位素 Am 231。它发射能量为 7.11(2) MeV 的 α 粒子。估计 Am 231 电子俘获衰变分支的上限为 0.66。未观测到来自 Am 229 的 α 衰变链；这对应探测单个事例时 0.03 nb 的截面水平。本文在 Geiger-Nuttall 经验关系框架内讨论 Am 231 的 α 衰变性质。
 
 ## 物理新闻
 
