@@ -1,33 +1,33 @@
 # 小康康的物理世界 · 2026-08-28 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 4/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 5/18 条已有中文内容。
 
 ## 今日重点论文
 
 1. **[Frontier Questions and Emerging Directions in Nuclear Science and Technology](https://arxiv.org/abs/2608.26207)**  
    arXiv nucl-th · 2026-08-28  
    Recent advances in nuclear science and technology are being driven simultaneously by fundamental questions on strong interactions and many-body emergence, by the rapid expansion of rare-isotope capabilities and multimessenger astronomy, and by growing societal demand for clean energy, precision medicine, and strategic technologies. This review reorganizes t…
-2. **[Interrogating the composition and distribution of nuclear magnetization via the hyperfine anomaly: experiment meets nuclear and atomic theory for short-lived $^{47}$K](https://arxiv.org/abs/2603.20090)**  
+2. **[由守恒荷涨落得到的重子夸克—双夸克结构证据](https://doi.org/10.1103/yb26-gj61)**  
+   Physical Review C · 2026-08-28  
+   We study fluctuations and correlations of conserved charges in QCD using a string-based description of the hadronic mass spectrum. Mesons and baryons are modeled as open relativistic strings with quark-antiquark and quark-diquark endpoints, respectively, leading to an exponential Hagedorn growth of states with a limiting temperature fixed by the string tens…
+3. **[Interrogating the composition and distribution of nuclear magnetization via the hyperfine anomaly: experiment meets nuclear and atomic theory for short-lived $^{47}$K](https://arxiv.org/abs/2603.20090)**  
    arXiv nucl-th · 2026-08-28  
    To date, the magnetic structure of nuclei has been poorly constrained, with limited information on its spatial distribution. In this work, we address the composition and distribution of nuclear magnetization in a precision study of short-lived $^{47}$K. We measure the Larmor frequency with part-per-million precision using liquid-state $\beta$-detected nucle…
-3. **[Simulated-Annealing Optimization of Mean-Field Parameters in a Correlated-Basis Nuclear Model with Realistic Short-Range Correlations](https://arxiv.org/abs/2506.05512)**  
+4. **[Simulated-Annealing Optimization of Mean-Field Parameters in a Correlated-Basis Nuclear Model with Realistic Short-Range Correlations](https://arxiv.org/abs/2506.05512)**  
    arXiv nucl-th · 2026-08-28  
    We optimize a six-parameter spherical Woods-Saxon mean field within a first-order correlated-basis-function description of finite nuclei containing central, spin-isospin, and tensor Short-Range Correlations (SRC). Monte Carlo importance sampling makes the multidimensional simulated-annealing search practical. The final objective contains 17 selected charge…
-4. **[Reduced basis emulator for elastic scattering in continuum-discretized coupled-channels calculations](https://arxiv.org/abs/2512.17687)**  
+5. **[Reduced basis emulator for elastic scattering in continuum-discretized coupled-channels calculations](https://arxiv.org/abs/2512.17687)**  
    arXiv nucl-th · 2026-08-28  
    I develop a reduced basis emulator for continuum-discretized coupled-channel (CDCC) calculations that achieves speedups of $\approx 10^2$ while maintaining sub-percent accuracy. The emulator is constructed using the proper orthogonal decomposition (POD) method applied to snapshots of CDCC solutions computed at sampled points in the optical potential paramet…
-5. **[N$^{\mathbf{3}}$LL + $\mathcal{O}(\alpha_s^2)$ predictions of lepton-jet azimuthal angular distribution in deep-inelastic scattering](https://arxiv.org/abs/2409.09248)**  
+6. **[Interplay between tensor force and pairing correlations in the microscopic description of α decay within the Hartree-Fock-Bogoliubov framework](https://doi.org/10.1103/ylvs-r51k)**  
+   Physical Review C · 2026-08-28  
+   数据源暂未提供详细介绍。
+7. **[N$^{\mathbf{3}}$LL + $\mathcal{O}(\alpha_s^2)$ predictions of lepton-jet azimuthal angular distribution in deep-inelastic scattering](https://arxiv.org/abs/2409.09248)**  
    arXiv nucl-th · 2026-08-28  
    We present an analysis of lepton-jet azimuthal decorrelation in deep-inelastic scattering (DIS) at next-to-next-to-next-to-leading logarithmic (N$^{3}$LL) accuracy, combined with fixed-order corrections at $\mathcal{O}(\alpha_s^2)$. In this study, jets are defined in the lab frame using the anti-$k_T$ clustering algorithm and the winner-take-all recombinati…
-6. **[Single-particle potentials in asymmetric nuclear matter within the LOCV framework](https://arxiv.org/abs/2608.26343)**  
+8. **[Single-particle potentials in asymmetric nuclear matter within the LOCV framework](https://arxiv.org/abs/2608.26343)**  
    arXiv nucl-th · 2026-08-28  
    The single-particle potentials and effective masses of protons and neutrons in asymmetric nuclear matter are investigated within the lowest-order constrained variational (LOCV) method. The dependence of these quantities on momentum, density, and isospin asymmetry is studied using the $Reid68$ and $AV_{18}$ nucleon-nucleon interactions, with the effects of t…
-7. **[Reconciling hadronic and partonic analyticity in $b\to s\ell\ell$ transitions](https://arxiv.org/abs/2604.01284)**  
-   arXiv nucl-th · 2026-08-28  
-   Rare $B$-meson decays mediated by $b\to s\ell\ell$ transitions constitute sensitive probes of physics beyond the Standard Model, and have triggered considerable interest due to hints for deviations from the Standard-Model prediction. To establish a discrepancy beyond a reasonable doubt, control over the nonlocal matrix elements involving charm loops is esse…
-8. **[Optimizing artificial neural networks for dipole strength predictions in light nuclei](https://arxiv.org/abs/2608.26988)**  
-   arXiv nucl-th · 2026-08-28  
-   We present an optimized artificial neural network approach for predicting electric dipole strength functions in nuclei with $A < 50$. Building upon a previous global study [Phys.Rev.C $\textbf{111}$ (2025) 5, L051308], we focus here on the region of light nuclei where dipole responses are more structured. The new network incorporates a two-stage training pr…
 
 ## 物理新闻
 
@@ -52,6 +52,9 @@
 - **[Intersection of nuclear structure and high-energy nuclear collisions: 2025 Program and Workshop](https://napp.fudan.edu.cn/event/45/)**  
    复旦大学核物理 Indico · 2025-01-31  
    Introduction: The purpose of this one-week program and three-day workshop is to gather together experts from high-energy and low-energy nuclear physics communities to report on the latest experimental and theoretical advances at the intersection of these fields. Discussions will focus on the interplay between low-energy nuclear experiments, modern nuclear s…
+- **[第二届测试束流与先进探测技术研讨会（TB&D-2）](https://indico.ihep.ac.cn/event/29156/)**  
+   高能所 Indico 核物理全量 · 2026-03-26  
+   会议简介： 近年来，我国在先进粒子探测器领域的研究取得了显著成就，推动相关技术跻身国际先进水平。随着探测技术的快速发展，对高能粒子测试束线的需求日益迫切。国内已建成多个束流测试装置，并正在中国散裂中子源建设我国首个专用高能质子（ 1.6 GeV ）束流测试实验站（ HPES ），这一重大国家科研基础设施预计于 2029 年出束试运行。为促进我国先进测试束能力建设，提升探测技术实验研究水平，进一步加强探测技术研发团队与装置研发团队之间的跨学科技术交流，拟于 2026 年10月09-11日 在 湖南省长沙市 举办 " 第二届测试束流与先进探测技术研讨会（ TB&D-2 ） " 。我们诚挚邀请相关领域专家、学者及工程技术人员齐聚一堂，共同探讨测试束流与先进探测技术领域的前沿发展与未来方向。会议将涵盖以下几个主要议题…
 - **[Nuclear Astrophysics Experiments with HIAF](https://indico.impcas.ac.cn/event/172/)**  
    近代物理所 Indico 全量 · 2025-07-08  
    HIAF is about to come online soon. We are going to organize a mini-workshop to discuss the possible nuclear astrophysics related experiments at HIAF in Huizhou from Sept. 3 to Sept. 5. This workshop will focus on decay, mass, active target, fission and charge exchange experiments. We sincerely invite you to Huizhou, where HIAF is located, to share the inter…
@@ -61,8 +64,5 @@
 - **[Frontiers in high-energy nuclear physics](https://indico.ihep.ac.cn/event/28839/)**  
    高能所 Indico 核物理全量 · 2026-02-11  
    The international workshop " Frontiers in high-energy nuclear physics " is organized by The Department of Physics, Tsinghua University and will take place in Beijing from July 19th to 23rd of 2026 ( 19th is for registration ). Conference venue: Marriott Hotel , Building 12, No. 3 Courtyard, Yongle North First Street , Huairou District, Beijing. Address in C…
-- **[第一届中微子、原子核物理和新物理研讨会(νNN2025)](https://indico.impcas.ac.cn/event/162/)**  
-   近代物理所 Indico 全量 · 2025-03-26  
-   为了促进以无中微子双贝塔衰变为核心的原子核物理、粒子物理与超出标准模型新物理研究的交叉融合与突破创新，我们将举办“中微子、原子核物理与新物理研讨会”系列会议（Neutrino, Nuclear Physics, and New Physics Symposium, νNN Series）。第一届会议（νNN2025）将于2025年7月21号－25号在兰州举行，由近代物理研究所承办，诚挚邀请并期待您的参与！ 近年来，作为探索中微子马约拉纳属性、轻子数破坏等超越标准模型新物理的核心探针，无中微子双贝塔衰变研究已在实验探测、核结构计算、新物理参数提取及模型构建等领域取得显著进展，但其理论诠释与实验验证仍面临重大挑战。在这一进程中，原子核结构的高精度计算、新型探测器技术、无中微子双贝塔衰变在探测新物理方面的独特优势以…
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)
