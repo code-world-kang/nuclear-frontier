@@ -1,5 +1,224 @@
 [
   {
+    "id": "d7b4791784c8c13d",
+    "type": "paper",
+    "title": "Self-confinement of ultrahigh-energy nuclei in cosmic filaments: Implications for the UHECR spectrum and composition",
+    "abstract": "The spectrum and composition of ultrahigh-energy cosmic rays (UHECRs) suggest that the population dominating above the ankle releases particles with a flux suppression at rigidities below approximately 1 EV. In phenomenological fits, this feature is usually encoded as an unusually hard source spectrum, which is difficult to reconcile with standard acceleration mechanisms. In self-confinement scenarios, however, such an apparent hardening can arise from transport: escaping UHECRs generate the magnetic turbulence that delays their own release from the magnetized environments surrounding their sources. So far, this mechanism has mainly been explored for its spectral consequences, and its implications for the observed mass composition have not been tested in detail. We extended the self-confinement scenario, based on the nonresonant streaming instability, to a mixed nuclear composition. The electric current carried by escaping UHECRs amplifies magnetic turbulence in the surrounding intergalactic medium, reduces the diffusion coefficient, and delays particle escape in a rigidity-dependent way. We described the confined region with an effective leaky box model including escape, photodisintegration, and secondary production, and we propagated the escaping nuclei to Earth. We then compared the resulting spectrum and composition with Auger measurements and computed the associated cosmogenic neutrino and gamma-ray emission. We find that self-generated turbulence can suppress the escaping flux below rigidities R ∼ 1 EV for source luminosities and magnetic-field coherence lengths compatible with UHECR sources hosted in galaxy clusters and propagating through cosmic filaments. For coherence lengths łambda_B ≃ 30--50 Mpc, the model reproduces the main features of the observed UHECR spectrum and composition with a standard acceleration spectrum, γ ≃ 2, without requiring a dominant primary proton component at the highest energies. During confinement, heavy nuclei efficiently photodisintegrate, producing secondary protons that naturally contribute below the ankle and help account for the observed composition evolution. The same confinement enhances the production of cosmogenic neutrinos and gamma rays: the predicted neutrino flux remains compatible with current limits, while the diffuse gamma-ray background provides a potentially strong constraint on the most extreme confinement configurations. Ultrahigh-energy cosmic-ray self-confinement in cosmic filaments therefore offers a physically motivated way to transform standard acceleration spectra into the hard effective spectra inferred from observations. In this picture, the apparent hardness of UHECR sources is not an intrinsic property of the accelerator, but the observable imprint of self-generated magnetic turbulence in the cosmic web.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Alessandro Cermenati",
+      "Roberto Aloisio",
+      "Carmelo Evoli"
+    ],
+    "published": "2026-08-31",
+    "updated": "2026-08-31",
+    "source": "Astronomy and Astrophysics",
+    "source_short": "A&A",
+    "source_type": "journal",
+    "doi": "10.1051/0004-6361/202660944",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1051/0004-6361/202660944",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-reactions",
+      "accelerators",
+      "particle-cross"
+    ],
+    "tags": [
+      "photodisintegration",
+      "accelerator",
+      "neutrino"
+    ],
+    "primary_topic": "nuclear-reactions",
+    "methods": [],
+    "classification_confidence": 0.72,
+    "classification_evidence": [
+      "photodisintegration",
+      "accelerator",
+      "neutrino"
+    ],
+    "importance": 56,
+    "score_reasons": [
+      "来源权重 +32",
+      "核物理研究侧重 +18",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.edpsciences.org/en/authors/copyright-and-licensing"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Cermenati, Alessandro",
+      "Aloisio, Roberto",
+      "Evoli, Carmelo"
+    ],
+    "journal_abbrev": "A&A",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "numpages": "",
+    "publisher": "EDP Sciences",
+    "publisher_url": "https://www.aanda.org/10.1051/0004-6361/202660944",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-08-31T00:09:17+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
+    "abstract_checked_sources": []
+  },
+  {
+    "id": "9a2d1edfe59192d2",
+    "type": "paper",
+    "title": "Modelling particle trajectories in the equatorial plane of rotating neutron stars",
+    "abstract": "Rotating neutron stars (RNSs) exhibit a complex spacetime geometry with a frame-dragging effect induced by their rotation, similar to that of rotating black holes (RBHs). However, unlike RBHs, which are well described by the Kerr metric, RNS metrics also depend on higher-order relativistic multipole moments in order to accurately describe the surrounding spacetime geometry. Accurate numerical tools are therefore required to study particle motion around RNSs in a physically meaningful way, which is crucial for investigating astrophysical processes such as accretion dynamics, relativistic jets, and radiation emission. We aim to develop and make accessible a numerical framework for studying the equatorial-plane motion of test particles in the curved spacetime surrounding RNSs using an appropriate metric. As representative applications, we examine stable circular orbits (SCOs), assess the usefulness of the effective potential for general equatorial motion, and investigate the location of the innermost stable circular orbit (ISCO) for both prograde and retrograde orbits. We perform numerical simulations to compute particle trajectories for different initial conditions in order to evaluate a geodesic solver implemented in Python, based on an energy-preserving Hamiltonian scheme. Our results demonstrate that the implemented numerical approach provides a robust and reliable tool to study particle dynamics around RNSs. We validate the framework and present several examples that illustrate its application to orbital motion in the equatorial plane. This work provides a numerical framework for investigating particle dynamics around RNSs and illustrates its capabilities through representative applications. The solver contributes to improved modelling of RNS spacetimes and provides a foundation for future studies of astrophysical phenomena, including accretion dynamics and quasi-periodic oscillations (QPOs). A more advanced version based on the AMReX framework will enable more sophisticated numerical investigations.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "B. Guichard",
+      "A. Topic",
+      "J. Chenevez",
+      "C. Köhn"
+    ],
+    "published": "2026-08-31",
+    "updated": "2026-08-31",
+    "source": "Astronomy and Astrophysics",
+    "source_short": "A&A",
+    "source_type": "journal",
+    "doi": "10.1051/0004-6361/202659873",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1051/0004-6361/202659873",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-astrophysics"
+    ],
+    "tags": [],
+    "primary_topic": "nuclear-astrophysics",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": [],
+    "importance": 42,
+    "score_reasons": [
+      "来源权重 +32",
+      "核物理研究侧重 +8",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.edpsciences.org/en/authors/copyright-and-licensing"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Guichard, B.",
+      "Topic, A.",
+      "Chenevez, J.",
+      "Köhn, C."
+    ],
+    "journal_abbrev": "A&A",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "numpages": "",
+    "publisher": "EDP Sciences",
+    "publisher_url": "https://www.aanda.org/10.1051/0004-6361/202659873",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-08-31T00:09:17+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
+    "abstract_checked_sources": []
+  },
+  {
+    "id": "2b635fe13546082d",
+    "type": "paper",
+    "title": "MINCE. IV. A detailed analysis of 37 metal-poor and subsolar metallicity stars",
+    "abstract": "The project called Measuring at Intermediate metallicity Neutron-Capture Elements (MINCE) primarily focuses on the photospheric abundances of several neutron-capture (NC) elements from high-quality spectra of metal-poor stars within the metallicity range of $ Fe/H !łeq -1.5 $, aiming to provide homogeneous information on their chemical compositions. Furthermore, based on the Gaia mission, chemical abundances can now be coupled with kinematic properties, enabling investigations of the constituent substructures of the Milky Way. We analyse the fourth sample of MINCE stars in terms of atmospheric parameters and chemical composition. The results are then compared with the previously analysed MINCE samples. The observations were conducted with HARPS-N ($ ̊m R ≈ 120,000 $) at the Telescopio Nazionale Galileo (TNG) and FIES ($ ̊m R ≈ 67,000 $ ) at the Nordic Optical Telescope (NOT), providing optical spectra with a high signal-to-noise ratio (S/N) and high resolution. We then used the methods developed in previous MINCE works and Gaia photometric data to obtain the stellar atmospheric parameters. The chemical abundances were analysed using 1D-LTE model atmospheres. We present the photospheric abundances in 37 stars of up to 26 elements, including α, iron-peak, light-odd, and 10 NC-elements (Sr, Y, Zr, Ba, La, Ce, Pr, Nd, Sm, and Eu). Kinematic properties and membership assessments are provided for all stars. The MINCE catalogue is thus expanded by 13 thin-disc stars, 9 thick-disc stars, 1 star in a transition zone between the thin and thick disc, 9 stars of the halo, and 5 Gaia-Sausage-Enceladus stars. The results agree excellently with previous MINCE works. The comparison with a Gaia Sausage Enceladus GCE model is consistent with the scenario of a major accretion event on the Milky Way from a dwarf galaxy.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "L. Sgatti",
+      "G. Cescutti",
+      "L. Lombardo",
+      "C. T. Nguyen",
+      "P. Bonifacio",
+      "E. Caffau",
+      "L. Monaco",
+      "R. Lallement",
+      "L. Magrini",
+      "M. Franchini",
+      "C. J. Hansen",
+      "A. Mucciarelli",
+      "A. Korn",
+      "A. Kucinskas",
+      "E. Spitoni",
+      "S. Lucatello"
+    ],
+    "published": "2026-08-31",
+    "updated": "2026-08-31",
+    "source": "Astronomy and Astrophysics",
+    "source_short": "A&A",
+    "source_type": "journal",
+    "doi": "10.1051/0004-6361/202661353",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1051/0004-6361/202661353",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-astrophysics"
+    ],
+    "tags": [],
+    "primary_topic": "nuclear-astrophysics",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": [],
+    "importance": 42,
+    "score_reasons": [
+      "来源权重 +32",
+      "核物理研究侧重 +8",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.edpsciences.org/en/authors/copyright-and-licensing"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Sgatti, L.",
+      "Cescutti, G.",
+      "Lombardo, L.",
+      "Nguyen, C. T.",
+      "Bonifacio, P.",
+      "Caffau, E.",
+      "Monaco, L.",
+      "Lallement, R.",
+      "Magrini, L.",
+      "Franchini, M.",
+      "Hansen, C. J.",
+      "Mucciarelli, A.",
+      "Korn, A.",
+      "Kucinskas, A.",
+      "Spitoni, E.",
+      "Lucatello, S."
+    ],
+    "journal_abbrev": "A&A",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "numpages": "",
+    "publisher": "EDP Sciences",
+    "publisher_url": "https://www.aanda.org/10.1051/0004-6361/202661353",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-08-31T00:09:17+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
+    "abstract_checked_sources": []
+  },
+  {
     "id": "22fe13529bd3ef30",
     "type": "paper",
     "title": "Global prediction of nuclear charge radii by integrating physical mechanisms with neural networks",
@@ -56,7 +275,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T04:00:19+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Yuan, Qiong",
       "Huang, Ru-Yu",
@@ -74,6 +293,72 @@
     "publisher": "World Scientific Pub Co Pte Ltd",
     "publisher_url": "https://www.worldscientific.com/doi/10.1142/S0218301326500527",
     "citation_metadata_checked": true,
+    "abstract_checked_sources": []
+  },
+  {
+    "id": "859dbcc5eb159ca7",
+    "type": "paper",
+    "title": "Portraits of the young and old in X-ray: New millisecond pulsar detections and updated characterisation of young neutron stars",
+    "abstract": "Abstract We present analyses of new and archival Chandra and NuSTAR data on two old millisecond pulsars, a young highly-energetic pulsar, and a young neutron star. PSR J1810−0623 is a recently-discovered 4.55 ms radio pulsar in a binary with a possible carbon-oxygen white dwarf companion. We tentatively detect the pulsar for the first time in X-ray using a new short Chandra HRC-I observation. Its faintness suggests a distance more in accord with the further (≈1kpc) of its dispersion measure-inferred distances. PSR J1933−6211 is a 3.54 ms radio pulsar also with a carbon-oxygen white dwarf companion. Our first-time X-ray detection in an archival HRC-S image indicates its X-ray luminosity is similar to that of the 1.9 ⊙ pulsar PSR J1614−2230. Next, PSR J1813−1749 is a 1–2 kyr pulsar with one of the highest known spin-down luminosities. We measure its spin period of 44.7 ms using 2025 NuSTAR and 2026 Chandra ACIS-S data and update its spin evolution model. We show for the first time the pulse profile of PSR J1813−1749 at 3–79 keV, and we find that the spectra of the pulsar and pulsar wind nebula at these energies did not change significantly between observations in 2018 and 2025. Finally, for the 5–10 kyr neutron star CXOU J182913.1−125113 in the supernova remnant G18.95−1.1, we combine ACIS-I observations from 2009 and 2024 to better measure the neutron star’s spectrum.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Wynn C G Ho",
+      "Patrick H Wang",
+      "Sebastien Guillot"
+    ],
+    "published": "2026-08-29",
+    "updated": "2026-08-29",
+    "source": "Monthly Notices of the Royal Astronomical Society",
+    "source_short": "MNRAS",
+    "source_type": "journal",
+    "doi": "10.1093/mnras/stag1650",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1093/mnras/stag1650",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-astrophysics"
+    ],
+    "tags": [
+      "neutron star",
+      "supernova"
+    ],
+    "primary_topic": "nuclear-astrophysics",
+    "methods": [],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "neutron star",
+      "supernova"
+    ],
+    "importance": 42,
+    "score_reasons": [
+      "来源权重 +32",
+      "核物理研究侧重 +8",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Ho, Wynn C G",
+      "Wang, Patrick H",
+      "Guillot, Sebastien"
+    ],
+    "journal_abbrev": "",
+    "volume": "",
+    "issue": "",
+    "pages": "stag1650",
+    "numpages": "",
+    "publisher": "Oxford University Press (OUP)",
+    "publisher_url": "https://academic.oup.com/mnras/advance-article/doi/10.1093/mnras/stag1650/8776106",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-08-31T00:09:17+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -215,7 +500,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/yb26-gj61",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-13T04:21:05+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-22T22:15:37+00:00",
@@ -526,7 +811,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/ylvs-r51k",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -609,7 +894,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae5671",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -762,7 +1047,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "primary_topic": "particle-cross",
     "methods": [
       "experimental",
@@ -913,7 +1198,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "primary_topic": "particle-cross",
     "methods": [
       "experimental",
@@ -1075,7 +1360,7 @@
     "publisher_url": "https://www.worldscientific.com/doi/10.1142/S0218301326500540",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T23:50:29+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -1133,7 +1418,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/jcs6-lbpq",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -1706,7 +1991,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Mrówczyński, Stanisław"
     ],
@@ -1949,7 +2234,7 @@
     "publisher_url": "https://www.worldscientific.com/doi/10.1142/S0218301326500552",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T23:50:29+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -2293,7 +2578,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/d8nv-mttg",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-12T12:46:34+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -2376,7 +2661,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/8x4j-pg8f",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -2453,7 +2738,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/nrkh-pmwk",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -2530,7 +2815,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/dyj6-2dfw",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -2672,7 +2957,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/hlmx-6x21",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -2930,7 +3215,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae6e53",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -3021,7 +3306,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aea007",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -3088,7 +3373,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aea008",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -3159,7 +3444,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aea009",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -3232,7 +3517,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9ab1",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -3342,7 +3627,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae948f",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -3421,7 +3706,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aea006",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -3480,7 +3765,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "fusion",
@@ -3575,7 +3860,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "fusion",
@@ -3747,7 +4032,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aea00a",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -4170,7 +4455,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/ftgk-cm86",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -4241,7 +4526,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T04:00:19+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Jain, Poonam",
       "Roy, Rishav",
@@ -4295,7 +4580,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "primary_topic": "nuclear-astrophysics",
     "methods": [],
     "classification_confidence": 0.38,
@@ -4372,7 +4657,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "primary_topic": "nuclear-astrophysics",
     "methods": [
       "experimental",
@@ -4477,7 +4762,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/p67d-fvpj",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -7052,7 +7337,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Conley, A. L.",
       "Spieker, M.",
@@ -7175,7 +7460,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Taioli, Simone",
       "Triggiani, Francesca",
@@ -7263,7 +7548,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/xksw-yqcj",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -7337,7 +7622,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/jt6y-h375",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -7485,7 +7770,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/jngg-1nf3",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -7546,7 +7831,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/mtdc-3f6n",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -7645,7 +7930,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1674-1137/ae9f35",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -7707,7 +7992,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/n6q9-1www",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -7799,7 +8084,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/sjy1-tshn",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -7971,7 +8256,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1361-6471/ae9f75",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -8044,7 +8329,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae4d1c",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -8106,7 +8391,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/999m-b763",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -8202,7 +8487,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/j71d-h5w2",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -8291,7 +8576,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae9758",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -8363,7 +8648,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1674-1137/ae9f38",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -8424,7 +8709,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/3d6w-hxs8",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -8507,7 +8792,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/y963-vqx6",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -8590,7 +8875,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/dr2g-kttx",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -8673,7 +8958,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/dj7f-48fn",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -8758,7 +9043,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/bbff-kxpy",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -8841,7 +9126,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/gm4m-8wyn",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -8924,7 +9209,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/6m5s-pxyz",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -9020,7 +9305,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1361-6471/ae9f77",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -9093,7 +9378,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9f72",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -9187,7 +9472,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1361-6587/ae9f8f",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -9223,7 +9508,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "particle-cross",
@@ -9352,7 +9637,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1361-6471/ae9f78",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -9423,7 +9708,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1674-1137/ae9f34",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -9491,7 +9776,7 @@
     "publisher_url": "https://academic.oup.com/mnras/advance-article/doi/10.1093/mnras/stag1614/8771745",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -9569,7 +9854,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1361-6471/ae9f76",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -9634,7 +9919,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1674-1137/ae9f36",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -9717,7 +10002,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/5txt-skp5",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -9859,7 +10144,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/xn4s-xxs8",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -9987,7 +10272,7 @@
     "publisher_url": "https://www.nature.com/articles/d41586-026-02511-7",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -10110,7 +10395,7 @@
       "核物理研究侧重 +18"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "nuclear-reactions",
@@ -10230,7 +10515,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/tnt4-6wbh",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -10310,7 +10595,7 @@
     "publisher_url": "https://www.nature.com/articles/d41586-026-02513-5",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -10404,7 +10689,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae9471",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -10537,7 +10822,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1674-1137/ae9ea9",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -10604,7 +10889,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/j8yn-8ftt",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-10T23:40:26+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-11T16:57:44+08:00",
@@ -10769,7 +11054,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9edf",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -10870,7 +11155,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9edd",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -10942,7 +11227,7 @@
     "publisher_url": "https://link.springer.com/10.1140/epja/s10050-026-01948-8",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -11105,7 +11390,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/9vds-3nmb",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -11182,7 +11467,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T04:00:19+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Hefny, A. A. E.",
       "Hassan, M. A.",
@@ -11272,7 +11557,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae8dcb",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -11621,7 +11906,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae8ba6",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -11688,7 +11973,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/st5n-sy81",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -11996,7 +12281,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/48tj-7b1b",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -12155,7 +12440,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae7e08",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -12189,7 +12474,7 @@
       "核物理研究侧重 +8"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "nuclear-general",
@@ -12374,7 +12659,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/bv9r-hvhm",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -12789,7 +13074,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "fusion",
@@ -12947,7 +13232,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9edc",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -13032,7 +13317,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9ede",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -13123,7 +13408,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9edb",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -13195,7 +13480,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "fusion",
@@ -13330,7 +13615,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1674-1137/ae9ea6",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -13463,7 +13748,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/qthl-2677",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -13532,7 +13817,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/lsf2-yl1p",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -13781,7 +14066,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/6gjf-24ll",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -14076,7 +14361,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/l8rt-hxnh",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -14159,7 +14444,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/4jv6-twnk",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -14242,7 +14527,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/fzjg-k25d",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -14329,7 +14614,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/6ft1-rk5b",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -14457,7 +14742,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/115m-y8mg",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -14616,7 +14901,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1674-1137/ae9e9a",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -14739,7 +15024,7 @@
     "publisher_url": "https://link.springer.com/10.1140/epja/s10050-026-01945-x",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -15297,7 +15582,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1361-6587/ae9eea",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -15360,7 +15645,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1674-1137/ae9ea7",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -15647,7 +15932,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1674-1137/ae9e9c",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -16494,7 +16779,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "primary_topic": "nuclear-structure",
     "methods": [
       "theoretical",
@@ -16587,7 +16872,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-decay",
@@ -16731,7 +17016,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae95ff",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -16794,7 +17079,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T04:00:19+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Tahyoor, Ridha Kamil",
       "Jabbar, Abdulnoor",
@@ -16891,7 +17176,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9e48",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -16935,7 +17220,7 @@
       "突破性表述 +8"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "fusion",
@@ -16982,7 +17267,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-23T22:15:18+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -17071,7 +17356,7 @@
       "核物理研究侧重 +20"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "nuclear-structure",
@@ -17309,7 +17594,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/78wl-8f1q",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -17904,7 +18189,7 @@
     "publisher_url": "https://www.nature.com/articles/d41586-026-02673-4",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -18053,7 +18338,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/rmh8-yqz7",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -18225,7 +18510,7 @@
     "publisher_url": "https://link.springer.com/10.1140/epja/s10050-026-01943-z",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -18321,7 +18606,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-astrophysics",
@@ -18516,7 +18801,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "high-energy-nuclear",
@@ -18748,7 +19033,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Semantic Scholar",
     "primary_topic": "nuclear-astrophysics",
@@ -18860,7 +19145,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T04:00:19+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Tursunmakhatov, K. I."
     ],
@@ -19116,7 +19401,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/sl21-xj4r",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -19173,7 +19458,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T04:00:19+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Debnath, Manas",
       "Thakur, Lata",
@@ -19283,7 +19568,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "primary_topic": "nuclear-general",
     "methods": [
       "review"
@@ -19437,7 +19722,7 @@
     "publisher_url": "https://www.aanda.org/10.1051/0004-6361/202660585",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -19500,7 +19785,7 @@
     "publisher_url": "https://www.aanda.org/10.1051/0004-6361/202661793",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -20152,7 +20437,7 @@
       "核物理研究侧重 +8"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "nuclear-general",
@@ -20304,7 +20589,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/kn9r-1ymy",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-25T22:20:13+00:00",
@@ -20387,7 +20672,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/6g8r-xqv5",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-25T22:20:13+00:00",
@@ -20550,7 +20835,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9e4a",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -20646,7 +20931,7 @@
       "核物理研究侧重 +8"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "nuclear-general",
@@ -20759,7 +21044,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/1n82-rlhp",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-25T22:20:13+00:00",
@@ -20816,7 +21101,7 @@
       "核物理研究侧重 +8"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "primary_topic": "nuclear-general",
     "methods": [
       "review"
@@ -20925,7 +21210,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/j2m6-v12v",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-25T22:20:13+00:00",
@@ -21007,7 +21292,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Datta, Arghyajit",
       "Sil, Arunansu"
@@ -21190,7 +21475,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "fusion",
@@ -21331,7 +21616,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae977e",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-11T04:01:53+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -21404,7 +21689,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9e1f",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -21487,7 +21772,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9e49",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-27T02:48:08+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -21564,7 +21849,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T03:43:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Marinoni, A.",
       "Chrystal, C.",
@@ -21640,7 +21925,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "fusion",
@@ -21750,7 +22035,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae97f5",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-11T15:32:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -21817,7 +22102,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae97f4",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-11T15:32:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -21880,7 +22165,7 @@
     "publisher_url": "https://www.aanda.org/10.1051/0004-6361/202660126",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -21943,7 +22228,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/wdvz-sgv5",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -22454,7 +22739,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "particle-cross",
@@ -22489,7 +22774,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-23T22:15:18+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -22568,7 +22853,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/sjff-yj2t",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-25T22:20:13+00:00",
@@ -22846,7 +23131,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Parmar, Vishal",
       "Scordino, Domenico",
@@ -23075,7 +23360,7 @@
     "publisher_url": "https://link.springer.com/10.1140/epja/s10050-026-01930-4",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-25T22:20:13+00:00",
@@ -23218,7 +23503,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-12T04:12:38+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": [],
     "citation_authors": [
       "Kun, Emma",
@@ -26336,7 +26621,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae8a44",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-24T22:20:01+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -26378,7 +26663,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-reactions",
@@ -26476,7 +26761,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Semantic Scholar",
     "primary_topic": "nuclear-structure",
@@ -26703,7 +26988,7 @@
       "核物理研究侧重 +18"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "nuclear-reactions",
@@ -26825,7 +27110,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/g18c-kwp9",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-24T22:20:01+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-24T22:20:01+00:00",
@@ -27008,7 +27293,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9d94",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -27062,7 +27347,7 @@
     "publisher_url": "https://www.nature.com/articles/d41586-026-02620-3",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-25T22:20:13+00:00",
@@ -27216,7 +27501,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Duan, Mingya",
       "Urban, Michael"
@@ -27312,7 +27597,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Rodriguez, M. C.",
       "Jiménez, José C.",
@@ -27428,7 +27713,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae8fc8",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-24T22:20:01+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -27467,7 +27752,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Semantic Scholar",
     "primary_topic": "nuclear-astrophysics",
@@ -27898,7 +28183,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae95f4",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-24T22:20:01+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -27963,7 +28248,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/wzjf-64f2",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-24T22:20:01+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-24T22:20:01+00:00",
@@ -28109,7 +28394,7 @@
       "核物理研究侧重 +8"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "primary_topic": "nuclear-general",
     "methods": [
       "theoretical",
@@ -28221,7 +28506,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/gkdb-l6v8",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-24T22:20:01+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-24T22:20:01+00:00",
@@ -28304,7 +28589,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/y19m-xxj5",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-24T22:20:01+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-24T22:20:01+00:00",
@@ -28549,7 +28834,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae977d",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-11T04:01:53+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -28588,7 +28873,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "fusion",
@@ -28673,7 +28958,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T03:43:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Johzaki, Tomoyuki",
       "Nagatomo, Hideo",
@@ -28768,7 +29053,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9d95",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -28849,7 +29134,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1361-6587/ae9db3",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -29120,7 +29405,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/2h89-y8wh",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-24T22:20:01+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -29180,7 +29465,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/vkhk-9dx8",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-24T22:20:01+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -29355,7 +29640,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/c7j9-ykx6",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-24T22:20:01+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-24T22:20:01+00:00",
@@ -29453,7 +29738,7 @@
     "publisher_url": "https://link.springer.com/10.1140/epja/s10050-026-01947-9",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-24T22:20:01+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -29486,7 +29771,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "particle-cross",
@@ -29595,7 +29880,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-24T22:20:01+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Mickley, Jackson A.",
       "Kamleh, Waseem",
@@ -29670,7 +29955,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": [],
     "citation_authors": [
       "Diez, C. M.",
@@ -29760,7 +30045,7 @@
     "publisher_url": "https://link.springer.com/10.1140/epja/s10050-026-01949-7",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-24T22:20:01+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-24T22:20:01+00:00",
@@ -29935,7 +30220,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1361-6587/ae9db7",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -30028,7 +30313,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1361-6587/ae9db2",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -30171,7 +30456,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/2632-2153/ae9dea",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -30246,7 +30531,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/2632-2153/ae9de8",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -30325,7 +30610,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1361-6587/ae9db4",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -30935,7 +31220,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/rbwx-m6mb",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-24T22:20:01+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -32265,7 +32550,7 @@
     "publisher_url": "https://link.springer.com/10.1140/epja/s10050-026-01951-z",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-22T22:15:37+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-22T22:15:37+00:00",
@@ -32420,7 +32705,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-22T22:15:37+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Pradhan, Bikram Keshari",
       "Chanfray, Guy",
@@ -33198,7 +33483,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-reactions",
@@ -33408,7 +33693,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/ljtv-y278",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -33532,7 +33817,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Mukherjee, Swagato",
       "Skokov, Vladimir V.",
@@ -33621,7 +33906,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/wlvt-szn4",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -33843,7 +34128,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-astrophysics",
@@ -33978,7 +34263,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9cc9",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-22T22:15:37+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -34242,7 +34527,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae90a4",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -34368,7 +34653,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/w92f-58lx",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-21T22:17:52+00:00",
@@ -34465,7 +34750,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/v7c7-rqsr",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -34694,7 +34979,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/t4wh-svzx",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -34783,7 +35068,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae9154",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -34844,7 +35129,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/p4dk-41pn",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -34927,7 +35212,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/8jp8-k1r7",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -35082,7 +35367,7 @@
       "核物理研究侧重 +8"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "nuclear-general",
@@ -35211,7 +35496,7 @@
       "核物理研究侧重 +8"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "nuclear-astrophysics",
@@ -35375,7 +35660,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/zyhv-p7f4",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -35470,7 +35755,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T03:43:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Guo, Bingqi",
       "Zhang, Chen",
@@ -35699,7 +35984,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9cca",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-22T22:15:37+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -35754,7 +36039,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "fusion",
@@ -35893,7 +36178,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9ccb",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-22T22:15:37+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -35951,7 +36236,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/1hsy-xvqx",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -36055,7 +36340,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Kojo, Toru",
       "Itatani, Sakura"
@@ -36195,7 +36480,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/fvck-n7xd",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -36310,7 +36595,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/22sz-l456",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -36393,7 +36678,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/ktbp-csd3",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -36480,7 +36765,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/t8qz-v87p",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -36567,7 +36852,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/v4hl-pbpn",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -36650,7 +36935,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/95x8-csn6",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -36728,7 +37013,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "López Oller, Víctor",
       "Liu, Boyuan",
@@ -36806,7 +37091,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/gkp7-k9r7",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -36965,7 +37250,7 @@
     "publisher_url": "https://link.springer.com/10.1140/epja/s10050-026-01908-2",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-21T22:17:52+00:00",
@@ -37268,7 +37553,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/c6jc-fnkm",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -38175,7 +38460,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/d6vm-5jfl",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-20T22:21:07+00:00",
@@ -38256,7 +38541,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Anonymous"
     ],
@@ -38440,7 +38725,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/tqp4-kwrt",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -38585,7 +38870,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/j21y-pqd6",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -38645,7 +38930,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Anonymous"
     ],
@@ -38903,7 +39188,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/w9k5-h5lj",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -39411,7 +39696,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "accelerators",
@@ -39521,7 +39806,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9c54",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -39739,7 +40024,7 @@
     "publisher_url": "https://academic.oup.com/ptep/advance-article/doi/10.1093/ptep/ptag163/8767481",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -39779,7 +40064,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-astrophysics",
@@ -39927,7 +40212,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae8da5",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -40007,7 +40292,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/9zlj-fngj",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -40112,7 +40397,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Anonymous"
     ],
@@ -40402,7 +40687,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/2bm2-28wb",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -40489,7 +40774,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/l4x9-sr5s",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -40572,7 +40857,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/zpsb-vhqc",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -40654,7 +40939,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/634s-zcy6",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -40737,7 +41022,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/z96t-6rxd",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -40820,7 +41105,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/hy6l-43l3",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -40885,7 +41170,7 @@
       "核物理研究侧重 +8"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "nuclear-general",
@@ -41003,7 +41288,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/p79r-jssc",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -41090,7 +41375,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/2n39-9g7c",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -41173,7 +41458,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/cwbz-6mcl",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -41234,7 +41519,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "nuclear-astrophysics",
@@ -41529,7 +41814,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9c56",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -41597,7 +41882,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/2632-2153/ae9c8b",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -41673,7 +41958,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9c55",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -41730,7 +42015,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T03:43:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Wei, Yulin",
       "Deng, Shunjie",
@@ -41809,7 +42094,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1361-6587/ae9c96",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -42193,7 +42478,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/988m-nm57",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -42275,7 +42560,7 @@
     "publisher_url": "https://www.aanda.org/10.1051/0004-6361/202660720",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -42329,7 +42614,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-13T04:21:05+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": [],
     "citation_authors": [
       "Wei, Yun-Feng",
@@ -42402,7 +42687,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/dg6d-6cv3",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -42551,7 +42836,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/gvv9-cnmx",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -42648,7 +42933,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1674-1137/ae9c1d",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -42705,7 +42990,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Ferguson, N",
       "Mulholland, L P",
@@ -42777,7 +43062,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1674-1137/ae9c23",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -42891,7 +43176,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/jjxx-85lj",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -43759,7 +44044,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1674-1137/ae9c1c",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -44703,7 +44988,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/qhr8-qhhp",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -44843,7 +45128,7 @@
     "publisher_url": "https://www.nature.com/articles/s41586-026-10894-w",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -44908,7 +45193,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/3mzz-nycn",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -44993,7 +45278,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Nairat, Obada",
       "Beacom, John F.",
@@ -45047,7 +45332,7 @@
       "跨领域关联 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "nuclear-structure",
@@ -45196,7 +45481,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae8e6b",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -45257,7 +45542,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/1h7p-c6kp",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -45344,7 +45629,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/2x9x-s7s4",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -45441,7 +45726,7 @@
     "publisher_url": "https://www.nature.com/articles/s41586-026-10938-1",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -45478,7 +45763,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "theoretical-nuclear",
@@ -45581,7 +45866,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/zjxy-z1c9",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -45651,7 +45936,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "accelerators",
@@ -45744,7 +46029,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-10T04:06:29+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Anonymous"
     ],
@@ -45820,7 +46105,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1361-6471/ae9bda",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -45891,7 +46176,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae8db7",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -45962,7 +46247,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/154s-hj62",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-20T22:21:07+00:00",
@@ -46046,7 +46331,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/v5pf-s624",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -46130,7 +46415,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/nqgq-2qgk",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -46213,7 +46498,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/g1j9-wwp2",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -46296,7 +46581,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/6zdl-krbq",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -46379,7 +46664,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/89yq-qzm5",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T03:26:55+00:00",
@@ -46462,7 +46747,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/h3f6-zr75",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-29T23:50:29+00:00",
@@ -46550,7 +46835,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T03:43:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Groenewald, Roelof E.",
       "Karbashewski, Scott",
@@ -46691,7 +46976,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9bd4",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -46766,7 +47051,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9bd3",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -46841,7 +47126,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9bd5",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -46930,7 +47215,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9bd6",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -46969,7 +47254,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "particle-cross",
@@ -47123,7 +47408,7 @@
     "publisher_url": "https://www.aanda.org/10.1051/0004-6361/202661002",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -47188,7 +47473,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1674-1137/ae9b9c",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -47245,7 +47530,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1361-6587/ae9bea",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -47307,7 +47592,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1674-1137/ae9b9b",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -47369,7 +47654,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1674-1137/ae9b89",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -47520,7 +47805,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/538w-rhqb",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -47609,7 +47894,7 @@
     "publisher_url": "https://link.springer.com/10.1007/s41365-026-02031-z",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-19T03:11:00+00:00",
@@ -47942,7 +48227,7 @@
       "突破性表述 +8"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "primary_topic": "frontiers",
     "methods": [
       "review"
@@ -48185,7 +48470,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/8gvn-3gbn",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -48483,7 +48768,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9b20",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -48602,7 +48887,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "primary_topic": "accelerators",
     "methods": [],
     "classification_confidence": 0.72,
@@ -48779,7 +49064,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/yj31-gk7k",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -49050,7 +49335,7 @@
     "publisher_url": "https://www.aanda.org/10.1051/0004-6361/202660879",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -49537,7 +49822,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/5qcl-8w8t",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -49968,7 +50253,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/dzzp-3vhf",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -50126,7 +50411,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/55cy-wzvx",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -50209,7 +50494,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/fp85-w4l2",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -50447,7 +50732,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "fusion",
@@ -50620,7 +50905,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "fusion",
@@ -50753,7 +51038,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9b21",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -50825,7 +51110,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/6bpd-yrm4",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -50903,7 +51188,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9b1f",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -51269,7 +51554,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/3rbk-gt2p",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -51410,7 +51695,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/tzhn-7tcq",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-27T02:48:08+00:00",
@@ -51470,7 +51755,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "particle-cross",
@@ -51591,7 +51876,7 @@
     "publisher_url": "https://academic.oup.com/mnras/advance-article/doi/10.1093/mnras/stag1554/8763808",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -51657,7 +51942,7 @@
     "publisher_url": "https://academic.oup.com/mnras/advance-article/doi/10.1093/mnras/stag1566/8763809",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -51832,7 +52117,7 @@
     "publisher_url": "https://link.springer.com/10.1140/epja/s10050-026-01919-z",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-19T03:11:00+00:00",
@@ -52925,7 +53210,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/7pzn-3ygf",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -54668,7 +54953,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Hayrapetyan, A.",
       "Makarenko, V.",
@@ -54756,7 +55041,7 @@
       "跨领域关联 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "nuclear-decay",
@@ -54873,7 +55158,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-11T16:57:44+08:00",
@@ -54952,7 +55237,7 @@
       "跨领域关联 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "primary_topic": "nuclear-decay",
     "methods": [
       "review"
@@ -55089,7 +55374,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/21tc-c8mc",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -55238,7 +55523,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/gymp-vp87",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -55304,7 +55589,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/2z3h-12hs",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-25T22:20:13+00:00",
@@ -55448,7 +55733,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T04:00:19+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": [],
     "citation_authors": [
       "Yashraj",
@@ -55596,7 +55881,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9aaf",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -55753,7 +56038,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "accelerators",
@@ -55869,7 +56154,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/zh98-jf1w",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -55942,7 +56227,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/787w-dpbz",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -56013,7 +56298,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae8c3c",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -56085,7 +56370,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/qmb8-q3cx",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -56125,7 +56410,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "primary_topic": "high-energy-nuclear",
     "methods": [
       "review"
@@ -56253,7 +56538,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/129f-b8vl",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -56554,7 +56839,7 @@
     "publisher_url": "https://www.aanda.org/10.1051/0004-6361/202661498",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-17T03:13:15+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -56704,7 +56989,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae853f",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -56754,7 +57039,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-11T04:01:53+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Kniehl, B. A.",
       "Moch, S.-O.",
@@ -56941,7 +57226,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/1x62-nw3p",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-25T22:20:13+00:00",
@@ -57024,7 +57309,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/5rpc-hg99",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-25T22:20:13+00:00",
@@ -57106,7 +57391,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/mmc9-nzfx",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-25T22:20:13+00:00",
@@ -57169,7 +57454,7 @@
       "核物理研究侧重 +8"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "primary_topic": "nuclear-general",
     "methods": [
       "review"
@@ -57318,7 +57603,7 @@
       "核物理研究侧重 +8"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "primary_topic": "nuclear-general",
     "methods": [
       "review"
@@ -57431,7 +57716,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/snvw-f54b",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-25T22:20:13+00:00",
@@ -57513,7 +57798,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Anonymous"
     ],
@@ -57609,7 +57894,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "citation_authors": [
       "Ambrosone, Antonio",
       "Chianese, Marco",
@@ -57691,7 +57976,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae8f2c",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -57760,7 +58045,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9a44",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -57825,7 +58110,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ae9ab0",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -57932,7 +58217,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "fusion",
@@ -58035,7 +58320,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/yq4t-51vd",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -58109,7 +58394,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/3c6s-dw2q",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -58171,7 +58456,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/sm8b-pn94",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -58286,7 +58571,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "particle-cross",
@@ -58399,7 +58684,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/t2p5-8twq",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-25T22:20:13+00:00",
@@ -58507,7 +58792,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_status": "unavailable",
     "abstract_source": "",
     "primary_topic": "particle-cross",
@@ -58641,7 +58926,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/1zq3-h31c",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -59040,7 +59325,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/k8dz-pjdx",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -59949,7 +60234,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/1mv3-khf8",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-08-29T23:50:29+00:00",
+    "last_seen": "2026-08-31T00:09:17+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-25T22:20:13+00:00",
@@ -83986,7 +84271,7 @@
     "last_seen": "2026-08-25T22:20:13+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -84427,7 +84712,7 @@
     "last_seen": "2026-08-24T22:20:01+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -86060,7 +86345,7 @@
     "last_seen": "2026-08-25T22:20:13+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -86147,7 +86432,7 @@
     "last_seen": "2026-08-24T22:20:01+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -88240,7 +88525,7 @@
     "last_seen": "2026-08-24T22:20:01+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -88503,7 +88788,7 @@
     "last_seen": "2026-08-25T22:20:13+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -88590,7 +88875,7 @@
     "last_seen": "2026-08-25T22:20:13+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -90725,7 +91010,7 @@
     "last_seen": "2026-08-25T22:20:13+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -92502,7 +92787,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-19T03:11:00+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -92849,7 +93134,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-19T03:11:00+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -93293,7 +93578,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-19T03:11:00+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -95486,7 +95771,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-19T03:11:00+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -95608,7 +95893,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-19T03:11:00+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -95691,7 +95976,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -95778,7 +96063,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -96918,7 +97203,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -97005,7 +97290,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -102029,7 +102314,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -102112,7 +102397,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -102199,7 +102484,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -102365,7 +102650,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -102448,7 +102733,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-22T22:15:37+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -102610,7 +102895,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-23T22:15:18+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -102740,7 +103025,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-23T22:15:18+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -103438,7 +103723,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-23T22:15:18+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -105922,7 +106207,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-23T22:15:18+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -106017,7 +106302,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-23T22:15:18+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -106247,7 +106532,7 @@
     },
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-08-23T22:15:18+00:00",
+      "checked_at": "2026-08-31T00:09:17+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
