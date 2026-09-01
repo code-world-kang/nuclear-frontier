@@ -90,7 +90,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0146641026000359",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -261,7 +261,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/538w-rhqb",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -357,7 +357,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0146641026000372",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -406,7 +406,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-decay",
@@ -566,7 +566,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226003013",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -634,7 +634,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-reactions",
@@ -769,7 +769,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/qhr8-qhhp",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -869,7 +869,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226002275",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -952,7 +952,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S016890022600286X",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -1002,7 +1002,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "abstract_status": "full",
     "abstract_source": "OpenAlex",
     "primary_topic": "nuclear-decay",
@@ -1052,95 +1052,6 @@
     "abstract_checked_sources": [
       "OpenAlex",
       "INSPIRE"
-    ]
-  },
-  {
-    "id": "ab80789d466713d7",
-    "type": "paper",
-    "title": "Corrigendum to “Accurate spontaneous fission half-lives from a microscopic large-scale nuclear structure model” [Physics Letters B 140287 (2026)]",
-    "abstract": "In the course of follow-up work, we discovered an issue with our search for the least-action path (LAP).Despite our best attempts to ensure proper initialisation, it turned out that PyNEB systematically converged to a path representing a local minimum of the action.Nearly universally, this local minimum was a path exploring the triaxial degree of freedom.However, for the vast majority of the nuclei we considered in the original paper, the true LAP -i.e. the global minimum of the action -does not exploit the triaxial degree of freedom.There are only a small number of exceptions for which our previous (triaxial) paths represent the global minimum; these concern nuclei for which both the inner and outer semiclassical turning points correspond to triaxial configurations.",
-    "abstract_status": "full",
-    "abstract_source": "OpenAlex",
-    "authors": [
-      "A. Sánchez-Fernández",
-      "S. Bara",
-      "W. Ryssens",
-      "S. Goriely"
-    ],
-    "published": "2026-09-01",
-    "updated": "2026-09-01",
-    "source": "Physics Letters B",
-    "source_short": "PLB",
-    "source_type": "journal",
-    "doi": "10.1016/j.physletb.2026.140737",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1016/j.physletb.2026.140737",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-decay",
-      "nuclear-structure",
-      "nuclear-reactions"
-    ],
-    "tags": [
-      "nuclear structure",
-      "spontaneous fission",
-      "fission"
-    ],
-    "primary_topic": "nuclear-decay",
-    "methods": [],
-    "classification_confidence": 0.72,
-    "classification_evidence": [
-      "nuclear structure",
-      "spontaneous fission",
-      "fission"
-    ],
-    "importance": 68,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +22",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Sánchez-Fernández, A.",
-      "Bara, S.",
-      "Ryssens, W.",
-      "Goriely, S."
-    ],
-    "journal_abbrev": "Physics Letters B",
-    "volume": "880",
-    "issue": "",
-    "pages": "140737",
-    "numpages": "",
-    "publisher": "Elsevier BV",
-    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326005885",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-09-01T00:56:38+00:00",
-      "source": "Publisher",
-      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326005885"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-09-01T00:56:38+00:00",
-      "source": "OpenAlex"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex"
     ]
   },
   {
@@ -1237,7 +1148,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226002731",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -1258,6 +1169,95 @@
       "期刊官网/Cite",
       "OpenAlex",
       "Semantic Scholar"
+    ]
+  },
+  {
+    "id": "ab80789d466713d7",
+    "type": "paper",
+    "title": "Corrigendum to “Accurate spontaneous fission half-lives from a microscopic large-scale nuclear structure model” [Physics Letters B 140287 (2026)]",
+    "abstract": "In the course of follow-up work, we discovered an issue with our search for the least-action path (LAP).Despite our best attempts to ensure proper initialisation, it turned out that PyNEB systematically converged to a path representing a local minimum of the action.Nearly universally, this local minimum was a path exploring the triaxial degree of freedom.However, for the vast majority of the nuclei we considered in the original paper, the true LAP -i.e. the global minimum of the action -does not exploit the triaxial degree of freedom.There are only a small number of exceptions for which our previous (triaxial) paths represent the global minimum; these concern nuclei for which both the inner and outer semiclassical turning points correspond to triaxial configurations.",
+    "abstract_status": "full",
+    "abstract_source": "OpenAlex",
+    "authors": [
+      "A. Sánchez-Fernández",
+      "S. Bara",
+      "W. Ryssens",
+      "S. Goriely"
+    ],
+    "published": "2026-09-01",
+    "updated": "2026-09-01",
+    "source": "Physics Letters B",
+    "source_short": "PLB",
+    "source_type": "journal",
+    "doi": "10.1016/j.physletb.2026.140737",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.physletb.2026.140737",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-decay",
+      "nuclear-structure",
+      "nuclear-reactions"
+    ],
+    "tags": [
+      "nuclear structure",
+      "spontaneous fission",
+      "fission"
+    ],
+    "primary_topic": "nuclear-decay",
+    "methods": [],
+    "classification_confidence": 0.72,
+    "classification_evidence": [
+      "nuclear structure",
+      "spontaneous fission",
+      "fission"
+    ],
+    "importance": 68,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +22",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Sánchez-Fernández, A.",
+      "Bara, S.",
+      "Ryssens, W.",
+      "Goriely, S."
+    ],
+    "journal_abbrev": "Physics Letters B",
+    "volume": "880",
+    "issue": "",
+    "pages": "140737",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326005885",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
+    "publisher_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-01T00:56:38+00:00",
+      "source": "Publisher",
+      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326005885"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-09-01T00:56:38+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex"
     ]
   },
   {
@@ -1339,200 +1339,8 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae8a44",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-24T22:20:01+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "abstract_checked_sources": []
-  },
-  {
-    "id": "279e1cee757a442a",
-    "type": "paper",
-    "title": "Extracting resonance width from lattice quantum Monte Carlo simulations using analytical continuation method",
-    "abstract": "Nuclear lattice effective field theory (NLEFT) provides an efficient ab initio framework for computing low-lying states via imaginary-time projection. However, the extraction of unstable resonances, especially those with broad widths, remains a significant challenge. Traditional techniques such as the complex scaling method are often limited by sign problems or inherent statistical uncertainties. In this work, we present the first direct extraction of a nuclear resonance width within NLEFT by combining a high-precision, sign-problem-free nuclear interaction with the analytical continuation in the coupling constant (ACCC) approach. To address numerical instabilities in the ACCC framework, we implement a robust Pade solver based on singular value decomposition (SVD), incorporating ridge regularization and pole-safety criteria to ensure reliable extrapolation to the resonance pole. We detail the methodology and apply it to the unbound ground state of $^5$He ($J^\\pi=3/2^-$). Our calculation yields a resonance energy $E=0.80(10)$ MeV and a width $\\Gamma=1.05(9)$ MeV, in agreement with recent experimental results ($E_{\\rm exp}=0.798$ MeV, $\\Gamma_{\\rm exp}=0.648$ MeV). This work establishes a practical and precise strategy for studying resonances within the ab initio lattice framework, paving the way for investigations of many-body resonances in exotic nuclei near the drip lines.",
-    "abstract_status": "full",
-    "abstract_source": "Semantic Scholar",
-    "authors": [
-      "Zhong-Wang Niu",
-      "Shi-Sheng Zhang",
-      "Bing-Nan Lu"
-    ],
-    "published": "2026-09-01",
-    "updated": "2026-09-01",
-    "source": "Physics Letters B",
-    "source_short": "PLB",
-    "source_type": "journal",
-    "doi": "10.1016/j.physletb.2026.140823",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1016/j.physletb.2026.140823",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-structure",
-      "theoretical-nuclear",
-      "frontiers"
-    ],
-    "tags": [
-      "many-body",
-      "exotic nuclei",
-      "quantum"
-    ],
-    "primary_topic": "nuclear-structure",
-    "methods": [
-      "theoretical"
-    ],
-    "classification_confidence": 0.72,
-    "classification_evidence": [
-      "many-body",
-      "exotic nuclei",
-      "quantum"
-    ],
-    "importance": 66,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +20",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Niu, Zhong-Wang",
-      "Zhang, Shi-Sheng",
-      "Lu, Bing-Nan"
-    ],
-    "journal_abbrev": "Physics Letters B",
-    "volume": "880",
-    "issue": "",
-    "pages": "140823",
-    "numpages": "",
-    "publisher": "Elsevier BV",
-    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S037026932600674X",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-08-12T04:12:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-08-12T04:12:38+00:00",
-      "source": "Publisher",
-      "url": "https://linkinghub.elsevier.com/retrieve/pii/S037026932600674X"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-08-12T04:12:38+00:00",
-      "source": "OpenAlex"
-    },
-    "abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-08-12T04:12:38+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ],
-    "semantic_scholar_abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-08-15T03:05:06+00:00",
-      "source": "Semantic Scholar"
-    }
-  },
-  {
-    "id": "4983197b1445f408",
-    "type": "paper",
-    "title": "NN and 3N tensor force in the N=34 shell evolution: An ab initio perspective",
-    "abstract": "Shell evolution plays a vital role in understanding the nuclear shell structures across the nuclear chart. In this work, we have investigated the N = 34 shell structure using the state-of-the-art ab-initio valence-space in-medium similarity renormalization (VS-IMSRG) approach. Notably, we employ nucleon-nucleon (NN) and three-nucleon (3N) interactions derived from chiral effective field theory and make use of the spin-tensor decomposition scheme to examine the contributions of individual interaction components. We discuss the evolution of the shell structures, which have been investigated by considering the roles of various components, including central, spin-orbit, and tensor effects of NN and 3N forces, respectively. The N = 34 shell gap gradually decreases from 54 Ca as the proton occupancy in the π 0 f 7/2 orbital increases, and eventually disappears in the 62 Ni as a consequence of the tensor-force driven shell evolution. Our analysis reveals that this disappearance is predominantly governed by the NN tensor force, which accounts for approximately 83%, while the 3N tensor force also contributes about 17%.",
-    "abstract_status": "full",
-    "abstract_source": "OpenAlex",
-    "authors": [
-      "Anil Kumar",
-      "Takayuki Miyagi",
-      "Noritaka Shimizu"
-    ],
-    "published": "2026-09-01",
-    "updated": "2026-09-01",
-    "source": "Physics Letters B",
-    "source_short": "PLB",
-    "source_type": "journal",
-    "doi": "10.1016/j.physletb.2026.140801",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1016/j.physletb.2026.140801",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-structure",
-      "theoretical-nuclear",
-      "nuclear-general"
-    ],
-    "tags": [
-      "chiral effective",
-      "IMSRG",
-      "shell evolution",
-      "nucleon-nucleon"
-    ],
-    "primary_topic": "nuclear-structure",
-    "methods": [
-      "theoretical"
-    ],
-    "classification_confidence": 0.8,
-    "classification_evidence": [
-      "chiral effective",
-      "IMSRG",
-      "shell evolution",
-      "nucleon-nucleon"
-    ],
-    "importance": 66,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +20",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Kumar, Anil",
-      "Miyagi, Takayuki",
-      "Shimizu, Noritaka"
-    ],
-    "journal_abbrev": "Physics Letters B",
-    "volume": "880",
-    "issue": "",
-    "pages": "140801",
-    "numpages": "",
-    "publisher": "Elsevier BV",
-    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326006520",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-09-01T00:56:38+00:00",
-      "source": "Publisher",
-      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326006520"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-09-01T00:56:38+00:00",
-      "source": "OpenAlex"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex"
-    ]
   },
   {
     "id": "83ffac5613cb8c79",
@@ -1680,7 +1488,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326005800",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -1689,6 +1497,198 @@
     "abstract_checked_sources": [
       "OpenAlex"
     ]
+  },
+  {
+    "id": "4983197b1445f408",
+    "type": "paper",
+    "title": "NN and 3N tensor force in the N=34 shell evolution: An ab initio perspective",
+    "abstract": "Shell evolution plays a vital role in understanding the nuclear shell structures across the nuclear chart. In this work, we have investigated the N = 34 shell structure using the state-of-the-art ab-initio valence-space in-medium similarity renormalization (VS-IMSRG) approach. Notably, we employ nucleon-nucleon (NN) and three-nucleon (3N) interactions derived from chiral effective field theory and make use of the spin-tensor decomposition scheme to examine the contributions of individual interaction components. We discuss the evolution of the shell structures, which have been investigated by considering the roles of various components, including central, spin-orbit, and tensor effects of NN and 3N forces, respectively. The N = 34 shell gap gradually decreases from 54 Ca as the proton occupancy in the π 0 f 7/2 orbital increases, and eventually disappears in the 62 Ni as a consequence of the tensor-force driven shell evolution. Our analysis reveals that this disappearance is predominantly governed by the NN tensor force, which accounts for approximately 83%, while the 3N tensor force also contributes about 17%.",
+    "abstract_status": "full",
+    "abstract_source": "OpenAlex",
+    "authors": [
+      "Anil Kumar",
+      "Takayuki Miyagi",
+      "Noritaka Shimizu"
+    ],
+    "published": "2026-09-01",
+    "updated": "2026-09-01",
+    "source": "Physics Letters B",
+    "source_short": "PLB",
+    "source_type": "journal",
+    "doi": "10.1016/j.physletb.2026.140801",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.physletb.2026.140801",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-structure",
+      "theoretical-nuclear",
+      "nuclear-general"
+    ],
+    "tags": [
+      "chiral effective",
+      "IMSRG",
+      "shell evolution",
+      "nucleon-nucleon"
+    ],
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.8,
+    "classification_evidence": [
+      "chiral effective",
+      "IMSRG",
+      "shell evolution",
+      "nucleon-nucleon"
+    ],
+    "importance": 66,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Kumar, Anil",
+      "Miyagi, Takayuki",
+      "Shimizu, Noritaka"
+    ],
+    "journal_abbrev": "Physics Letters B",
+    "volume": "880",
+    "issue": "",
+    "pages": "140801",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326006520",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
+    "publisher_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-01T00:56:38+00:00",
+      "source": "Publisher",
+      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326006520"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-09-01T00:56:38+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex"
+    ]
+  },
+  {
+    "id": "279e1cee757a442a",
+    "type": "paper",
+    "title": "Extracting resonance width from lattice quantum Monte Carlo simulations using analytical continuation method",
+    "abstract": "Nuclear lattice effective field theory (NLEFT) provides an efficient ab initio framework for computing low-lying states via imaginary-time projection. However, the extraction of unstable resonances, especially those with broad widths, remains a significant challenge. Traditional techniques such as the complex scaling method are often limited by sign problems or inherent statistical uncertainties. In this work, we present the first direct extraction of a nuclear resonance width within NLEFT by combining a high-precision, sign-problem-free nuclear interaction with the analytical continuation in the coupling constant (ACCC) approach. To address numerical instabilities in the ACCC framework, we implement a robust Pade solver based on singular value decomposition (SVD), incorporating ridge regularization and pole-safety criteria to ensure reliable extrapolation to the resonance pole. We detail the methodology and apply it to the unbound ground state of $^5$He ($J^\\pi=3/2^-$). Our calculation yields a resonance energy $E=0.80(10)$ MeV and a width $\\Gamma=1.05(9)$ MeV, in agreement with recent experimental results ($E_{\\rm exp}=0.798$ MeV, $\\Gamma_{\\rm exp}=0.648$ MeV). This work establishes a practical and precise strategy for studying resonances within the ab initio lattice framework, paving the way for investigations of many-body resonances in exotic nuclei near the drip lines.",
+    "abstract_status": "full",
+    "abstract_source": "Semantic Scholar",
+    "authors": [
+      "Zhong-Wang Niu",
+      "Shi-Sheng Zhang",
+      "Bing-Nan Lu"
+    ],
+    "published": "2026-09-01",
+    "updated": "2026-09-01",
+    "source": "Physics Letters B",
+    "source_short": "PLB",
+    "source_type": "journal",
+    "doi": "10.1016/j.physletb.2026.140823",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.physletb.2026.140823",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-structure",
+      "theoretical-nuclear",
+      "frontiers"
+    ],
+    "tags": [
+      "many-body",
+      "exotic nuclei",
+      "quantum"
+    ],
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.72,
+    "classification_evidence": [
+      "many-body",
+      "exotic nuclei",
+      "quantum"
+    ],
+    "importance": 66,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Niu, Zhong-Wang",
+      "Zhang, Shi-Sheng",
+      "Lu, Bing-Nan"
+    ],
+    "journal_abbrev": "Physics Letters B",
+    "volume": "880",
+    "issue": "",
+    "pages": "140823",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S037026932600674X",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-08-12T04:12:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
+    "publisher_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-08-12T04:12:38+00:00",
+      "source": "Publisher",
+      "url": "https://linkinghub.elsevier.com/retrieve/pii/S037026932600674X"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-08-12T04:12:38+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-08-12T04:12:38+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ],
+    "semantic_scholar_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-15T03:05:06+00:00",
+      "source": "Semantic Scholar"
+    }
   },
   {
     "id": "0ebc9e148bc830b0",
@@ -1766,7 +1766,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "citation_authors": [
       "Conley, A. L.",
       "Spieker, M.",
@@ -1861,7 +1861,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "primary_topic": "nuclear-structure",
     "methods": [
       "theoretical",
@@ -1984,7 +1984,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "abstract_checked_sources": [],
     "citation_authors": [
       "Anonymous"
@@ -2078,7 +2078,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326006313",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -2210,7 +2210,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326006428",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -2258,7 +2258,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-decay",
@@ -2358,7 +2358,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/3mzz-nycn",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-28T05:54:28+00:00",
@@ -2506,7 +2506,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326005472",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -2597,7 +2597,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/d6vm-5jfl",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-08-20T22:21:07+00:00",
@@ -2678,7 +2678,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "citation_authors": [
       "Anonymous"
     ],
@@ -2716,6 +2716,86 @@
       "OpenAlex",
       "Semantic Scholar",
       "INSPIRE"
+    ]
+  },
+  {
+    "id": "0daed7da24f6aeb2",
+    "type": "paper",
+    "title": "Twist-2 relations for the twist-3 tensor-polarized distribution function fLT of a spin-1 hadron by the operator-product-expansion method",
+    "abstract": "In a spin-1 hadron, tensor-polarized parton distribution functions (PDFs) exist. The twist-2 function is f 1 LL and a twist-3 one is f LT . Because an experiment is under preparation at the Thomas Jefferson National Accelerator Facility (JLab) to measure the cross section of electron-deuteron deep inelastic scattering with the tensor-polarized deuteron target, these PDFs need to be understood theoretically. Especially, measurements will be done in a relatively low- Q 2 region at JLab, so that twist-3 contributions could become sizable in the cross section. In a previous work, a twist-2 relation was derived for f LT in terms of f 1 LL by using a nonlocal operator, and it corresponds to the Wandzura-Wilczek (WW) relation between g 1 and g 2 . In addition, another relation similar to the Burkhardt-Cottingham (BC) sum rule was obtained. It is known that a formal way to derive the WW relation and the BC sum rule is to use the operator product expansion (OPE) with local operators. In this work, the WW-like relation and the BC-like sum rule for f LT are derived by using the local OPE method as a reliable independent way to establish these relations.",
+    "abstract_status": "full",
+    "abstract_source": "OpenAlex",
+    "authors": [
+      "S. Kumano",
+      "Kenshi Kuroki"
+    ],
+    "published": "2026-09-01",
+    "updated": "2026-09-01",
+    "source": "Physics Letters B",
+    "source_short": "PLB",
+    "source_type": "journal",
+    "doi": "10.1016/j.physletb.2026.140741",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.physletb.2026.140741",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-reactions",
+      "accelerators",
+      "high-energy-nuclear"
+    ],
+    "tags": [
+      "inelastic scattering",
+      "hadron",
+      "accelerator"
+    ],
+    "primary_topic": "nuclear-reactions",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.72,
+    "classification_evidence": [
+      "inelastic scattering",
+      "hadron",
+      "accelerator"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +18",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Kumano, S.",
+      "Kuroki, Kenshi"
+    ],
+    "journal_abbrev": "Physics Letters B",
+    "volume": "880",
+    "issue": "",
+    "pages": "140741",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326005927",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
+    "openalex_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-09-01T00:56:38+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_checked_sources": [
+      "OpenAlex"
     ]
   },
   {
@@ -2801,87 +2881,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226002779",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
-    "openalex_abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-09-01T00:56:38+00:00",
-      "source": "OpenAlex"
-    },
-    "abstract_checked_sources": [
-      "OpenAlex"
-    ]
-  },
-  {
-    "id": "0daed7da24f6aeb2",
-    "type": "paper",
-    "title": "Twist-2 relations for the twist-3 tensor-polarized distribution function fLT of a spin-1 hadron by the operator-product-expansion method",
-    "abstract": "In a spin-1 hadron, tensor-polarized parton distribution functions (PDFs) exist. The twist-2 function is f 1 LL and a twist-3 one is f LT . Because an experiment is under preparation at the Thomas Jefferson National Accelerator Facility (JLab) to measure the cross section of electron-deuteron deep inelastic scattering with the tensor-polarized deuteron target, these PDFs need to be understood theoretically. Especially, measurements will be done in a relatively low- Q 2 region at JLab, so that twist-3 contributions could become sizable in the cross section. In a previous work, a twist-2 relation was derived for f LT in terms of f 1 LL by using a nonlocal operator, and it corresponds to the Wandzura-Wilczek (WW) relation between g 1 and g 2 . In addition, another relation similar to the Burkhardt-Cottingham (BC) sum rule was obtained. It is known that a formal way to derive the WW relation and the BC sum rule is to use the operator product expansion (OPE) with local operators. In this work, the WW-like relation and the BC-like sum rule for f LT are derived by using the local OPE method as a reliable independent way to establish these relations.",
-    "abstract_status": "full",
-    "abstract_source": "OpenAlex",
-    "authors": [
-      "S. Kumano",
-      "Kenshi Kuroki"
-    ],
-    "published": "2026-09-01",
-    "updated": "2026-09-01",
-    "source": "Physics Letters B",
-    "source_short": "PLB",
-    "source_type": "journal",
-    "doi": "10.1016/j.physletb.2026.140741",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1016/j.physletb.2026.140741",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-reactions",
-      "accelerators",
-      "high-energy-nuclear"
-    ],
-    "tags": [
-      "inelastic scattering",
-      "hadron",
-      "accelerator"
-    ],
-    "primary_topic": "nuclear-reactions",
-    "methods": [
-      "experimental"
-    ],
-    "classification_confidence": 0.72,
-    "classification_evidence": [
-      "inelastic scattering",
-      "hadron",
-      "accelerator"
-    ],
-    "importance": 64,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +18",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Kumano, S.",
-      "Kuroki, Kenshi"
-    ],
-    "journal_abbrev": "Physics Letters B",
-    "volume": "880",
-    "issue": "",
-    "pages": "140741",
-    "numpages": "",
-    "publisher": "Elsevier BV",
-    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326005927",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -2930,7 +2930,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-reactions",
@@ -2985,6 +2985,135 @@
       "status": "not_found",
       "checked_at": "2026-08-11T17:05:16+08:00",
       "source": "Semantic Scholar"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ]
+  },
+  {
+    "id": "173e6c323592e958",
+    "type": "paper",
+    "title": "The beam-particle monitor for CEE experiment",
+    "abstract": "The cooler storage ring (CSR) external-target experiment (CEE) is a large-scale fixed-target heavy-ion collision experiment under development at the heavy-ion research facility in Lanzhou (HIRFL). A critical subsystem for beam monitoring and primary vertex reconstruction is the beam-particle monitor (BPM). This detector comprises two micro-TPCs integrated within a common gas chamber to simultaneously measure the transverse positions and timing information of individual beam particles. To meet stringent performance requirements, specialized pixel charge sensors and readout electronics were custom-developed for this application. Following assembly, the BPM was successfully validated through laser and Sn-ion beam tests at HIRFL. This paper describes the detector architecture and presents the results from these tests, demonstrating the system’s functionality and the achieved spatial and time resolutions.",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "authors": [
+      "Hulin Wang",
+      "Jun Liu",
+      "Xianglun Wei",
+      "Ran Chen",
+      "Junshuai Liu",
+      "Chaosong Gao",
+      "Kai Chen",
+      "Qian Wang",
+      "Zhen Wang",
+      "Peng Ma",
+      "Haibo Yang",
+      "Chengxin Zhao",
+      "Mingmei Xu",
+      "Shusu Shi",
+      "Xiangming Sun",
+      "Feng Liu"
+    ],
+    "published": "2026-09-01",
+    "updated": "2026-09-01",
+    "source": "Nuclear Instruments and Methods in Physics Research A",
+    "source_short": "NIMA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nima.2026.171561",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nima.2026.171561",
+    "pdf_url": "",
+    "categories": [
+      "detectors-daq",
+      "accelerators",
+      "high-energy-nuclear"
+    ],
+    "tags": [
+      "heavy-ion collision",
+      "storage ring"
+    ],
+    "primary_topic": "detectors-daq",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "heavy-ion collision",
+      "storage ring"
+    ],
+    "importance": 63,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +17",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "https://doi.org/10.15223/policy-017",
+      "https://doi.org/10.15223/policy-037",
+      "https://doi.org/10.15223/policy-012",
+      "https://doi.org/10.15223/policy-029",
+      "https://doi.org/10.15223/policy-004"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Wang, Hulin",
+      "Liu, Jun",
+      "Wei, Xianglun",
+      "Chen, Ran",
+      "Liu, Junshuai",
+      "Gao, Chaosong",
+      "Chen, Kai",
+      "Wang, Qian",
+      "Wang, Zhen",
+      "Ma, Peng",
+      "Yang, Haibo",
+      "Zhao, Chengxin",
+      "Xu, Mingmei",
+      "Shi, Shusu",
+      "Sun, Xiangming",
+      "Liu, Feng"
+    ],
+    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
+    "volume": "1089",
+    "issue": "",
+    "pages": "171561",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226002871",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
+    "publisher_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-01T00:56:38+00:00",
+      "source": "Publisher",
+      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226002871"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-01T00:56:38+00:00",
+      "source": "OpenAlex"
+    },
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-01T00:56:38+00:00",
+      "source": "Semantic Scholar"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-09-01T00:56:38+00:00",
+      "source": "INSPIRE"
     },
     "abstract_checked_sources": [
       "期刊官网/Cite",
@@ -3137,7 +3266,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226003141",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -3152,135 +3281,6 @@
     "abstract_checked_sources": [
       "期刊官网/Cite",
       "OpenAlex"
-    ]
-  },
-  {
-    "id": "173e6c323592e958",
-    "type": "paper",
-    "title": "The beam-particle monitor for CEE experiment",
-    "abstract": "The cooler storage ring (CSR) external-target experiment (CEE) is a large-scale fixed-target heavy-ion collision experiment under development at the heavy-ion research facility in Lanzhou (HIRFL). A critical subsystem for beam monitoring and primary vertex reconstruction is the beam-particle monitor (BPM). This detector comprises two micro-TPCs integrated within a common gas chamber to simultaneously measure the transverse positions and timing information of individual beam particles. To meet stringent performance requirements, specialized pixel charge sensors and readout electronics were custom-developed for this application. Following assembly, the BPM was successfully validated through laser and Sn-ion beam tests at HIRFL. This paper describes the detector architecture and presents the results from these tests, demonstrating the system’s functionality and the achieved spatial and time resolutions.",
-    "abstract_status": "full",
-    "abstract_source": "INSPIRE",
-    "authors": [
-      "Hulin Wang",
-      "Jun Liu",
-      "Xianglun Wei",
-      "Ran Chen",
-      "Junshuai Liu",
-      "Chaosong Gao",
-      "Kai Chen",
-      "Qian Wang",
-      "Zhen Wang",
-      "Peng Ma",
-      "Haibo Yang",
-      "Chengxin Zhao",
-      "Mingmei Xu",
-      "Shusu Shi",
-      "Xiangming Sun",
-      "Feng Liu"
-    ],
-    "published": "2026-09-01",
-    "updated": "2026-09-01",
-    "source": "Nuclear Instruments and Methods in Physics Research A",
-    "source_short": "NIMA",
-    "source_type": "journal",
-    "doi": "10.1016/j.nima.2026.171561",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1016/j.nima.2026.171561",
-    "pdf_url": "",
-    "categories": [
-      "detectors-daq",
-      "accelerators",
-      "high-energy-nuclear"
-    ],
-    "tags": [
-      "heavy-ion collision",
-      "storage ring"
-    ],
-    "primary_topic": "detectors-daq",
-    "methods": [
-      "experimental"
-    ],
-    "classification_confidence": 0.64,
-    "classification_evidence": [
-      "heavy-ion collision",
-      "storage ring"
-    ],
-    "importance": 63,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +17",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "https://doi.org/10.15223/policy-017",
-      "https://doi.org/10.15223/policy-037",
-      "https://doi.org/10.15223/policy-012",
-      "https://doi.org/10.15223/policy-029",
-      "https://doi.org/10.15223/policy-004"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Wang, Hulin",
-      "Liu, Jun",
-      "Wei, Xianglun",
-      "Chen, Ran",
-      "Liu, Junshuai",
-      "Gao, Chaosong",
-      "Chen, Kai",
-      "Wang, Qian",
-      "Wang, Zhen",
-      "Ma, Peng",
-      "Yang, Haibo",
-      "Zhao, Chengxin",
-      "Xu, Mingmei",
-      "Shi, Shusu",
-      "Sun, Xiangming",
-      "Liu, Feng"
-    ],
-    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
-    "volume": "1089",
-    "issue": "",
-    "pages": "171561",
-    "numpages": "",
-    "publisher": "Elsevier BV",
-    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226002871",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-09-01T00:56:38+00:00",
-      "source": "Publisher",
-      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226002871"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-09-01T00:56:38+00:00",
-      "source": "OpenAlex"
-    },
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-09-01T00:56:38+00:00",
-      "source": "Semantic Scholar"
-    },
-    "abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-09-01T00:56:38+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
     ]
   },
   {
@@ -3399,7 +3399,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226003086",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -3560,7 +3560,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/ljtv-y278",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -3700,7 +3700,7 @@
     "publisher_url": "https://www.nature.com/articles/s41586-026-10894-w",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -3791,7 +3791,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226002846",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -3870,7 +3870,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0146641026000384",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -3953,7 +3953,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-18T03:08:19+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "citation_authors": [
       "Taioli, Simone",
       "Triggiani, Francesca",
@@ -4029,7 +4029,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T04:00:19+08:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "citation_authors": [
       "Tahyoor, Ridha Kamil",
       "Jabbar, Abdulnoor",
@@ -4217,7 +4217,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae95ff",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-09-01T00:56:38+00:00",
+    "last_seen": "2026-09-01T23:44:07+00:00",
     "abstract_checked_sources": []
   }
 ]

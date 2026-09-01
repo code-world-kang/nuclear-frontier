@@ -22,12 +22,12 @@
 6. **[Sub-GeV right-handed neutrino as a probe of neutrino mass generation in the minimal left-right symmetric model](https://doi.org/10.1016/j.physletb.2026.140829)**  
    Physics Letters B · 2026-09-01  
    The minimal left-right symmetric model (mLRSM) provides an elegant and testable framework for addressing the origin of neutrino masses. We examine the constraints on the sub-GeV right-handed (RH) neutrino in the type-II seesaw scenario of the mLRSM without left-right mixing, taking limits from collider searches, meson decays, supernovae, neutrinoless double…
-7. **[Corrigendum to “Accurate spontaneous fission half-lives from a microscopic large-scale nuclear structure model” [Physics Letters B 140287 (2026)]](https://doi.org/10.1016/j.physletb.2026.140737)**  
-   Physics Letters B · 2026-09-01  
-   In the course of follow-up work, we discovered an issue with our search for the least-action path (LAP).Despite our best attempts to ensure proper initialisation, it turned out that PyNEB systematically converged to a path representing a local minimum of the action.Nearly universally, this local minimum was a path exploring the triaxial degree of freedom.Ho…
-8. **[Novel high-radiopurity doped amorphous silicon resistors for low-background detectors](https://doi.org/10.1016/j.nima.2026.171547)**  
+7. **[Novel high-radiopurity doped amorphous silicon resistors for low-background detectors](https://doi.org/10.1016/j.nima.2026.171547)**  
    Nuclear Instruments and Methods in Physics Research A · 2026-09-01  
    We present the results of a study of lightly doped amorphous silicon used as a resistive medium for high-radiopurity resistors in nuclear and particle physics research instrumentation. Prototypes are produced for a Time Projection Chamber design for the nEXO neutrinoless double-beta decay search experiment that meet requirements for ultra-high radiopurity,…
+8. **[Corrigendum to “Accurate spontaneous fission half-lives from a microscopic large-scale nuclear structure model” [Physics Letters B 140287 (2026)]](https://doi.org/10.1016/j.physletb.2026.140737)**  
+   Physics Letters B · 2026-09-01  
+   In the course of follow-up work, we discovered an issue with our search for the least-action path (LAP).Despite our best attempts to ensure proper initialisation, it turned out that PyNEB systematically converged to a path representing a local minimum of the action.Nearly universally, this local minimum was a path exploring the triaxial degree of freedom.Ho…
 
 ## 物理新闻
 
@@ -55,14 +55,14 @@
 - **[第二届测试束流与先进探测技术研讨会（TB&D-2）](https://indico.ihep.ac.cn/event/29156/)**  
    高能所 Indico 核物理全量 · 2026-03-26  
    会议简介： 近年来，我国在先进粒子探测器领域的研究取得了显著成就，推动相关技术跻身国际先进水平。随着探测技术的快速发展，对高能粒子测试束线的需求日益迫切。国内已建成多个束流测试装置，并正在中国散裂中子源建设我国首个专用高能质子（ 1.6 GeV ）束流测试实验站（ HPES ），这一重大国家科研基础设施预计于 2029 年出束试运行。为促进我国先进测试束能力建设，提升探测技术实验研究水平，进一步加强探测技术研发团队与装置研发团队之间的跨学科技术交流，拟于 2026 年10月09-11日 在 湖南省长沙市 举办 " 第二届测试束流与先进探测技术研讨会（ TB&D-2 ） " 。我们诚挚邀请相关领域专家、学者及工程技术人员齐聚一堂，共同探讨测试束流与先进探测技术领域的前沿发展与未来方向。会议将涵盖以下几个主要议题…
+- **[Direct reaction and future spectrometer at HIAF](https://indico.impcas.ac.cn/event/209/)**  
+   近代物理所 Indico 全量 · 2026-08-25  
+   The High Intensity Heavy-ion Accelerator Facility (HIAF) has completed its construction. Equipped with an advanced accelerator complex and a next-generation in-flight separator, HIAF provides an excellent platform for a wide range of experiments utilizing direct reactions. As an international user facility, HIAF warmly welcomes scientists from around the wo…
 - **[Nuclear Astrophysics Experiments with HIAF](https://indico.impcas.ac.cn/event/172/)**  
    近代物理所 Indico 全量 · 2025-07-08  
    HIAF is about to come online soon. We are going to organize a mini-workshop to discuss the possible nuclear astrophysics related experiments at HIAF in Huizhou from Sept. 3 to Sept. 5. This workshop will focus on decay, mass, active target, fission and charge exchange experiments. We sincerely invite you to Huizhou, where HIAF is located, to share the inter…
 - **[C3NT workshop: Quantum Information Science in High Energy Nuclear Physics (QIS-HENP)](https://indico.ihep.ac.cn/event/27301/)**  
    高能所 Indico 核物理全量 · 2025-09-13  
    Quantum simulation of high-energy physics (HEP) was one of the original motivations for the development of quantum computers and remains a source of ongoing proposals for achieving quantum advantage. As experimental platforms grow in size and fidelity and classical algorithms near their limits, novel quantum‑information tools are poised to revolutionize how…
-- **[Frontiers in high-energy nuclear physics](https://indico.ihep.ac.cn/event/28839/)**  
-   高能所 Indico 核物理全量 · 2026-02-11  
-   The international workshop " Frontiers in high-energy nuclear physics " is organized by The Department of Physics, Tsinghua University and will take place in Beijing from July 19th to 23rd of 2026 ( 19th is for registration ). Conference venue: Marriott Hotel , Building 12, No. 3 Courtyard, Yongle North First Street , Huairou District, Beijing. Address in C…
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)
