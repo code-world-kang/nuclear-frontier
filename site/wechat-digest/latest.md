@@ -1,33 +1,33 @@
-# 小康康的物理世界 · 2026-09-01 科研简报
+# 小康康的物理世界 · 2026-09-02 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 4/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 5/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[The role of ab initio beta-decay calculations in light nuclei for probes of physics beyond the standard model](https://doi.org/10.1016/j.ppnp.2026.104260)**  
-   Progress in Particle and Nuclear Physics · 2026-09-01  
-   Precision beta decay experiments serve as powerful probes of physics beyond the Standard Model, enabling stringent tests of fundamental symmetries of nature. In particular, these experiments primarily focus on precise determinations of the Cabibbo-Kobayashi-Maskawa matrix element Vud and the search for exotic weak currents, both of which depend critically o…
-2. **[Deformation, halo, and bubble structure: A paradigm shift of exotic phenomena in light to medium mass nuclei](https://doi.org/10.1016/j.ppnp.2026.104262)**  
-   Progress in Particle and Nuclear Physics · 2026-09-01  
-   The emergence of exotic nuclear structures, such as deformation, one- and two-neutron halos, and bubble configurations, marks a paradigm shift in our understanding of light- to medium-mass nuclei far from stability, particularly near and within the island of inversion extending across $N=20-28$. In this review, we integrate microscopic structure calculation…
-3. **[The Ring Imaging Cherenkov detector of the NA62 experiment at CERN: Basic performance and aging effects](https://doi.org/10.1016/j.nima.2026.171575)**  
-   Nuclear Instruments and Methods in Physics Research A · 2026-09-01  
-   The NA62 experiment is designed to measure the extremely rare kaon decay \(\left. K^{+}\rightarrow\pi^{+}\nu\bar{\nu} \right.\) at the CERN Super Proton Synchrotron. This decay mode is highly sensitive to indirect effects of new physics at energy scales beyond the reach of current accelerators, and its branching ratio is predicted with high precision by the…
-4. **[Commissioning of proANUBIS: A proof-of-concept detector for the ANUBIS experiment](https://doi.org/10.1016/j.nima.2026.171501)**  
-   Nuclear Instruments and Methods in Physics Research A · 2026-09-01  
-   Long-lived particles (LLPs), predicted by various extensions of the Standard Model (SM), have become a key focus of the contemporary search programme for physics beyond the SM. To enhance LLP discovery potential at the LHC, the ANUBIS experiment has been proposed to instrument the ceiling of the ATLAS experiment’s underground cavern with dedicated tracking…
-5. **[A compact Cherenkov detector for measurement of the high energy antideuteron flux in cosmic rays](https://doi.org/10.1016/j.nima.2026.171560)**  
-   Nuclear Instruments and Methods in Physics Research A · 2026-09-01  
-   The measurement of the antideuteron flux in cosmic rays has been proposed as a probe towards the discovery of exotic sources such as primordial black holes evaporation or dark matter annihilation. The main reason is the smaller background from more ordinary processes with respect to the antiproton flux in the low energy region of the spectrum, where the con…
-6. **[Sub-GeV right-handed neutrino as a probe of neutrino mass generation in the minimal left-right symmetric model](https://doi.org/10.1016/j.physletb.2026.140829)**  
-   Physics Letters B · 2026-09-01  
-   The minimal left-right symmetric model (mLRSM) provides an elegant and testable framework for addressing the origin of neutrino masses. We examine the constraints on the sub-GeV right-handed (RH) neutrino in the type-II seesaw scenario of the mLRSM without left-right mixing, taking limits from collider searches, meson decays, supernovae, neutrinoless double…
-7. **[Novel high-radiopurity doped amorphous silicon resistors for low-background detectors](https://doi.org/10.1016/j.nima.2026.171547)**  
-   Nuclear Instruments and Methods in Physics Research A · 2026-09-01  
-   We present the results of a study of lightly doped amorphous silicon used as a resistive medium for high-radiopurity resistors in nuclear and particle physics research instrumentation. Prototypes are produced for a Time Projection Chamber design for the nEXO neutrinoless double-beta decay search experiment that meet requirements for ultra-high radiopurity,…
-8. **[Corrigendum to “Accurate spontaneous fission half-lives from a microscopic large-scale nuclear structure model” [Physics Letters B 140287 (2026)]](https://doi.org/10.1016/j.physletb.2026.140737)**  
-   Physics Letters B · 2026-09-01  
-   In the course of follow-up work, we discovered an issue with our search for the least-action path (LAP).Despite our best attempts to ensure proper initialisation, it turned out that PyNEB systematically converged to a path representing a local minimum of the action.Nearly universally, this local minimum was a path exploring the triaxial degree of freedom.Ho…
+1. **[Can Bose-Einstein Condensates Enhance Radioactive Decay?](https://doi.org/10.1103/rnx6-wqpf)**  
+   Physical Review Letters · 2026-09-02  
+   数据源暂未提供详细介绍。
+2. **[Gamma-ray production cross sections in proton interactions with natMg, natSi and 56Fe targets: measurement over the energy range of $E_p = 66$-125 MeV, data analysis, results and discussion. Astrophysical implications](https://arxiv.org/abs/2607.02202)**  
+   arXiv nucl-ex · 2026-09-02  
+   We have measured nuclear gamma-ray line production cross sections in interactions of highly accelerated proton beams with various target nuclei abundant in astrophysical sites. The experiments were carried out at the 200-MV Separated Sector Cyclotron (SSC) of iThemba LABS (near Cape Town, in South Africa) using a high-energy resolution and high efficiency d…
+3. **[What Are We Talking About When We Talk About Nuclear Reactions](https://arxiv.org/abs/2609.00410)**  
+   arXiv nucl-th · 2026-09-02  
+   This introductory Chapter will try to briefly address 1. the basic physical ingredients that determine the nuclear spectrum and the associated energy scales; 2. the connection between the observed experimental results, typically in the form of cross sections, and the underlying nuclear structure presented in the previous point. The nature and scope of the p…
+4. **[Science Of Nuclear Fusion: Insights and Ideas](https://arxiv.org/abs/2609.01366)**  
+   arXiv nucl-th · 2026-09-02  
+   Advances in several physics domains open up novel paths to smaller scale, higher energy density opportunities to advance small systems for nuclear fusion. Here we survey both legacy and several novel ``table-top'' approaches which attract current interest. We furthermore address a few related practical and challenging nuclear science topics arising in the c…
+5. **[Neural-Network-Based Variational Method in Nuclear Density Functional Theory: Application to the Kohn--Sham method](https://arxiv.org/abs/2609.00836)**  
+   arXiv nucl-th · 2026-09-02  
+   We extend the neural-network-based variational method for nuclear density functional theory to the Kohn--Sham scheme, representing the complex spinor components of the single-particle orbitals by multi-layer perceptrons. We show that neural-network optimization of a given energy density functional, combined with an orthonormalization post-processing step, i…
+6. **[Femtoscopy as a New Probe of the Nuclear Equation of State](https://arxiv.org/abs/2609.00897)**  
+   arXiv nucl-th · 2026-09-02  
+   Femtoscopic correlations are widely regarded as precision probes of hadronic interactions through vacuum final-state interactions after kinetic freeze-out. Here we demonstrate that, in baryon-rich heavy-ion collisions, the nuclear mean field generates an additional dynamical contribution to femtoscopic correlations during the transport evolution. Using the…
+7. **[Effect of constraining the 1 d 3 / 2 – 1 f 7 / 2 energy gap in Ca 40 using a modified relativistic mean field approach](https://doi.org/10.1103/lxf3-294n)**  
+   Physical Review C · 2026-09-02  
+   数据源暂未提供详细介绍。
+8. **[磁化与磁场诱导修正：对磁流体动力学中 QGP 热光子产生的影响](https://doi.org/10.1103/3rc1-gyx5)**  
+   Physical Review D · 2026-09-02  
+   我们在 (1+1) 维相对论磁流体动力学（MHD）框架内研究磁化夸克-胶子等离子体（QGP）的热光子发射，系统地纳入磁化率 $\chi_m$——包括常数参数化和由格点 QCD 导出的温度依赖参数化 $\chi_m(T)$——以及对夸克分布函数 $f_{\rm EM}$ 的弱场量子修正。采用 Pu-Bjorken MHD 框架，我们计算 Compton 散射、$q\bar{q}$ 湮灭、轫致辐射以及伴随再散射的湮灭所产生的光子产生率，并在 QGP 的时空演化上对其积分，以得到横动量（$p_T$）谱。结果表明，光子产额主要由初始磁场强度及其时间衰减轮廓决定，而在所考察的参数空间内，$\chi_m$ 的影响可以忽略。相比之下，弱场修正 $f_{\rm EM}$ 会使中等 $p_T$ 区域的热光子产生明显增强。本工作…
 
 ## 物理新闻
 
