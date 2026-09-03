@@ -1,33 +1,33 @@
-# 小康康的物理世界 · 2026-09-02 科研简报
+# 小康康的物理世界 · 2026-09-03 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 5/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 6/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[Can Bose-Einstein Condensates Enhance Radioactive Decay?](https://doi.org/10.1103/rnx6-wqpf)**  
-   Physical Review Letters · 2026-09-02  
+1. **[Novel analysis of proton-$$\gamma $$ coincidences for the $$\beta $$-delayed proton emission technique: the case of $$^{46}$$Mn](https://doi.org/10.1140/epja/s10050-026-01952-y)**  
+   The European Physical Journal A · 2026-09-03  
+   Abstract In the interest of exploring resonant contributions to the radiative capture reaction $$^{45}$$ 45 V(p, $$\gamma $$ γ ) $$^{46}$$ 46 Cr, which is identified to impact the $$^{44}$$ 44 Ti nucleosynthesis in Core Collapse Supernovae at astrophysical energies, we performed a spectroscopic study of $$^{46}$$ 46 Cr through the $$\beta $$ β -decay of the…
+2. **[Ia 型超新星遗迹的系统研究：利用核合成探测其超新星前身星](https://doi.org/10.3847/1538-4357/ae9750)**  
+   The Astrophysical Journal · 2026-09-03  
+   我们给出首项针对一组主要为热核型（Ia 型）超新星遗迹（SNRs）的系统性空间分辨 X 射线光谱研究，旨在通过与文献中可用的一套核合成模型比较，探测爆炸性质及其前身星。我们的样本聚焦于银河系和大麦哲伦云中富含抛射物的 SNRs，这些遗迹被认为或假定具有热核起源。利用存档的 XMM-Newton 观测数据（对 G1.9+0.3 则使用 Chandra 数据），我们从每个遗迹内自适应分箱区域中提取光谱，并对其发射建模，以约束等离子体温度、电离时间尺度和抛射物丰度。随后，我们将丰度比（相对于 Si）与一个包含 335 个独立模型的库进行比较；该库涵盖文献中 11 套常用超新星核合成模拟集合，包括七套热核型和四套核心坍缩型集合。在整个样本中，我们发现单个遗迹可以与模型的某些子集良好匹配，但没有任何单一模型能同时再现所…
+3. **[Erratum: Observation of new levels and proposed octupole correlations in neutron-rich 150 Ce [Phys. Rev. C 85, 014330 (2012)]](https://doi.org/10.1103/hrpp-3t32)**  
+   Physical Review C · 2026-09-03  
    数据源暂未提供详细介绍。
-2. **[Gamma-ray production cross sections in proton interactions with natMg, natSi and 56Fe targets: measurement over the energy range of $E_p = 66$-125 MeV, data analysis, results and discussion. Astrophysical implications](https://arxiv.org/abs/2607.02202)**  
-   arXiv nucl-ex · 2026-09-02  
-   We have measured nuclear gamma-ray line production cross sections in interactions of highly accelerated proton beams with various target nuclei abundant in astrophysical sites. The experiments were carried out at the 200-MV Separated Sector Cyclotron (SSC) of iThemba LABS (near Cape Town, in South Africa) using a high-energy resolution and high efficiency d…
-3. **[What Are We Talking About When We Talk About Nuclear Reactions](https://arxiv.org/abs/2609.00410)**  
-   arXiv nucl-th · 2026-09-02  
-   This introductory Chapter will try to briefly address 1. the basic physical ingredients that determine the nuclear spectrum and the associated energy scales; 2. the connection between the observed experimental results, typically in the form of cross sections, and the underlying nuclear structure presented in the previous point. The nature and scope of the p…
-4. **[Science Of Nuclear Fusion: Insights and Ideas](https://arxiv.org/abs/2609.01366)**  
-   arXiv nucl-th · 2026-09-02  
-   Advances in several physics domains open up novel paths to smaller scale, higher energy density opportunities to advance small systems for nuclear fusion. Here we survey both legacy and several novel ``table-top'' approaches which attract current interest. We furthermore address a few related practical and challenging nuclear science topics arising in the c…
-5. **[Neural-Network-Based Variational Method in Nuclear Density Functional Theory: Application to the Kohn--Sham method](https://arxiv.org/abs/2609.00836)**  
-   arXiv nucl-th · 2026-09-02  
-   We extend the neural-network-based variational method for nuclear density functional theory to the Kohn--Sham scheme, representing the complex spinor components of the single-particle orbitals by multi-layer perceptrons. We show that neural-network optimization of a given energy density functional, combined with an orthonormalization post-processing step, i…
-6. **[Femtoscopy as a New Probe of the Nuclear Equation of State](https://arxiv.org/abs/2609.00897)**  
-   arXiv nucl-th · 2026-09-02  
-   Femtoscopic correlations are widely regarded as precision probes of hadronic interactions through vacuum final-state interactions after kinetic freeze-out. Here we demonstrate that, in baryon-rich heavy-ion collisions, the nuclear mean field generates an additional dynamical contribution to femtoscopic correlations during the transport evolution. Using the…
-7. **[Effect of constraining the 1 d 3 / 2 – 1 f 7 / 2 energy gap in Ca 40 using a modified relativistic mean field approach](https://doi.org/10.1103/lxf3-294n)**  
-   Physical Review C · 2026-09-02  
-   数据源暂未提供详细介绍。
-8. **[磁化与磁场诱导修正：对磁流体动力学中 QGP 热光子产生的影响](https://doi.org/10.1103/3rc1-gyx5)**  
-   Physical Review D · 2026-09-02  
-   我们在 (1+1) 维相对论磁流体动力学（MHD）框架内研究磁化夸克-胶子等离子体（QGP）的热光子发射，系统地纳入磁化率 $\chi_m$——包括常数参数化和由格点 QCD 导出的温度依赖参数化 $\chi_m(T)$——以及对夸克分布函数 $f_{\rm EM}$ 的弱场量子修正。采用 Pu-Bjorken MHD 框架，我们计算 Compton 散射、$q\bar{q}$ 湮灭、轫致辐射以及伴随再散射的湮灭所产生的光子产生率，并在 QGP 的时空演化上对其积分，以得到横动量（$p_T$）谱。结果表明，光子产额主要由初始磁场强度及其时间衰减轮廓决定，而在所考察的参数空间内，$\chi_m$ 的影响可以忽略。相比之下，弱场修正 $f_{\rm EM}$ 会使中等 $p_T$ 区域的热光子产生明显增强。本工作…
+4. **[悬浮微粒中放射性衰变产生的逐衰变分辨电荷变化](https://doi.org/10.1103/z83g-y4xn)**  
+   Physical Review C · 2026-09-03  
+   我们逐事例测量光学悬浮二氧化硅微球内部单次放射性衰变引起的净电荷离散变化，并与邻近闪烁探测器中的能量沉积进行符合。通过测量悬浮微球对振荡电场的受驱响应，连续监测其净电荷，从而以低于一个元电荷的精度在毫秒时间尺度上分辨单次电荷变化事例。同时，使用由硅光电倍增管阵列读出的闪烁体，探测植入的 $^{212}$Pb 及其子体衰变时发射的 $\alpha$ 和 $\beta$ 粒子。通过关联重建的电荷变化时间与闪烁体响应，我们可以将微球净电荷的突然变化直接归因于单次核衰变，并识别 $\alpha$ 和 $\beta$ 衰变所射出电荷分布的差异。这些结果建立了一种在单次衰变层面研究放射性衰变发射低能带电粒子的新方法，并识别出植入固体表面附近的 $\alpha$ 衰变 radon 子体所发射的辐射成因低能电子簇射。
+5. **[Impact of nuclear triaxial deformation on electromagnetic fields in relativistic $^{129}\mathrm{Xe}+^{129}\mathrm{Xe}$ collisions](https://arxiv.org/abs/2609.02053)**  
+   arXiv nucl-th · 2026-09-03  
+   Electromagnetic fields produced in relativistic heavy-ion collisions depend sensitively on the initial spatial distribution of nuclear charge. Using the Li\'enard--Wiechert potential with a triaxially deformed Woods--Saxon density, we calculate the transverse electric and magnetic field distributions in $^{129}\mathrm{Xe}+{}^{129}\mathrm{Xe}$ collisions at…
+6. **[Halo-EFT: an effective and efficient tool to study reactions with halo nuclei](https://arxiv.org/abs/2609.02704)**  
+   arXiv nucl-th · 2026-09-03  
+   Halo nuclei are exotic nuclei, which exhibit a much larger matter radius than their isobars. This unusual size is now understood as a threshold effect, in which one or two valence nucleons are loosely bound to the core of the nucleus. Thanks to this loose binding, halo nuclei exhibit a strongly clusterised structure with a diffuse neutron halo surrounding a…
+7. **[Clustered Nature of Hot and Dense Nuclear Matter: A quantum statistical approach](https://arxiv.org/abs/2609.02463)**  
+   arXiv nucl-th · 2026-09-03  
+   The equilibrium abundances of the light clusters $^2$H, $^3$H, $^3$He, $^4$He in hot nuclear matter at densities near the saturation density are of essential interest for nuclear physics and astrophysical applications, but theoretical approaches give diverging answers. We compare the quantum statistical approach with the recently discussed phase-space exclu…
+8. **[Identification of a nanosecond isomer of $$^{164}$$Tb](https://doi.org/10.1140/epja/s10050-026-01950-0)**  
+   The European Physical Journal A · 2026-09-03  
+   Abstract This letter reports on the identification of a new isomeric state of $$^{164}$$ 164 Tb ( $$Z=65$$ Z = 65 , $$N=99$$ N = 99 ), which was measured with the DESPEC setup at the GSI Helmholtzzentrum für Schwerionenforschung GmbH following the first relativistic fragmentation of an $$^{170}$$ 170 Er primary beam. From the time distribution and coinciden…
 
 ## 物理新闻
 
@@ -54,7 +54,7 @@
    Introduction: The purpose of this one-week program and three-day workshop is to gather together experts from high-energy and low-energy nuclear physics communities to report on the latest experimental and theoretical advances at the intersection of these fields. Discussions will focus on the interplay between low-energy nuclear experiments, modern nuclear s…
 - **[第二届测试束流与先进探测技术研讨会（TB&D-2）](https://indico.ihep.ac.cn/event/29156/)**  
    高能所 Indico 核物理全量 · 2026-03-26  
-   会议简介： 近年来，我国在先进粒子探测器领域的研究取得了显著成就，推动相关技术跻身国际先进水平。随着探测技术的快速发展，对高能粒子测试束线的需求日益迫切。国内已建成多个束流测试装置，并正在中国散裂中子源建设我国首个专用高能质子（ 1.6 GeV ）束流测试实验站（ HPES ），这一重大国家科研基础设施预计于 2029 年出束试运行。为促进我国先进测试束能力建设，提升探测技术实验研究水平，进一步加强探测技术研发团队与装置研发团队之间的跨学科技术交流，拟于 2026 年10月09-11日 在 湖南省长沙市 举办 " 第二届测试束流与先进探测技术研讨会（ TB&D-2 ） " 。我们诚挚邀请相关领域专家、学者及工程技术人员齐聚一堂，共同探讨测试束流与先进探测技术领域的前沿发展与未来方向。会议将涵盖以下几个主要议题…
+   会议简介： 近年来，我国在先进粒子探测器领域的研究取得了显著成就，推动相关技术跻身国际先进水平。随着探测技术的快速发展，对高能粒子测试束线的需求日益迫切。国内已建成多个束流测试装置，并正在中国散裂中子源建设我国首个专用高能质子（ 1.6 GeV ）束流测试实验站（ HPES ），这一重大国家科研基础设施预计于 2029 年出束试运行。为促进我国先进测试束能力建设，提升探测技术实验研究水平，进一步加强探测技术研发团队与装置研发团队之间的跨学科技术交流，拟于 2026 年10月9-11日 在 湖南省长沙市 举办 " 第二届测试束流与先进探测技术研讨会（ TB&D-2 ） " 。 本次会议将涵盖以下几个主要议题： 测试束装置及测试束流物理研究 测试束中的先进测量技术 先进探测器研究与束流测试 束流测试中的电子学与数…
 - **[Direct reaction and future spectrometer at HIAF](https://indico.impcas.ac.cn/event/209/)**  
    近代物理所 Indico 全量 · 2026-08-25  
    The High Intensity Heavy-ion Accelerator Facility (HIAF) has completed its construction. Equipped with an advanced accelerator complex and a next-generation in-flight separator, HIAF provides an excellent platform for a wide range of experiments utilizing direct reactions. As an international user facility, HIAF warmly welcomes scientists from around the wo…
