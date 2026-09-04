@@ -1,33 +1,33 @@
-# 小康康的物理世界 · 2026-09-03 科研简报
+# 小康康的物理世界 · 2026-09-04 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 6/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 4/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[Novel analysis of proton-$$\gamma $$ coincidences for the $$\beta $$-delayed proton emission technique: the case of $$^{46}$$Mn](https://doi.org/10.1140/epja/s10050-026-01952-y)**  
-   The European Physical Journal A · 2026-09-03  
-   Abstract In the interest of exploring resonant contributions to the radiative capture reaction $$^{45}$$ 45 V(p, $$\gamma $$ γ ) $$^{46}$$ 46 Cr, which is identified to impact the $$^{44}$$ 44 Ti nucleosynthesis in Core Collapse Supernovae at astrophysical energies, we performed a spectroscopic study of $$^{46}$$ 46 Cr through the $$\beta $$ β -decay of the…
-2. **[Ia 型超新星遗迹的系统研究：利用核合成探测其超新星前身星](https://doi.org/10.3847/1538-4357/ae9750)**  
-   The Astrophysical Journal · 2026-09-03  
-   我们给出首项针对一组主要为热核型（Ia 型）超新星遗迹（SNRs）的系统性空间分辨 X 射线光谱研究，旨在通过与文献中可用的一套核合成模型比较，探测爆炸性质及其前身星。我们的样本聚焦于银河系和大麦哲伦云中富含抛射物的 SNRs，这些遗迹被认为或假定具有热核起源。利用存档的 XMM-Newton 观测数据（对 G1.9+0.3 则使用 Chandra 数据），我们从每个遗迹内自适应分箱区域中提取光谱，并对其发射建模，以约束等离子体温度、电离时间尺度和抛射物丰度。随后，我们将丰度比（相对于 Si）与一个包含 335 个独立模型的库进行比较；该库涵盖文献中 11 套常用超新星核合成模拟集合，包括七套热核型和四套核心坍缩型集合。在整个样本中，我们发现单个遗迹可以与模型的某些子集良好匹配，但没有任何单一模型能同时再现所…
-3. **[Erratum: Observation of new levels and proposed octupole correlations in neutron-rich 150 Ce [Phys. Rev. C 85, 014330 (2012)]](https://doi.org/10.1103/hrpp-3t32)**  
-   Physical Review C · 2026-09-03  
+1. **[\texorpdfstring{$\alpha$}{}-decay for superheavy nucleus: The alpha decay energy to the one-fourth power](https://arxiv.org/abs/2609.03902)**  
+   arXiv nucl-th · 2026-09-04  
+   Recently, Sobhani and Luo \cite{sobhani2025unified} proposed a new empirical formula for $\alpha$ decay based on the $Q_\alpha^{-1/4}$ energy dependence, incorporating the proton number $Z$, neutron number $N$, and relative neutron excess $I = (N - Z)/(N + Z)$ as primary parameters. In this work, we extend this model by explicitly including the angular mome…
+2. **[Phenomenological implications of the high-precision COHERENT germanium CE$\nu$NS data](https://arxiv.org/abs/2605.07975)**  
+   arXiv hep-ph · 2026-09-04  
+   This work presents the first comprehensive phenomenological analysis of the newly released Coherent Elastic Neutrino-Nucleus Scattering (CE$\nu$NS) data on germanium, measured by the COHERENT collaboration at the Spallation Neutron Source. Leveraging the unprecedented precision of this dataset, we provide state-of-the-art determinations of key Standard Mode…
+3. **[Impact of the Li 5 resonance in α − p elastic scattering on precision measurements of neutrino oscillation parameters](https://doi.org/10.1103/wjvr-9gbc)**  
+   Physical Review D · 2026-09-04  
    数据源暂未提供详细介绍。
-4. **[悬浮微粒中放射性衰变产生的逐衰变分辨电荷变化](https://doi.org/10.1103/z83g-y4xn)**  
-   Physical Review C · 2026-09-03  
-   我们逐事例测量光学悬浮二氧化硅微球内部单次放射性衰变引起的净电荷离散变化，并与邻近闪烁探测器中的能量沉积进行符合。通过测量悬浮微球对振荡电场的受驱响应，连续监测其净电荷，从而以低于一个元电荷的精度在毫秒时间尺度上分辨单次电荷变化事例。同时，使用由硅光电倍增管阵列读出的闪烁体，探测植入的 $^{212}$Pb 及其子体衰变时发射的 $\alpha$ 和 $\beta$ 粒子。通过关联重建的电荷变化时间与闪烁体响应，我们可以将微球净电荷的突然变化直接归因于单次核衰变，并识别 $\alpha$ 和 $\beta$ 衰变所射出电荷分布的差异。这些结果建立了一种在单次衰变层面研究放射性衰变发射低能带电粒子的新方法，并识别出植入固体表面附近的 $\alpha$ 衰变 radon 子体所发射的辐射成因低能电子簇射。
-5. **[Impact of nuclear triaxial deformation on electromagnetic fields in relativistic $^{129}\mathrm{Xe}+^{129}\mathrm{Xe}$ collisions](https://arxiv.org/abs/2609.02053)**  
-   arXiv nucl-th · 2026-09-03  
-   Electromagnetic fields produced in relativistic heavy-ion collisions depend sensitively on the initial spatial distribution of nuclear charge. Using the Li\'enard--Wiechert potential with a triaxially deformed Woods--Saxon density, we calculate the transverse electric and magnetic field distributions in $^{129}\mathrm{Xe}+{}^{129}\mathrm{Xe}$ collisions at…
-6. **[Halo-EFT: an effective and efficient tool to study reactions with halo nuclei](https://arxiv.org/abs/2609.02704)**  
-   arXiv nucl-th · 2026-09-03  
-   Halo nuclei are exotic nuclei, which exhibit a much larger matter radius than their isobars. This unusual size is now understood as a threshold effect, in which one or two valence nucleons are loosely bound to the core of the nucleus. Thanks to this loose binding, halo nuclei exhibit a strongly clusterised structure with a diffuse neutron halo surrounding a…
-7. **[Clustered Nature of Hot and Dense Nuclear Matter: A quantum statistical approach](https://arxiv.org/abs/2609.02463)**  
-   arXiv nucl-th · 2026-09-03  
-   The equilibrium abundances of the light clusters $^2$H, $^3$H, $^3$He, $^4$He in hot nuclear matter at densities near the saturation density are of essential interest for nuclear physics and astrophysical applications, but theoretical approaches give diverging answers. We compare the quantum statistical approach with the recently discussed phase-space exclu…
-8. **[Identification of a nanosecond isomer of $$^{164}$$Tb](https://doi.org/10.1140/epja/s10050-026-01950-0)**  
-   The European Physical Journal A · 2026-09-03  
-   Abstract This letter reports on the identification of a new isomeric state of $$^{164}$$ 164 Tb ( $$Z=65$$ Z = 65 , $$N=99$$ N = 99 ), which was measured with the DESPEC setup at the GSI Helmholtzzentrum für Schwerionenforschung GmbH following the first relativistic fragmentation of an $$^{170}$$ 170 Er primary beam. From the time distribution and coinciden…
+4. **[Quantum Complexity in Nuclear Scattering and Fission Dynamics](https://arxiv.org/abs/2609.03240)**  
+   arXiv nucl-th · 2026-09-04  
+   Quantum computers promise advantages for simulating strongly correlated quantum many-body systems, like atomic nuclei, that are beyond the reach of classical computers. Realizing this potential requires understanding the quantum complexity structure of the target problem. We investigate the time-evolution of two key indicators of quantum complexity, biparti…
+5. **[Microscopic Calculation of Electric Quadrupole Effective Charges in Exotic Nuclei](https://arxiv.org/abs/2609.04044)**  
+   arXiv nucl-th · 2026-09-04  
+   Electric quadrupole ($E2$) effective charges are evaluated based on the self-consistent relativistic Hartree-Fock single-particle states, with core-polarization corrections resummed to all orders using the Tamm-Dancoff approximation (TDA). Configuration-interaction relativistic Hartree-Fock (CI-RHF) calculations employing the TDA effective charges well repr…
+6. **[B(E2) Serves as a Robust Signature of N = 32,34 Shell Evolution](https://arxiv.org/abs/2609.04154)**  
+   arXiv nucl-th · 2026-09-04  
+   Electric quadrupole transition probabilities $B(E2)$ serve as key probe of nuclear shell evolution, yet anomalous $B(E2)$ values in exotic nuclei complicate the identification of new magic numbers. In this letter, employing the configuration-interaction relativistic Hartree-Fock model, we demonstrate that effective charges are sensitive to orbital radii, an…
+7. **[Neutron measurements with VERDI detectors in the long term irradiation station at JET tokamak during Deuterium-Tritium operation](https://doi.org/10.1088/1361-6587/aea2cc)**  
+   Plasma Physics and Controlled Fusion · 2026-09-04  
+   Abstract The VERDI detector is a passive neutron detector using the multi-foil activation technique to measure neutron fluence in extreme fusion conditions. It features a low-activation capsule that contains a defined concentration of metallic elements. The robustness of the detector is ensured by the capsule material, while neutron detection relies on acti…
+8. **[Sgr A* as a Galactic PeVatron: Multimessenger Signatures of the Magnetic Penrose Process](https://arxiv.org/abs/2609.04051)**  
+   arXiv astro-ph.HE · 2026-09-04  
+   The magnetic Penrose process (MPP) is one of the most efficient mechanisms for extracting rotational energy from a magnetized Kerr black hole (BH), enabling charged particles to reach very-high energies. We investigate this process in Sagittarius A* (Sgr A*), the supermassive BH at the Galactic center (GC), focusing on its ultra-high-efficiency regime, in w…
 
 ## 物理新闻
 
