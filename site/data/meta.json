@@ -1881,19 +1881,21 @@
     "last_run": {
       "backend": "open_source",
       "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "started_at": "2026-09-05T08:02:28.305980+00:00",
-      "attempted": 1,
-      "completed": 1,
-      "failed": 0,
+      "started_at": "2026-09-05T08:08:09.954890+00:00",
+      "attempted": 6,
+      "completed": 4,
+      "failed": 2,
       "deferred": 0,
-      "errors": {},
-      "finished_at": "2026-09-05T08:02:41.484217+00:00",
-      "pending": 2251,
-      "service_status": "ready"
+      "errors": {
+        "公式、数值或术语保护项被遗漏/重复/改写": 2
+      },
+      "finished_at": "2026-09-05T08:16:15.742634+00:00",
+      "pending": 2247,
+      "service_status": "partial"
     },
-    "service_status": "ready",
-    "pending": 2251,
-    "generated_at": "2026-09-05T08:02:41.898258+00:00",
+    "service_status": "partial",
+    "pending": 2247,
+    "generated_at": "2026-09-05T08:16:16.610063+00:00",
     "model": "Qwen3-4B-Instruct-2507-Q4_K_M"
   },
   "personal_backup": {
