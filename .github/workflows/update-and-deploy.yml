@@ -45,19 +45,27 @@ jobs:
         if: github.event_name != 'push'
         run: python scripts/backfill_history.py --next 6 --max-workers 4
 
-      - name: 更新待译队列并调用已配置的翻译服务
-        env:
-          TRANSLATION_API_KEY: ${{ secrets.TRANSLATION_API_KEY }}
-          TRANSLATION_API_URL: ${{ vars.TRANSLATION_API_URL }}
-          TRANSLATION_MODEL: ${{ vars.TRANSLATION_MODEL }}
-        run: python scripts/translate_content.py --limit 40
-
       - name: 备份已配置国内主站的公开个人快照
         if: github.event_name != 'push'
         continue-on-error: true
         env:
           PERSONAL_STATE_URL: ${{ vars.PERSONAL_STATE_URL }}
         run: python scripts/backup_cloud_personal.py
+
+      - name: 缓存开放翻译模型（不使用商业 API）
+        uses: actions/cache@v4
+        with:
+          path: output/llama-model
+          key: translation-qwen3-4b-instruct-q4-b10516-${{ runner.os }}-v1
+
+      - name: 自动翻译新增内容并逐步消化积压
+        timeout-minutes: 60
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            python scripts/translate_content.py --limit 6 --backend offline --max-minutes 8
+          else
+            python scripts/translate_content.py --limit 120 --backend offline --max-minutes 45
+          fi
 
       - name: 构建站点数据
         run: python scripts/build_site.py

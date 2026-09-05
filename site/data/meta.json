@@ -1878,9 +1878,23 @@
     ]
   },
   "translation_service": {
-    "service_status": "not_configured",
-    "pending": 2266,
-    "generated_at": "2026-09-05T07:10:33.935923+00:00"
+    "last_run": {
+      "backend": "open_source",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "started_at": "2026-09-05T08:02:28.305980+00:00",
+      "attempted": 1,
+      "completed": 1,
+      "failed": 0,
+      "deferred": 0,
+      "errors": {},
+      "finished_at": "2026-09-05T08:02:41.484217+00:00",
+      "pending": 2251,
+      "service_status": "ready"
+    },
+    "service_status": "ready",
+    "pending": 2251,
+    "generated_at": "2026-09-05T08:02:41.898258+00:00",
+    "model": "Qwen3-4B-Instruct-2507-Q4_K_M"
   },
   "personal_backup": {
     "snapshot_at": "2026-08-20T02:05:13.625Z"

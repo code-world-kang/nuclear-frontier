@@ -22,6 +22,13 @@ test('翻译统计：空条目、原生中文、仅译标题、缺正文分开',
   assert.deepEqual(stats, { total: 3, complete: 1, native: 1, titleDone: 2, titleTotal: 3, bodyDone: 0, bodyTotal: 2, missingBody: 1, partial: 1 });
 });
 
+test('通知只有日期时不因没有汉字而显示正文待译', () => {
+  const stats = translationCoverage([{ id: 'n', title: 'CEPC meeting', summary: '2026-09-11 — 2026-09-11' }], { n: { title_zh: 'CEPC 会议' } });
+  assert.equal(stats.complete, 1);
+  assert.equal(stats.bodyTotal, 0);
+  assert.equal(stats.partial, 0);
+});
+
 function appHarness() {
   let source = readFileSync(new URL('../site/app.js', import.meta.url), 'utf8');
   source = source.replace(/^import .*;\n/m, '').replace(/initialize\(\);\s*$/, '');

@@ -73,7 +73,7 @@ def main() -> None:
         "categories": topics["categories"],
         "status": status,
         "insights": insights,
-        "translation_service": {key: queue.get(key) for key in ("service_status", "pending", "generated_at")},
+        "translation_service": {**({"last_run": load(DATA / "translation-run.json")} if (DATA / "translation-run.json").exists() else {}), **{key: queue.get(key) for key in ("service_status", "pending", "generated_at", "model")}},
         "personal_backup": {"snapshot_at": personal_payload.get("updated_at", "")},
         "notice": "本站汇总官方公开元数据，不代表数据源机构背书。请以原始页面为准。",
     }

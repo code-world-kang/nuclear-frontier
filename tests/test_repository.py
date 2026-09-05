@@ -120,7 +120,7 @@ class RepositoryTests(unittest.TestCase):
                 else:
                     self.assertIn("跳过翻译", item.get("note", ""))
 
-    def test_translation_queue_uses_explicit_service_configuration(self):
+    def test_translation_queue_uses_open_model_without_credentials(self):
         workflow = (ROOT / ".github" / "workflows" / "update-and-deploy.yml").read_text(encoding="utf-8")
         script = (ROOT / "scripts" / "translate_content.py").read_text(encoding="utf-8")
         queue = json.loads((ROOT / "data" / "translation-queue.json").read_text(encoding="utf-8"))
@@ -128,7 +128,9 @@ class RepositoryTests(unittest.TestCase):
         self.assertNotIn("GITHUB_MODELS_TOKEN", workflow)
         self.assertIn("translate_content.py --limit", workflow)
         self.assertIn('DEFAULT_ENDPOINT = ""', script)
-        self.assertIn("TRANSLATION_API_KEY", workflow)
+        self.assertIn("--backend offline", workflow)
+        self.assertIn("actions/cache@v4", workflow)
+        self.assertNotIn("secrets.TRANSLATION_API_KEY", workflow)
         self.assertGreaterEqual(queue.get("pending", 0), 0)
         self.assertEqual(sum(queue.get("counts", {}).values()), queue.get("pending"))
 

@@ -27,8 +27,9 @@ export function searchText(value = '') {
 }
 
 export function isChinese(value = '') {
-  const han = (String(value).match(/[\u3400-\u9fff]/g) || []).length;
-  const latin = (String(value).match(/[a-z]/gi) || []).length;
+  const content = String(value).replace(/https?:\/\/[^\s<>，。；]+/g, '');
+  const han = (content.match(/[\u3400-\u9fff]/g) || []).length;
+  const latin = (content.match(/[a-z]/gi) || []).length;
   return han >= 2 && han / Math.max(1, han + latin) >= 0.25;
 }
 
@@ -38,8 +39,8 @@ export function translationCoverage(records, translations = {}) {
     const title = String(item.title || '').trim();
     const body = String(item.abstract || item.content || item.summary || '').trim();
     const translated = translations[item.id] || item;
-    const titleNative = isChinese(title);
-    const bodyNative = body && isChinese(body);
+    const titleNative = isChinese(title) || (title && !/[A-Za-z]{2,}/.test(title));
+    const bodyNative = body && (isChinese(body) || !/[A-Za-z]{2,}/.test(body));
     if (!body) stats.missingBody += 1;
     if (titleNative && (!body || bodyNative)) { stats.native += 1; continue; }
     stats.total += 1;

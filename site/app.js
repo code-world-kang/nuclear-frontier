@@ -1,4 +1,4 @@
-import { scientificText, nuclidesIn, searchText, translationCoverage } from './research-utils.js';
+import { scientificText, nuclidesIn, searchText, translationCoverage } from './research-utils.js?v=20260905-translation';
 
 const PATH = new URL('.', window.location.href).pathname;
 // GitHub 仍是个人数据的最终来源；本地副本只用来防止“已点收藏、未提交 GitHub”时刷新丢失。
@@ -1378,7 +1378,7 @@ function inlineNoteEditorFor(item) {
 }
 
 function toggleTranslation(item) {
-  if (!translationFor(item)) return showToast('这篇论文暂时还没有 Codex 中文译文');
+  if (!translationFor(item)) return showToast('这篇论文暂时还没有中文译文');
   if (state.translatedIds.has(item.id)) state.translatedIds.delete(item.id);
   else state.translatedIds.add(item.id);
   refreshPaperCardViews();
@@ -1490,6 +1490,15 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
     tags.append(tag);
   });
 
+  if (translation && translated) {
+    const provenance = document.createElement('small');
+    provenance.className = 'translation-provenance';
+    provenance.textContent = translation.quality === 'machine_draft'
+      ? `机器初译 · ${translation.model || '开放模型'} · 未经人工校对，请对照原文`
+      : '中文译文 · 请对照原文核查';
+    abstract.after(provenance);
+  }
+
   const actions = $('.paper-actions', card);
   const original = document.createElement('a');
   original.href = item.url || '#';
@@ -1531,7 +1540,7 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
   translate.disabled = !translation;
   translate.title = translation
     ? '中文译文优先显示，可随时切换回原文'
-    : 'Codex 将在自动翻译队列中补全这条内容';
+    : '每天自动尝试翻译；检查未通过的内容会保留原文并重试';
   translate.addEventListener('click', () => toggleTranslation(item));
   actions.append(translate);
 
@@ -2328,7 +2337,7 @@ function openDetails(item) {
     <p class="detail-meta">${text((item.authors || []).join(', ') || item.source || '')}<br>${text(prettyDate(item.published))}${item.doi ? ` · DOI ${text(item.doi)}` : ''}</p>
     <div class="tag-row">${(item.categories || []).map(id => `<span class="tag category">${text(categoryName(id))}</span>`).join('')}</div>
     <div class="score-box"><b>重要性 ${item.importance || 0}</b><div>${scoreReasons || '<span>基于来源与主题计算</span>'}</div></div>
-    <h4>${translated ? 'Codex 中文译文' : '原文摘要'}</h4>
+    <h4>${translated ? '中文译文' : '原文摘要'}</h4>
     <p class="detail-abstract">${text(translated ? applyTranslationGlossary(translation.abstract_zh) : (item.abstract || item.summary || '该来源未提供可公开摘要。'))}</p>
     <div class="detail-tools">
       <a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">打开原文 ↗</a>
@@ -2713,6 +2722,7 @@ function renderAssistantPaperDetail(item) {
     <section class="assistant-section paper-detail-section">
       <div class="assistant-section-head"><span>摘要与操作</span><small>优先展示已有中文译文</small></div>
       <p class="assistant-paper-summary">${text(localizedAbstract(item) || missingAbstractMessage(item))}</p>
+      ${translationFor(item)?.quality === 'machine_draft' ? `<small class="translation-provenance">机器初译 · ${text(translationFor(item).model)} · 未经人工校对，请对照原文</small>` : ''}
       <div class="assistant-paper-actions">
         <a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">原始页面 ↗</a>
         ${item.pdf_url ? `<a href="${text(item.pdf_url)}" target="_blank" rel="noreferrer">PDF ↗</a>` : ''}
@@ -2960,7 +2970,7 @@ function renderNoticeDetail(item) {
     <header class="notice-detail-head"><span>${text(group.icon)} ${text(group.label)}</span><small>${text(category.label)}</small></header>
     <h2>${text(localizedTitle(item))}</h2>
     <div class="notice-detail-meta"><b>${text(item.source || '官方来源')}</b><time>${text(prettyDate(item.published))}</time>${noticeEventDate(item) ? `<strong class="notice-event-date">${text(noticeEventDate(item))}</strong>` : ''}${item.deadline ? `<strong>截止 ${text(prettyDate(item.deadline))}</strong>` : ''}</div>
-    ${translated?.abstract_zh ? `<section><h3>中文介绍</h3><p>${text(applyTranslationGlossary(translated.abstract_zh))}</p></section>` : ''}
+    ${translated?.abstract_zh ? `<section><h3>中文介绍${translated.quality === 'machine_draft' ? ' · 机器初译' : ''}</h3><p>${text(applyTranslationGlossary(translated.abstract_zh))}</p><small>${text(translated.note || '请对照官方原文核查。')}</small></section>` : ''}
     <section><h3>官方原文信息</h3><p>${text(original)}</p></section>
     <div class="notice-detail-tags">${noticeLabelBadges(item)}${(item.categories || []).map(id => `<span>${text(categoryName(id))}</span>`).join('')}<span>${text(item.scope || category.description || '')}</span></div>
     <div class="notice-detail-actions"><a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">查看官方原文 ↗</a><button type="button" data-notice-favorite>${isFavorite(item.id) ? '★ 已收藏' : '☆ 收藏'}</button><a href="${text(googleTranslationPageUrl(item))}" target="_blank" rel="noreferrer">Google 翻译官网 ↗</a></div>`;
@@ -3267,8 +3277,12 @@ function renderBriefing() {
   $('#translationProgressCount').textContent = `${translatedCount.toLocaleString('zh-CN')} / ${translationTotal.toLocaleString('zh-CN')} 条已译完可获取内容`;
   $('#translationProgressBar').style.width = `${Math.min(100, translationPercent).toFixed(2)}%`;
   $('#translationProgressTrack').setAttribute('aria-valuenow', translationPercent.toFixed(1));
-  const serviceLabel = { ready: '翻译服务最近执行成功', failed: '翻译服务需重试', configured: '翻译服务已配置，待执行', not_configured: '自动翻译未连接，仅维护待译队列' }[state.meta.translation_service?.service_status] || '自动翻译服务状态未确认';
-  $('#translationProgressStats').innerHTML = `${translationGroups.map(group => `<span>${group.label} <b>${group.complete.toLocaleString('zh-CN')}</b> / ${group.total.toLocaleString('zh-CN')}</span>`).join('')}<small>原生中文 ${totals.native} · 题目 ${totals.titleDone}/${totals.titleTotal} · 摘要/介绍 ${totals.bodyDone}/${totals.bodyTotal} · 部分已译 ${totals.partial} · 原文缺正文 ${totals.missingBody}</small><small>${text(serviceLabel)}。空记录不计完成；缺少原文的摘要不补写。</small>`;
+  const serviceLabel = { ready: '自动翻译最近执行成功', partial: '自动翻译已完成一批，部分内容待重试', idle: '自动翻译已启用，等待下次批处理', failed: '自动翻译暂未成功，保留原文等待重试', configured: '翻译服务已配置，待执行', not_configured: '自动翻译未连接，仅维护待译队列' }[state.meta.translation_service?.service_status] || '自动翻译服务状态未确认';
+  const translationRun = state.meta.translation_service?.last_run;
+  const runLabel = translationRun
+    ? `最近一批：尝试 ${translationRun.attempted ?? 0} 条，新增 ${translationRun.completed ?? 0} 条，未通过检查或出错 ${translationRun.failed ?? 0} 条。每日北京时间 06:00 计划启动（可能延迟），新内容与积压分批处理。机器初译不等于人工校对；进度仅含当前日常库，不含全部历史库。`
+    : '';
+  $('#translationProgressStats').innerHTML = `${translationGroups.map(group => `<span>${group.label} <b>${group.complete.toLocaleString('zh-CN')}</b> / ${group.total.toLocaleString('zh-CN')}</span>`).join('')}<small>中文或无需翻译 ${totals.native} · 题目 ${totals.titleDone}/${totals.titleTotal} · 摘要/介绍 ${totals.bodyDone}/${totals.bodyTotal} · 部分已译 ${totals.partial} · 原文缺正文 ${totals.missingBody}</small><small>${text(serviceLabel)}。空记录不计完成；缺少原文的摘要不补写。</small><small>${text(runLabel)}</small>`;
 
 
   const renderBars = (host, values, labelFor) => {

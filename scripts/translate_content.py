@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """把每日新增的英文论文、新闻和通知自动译为中文。
 
-仅使用显式配置的服务端翻译服务；未配置时只建立待译队列。
+可使用 GitHub runner 内运行的开放模型，或显式配置的服务端翻译服务。
 不使用 GitHub 登录令牌冒充翻译凭据，不截断摘要冒充完整译文。
 """
 
@@ -39,7 +39,9 @@ def load_json(path: Path) -> Any:
 
 
 def write_json(path: Path, payload: Any) -> None:
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temporary.replace(path)
 
 
 def source_text(item: dict[str, Any]) -> str:
@@ -50,9 +52,15 @@ def source_text(item: dict[str, Any]) -> str:
 
 
 def is_chinese(value: str) -> bool:
-    han = len(HAN_RE.findall(str(value or "")))
-    latin = len(re.findall(r"[A-Za-z]", str(value or "")))
+    content = re.sub(r"https?://[^\s<>，。；]+", "", str(value or ""))
+    han = len(HAN_RE.findall(content))
+    latin = len(re.findall(r"[A-Za-z]", content))
     return han >= 2 and han / max(1, han + latin) >= 0.25
+
+
+def requires_translation(value: str) -> bool:
+    # 纯日期、数字或符号不应因没有汉字而反复进入待译队列。
+    return bool(re.search(r"[A-Za-z]{2,}", str(value or ""))) and not is_chinese(value)
 
 
 def source_hash(item: dict[str, Any]) -> str:
@@ -64,12 +72,12 @@ def needs_translation(item: dict[str, Any], existing: dict[str, Any]) -> bool:
     if not title:
         return False
     translated = existing.get(item["id"], {})
-    if not is_chinese(title) and not is_chinese(translated.get("title_zh", "")):
+    if requires_translation(title) and not is_chinese(translated.get("title_zh", "")):
         return True
     body = source_text(item)
     if translated.get("source_hash") and translated["source_hash"] != source_hash(item):
-        return not (is_chinese(title) and (not body or is_chinese(body)))
-    return bool(body and not is_chinese(body) and not is_chinese(translated.get("abstract_zh", "")))
+        return requires_translation(title) or requires_translation(body)
+    return bool(requires_translation(body) and not is_chinese(translated.get("abstract_zh", "")))
 
 
 def collect_candidates(existing: dict[str, Any]) -> list[dict[str, Any]]:
@@ -187,14 +195,110 @@ def translate_batch(batch: list[dict[str, Any]], token: str, endpoint: str, mode
     raise RuntimeError(f"翻译请求失败：{last_error}")
 
 
+def select_balanced(candidates: list[dict], limit: int, retries: dict, now: dt.datetime) -> list[dict]:
+    """论文占主要配额，新闻与通知也每天推进；失败条目退避，不堵塞队列。"""
+    groups = {kind: [] for kind in ("paper", "news", "notice")}
+    for item in candidates:
+        retry = retries.get(item["id"], {})
+        if retry.get("source_hash") == source_hash(item) and retry.get("last_attempt"):
+            try:
+                last = dt.datetime.fromisoformat(retry["last_attempt"])
+                days = min(7, max(1, int(retry.get("attempts", 1))))
+                if now - last < dt.timedelta(days=days):
+                    continue
+            except (ValueError, TypeError):
+                pass
+        groups.setdefault(item.get("type", "paper"), []).append(item)
+    selected = []
+    while any(groups.values()) and len(selected) < limit:
+        for kind in ("paper", "paper", "paper", "paper", "news", "notice"):
+            if groups[kind] and len(selected) < limit:
+                selected.append(groups[kind].pop(0))
+    return selected
+
+
+def run_offline(args, payload: dict) -> None:
+    from offline_translation import MODEL_NAME, OfflineTranslator, QualityError
+    existing = payload.setdefault("items", {})
+    candidates = collect_candidates(existing)
+    retries_path = DATA / "translation-retries.json"
+    retries = load_json(retries_path) if retries_path.exists() else {}
+    now = dt.datetime.now(dt.timezone.utc)
+    target_ids = set(filter(None, getattr(args, "ids", "").split(",")))
+    eligible = [item for item in candidates if not target_ids or item["id"] in target_ids]
+    selected = select_balanced(eligible, args.limit, {} if getattr(args, "retry_failed", False) else retries, now)
+    report = {"backend": "open_source", "model": MODEL_NAME, "started_at": now.isoformat(),
+              "attempted": 0, "completed": 0, "failed": 0, "deferred": 0, "errors": {}}
+    engine = None
+    started = time.monotonic()
+    write_json(QUEUE, queue_payload(candidates, MODEL_NAME, "configured"))
+    try:
+        if selected:
+            engine = OfflineTranslator()
+        for item in selected:
+            if time.monotonic() - started > args.max_minutes * 60:
+                report["deferred"] = len(selected) - report["attempted"]
+                break
+            report["attempted"] += 1
+            try:
+                translated = engine.translate_item(item, existing.get(item["id"]))
+                record = {**translated, "translated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
+                          "provider": "open-source-local", "model": MODEL_NAME,
+                          "source_hash": source_hash(item), "quality": "machine_draft",
+                          "note": "开放模型机器初译，未经人工校对；请对照原文核查。"}
+                if not source_text(item):
+                    record["note"] += " 原始来源未提供 abstract/summary，仅翻译题目。"
+                elif not requires_translation(source_text(item)) and not is_chinese(source_text(item)):
+                    record["note"] += " 来源仅有日期或符号信息，原样保留，未补写介绍。"
+                existing[item["id"]] = record
+                payload["provider"] = "mixed"
+                payload["provider_note"] = "来源以条目的 provider/note 为准；历史译文保留原备注。"
+                retries.pop(item["id"], None)
+                report["completed"] += 1
+                payload["generated_at"] = dt.datetime.now(dt.timezone.utc).isoformat()
+                write_json(TRANSLATIONS, payload)
+            except (OSError, ValueError, KeyError, RuntimeError) as exc:
+                reason = str(exc) if isinstance(exc, QualityError) else type(exc).__name__
+                retry = retries.get(item["id"], {})
+                attempts = retry.get("attempts", 0) if retry.get("source_hash") == source_hash(item) else 0
+                retries[item["id"]] = {"source_hash": source_hash(item), "attempts": attempts + 1,
+                                        "last_attempt": now.isoformat(), "error": reason}
+                report["errors"][reason] = report["errors"].get(reason, 0) + 1
+                report["failed"] += 1
+            write_json(retries_path, retries)
+            print(f"本次已尝试 {report['attempted']}，写入 {report['completed']}，待重试 {report['failed']}。", flush=True)
+    except (OSError, ValueError, RuntimeError) as exc:
+        report["errors"]["模型运行环境不可用"] = 1
+        report["failed"] += 1
+        print(f"开放翻译模型暂不可用：{type(exc).__name__}；保留原文和已有译文。", flush=True)
+    finally:
+        if engine:
+            engine.close()
+        report["finished_at"] = dt.datetime.now(dt.timezone.utc).isoformat()
+        report["pending"] = len(collect_candidates(existing))
+        status = "partial" if report["failed"] and report["completed"] else "failed" if report["failed"] else "ready" if report["completed"] else "idle"
+        report["service_status"] = status
+        write_json(DATA / "translation-run.json", report)
+        write_json(QUEUE, queue_payload(collect_candidates(existing), MODEL_NAME, status))
+    if report["failed"] and args.strict:
+        raise SystemExit(1)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="自动补全英文科研内容的中文译文")
     parser.add_argument("--limit", type=int, default=40, help="本次最多翻译多少条")
     parser.add_argument("--batch-size", type=int, default=3, help="每次模型请求包含多少条")
     parser.add_argument("--strict", action="store_true", help="模型调用失败时返回非零状态")
+    parser.add_argument("--backend", choices=("api", "offline"), default="api", help="offline 使用免费开放模型，无需 API Key")
+    parser.add_argument("--max-minutes", type=float, default=45, help="离线翻译每次的时间预算，在文章边界停止")
+    parser.add_argument("--retry-failed", action="store_true", help="手动验证修复后立即重试，日常流程仍保持退避")
+    parser.add_argument("--ids", default="", help="仅处理指定条目 ID，逗号分隔；用于定点补译")
     args = parser.parse_args()
 
     payload = load_json(TRANSLATIONS)
+    if args.backend == "offline":
+        run_offline(args, payload)
+        return
     existing = payload.setdefault("items", {})
     model = os.getenv("TRANSLATION_MODEL", DEFAULT_MODEL).strip() or DEFAULT_MODEL
     endpoint = os.getenv("TRANSLATION_API_URL", DEFAULT_ENDPOINT).strip() or DEFAULT_ENDPOINT

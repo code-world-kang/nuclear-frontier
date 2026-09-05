@@ -1790,3 +1790,5 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .notice-detail-panel { position: relative; top: auto; grid-column: 1; }
   .notice-group-panel .daily-notice-categories { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+.translation-provenance { display: block; color: #6d7c67; font-size: 12px; line-height: 1.6; margin: 8px 0; }

@@ -1,6 +1,6 @@
 # 小康康的物理世界 · 2026-09-01 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 3/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 6/18 条已有中文内容。
 
 ## 今日重点论文
 
@@ -31,12 +31,12 @@
 
 ## 物理新闻
 
-- **[Lab-Based Plasmas Shed Light on Stellar Mystery](http://link.aps.org/doi/10.1103/Physics.19.123)**  
+- **[基于实验室的等离子体揭示了恒星之谜](http://link.aps.org/doi/10.1103/Physics.19.123)**  
    APS Physics · 2026-09-04  
-   Author(s): Susan Curtis Using high-power lasers to drive highly magnetized plasmas, researchers have probed the stellar processes that control coronal mass ejections. [Physics 19, 123] Published Fri Sep 04, 2026
-- **[Relativistic position verification with coherent states](https://www.nature.com/articles/s41567-026-03439-5)**  
+   作者：Susan Curtis 使用高功率激光驱动高度磁化的等离子体，研究人员已经探测了控制日冕物质抛射的恒星过程。 [物理 19, 123] 发表于 Fri Sep 04, 2026
+- **[相对论位置验证与相干态](https://www.nature.com/articles/s41567-026-03439-5)**  
    Nature Physics · 2026-09-03  
-   A secure approach to determining the position of an entity can enable schemes such as position-based authorization for transactions and tracking of high-value targets. However, classical methods are incapable of providing secure position verification in the untrusted-prover case, meaning that a prover can mislead verifiers about its actual position. Here we…
+   一种安全确定实体位置的方法可以支持基于位置的交易授权以及高价值目标的追踪。然而，经典方法在不可信证明者的情况下无法提供安全的位置验证，这意味着证明者可以误导验证者关于其实际位置。在此，我们提出并实验实现了结合量子光学与相对论的信息论框架下的安全位置验证协议。利用相位随机化的弱相干态，两个相距 2 公里的验证者以优于 75 米的精度安全地验证证明者的位置。这些结果确立了基于位置的安全认证作为一种实际可能性，为金融交易、灾害响应和认证安全通信等应用铺平了道路。通过结合量子与相对论物理，可以在不信任对方的情况下远程验证某人的位置。这种位置验证协议现已通过量子光学实验被引入并演示。
 - **[A Quantum Filter for Improved Spintronics](http://link.aps.org/doi/10.1103/Physics.19.s108)**  
    APS Physics · 2026-09-03  
    Author(s): Ryan Wilkinson A precisely engineered material interface can host the spin currents needed for practical spin-based electronics. [Physics 19, s108] Published Thu Sep 03, 2026
@@ -55,7 +55,7 @@
 - **[关于发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100371.html)**  
    国家自然科学基金委项目指南 · 2029-12-31  
    国科金发计〔2026〕6号 国家自然科学基金委员会现发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请
-- **[CEPC Beam Dynamics Meeting](https://indico.ihep.ac.cn/event/30687/)**  
+- **[CEPC 束流动力学会议](https://indico.ihep.ac.cn/event/30687/)**  
    高能所 Indico · 2026-09-03  
    2026-09-11 — 2026-09-11
 - **[北京同步辐射装置2026年下半年开放运行通知](https://ihep.cas.cn/dkxzz/bsrf/tongzhigonggao/202609/t20260902_8276464.html)**  
