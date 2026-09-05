@@ -26,6 +26,7 @@ CORE_TOPICS = {
     "experimental-nuclear",
     "theoretical-nuclear",
     "nuclear-structure",
+    "nuclear-clusters",
     "nuclear-decay",
     "nuclear-reactions",
     "detectors-daq",
@@ -37,6 +38,7 @@ TOPIC_LABELS = {
     "experimental-nuclear": "实验核物理",
     "theoretical-nuclear": "理论核物理",
     "nuclear-structure": "核结构",
+    "nuclear-clusters": "团簇结构",
     "nuclear-decay": "核衰变与放射性",
     "nuclear-reactions": "核反应",
     "high-energy-nuclear": "高能核物理",
@@ -101,8 +103,8 @@ def latest_records(records: list[dict[str, Any]], limit: int) -> list[dict[str, 
     return sorted(
         pool,
         key=lambda item: (
-            int(item.get("importance") or 0),
             str(item.get("published") or ""),
+            int(item.get("importance") or 0),
         ),
         reverse=True,
     )[:limit]

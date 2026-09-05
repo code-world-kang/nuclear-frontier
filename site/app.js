@@ -1,10 +1,12 @@
+import { scientificText, nuclidesIn, searchText, translationCoverage } from './research-utils.js';
+
 const PATH = new URL('.', window.location.href).pathname;
 // GitHub 仍是个人数据的最终来源；本地副本只用来防止“已点收藏、未提交 GitHub”时刷新丢失。
 const PERSONAL_DRAFT_KEY = 'nuclear-frontier.personal.v1';
 const LEGACY_LAYOUT_KEY = 'nuclear-frontier.paper-layout.v1';
 
 const DEFAULT_CATEGORY_ORDER = [
-  'experimental-nuclear', 'nuclear-structure', 'nuclear-reactions', 'nuclear-decay', 'detectors-daq',
+  'experimental-nuclear', 'nuclear-structure', 'nuclear-clusters', 'nuclear-reactions', 'nuclear-decay', 'detectors-daq',
   'theoretical-nuclear', 'nuclear-astrophysics', 'high-energy-nuclear', 'accelerators', 'fusion',
   'ai-science', 'nuclear-general', 'nuclear-data-applications', 'particle-cross', 'frontiers',
 ];
@@ -20,6 +22,8 @@ const state = {
   cloudSyncAvailable: false,
   cloudSyncBusy: false,
   cloudSyncToken: '',
+  cloudSyncError: '',
+  personalGeneration: 0,
   localDraftUpdatedAt: '',
   personalDirty: false,
   noticeCategory: 'all', noticeTiming: 'all', noticeQuery: '', noticeVisible: 24,
@@ -35,8 +39,8 @@ const state = {
 const citationMetadataRequests = new Map();
 let cloudSyncTimer = 0;
 const PRIMARY_NUCLEAR_CATEGORIES = new Set([
-  'experimental-nuclear', 'theoretical-nuclear', 'nuclear-structure', 'nuclear-decay', 'nuclear-reactions',
-  'detectors-daq', 'nuclear-general', 'high-energy-nuclear', 'nuclear-astrophysics',
+  'experimental-nuclear', 'theoretical-nuclear', 'nuclear-structure', 'nuclear-clusters', 'nuclear-decay', 'nuclear-reactions',
+  'detectors-daq', 'nuclear-general', 'high-energy-nuclear', 'nuclear-astrophysics', 'fusion', 'accelerators', 'nuclear-data-applications',
 ]);
 
 const CORE_CATEGORIES = new Set([
@@ -54,7 +58,7 @@ const HOME_FEATURED_JOURNALS = new Map([
 ]);
 
 const NUCLEAR_PRIORITY = new Map([
-  ['experimental-nuclear', 12], ['nuclear-structure', 12], ['nuclear-decay', 12],
+  ['experimental-nuclear', 12], ['nuclear-structure', 12], ['nuclear-clusters', 12], ['nuclear-decay', 12],
   ['theoretical-nuclear', 11], ['nuclear-reactions', 10], ['detectors-daq', 10],
   ['nuclear-general', 9], ['accelerators', 5], ['nuclear-data-applications', 5], ['high-energy-nuclear', 4],
   ['nuclear-astrophysics', 4], ['fusion', 3], ['particle-cross', 1], ['ai-science', 0],
@@ -199,13 +203,16 @@ function applyPublicPersonalState(payload = {}) {
   const localTime = Date.parse(local?.updatedAt || '') || 0;
   const recoverLegacy = Boolean(local?.legacy && hasPersonalContent(local.personal));
   const useLocal = Boolean(local && !local.legacy && localTime > remoteTime);
+  const recoverUnsent = Boolean(local && !local.legacy && localTime <= remoteTime
+    && JSON.stringify([local.personal, local.paperLayout, local.googleTranslations]) !== JSON.stringify([remote.personal, remote.paperLayout, remote.googleTranslations]));
 
-  if (recoverLegacy) {
+  if (recoverLegacy || recoverUnsent) {
     state.personal = mergePersonal(remote.personal, local.personal);
     state.paperLayout = local.paperLayout;
     state.googleTranslations = new Map(Object.entries({ ...remote.googleTranslations, ...local.googleTranslations }));
     state.localDraftUpdatedAt = new Date().toISOString();
     state.personalDirty = true;
+    if (recoverUnsent) state.cloudSyncError = '发现尚未提交的旧副本，已合并保留收藏与笔记。请核对内容后同步；云端和本机时间不同不会直接删除收藏。';
     persistPersonalDraft(state.localDraftUpdatedAt);
   } else if (useLocal) {
     state.personal = local.personal;
@@ -259,16 +266,18 @@ function updateCloudSyncUI(message = '') {
   else if (state.cloudSyncAvailable && !state.cloudSyncToken) button.textContent = '连接云端';
   else button.textContent = state.cloudSyncAvailable ? '立即同步' : '提交到 GitHub';
   const cloudTime = state.cloudUpdatedAt ? `云端快照：${prettyDate(state.cloudUpdatedAt)}` : '尚无云端快照';
-  $('#cloudSyncStatus').textContent = message || (state.cloudSyncAvailable
+  $('#cloudSyncStatus').textContent = message || state.cloudSyncError || (state.cloudSyncAvailable
     ? (state.personalDirty
       ? (state.cloudSyncToken ? '变更将自动保存到 EdgeOne。' : '输入一次同步密码后，本次会话内将自动保存。')
-      : `EdgeOne 云端已连接 · ${cloudTime}`)
+      : `EdgeOne 云端已连接 · ${cloudTime} · GitHub 备份快照：${state.meta?.personal_backup?.snapshot_at ? prettyDate(state.meta.personal_backup.snapshot_at) : '尚未确认'}`)
     : (state.personalDirty
-      ? '当前仍为 GitHub Pages，可继续使用 GitHub 提交同步。'
+      ? '此入口未连接动态同步：修改尚未存到 GitHub，请提交同步；勿清除未提交副本。'
       : `已从 GitHub 读取 · ${cloudTime}`));
 }
 
 function markPersonalDirty() {
+  state.personalGeneration += 1;
+  state.cloudSyncError = '';
   state.personalDirty = true;
   updateCloudSyncUI();
 }
@@ -361,8 +370,11 @@ async function loadCloudPersonalState() {
       headers: { Accept: 'application/json' },
     });
     if (response.headers.get('X-Nuclear-Frontier-Cloud') !== 'edgeone') return false;
+    if (!response.ok) {
+      state.cloudSyncError = `云端读取失败（HTTP ${response.status}），没有用空数据覆盖收藏。`;
+      return false;
+    }
     state.cloudSyncAvailable = true;
-    if (!response.ok) return true;
     const payload = await response.json();
     if (payload.updated_at || hasPersonalContent(payload.personal || {})) applyPublicPersonalState(payload);
     return true;
@@ -380,6 +392,8 @@ async function savePersonalToCloud({ interactive = false } = {}) {
     return false;
   }
   state.cloudSyncBusy = true;
+  const savingGeneration = state.personalGeneration;
+  let saved = false;
   updateCloudSyncUI('正在安全保存到 EdgeOne…');
   try {
     const response = await fetch(cloudSyncEndpoint(), {
@@ -388,7 +402,7 @@ async function savePersonalToCloud({ interactive = false } = {}) {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${state.cloudSyncToken}`,
       },
-      body: JSON.stringify(publicPersonalPayload()),
+      body: JSON.stringify({ ...publicPersonalPayload(), base_updated_at: state.cloudUpdatedAt }),
     });
     const result = await response.json().catch(() => ({}));
     if (response.status === 401) {
@@ -398,17 +412,23 @@ async function savePersonalToCloud({ interactive = false } = {}) {
     }
     if (!response.ok) throw new Error(result.error || `HTTP ${response.status}`);
     state.cloudUpdatedAt = result.state?.updated_at || new Date().toISOString();
-    state.personalDirty = false;
-    try { localStorage.removeItem(PERSONAL_DRAFT_KEY); } catch { /* 云端已保存，本地清理失败不影响使用 */ }
+    state.personalDirty = state.personalGeneration !== savingGeneration;
+    state.cloudSyncError = '';
+    saved = true;
+    if (!state.personalDirty) {
+      try { localStorage.removeItem(PERSONAL_DRAFT_KEY); } catch { /* 云端已保存，本地清理失败不影响使用 */ }
+    } else persistPersonalDraft();
     hideCloudSyncAuth();
-    updateCloudSyncUI('已自动保存到 EdgeOne 云端');
+    updateCloudSyncUI(state.personalDirty ? '上一批已存云端，正在保存后续修改…' : '已保存到 EdgeOne 云端（不等于已备份 GitHub）');
     return true;
   } catch (error) {
     console.error(error);
-    updateCloudSyncUI(`云端保存失败：${error.message}；本地安全副本仍在。`);
+    state.cloudSyncError = `云端保存失败：${error.message}；未提交副本仍保留。`;
+    updateCloudSyncUI();
     return false;
   } finally {
     state.cloudSyncBusy = false;
+    if (saved && state.personalDirty) scheduleCloudSync();
     updateCloudSyncUI();
   }
 }
@@ -679,7 +699,7 @@ function inPaperScope(item, focusIds, latest) {
 }
 
 function filteredItems() {
-  const query = state.query.trim().toLowerCase();
+  const query = scientificText(state.query.trim()).replace(/\b([A-Z][a-z]?)-(\d{1,3})\b/g, '$2$1').toLowerCase();
   const latest = latestPaperDay();
   const focusIds = state.scope === 'daily-focus' ? dailyFocusIds() : new Set();
   const ignored = new Set(state.personal.ignoredItems);
@@ -709,8 +729,8 @@ function filteredItems() {
         ...(item.categories || []).map(id => state.categoryMap.get(id)?.name || id),
       ],
     };
-    const haystack = (fields[state.searchField] || fields.all).join(' ').toLowerCase();
-    return query.split(/\s+/).every(term => haystack.includes(term));
+    const haystack = (fields[state.searchField] || fields.all).join(' ');
+    return query.split(/\s+/).every(term => searchText(haystack).includes(term));
   });
 
   values.sort((a, b) => {
@@ -837,7 +857,7 @@ async function searchAllHistory(keyword) {
   renderCategories();
   renderGlobalKeywordPanel();
   renderCards();
-  const terms = normalized.toLocaleLowerCase('zh-CN').split(/\s+/).filter(Boolean);
+  const terms = scientificText(normalized).replace(/\b([A-Z][a-z]?)-(\d{1,3})\b/g, '$2$1').toLocaleLowerCase('zh-CN').split(/\s+/).filter(Boolean);
   const years = [...(state.historyManifest?.years || [])].sort((a, b) => b.year - a.year);
   const matched = new Map();
   try {
@@ -1030,7 +1050,7 @@ function usingTranslation(item) {
 
 function localizedTitle(item) {
   const translation = translationFor(item);
-  return usingTranslation(item) && translation.title_zh ? applyTranslationGlossary(translation.title_zh) : item.title;
+  return scientificText(usingTranslation(item) && translation.title_zh ? applyTranslationGlossary(translation.title_zh) : item.title);
 }
 
 function localizedAbstract(item) {
@@ -1044,7 +1064,7 @@ function localizedDescription(item) {
   const value = localizedAbstract(item);
   if (value) return value;
   if (item.type === 'news') {
-    return `${item.source || '官方来源'}发布的科研新闻，主题为“${item.title}”。当前官方订阅源未附简介，可从原文查看完整报道。`;
+    return `${item.source || '官方来源'}发布的科研新闻，主题为“${item.title}”。${item.content_status === 'source_blocked' || item.content_status === 'source_unavailable' ? '官方正文暂时无法读取，将在后续更新中重试。' : '官方订阅源未附简介，请查看原文。'}`;
   }
   return '';
 }
@@ -1370,6 +1390,7 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
   const primary = item.categories?.[0] || 'frontiers';
   card.dataset.id = item.id;
   card.dataset.primary = primary;
+  if (item.type === 'paper') card.classList.add('has-ignore-control');
   card.classList.toggle('selected-for-assistant', state.selectedPaperId === item.id);
   if ((item.importance || 0) >= 65) card.classList.add('featured');
 
@@ -1395,7 +1416,8 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
   if ((item.importance || 0) >= 60) {
     const score = document.createElement('span');
     score.className = 'importance-badge';
-    score.textContent = `重点 ${item.importance}`;
+    score.textContent = `推荐 ${item.importance}`;
+    score.title = '按来源、方向和关键词排序，不代表论文科学质量';
     meta.append(score);
   }
   if ((item.first_seen || '').slice(0, 10) === state.meta?.status?.last_success?.slice(0, 10)) {
@@ -1418,21 +1440,21 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
   titleLink.rel = 'noreferrer';
   const translation = translationFor(item);
   const translated = usingTranslation(item);
-  titleLink.textContent = translated ? applyTranslationGlossary(translation.title_zh) : item.title;
+  titleLink.textContent = localizedTitle(item);
   heading.append(titleLink);
 
   const authors = $('.authors', card);
-  authors.textContent = item.authors?.length ? item.authors.join(', ') : item.source;
+  authors.textContent = scientificText(item.authors?.length ? item.authors.join(', ') : item.source);
   if (!item.authors?.length && item.type !== 'paper') authors.hidden = true;
 
   const abstractValue = item.abstract || item.summary || '';
   const hasTranslatedAbstract = Boolean(translated && translation?.abstract_zh);
   const abstract = $('.abstract', card);
-  abstract.textContent = hasTranslatedAbstract
+  abstract.textContent = scientificText(hasTranslatedAbstract
     ? applyTranslationGlossary(translation.abstract_zh)
-    : (localizedDescription(item) || missingAbstractMessage(item));
+    : (localizedDescription(item) || missingAbstractMessage(item)));
   $('.abstract-label', card).textContent = (abstractValue || item.type === 'news')
-    ? (hasTranslatedAbstract ? '完整摘要（Codex 中文译文）' : (item.type === 'paper' ? '完整摘要（原文）' : '完整介绍（原始来源）'))
+    ? (hasTranslatedAbstract ? (item.type === 'paper' ? '完整摘要（中文译文）' : '来源介绍（中文译文）') : (item.type === 'paper' ? '完整摘要（原文）' : '完整介绍（原始来源）'))
     : (item.type === 'paper' ? '摘要状态' : '介绍状态');
 
   const tags = $('.tag-row', card);
@@ -1558,15 +1580,6 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
     actions.append(info);
   }
   if (item.type === 'paper') {
-    const ignore = document.createElement('button');
-    ignore.type = 'button';
-    ignore.className = `ignore-button${isIgnored(item.id) ? ' active' : ''}`;
-    ignore.textContent = isIgnored(item.id) ? '恢复论文' : '忽略';
-    ignore.title = isIgnored(item.id) ? '重新显示这篇论文' : '以后不再显示这篇论文';
-    ignore.addEventListener('click', () => toggleIgnored(item));
-    actions.append(ignore);
-  }
-  if (item.type === 'paper') {
     const related = document.createElement('button');
     related.type = 'button';
     related.className = 'related-button';
@@ -1584,6 +1597,7 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
   if (zoteroPanel) $('.paper-copy', card).append(zoteroPanel);
 
   const favorite = $('.favorite-button', card);
+  const ignore = $('.card-ignore-button', card);
   if (!['paper', 'news'].includes(item.type)) return card;
   card.tabIndex = 0;
   card.setAttribute('aria-label', `${item.type === 'paper' ? '论文' : '新闻'}：${item.title}。按回车在右侧查看详细信息`);
@@ -1600,6 +1614,14 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
   favorite.classList.toggle('active', isFavorite(item.id));
   favorite.setAttribute('aria-pressed', String(isFavorite(item.id)));
   favorite.addEventListener('click', () => toggleFavorite(item, favorite));
+  if (item.type === 'paper') {
+    ignore.hidden = false;
+    ignore.textContent = isIgnored(item.id) ? '恢复' : '忽略';
+    ignore.classList.toggle('active', isIgnored(item.id));
+    ignore.setAttribute('aria-label', isIgnored(item.id) ? `恢复显示论文《${item.title}》` : `忽略论文《${item.title}》`);
+    ignore.title = isIgnored(item.id) ? '重新显示这篇论文' : '以后不再显示这篇论文';
+    ignore.addEventListener('click', () => toggleIgnored(item));
+  }
   return card;
 }
 
@@ -1669,7 +1691,7 @@ function personalCollectionCard(item, section) {
 }
 
 function renderMyCollection() {
-  const query = state.query.trim().toLowerCase();
+  const query = scientificText(state.query.trim()).replace(/\b([A-Z][a-z]?)-(\d{1,3})\b/g, '$2$1').toLowerCase();
   const items = myCollectionItems()
     .filter(item => state.mySection !== 'references' || state.referenceGroup === 'all' || (item.group || 'other') === state.referenceGroup)
     .filter(item => !query || [item.title, item.description, referenceGroupInfo(item.group).label, ...(item.keywords || [])].join(' ').toLowerCase().includes(query));
@@ -2549,17 +2571,11 @@ function matchedTerms(value, vocabulary) {
 }
 
 function extractNuclides(item) {
-  const value = [item.title, item.abstract, ...(item.tags || [])].join(' ');
-  const results = [];
-  const patterns = [/\^\{(\d{1,3})\}\$?\s*([A-Z][a-z]?)/g, /\b(\d{1,3})([A-Z][a-z])\b/g];
-  patterns.forEach(pattern => {
-    for (const match of value.matchAll(pattern)) results.push(`${match[1]}${match[2]}`);
-  });
-  return [...new Set(results)].slice(0, 8);
+  return nuclidesIn([item.title, item.abstract, ...(item.tags || [])].join(' ')).slice(0, 16);
 }
 
 function extractPaperFacts(item) {
-  const value = [item.title, item.abstract, ...(item.tags || [])].join(' ');
+  const value = scientificText([item.title, item.abstract, ...(item.tags || [])].join(' '));
   const reactions = matchedTerms(value, [
     { label: '电子俘获', patterns: [/electron capture/] },
     { label: 'β 衰变', patterns: [/beta decay/, /\\beta\s*decay/] },
@@ -2590,8 +2606,16 @@ function extractPaperFacts(item) {
     { label: 'JLab', patterns: [/\bjlab\b/, /jefferson lab/] }, { label: 'ITER', patterns: [/\biter\b/] },
   ]);
   const observables = matchedTerms(value, [
-    { label: '半衰期', patterns: [/half-life/] }, { label: '分支比', patterns: [/branching ratio/] },
-    { label: '反应截面', patterns: [/cross section/] }, { label: '能谱/谱函数', patterns: [/energy spectrum/, /spectral function/] },
+    { label: 'B(E2) 跃迁强度', patterns: [/b\s*\(\s*e\s*2\s*\)/, /electric quadrupole transition/] },
+    { label: 'B(E1) 跃迁强度', patterns: [/b\s*\(\s*e\s*1\s*\)/] },
+    { label: 'B(M1) 跃迁强度', patterns: [/b\s*\(\s*m\s*1\s*\)/] },
+    { label: '电荷半径', patterns: [/charge radi/, /电荷半径/] },
+    { label: '中子皮厚度', patterns: [/neutron.skin/, /中子皮/] },
+    { label: '分离能', patterns: [/separation energ/, /分离能/] },
+    { label: '谱因子', patterns: [/spectroscopic factor/, /谱因子/] },
+    { label: '团簇结构', patterns: [/alpha.cluster/, /hoyle state/, /nuclear cluster/, /团簇/] },
+    { label: '半衰期', patterns: [/half[ -]life/, /半衰期/] }, { label: '分支比', patterns: [/branching ratio/] },
+    { label: '反应截面', patterns: [/cross[ -]section/, /截面/] }, { label: '能谱/谱函数', patterns: [/energy spectrum/, /spectral function/] },
     { label: '角分布', patterns: [/angular distribution/] }, { label: '核矩阵元', patterns: [/nuclear matrix element/] },
     { label: '动量分布', patterns: [/momentum distribution/] }, { label: '质量与半径', patterns: [/mass.radius/, /mass--radius/] },
     { label: '流系数', patterns: [/flow coefficient/] }, { label: '能量分辨率', patterns: [/energy resolution/] },
@@ -2599,7 +2623,7 @@ function extractPaperFacts(item) {
   const methodLabels = { experimental: '实验测量', theoretical: '理论计算', review: '综述' };
   const models = matchedTerms(value, [
     { label: 'HFB', patterns: [/hartree-fock-bogoliubov/, /\bhfb\b/] }, { label: 'DFT', patterns: [/density functional theory/, /\bdft\b/] },
-    { label: '壳模型', patterns: [/shell model/] }, { label: 'DWIA', patterns: [/\bdwia\b/] },
+    { label: '壳模型', patterns: [/shell[ -]model/, /壳模型/] }, { label: 'DWIA', patterns: [/\bdwia\b/] },
     { label: 'Glauber 模型', patterns: [/glauber/] }, { label: '输运模型', patterns: [/transport model/] },
     { label: '机器学习', patterns: [/machine learning/, /neural network/, /neural operator/] },
   ]);
@@ -2610,8 +2634,8 @@ function extractPaperFacts(item) {
 }
 
 function paperFactRow(label, values) {
-  const items = values?.length ? values : ['未从摘要识别'];
-  return `<div class="paper-fact-row"><dt>${text(label)}</dt><dd>${items.map(value => `<span${value === '未从摘要识别' ? ' class="missing"' : ''}>${text(value)}</span>`).join('')}</dd></div>`;
+  const items = values?.length ? values : ['未在题目或摘要中识别'];
+  return `<div class="paper-fact-row"><dt>${text(label)}</dt><dd>${items.map(value => `<span${value === '未在题目或摘要中识别' ? ' class="missing"' : ''}>${text(value)}</span>`).join('')}</dd></div>`;
 }
 
 function renderAssistantNewsDetail(item) {
@@ -2712,7 +2736,7 @@ function renderAssistantPaperDetail(item) {
       </dl>
     </section>
     <section class="assistant-section paper-detail-section">
-      <div class="assistant-section-head"><span>为什么值得看</span><small>可解释评分</small></div>
+      <div class="assistant-section-head"><span>推荐依据</span><small>排序参考，不是科研质量评价</small></div>
       <ul class="paper-reason-list">${scoreReasons.length ? scoreReasons.map(reason => `<li>${text(reason)}</li>`).join('') : '<li>当前暂无评分理由。</li>'}</ul>
     </section>
     <section class="assistant-section paper-detail-section">
@@ -2958,17 +2982,20 @@ function dailyNoticeCard(item) {
   article.dataset.category = category.id;
   article.classList.toggle('selected', state.selectedNoticeId === item.id);
   const original = noticeOfficialText(item);
+  const translated = translationFor(item);
+  const translatedSummary = translated?.abstract_zh ? applyTranslationGlossary(translated.abstract_zh) : '';
   const expanded = state.expandedNoticeIds.has(item.id);
   const excerpt = original
     ? (expanded ? original : truncate(original, 360))
     : '官方列表页暂未提供介绍，请打开原文查看申请条件、时间和附件。';
   article.innerHTML = `
     <div class="daily-notice-card-top">
-      <span class="notice-kind">${text((NOTICE_GROUPS.find(value => value.id === noticeGroup(item)) || NOTICE_GROUPS[0]).icon)} ${text((NOTICE_GROUPS.find(value => value.id === noticeGroup(item)) || NOTICE_GROUPS[0]).label)} · ${text(category.label)}</span>
+      <span class="notice-kind">${text((NOTICE_GROUPS.find(value => value.id === noticeGroup(item)) || NOTICE_GROUPS[0]).icon)} ${text((NOTICE_GROUPS.find(value => value.id === noticeGroup(item)) || NOTICE_GROUPS[0]).label)} · ${text(category.label)}${item.applicability === 'general-call' ? ' · 通用申请（请核对资格）' : ''}${item.event_kind === 'regular-meeting' ? ' · 学术例会' : item.event_kind === 'report' ? ' · 会后报道' : ''}</span>
       <div>${isFresh ? '<b class="notice-fresh">今日发现</b>' : ''}${deadlineLabel ? `<b class="notice-deadline ${text(deadline.kind)}">${text(deadlineLabel)}</b>` : ''}<button type="button" class="notice-favorite-button" aria-label="收藏通知">${isFavorite(item.id) ? '★' : '☆'}</button></div>
     </div>
     ${noticeLabelBadges(item) ? `<div class="notice-card-organizations">${noticeLabelBadges(item)}</div>` : ''}
     <h3><button type="button" class="notice-title-button">${text(localizedTitle(item))}</button></h3>
+    ${translatedSummary ? `<div class="notice-translated-preview"><b>中文介绍</b><p>${text(translatedSummary)}</p></div>` : ''}
     <div class="notice-original-preview"><b>官方原文信息</b><p>${text(excerpt)}</p>${original.length > 360 ? `<button type="button" class="notice-expand">${expanded ? '收起原文' : '展开全部信息'}</button>` : ''}</div>
     <footer>
       <div><b>${text(item.source || '官方来源')}</b><span>${text(item.scope || '')}</span><time>${text(prettyDate(item.published))}</time>${noticeEventDate(item) ? `<strong>${text(noticeEventDate(item))}</strong>` : ''}</div>
@@ -3223,9 +3250,10 @@ function renderBriefing() {
   const preprintCount = items.filter(item => item.source_type === 'preprint').length;
   const translationGroups = [
     ['论文', state.papers], ['新闻', state.news], ['通知', state.notices],
-  ].map(([label, records]) => ({ label, total: records.length, translated: records.filter(item => Boolean(state.translations[item.id])).length }));
+  ].map(([label, records]) => ({ label, ...translationCoverage(records, state.translations) }));
   const translationTotal = translationGroups.reduce((sum, group) => sum + group.total, 0);
-  const translatedCount = translationGroups.reduce((sum, group) => sum + group.translated, 0);
+  const translatedCount = translationGroups.reduce((sum, group) => sum + group.complete, 0);
+  const totals = translationCoverage([...state.papers, ...state.news, ...state.notices], state.translations);
   const translationPercent = translationTotal ? translatedCount / translationTotal * 100 : 0;
   const translationPercentLabel = translationPercent >= 100 ? '100%' : `${translationPercent.toFixed(1)}%`;
   $('#dailyPaperCount').textContent = allItems.length.toLocaleString('zh-CN');
@@ -3233,13 +3261,15 @@ function renderBriefing() {
   $('#dailyJournalCount').textContent = journalCount.toLocaleString('zh-CN');
   $('#dailyPreprintCount').textContent = preprintCount.toLocaleString('zh-CN');
   $('#briefingSummary').textContent = items.length
-    ? `今日共收录 ${allItems.length} 篇论文，其中 ${items.length} 篇属于核物理相关分类：期刊论文 ${journalCount} 篇、预印本 ${preprintCount} 篇。重点文章仅从 PRL、Nature、Science、Nature Physics 与 Nature Communications 中筛选。`
+    ? `最新论文发布日期 ${latest}：${allItems.length} 篇，其中涉核 ${items.length} 篇（期刊 ${journalCount}、预印本 ${preprintCount}）。最近一次更新实际新入库 ${state.meta.status.new_counts?.papers ?? '—'} 篇。重点推荐仅限五种期刊，论文库不受此限制。`
     : '尚无可用的当日元数据。';
   $('#translationProgressPercent').textContent = translationPercentLabel;
-  $('#translationProgressCount').textContent = `${translatedCount.toLocaleString('zh-CN')} / ${translationTotal.toLocaleString('zh-CN')} 条已有中文译文`;
+  $('#translationProgressCount').textContent = `${translatedCount.toLocaleString('zh-CN')} / ${translationTotal.toLocaleString('zh-CN')} 条已译完可获取内容`;
   $('#translationProgressBar').style.width = `${Math.min(100, translationPercent).toFixed(2)}%`;
   $('#translationProgressTrack').setAttribute('aria-valuenow', translationPercent.toFixed(1));
-  $('#translationProgressStats').innerHTML = `${translationGroups.map(group => `<span>${group.label} <b>${group.translated.toLocaleString('zh-CN')}</b> / ${group.total.toLocaleString('zh-CN')}</span>`).join('')}<small>尚待翻译 ${(translationTotal - translatedCount).toLocaleString('zh-CN')} 条</small>`;
+  const serviceLabel = { ready: '翻译服务最近执行成功', failed: '翻译服务需重试', configured: '翻译服务已配置，待执行', not_configured: '自动翻译未连接，仅维护待译队列' }[state.meta.translation_service?.service_status] || '自动翻译服务状态未确认';
+  $('#translationProgressStats').innerHTML = `${translationGroups.map(group => `<span>${group.label} <b>${group.complete.toLocaleString('zh-CN')}</b> / ${group.total.toLocaleString('zh-CN')}</span>`).join('')}<small>原生中文 ${totals.native} · 题目 ${totals.titleDone}/${totals.titleTotal} · 摘要/介绍 ${totals.bodyDone}/${totals.bodyTotal} · 部分已译 ${totals.partial} · 原文缺正文 ${totals.missingBody}</small><small>${text(serviceLabel)}。空记录不计完成；缺少原文的摘要不补写。</small>`;
+
 
   const renderBars = (host, values, labelFor) => {
     const max = Math.max(...values.map(([, count]) => count), 1);
@@ -3264,16 +3294,17 @@ function renderMetrics() {
   $('#newsCount').textContent = state.news.length.toLocaleString('zh-CN');
   const results = status.source_results || [];
   const ok = results.filter(item => item.ok).length;
+  const empty = results.filter(item => item.ok && !item.count).length;
   $('#sourceHealth').textContent = results.length ? `${ok}/${results.length}` : '—';
-  $('#sourceHealthHint').textContent = results.length && ok === results.length ? '全部正常' : `${results.length - ok} 个源待重试`;
+  $('#sourceHealthHint').textContent = `${results.length - ok} 个失败 · ${empty} 个本次零条`;
   $('#lastUpdated').textContent = relativeUpdate(status.last_success);
-  $('#automationSummary').textContent = results.length ? `本次 ${ok} 个数据源成功，${results.length - ok} 个将在下次重试。` : '尚未完成首次自动更新。';
+  $('#automationSummary').textContent = results.length ? `计划北京时间 06:00 更新，最近完成 ${state.meta.status.last_success ? new Date(state.meta.status.last_success).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false }) : '未知'}。${results.length - ok} 个失败，${empty} 个零条待核查；计划时间不保证准点。` : '尚未完成首次自动更新。';
 }
 
 function showStatus() {
   const results = state.meta.status.source_results || [];
   $('#statusContent').innerHTML = results.length ? results.map(item => `
-    <div class="status-row"><span>${text(item.name)}<small> · ${text(item.kind)} · ${item.count} 条${item.duration_ms ? ` · ${(item.duration_ms / 1000).toFixed(1)}s` : ''}</small></span><span class="${item.ok ? 'ok' : 'fail'}">${item.ok ? '正常' : '待重试'}</span></div>
+    <div class="status-row"><span>${text(item.name)}<small> · ${text(item.kind)} · ${item.count} 条${item.duration_ms ? ` · ${(item.duration_ms / 1000).toFixed(1)}s` : ''}</small></span><span class="${item.ok ? 'ok' : 'fail'}">${item.ok ? (item.count ? '已采集' : '本次零条，待核查') : '待重试'}${item.message ? `<small>${text(item.message)}</small>` : ''}</span></div>
   `).join('') : '<p>尚无更新记录。</p>';
   $('#statusDialog').showModal();
 }

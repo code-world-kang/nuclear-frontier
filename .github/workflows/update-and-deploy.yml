@@ -45,6 +45,20 @@ jobs:
         if: github.event_name != 'push'
         run: python scripts/backfill_history.py --next 6 --max-workers 4
 
+      - name: 更新待译队列并调用已配置的翻译服务
+        env:
+          TRANSLATION_API_KEY: ${{ secrets.TRANSLATION_API_KEY }}
+          TRANSLATION_API_URL: ${{ vars.TRANSLATION_API_URL }}
+          TRANSLATION_MODEL: ${{ vars.TRANSLATION_MODEL }}
+        run: python scripts/translate_content.py --limit 40
+
+      - name: 备份已配置国内主站的公开个人快照
+        if: github.event_name != 'push'
+        continue-on-error: true
+        env:
+          PERSONAL_STATE_URL: ${{ vars.PERSONAL_STATE_URL }}
+        run: python scripts/backup_cloud_personal.py
+
       - name: 构建站点数据
         run: python scripts/build_site.py
 
@@ -52,6 +66,7 @@ jobs:
         run: |
           python -m unittest discover -s tests -v
           node --check site/app.js
+          node --test tests/*.test.mjs
 
       - name: 保存当日数据快照
         run: |
@@ -64,7 +79,7 @@ jobs:
               git fetch origin main
               git rebase origin/main
               python scripts/build_site.py
-              git add site/data site/wechat-digest wechat-official-account
+              git add data/translation-queue.json site/data site/wechat-digest wechat-official-account
               if ! git diff --cached --quiet; then
                 git commit --amend --no-edit
               fi

@@ -70,6 +70,25 @@ NOTICE_PHYSICS_TERMS = (
 )
 NOTICE_TRUSTED_PHYSICS_CATEGORIES = frozenset({"beam-domestic", "beam-international", "meetings-nuclear"})
 
+
+def contains_topic(text: str, term: str) -> bool:
+    """英文按词匹配，避免 RNA 错误命中 international；中文保留词组匹配。"""
+    if re.search(r"[a-z]", term, re.I):
+        return re.search(r"(?<![a-z0-9])" + re.escape(term.lower()) + r"(?![a-z0-9])", text.lower()) is not None
+    return term in text
+
+
+def notice_is_test(title: str) -> bool:
+    return bool(re.search(r"(?:^test\d*$|[-_]test\d*\b|\btest\d+\b|\btest\s+(?:event|page|conference)\b|测试页面|测试会议|会议测试|测试用)", title, re.I))
+
+
+def notice_event_kind(title: str) -> str:
+    if re.search(r"\b(?:weekly|biweekly|regular|group meeting|beam dynamics meeting)\b|组会|例会|周会", title, re.I):
+        return "regular-meeting"
+    if re.search(r"圆满|成功召开|顺利召开|会议纪要|会议回顾", title):
+        return "report"
+    return "conference"
+
 NOTICE_ORGANIZATION_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("中国核学会", ("中国核学会", "核电子学与核探测技术分会", "全国核电子学与核探测技术学术年会", "三核论坛")),
     ("中国核物理学会", ("中国核物理学会",)),
@@ -79,6 +98,7 @@ NOTICE_ORGANIZATION_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
 NOTICE_MEETING_SERIES_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("气体探测器", ("气体探测器", "gaseous detector", "gas detector", "mpgd", "micromegas")),
     ("RIBLL 合作组", ("ribll",)),
+    ("IWND", ("iwnd", "nuclear dynamics in heavy-ion reactions")),
     ("HIAF 科学", ("hiaf",)),
     ("核物理 × AI", ("核物理以及核数据中的人工智能", "核物理及核数据中的机器学习", "ai agents for nuclear physics", "ai for nuclear", "ai 智能体赋能核物理")),
     ("全国核物理大会", ("全国核物理大会", "全国中高能核物理大会")),
@@ -101,22 +121,28 @@ def notice_is_physics_relevant(
     detail_text = unicodedata.normalize("NFKC", " ".join([title or "", summary or "", scope or ""])).lower()
     # 标题明确属于核物理/学会系列时，不因承办单位或议题列表中偶然出现
     # “医学/化学”而丢弃整场会议；标题本身属于非物理方向仍严格排除。
-    if any(term in title_text for term in NOTICE_NON_PHYSICS_TERMS):
+    if notice_is_test(title) or any(contains_topic(title_text, term) for term in NOTICE_NON_PHYSICS_TERMS):
         return False
+    title_is_physics = any(contains_topic(title_text, term) for term in NOTICE_PHYSICS_TERMS)
+    if title_is_physics:
+        return True
+    # 来自已配置官方基金来源的通用申请不能因标题没有“物理”而被删掉。
+    if notice_category.startswith("funding-") or notice_category == "talent":
+        general_calls = ("科学基金", "自然科学基金", "博士后", "国家公派", "留学", "申报", "申请", "指南", "受理", "fellowship", "scholarship", "grant", "funding", "call for proposals")
+        return any(contains_topic(title_text, term) for term in general_calls)
     if notice_category in NOTICE_TRUSTED_PHYSICS_CATEGORIES:
-        title_is_physics = any(term in title_text for term in NOTICE_PHYSICS_TERMS)
         title_is_nuclear_society = any(
             marker in title_text
             for marker in ("中国核学会", "中国核物理学会", "三核论坛", "ribll", "hiaf")
         )
         if title_is_physics or title_is_nuclear_society:
             return True
-        if any(term in detail_text for term in NOTICE_NON_PHYSICS_TERMS):
+        if any(contains_topic(detail_text, term) for term in NOTICE_NON_PHYSICS_TERMS):
             return False
         return True
-    if any(term in detail_text for term in NOTICE_NON_PHYSICS_TERMS):
+    if any(contains_topic(detail_text, term) for term in NOTICE_NON_PHYSICS_TERMS):
         return False
-    return any(term in title_text for term in NOTICE_PHYSICS_TERMS)
+    return title_is_physics
 
 
 def notice_labels(item: dict[str, Any]) -> tuple[list[str], list[str]]:
@@ -351,12 +377,15 @@ class AnchorParser(HTMLParser):
         super().__init__()
         self.current_href = ""
         self.current_text: list[str] = []
+        self.current_title = ""
+        self.link_texts: dict[str, str] = {}
         self.links: list[tuple[str, str]] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         if tag.lower() != "a":
             return
         self.current_href = dict(attrs).get("href") or ""
+        self.current_title = clean_text(dict(attrs).get("title") or "")
         self.current_text = []
 
     def handle_data(self, data: str) -> None:
@@ -365,7 +394,9 @@ class AnchorParser(HTMLParser):
 
     def handle_endtag(self, tag: str) -> None:
         if tag.lower() == "a" and self.current_href:
-            text = clean_text(" ".join(self.current_text))
+            full_text = clean_text(" ".join(self.current_text))
+            text = self.current_title or full_text
+            self.link_texts[self.current_href] = full_text
             if text:
                 self.links.append((self.current_href, text))
             self.current_href = ""
@@ -421,6 +452,88 @@ class PageMetadataParser(HTMLParser):
     @property
     def visible_text(self) -> str:
         return clean_text(" ".join(self.parts))
+
+
+BLOCKED_CONTENT_MARKERS = (
+    "client challenge", "verify you are human", "checking your browser", "access denied",
+    "enable javascript and cookies", "couldn't load this page", "couldn’t load this page",
+    "please enable javascript", "just a moment...", "您的访问过于频繁", "访问验证",
+)
+
+
+def content_is_blocked(value: str) -> bool:
+    return any(marker in str(value or "").lower() for marker in BLOCKED_CONTENT_MARKERS)
+
+
+class ArticleBodyParser(HTMLParser):
+    """优先选择官方正文容器；没有正文结构时不把整个导航页当正文。"""
+    def __init__(self) -> None:
+        super().__init__()
+        self.stack: list[tuple[str, bool, int]] = []
+        self.candidates: dict[int, list[str]] = {}
+        self.weights: dict[int, int] = {}
+        self.serial = 0
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        values = dict(attrs)
+        marker = " ".join([values.get("id") or "", values.get("class") or ""]).lower()
+        ignored = tag in {"script", "style", "nav", "header", "footer", "aside", "noscript", "select", "svg"}
+        ignored = ignored or bool(re.search(r"(?:^|[ _-])(?:breadcrumb|share|navigation|copyright)(?:$|[ _-])", marker))
+        weight = 3 if any(s in marker for s in ("trs_editor", "article-body", "article-content", "v_news_content", "rich_media_content")) or marker in {"zoom", "contenttext"} else 2 if tag == "article" else 1 if tag == "main" else 0
+        ident = 0
+        if weight:
+            self.serial += 1
+            ident = self.serial
+            self.candidates[ident] = []
+            self.weights[ident] = weight
+        if tag not in {"meta", "link", "br", "img", "hr", "input", "source", "wbr", "area", "embed"}:
+            self.stack.append((tag, ignored, ident))
+
+    def handle_endtag(self, tag: str) -> None:
+        for index in range(len(self.stack) - 1, -1, -1):
+            if self.stack[index][0] == tag:
+                del self.stack[index:]
+                break
+
+    def handle_data(self, data: str) -> None:
+        if any(ignore for _, ignore, _ in self.stack):
+            return
+        for _, _, ident in self.stack:
+            if ident:
+                self.candidates[ident].append(data)
+
+    @property
+    def body(self) -> str:
+        candidates = [(self.weights[k], clean_text(" ".join(v))) for k, v in self.candidates.items()]
+        candidates = [pair for pair in candidates if len(pair[1]) >= 45 and not content_is_blocked(pair[1])]
+        return max(candidates, key=lambda pair: (pair[0], len(pair[1])), default=(0, ""))[1]
+
+
+def clean_record_content(item: dict[str, Any]) -> bool:
+    """清除拦截页污染，保留标题、来源及记录 ID，方便稍后重试。"""
+    invalid = False
+    for field in ("summary", "content", "abstract"):
+        if content_is_blocked(item.get(field, "")):
+            item[field] = ""
+            invalid = True
+    if invalid:
+        item["content_status"] = "source_blocked"
+    elif item.get("content") or item.get("summary"):
+        item["content_status"] = "available"
+    else:
+        item.setdefault("content_status", "missing")
+    return invalid
+
+
+def strip_notice_chrome(value: str) -> str:
+    """仅在明确的网页控件前缀存在时去掉导航，不猜测或改写通知事实。"""
+    value = clean_text(value)
+    prefix = value[:1200]
+    if "当前位置" in prefix and "字号" in prefix:
+        marker = re.search(r"打印(?:本页)?", prefix)
+        if marker and len(value[marker.end():]) > 50:
+            value = value[marker.end():].strip()
+    return value
 
 
 PUBLISHER_ABSTRACT_META_KEYS = (
@@ -612,6 +725,10 @@ def notice_detail_metadata(url: str, title: str = "") -> dict[str, Any]:
     raw = fetch(url, accept="text/html", attempts=1).decode("utf-8", errors="replace")
     parser = PageMetadataParser()
     parser.feed(raw)
+    if content_is_blocked(parser.visible_text[:1800]):
+        raise ValueError("官方页面返回访问验证，未采纳为正文")
+    body_parser = ArticleBodyParser()
+    body_parser.feed(raw)
     visible = parser.visible_text[:30000]
     description = ""
     content = ""
@@ -639,7 +756,10 @@ def notice_detail_metadata(url: str, title: str = "") -> dict[str, Any]:
         sentences = [clean_text(part) for part in re.split(r"[。！？!?]", visible)]
         description = next((part for part in sentences if 45 <= len(part) <= 420), "")
         content = description
-    deadline = extract_deadline(visible)
+    if body_parser.body:
+        content = body_parser.body
+        description = content
+    deadline = extract_deadline(content)
     if deadline and not any(term in description.lower() for term in ("截止", "申请时间", "deadline", "submitted")):
         context = re.search(r"[^.。]{0,260}(?:截止|申请时间|deadline|submitted)[^.。]{0,520}[.。]?", visible, re.I)
         if context:
@@ -657,7 +777,13 @@ def news_detail_metadata(url: str, title: str = "") -> dict[str, str]:
     raw = fetch(url, accept="text/html", attempts=1).decode("utf-8", errors="replace")
     parser = PageMetadataParser()
     parser.feed(raw)
+    if content_is_blocked(parser.visible_text[:1800]) or content_is_blocked(parser.description):
+        raise ValueError("新闻来源返回访问验证，未采纳为介绍")
+    body_parser = ArticleBodyParser()
+    body_parser.feed(raw)
     summary = clean_text(parser.description)
+    if len(summary) < 45 and body_parser.body:
+        summary = body_parser.body
     if len(summary) < 45:
         visible = parser.visible_text[:16000]
         if title:
@@ -671,12 +797,14 @@ def news_detail_metadata(url: str, title: str = "") -> dict[str, str]:
 
 def notice_summary_is_low_quality(value: str) -> bool:
     lowered = clean_text(value).lower()
-    return len(lowered) < 45 or any(term in lowered for term in (
+    return len(lowered) < 45 or content_is_blocked(lowered) or any(term in lowered for term in (
         "indico style", "choose timezone", "africa/abidjan", "skip to main content",
     ))
 
 
 def enrich_missing_news_details(items: list[dict[str, Any]], limit: int = 30) -> dict[str, int]:
+    for item in items:
+        clean_record_content(item)
     candidates = [item for item in items if len(clean_text(item.get("summary", ""))) < 45][:max(0, limit)]
     success = 0
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
@@ -685,10 +813,12 @@ def enrich_missing_news_details(items: list[dict[str, Any]], limit: int = 30) ->
             try:
                 details = future.result()
             except Exception:  # noqa: BLE001 - 单个新闻详情失败不影响日更
+                futures[future]["content_status"] = "source_unavailable"
                 continue
             summary = clean_text(details.get("summary", ""))
-            if summary:
+            if summary and not content_is_blocked(summary):
                 futures[future]["summary"] = summary
+                futures[future]["content_status"] = "available"
                 success += 1
     return {"attempted": len(candidates), "updated": success}
 
@@ -809,6 +939,7 @@ class Classifier:
         nuclear_context = self.match_count(lowered, [
             "nuclear physics", "nuclear structure", "nuclear reaction", "nuclear decay", "nuclear matter",
             "nucleus", "nuclei", "nuclide", "isotope", "radioactive", "nucleon", "neutron-rich", "proton-rich",
+            "核物理", "原子核", "核结构", "核反应", "核衰变", "团簇结构", "集团结构", "晕核", "同位素",
         ]) > 0
 
         if category_id == "nuclear-decay":
@@ -836,6 +967,10 @@ class Classifier:
             if any(term in lowered for term in ("galactic nucleus", "active galactic nucleus", "nuclear star cluster")) and not core_source:
                 return False
             return core_source or nuclear_context
+        if category_id == "nuclear-clusters":
+            return core_source or nuclear_context or any(self.contains_term(lowered, marker) for marker in (
+                "alpha cluster", "alpha-cluster", "Hoyle state", "THSR", "Borromean", "核团簇", "团簇结构", "集团结构",
+            ))
 
         if category_id in {"experimental-nuclear", "theoretical-nuclear"}:
             return core_source or nuclear_context or "lattice qcd" in [hit.lower() for hit in hits]
@@ -998,10 +1133,35 @@ def crossref_citation_fields(item: dict[str, Any]) -> dict[str, Any]:
 
 def fetch_crossref(source: dict[str, Any], classifier: Classifier, start: str, end: str) -> tuple[list[dict[str, Any]], SourceResult]:
     try:
-        with CROSSREF_SEMAPHORE:
-            payload = json.loads(fetch(crossref_url(source["issn"], start, end), accept="application/json"))
+        raw_items: list[dict[str, Any]] = []
+        cursor = "*"
+        total = 0
+        message = ""
+        # 大型综合期刊的两周数据可超过 500 条，不能只读第一页。
+        for _ in range(max(1, int(source.get("max_pages", 12)))):
+            base = urllib.parse.urlsplit(crossref_url(source["issn"], start, end))
+            params = dict(urllib.parse.parse_qsl(base.query))
+            # Crossref 的日期排序不能与 cursor 同时使用；页面取得后在本地排序。
+            params.pop("sort", None)
+            params.pop("order", None)
+            params["cursor"] = cursor
+            url = urllib.parse.urlunsplit(base._replace(query=urllib.parse.urlencode(params)))
+            with CROSSREF_SEMAPHORE:
+                payload = json.loads(fetch(url, accept="application/json"))
+            page = payload.get("message", {})
+            batch = page.get("items", [])
+            total = int(page.get("total-results", len(batch)))
+            raw_items.extend(batch)
+            if not batch or len(raw_items) >= total:
+                break
+            next_cursor = page.get("next-cursor")
+            if not next_cursor or next_cursor == cursor:
+                break
+            cursor = next_cursor
+        if len(raw_items) < total:
+            message = f"当前读取 {len(raw_items)}/{total} 条原始记录，尚未完整覆盖此时间窗"
         records: list[dict[str, Any]] = []
-        for item in payload.get("message", {}).get("items", []):
+        for item in raw_items:
             title = clean_text((item.get("title") or [""])[0])
             abstract = clean_text(item.get("abstract"))
             if not title or not classifier.relevant(title, abstract, source["mode"]):
@@ -1054,7 +1214,7 @@ def fetch_crossref(source: dict[str, Any], classifier: Classifier, start: str, e
                 "figure_status": "rights_unknown",
                 **crossref_citation_fields(item),
             })
-        return records, SourceResult(source["name"], "paper", True, len(records))
+        return records, SourceResult(source["name"], "paper", True, len(records), message)
     except Exception as exc:  # noqa: BLE001 - 单源失败不应终止整个日更
         return [], SourceResult(source["name"], "paper", False, 0, str(exc)[:240])
 
@@ -2112,6 +2272,8 @@ def fetch_notice(source: dict[str, Any], classifier: Classifier) -> tuple[list[d
             parsed_url = urllib.parse.urlsplit(url)
             if parsed_url.scheme not in {"http", "https"} or not parsed_url.hostname:
                 continue
+            if source.get("detail_url_pattern") and not re.search(source["detail_url_pattern"], parsed_url.path):
+                continue
             if any(term in title.lower() for term in [value.lower() for value in source.get("exclude", [])]):
                 continue
             if source.get("kind", "notice") == "notice" and not notice_is_physics_relevant(
@@ -2123,8 +2285,9 @@ def fetch_notice(source: dict[str, Any], classifier: Classifier) -> tuple[list[d
             if url in seen:
                 continue
             seen.add(url)
-            title_dates = [extract_notice_date(match.group(0)) for match in DATE_PATTERN.finditer(title)]
-            published = notice_date_from_url(url) or extract_notice_date(title)
+            list_text = parser.link_texts.get(href, title)
+            title_dates = [extract_notice_date(match.group(0)) for match in DATE_PATTERN.finditer(list_text)]
+            published = notice_date_from_url(url) or extract_notice_date(list_text) or extract_english_notice_date(list_text)
             title_deadline = ""
             if source.get("title_date_order") == "deadline-published" and len(title_dates) >= 2:
                 title_deadline, published = title_dates[0], title_dates[-1]
@@ -2185,7 +2348,7 @@ def fetch_notice(source: dict[str, Any], classifier: Classifier) -> tuple[list[d
             record["organizations"], record["meeting_series"] = notice_labels(record)
         records = [
             record for record in records
-            if notice_is_physics_relevant(
+            if record.get("type") == "news" or notice_is_physics_relevant(
                 record.get("title", ""),
                 record.get("summary", ""),
                 notice_category=record.get("notice_category", ""),
@@ -2217,7 +2380,12 @@ def merge_records(existing: list[dict[str, Any]], incoming: list[dict[str, Any]]
     for item in incoming:
         title_key = normalize_title(item.get("title", ""))
         duplicate_id = title_index.get(title_key) if title_key else None
-        target_id = duplicate_id or item["id"]
+        if duplicate_id:
+            candidate = merged.get(duplicate_id, {})
+            distinct_doi = candidate.get("doi") and item.get("doi") and normalized_doi(candidate["doi"]) != normalized_doi(item["doi"])
+            if distinct_doi or (item.get("type") in {"news", "notice"} and item.get("url") != candidate.get("url")):
+                duplicate_id = None
+        target_id = item["id"] if item["id"] in merged else duplicate_id or item["id"]
         if target_id in merged:
             old = merged[target_id]
             # 官方期刊元数据优先于预印本，但保留 arXiv/PDF 链接。
@@ -2233,6 +2401,10 @@ def merge_records(existing: list[dict[str, Any]], incoming: list[dict[str, Any]]
             combined["citation_metadata_checked"] = bool(item.get("citation_metadata_checked") or old.get("citation_metadata_checked"))
             # 新元数据缺失时不得覆盖已有的完整摘要、许可证据与已筛选图像。
             combined["abstract"] = item.get("abstract") or old.get("abstract", "")
+            for field in ("summary", "content"):
+                new_text = item.get(field, "")
+                old_text = old.get(field, "")
+                combined[field] = new_text if new_text and not content_is_blocked(new_text) else old_text if not content_is_blocked(old_text) else ""
             combined["abstract_status"] = "full" if combined["abstract"] else "missing"
             combined["abstract_source"] = item.get("abstract_source") or old.get("abstract_source", "")
             combined["license"] = item.get("license") or old.get("license", "")
@@ -2465,6 +2637,12 @@ def main() -> int:
         notices, int(runtime.get("notice_detail_enrichment_limit", 60))
     )
     for notice in notices:
+        clean_record_content(notice)
+        for field in ("summary", "content"):
+            notice[field] = strip_notice_chrome(notice.get(field, ""))
+        notice["title"] = re.sub(r"(?P<date>20\d{2}[-/.]\d{1,2}[-/.]\d{1,2})(?:\s*(?P=date))+$", "", notice.get("title", "")).strip()
+        notice["event_kind"] = notice_event_kind(notice.get("title", ""))
+        notice["applicability"] = "physics" if any(contains_topic(notice.get("title", "").lower(), term) for term in NOTICE_PHYSICS_TERMS) else "general-call" if notice.get("notice_category", "").startswith("funding-") or notice.get("notice_category") == "talent" else "physics"
         notice["organizations"], notice["meeting_series"] = notice_labels(notice)
     notice_terms = {
         source["name"]: [term.lower() for term in source.get("include", [])]
@@ -2524,7 +2702,8 @@ def main() -> int:
     write_json(DATA / "notices.json", notices)
     write_json(DATA / "featured.json", featured)
     status = {
-        "last_success": run_at,
+        "started_at": run_at,
+        "last_success": dt.datetime.now(dt.timezone.utc).astimezone().isoformat(timespec="seconds"),
         "window": {"from": start, "to": end},
         "source_results": [asdict(item) for item in sorted(results, key=lambda result: (result.kind, result.name))],
         "counts": {"papers": len(papers), "news": len(news), "notices": len(notices), "featured": len(featured)},

@@ -27,7 +27,7 @@
   </script>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20260812-zotero-classification">
+  <link rel="stylesheet" href="./styles.css?v=20260905-nuclear-reliability">
 </head>
 <body>
   <div class="shell">
@@ -69,7 +69,7 @@
           <div class="home-translation-progress-stats" id="translationProgressStats"><span>论文 —</span><span>新闻 —</span><span>通知 —</span><small>正在读取翻译数据</small></div>
         </section>
         <section class="metrics briefing-metrics briefing-daily-metrics" aria-label="今日论文统计">
-          <article><span>今日新增论文</span><strong id="dailyPaperCount">—</strong><small>最新发布日期</small></article>
+          <article><span>最新日论文</span><strong id="dailyPaperCount">—</strong><small>最新发布日期</small></article>
           <article><span>核物理相关</span><strong id="dailyNuclearCount">—</strong><small>核心核物理分类</small></article>
           <article><span>期刊论文</span><strong id="dailyJournalCount">—</strong><small>正式期刊来源</small></article>
           <article><span>预印本</span><strong id="dailyPreprintCount">—</strong><small>开放预印本来源</small></article>
@@ -453,10 +453,13 @@
           <div class="paper-actions"></div>
         </div>
       </div>
-      <button class="favorite-button" aria-label="收藏文章" title="收藏">☆</button>
+      <div class="paper-card-controls">
+        <button class="card-ignore-button" type="button" aria-label="忽略论文" title="忽略" hidden>忽略</button>
+        <button class="favorite-button" aria-label="收藏文章" title="收藏">☆</button>
+      </div>
     </article>
   </template>
 
-  <script type="module" src="./app.js?v=20260812-zotero-classification"></script>
+  <script type="module" src="./app.js?v=20260905-nuclear-reliability"></script>
 </body>
 </html>

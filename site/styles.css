@@ -242,6 +242,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .paper-card[data-primary="ai-science"] .card-accent { background: var(--mint); }
 .paper-card.featured .card-accent { background: linear-gradient(var(--mint), var(--amber)); }
 .paper-main { padding: 19px 56px 19px 20px; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; align-items: start; }
+.paper-card.has-ignore-control .paper-main { padding-right: 122px; }
 .paper-copy { min-width: 0; }
 .paper-meta { display: flex; align-items: center; gap: 8px; color: #78878a; font-size: 9px; text-transform: uppercase; letter-spacing: .06em; flex-wrap: wrap; }
 .paper-meta .source-badge { color: #226f60; background: var(--mint-soft); border-radius: 4px; padding: 2px 6px; font-weight: 750; }
@@ -264,7 +265,11 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .paper-actions a, .paper-actions button { border: 0; padding: 0; background: none; cursor: pointer; text-decoration: none; color: #66777a; font-size: 10px; }
 .paper-actions a:hover, .paper-actions button:hover { color: #16816c; }
 .paper-actions .reading-button { color: #317a6c; }
-.favorite-button { position: absolute; right: 16px; top: 15px; border: 1px solid #dce3e0; background: #fff; border-radius: 8px; width: 32px; height: 32px; cursor: pointer; color: #849397; font-size: 19px; line-height: 1; }
+.paper-card-controls { position: absolute; right: 16px; top: 15px; z-index: 2; display: flex; align-items: center; gap: 6px; }
+.favorite-button { position: static; flex: 0 0 auto; border: 1px solid #dce3e0; background: #fff; border-radius: 8px; width: 32px; height: 32px; cursor: pointer; color: #849397; font-size: 19px; line-height: 1; }
+.card-ignore-button { height: 32px; border: 1px solid #eadbd5; border-radius: 8px; padding: 0 10px; color: #946b62; background: #fffdfa; cursor: pointer; font: inherit; font-size: 10px; font-weight: 700; }
+.card-ignore-button:hover { border-color: #d7a99e; color: #a34f42; background: #fff4ef; }
+.card-ignore-button.active { border-color: #b9d6bd; color: #4d7a57; background: #eff8ed; }
 .favorite-button.active { color: #b86f19; background: var(--amber-soft); border-color: #f0ce9e; }
 .load-more { margin: 18px auto 0; display: block; border: 1px solid var(--line); background: white; border-radius: 8px; padding: 9px 20px; font-size: 11px; cursor: pointer; }
 .empty-state { text-align: center; padding: 60px 20px; background: white; border: 1px dashed #ccd7d2; border-radius: 12px; }
@@ -404,6 +409,9 @@ dialog::backdrop { background: rgba(5,20,26,.72); backdrop-filter: blur(3px); }
   .toolbar { grid-template-columns: 1fr; }
   .toolbar select { height: 40px; }
   .paper-main { padding: 17px 47px 17px 15px; gap: 15px; }
+  .paper-card.has-ignore-control .paper-main { padding-right: 104px; }
+  .paper-card-controls { right: 10px; top: 11px; gap: 4px; }
+  .card-ignore-button { padding: 0 7px; }
   .paper-card h3 { font-size: 16px; }
   .abstract { font-size: 12px; }
   .results-meta span:nth-child(2) { display: none; }
@@ -1717,6 +1725,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .notice-original-preview { padding: 11px 13px; border: 1px solid #e5eadf; border-radius: 11px; background: #fbfcf7; }
 .notice-original-preview > b { display: block; margin-bottom: 5px; color: #708172; font-size: 8px; letter-spacing: .05em; }
 .notice-original-preview p { margin: 0; color: #66756a; font-size: 10px; line-height: 1.72; white-space: pre-line; }
+.notice-translated-preview { margin-bottom: 8px; padding: 11px 13px; border: 1px solid #cfe3c8; border-radius: 11px; background: #f2faed; }
+.notice-translated-preview > b { display: block; margin-bottom: 5px; color: #4f7b58; font-size: 8px; letter-spacing: .05em; }
+.notice-translated-preview p { margin: 0; color: #4c6753; font-size: 10px; line-height: 1.72; white-space: pre-line; }
 .notice-expand,
 .notice-detail-button { margin-top: 7px; padding: 0; border: 0; color: #438054; background: transparent; cursor: pointer; font: inherit; font-size: 8px; font-weight: 700; }
 .notice-detail-button { margin-top: 0; }

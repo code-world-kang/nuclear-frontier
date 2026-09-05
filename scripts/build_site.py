@@ -10,6 +10,7 @@ from pathlib import Path
 
 from build_history import build_history_site
 from build_wechat_digest import build_digest
+from translate_content import collect_candidates, queue_payload
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,9 +27,16 @@ def load(path: Path):
 
 def main() -> None:
     PUBLIC_DATA.mkdir(parents=True, exist_ok=True)
+    # 即使未配置翻译服务或首次构建，也应有真实可用的待译队列。
+    queue_file = DATA / "translation-queue.json"
+    old_queue = load(queue_file) if queue_file.exists() else {}
+    queue = queue_payload(collect_candidates(load(DATA / "translations.zh-CN.json").get("items", {})), old_queue.get("model", ""), old_queue.get("service_status", "not_configured"))
+    if {key: value for key, value in queue.items() if key != "generated_at"} == {key: value for key, value in old_queue.items() if key != "generated_at"}:
+        queue["generated_at"] = old_queue["generated_at"]
+    queue_file.write_text(json.dumps(queue, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for name in (
         "papers.json", "news.json", "notices.json", "featured.json", "status.json",
-        "translations.zh-CN.json", "reference-resources.json",
+        "translations.zh-CN.json", "translation-queue.json", "reference-resources.json",
     ):
         shutil.copy2(DATA / name, PUBLIC_DATA / name)
     shutil.copy2(CONFIG / "notice_portals.json", PUBLIC_DATA / "notice-portals.json")
@@ -65,6 +73,8 @@ def main() -> None:
         "categories": topics["categories"],
         "status": status,
         "insights": insights,
+        "translation_service": {key: queue.get(key) for key in ("service_status", "pending", "generated_at")},
+        "personal_backup": {"snapshot_at": personal_payload.get("updated_at", "")},
         "notice": "本站汇总官方公开元数据，不代表数据源机构背书。请以原始页面为准。",
     }
     (PUBLIC_DATA / "meta.json").write_text(

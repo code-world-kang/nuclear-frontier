@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "categories": [
     {
       "id": "experimental-nuclear",
@@ -16,7 +16,12 @@
         "decay measurement",
         "mass measurement",
         "lifetime measurement",
-        "in-beam spectroscopy"
+        "in-beam spectroscopy",
+        "实验核物理",
+        "衰变谱学",
+        "在束谱学",
+        "质量测量",
+        "放射性束流"
       ],
       "priority": 18
     },
@@ -48,7 +53,12 @@
         "R-matrix",
         "Hauser-Feshbach",
         "continuum discretized coupled channels",
-        "CDCC"
+        "CDCC",
+        "理论核物理",
+        "从头计算",
+        "壳模型",
+        "核密度泛函",
+        "量子多体"
       ],
       "priority": 15
     },
@@ -80,9 +90,57 @@
         "nuclear isomer",
         "metastable nuclear state",
         "single-particle state",
-        "occupation number"
+        "occupation number",
+        "核结构",
+        "壳演化",
+        "形状共存",
+        "晕核",
+        "滴线",
+        "同核异能态",
+        "核形变",
+        "neutron skin",
+        "pygmy dipole",
+        "tetrahedral deformation",
+        "superheavy nuclei",
+        "hypernuclei",
+        "hypernucleus",
+        "tensor force",
+        "nuclear pairing",
+        "isospin symmetry",
+        "spin-orbit splitting"
       ],
       "priority": 20
+    },
+    {
+      "id": "nuclear-clusters",
+      "name": "团簇结构",
+      "icon": "◌",
+      "priority": 21,
+      "keywords": [
+        "nuclear cluster",
+        "nuclear clustering",
+        "cluster structure",
+        "alpha cluster",
+        "alpha-cluster",
+        "α cluster",
+        "α-cluster",
+        "clusterization",
+        "clusterisation",
+        "Hoyle state",
+        "Ikeda diagram",
+        "Brink model",
+        "antisymmetrized molecular dynamics",
+        "fermionic molecular dynamics",
+        "THSR",
+        "Borromean",
+        "molecular resonance",
+        "核团簇",
+        "团簇结构",
+        "集团结构",
+        "阿尔法团簇",
+        "α团簇",
+        "霍伊尔态"
+      ]
     },
     {
       "id": "nuclear-decay",
@@ -116,7 +174,13 @@
         "two-proton emission",
         "neutron emission",
         "spontaneous fission",
-        "isomeric transition"
+        "isomeric transition",
+        "核衰变",
+        "半衰期",
+        "双贝塔衰变",
+        "双β衰变",
+        "α衰变",
+        "β衰变"
       ]
     },
     {
@@ -147,7 +211,15 @@
         "angular distribution",
         "excitation function",
         "photodisintegration",
-        "spallation"
+        "spallation",
+        "核反应",
+        "敲出反应",
+        "转移反应",
+        "破裂反应",
+        "准自由散射",
+        "融合蒸发",
+        "弹性散射",
+        "非弹性散射"
       ],
       "priority": 18
     },
@@ -171,7 +243,11 @@
         "elliptic flow",
         "anisotropic flow",
         "nuclear modification factor",
-        "color glass condensate"
+        "color glass condensate",
+        "高能核物理",
+        "重离子碰撞",
+        "夸克胶子等离子体",
+        "强相互作用"
       ],
       "priority": 9
     },
@@ -193,7 +269,10 @@
         "stellar reaction",
         "equation of state",
         "kilonova",
-        "x-ray burst"
+        "x-ray burst",
+        "核天体",
+        "核合成",
+        "中子星"
       ],
       "priority": 8
     },
@@ -237,7 +316,13 @@
         "CZT",
         "multi-wire proportional chamber",
         "MWPC",
-        "FPGA"
+        "FPGA",
+        "探测器",
+        "核电子学",
+        "数据获取",
+        "气体探测器",
+        "闪烁体",
+        "硅探测器"
       ],
       "priority": 17
     },
@@ -251,7 +336,10 @@
         "nuclear properties",
         "nuclear matter",
         "nuclear system",
-        "nucleon-nucleon"
+        "nucleon-nucleon",
+        "核物理",
+        "原子核",
+        "核科学"
       ]
     },
     {
@@ -270,7 +358,10 @@
         "beam line",
         "storage ring",
         "electron cooling",
-        "radiofrequency cavity"
+        "radiofrequency cavity",
+        "加速器",
+        "束流",
+        "离子源"
       ],
       "priority": 10
     },
@@ -291,7 +382,11 @@
         "NIF",
         "tritium",
         "plasma-facing",
-        "fusion reactor"
+        "fusion reactor",
+        "核聚变",
+        "托卡马克",
+        "惯性约束",
+        "磁约束"
       ],
       "priority": 4
     },
@@ -309,7 +404,10 @@
         "surrogate model",
         "scientific machine learning",
         "Bayesian inference",
-        "uncertainty quantification"
+        "uncertainty quantification",
+        "人工智能",
+        "机器学习",
+        "深度学习"
       ],
       "priority": 4
     },
@@ -340,7 +438,12 @@
         "JEFF",
         "JENDL",
         "TENDL",
-        "covariance data"
+        "covariance data",
+        "核数据",
+        "核能",
+        "核裂变",
+        "中子输运",
+        "核技术"
       ],
       "priority": 12
     },
@@ -423,7 +526,62 @@
     "shell model",
     "nuclear structure",
     "nuclear reaction",
-    "nuclear detector"
+    "nuclear detector",
+    "hypernucleus",
+    "hypernuclei",
+    "alpha cluster",
+    "alpha-cluster",
+    "Hoyle state",
+    "核物理",
+    "原子核",
+    "核结构",
+    "团簇结构",
+    "集团结构",
+    "核反应",
+    "核衰变",
+    "核数据",
+    "核探测",
+    "重离子",
+    "核天体",
+    "核聚变",
+    "核裂变",
+    "核能",
+    "核技术",
+    "同位素",
+    "中子",
+    "放射性束流",
+    "加速器",
+    "探测器",
+    "dineutron",
+    "diproton",
+    "tetraneutron",
+    "neutron halo",
+    "proton halo",
+    "halo nuclei",
+    "halo nucleus",
+    "borromean nucleus",
+    "borromean nuclei",
+    "hypernuclear",
+    "nuclear symmetry energy",
+    "nuclear shell",
+    "nuclear pairing",
+    "Gamow-Teller",
+    "isobaric analog",
+    "isobaric analogue",
+    "isospin",
+    "nuclear equation of state",
+    "neutron skin",
+    "superheavy element",
+    "superheavy nuclei",
+    "alpha clustering",
+    "三体核",
+    "四中子",
+    "双中子",
+    "双质子",
+    "超重核",
+    "超核",
+    "同位旋",
+    "核素"
   ],
   "physics_gate": [
     "physics",
@@ -447,7 +605,11 @@
     "neutron",
     "proton",
     "radiation",
-    "materials science"
+    "materials science",
+    "物理",
+    "加速器",
+    "探测器",
+    "束流"
   ],
   "ai_gate": [
     "nuclear physics",

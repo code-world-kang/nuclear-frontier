@@ -77,12 +77,11 @@ function isAuthorized(request, context) {
   return Boolean(expected && received && expected === received);
 }
 
-export async function onRequest(context) {
+export async function handleRequest(context, store) {
   const { request } = context;
   if (request.method === 'OPTIONS') {
     return new Response(null, { status: 204, headers: { Allow: 'GET, PUT, OPTIONS' } });
   }
-  const store = getStore({ name: STORE_NAME, consistency: 'strong' });
   if (request.method === 'GET') {
     const saved = await store.get(STATE_KEY, { type: 'json', consistency: 'strong' });
     return json(saved || emptyState());
@@ -102,9 +101,27 @@ export async function onRequest(context) {
   } catch {
     return json({ error: '请求体不是有效 JSON' }, 400);
   }
+  if (payload?.version !== 1 || !payload.personal || typeof payload.personal !== 'object' || Array.isArray(payload.personal)) {
+    return json({ error: '个人快照结构不完整，没有覆盖云端数据' }, 400);
+  }
   const cleaned = cleanState(payload);
+  const previous = await store.get(STATE_KEY, { type: 'json', consistency: 'strong' });
+  if (previous?.updated_at && payload.base_updated_at !== previous.updated_at) {
+    return json({ error: '云端已有另一份修改。请先导出当前副本，再刷新合并；本次没有覆盖云端。' }, 409);
+  }
+  // 保存覆盖前的版本。时间戳校验能发现过时客户端，但不是数据库级原子事务。
+  // 保留旧版本用于恢复；跨设备同时写入仍应改用支持事务的存储后再开放并发编辑。
+  if (previous?.updated_at) {
+    const version = String(previous.updated_at).replace(/[^0-9A-Za-z.-]/g, '-');
+    await store.setJSON(`history/${version}.json`, previous);
+  }
   await store.setJSON(STATE_KEY, cleaned);
   return json({ ok: true, state: cleaned });
+}
+
+export async function onRequest(context) {
+  const store = getStore({ name: STORE_NAME, consistency: 'strong' });
+  return handleRequest(context, store);
 }
 
 export default onRequest;

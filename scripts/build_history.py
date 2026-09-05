@@ -4,11 +4,13 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import unicodedata
 from collections import Counter
 from pathlib import Path
 from typing import Any
+from update_content import Classifier
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -49,6 +51,17 @@ def all_history_records() -> list[dict[str, Any]]:
             current = values.get(key)
             if not current or (not current.get("abstract") and item.get("abstract")):
                 values[key] = item
+    # 旧论文也应能用新增的团簇类别检索，不必等待逐月重抓所有元数据。
+    topics = load(ROOT / "config" / "topics.json", {})
+    classifier = Classifier(topics)
+    cluster = next((c for c in topics["categories"] if c["id"] == "nuclear-clusters"), None)
+    if cluster:
+        for item in values.values():
+            text = " ".join(str(item.get(k) or "") for k in ("title", "abstract"))
+            hits = [term for term in cluster["keywords"] if classifier.contains_term(text, term)]
+            if hits and classifier.category_hits_allowed("nuclear-clusters", text, hits, item.get("source", "")):
+                item["categories"] = list(dict.fromkeys([*item.get("categories", []), "nuclear-clusters"]))
+                item["tags"] = list(dict.fromkeys([*item.get("tags", []), *hits[:2]]))
     return list(values.values())
 
 
@@ -58,7 +71,16 @@ def search_text(item: dict[str, Any]) -> str:
         item.get("doi"), item.get("arxiv_id"), " ".join(item.get("authors") or []),
         " ".join(item.get("tags") or []), " ".join(item.get("categories") or []),
     ])
-    return " ".join(unicodedata.normalize("NFKC", value).casefold().split())
+    normalized = unicodedata.normalize("NFKC", value)
+    normalized = re.sub(r"\\(?:mathrm|text|textrm)\s*\{([^{}]*)\}", r"\1", normalized)
+    normalized = re.sub(r"\^\{([\d, ]+)\}", r"\1", normalized).replace("$", "")
+    normalized = re.sub(r"\b([A-Z][a-z]?)[‐‑–—-](\d{1,3})\b", r"\2\1", normalized)
+    aliases = []
+    for match in re.finditer(r"(\d{1,3}(?:\s*,\s*\d{1,3})*)\s*([A-Z][a-z]?)\b", normalized):
+        aliases.extend(a.strip() + match[2] for a in match[1].split(","))
+    if "nuclear-clusters" in item.get("categories", []):
+        aliases.extend(["团簇结构", "集团结构", "核团簇"])
+    return " ".join((normalized + " " + " ".join(aliases)).casefold().split())
 
 
 def consecutive_coverage(completed: set[str], start: str) -> str:
