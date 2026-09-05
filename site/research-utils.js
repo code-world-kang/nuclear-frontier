@@ -27,7 +27,9 @@ export function searchText(value = '') {
 }
 
 export function isChinese(value = '') {
-  const content = String(value).replace(/https?:\/\/[^\s<>，。；]+/g, '');
+  // 数学排版命令不参与中英文比例统计，与服务端待译判定保持一致。
+  const content = String(value).replace(/https?:\/\/[^\s<>，。；]+/g, '')
+    .replace(/\$\$[\s\S]*?\$\$|\$[^$]*\$|\\nuclide\[[^\]]*\]\{[^}]*\}/g, ' ');
   const han = (content.match(/[\u3400-\u9fff]/g) || []).length;
   const latin = (content.match(/[a-z]/gi) || []).length;
   return han >= 2 && han / Math.max(1, han + latin) >= 0.25;

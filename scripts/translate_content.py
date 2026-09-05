@@ -53,6 +53,8 @@ def source_text(item: dict[str, Any]) -> str:
 
 def is_chinese(value: str) -> bool:
     content = re.sub(r"https?://[^\s<>，。；]+", "", str(value or ""))
+    # 公式和核素命令不是英文正文，不能把公式较多的中文译文误判为待译。
+    content = re.sub(r"\$\$[\s\S]*?\$\$|\$[^$]*\$|\\nuclide\[[^\]]*\]\{[^}]*\}", " ", content)
     han = len(HAN_RE.findall(content))
     latin = len(re.findall(r"[A-Za-z]", content))
     return han >= 2 and han / max(1, han + latin) >= 0.25

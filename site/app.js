@@ -1,4 +1,4 @@
-import { scientificText, nuclidesIn, searchText, translationCoverage } from './research-utils.js?v=20260905-translation';
+import { scientificText, nuclidesIn, searchText, translationCoverage } from './research-utils.js?v=20260905-codex-batch';
 
 const PATH = new URL('.', window.location.href).pathname;
 // GitHub 仍是个人数据的最终来源；本地副本只用来防止“已点收藏、未提交 GitHub”时刷新丢失。

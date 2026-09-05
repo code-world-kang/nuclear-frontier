@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
-import { scientificText, nuclidesIn, searchText, translationCoverage } from '../site/research-utils.js';
+import { scientificText, nuclidesIn, searchText, translationCoverage, isChinese } from '../site/research-utils.js';
 
 test('核素：单字母、双字母、上标、连字符及合写', () => {
   assert.deepEqual(nuclidesIn('8B and B-8, ⁸B, 52,54Ca and $^{53,55}$Sc'), ['8B', '52Ca', '54Ca', '53Sc', '55Sc']);
@@ -27,6 +27,17 @@ test('通知只有日期时不因没有汉字而显示正文待译', () => {
   assert.equal(stats.complete, 1);
   assert.equal(stats.bodyTotal, 0);
   assert.equal(stats.partial, 0);
+});
+
+test('复杂公式和核素命令不会把中文译文误判为英文', () => {
+  const title = String.raw`研究 $^{9}_{\Omega/\Omega_{ccc}}{\mathrm{Be}}$ 核中 $\alpha\alpha\Omega/\Omega_{ccc}$ 团簇的三体共振`;
+  assert.equal(isChinese(title), true);
+  assert.equal(isChinese(String.raw`\nuclide[78]{Ni} 的低激发态`), true);
+  assert.equal(isChinese(String.raw`Three-body resonances in $\alpha\alpha\Omega$ clusters`), false);
+  assert.equal(isChinese(String.raw`$\alpha\alpha\Omega$`), false);
+  const stats = translationCoverage([{ id: 'p', title: 'Three-body resonances', abstract: 'Full abstract' }],
+    { p: { title_zh: title, abstract_zh: '这里是完整的中文摘要。' } });
+  assert.equal(stats.complete, 1);
 });
 
 function appHarness() {

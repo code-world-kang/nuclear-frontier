@@ -56,6 +56,16 @@ class OfflineTranslationTests(unittest.TestCase):
         with self.assertRaises(offline.QualityError):
             offline.validate_literals("The correction is -0.97.", "修正为0.97。")
 
+    def test_formula_heavy_chinese_translation_is_not_queued_again(self):
+        title = r"研究 $^{9}_{\Omega/\Omega_{ccc}}{\mathrm{Be}}$ 核中 $\alpha\alpha\Omega/\Omega_{ccc}$ 团簇的三体共振"
+        self.assertTrue(translation.is_chinese(title))
+        self.assertTrue(translation.is_chinese(r"\nuclide[78]{Ni} 的低激发态"))
+        self.assertFalse(translation.is_chinese(r"Three-body resonances in $\alpha\alpha\Omega$ clusters"))
+        self.assertFalse(translation.is_chinese(r"$\alpha\alpha\Omega$"))
+        item = {"id": "hypernucleus", "title": "Three-body resonances", "abstract": "Full English abstract"}
+        existing = {"hypernucleus": {"title_zh": title, "abstract_zh": "这里是完整的中文摘要。"}}
+        self.assertFalse(translation.needs_translation(item, existing))
+
     def test_balanced_selection_and_retry_cooldown(self):
         now = dt.datetime.now(dt.timezone.utc)
         papers = [{"id": f"p{i}", "type": "paper", "title": "Nuclear study"} for i in range(10)]
