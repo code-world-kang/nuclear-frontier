@@ -64,6 +64,7 @@ jobs:
 
       - name: 运行数据与代码检查
         run: |
+          npm ci --ignore-scripts
           python -m unittest discover -s tests -v
           node --check site/app.js
           node --test tests/*.test.mjs
