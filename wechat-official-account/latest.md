@@ -1,33 +1,33 @@
-# 小康康的物理世界 · 2026-09-01 科研简报
+# 小康康的物理世界 · 2026-09-07 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 7/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 13/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[The role of ab initio beta-decay calculations in light nuclei for probes of physics beyond the standard model](https://doi.org/10.1016/j.ppnp.2026.104260)**  
-   Progress in Particle and Nuclear Physics · 2026-09-01  
-   Precision beta decay experiments serve as powerful probes of physics beyond the Standard Model, enabling stringent tests of fundamental symmetries of nature. In particular, these experiments primarily focus on precise determinations of the Cabibbo-Kobayashi-Maskawa matrix element Vud and the search for exotic weak currents, both of which depend critically o…
-2. **[First Nb 94 ( n , γ ) Measurement: Constraining the Nucleosynthetic Origin of Mo 94 in Presolar Grains](https://doi.org/10.1103/538w-rhqb)**  
-   Physical Review Letters · 2026-08-18  
-   Isotopic measurements of presolar silicon carbide grains from dying stars have revealed a puzzling overabundance of Mo 94 that stellar nucleosynthesis models have failed to reproduce for two decades. This discrepancy challenged our understanding of the slow neutron-capture process ( s -process) that forges approximately half of the elements heavier than iro…
-3. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
-   Physical Review Letters · 2026-08-04  
-   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
-4. **[Deformation, halo, and bubble structure: A paradigm shift of exotic phenomena in light to medium mass nuclei](https://doi.org/10.1016/j.ppnp.2026.104262)**  
-   Progress in Particle and Nuclear Physics · 2026-09-01  
-   The emergence of exotic nuclear structures, such as deformation, one- and two-neutron halos, and bubble configurations, marks a paradigm shift in our understanding of light- to medium-mass nuclei far from stability, particularly near and within the island of inversion extending across $N=20-28$. In this review, we integrate microscopic structure calculation…
-5. **[双中微子双 β 衰变的辐射修正](https://doi.org/10.1103/gbjc-wsdn)**  
-   Physical Review Letters · 2026-08-11  
-   We use heavy-nucleus effective field theory to compute radiative corrections to two-neutrino double-$\beta$ decay ($2\nu\beta\beta$). Our main result is the first derivation of a universal radiative-correction factor for double-weak decays -- the analogue of the Sirlin function in single-$\beta$ decay -- independent of nuclear matrix elements and excitation…
-6. **[通过基态与激发态联合分析研究无中微子双 β 衰变的灵敏度](https://doi.org/10.1016/j.physletb.2026.140623)**  
-   Physics Letters B · 2026-08-01  
-   下一代无中微子双 β（0νββ）衰变实验预计半衰期灵敏度将接近 10 28 年，其目标是在轻中微子交换情景中探测反转中微子质量排序的整个参数空间。然而，由于核矩阵元（NMEs）具有显著的模型依赖性，这一探测能力仍存在不确定性。在本工作中，我们提出一种联合分析 0νββ 衰变至子核基态和第一个激发 0 + 态的策略。我们表明，这种多道方法可显著提高实验灵敏度，具体幅度取决于所采用的 NME 预测。该方法尤其适合大型液氙探测器，例如拟议的 PandaX-xT 和 XLZD 实验，因为它们能够高效识别 136 Xe 向激发态的跃迁。我们的结果突出说明，在未来的 0νββ 搜寻中利用多个衰变道，对于最大化其发现潜力十分重要。
-7. **[Beyond half-life limits: Robust operator-level interpretation of multi-isotope neutrinoless double-beta decay](https://doi.org/10.1103/my19-cmrh)**  
-   Physical Review D · 2026-08-31  
-   Current and future neutrinoless double-beta decay ( 0 ν β β ) searches are usually characterized by half-life limits or projected sensitivities. For operator-level interpretation, however, the relevant question is not only the strength of the limit, but also the stability of the inferred constraints on low-energy lepton number violation (LNV) coefficients u…
-8. **[Resolving root causes of experiment discrepancies guided by machine learning](https://doi.org/10.1038/s41467-026-76798-5)**  
-   Nature Communications · 2026-08-27  
-   Abstract Scientists rely on accurate experimental data to explain nature and then harness this knowledge for applications addressing human needs. However, discrepancies between experiments of the same observable can impede scientific progress if one does not understand the underlying causes. Here, we developed a process that unravels data discrepancies by f…
+1. **[重夸克与夸克onium在RHIC](https://arxiv.org/abs/2609.04337)**  
+   arXiv nucl-ex · 2026-09-07  
+   在发现强耦合夸克-胶子等离子体（QGP），一种近乎完美的流体，在200 GeV Au+Au碰撞中于RHIC时之后，理解其微观结构和输运性质已成为相对论重离子物理的核心目标。含charm或bottom夸克的重味粒子由于主要在初始硬散射中产生，并在整个演化过程中与介质相互作用，因而对QGP具有独特敏感性。本综述总结了PHENIX和STAR实验对开放重味粒子和夸克onium的测量结果，主要聚焦于在RHIC运行前两个十年期间记录的200 GeV碰撞数据。我们讨论了charm、bottom以及夸克onium产额截面的关键结果；在小碰撞系统中冷核物质效应；开放重味强子的核修正因子和椭圆流；charm重子与介子的产生比；以及在Au+Au碰撞中夸克onium态的抑制模式。我们进一步强调了由此获得的关于QGP性质的见解，包括重…
+2. **[质子发射半衰期和形状共存对于$71 \leq Z \leq 83$奇数$Z$原子核](https://arxiv.org/abs/2608.19601)**  
+   arXiv nucl-th · 2026-09-07  
+   一个质子发射是靠近质子滴线区域核结构的直接探针，并在理解奇异衰变模式和核合成过程方面起着关键作用。在本研究中，我们通过采用WKB近似，并使用基于变形相对论哈特里-波戈利布夫理论在连续域（DRHBc）中获得的核势，研究了$71 \leq Z \leq 83$奇数-$Z$原子核的一个质子发射体的半衰期，并与相对论连续域哈特里-波戈利布夫理论（RCHB）进行比较。我们首先将计算得到的半衰期与现有的实验数据进行对比。通过DRHBc引入四极形变对变形核半衰期预测的改进作用微乎其微。我们发现，所有研究的核素均具有$|\beta_{2,{\rm DRHBc}}| < 0.15$的基态，且在这一有限的形变范围内，谱学因子对半衰期的贡献远大于衰变宽度。特别是对于在DRHBc中表现出形状共存的核素，例如$^{170}$Au，其半…
+3. **[原子核中集群原子核的固-液相变信号](https://arxiv.org/abs/2609.05145)**  
+   arXiv nucl-th · 2026-09-07  
+   核相图仍然是一个基本挑战，其中揭示簇自由度随温度和能量的变化对于理解簇、核子和核天体物理之间的有趣过渡至关重要。一种新的首级相变——核固-液相变（SLPT）——在低能重离子碰撞中自发地从核子自由度中出现。在较小系统中（例如$^{12}\text{C} + ^{12}\text{C}$和$^{16}\text{O} + ^{12}\text{C}$）观察到SLPT的明确信号，表现为负热容区域，在较大系统中（例如$^{28}\text{Si} + ^{12}\text{C}$和$^{40}\text{Ca} + ^{12}\text{C}$）则表现为比热平台，同时在碎片种类数量和信息熵方面表现出显著特征。此外，配对距离概率密度函数提供了熔化过程的直接空间指纹，其中长程晶体$\alpha$簇峰在临界温度以上消失，转…
+4. **[FUSION：一种基于技能的科研代理，用于公开可获取的核物理代码](https://arxiv.org/abs/2609.04742)**  
+   arXiv nucl-th · 2026-09-07  
+   运行一个不熟悉的核物理代码通常并不困难，仅因为物理本身的原因。用户必须找到并构建该程序，学习其输入规范，并决定一个看似合理的输出结果是否实际上正确。一个通用编程代理有助于完成前两个任务，但可能会使最后一个任务变得更困难：它可能生成一个使用错误物理规范的输入文件。FUSION 通过代码特定的技能来解决这个问题。一个技能会从其公开源代码中获取程序，从一个经过验证的输入开始，运行并解析计算过程，记录已知的失败模式，并且必须在指定容差内重现一个指定的基准结果，才能报告最终结果。当前版本覆盖了二十个代码，涵盖光学模型和反应、核结构、裂变和统计模型、天体物理以及R-矩阵分析，还包括重离子输运。它还包含一个离线、可搜索的61 167页面集合，这些页面源自nucl-th文献。用户笔记和身份信息仍保留在公共仓库之外。FUSIO…
+5. **[相干 J/$\psi$ 光产生在重离子 PbPb 碰撞中相对于自旋的方位角不对称性，碰撞能量为 $\sqrt{s_\mathrm{NN}}$ = 5.36 TeV](https://arxiv.org/abs/2609.04376)**  
+   arXiv nucl-ex · 2026-09-07  
+   我们报告了在重离子铅-铅（PbPb）碰撞中，相干光产生产生的J/$\psi$介子衰变μ子相对于二级事件平面的方位角不对称性测量结果。该分析基于CMS实验在LHC上收集的数据，中心核子-核子能量为5.36 TeV，对应的总亮度为1.26 nb$^{-1}$。不对称性通过衰变μ子方位角分布的二级谐波调制幅度$A_{2}$进行量化。首次观测到负的$A_{2}$ = $-$0.194 $\pm$ 0.022（统计）$\pm$ 0.018（系统）的值，其显著性超过五个标准差。$A_{2}$值在J/$\psi$介子的快速性或碰撞离子重叠程度上均无显著依赖性。一个理论模型，即相干光产生产生的J/$\psi$介子继承入射光子的线性极化，与实验数据一致。当与近期在超外围碰撞中对相干$\rho^0$ $\to$ $\pi^+\p…
+6. **[在形变的壳层核 $^{31}$Ne 中的旋转 Feshbach 谐振](https://arxiv.org/abs/2609.04758)**  
+   arXiv nucl-th · 2026-09-07  
+   背景：形变的壳层核 $^{31}$Ne 由于其壳层中子与 $^{30}$Ne 核的形变之间的相互作用而表现出独特的结构特性。尽管先前的研究通过反应截面和包容性分解测量确立了其弱束缚基态的性质，但其在低能连续态中的激发态结构——这些态预计会表现为共振态——仍 largely 未被充分探索。目的：我们研究这些共振态的结构，并阐明其旋转性质和形成机制。方法：使用粒子转子模型（PRM）描述 $^{31}$Ne 的结构，该模型明确地处理了在束缚态和连续态中核心激发与单粒子运动之间的耦合。结果：计算预测在 $^{31}$Ne 的低能连续态中会出现无束缚的旋转态，这些态基于弱束缚的尼尔松 [321 3/2] 配置形成一个旋转序列。随着总角动量沿旋转带增加，内在的尼尔松结构基本得以保留，而主导的核心自旋分量则逐渐转移到更高自…
+7. **[天体物理 $S$-因子在原初核合成中的应用](https://arxiv.org/abs/2609.04480)**  
+   arXiv nucl-th · 2026-09-07  
+   天体物理$S$因子在将实验室截面数据外推到核合成计算中相关的低能量范围时起着重要作用。无论是经验拟合还是对$S$因子的理论建模，对一系列能量范围内的截面实验信息都是提供可靠$S$因子并进而得到核反应速率以用于核合成网络所必需的。鉴于文献和数据库中关于同一反应的数据零散且有时存在差异，我们整理并综述了来自318参考文献中涉及371实验的主反应和次主反应在大爆炸核合成（BBN）中的数据。发现某些能量处出现的峰值以及由于屏蔽效应在低能量下$S$因子急剧上升等显著特征在不同实验中存在差异。后者依赖于靶材的变化，有时还依赖于温度，以提取关于同一核反应的信息。例如，在45情况下，低能量下的$S$因子表现出电子屏蔽效应，其偏离背景值的特征具有实验、靶材和温度的特异性。对每个反应在BBN中的相关性进行的广泛整理、讨论以及$S…
+8. **[核奇异性起源与演化的统一机制](https://arxiv.org/abs/2411.15562)**  
+   arXiv nucl-th · 2026-09-07  
+   一个简单的组织模式，即核壳结构，从原子核中核子之间复杂的相互作用中浮现出来，并在一定程度上决定了核结构的性质。最近对奇异核的实验研究揭示了我们对核壳演化和核幻数理解的不足。我们在能量密度泛函框架中引入了一种新视角，其中狄拉克质量动能项——源于一个自旋为0的玻色子在核强相互作用中特殊参与——在生成核壳结构中起着关键作用。具体而言，狄拉克质量动能项与自旋轨道项的结合重新定义了稳定核和奇异核中的幻数。这一机制的识别使得能够对核幻数的起源和演化提供一个广泛的理解。
 
 ## 物理新闻
 
@@ -46,6 +46,9 @@
 
 ## 科研通知
 
+- **[SCD周会](https://indico.ihep.ac.cn/event/30760/)**  
+   高能所 Indico · 2026-09-07  
+   2026-09-08 — 2026-09-08
 - **[核物理与核技术全国重点实验室学术报告— 核物理前沿与交叉专题（第五十八讲）](https://sklnpt.pku.edu.cn/info/1121/4681.htm)**  
    核物理与核技术全国重点实验室会议 · 2026-09-02  
    ----友情链接---- ---- 北京大学 ---- ---- 北京大学物理学院 ---- ---- HIAF强流重离子加速器装置 ---- 地址：北京市海淀区成府路201号核物理与核技术全国重点实验室 邮编：100871 联系电话：010-62751870；010-62755215 邮箱：jingwu@pku.edu.cn
@@ -61,8 +64,5 @@
 - **[北京同步辐射装置2026年下半年开放运行通知](https://ihep.cas.cn/dkxzz/bsrf/tongzhigonggao/202609/t20260902_8276464.html)**  
    北京同步辐射装置通知公告 · 2026-09-02  
    尊敬的用户，您好！ 北京同步辐射装置（BSRF）将于9月中旬结束暑期检修、恢复开放运行，请有需求的用户及时登录中国科学院重大科技基础设施共享服务平台（https://lssf.cas.cn/）或BSRF用户服务系统（https://user.bsrf.ihep.ac.cn/）提交课题申请、机时预约申请。 BSRF全年接收课题申请和机时预约申请，具体流程请参考附件1。 如有问题，请您与BSRF用户办或对应线站联系人进行联系，各线站联系人信息请见附件2。 北京同步辐射装置用户办公室 2026-9-2
-- **[关于对申报2026年广东省基础与应用基础研究基金项目开展核查的通知](http://gdstc.gd.gov.cn/zwgk_n/tzgg/content/post_4951330.html)**  
-   广东省科技厅 · 2026-09-04  
-   广东省科学技术厅 简体 繁体 无障碍 长者助手 首页 政务公开 科技资讯 党风廉政 办事服务 互动平台 搜 索 当前位置： 首页 > 政务公开 > 通知公告 关于对申报2026年广东省基础与应用基础研究基金项目开展核查的通知 时间 : 2026-09-04 11:38:23 来源 : 广东省科学技术厅 【字体: 大 中 小 】 【打印】 分享到： 粤基金函字〔2026〕25 号 各有关单位： 根据《广东省基础与应用基础研究基金委员会关于组织申报2026年广东省基础与应用基础研究基金项目的通知》（粤基金函字〔2026〕16号）要求，申请人不得在同一自然年内将研究内容相同或相近的项目以不同项目类型或由不同申请人或经过不同依托单位提出申请；申请的项目研究内容应避免与已通过其他渠道提交申请且处于受理、评审阶段的项目相…
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)
