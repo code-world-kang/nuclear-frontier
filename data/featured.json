@@ -90,7 +90,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0146641026000359",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -262,7 +262,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/fgsf-gx2q",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-08T23:47:28+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -361,7 +361,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0146641026000372",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -440,7 +440,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "citation_authors": [
       "Kitano, Ryuichiro",
       "Low, Ian",
@@ -493,7 +493,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "nuclear-decay",
@@ -636,7 +636,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-76798-5",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-05T14:57:42+08:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -742,7 +742,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226003013",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -763,6 +763,119 @@
       "status": "ready",
       "checked_at": "2026-09-01T00:56:38+00:00",
       "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ],
+    "summary": "",
+    "content": ""
+  },
+  {
+    "id": "f31ba28b1dd9adcf",
+    "type": "paper",
+    "title": "Impact of the Li 5 resonance in α − p elastic scattering on precision measurements of neutrino oscillation parameters",
+    "abstract": "Precision measurements of four neutrino oscillation parameters, θ 12 , θ 13 , Δ m 21 2 , and | Δ m 31 2 |, face significant interference from a previously overlooked correlated background. Recent findings from the SNO+ and JUNO experiments reveal that cascade decays of Bi 214 - Po 214 in liquid scintillator detectors can mimic inverse beta decay signals from reactor and geoneutrinos, with a misidentification probability on the order of 10 - 4 when hydrogen neutron capture is used, a rate ten times higher than geant4 simulations predicted. This work identifies the Li 5 resonance in α - p elastic scattering as the underlying cause. For alpha energies above 5 MeV, the cross section is hundreds of times larger than that of Rutherford scattering. After correctly incorporating the differential cross section into geant4, the misidentification probability is recalculated as 1.9 × 10 - 4 . The simulated shape of the long tail in the alpha deposited energy also differs from the extrapolation models currently used by SNO+ and JUNO. These results will assist both experiments in more accurately estimating this novel background, thereby refining measurements of neutrino oscillation parameters and the geoneutrino flux. Additionally, the study implies an overlooked background with a rate of 0.5 events per detector per day in the Daya Bay θ 13 analysis using hydrogen neutron capture, leading to an increase of sin 2 2 θ 13 by approximately 0.010. Consequently, the Particle Data Group’s reported sin 2 θ 13 value shall increase by about 0.006 ( 1 σ ).",
+    "authors": [
+      "Mingyuan Wang",
+      "Yiyang Li",
+      "Suqing Hou",
+      "Fei Xiao",
+      "Yaoguang Wang",
+      "Zeyuan Yu"
+    ],
+    "published": "2026-09-04",
+    "updated": "2026-09-04",
+    "source": "Physical Review D",
+    "source_short": "PRD",
+    "source_type": "journal",
+    "doi": "10.1103/wjvr-9gbc",
+    "arxiv_id": "2601.12452",
+    "url": "https://doi.org/10.1103/wjvr-9gbc",
+    "pdf_url": "https://arxiv.org/pdf/2601.12452",
+    "categories": [
+      "nuclear-decay",
+      "nuclear-reactions",
+      "detectors-daq",
+      "particle-cross"
+    ],
+    "tags": [
+      "beta decay",
+      "neutron capture",
+      "elastic scattering",
+      "scintillator",
+      "neutrino"
+    ],
+    "importance": 70,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +22",
+      "跨领域关联 +6",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "primary_topic": "nuclear-decay",
+    "methods": [
+      "experimental",
+      "review"
+    ],
+    "classification_confidence": 0.88,
+    "classification_evidence": [
+      "beta decay",
+      "neutron capture",
+      "elastic scattering",
+      "scintillator",
+      "neutrino"
+    ],
+    "license": "",
+    "publisher_licenses": [
+      "https://link.aps.org/licenses/aps-default-license"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Wang, Mingyuan",
+      "Li, Yiyang",
+      "Hou, Suqing",
+      "Xiao, Fei",
+      "Wang, Yaoguang",
+      "Yu, Zeyuan"
+    ],
+    "journal_abbrev": "Phys. Rev. D",
+    "volume": "114",
+    "issue": "5",
+    "pages": "052005",
+    "numpages": "",
+    "publisher": "American Physical Society (APS)",
+    "publisher_url": "https://link.aps.org/doi/10.1103/wjvr-9gbc",
+    "citation_metadata_checked": true,
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-10T23:37:56+00:00",
+      "source": "OpenAlex"
+    },
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-23T22:15:18+00:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-09-10T23:37:56+00:00",
+      "source": "INSPIRE"
+    },
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-10T23:37:56+00:00",
+      "source": "Semantic Scholar"
     },
     "abstract_checked_sources": [
       "期刊官网/Cite",
@@ -836,7 +949,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/rnx6-wqpf",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-02T23:46:47+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-09-02T23:46:47+00:00",
@@ -964,7 +1077,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226002275",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -1049,7 +1162,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S016890022600286X",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -1134,7 +1247,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/yyfr-j1yl",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-08T23:47:28+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -1179,7 +1292,7 @@
     ],
     "open_access": null,
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "abstract_status": "full",
     "abstract_source": "OpenAlex",
     "primary_topic": "nuclear-decay",
@@ -1327,7 +1440,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226002731",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -1424,7 +1537,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326005885",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -1516,7 +1629,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326007185",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -1620,7 +1733,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-77427-x",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-05T14:57:42+08:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "publisher_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-09-05T14:57:42+08:00",
@@ -1637,9 +1750,9 @@
     "id": "c8771ae158b049b3",
     "type": "paper",
     "title": "Electromagnetic structure of charged and neutral strange vector mesons",
-    "abstract": "We investigate the electromagnetic form factors of the charged $K^{*+}(892)$ ($u\\bar{s}$) and neutral $K^{0}(896)$ ($d\\bar{s}$) strange vector mesons within the covariant Nambu--Jona-Lasinio model, employing the Schwinger proper-time regularization scheme to regularize ultraviolet divergences while incorporating the QCD aspect of quark confinement. To this end, we evaluate the charge (electric) $G_C(Q^2)$, magnetic $G_M(Q^2)$, and quadrupole $G_Q(Q^2)$ form factors, as well as the charge radii, of the charged $K^{+}(892)$ and neutral $K^{0}(896)$ strange vector mesons. We find the charge radii to be $\\langle r^2 \\rangle_{K^{+}} = 0.45~\\mathrm{fm}^2$ and $\\langle r^2 \\rangle_{K^{0}} = -0.04~\\mathrm{fm}^2$, respectively, while the corresponding magnetic moments are $\\mu_{K^{+}} = 2.67,\\mu_N$ and $\\mu_{K^{*0}} = 0.032,\\mu_N$. These results are consistent with other theoretical calculations and lattice QCD simulations.",
+    "abstract": "We investigate the electromagnetic form factors of the charged K * + ( 892 ) ( u s ¯ ) and neutral K * 0 ( 896 ) ( d s ¯ ) strange vector mesons within the covariant Nambu–Jona-Lasinio model, employing the Schwinger proper-time regularization scheme to regularize ultraviolet divergences that incorporated the QCD aspect of the quark confinement. To this end, we evaluate the charge (electric) G C ( Q 2 ) , magnetic moment G M ( Q 2 ) , and quadrupole moment G Q ( Q 2 ) form factors and charge radii of the charged K * + ( 892 ) and neutral K * 0 ( 896 ) strange vector mesons. We find that the charge radii are ⟨ r 2 ⟩ K * + = 0.45 fm 2 and ⟨ r 2 ⟩ K * 0 = − 0.04 fm 2 , respectively, while the magnetic moments are found μ K * + = 2.67 μ N and μ K * 0 = 0.032 μ N , consistent with other theoretical calculations and lattice QCD simulation results.",
     "abstract_status": "full",
-    "abstract_source": "arXiv RSS",
+    "abstract_source": "Crossref",
     "authors": [
       "Parada T. P. Hutauruk"
     ],
@@ -1659,17 +1772,19 @@
     ],
     "tags": [
       "lattice qcd",
-      "charge radii"
+      "charge radii",
+      "quadrupole moment"
     ],
     "primary_topic": "nuclear-structure",
     "methods": [
       "theoretical",
       "review"
     ],
-    "classification_confidence": 0.64,
+    "classification_confidence": 0.72,
     "classification_evidence": [
       "lattice qcd",
-      "charge radii"
+      "charge radii",
+      "quadrupole moment"
     ],
     "importance": 66,
     "score_reasons": [
@@ -1685,9 +1800,9 @@
     ],
     "rights_status": "reusable",
     "figures": [],
-    "figure_status": "pending",
+    "figure_status": "rights_unknown",
     "first_seen": "2026-09-08T23:47:28+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "citation_authors": [
       "Hutauruk, Parada T. P."
     ],
@@ -1700,6 +1815,176 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/t2g6-thzh",
     "citation_metadata_checked": true,
     "abstract_checked_sources": [],
+    "summary": "",
+    "content": ""
+  },
+  {
+    "id": "9568e62eee064356",
+    "type": "paper",
+    "title": "Isoscalar giant resonances in highly deformed Yb 172",
+    "abstract": "To study the isoscalar giant resonances in a deformed case, background-free α -particle inelastic scattering measurements using a 386 MeV α beam were performed on the highly deformed Yb 172 nucleus using the Grand Raiden spectrometer at the Research Center for Nuclear Physics (RCNP) at very forward angles, including 0 ∘ . The strength distributions for the isoscalar giant resonances up to L ≤ 3 were obtained using multipole decomposition analysis. The isoscalar giant monopole resonance (ISGMR) strength exhibits a splitting into two components, interpreted as the coupling of the ISGMR with the K = 0 component of the isoscalar giant quadrupole resonance (ISGQR). A bimodal structure is observed in the strength distribution of the isoscalar giant dipole resonance. The ISGQR strength shows an enhancement near 25 MeV, attributed to the excitation of an overtone mode, while the broadening of the main-tone peak is associated with nuclear deformation. The experimental results are compared with theoretical strength distributions calculated using the quasiparticle finite amplitude method for L ≤ 3 .",
+    "authors": [
+      "K. Khokhar",
+      "S. Bagchi",
+      "Y. Niu",
+      "C. Chen",
+      "M. N. Harakeh",
+      "M. Abdullah",
+      "H. Akimune",
+      "D. Das",
+      "T. Doi",
+      "L. M. Donaldson",
+      "Y. Fujikawa",
+      "M. Fujiwara",
+      "T. Furuno",
+      "U. Garg",
+      "Y. K. Gupta",
+      "K. B. Howard",
+      "Y. Hijikata",
+      "K. Inaba",
+      "S. Ishida",
+      "M. Itoh",
+      "N. Kalantar-Nayestanaki",
+      "D. Kar",
+      "T. Kawabata",
+      "S. Kawashima",
+      "K. Kitamura",
+      "N. Kobayashi",
+      "Y. Matsuda",
+      "A. Nakagawa",
+      "S. Nakamura",
+      "K. Nosaka",
+      "S. Okamoto",
+      "S. Ota",
+      "S. Pal",
+      "S. Roy",
+      "S. Weyhmiller",
+      "Z. Yang",
+      "J. C. Zamora"
+    ],
+    "published": "2026-09-04",
+    "updated": "2026-09-04",
+    "source": "Physical Review C",
+    "source_short": "PRC",
+    "source_type": "journal",
+    "doi": "10.1103/sxf2-hl2p",
+    "arxiv_id": "2512.20694",
+    "url": "https://doi.org/10.1103/sxf2-hl2p",
+    "pdf_url": "https://arxiv.org/pdf/2512.20694",
+    "categories": [
+      "nuclear-structure",
+      "nuclear-reactions",
+      "nuclear-general"
+    ],
+    "tags": [
+      "nuclear deformation",
+      "inelastic scattering",
+      "nuclear physics"
+    ],
+    "importance": 66,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "theoretical",
+      "review"
+    ],
+    "classification_confidence": 0.72,
+    "classification_evidence": [
+      "nuclear deformation",
+      "inelastic scattering",
+      "nuclear physics"
+    ],
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "license": "",
+    "publisher_licenses": [
+      "https://link.aps.org/licenses/aps-default-license"
+    ],
+    "figures": [],
+    "rights_status": "unknown",
+    "figure_status": "rights_unknown",
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-10T23:37:56+00:00",
+      "source": "OpenAlex"
+    },
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-08-11T16:58:16+08:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-09-10T23:37:56+00:00",
+      "source": "INSPIRE"
+    },
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-10T23:37:56+00:00",
+      "source": "Semantic Scholar"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ],
+    "citation_authors": [
+      "Khokhar, K.",
+      "Bagchi, S.",
+      "Niu, Y.",
+      "Chen, C.",
+      "Harakeh, M. N.",
+      "Abdullah, M.",
+      "Akimune, H.",
+      "Das, D.",
+      "Doi, T.",
+      "Donaldson, L. M.",
+      "Fujikawa, Y.",
+      "Fujiwara, M.",
+      "Furuno, T.",
+      "Garg, U.",
+      "Gupta, Y. K.",
+      "Howard, K. B.",
+      "Hijikata, Y.",
+      "Inaba, K.",
+      "Ishida, S.",
+      "Itoh, M.",
+      "Kalantar-Nayestanaki, N.",
+      "Kar, D.",
+      "Kawabata, T.",
+      "Kawashima, S.",
+      "Kitamura, K.",
+      "Kobayashi, N.",
+      "Matsuda, Y.",
+      "Nakagawa, A.",
+      "Nakamura, S.",
+      "Nosaka, K.",
+      "Okamoto, S.",
+      "Ota, S.",
+      "Pal, S.",
+      "Roy, S.",
+      "Weyhmiller, S.",
+      "Yang, Z.",
+      "Zamora, J. C."
+    ],
+    "journal_abbrev": "Phys. Rev. C",
+    "volume": "114",
+    "issue": "3",
+    "pages": "034305",
+    "numpages": "",
+    "publisher": "American Physical Society (APS)",
+    "publisher_url": "https://link.aps.org/doi/10.1103/sxf2-hl2p",
+    "citation_metadata_checked": true,
     "summary": "",
     "content": ""
   },
@@ -1849,7 +2134,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326005800",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -1937,7 +2222,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326006520",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -2028,7 +2313,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S037026932600674X",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-12T04:12:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-08-12T04:12:38+00:00",
@@ -2118,7 +2403,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-29T03:26:55+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "citation_authors": [
       "Anonymous"
     ],
@@ -2230,7 +2515,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "citation_authors": [
       "Conley, A. L.",
       "Spieker, M.",
@@ -2350,7 +2635,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "abstract_checked_sources": [],
     "citation_authors": [
       "Anonymous"
@@ -2446,7 +2731,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326006313",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -2580,7 +2865,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326006428",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -2675,7 +2960,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/vqrl-cjyy",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-08T23:47:28+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-09-08T23:47:28+00:00",
@@ -2819,7 +3104,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326005472",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -2934,6 +3219,84 @@
     }
   },
   {
+    "id": "c34e89ea2a5f189e",
+    "type": "paper",
+    "title": "Quantum computing hadron fragmentation functions in light-front chromodynamics",
+    "abstract": "We deploy quantum chromodynamics in light-front quantization (and gauge), discretized and truncated in both Fock and momentum spaces with a particle-register encoding suited for quantum simulation; we show for the first time how to calculate fragmentation functions, a problem heretofore untractable in general from approaches. We provide a classical-simulator-based proof of concept by computing the charm-to-charmonium fragmentation, c → J / ψ , in a simplified setup, an interesting case where we can (reasonably) compare with the known 1993 perturbative evaluation (and a more recent one at next-to-leading order) within nonrelativistic QCD.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "J. J. Gálvez-Viruet",
+      "Felipe J. Llanes-Estrada",
+      "Nicolás Martínez de Arenaza",
+      "María Gómez-Rocha",
+      "T. J. Hobbs"
+    ],
+    "published": "2026-09-10",
+    "updated": "2026-09-10",
+    "source": "Physical Review D",
+    "source_short": "PRD",
+    "source_type": "journal",
+    "doi": "10.1103/4grj-x7xv",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1103/4grj-x7xv",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-reactions",
+      "high-energy-nuclear",
+      "frontiers"
+    ],
+    "tags": [
+      "fragmentation",
+      "hadron",
+      "quantum"
+    ],
+    "primary_topic": "nuclear-reactions",
+    "methods": [
+      "theoretical",
+      "review"
+    ],
+    "classification_confidence": 0.72,
+    "classification_evidence": [
+      "fragmentation",
+      "hadron",
+      "quantum"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +18",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Gálvez-Viruet, J. J.",
+      "Llanes-Estrada, Felipe J.",
+      "Martínez de Arenaza, Nicolás",
+      "Gómez-Rocha, María",
+      "Hobbs, T. J."
+    ],
+    "journal_abbrev": "Phys. Rev. D",
+    "volume": "114",
+    "issue": "5",
+    "pages": "054021",
+    "numpages": "",
+    "publisher": "American Physical Society (APS)",
+    "publisher_url": "https://link.aps.org/doi/10.1103/4grj-x7xv",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-09-10T23:37:56+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
+    "abstract_checked_sources": []
+  },
+  {
     "id": "c524112054702018",
     "type": "paper",
     "title": "Direct mass measurement of Rh 91 and Ru 89 and mid-shell trend of the one-proton separation energies for N = Z + 1 nuclei",
@@ -3008,7 +3371,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "abstract_status": "full",
     "abstract_source": "Crossref",
     "primary_topic": "experimental-nuclear",
@@ -3107,6 +3470,166 @@
       "Semantic Scholar",
       "INSPIRE"
     ],
+    "summary": "",
+    "content": ""
+  },
+  {
+    "id": "c08eb4cc3d1ccbf2",
+    "type": "paper",
+    "title": "Hypervision: An on-chip hyperspectral microsystem for online video-rate computational imaging",
+    "abstract": "In this work, we tackled the long-standing challenge of the massive computation for hyperspectral imaging that is required to reconstruct and process large-volume spatial-spectral data cubes. Specifically, we designed a hardware accelerator, fabricated as a neural processing unit (NPU) capable of 9.3 tera operations per second at 16-bit integer (INT16), alongside a topology-aware structured pruning strategy for a lightweight reconstruction network. Through integration with our HyperspecI sensor, we demonstrate a fully standalone visible–near-infrared hyperspectral microsystem (~950 grams) that requires neither external power nor computing resources. The microsystem achieved real-time hyperspectral imaging at 32.9 frames per second (512×512, 61 channels) or 24.6 frames per second (1024×1024, 16 channels) and consumed only ~25.3 watts (367 giga–operations per second per watt). Application demonstrations in intelligent driving and air-to-ground monitoring highlight its practical potential advancing computational hyperspectral imaging from offline processing to integrated online perception.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Liheng Bian",
+      "Qinghao Meng",
+      "Lianjie Li",
+      "Zhen Wang",
+      "Yibo Feng",
+      "Xuan Peng",
+      "Jiajun Zhao",
+      "Jingyi Wang",
+      "Zhu Yang",
+      "Jun Zhang"
+    ],
+    "published": "2026-08-27",
+    "updated": "2026-08-27",
+    "source": "Science",
+    "source_short": "Science",
+    "source_type": "journal",
+    "doi": "10.1126/science.aef8268",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1126/science.aef8268",
+    "pdf_url": "",
+    "categories": [
+      "accelerators"
+    ],
+    "tags": [
+      "accelerator"
+    ],
+    "primary_topic": "accelerators",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "accelerator"
+    ],
+    "importance": 68,
+    "score_reasons": [
+      "来源权重 +56",
+      "核物理研究侧重 +10",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Bian, Liheng",
+      "Meng, Qinghao",
+      "Li, Lianjie",
+      "Wang, Zhen",
+      "Feng, Yibo",
+      "Peng, Xuan",
+      "Zhao, Jiajun",
+      "Wang, Jingyi",
+      "Yang, Zhu",
+      "Zhang, Jun"
+    ],
+    "journal_abbrev": "Science",
+    "volume": "393",
+    "issue": "6814",
+    "pages": "888-894",
+    "numpages": "7",
+    "publisher": "American Association for the Advancement of Science (AAAS)",
+    "publisher_url": "https://www.science.org/doi/10.1126/science.aef8268",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-09-05T14:57:42+08:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
+    "abstract_checked_sources": [],
+    "summary": "",
+    "content": ""
+  },
+  {
+    "id": "1e958a380f5ba826",
+    "type": "paper",
+    "title": "The LBT Y p Project. IV. A New Value of the Primordial Helium Abundance",
+    "abstract": "Abstract We present a new determination of the primordial helium abundance based on new, high-quality Large Binocular Telescope (LBT) observations of 54 metal-poor H ii regions. These regions have been observed and analyzed uniformly. We also describe a number of updates to our methodology, including updated helium emissivities. Enabled by the large, high-quality dataset, we examine our sample targets for potential systematic errors, which could bias their results. We perform a standard 95% confidence level (CL) χ 2 cut and find that a significantly larger fraction (47/54 = 87%) of our sample qualifies than for previous datasets. We also screen for quality and reliability, flagging targets that may introduce significant systematic errors, producing a dataset of 41 targets. In a significant breakthrough for the field, that dataset includes 15 high signal-to-noise ratio (SNR) targets with low metallicity (O/H ≤ 4 × 10 −5 ). Due to this low-metallicity dataset, for the first time, a weighted average for determining the primordial helium abundance ( y p ) is well justified and produces a robust result. By weighted average of our 15 low-metallicity targets, we determine y p = 0.08146 ± 0.00058, with the corresponding mass fraction Y p = 0.2458 ± 0.0013. This result achieves an unprecedented precision of 0.5%, and it is in good agreement with the Big Bang nucleosynthesis (BBN) result, Y p = 0.2467 ± 0.0002, based on the Planck determination of the baryon density.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Erik Aver",
+      "Evan D. Skillman",
+      "Richard W. Pogge",
+      "Noah S. J. Rogers",
+      "Miqaela K. Weller",
+      "Keith A. Olive",
+      "Danielle A. Berg",
+      "John J. Salzer",
+      "John H. Miller",
+      "José Eduardo Méndez-Delgado"
+    ],
+    "published": "2026-09-09",
+    "updated": "2026-09-09",
+    "source": "The Astrophysical Journal",
+    "source_short": "ApJ",
+    "source_type": "journal",
+    "doi": "10.3847/1538-4357/ae879b",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3847/1538-4357/ae879b",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-astrophysics"
+    ],
+    "tags": [
+      "nucleosynthesis"
+    ],
+    "primary_topic": "nuclear-astrophysics",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "nucleosynthesis"
+    ],
+    "importance": 66,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +8",
+      "突破性表述 +16",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://creativecommons.org/licenses/by/4.0/",
+      "https://iopscience.iop.org/info/page/text-and-data-mining"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Aver, Erik",
+      "Skillman, Evan D.",
+      "Pogge, Richard W.",
+      "Rogers, Noah S. J.",
+      "Weller, Miqaela K.",
+      "Olive, Keith A.",
+      "Berg, Danielle A.",
+      "Salzer, John J.",
+      "Miller, John H.",
+      "Méndez-Delgado, José Eduardo"
+    ],
+    "journal_abbrev": "ApJ",
+    "volume": "1008",
+    "issue": "2",
+    "pages": "240",
+    "numpages": "",
+    "publisher": "American Astronomical Society",
+    "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae879b",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
+    "abstract_checked_sources": [],
     "summary": "",
     "content": ""
   },
@@ -3243,7 +3766,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326005927",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -3338,7 +3861,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226002779",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -3349,164 +3872,6 @@
     ],
     "summary": "",
     "content": ""
-  },
-  {
-    "id": "c08eb4cc3d1ccbf2",
-    "type": "paper",
-    "title": "Hypervision: An on-chip hyperspectral microsystem for online video-rate computational imaging",
-    "abstract": "In this work, we tackled the long-standing challenge of the massive computation for hyperspectral imaging that is required to reconstruct and process large-volume spatial-spectral data cubes. Specifically, we designed a hardware accelerator, fabricated as a neural processing unit (NPU) capable of 9.3 tera operations per second at 16-bit integer (INT16), alongside a topology-aware structured pruning strategy for a lightweight reconstruction network. Through integration with our HyperspecI sensor, we demonstrate a fully standalone visible–near-infrared hyperspectral microsystem (~950 grams) that requires neither external power nor computing resources. The microsystem achieved real-time hyperspectral imaging at 32.9 frames per second (512×512, 61 channels) or 24.6 frames per second (1024×1024, 16 channels) and consumed only ~25.3 watts (367 giga–operations per second per watt). Application demonstrations in intelligent driving and air-to-ground monitoring highlight its practical potential advancing computational hyperspectral imaging from offline processing to integrated online perception.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Liheng Bian",
-      "Qinghao Meng",
-      "Lianjie Li",
-      "Zhen Wang",
-      "Yibo Feng",
-      "Xuan Peng",
-      "Jiajun Zhao",
-      "Jingyi Wang",
-      "Zhu Yang",
-      "Jun Zhang"
-    ],
-    "published": "2026-08-27",
-    "updated": "2026-08-27",
-    "source": "Science",
-    "source_short": "Science",
-    "source_type": "journal",
-    "doi": "10.1126/science.aef8268",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1126/science.aef8268",
-    "pdf_url": "",
-    "categories": [
-      "accelerators"
-    ],
-    "tags": [
-      "accelerator"
-    ],
-    "primary_topic": "accelerators",
-    "methods": [],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "accelerator"
-    ],
-    "importance": 68,
-    "score_reasons": [
-      "来源权重 +56",
-      "核物理研究侧重 +10",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Bian, Liheng",
-      "Meng, Qinghao",
-      "Li, Lianjie",
-      "Wang, Zhen",
-      "Feng, Yibo",
-      "Peng, Xuan",
-      "Zhao, Jiajun",
-      "Wang, Jingyi",
-      "Yang, Zhu",
-      "Zhang, Jun"
-    ],
-    "journal_abbrev": "Science",
-    "volume": "393",
-    "issue": "6814",
-    "pages": "888-894",
-    "numpages": "7",
-    "publisher": "American Association for the Advancement of Science (AAAS)",
-    "publisher_url": "https://www.science.org/doi/10.1126/science.aef8268",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-09-05T14:57:42+08:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
-    "abstract_checked_sources": [],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "1e958a380f5ba826",
-    "type": "paper",
-    "title": "The LBT Y p Project. IV. A New Value of the Primordial Helium Abundance",
-    "abstract": "Abstract We present a new determination of the primordial helium abundance based on new, high-quality Large Binocular Telescope (LBT) observations of 54 metal-poor H ii regions. These regions have been observed and analyzed uniformly. We also describe a number of updates to our methodology, including updated helium emissivities. Enabled by the large, high-quality dataset, we examine our sample targets for potential systematic errors, which could bias their results. We perform a standard 95% confidence level (CL) χ 2 cut and find that a significantly larger fraction (47/54 = 87%) of our sample qualifies than for previous datasets. We also screen for quality and reliability, flagging targets that may introduce significant systematic errors, producing a dataset of 41 targets. In a significant breakthrough for the field, that dataset includes 15 high signal-to-noise ratio (SNR) targets with low metallicity (O/H ≤ 4 × 10 −5 ). Due to this low-metallicity dataset, for the first time, a weighted average for determining the primordial helium abundance ( y p ) is well justified and produces a robust result. By weighted average of our 15 low-metallicity targets, we determine y p = 0.08146 ± 0.00058, with the corresponding mass fraction Y p = 0.2458 ± 0.0013. This result achieves an unprecedented precision of 0.5%, and it is in good agreement with the Big Bang nucleosynthesis (BBN) result, Y p = 0.2467 ± 0.0002, based on the Planck determination of the baryon density.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Erik Aver",
-      "Evan D. Skillman",
-      "Richard W. Pogge",
-      "Noah S. J. Rogers",
-      "Miqaela K. Weller",
-      "Keith A. Olive",
-      "Danielle A. Berg",
-      "John J. Salzer",
-      "John H. Miller",
-      "José Eduardo Méndez-Delgado"
-    ],
-    "published": "2026-09-09",
-    "updated": "2026-09-09",
-    "source": "The Astrophysical Journal",
-    "source_short": "ApJ",
-    "source_type": "journal",
-    "doi": "10.3847/1538-4357/ae879b",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.3847/1538-4357/ae879b",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-astrophysics"
-    ],
-    "tags": [
-      "nucleosynthesis"
-    ],
-    "primary_topic": "nuclear-astrophysics",
-    "methods": [],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "nucleosynthesis"
-    ],
-    "importance": 66,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +8",
-      "突破性表述 +16",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0/",
-      "https://iopscience.iop.org/info/page/text-and-data-mining"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Aver, Erik",
-      "Skillman, Evan D.",
-      "Pogge, Richard W.",
-      "Rogers, Noah S. J.",
-      "Weller, Miqaela K.",
-      "Olive, Keith A.",
-      "Berg, Danielle A.",
-      "Salzer, John J.",
-      "Miller, John H.",
-      "Méndez-Delgado, José Eduardo"
-    ],
-    "journal_abbrev": "ApJ",
-    "volume": "1008",
-    "issue": "2",
-    "pages": "240",
-    "numpages": "",
-    "publisher": "American Astronomical Society",
-    "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ae879b",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-09-09T23:46:01+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
-    "abstract_checked_sources": []
   },
   {
     "id": "173e6c323592e958",
@@ -3608,7 +3973,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226002871",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -3783,7 +4148,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226003141",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
+    "last_seen": "2026-09-10T23:37:56+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-01T00:56:38+00:00",
@@ -3963,350 +4328,6 @@
     "abstract_checked_sources": [
       "期刊官网/Cite",
       "OpenAlex"
-    ],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "7b880b729958a8ab",
-    "type": "paper",
-    "title": "High-precision beam profile measurement with a microchannel-plate detector in the high magnetic field of the WISArD experiment",
-    "abstract": "We present the development and characterization of a compact low-energy ion beam diagnostic for the WISArD (Weak Interaction Studies with $\\mathrm{^{32}Ar}$ Decay) experiment at ISOLDE/CERN. The microchannel plate (MCP) detector, which is configured in a Z-stack and has a resistive position sensitive anode, was tested with both stable and radioactive beams. This work focuses on the image reconstruction method, which corrects the pincushion distortion inherent to the square-shaped resistive anode, and investigates the influence of the magnetic field on the detector performance. Our results demonstrate that the detector achieves beam profile measurements with sub-millimeter accuracy, while coping with the spatial and high-magnetic field (4 T) constraints of the experiment. These capabilities meet the precision requirements of the WISArD experiment for extracting the modified beta-neutrino angular correlation coefficient, \\~a$_{\\beta\\nu}$, with an uncertainty of 0.1%.",
-    "abstract_status": "full",
-    "abstract_source": "Semantic Scholar",
-    "authors": [
-      "S. Lecanuet",
-      "X. Fléchard",
-      "P. Alfaurt",
-      "P. Ascher",
-      "D. Atanasov",
-      "B. Blank",
-      "L. Daudin",
-      "H. DePreaumont",
-      "M. Gerbaux",
-      "J. Giovinazzo",
-      "S. Grévy",
-      "G. Guignard",
-      "J. Ha",
-      "C. Knapen",
-      "S. Lechner",
-      "A. Lépine",
-      "J. Lory",
-      "J. Perronnel",
-      "M. Pomorski",
-      "M. Roche",
-      "C. Roumegou",
-      "N. Severijns",
-      "Y. Son",
-      "S. Vanlangendonck",
-      "M. Versteegen",
-      "D. Zakoucky"
-    ],
-    "published": "2026-09-01",
-    "updated": "2026-09-01",
-    "source": "Nuclear Instruments and Methods in Physics Research A",
-    "source_short": "NIMA",
-    "source_type": "journal",
-    "doi": "10.1016/j.nima.2026.171582",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1016/j.nima.2026.171582",
-    "pdf_url": "",
-    "categories": [
-      "detectors-daq",
-      "accelerators",
-      "particle-cross"
-    ],
-    "tags": [
-      "beam diagnostic",
-      "neutrino"
-    ],
-    "primary_topic": "detectors-daq",
-    "methods": [
-      "experimental"
-    ],
-    "classification_confidence": 0.64,
-    "classification_evidence": [
-      "beam diagnostic",
-      "neutrino"
-    ],
-    "importance": 63,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +17",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Lecanuet, S.",
-      "Fléchard, X.",
-      "Alfaurt, P.",
-      "Ascher, P.",
-      "Atanasov, D.",
-      "Blank, B.",
-      "Daudin, L.",
-      "DePreaumont, H.",
-      "Gerbaux, M.",
-      "Giovinazzo, J.",
-      "Grévy, S.",
-      "Guignard, G.",
-      "Ha, J.",
-      "Knapen, C.",
-      "Lechner, S.",
-      "Lépine, A.",
-      "Lory, J.",
-      "Perronnel, J.",
-      "Pomorski, M.",
-      "Roche, M.",
-      "Roumegou, C.",
-      "Severijns, N.",
-      "Son, Y.",
-      "Vanlangendonck, S.",
-      "Versteegen, M.",
-      "Zakoucky, D."
-    ],
-    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
-    "volume": "1089",
-    "issue": "",
-    "pages": "171582",
-    "numpages": "",
-    "publisher": "Elsevier BV",
-    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226003086",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-09-01T00:56:38+00:00",
-      "source": "OpenAlex"
-    },
-    "semantic_scholar_abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-09-01T00:56:38+00:00",
-      "source": "Semantic Scholar"
-    },
-    "abstract_checked_sources": [
-      "OpenAlex",
-      "Semantic Scholar"
-    ],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "c3de8a9400a92dd0",
-    "type": "paper",
-    "title": "Design, fabrication, and cold RF test of a prototype chopper system at LEAF",
-    "abstract": "Extended bunch spacing is required for precise product detection in certain nuclear physics experiments. To fulfill this need, a prototype RF chopper system was developed for the Low Energy Heavy Ion Accelerator Facility (LEAF) to provide an approximately 100 ns clean gap in the beam structure. The chopper operates at 5.078 MHz, employing a quarter-wave coaxial resonator. The RF design predicts that driven by an RF power of 217 W, the chopper system attains a deflection angle of approximately 11 mrad at a deflecting voltage of 20 kV for ions with a mass-to-charge ratio of 4, thereby facilitating the selection of one bunch out of every eight. This paper presents the design, construction, and low-power RF validation of the chopper prototype.",
-    "abstract_status": "full",
-    "abstract_source": "OpenAlex",
-    "authors": [
-      "Yu Tang",
-      "Yao Yang",
-      "Bo Zhang",
-      "Yuhan Zhai",
-      "Zehua Jia",
-      "Xianwu Wang",
-      "Zhiyuan Jiang",
-      "Zhiming Hu",
-      "Libin Li",
-      "Liangting Sun",
-      "Hongwei Zhao"
-    ],
-    "published": "2026-09-01",
-    "updated": "2026-09-01",
-    "source": "Nuclear Instruments and Methods in Physics Research A",
-    "source_short": "NIMA",
-    "source_type": "journal",
-    "doi": "10.1016/j.nima.2026.171558",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1016/j.nima.2026.171558",
-    "pdf_url": "",
-    "categories": [
-      "detectors-daq",
-      "accelerators",
-      "nuclear-general"
-    ],
-    "tags": [
-      "nuclear physics",
-      "accelerator"
-    ],
-    "primary_topic": "detectors-daq",
-    "methods": [],
-    "classification_confidence": 0.64,
-    "classification_evidence": [
-      "nuclear physics",
-      "accelerator"
-    ],
-    "importance": 63,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +17",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "https://doi.org/10.15223/policy-017",
-      "https://doi.org/10.15223/policy-037",
-      "https://doi.org/10.15223/policy-012",
-      "https://doi.org/10.15223/policy-029",
-      "https://doi.org/10.15223/policy-004"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Tang, Yu",
-      "Yang, Yao",
-      "Zhang, Bo",
-      "Zhai, Yuhan",
-      "Jia, Zehua",
-      "Wang, Xianwu",
-      "Jiang, Zhiyuan",
-      "Hu, Zhiming",
-      "Li, Libin",
-      "Sun, Liangting",
-      "Zhao, Hongwei"
-    ],
-    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
-    "volume": "1089",
-    "issue": "",
-    "pages": "171558",
-    "numpages": "",
-    "publisher": "Elsevier BV",
-    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226002846",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
-    "openalex_abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-09-01T00:56:38+00:00",
-      "source": "OpenAlex"
-    },
-    "abstract_checked_sources": [
-      "OpenAlex"
-    ],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "74a6c33f10857e8d",
-    "type": "paper",
-    "title": "Neutron star matter with hyperons: Bayesian comparison of nucleonic and SU(6)/SU(3) hyperonic models",
-    "abstract": "We investigate neutron star matter with hyperons within a density-dependent relativistic mean-field framework using Bayesian inference, considering three composition scenarios: purely nucleonic matter, hyperonic matter under SU(6) flavor symmetry, and hyperonic matter under SU(3) symmetry with free vector-sector parameters. The analysis incorporates constraints from empirical nuclear matter properties, theoretical inputs at low densities, and multimessenger observations of neutron stars. We find that the SU(6) scheme, grounded in the quark model and isospin counting rule, leads to a significantly softer equation of state. In contrast, the additional flexibility of the SU(3) framework enhances vector repulsion and yields a comparatively stiffer equation of state consistent with observational bounds across the explored parameter space; in particular, the posterior distributions favor values of the vector coupling ratio α v lower than the SU(6) limit α v = 1 . These differences are reflected in neutron star observables, including mass-radius relations, tidal deformabilities, direct Urca thresholds, and oscillation properties, all of which remain compatible with current constraints within the SU(3) scenario. We further examine structural signatures through the curvature of the mass-radius relation and find that, although hyperon-rich configurations can induce noticeable variations, such features depend sensitively on the stiffness of the equation of state and are therefore not universally robust indicators. Bayesian model comparison further shows that present constraints do not meaningfully discriminate between the purely nucleonic and SU(3) hyperonic scenarios, while providing positive, but not decisive, evidence against the more restrictive SU(6) framework.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Athira S.",
-      "Vishal Parmar",
-      "Monika Sinha",
-      "Ignazio Bombaci"
-    ],
-    "published": "2026-09-08",
-    "updated": "2026-09-08",
-    "source": "Physical Review C",
-    "source_short": "PRC",
-    "source_type": "journal",
-    "doi": "10.1103/6jzv-s7dq",
-    "arxiv_id": "2608.20989",
-    "url": "https://doi.org/10.1103/6jzv-s7dq",
-    "pdf_url": "https://arxiv.org/pdf/2608.20989",
-    "categories": [
-      "theoretical-nuclear",
-      "nuclear-astrophysics",
-      "nuclear-general",
-      "ai-science"
-    ],
-    "tags": [
-      "mean-field",
-      "neutron star",
-      "equation of state",
-      "nuclear matter",
-      "Bayesian inference"
-    ],
-    "primary_topic": "theoretical-nuclear",
-    "methods": [
-      "theoretical",
-      "review"
-    ],
-    "classification_confidence": 0.88,
-    "classification_evidence": [
-      "mean-field",
-      "neutron star",
-      "equation of state",
-      "nuclear matter",
-      "Bayesian inference"
-    ],
-    "importance": 63,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +15",
-      "跨领域关联 +6",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "http://creativecommons.org/licenses/by/4.0/",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license",
-      "https://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "reusable",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-09-09T23:46:01+00:00",
-    "citation_authors": [
-      "S., Athira",
-      "Parmar, Vishal",
-      "Sinha, Monika",
-      "Bombaci, Ignazio"
-    ],
-    "journal_abbrev": "Phys. Rev. C",
-    "volume": "114",
-    "issue": "3",
-    "pages": "035802",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/6jzv-s7dq",
-    "citation_metadata_checked": true,
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-08-11T16:57:44+08:00",
-      "source": "OpenAlex"
-    },
-    "publisher_abstract_enrichment": {
-      "status": "blocked",
-      "checked_at": "2026-08-11T16:58:16+08:00",
-      "source": "Publisher",
-      "error": "HTTP Error 403: Forbidden"
-    },
-    "abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-08-11T17:02:25+08:00",
-      "source": "INSPIRE"
-    },
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-08-11T17:05:16+08:00",
-      "source": "Semantic Scholar"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
     ],
     "summary": "",
     "content": ""
