@@ -1,68 +1,68 @@
-# 小康康的物理世界 · 2026-09-12 科研简报
+# 小康康的物理世界 · 2026-09-11 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 13/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 11/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[在小x区域探测致密核物质：一个全局分析框架的工作流程](https://arxiv.org/abs/2609.00230)**  
-   arXiv nucl-th · 2026-09-12  
-   dipole模型为描述高能核相互作用提供了强有力的框架，特别是在稠密胶子物质的 regime 中。然而，准确演化dipole--nucleus散射振幅仍是一个主要的计算挑战，因为其受非线性QCD演化方程的支配。为解决这一问题，我们研究了一种机器学习（ML）模型，作为传统数值演化的高效替代方案。这些基于ML-的近似方法显著降低了全局分析的计算成本，同时保持了描述广泛实验数据所需精度。我们系统地评估了ML结果在准确性、计算效率以及捕捉核环境中dipole演化关键特征方面的表现。这些计算进展将使在dipole和parton模型框架内对多样化数据集进行全局分析成为可能，从而更严格地探测稠密区域中的核结构。在统一的拟合框架下比较这两种描述，可以为胶子分布提供精确约束，并推进我们对核中夸克和胶子结构的理解，特别是在小x区…
-2. **[Gogny相互作用从起源到当前挑战](https://arxiv.org/abs/2609.11425)**  
-   arXiv nucl-th · 2026-09-12  
-   本文综述的主要目标是首次系统地汇集关于唯象有效Gogny相互作用的各种方面，该相互作用最初由70提出。这包括导致其产生和演化的核现象以及促成目标实现的高度技术性方面。为此，我们提出围绕四个要点进行讨论。在一般引言之后，阐述了Gogny相互作用的历史与哲学。特别是，强调了一种直观方法，即通过使用基于真实相互作用的Hartree-Fock计算结果以及二阶修正和G-矩阵所获得的结果来指导唯象相互作用参数的确定。同时，还表明配对或裂变等物理现象对于改进参数化至关重要。此外，还讨论了原始解析形式在多年间的发展演变。第二点涉及用于参数化生成的模拟器，给出了其与解析形式演变相一致的修改内容。此外，也提及了更近期的其他拟合方法。第三要点专门讨论了核物质在拟合过程中的作用以及参数化被接受的依据。最后一个要点旨在突出使用Gogn…
-3. **[Nucleon 3D intrinsic spin structure from the weak-neutral axial-vector form factors](https://arxiv.org/abs/2512.06801)**  
-   arXiv nucl-th · 2026-09-12  
-   Relativistic 3D weak-neutral axial-vector four-current and spin distributions inside a nucleon (or a general spin-$\frac{1}{2}$ hadron) including three weak-neutral axial-vector form factors are investigated for the first time. We clarify that the relativistic 3D axial charge distribution in the Breit frame is completely described by the induced pseudotenso…
-4. **[从NLO NRQCD出发的赝标量夸克对的共线碎裂](https://arxiv.org/abs/2609.11604)**  
-   arXiv nucl-th · 2026-09-12  
-   我们讨论了一种新的公开可用的共线碎裂函数（FFs）家族，用于赝标量夸克对，即NRFF1.0集合。它基于重味非相对论演化（HF-NRevo）方案，旨在描述在中等和大横向动量下重强子形成的主导幂次碎裂过程。重夸克对产生自然地涉及了量子色动力学（QCD）中的扰动和非扰动动力学，从重$Q\bar{Q}$对的产生到其形成为物理束缚态。在NRFF1.0中，非相对论量子色动力学（NRQCD）提供了计算初始尺度下FF输入的理论框架，这些输入随后通过HF-NRevo方案演化。该设置为研究中到高横向动量区域内的部分子层级和喷注结构提供了精确基准。对部分子通道和重味阈值的显式处理，使该框架特别适用于探索夸克对在喷注中的碎裂、喷注淬灭敏感性、能量损失机制以及在夸克-胶子等离子体中出现的介质改性碎裂模式。
-5. **[N$^3$LO Twist-2 匹配的横动量依赖分布函数与SIDIS $q_\ast$ 谱](https://arxiv.org/abs/2509.01655)**  
-   arXiv nucl-th · 2026-09-12  
-   我们计算了横动量依赖（TMD）手性部分子分布函数和碎片化函数在次次次次-leading阶（N$^3$LO）的QCD中的扭结-2匹配。该计算包含了完全的次次-leading阶（NNLO）多克希策-格里博夫-利帕托夫-阿尔塔雷利-帕里（DGLAP）分裂函数集合，这些分裂函数控制着手性依赖部分子分布函数（PDFs）和碎片化函数（FFs）的演化。在TMD因子化框架内，我们通过完成轻子-强子横动量不平衡在半包涵深度非弹性散射（SIDIS）中的次次次次-leading对数（N$^3$LL）预测，量化了辐射修正的影响。我们的结果为未来电子-离子对撞机（EIC）探测夸克和胶子的手性结构和束缚运动提供了最精确的理论输入。
-6. **[利用PYTHIA研究在$\sqrt{s}=200$ GeV的pp碰撞中多重性依赖的非流相关性](https://arxiv.org/abs/2609.11526)**  
-   arXiv nucl-th · 2026-09-12  
-   在高多重度pA和pp碰撞中观察到近侧长程相关性的增强，通常被称为ridge，这激发了大量研究以量化小系统中可能存在的集体效应。在LHC上小系统中两粒子相关测量中，非流动贡献的估算通常依赖于一个假设，即由喷注引起的非流动相关性与事件多重度无关。因此，这一假设使得可以通过直接使用低多重度事件来估算和扣除高多重度情况下的非流动贡献。本文研究了这一假设在RHIC能量（$\sqrt{s} = 200$~GeV）pp碰撞中使用PYTHIA事件生成器通过两粒子相关函数估算的非流动贡献的多重度依赖性。结果表明，选择任何特定的多重度范围都会内在地引入对喷注产生动力学的偏差。这些偏差在RHIC能量下引入了非流动贡献的非平凡多重度依赖性。利用多种常用的多重度估计量，包括中性区带电粒子多重度、前向多重度以及本底事件活动，研究了喷注碎…
-7. **[色玻璃凝聚体多威尔逊线相关函数的傅里叶变换通过菲隆求积法](https://arxiv.org/abs/2608.18589)**  
-   arXiv nucl-th · 2026-09-12  
-   在颜色玻璃凝聚有效理论中计算截面需要将多条威尔逊线相关函数从横向坐标空间傅里叶变换到横向动量空间。在通常假设撞击参数无关性的条件下，每项变换简化为一组贝塞尔函数核快速振荡的汉克尔变换，在现象学相关动量下这种振荡使得直接求积成本过高。我们提出了一种类似菲隆的求积方法，适用于任意被积函数，该方法以闭合形式在存储的坐标网格上对这些振荡因子进行积分，将每项汉克尔变换简化为一个预先计算的权重向量，从而将完整的嵌套变换链简化为一系列矩阵乘法。我们在深非弹性散射双喷射截面中开发并验证了该方法，超越了相关极限近似，其中基于exprel的四极威尔逊线相关函数重述消除了其标准参数化中固有的数值$0/0$不稳定性。将计算移植到图形处理单元（GPU）上，采用自定义CUDA核，将动量空间收缩直接融合到相关函数评估中，使得单个偶极输入的…
-8. **[从超流体相干性到核断裂高-$K$碎片通道](https://arxiv.org/abs/2609.11485)**  
-   arXiv nucl-th · 2026-09-12  
-   裂变碎片自旋的起源仍不清楚。对于$^{236}$U裂变，我们结合了与形变相关的有限温度配对效应以及多维断裂谱分析。在配对淬灭边界附近，配对断裂暴露了近费米能级的高$\Omega$入侵轨道，并打开了高$K$通道。由此产生的最大谱学容量范围从几个到十几个$\hbar$单位。快速颈断裂起到非绝热投影冻结的作用，其中配对充当动力学门控：其临界衰减不会产生角动量，但允许现有的高$K$投影作为局部碎片$K$分量绝热保留，同时总角动量保持守恒。
+1. **[The role of ab initio beta-decay calculations in light nuclei for probes of physics beyond the standard model](https://doi.org/10.1016/j.ppnp.2026.104260)**  
+   Progress in Particle and Nuclear Physics · 2026-09-01  
+   Precision beta decay experiments serve as powerful probes of physics beyond the Standard Model, enabling stringent tests of fundamental symmetries of nature. In particular, these experiments primarily focus on precise determinations of the Cabibbo-Kobayashi-Maskawa matrix element Vud and the search for exotic weak currents, both of which depend critically o…
+2. **[在s = 200 GeV的横向极化质子-质子碰撞中喷注内的能量相关子](https://doi.org/10.1103/fgsf-gx2q)**  
+   Physical Review Letters · 2026-09-08  
+   我们报告了在横向极化的质子-质子碰撞中，s = 200 GeV 条件下，利用相对论重离子对撞机上的STAR探测器首次测量了单点和双点能量相关函数。这些可观测量分别量化了单个强子和强子对在喷注内的能量加权角分布。对于π⁺、π⁻以及π⁺π⁻对，观察到显著的自旋依赖不对称性，揭示了在特定角尺度下非微扰动力学的出现。通过将碎片化动力学投影到梅林矩上，这些测量对核子的横向不对称性具有敏感性，同时最小化了来自非微扰碎片化函数的不确定性。这些结果确立了能量相关函数作为探测核子结构的一种新颖且精确的手段，并为未来电子-离子对撞机上的三维核子断层成像开辟了有前景的途径。
+3. **[First Nb 94 ( n , γ ) Measurement: Constraining the Nucleosynthetic Origin of Mo 94 in Presolar Grains](https://doi.org/10.1103/538w-rhqb)**  
+   Physical Review Letters · 2026-08-18  
+   Isotopic measurements of presolar silicon carbide grains from dying stars have revealed a puzzling overabundance of Mo 94 that stellar nucleosynthesis models have failed to reproduce for two decades. This discrepancy challenged our understanding of the slow neutron-capture process ( s -process) that forges approximately half of the elements heavier than iro…
+4. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
+   Physical Review Letters · 2026-08-04  
+   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
+5. **[Deformation, halo, and bubble structure: A paradigm shift of exotic phenomena in light to medium mass nuclei](https://doi.org/10.1016/j.ppnp.2026.104262)**  
+   Progress in Particle and Nuclear Physics · 2026-09-01  
+   The emergence of exotic nuclear structures, such as deformation, one- and two-neutron halos, and bubble configurations, marks a paradigm shift in our understanding of light- to medium-mass nuclei far from stability, particularly near and within the island of inversion extending across $N=20-28$. In this review, we integrate microscopic structure calculation…
+6. **[双中微子双 β 衰变的辐射修正](https://doi.org/10.1103/gbjc-wsdn)**  
+   Physical Review Letters · 2026-08-11  
+   We use heavy-nucleus effective field theory to compute radiative corrections to two-neutrino double-$\beta$ decay ($2\nu\beta\beta$). Our main result is the first derivation of a universal radiative-correction factor for double-weak decays -- the analogue of the Sirlin function in single-$\beta$ decay -- independent of nuclear matrix elements and excitation…
+7. **[在ATLAS实验中希格斯玻色子衰变中Z-玻色子对纠缠的测量](https://doi.org/10.1103/y1nh-1b82)**  
+   Physical Review Letters · 2026-09-11  
+   纠缠是量子系统的一个关键特性。本文报道了利用大型强子对撞机（LHC）在质心能量为13和13.6 TeV的质子-质子对撞数据中，对Z玻色子对中自旋纠缠的首次测量，数据由ATLAS探测器记录。通过对H → Z Z * → ℓ + ℓ − ℓ + ℓ − 过程中与Z Z * 自旋密度矩阵元素相关的角观测量的测量，得到系数C 2 , 1 , 2 , − 1 = − 0.71 ± 0.45 和 C 2 , 2 , 2 , − 2 = 0.08 ± 0.44，与标准模型预测一致。利用完整的角分布进行的互补假设检验，依赖于衰变过程中的若干标准模型假设，对量子相关性具有显著更高的敏感度，并在4.7个标准差（预期为4.9 σ）的显著性水平上否定可分离态假设，相对于纠缠标准模型假设。这些结果为在电弱尺度上重子（自旋三态）之间的量…
+8. **[重中性轻子在同号缪子对撞机中](https://doi.org/10.1103/prx6-wnwr)**  
+   Physical Review D · 2026-09-09  
+   我们探讨了在提议的高能同号缪子对撞机μ TRISTAN 上发现重中性轻子（HNLs）的潜力，这些HNLs的模型源于解释中微子质量起源的理论。研究聚焦于两种互补的HNL-介导的信号：（i）违反轻子味（LFV）的通道 μ + μ + → W + τ + ν ¯ μ 和（ii）违反轻子数（LNV）的通道 μ + μ + → W + W + 。LNV 过程是逆中微子无双β衰变的缪子类比，如果被观测到，将为马约拉纳中微子提供强有力的证据，而LFV 过程则为轻子区中的味改变中性流提供了一种新颖的探测手段。在s ∼ O ( 10 ) TeV 的μ TRISTAN 对撞机上，对与缪子和塔中微子混合的HNL 的敏感度，随质量变化而呈现，可在广泛的质量范围内超越目前基于电弱精确可观测量的实验界限。特别是，对于与缪子中微子的混合，…
 
 ## 物理新闻
 
-- **[使用W态进行量子场论中散射的数字量子模拟](https://www.nature.com/articles/s41567-026-03436-8)**  
-   Nature Physics · 2026-09-11  
+- **[微转子产生波](https://www.nature.com/articles/s41567-026-03452-8)**  
+   Nature Physics · 2026-09-14  
    数据源暂未提供详细介绍。
-- **[一个数字孪生体应该做出一个风险性的声明](https://www.nature.com/articles/s41567-026-03411-3)**  
-   Nature Physics · 2026-09-11  
+- **[为引力和激光光谱学实验产生高强度的超热μ子束](https://www.nature.com/articles/s41567-026-03433-x)**  
+   Nature Physics · 2026-09-14  
    数据源暂未提供详细介绍。
-- **[国际象棋揭示了人类与AI策略之间的差异](http://link.aps.org/doi/10.1103/Physics.19.126)**  
-   APS Physics · 2026-09-11  
-   作者：Mark Buchanan 国际象棋大师们比AI玩家更快地向更简单的游戏过渡，这表明在平衡短期和长期前景方面存在不同的方法。[物理19, 126] 发表于Fri Sep 11, 2026
-- **[三重态霍尔效应在电子-空穴双层中](https://www.nature.com/articles/s41567-026-03444-8)**  
-   Nature Physics · 2026-09-10  
+- **[滑动液滴和冻结液滴中的电离机制](https://www.nature.com/articles/s41567-026-03449-3)**  
+   Nature Physics · 2026-09-14  
+   数据源暂未提供详细介绍。
+- **[临界状态源于竞争](https://www.nature.com/articles/s41567-026-03450-w)**  
+   Nature Physics · 2026-09-14  
    数据源暂未提供详细介绍。
 
 ## 科研通知
 
+- **[CEPC硅内径迹探测器会议](https://indico.ihep.ac.cn/event/30841/)**  
+   高能所 Indico · 2026-09-14  
+   Zoom 链接：https://zoom.us/j/97031326814?pwd=ftwTs8PlLe8ZAhi5OmaFD2bw8ffx4w.1 会议 ID：97031326814 密码：212318
 - **[SCD周会](https://indico.ihep.ac.cn/event/30821/)**  
    高能所 Indico · 2026-09-13  
    2026-09-14 — 2026-09-14
-- **[核物理与核技术全国重点实验室学术报告— 核物理前沿与交叉专题（第六十讲）](https://sklnpt.pku.edu.cn/info/1121/4761.htm)**  
-   核物理与核技术全国重点实验室会议 · 2026-09-11  
-   ----友情链接---- ---- 北京大学 ---- ---- 北京大学物理学院 ---- ---- HIAF强流重离子加速器装置 ---- 地址：北京市海淀区成府路201号核物理与核技术全国重点实验室 邮编：100871 联系电话：010-62751870；010-62755215 邮箱：jingwu@pku.edu.cn
 - **[关于发布原子级制造基础研究重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100397.html)**  
    国家自然科学基金委项目指南 · 2030-12-31  
    国科金发计〔2026〕12号 国家自然科学基金委员会现发布原子级制造基础研究重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请。 国家自然科学基金委员会 2026年1月26日 原子级制造基础研究重大研究计划 2026年度项目指南 原子级制造是指在原子尺度控制材料的结构与成分，其核心是通过原子的精确操控来获得特定功能，突破传统制造技术的精度极限，实现物质的原子级转化与高效利用。原子级制造的科学基础是在原子尺度下优化物质转化与能量利用，实现物质结构和材料性能的按需订制，为实现颠覆性技术、升级战略性产业和提升国家安全竞争力奠定科学与技术基础。 一、科学目标 本重大研究计划围绕批量原子操控这一核心目标，聚焦原子尺度下物质与能量的相互作用原理，实现材料成分和结构的原子级构筑和测量表征，…
 - **[关于发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100371.html)**  
    国家自然科学基金委项目指南 · 2029-12-31  
    国科金发计〔2026〕6号 国家自然科学基金委员会现发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请
-- **[国家自然科学基金委员会数学物理科学部关于征集2026年度重大非共识项目立项建议的通告 2026-09-09](https://www.nsfc.gov.cn/p1/3381/2822/141850.html)**  
-   国家自然科学基金委数理科学部 · 2026-09-09  
-   国家自然科学基金委员会数学物理科学部关于征集2026年度重大非共识项目立项建议的通告已通过科学基金网络信息系统（https://grants.nsfc.gov.cn）予以发布，请依托单位和申请人登录科学基金网络信息系统，在“项目管理-项目指南”模块查看
-- **[CGEM软件会议](https://indico.ihep.ac.cn/event/30796/)**  
-   高能所 Indico · 2026-09-09  
-   2026-09-10 — 2026-09-10
+- **[关于组织申报2026年度广东省基础与应用基础研究基金企业联合基金（公共卫生与医药健康领域）第二批项目的通知](https://gdstc.gd.gov.cn/zwgk_n/tzgg/content/post_4955299.html)**  
+   广东省科技厅 · 2026-09-15  
+   广东省科学技术厅 简体 繁体 无障碍 长者助手 首页 政务公开 科技资讯 党风廉政 办事服务 互动平台 搜 索 当前位置： 首页 > 政务公开 > 通知公告 关于组织申报2026年度广东省基础与应用基础研究基金企业联合基金（公共卫生与医药健康领域）第二批项目的通知 时间 : 2026-09-14 15:13:07 来源 : 广东省科学技术厅 【字体: 大 中 小 】 【打印】 分享到： 粤基金函字〔2026〕27号 各有关单位： 为深入贯彻习近平总书记关于科技创新特别是基础研究的系列重要讲话精神以及党的二十大和二十届历次全会精神，落实省委省政府关于加强基础研究的部署要求，充分发挥省基础与应用基础研究基金（以下简称省基金）导向作用，广东省科学技术厅、广东省基础与应用基础研究基金委员会（以下简称省基金委）与有关企…
+- **[核物理与核技术全国重点实验室学术报告— 核物理前沿与交叉专题（第六十讲）](https://sklnpt.pku.edu.cn/info/1121/4761.htm)**  
+   核物理与核技术全国重点实验室会议 · 2026-09-11  
+   ----友情链接---- ---- 北京大学 ---- ---- 北京大学物理学院 ---- ---- HIAF强流重离子加速器装置 ---- 地址：北京市海淀区成府路201号核物理与核技术全国重点实验室 邮编：100871 联系电话：010-62751870；010-62755215 邮箱：jingwu@pku.edu.cn
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)
