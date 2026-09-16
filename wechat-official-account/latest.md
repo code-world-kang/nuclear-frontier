@@ -1,46 +1,46 @@
-# 小康康的物理世界 · 2026-09-11 科研简报
+# 小康康的物理世界 · 2026-09-15 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 11/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 13/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[The role of ab initio beta-decay calculations in light nuclei for probes of physics beyond the standard model](https://doi.org/10.1016/j.ppnp.2026.104260)**  
-   Progress in Particle and Nuclear Physics · 2026-09-01  
-   Precision beta decay experiments serve as powerful probes of physics beyond the Standard Model, enabling stringent tests of fundamental symmetries of nature. In particular, these experiments primarily focus on precise determinations of the Cabibbo-Kobayashi-Maskawa matrix element Vud and the search for exotic weak currents, both of which depend critically o…
-2. **[在s = 200 GeV的横向极化质子-质子碰撞中喷注内的能量相关子](https://doi.org/10.1103/fgsf-gx2q)**  
-   Physical Review Letters · 2026-09-08  
-   我们报告了在横向极化的质子-质子碰撞中，s = 200 GeV 条件下，利用相对论重离子对撞机上的STAR探测器首次测量了单点和双点能量相关函数。这些可观测量分别量化了单个强子和强子对在喷注内的能量加权角分布。对于π⁺、π⁻以及π⁺π⁻对，观察到显著的自旋依赖不对称性，揭示了在特定角尺度下非微扰动力学的出现。通过将碎片化动力学投影到梅林矩上，这些测量对核子的横向不对称性具有敏感性，同时最小化了来自非微扰碎片化函数的不确定性。这些结果确立了能量相关函数作为探测核子结构的一种新颖且精确的手段，并为未来电子-离子对撞机上的三维核子断层成像开辟了有前景的途径。
-3. **[First Nb 94 ( n , γ ) Measurement: Constraining the Nucleosynthetic Origin of Mo 94 in Presolar Grains](https://doi.org/10.1103/538w-rhqb)**  
-   Physical Review Letters · 2026-08-18  
-   Isotopic measurements of presolar silicon carbide grains from dying stars have revealed a puzzling overabundance of Mo 94 that stellar nucleosynthesis models have failed to reproduce for two decades. This discrepancy challenged our understanding of the slow neutron-capture process ( s -process) that forges approximately half of the elements heavier than iro…
-4. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
-   Physical Review Letters · 2026-08-04  
-   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
-5. **[Deformation, halo, and bubble structure: A paradigm shift of exotic phenomena in light to medium mass nuclei](https://doi.org/10.1016/j.ppnp.2026.104262)**  
-   Progress in Particle and Nuclear Physics · 2026-09-01  
-   The emergence of exotic nuclear structures, such as deformation, one- and two-neutron halos, and bubble configurations, marks a paradigm shift in our understanding of light- to medium-mass nuclei far from stability, particularly near and within the island of inversion extending across $N=20-28$. In this review, we integrate microscopic structure calculation…
-6. **[双中微子双 β 衰变的辐射修正](https://doi.org/10.1103/gbjc-wsdn)**  
-   Physical Review Letters · 2026-08-11  
-   We use heavy-nucleus effective field theory to compute radiative corrections to two-neutrino double-$\beta$ decay ($2\nu\beta\beta$). Our main result is the first derivation of a universal radiative-correction factor for double-weak decays -- the analogue of the Sirlin function in single-$\beta$ decay -- independent of nuclear matrix elements and excitation…
-7. **[在ATLAS实验中希格斯玻色子衰变中Z-玻色子对纠缠的测量](https://doi.org/10.1103/y1nh-1b82)**  
-   Physical Review Letters · 2026-09-11  
-   纠缠是量子系统的一个关键特性。本文报道了利用大型强子对撞机（LHC）在质心能量为13和13.6 TeV的质子-质子对撞数据中，对Z玻色子对中自旋纠缠的首次测量，数据由ATLAS探测器记录。通过对H → Z Z * → ℓ + ℓ − ℓ + ℓ − 过程中与Z Z * 自旋密度矩阵元素相关的角观测量的测量，得到系数C 2 , 1 , 2 , − 1 = − 0.71 ± 0.45 和 C 2 , 2 , 2 , − 2 = 0.08 ± 0.44，与标准模型预测一致。利用完整的角分布进行的互补假设检验，依赖于衰变过程中的若干标准模型假设，对量子相关性具有显著更高的敏感度，并在4.7个标准差（预期为4.9 σ）的显著性水平上否定可分离态假设，相对于纠缠标准模型假设。这些结果为在电弱尺度上重子（自旋三态）之间的量…
-8. **[重中性轻子在同号缪子对撞机中](https://doi.org/10.1103/prx6-wnwr)**  
-   Physical Review D · 2026-09-09  
-   我们探讨了在提议的高能同号缪子对撞机μ TRISTAN 上发现重中性轻子（HNLs）的潜力，这些HNLs的模型源于解释中微子质量起源的理论。研究聚焦于两种互补的HNL-介导的信号：（i）违反轻子味（LFV）的通道 μ + μ + → W + τ + ν ¯ μ 和（ii）违反轻子数（LNV）的通道 μ + μ + → W + W + 。LNV 过程是逆中微子无双β衰变的缪子类比，如果被观测到，将为马约拉纳中微子提供强有力的证据，而LFV 过程则为轻子区中的味改变中性流提供了一种新颖的探测手段。在s ∼ O ( 10 ) TeV 的μ TRISTAN 对撞机上，对与缪子和塔中微子混合的HNL 的敏感度，随质量变化而呈现，可在广泛的质量范围内超越目前基于电弱精确可观测量的实验界限。特别是，对于与缪子中微子的混合，…
+1. **[超重核在融合中的产生概率](https://doi.org/10.1103/dyj6-2dfw)**  
+   Physical Review C · 2026-09-15  
+   通过融合反应合成超重原子核（SHN）是核物理中的一个关键领域，为理解原子核稳定性以及周期表的极限提供了重要见解。然而，由于复杂的反应机制和对敏感模型参数的不确定性，蒸发残留截面（$ \sigma_{\rm {ER} }$）的理论预测仍然具有挑战性。在本工作中，基于势垒隧穿概念，系统分析了原子序数为$Z\ge 110$的SHN的平均产额。结合用于描述俘获过程的经验势垒分布方法，提出了一种唯象公式（EBD3），该公式在数量级上再现了58测得的$ \sigma_{\rm {ER} }$，其均方根偏差为0.369。该公式成功捕捉了裂变类过程中的关键量，包括裂变势垒高度、质量不对称性、俘获口袋深度以及有效融合势垒高度。给出了元素119合成的预测，识别出具有前景的入射靶组合，例如$^{50}$Ti + $^{249}$B…
+2. **[原子核中梨形结构及其量子涨落的可视化](https://doi.org/10.1103/ptd7-hcwg)**  
+   Physical Review C · 2026-09-15  
+   原子核呈梨形，或称八极形变，增强了原子核对基本对称性破坏效应（包括CP破坏）的敏感性，然而其定量表征，特别是其量子涨落，仍具挑战性。我们建立了一种多尺度验证策略，结合低能电磁跃迁与中等能量核-核碰撞，以探测八极形变及其相关的量子形状涨落。基于密度泛函理论的微观集体哈密顿量，我们首先重现了$^{226}\mathrm{Ra}, ^{238}\mathrm{U}$和$^{244}\mathrm{Pu}$的电八极跃迁强度，从而验证了核结构输入的基础性。在同位旋玻尔兹曼-乌林格-乌伦贝克输运模型中，我们通过将初始参与粒子的椭圆度与自相关减去的两粒子流动可观测量相关联，验证了几何响应。所得三角流动可观测量${v}_{3}{{2}}^{2}$与平均平方八极形变$\ensuremath{\langle}{\ensurema…
+3. **[光子诱导的 $J/\psi$ 作为相对论重离子碰撞中碰撞几何形状的线性偏振探测](https://arxiv.org/abs/2609.14604)**  
+   arXiv nucl-ex · 2026-09-15  
+   在相对论重离子碰撞中，准实光子的线性偏振可以关联光子诱导的矢量介子的自旋方向与碰撞几何结构。为了探索这种敏感性，我们报告了在具有强子重叠的重离子碰撞中，关于事件平面的光子诱导 $J/\psi$ 衰变角分布的首次测量。分析使用了STAR探测器记录的Ru+Ru和Zr+Zr碰撞，其核-核中心能为 $\sqrt{s_{\mathrm{NN}}}=200$ GeV。在考虑有限事件平面分辨率并减去残余强子贡献后，我们提取了在 $|y^{ee}|<0.8$、$p_{\mathrm T}^{ee}<0.2~\mathrm{GeV}/c$ 以及30--80%中心性范围内的负的二阶调制，$A_2^{\rm phot} = -0.39 \pm 0.11~(\mathrm{stat.}) \pm 0.04~(\mathrm{sys.…
+4. **[在Zn 68的低自旋状态下发生核共振荧光引起的核芯断裂](https://doi.org/10.1103/hfk6-hmvf)**  
+   Physical Review C · 2026-09-15  
+   $^{68}$Zn原子核中的低自旋激发态已通过高亮度γ射线源（HI$\gamma$S）从基态一直研究到粒子发射阈值，使用核共振荧光技术（NRF）和新开发的Clover阵列。低自旋能级通过线性偏振的$2.90 - 9.79$ MeV光子束激发。对于观察到的大量158态，确定了自旋-宇称量子数以及相关的$M1$和$E1$衰变强度。此外，在9.46和9.79 MeV上进行的长时间符合测量使得能够研究靠近基态的能级结构。结果已通过使用两种不同模型空间和几种常用于描述该质量区核素的有效相互作用的壳模型计算进行解释。在基态附近结构可归因于仅涉及价核子的激发，但在高于$\sim5$ MeV的激发能处，总$M1$强度的演化需要引入壳破裂来解释。
+5. **[Multimodal shell-driven fission in radium isotopes](https://doi.org/10.1103/2x9x-s7s4)**  
+   Physical Review C · 2026-09-15  
+   Background: Mass-asymmetric fission in the actinide nuclei is dominated by shell gaps in the heavy fragment, proposed to be due to octupole deformed shell gaps between $Z=52$ and 56. The mass-asymmetric fission of nuclei lighter than lead shows the influence of different shell gaps, centered around $Z=34,36$ and $Z=44,46$. There is indirect evidence that th…
+6. **[包含全部轻子能量依赖性的两中微子双β衰变率的直接计算](https://arxiv.org/abs/2606.31107)**  
+   arXiv nucl-th · 2026-09-15  
+   两个中微子双β衰变（DBD）衰变率的计算迄今为止依赖于将核结构与发射的轻子动力学解耦的近似方法。为了实现更严谨的处理，我们提出一种方法，该方法在统一公式中纳入核结构与轻子动力学之间的完整相互依赖关系，并在不依赖这些近似方法的情况下进行计算。对于同位素 $^{82}$Se 和 $^{136}$Xe，展示了并讨论了衰变率和电子能谱相对于传统方法（如闭合、非闭合以及泰勒展开近似）的偏差。我们的方法对DBD过程提供了更真实的描述，并为进一步的理论和实验研究中核结构与发射轻子动力学之间的相关性及其对过程动力学的贡献奠定了基础。该框架向其他同位素以及中微子less双β衰变的扩展目前正在进行中。
+7. **[碎片自旋的产生及在快速旋转裂变中的断裂机制](https://doi.org/10.1103/f2ws-57py)**  
+   Physical Review C · 2026-09-15  
+   裂变碎片角动量的产生作为断裂机制探针仍是一个备受关注的问题。我们在此基于含时密度泛函理论框架，对复合核 $^{240}\mathrm{Pu}$ 在不同初始条件下的快速旋转裂变进行了微观计算。所得轻重新生碎片的自旋比在高自旋下保持不变，但随激发能的增加而减小，表明在高激发条件下碎片自旋中的锯齿结构会消失，而非在高角动量下消失。结果还显示，由于快速旋转，碎片呈现出拉长的颈结构和非轴对称的变形。这些发现为快速旋转复合核的断裂机制以及强碎片自旋极化提供了见解。
+8. **[处于 2.36-hour 紧致轨道的 PSR J1856–0039 双中子星系统的相对论效应](https://doi.org/10.1103/hmjp-htd1)**  
+   Physical Review Letters · 2026-09-15  
+   紧致双中子星（DNS）系统是检验引力理论和研究 DNS 并合的独特实验室。本文报告利用五百米口径球面射电望远镜（FAST）发现的新 DNS 系统 PSR J1856--0039 的性质。该脉冲星为轻度再循环脉冲星，自转周期为 23.4~ms，处于轨道周期为 2.36 hours 的紧致偏心轨道（$e=0.106$）中。通过后续 FAST 观测，我们测量了相对论效应，包括轨道周期导数 $\dot{P}_{\rm orb}=-1.284\pm0.019\times10^{-12}$ s s$^{-1}$、近星点进动 $\dotω=17.5859\pm0.0007$ deg yr$^{-1}$ 和 Einstein 延迟 $γ=0.445\pm0.011$ ms。该 DNS 系统轨道倾角较低，为 $i=133^\c…
 
 ## 物理新闻
 
+- **[运动细菌群体中空间模式跃迁的机制](https://www.nature.com/articles/s41567-026-03416-y)**  
+   Nature Physics · 2026-09-15  
+   数据源暂未提供详细介绍。
+- **[量子电池的可靠性如何？](http://link.aps.org/doi/10.1103/Physics.19.s114)**  
+   APS Physics · 2026-09-15  
+   作者：Marric Stephens 提高量子电池的充电速率会导致存储总能量的不可避免波动。[Physics 19, s114] 发表于 Tue Sep 15, 2026
 - **[微转子产生波](https://www.nature.com/articles/s41567-026-03452-8)**  
    Nature Physics · 2026-09-14  
    数据源暂未提供详细介绍。
 - **[为引力和激光光谱学实验产生高强度的超热μ子束](https://www.nature.com/articles/s41567-026-03433-x)**  
-   Nature Physics · 2026-09-14  
-   数据源暂未提供详细介绍。
-- **[滑动液滴和冻结液滴中的电离机制](https://www.nature.com/articles/s41567-026-03449-3)**  
-   Nature Physics · 2026-09-14  
-   数据源暂未提供详细介绍。
-- **[临界状态源于竞争](https://www.nature.com/articles/s41567-026-03450-w)**  
    Nature Physics · 2026-09-14  
    数据源暂未提供详细介绍。
 
@@ -61,8 +61,8 @@
 - **[关于组织申报2026年度广东省基础与应用基础研究基金企业联合基金（公共卫生与医药健康领域）第二批项目的通知](https://gdstc.gd.gov.cn/zwgk_n/tzgg/content/post_4955299.html)**  
    广东省科技厅 · 2026-09-15  
    广东省科学技术厅 简体 繁体 无障碍 长者助手 首页 政务公开 科技资讯 党风廉政 办事服务 互动平台 搜 索 当前位置： 首页 > 政务公开 > 通知公告 关于组织申报2026年度广东省基础与应用基础研究基金企业联合基金（公共卫生与医药健康领域）第二批项目的通知 时间 : 2026-09-14 15:13:07 来源 : 广东省科学技术厅 【字体: 大 中 小 】 【打印】 分享到： 粤基金函字〔2026〕27号 各有关单位： 为深入贯彻习近平总书记关于科技创新特别是基础研究的系列重要讲话精神以及党的二十大和二十届历次全会精神，落实省委省政府关于加强基础研究的部署要求，充分发挥省基础与应用基础研究基金（以下简称省基金）导向作用，广东省科学技术厅、广东省基础与应用基础研究基金委员会（以下简称省基金委）与有关企…
-- **[核物理与核技术全国重点实验室学术报告— 核物理前沿与交叉专题（第六十讲）](https://sklnpt.pku.edu.cn/info/1121/4761.htm)**  
-   核物理与核技术全国重点实验室会议 · 2026-09-11  
-   ----友情链接---- ---- 北京大学 ---- ---- 北京大学物理学院 ---- ---- HIAF强流重离子加速器装置 ---- 地址：北京市海淀区成府路201号核物理与核技术全国重点实验室 邮编：100871 联系电话：010-62751870；010-62755215 邮箱：jingwu@pku.edu.cn
+- **[2026年中秋节、国庆节期间上海市科技政务服务中心受理窗口对外接待服务时间调整通知](https://stcsm.sh.gov.cn/zwgk/tzgs/qttzgs/20260915/cf4e8e80487547c3bb7ef40a4590b3b1.html)**  
+   上海市科委 · 2026-09-15  
+   _其他通知告示_上海市科学技术委员会 当前位置： 首页 > 政务公开> 通知告示> 其他通知告示> 正文 2026年中秋节、国庆节期间上海市科技政务服务中心受理窗口对外接待服务时间调整通知 发布日期：2026-09-15 根据《国务院办公厅关于2026年部分节假日安排的通知》（国办发明电〔2025〕7号）规定，上海市科技政务服务中心（徐汇区中山西路1525号技贸大厦一楼）2026年中秋节（9月25日至9月27日）放假3天、国庆节（10月1日至10月7日）放假7天，不对外接待。9月20日（周日）、10月10日(周六)正常对外接待。 服务时间：每周一至周五9:00-16:30（最晚取号时间16:15） 请广大市民朋友合理安排业务办理时间，建议优先通过“一网通办”总门户、“随申办市民云”APP等渠道提前进行线上预约…
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)
