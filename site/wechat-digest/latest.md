@@ -1,33 +1,33 @@
-# 小康康的物理世界 · 2026-09-18 科研简报
+# 小康康的物理世界 · 2026-09-11 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 12/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 9/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[在Wigner函数凝聚框架内，重离子碰撞中轻原子核和超核的序贯聚类](https://doi.org/10.1103/td8v-zjr2)**  
-   Physical Review C · 2026-09-18  
-   数据源暂未提供详细介绍。
-2. **[通过深层非弹性散射中的喷注电荷解析中子皮层厚度](https://doi.org/10.1103/zc6z-ss9j)**  
-   Physical Review C · 2026-09-18  
-   数据源暂未提供详细介绍。
-3. **[下一代引力波探测器中双中子星的准确且可扩展的推断](https://doi.org/10.1103/95x8-csn6)**  
-   Physical Review D · 2026-09-18  
-   下一代引力波天文台将观测到双中子星并合事件，其信噪比远高于当前探测器，持续时间更长，覆盖的频率范围也更广。这些长时间信号对贝叶斯参数估计构成了重大计算挑战。降阶积分是一种有前景的方法，用于加速推断，但在该领域中，其标准构造面临严重的内存和精度限制。我们提出了一种适用于长时程双中子星信号的实用降阶积分构造方法，该方法考虑了含时探测器响应以及天文台自由谱范围的全部效应。我们的方法结合了改进的自适应频率采样、基于磁盘的流式处理以及子带降阶积分构造，使得此前在降阶积分框架下无法处理的信号能够实现高效且准确的降阶模型。我们首次实现了对一个约 2 h、频率下限为 5 Hz、信噪比为 2090 的双中子星信号的降阶贝叶斯推断。我们证明了所得的降阶积分在实际推断中仍具有足够的精度。整个分析在约 48 小时内，使用 128 C…
-4. **[向Ω 3 Q baryons的精确碎裂迈进：omg3q1.1 框架](https://doi.org/10.1103/43ws-fsc2)**  
-   Physical Review D · 2026-09-18  
-   近期在重子区的实验进展，包括双charm态的观测，重新激发了人们对越来越重的强子系统产生机制的兴趣，亟需精确且具有不确定性控制的描述。我们提出了31.1框架，用于描述高能强子碰撞中同味全重Ω 3 Q重子的碎片化过程。该框架结合了双夸克启发的轻子-重夸克和胶子通道输入，以及在方案内具有阈值意识的DGLAP演化。通过基于副本的策略，一致地量化了perturbative缺失高阶效应和非微扰波函数不确定性，从而获得了Ω 3 Q区首个具有不确定性解析的碎片化函数集。由此得到的LHAPDF6网格被用于在（对称）JETHAD环境中研究HL-LHC及未来环形对撞机中半包容Ω 3 Q加喷注的产生过程。31.1框架为稀有三重重重子建立了精确性的基准，并为未来重味重子图景的研究奠定了基础。
-5. **[刻画中微子能量估算中最终态相互作用的作用，在DUNE和Hyper-K时代](https://doi.org/10.1088/1361-6471/aea96e)**  
-   Journal of Physics G · 2026-09-18  
-   摘要 深地地下中微子实验（DUNE）和超之超大水池实验（Hyper-K）将以前所未有的精度测量中微子振荡参数，这要求中微子能量估计的控制精度达到几MeV级别。实现这一目标的主要挑战在于对中微子与原子核碰撞产生的强子在残余核介质中的再相互作用，即最终态相互作用（FSI）的建模。在本工作中，我们使用最先进的中微子相互作用事件生成器，回顾了FSI建模对Hyper-K和DUNE分别使用的动力学和热学中微子能量估计量的影响，考虑了当前模拟中占主导地位的半经典核内级联（INCs）以及基于相对论平均场计算的微观处理方法。我们发现，FSI模型的合理变化会引入中微子能量估计代理的不确定性，其水平达到或超过Hyper-K和DUNE所预期的中微子振荡灵敏度所需的能量尺度控制精度，凸显了仔细建模FSI以实现稳健近端探测器约束的重要性…
-6. **[三态混合作为多重形状共存的唯象框架](https://arxiv.org/abs/2609.19300)**  
-   arXiv nucl-th · 2026-09-18  
-   形状共存代表了原子核中集体自由度和单粒子自由度竞争的最显著表现之一。虽然两种构型的共存与混合可以在已建立的两态混合框架中描述，但观察到三个或更多竞争结构则需要更一般的处理方法。在本工作中，我们引入了一个三态混合（3SM）模型，其中三个本征构型通过一个 $SO(3)$ 旋转与物理态相关联。该框架建立了实验可观测量、构型混合振幅和本征性质之间的直接联系，而实验已知的激发能则允许相应有效哈密顿量和相互作用强度的重构。该模型被应用于 $^{116}$Sn 的低能结构，使用了通过综合库仑激发测量最近确定的电磁矩阵元。分析识别出三种本征构型，分别具有球形、弱扁椭球形和强形变的三轴形状，并且在物理 $0^+$ 态之间存在显著的构型混合。本表述提供了一个通用的唯象框架，用于研究多个构型共存且强烈相互作用的系统。
-7. **[核结构和N=60同量异位素中的混合对称态在相互作用玻色子模型中](https://doi.org/10.1142/s021830132650062x)**  
-   International Journal of Modern Physics E · 2026-09-18  
-   核结构和N=60同位素链（100 Zr，102 Mo，104 Ru，106 Pd和108 Cd）的混合对称态通过质子-中子相互作用玻色子模型（IBM-2）成功进行了研究。在本研究中，计算了能级、电磁跃迁概率B(E2)和B(M1)以及混合比。基于所用参数，计算结果与实验数据表现出可接受的一致性，尽管在某些计算量之间存在差异。计算得到的能量比表明，在所采用的IBM-2构型下，沿（N=60）同位素链，核结构从γ-软逐渐向更显著的振动特性演化。此外，该模型能够描述（2 +）混合对称态以及1 +、2 +和3 +混合对称态，特别是钼、钌和钯同位素链中的（1 +）态。结果还帮助阐明了马约拉纳系数，特别是ξ 2，如何影响集体行为、质子-中子相互作用以及混合对称态，特别是剪切模式，在所研究的原子核中的作用。这些结果为过渡态中等…
-8. **[由原初黑洞蒸发辅助的复合非对称暗物质](https://doi.org/10.1103/yljw-51bf)**  
-   Physical Review D · 2026-09-18  
-   我们研究了一种复合非对称暗物质框架的生成场景：暗物质领域具有与标准模型中量子色动力学类似的强相互作用动力学，而暗物质领域的质子对应物是暗物质候选者。原初黑洞的霍金蒸发作用作为重标量粒子的来源，这些标量粒子通过CP破坏性衰变产生到夸克和暗夸克，从而分别在质子和暗物质中产生粒子-反粒子不对称性。原初黑洞应在电弱相变之后、大爆炸核合成之前蒸发，以解释宇宙中的质子不对称性并保持宇宙学的一致性。我们发现，当重标量粒子的质量为10 6 – 10 9 GeV，且原初黑洞的质量为10 7 – 10 9 g时，该场景能够解释观测到的质子和暗物质能量密度值。
+1. **[The role of ab initio beta-decay calculations in light nuclei for probes of physics beyond the standard model](https://doi.org/10.1016/j.ppnp.2026.104260)**  
+   Progress in Particle and Nuclear Physics · 2026-09-01  
+   Precision beta decay experiments serve as powerful probes of physics beyond the Standard Model, enabling stringent tests of fundamental symmetries of nature. In particular, these experiments primarily focus on precise determinations of the Cabibbo-Kobayashi-Maskawa matrix element Vud and the search for exotic weak currents, both of which depend critically o…
+2. **[在s = 200 GeV的横向极化质子-质子碰撞中喷注内的能量相关子](https://doi.org/10.1103/fgsf-gx2q)**  
+   Physical Review Letters · 2026-09-08  
+   我们报告了在横向极化的质子-质子碰撞中，s = 200 GeV 条件下，利用相对论重离子对撞机上的STAR探测器首次测量了单点和双点能量相关函数。这些可观测量分别量化了单个强子和强子对在喷注内的能量加权角分布。对于π⁺、π⁻以及π⁺π⁻对，观察到显著的自旋依赖不对称性，揭示了在特定角尺度下非微扰动力学的出现。通过将碎片化动力学投影到梅林矩上，这些测量对核子的横向不对称性具有敏感性，同时最小化了来自非微扰碎片化函数的不确定性。这些结果确立了能量相关函数作为探测核子结构的一种新颖且精确的手段，并为未来电子-离子对撞机上的三维核子断层成像开辟了有前景的途径。
+3. **[First Nb 94 ( n , γ ) Measurement: Constraining the Nucleosynthetic Origin of Mo 94 in Presolar Grains](https://doi.org/10.1103/538w-rhqb)**  
+   Physical Review Letters · 2026-08-18  
+   Isotopic measurements of presolar silicon carbide grains from dying stars have revealed a puzzling overabundance of Mo 94 that stellar nucleosynthesis models have failed to reproduce for two decades. This discrepancy challenged our understanding of the slow neutron-capture process ( s -process) that forges approximately half of the elements heavier than iro…
+4. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
+   Physical Review Letters · 2026-08-04  
+   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
+5. **[Deformation, halo, and bubble structure: A paradigm shift of exotic phenomena in light to medium mass nuclei](https://doi.org/10.1016/j.ppnp.2026.104262)**  
+   Progress in Particle and Nuclear Physics · 2026-09-01  
+   The emergence of exotic nuclear structures, such as deformation, one- and two-neutron halos, and bubble configurations, marks a paradigm shift in our understanding of light- to medium-mass nuclei far from stability, particularly near and within the island of inversion extending across $N=20-28$. In this review, we integrate microscopic structure calculation…
+6. **[双中微子双 β 衰变的辐射修正](https://doi.org/10.1103/gbjc-wsdn)**  
+   Physical Review Letters · 2026-08-11  
+   We use heavy-nucleus effective field theory to compute radiative corrections to two-neutrino double-$\beta$ decay ($2\nu\beta\beta$). Our main result is the first derivation of a universal radiative-correction factor for double-weak decays -- the analogue of the Sirlin function in single-$\beta$ decay -- independent of nuclear matrix elements and excitation…
+7. **[在ATLAS实验中希格斯玻色子衰变中Z-玻色子对纠缠的测量](https://doi.org/10.1103/y1nh-1b82)**  
+   Physical Review Letters · 2026-09-11  
+   纠缠是量子系统的一个关键特性。本文报道了利用大型强子对撞机（LHC）在质心能量为13和13.6 TeV的质子-质子对撞数据中，对Z玻色子对中自旋纠缠的首次测量，数据由ATLAS探测器记录。通过对H → Z Z * → ℓ + ℓ − ℓ + ℓ − 过程中与Z Z * 自旋密度矩阵元素相关的角观测量的测量，得到系数C 2 , 1 , 2 , − 1 = − 0.71 ± 0.45 和 C 2 , 2 , 2 , − 2 = 0.08 ± 0.44，与标准模型预测一致。利用完整的角分布进行的互补假设检验，依赖于衰变过程中的若干标准模型假设，对量子相关性具有显著更高的敏感度，并在4.7个标准差（预期为4.9 σ）的显著性水平上否定可分离态假设，相对于纠缠标准模型假设。这些结果为在电弱尺度上重子（自旋三态）之间的量…
+8. **[重中性轻子在同号缪子对撞机中](https://doi.org/10.1103/prx6-wnwr)**  
+   Physical Review D · 2026-09-09  
+   我们探讨了在提议的高能同号缪子对撞机μ TRISTAN 上发现重中性轻子（HNLs）的潜力，这些HNLs的模型源于解释中微子质量起源的理论。研究聚焦于两种互补的HNL-介导的信号：（i）违反轻子味（LFV）的通道 μ + μ + → W + τ + ν ¯ μ 和（ii）违反轻子数（LNV）的通道 μ + μ + → W + W + 。LNV 过程是逆中微子无双β衰变的缪子类比，如果被观测到，将为马约拉纳中微子提供强有力的证据，而LFV 过程则为轻子区中的味改变中性流提供了一种新颖的探测手段。在s ∼ O ( 10 ) TeV 的μ TRISTAN 对撞机上，对与缪子和塔中微子混合的HNL 的敏感度，随质量变化而呈现，可在广泛的质量范围内超越目前基于电弱精确可观测量的实验界限。特别是，对于与缪子中微子的混合，…
 
 ## 物理新闻
 
