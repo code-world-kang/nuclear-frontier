@@ -1,47 +1,47 @@
-# 小康康的物理世界 · 2026-10-01 科研简报
+# 小康康的物理世界 · 2026-09-25 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 10/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 8/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[超重核中存在高总动能的自发裂变模式的证据](https://doi.org/10.1016/j.physletb.2026.140873)**  
-   Physics Letters B · 2026-10-01  
-   自发裂变是重核最主要的衰变模式之一，限制了超重核的存在，即质子数Z大于103的核。迄今为止，已知质子数Z达到118的超重核，其观测到的衰变特性显示出由于核壳效应而增强的抗裂变稳定性。然而，对最重核区域中自发裂变过程的详细理解仍然不足。特别是，裂变碎片质量分布仅在Z不超过104（Rf，𬬻）的核中被了解。本文中，我们提供了关于242 Cf（Z = 98）、252 No（Z = 102）、264 Lr（Z = 103）和268 Db（Z = 105）裂变性质的新实验数据。对于242 Cf和252 No，我们测定了已知的非对称裂变模式，其特征是重碎片的质量A ≈ 140。相比之下，264 Lr和268 Db的裂变表现出几乎对称的质量分布，并伴有增强的总动能（TKE），这是涉及形成球形Sn类碎片的裂变模式的典型特征。这…
-2. **[研究使用物理约束的机器学习方法进行不完全融合](https://doi.org/10.1016/j.nuclphysa.2026.123457)**  
-   Nuclear Physics A · 2026-10-01  
-   在接近库仑势垒的重离子核反应中建模不完全融合（ICF）截面具有挑战性，原因在于入口通道依赖关系的复杂性以及传统理论模型的有限成功。我们开发并系统比较了两种针对ICF定制的机器学习框架：鲁棒极值梯度提升（RXGB），一种决策树集成方法，以及高斯过程回归（GPR），一种贝叶斯非参数方法，能够提供严格的不确定性量化。两种框架均在包含52个入射粒子-靶系统、共413个实验测量值的精心整理数据集上进行训练，并采用11个具有物理意义的特征，编码库仑动力学、反应动力学和核结构信息。未加约束的GPR达到了最高的精度，其平均绝对误差为23.1 mb，而最佳RXGB变体的误差为47.0 mb。受SUMRULE和解体-融合先验信息启发，通过核长度尺度边界约束的物理约束GPR变体表明，它们能够捕捉结构和几何细节，同时保持高可靠性。通…
-3. **[对形变的176Hf原子核的各向异性α散射进行半经典分析](https://doi.org/10.1016/j.nuclphysa.2026.123454)**  
-   Nuclear Physics A · 2026-10-01  
-   本工作在半经典轨迹框架下研究了原子核形变对α粒子从永久形变的¹⁷⁶Hf原子核发生弹性散射的影响。该模型结合了形变的Woods–Saxon原子核势与库仑相互作用，并利用蒙特卡洛模拟生成大量经典轨迹。通过分析散射粒子的角分布，以考察形变可能引起的各向异性效应。结果表明，在所考虑的能量下，整体散射模式主要由长程库仑相互作用决定，导致近似各向同性的方位分布。形变（β₂ = 0.27）与球形参考势之间的比较表明，原子核形变在模拟的统计精度范围内仅产生微弱的方位调制。然而，该研究证明了半经典轨迹计算能够捕捉到细微的取向依赖效应，并为库仑相互作用与核相互作用在形变原子核散射中的相互作用提供有用的见解。该方法为更复杂的量子力学处理提供了计算上高效的标准参考，并可能有助于解释未来对形变靶材上带电粒子散射的实验测量。
-4. **[在JUNO时代，中微子无中微子双β衰变的meV前沿](https://doi.org/10.1016/j.physletb.2026.140862)**  
-   Physics Letters B · 2026-10-01  
-   观测到无中微子双β衰变将证实勒顿数的违反以及中微子的马约拉纳性质。在标准3-味范式下，该过程的速率由有效马约拉纳质量$|\langle m \rangle|$控制，如果中微子质量谱呈现正常排序，则该质量可能被严重抑制。考虑到首次JUNO结果，这些结果显著降低了太阳中微子振荡参数的不确定性，我们提供了更新的条件，以确保$|\langle m \rangle|_\text{NO}$超过$10^{-3}$ eV（$5\times 10^{-3}$ eV）阈值。我们分析了通用情况，以及两种马约拉纳相位分别取CP守恒值或至少其中一个取CP-违反值的情形，这些情形与结合味物理和广义CP对称性的预测方案相一致。
-5. **[利用协变密度泛函理论对偶偶氪同位素的形状演化和基态性质进行系统性研究](https://doi.org/10.1016/j.nuclphysa.2026.123458)**  
-   Nuclear Physics A · 2026-10-01  
-   我们对从68 Kr到100 Kr的偶偶氪同位素的形状演化和基态性质进行了系统研究，采用协变密度泛函理论。使用密度依赖的介子交换（DD-ME2）和点耦合（DD-PCX）相互作用，进行了三轴相对论哈特里-波戈利布夫计算。在(β2, γ)平面上的势能面揭示了中子贫乏同位素中的扁椭球基态，74 Kr中突然出现强烈的纺锤形形变，在N = 40和N = 50壳闭合附近出现近球形构型，而在N = 50之后的中子富集核中逐渐演化为扁椭球形状。计算得到的结合能、两个中子分离能和电荷半径与实验数据高度一致，包括在中子幻数N = 50处S2n的显著下降。过渡核，特别是90 Kr，表现出柔软的能面和对三轴形变的增强敏感性，这归因于中子和质子壳效应的竞争。DD-ME2和DD-PCX结果的一致性表明，协变密度泛函方法在此质量区具有稳健性。
-6. **[Optimization of gain uniformity in thermal bonding Micromegas for the PandaX-III experiment](https://doi.org/10.1016/j.nima.2026.171650)**  
-   Nuclear Instruments and Methods in Physics Research A · 2026-10-01  
-   Micro-pattern gas detectors (MPGDs) are widely utilized in physics experiments owing to their excellent spatial resolution and high-rate capabilities. Within the PandaX-III experiment, which aims to investigate neutrinoless double beta decay, Micromegas detectors serve as charge readout devices. High energy resolution is a critical requirement for the reado…
-7. **[边界诱导的赝自旋和自旋对称性控制](https://doi.org/10.1016/j.physletb.2026.140948)**  
-   Physics Letters B · 2026-10-01  
-   Pseudospin 对称性在核结构中起着根本性作用。其相对论起源，根植于标量势与矢量势之间的相互作用，在核物理以及更广泛的领域中对一类狄拉克哈密顿量进行了广泛研究，然而边界条件的作用却长期未被充分探索。本文揭示了一种由边界引起的机制，该机制决定了pseudospin和自旋对称性的实现与破缺。通过推导平方阱势及其变体形式下狄拉克方程的解析解，并与高精度数值计算结果进行比对，我们证明，通过施加在狄拉克旋量的小分量或大分量上的边界条件，可以有选择地保持或破坏pseudospin和自旋对称性。这种控制是精确的，具有清晰的解析解释，并且与底层势场的动态细节无关。对于Woods-Saxon势的情况，边界条件也被证明是影响对称性恢复程度的一个潜在重要因素。我们的结果揭示了边界条件作为一种此前未被认识且独立的控制参数，能够…
-8. **[A=4原子核和超核的神经网络激发态](https://doi.org/10.1016/j.physletb.2026.140911)**  
-   Physics Letters B · 2026-10-01  
-   我们首次在神经网络量子态（NQS）框架内，利用变分蒙特卡洛方法研究了核和超核的激发态。我们实现了重叠惩罚（OP）和自然激发态（NES）方法，以计算低能激发谱。为解决超核计算中的自旋污染问题，我们提出了针对量子数的（QNT）技术用于OP方法。OP-QNT和NES方法能够很好地重现对角可观测量，例如能量和空间结构，与严格的基准结果高度一致。我们进一步提供了迄今为止首次\textit{ab initio}计算的$M1$跃迁强度，针对$^{4}_{\Lambda}\mathrm{H}$。计算得到的跃迁强度与弱耦合极限一致，表现出$\sim$1.3\%的抑制。本工作表明，NQS可以从基态求解器提升为核和超核光谱学的实用工具。
+1. **[The role of ab initio beta-decay calculations in light nuclei for probes of physics beyond the standard model](https://doi.org/10.1016/j.ppnp.2026.104260)**  
+   Progress in Particle and Nuclear Physics · 2026-09-01  
+   Precision beta decay experiments serve as powerful probes of physics beyond the Standard Model, enabling stringent tests of fundamental symmetries of nature. In particular, these experiments primarily focus on precise determinations of the Cabibbo-Kobayashi-Maskawa matrix element Vud and the search for exotic weak currents, both of which depend critically o…
+2. **[寻找超重核：实验视角](https://doi.org/10.1146/annurev-nucl-100324-103404)**  
+   Annual Review of Nuclear and Particle Science · 2026-09-21  
+   实验物理学家目前正致力于将周期表扩展至第八行，元素119和120的搜寻工作正在进行中，此时回顾合成元素发现近一个世纪的历史显得尤为及时。从最初生产铀以外的元素到最近完成第七行的探索，本综述全面概述了扩展周期表过程中的重要里程碑和进展。历史上，新元素的搜寻一直激发公众的想象力，同时也为基本科学提供了独特的窗口。这一点在超重元素的发现与研究中表现得尤为明显，这些元素使人们能够直接进行核科学和化学极端情况的实验探索。本综述探讨了合成元素发现中的主要发展和突破，展示了科学好奇心、创新研究与不断拓展我们对周期表理解之间的复杂关系。
+3. **[在s = 200 GeV的横向极化质子-质子碰撞中喷注内的能量相关子](https://doi.org/10.1103/fgsf-gx2q)**  
+   Physical Review Letters · 2026-09-08  
+   我们报告了在横向极化的质子-质子碰撞中，s = 200 GeV 条件下，利用相对论重离子对撞机上的STAR探测器首次测量了单点和双点能量相关函数。这些可观测量分别量化了单个强子和强子对在喷注内的能量加权角分布。对于π⁺、π⁻以及π⁺π⁻对，观察到显著的自旋依赖不对称性，揭示了在特定角尺度下非微扰动力学的出现。通过将碎片化动力学投影到梅林矩上，这些测量对核子的横向不对称性具有敏感性，同时最小化了来自非微扰碎片化函数的不确定性。这些结果确立了能量相关函数作为探测核子结构的一种新颖且精确的手段，并为未来电子-离子对撞机上的三维核子断层成像开辟了有前景的途径。
+4. **[First Nb 94 ( n , γ ) Measurement: Constraining the Nucleosynthetic Origin of Mo 94 in Presolar Grains](https://doi.org/10.1103/538w-rhqb)**  
+   Physical Review Letters · 2026-08-18  
+   Isotopic measurements of presolar silicon carbide grains from dying stars have revealed a puzzling overabundance of Mo 94 that stellar nucleosynthesis models have failed to reproduce for two decades. This discrepancy challenged our understanding of the slow neutron-capture process ( s -process) that forges approximately half of the elements heavier than iro…
+5. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
+   Physical Review Letters · 2026-08-04  
+   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
+6. **[Deformation, halo, and bubble structure: A paradigm shift of exotic phenomena in light to medium mass nuclei](https://doi.org/10.1016/j.ppnp.2026.104262)**  
+   Progress in Particle and Nuclear Physics · 2026-09-01  
+   The emergence of exotic nuclear structures, such as deformation, one- and two-neutron halos, and bubble configurations, marks a paradigm shift in our understanding of light- to medium-mass nuclei far from stability, particularly near and within the island of inversion extending across $N=20-28$. In this review, we integrate microscopic structure calculation…
+7. **[逆β衰变的辐射修正：反应堆中微子的高精度分析](https://doi.org/10.1103/zbcz-nkpd)**  
+   Physical Review Letters · 2026-09-25  
+   我们基于重夸克巴尔-奇性微扰理论，对反应堆反中微子能量范围内的逆β衰变反应 ν ¯ e + p → e + + n 的辐射修正进行了完整计算。我们的分析首次在该框架内一致地包含了量子电动力学、色动力学以及电弱相互作用的贡献。我们提供了更新的、高精度的截面预测，并包含完整的误差预算，同时给出了正电子能谱，包括辐射效应。这些结果对于归一化反应堆反中微子通量、以亚百分比精度确定中微子振荡参数以及在核电站中搜寻新物理至关重要。
+8. **[寻找超重核：一种理论视角](https://doi.org/10.1146/annurev-nucl-100324-104345)**  
+   Annual Review of Nuclear and Particle Science · 2026-09-21  
+   超重核（SHNs）的合成处于核物理的前沿，使研究人员能够探测核稳定性的极限以及壳效应的影响。本文综述了近年来在理解SHN形成与衰变方面的理论进展，强调了含时密度泛函理论（TDDFT）及其扩展作为描述重离子动力学的微观工具。结合TDDFT与通道耦合、朗之万和统计模型的混合方法被讨论为连接微观预测与实验可观测量的手段。融合抑制、准裂变和多核子转移的作用在耗散、壳结构和形变效应方面被考察。近年来计算能力的提升使得包含配对和涨落动力学的三维含时平均场（及更进一步）模拟成为可能。对未来实现超重元素合成的完全可预测描述以及对核图谱上限的探索提出了展望。
 
 ## 物理新闻
 
 - **[国家重大科技基础设施项目“强流重离子加速器装置”通过档案专项验收](https://www.imp.cas.cn/sndt2017/202609/t20260930_8289163.html)**  
    近代物理所核物理动态 · 2026-09-30  
    9 月 28 日，中国科学院档案馆组织档案专家组对国家重大科技基础设施——强流重离子加速器装置（ HIAF ）项目，开展了档案专项验收工作。专家组由来自中国科学院档案馆、科研院所的 7 位专家组成，中国科学院科技基础能力局和近代物理研究所相关部门共 40 余人参会。 档案验收专业组听取了项目建设情况及档案管理工作报告，就报告内容进行质询，现场抽查项目档案，审阅相关材料。 档案专家组认为，建设单位高度重视项目档案工作，工作网络健全，职责明确，同步管理机制完善，全过程业务指导和关键节点检查落实到位，做到了同部署、同实施、同验收。建设单位结合实际制定了项目文件材料归档范围，并将归档要求纳入合同、协议，保障了项目文件材料收集齐全、真实有效。项目档案质量、安全防护设施、保管条件符合国家和中国科学院有关规范要求。项目依托…
+- **[声子热霍尔效应的意外普遍性](http://link.aps.org/doi/10.1103/Physics.19.122)**  
+   APS Physics · 2026-09-30  
+   作者：Kamran Behnia 和 Zengwei Zhu 在常见半导体中发现热霍尔效应，挑战了我们对磁场与热流在固体中相互作用的理解。[Physics 19, 122] 发表于 Wed Sep 30, 2026
 - **[完全发展的主动湍流通过一个非平衡相变来定义](https://www.nature.com/articles/s41567-026-03408-y)**  
    Nature Physics · 2026-09-30  
    数据源暂未提供详细介绍。
 - **[确定性且可编程的融合，用于可扩展的光子图状态生成](https://www.nature.com/articles/s41567-026-03471-5)**  
    Nature Physics · 2026-09-30  
-   数据源暂未提供详细介绍。
-- **[在各向异性纳米粒子悬浮液中通过时间分辨X-射线散射显微术揭示的多尺度过渡流动](https://www.nature.com/articles/s41567-026-03467-1)**  
-   Nature Physics · 2026-09-29  
    数据源暂未提供详细介绍。
 
 ## 科研通知
