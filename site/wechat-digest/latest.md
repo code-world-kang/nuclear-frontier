@@ -31,6 +31,9 @@
 
 ## 物理新闻
 
+- **[一点噪音有助于软阀关闭](http://link.aps.org/doi/10.1103/Physics.19.130)**  
+   APS Physics · 2026-10-05  
+   作者： Matteo Pezzulla 心脏二尖瓣的简化模型表明，流动波动可使软瓣在稳态流动所需压力的十分之一处关闭。[Physics 19, 130] 发表于 Mon Oct 05, 2026
 - **[将液体旋转为固体](http://link.aps.org/doi/10.1103/Physics.19.137)**  
    APS Physics · 2026-10-02  
    作者： Mark Buchanan 一种从液态喷射流中生成固态纤维的新技术比以往方法更容易建模——因此也更容易控制。[Physics 19, 137] 发表于 Fri Oct 02, 2026
@@ -40,9 +43,6 @@
 - **[快照：在观者眼中](http://link.aps.org/doi/10.1103/Physics.19.134)**  
    APS Physics · 2026-10-01  
    金纳米结构的形状取决于其成像方式。[Physics 19, 134] 发表于 Thu Oct 01, 2026
-- **[使用冷原子模拟粒子的产生](http://link.aps.org/doi/10.1103/Physics.19.s131)**  
-   APS Physics · 2026-10-01  
-   作者： Michael Schirber 研究人员观察到原子被囚禁在光学晶格中，模拟了在强电场中产生的粒子。[Physics 19, s131] 发表于 Thu Oct 01, 2026
 
 ## 科研通知
 
