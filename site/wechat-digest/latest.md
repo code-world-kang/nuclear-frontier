@@ -1,48 +1,48 @@
-# 小康康的物理世界 · 2026-09-30 科研简报
+# 小康康的物理世界 · 2026-10-06 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 9/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 13/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[The role of ab initio beta-decay calculations in light nuclei for probes of physics beyond the standard model](https://doi.org/10.1016/j.ppnp.2026.104260)**  
-   Progress in Particle and Nuclear Physics · 2026-09-01  
-   Precision beta decay experiments serve as powerful probes of physics beyond the Standard Model, enabling stringent tests of fundamental symmetries of nature. In particular, these experiments primarily focus on precise determinations of the Cabibbo-Kobayashi-Maskawa matrix element Vud and the search for exotic weak currents, both of which depend critically o…
-2. **[寻找超重核：实验视角](https://doi.org/10.1146/annurev-nucl-100324-103404)**  
-   Annual Review of Nuclear and Particle Science · 2026-09-21  
-   实验物理学家目前正致力于将周期表扩展至第八行，元素119和120的搜寻工作正在进行中，此时回顾合成元素发现近一个世纪的历史显得尤为及时。从最初生产铀以外的元素到最近完成第七行的探索，本综述全面概述了扩展周期表过程中的重要里程碑和进展。历史上，新元素的搜寻一直激发公众的想象力，同时也为基本科学提供了独特的窗口。这一点在超重元素的发现与研究中表现得尤为明显，这些元素使人们能够直接进行核科学和化学极端情况的实验探索。本综述探讨了合成元素发现中的主要发展和突破，展示了科学好奇心、创新研究与不断拓展我们对周期表理解之间的复杂关系。
-3. **[在s = 200 GeV的横向极化质子-质子碰撞中喷注内的能量相关子](https://doi.org/10.1103/fgsf-gx2q)**  
-   Physical Review Letters · 2026-09-08  
-   我们报告了在横向极化的质子-质子碰撞中，s = 200 GeV 条件下，利用相对论重离子对撞机上的STAR探测器首次测量了单点和双点能量相关函数。这些可观测量分别量化了单个强子和强子对在喷注内的能量加权角分布。对于π⁺、π⁻以及π⁺π⁻对，观察到显著的自旋依赖不对称性，揭示了在特定角尺度下非微扰动力学的出现。通过将碎片化动力学投影到梅林矩上，这些测量对核子的横向不对称性具有敏感性，同时最小化了来自非微扰碎片化函数的不确定性。这些结果确立了能量相关函数作为探测核子结构的一种新颖且精确的手段，并为未来电子-离子对撞机上的三维核子断层成像开辟了有前景的途径。
-4. **[First Nb 94 ( n , γ ) Measurement: Constraining the Nucleosynthetic Origin of Mo 94 in Presolar Grains](https://doi.org/10.1103/538w-rhqb)**  
-   Physical Review Letters · 2026-08-18  
-   Isotopic measurements of presolar silicon carbide grains from dying stars have revealed a puzzling overabundance of Mo 94 that stellar nucleosynthesis models have failed to reproduce for two decades. This discrepancy challenged our understanding of the slow neutron-capture process ( s -process) that forges approximately half of the elements heavier than iro…
-5. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
-   Physical Review Letters · 2026-08-04  
-   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
-6. **[Deformation, halo, and bubble structure: A paradigm shift of exotic phenomena in light to medium mass nuclei](https://doi.org/10.1016/j.ppnp.2026.104262)**  
-   Progress in Particle and Nuclear Physics · 2026-09-01  
-   The emergence of exotic nuclear structures, such as deformation, one- and two-neutron halos, and bubble configurations, marks a paradigm shift in our understanding of light- to medium-mass nuclei far from stability, particularly near and within the island of inversion extending across $N=20-28$. In this review, we integrate microscopic structure calculation…
-7. **[Neutron Drip Line in Calcium Isotopes from a Chiral Interaction](https://doi.org/10.1103/pz1t-q6v1)**  
-   Physical Review Letters · 2026-09-30  
-   Interactions derived from effective field theories of quantum chromodynamics have thus far failed to bind calcium nuclei beyond neutron number $N=40$, while nuclear density functionals typically place the neutron dripline near $^{70}$Ca, at $N=50$. We present the chiral interaction N$^3$LO$_{\rm Texas}$, a combination of two- and three-nucleon potentials at…
-8. **[逆β衰变的辐射修正：反应堆中微子的高精度分析](https://doi.org/10.1103/zbcz-nkpd)**  
-   Physical Review Letters · 2026-09-25  
-   我们基于重夸克巴尔-奇性微扰理论，对反应堆反中微子能量范围内的逆β衰变反应 ν ¯ e + p → e + + n 的辐射修正进行了完整计算。我们的分析首次在该框架内一致地包含了量子电动力学、色动力学以及电弱相互作用的贡献。我们提供了更新的、高精度的截面预测，并包含完整的误差预算，同时给出了正电子能谱，包括辐射效应。这些结果对于归一化反应堆反中微子通量、以亚百分比精度确定中微子振荡参数以及在核电站中搜寻新物理至关重要。
+1. **[二维横向动量减除和半包络深非弹性散射在QCD的下下下一个阶](https://doi.org/10.1103/gnk4-8p43)**  
+   Physical Review Letters · 2026-10-06  
+   识别的强子产生对于研究核子结构和QCD强子化在高能条件下的过程至关重要。我们提出了在微扰QCD下至下至下-leading阶的非极化半包络深非弹性散射的计算。我们的计算基于一种新颖的横向动量减除方法，该方法受到QCD软和近似共线奇异性因子化的影响。次次次-leading阶修正在一般情况下较为温和，但在阈值区域可能显著，并表现出优异的微扰收敛性和减小的尺度变化。全微分框架允许任意选择切片，并直接支持在即将到来的电子-离子对撞机上的精确实现核子层析成像，为与预期实验精度相匹配提供了理论基础。该方法向极化半包络深非弹性散射计算的推广也是可行的。
+2. **[在电子-正电子湮灭中的高扭效应](https://doi.org/10.1103/d6xz-1xr6)**  
+   Physical Review D · 2026-10-06  
+   我们建立了一个关于电子-正电子单包涵湮灭（SIA）过程的完整理论框架，该框架包含了最高扭度达扭度-4的高扭贡献，并研究了这些效应在低能反应中的可能相关性。通过系统地对强子张量进行共线展开，我们以共线碎片化函数（FFs）的形式导出了完整的结构函数，明确包含了最高到四部分子水平的多部分子相关项。为了评估这些幂次修正的可能影响，我们采用一个旁观者模型估算扭度-4的非极化FF D 3，并计算了π 0产生过程的归一化微分截面。我们的示例性数值估算表明，动量学强子质量修正与高扭D 3贡献之间的相互作用可以在相对较低的z区域部分改善最近BESIII数据的描述。该贡献的Q-依赖性与扭度-4项预期的幂次抑制一致。这些发现表明，高扭贡献对于低能下强子化动力学的研究是相关的，并促使未来更完整的分析包含所有扭度-4的FFs。
+3. **[152 Tb的衰变谱学：铽诊疗工具箱的一个诊断组件](https://doi.org/10.1103/3c72-gcls)**  
+   Physical Review C · 2026-10-06  
+   数据源暂未提供详细介绍。
+4. **[有限化学势下夸克-胶子等离子体的热力学和输运性质的深度神经网络框架](https://doi.org/10.1103/xfl6-4t69)**  
+   Physical Review D · 2026-10-06  
+   热系统的特性强烈依赖于其对温度梯度的响应以及构成粒子之间的微观相互作用。在本研究中，我们采用深度学习辅助的准粒子模型，研究在有限重子化学势下的夸克-胶子等离子体（QGP）的热力学和输运性质。利用神经网络训练以重现基于零重子化学势附近泰勒展开得到的方程状态的格点QCD结果，估算出准粒子的温度依赖（T）和重子化学势依赖（μ_B）的热质量。训练好的模型作为有效模拟器，使我们能够在有限μ_B下估算热力学和输运性质。我们计算了非关联系统的声速、比热、黏度和电导率。我们的结果与现有的格点计算和其他唯象模型保持良好一致。本研究表明，基于深度神经网络的方法为研究有限重子密度下的QGP性质提供了一个高效框架。
+5. **[$sd$ 壳层中质子晕的动量分布与空间特征](https://doi.org/10.1103/b9lc-dkp9)**  
+   Physical Review C · 2026-10-06  
+   我们对质子靶上的中能准自由单质子敲出反应进行了理论研究。采用受实验质子分离能约束的单粒子波函数，计算 $^{26}$P、$^{27}$S 和 $^{31}$Ar 核的纵向动量分布、单质子移除截面及完整动量空间分布。为建立识别质子晕的稳健判据，分析超越传统动量宽度方法，进一步考察价质子的空间延展性，包括均方根半径及质子位于核芯之外的概率 $P(r>R_{\rm core})$。我们还考察了库仑势垒系统学、镜像核比较、现实的谱学混合、有限实验动量分辨率，以及与质子分离能相关的不确定度。我们的计算表明，不能仅凭单一可观测量可靠识别质子晕结构；只有同时考虑动量分布、空间可观测量、库仑效应和多体结构，才能得到一致解释。在当前模型下，$^{26}$P 显示出最强的质子晕特征，而 $^{27}$S 尽管具有更高的库仑势垒，…
+6. **[在自洽光前端夸克模型中，半轻子B ¯ c * → ( P , V ) ℓ − ν ¯ ℓ衰变](https://doi.org/10.1103/hbx2-djvf)**  
+   Physical Review D · 2026-10-06  
+   受ATLAS合作组最近观测到B c *介子及其在未来的高亮度对撞机中具有前景的发现潜力的启发，我们研究了标准模型中B ¯ c * → ( P , V ) ℓ − ν ¯ ℓ（P = D , B d , s , η c ( 1 S , 2 S , 3 S ) ; V = D * , B d , s * , ψ ( 1 S , 2 S , 3 S )）的半轻子衰变。利用自洽协变光前夸克模型中获得的相关形式因子，我们对若干物理可观测量进行了理论预测，包括分支比、分支比比值R ( L )、子矢量介子的纵向极化分数、τ轻子自旋不对称性以及前向-反向不对称性。结果发现，卡比博偏好衰变B ¯ c * → B ¯ s * e − ν ¯ e 和B ¯ s * μ − ν ¯ μ的分支比达到O ( 10 − 6 )的数量级，这…
+7. **[在相对论性 Hartree-Fock 框架下，带电中微子不透明度用于恒星核心坍缩超新星和双中子星合并的天体物理模拟](https://doi.org/10.1103/st5n-sy81)**  
+   Physical Review D · 2026-10-06  
+   中微子及其弱相互作用在核心坍缩超新星和双中子星合并的物理过程中起着至关重要的作用。在天体物理模拟中对中微子的描述，包括弱相互作用率，对于准确预测中微子通量和谱，包括与核合成相关的条件，具有决定性意义；中微子还负责恒星等离子体的加热和冷却，以及轻子数和熵的传输。在本文中，我们对基本核介质的描述进行了关键性改进，以实现对带电弱相互作用率的计算，该改进包括显式依赖动量的核相互作用。为此，我们引入了相对论性哈特里-福克（RHF）方法以及相关的动量依赖核自能。我们讨论了由此产生的中微子和反中微子不透明度，并发现相对于常用的相对论平均场（RMF）模型，RHF水平上的弱相互作用率存在显著差异；特别是，我们观察到以往报道的与RMF方法相关的、具有强介质依赖性的修正出现了显著的偏移。
+8. **[XRF 241001A/SN 2024aiiq：SVOM 探测到的暗弱软 X 射线暂现源，以及 JWST 揭示的宽线 Ic 型超新星](https://doi.org/10.1051/0004-6361/202660544)**  
+   Astronomy and Astrophysics · 2026-10-06  
+   X 射线闪（XRF）是一类伽马射线暴（GRB），其瞬时辐射主要位于 ∼30 keV 以下，过去执行高能天空监测的任务对其探测不足。空间多波段天文变源监视器凭借其宽视场仪器 ECLAIRs，为探测 XRF 等软 X 射线暂现源提供了新途径，并可由快速星载多波段后随观测补充。我们给出对 XRF 241001A 的测光和光谱观测；它由一个柔和、低光度、低能量的暴触发，位于 Amati 关系中样本稀少的区域。我们研究了其暗弱、柔和高能辐射的起源，以评估它与长 GRB 总体的联系。我们分析了瞬时辐射，并从 X 射线至射电波段对其余辉辐射建模。我们还给出相关超新星（SN 2024aiiq）的 SVOM/VT 观测，以 Arnett 放射性衰变成分对其建模，并将其性质与此前探测到的 GRB/SN 比较。事件 XRF 241…
 
 ## 物理新闻
 
-- **[一点噪音有助于软阀关闭](http://link.aps.org/doi/10.1103/Physics.19.130)**  
+- **[轨道对称性控制的化学反应中的拓扑跃迁](https://www.nature.com/articles/s41567-026-03455-5)**  
+   Nature Physics · 2026-10-06  
+   数据源暂未提供详细介绍。
+- **[反应变得具有拓扑性质](https://www.nature.com/articles/s41567-026-03472-4)**  
+   Nature Physics · 2026-10-06  
+   数据源暂未提供详细介绍。
+- **[用超声波阐明超导性](http://link.aps.org/doi/10.1103/Physics.19.s122)**  
+   APS Physics · 2026-10-06  
+   作者： Charles Day 研究人员测量了晶体的弹性模量和声衰减，以推断两种超导态的性质。[Physics 19, s122] 发表于 Tue Oct 06, 2026
+- **[从内部重新排列晶体](http://link.aps.org/doi/10.1103/Physics.19.131)**  
    APS Physics · 2026-10-05  
-   作者： Matteo Pezzulla 心脏二尖瓣的简化模型表明，流动波动可使软瓣在稳态流动所需压力的十分之一处关闭。[Physics 19, 130] 发表于 Mon Oct 05, 2026
-- **[将液体旋转为固体](http://link.aps.org/doi/10.1103/Physics.19.137)**  
-   APS Physics · 2026-10-02  
-   作者： Mark Buchanan 一种从液态喷射流中生成固态纤维的新技术比以往方法更容易建模——因此也更容易控制。[Physics 19, 137] 发表于 Fri Oct 02, 2026
-- **[纳米受限水中巨大的介电常数](http://link.aps.org/doi/10.1103/Physics.19.s130)**  
-   APS Physics · 2026-10-01  
-   作者： Marric Stephens 研究人员提出，当水被限制在几纳米宽的间隙中时，长程分子偶极相关性会改变水的电学性质。[Physics 19, s130] 发表于 Thu Oct 01, 2026
-- **[快照：在观者眼中](http://link.aps.org/doi/10.1103/Physics.19.134)**  
-   APS Physics · 2026-10-01  
-   金纳米结构的形状取决于其成像方式。[Physics 19, 134] 发表于 Thu Oct 01, 2026
+   作者：Akashni Raghubar Latchanna Julian Klein 和 Frances Ross 解释了电子显微镜如何成为用于在晶体材料中引入缺陷的工程工具。[Physics 19, 131] 发表于 Mon Oct 05, 2026
 
 ## 科研通知
 
