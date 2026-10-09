@@ -1,51 +1,54 @@
-# 小康康的物理世界 · 2026-10-07 科研简报
+# 小康康的物理世界 · 2026-10-08 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 8/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 13/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[A nuclear clock synchronized to 229Th](https://doi.org/10.1038/s41586-026-11122-1)**  
-   Nature · 2026-10-07  
-   Abstract Atomic clocks have made time and frequency the most precisely measured quantities in physics, progressing from microwave standards that realize the SI second 1 to optical clocks with unprecedented precision 2 . A nuclear clock transfers the frequency reference from an electronic to a nuclear transition and the uniquely low-lying, laser-accessible,…
-2. **[The role of ab initio beta-decay calculations in light nuclei for probes of physics beyond the standard model](https://doi.org/10.1016/j.ppnp.2026.104260)**  
-   Progress in Particle and Nuclear Physics · 2026-09-01  
-   Precision beta decay experiments serve as powerful probes of physics beyond the Standard Model, enabling stringent tests of fundamental symmetries of nature. In particular, these experiments primarily focus on precise determinations of the Cabibbo-Kobayashi-Maskawa matrix element Vud and the search for exotic weak currents, both of which depend critically o…
-3. **[寻找超重核：实验视角](https://doi.org/10.1146/annurev-nucl-100324-103404)**  
-   Annual Review of Nuclear and Particle Science · 2026-09-21  
-   实验物理学家目前正致力于将周期表扩展至第八行，元素119和120的搜寻工作正在进行中，此时回顾合成元素发现近一个世纪的历史显得尤为及时。从最初生产铀以外的元素到最近完成第七行的探索，本综述全面概述了扩展周期表过程中的重要里程碑和进展。历史上，新元素的搜寻一直激发公众的想象力，同时也为基本科学提供了独特的窗口。这一点在超重元素的发现与研究中表现得尤为明显，这些元素使人们能够直接进行核科学和化学极端情况的实验探索。本综述探讨了合成元素发现中的主要发展和突破，展示了科学好奇心、创新研究与不断拓展我们对周期表理解之间的复杂关系。
-4. **[在s = 200 GeV的横向极化质子-质子碰撞中喷注内的能量相关子](https://doi.org/10.1103/fgsf-gx2q)**  
-   Physical Review Letters · 2026-09-08  
-   我们报告了在横向极化的质子-质子碰撞中，s = 200 GeV 条件下，利用相对论重离子对撞机上的STAR探测器首次测量了单点和双点能量相关函数。这些可观测量分别量化了单个强子和强子对在喷注内的能量加权角分布。对于π⁺、π⁻以及π⁺π⁻对，观察到显著的自旋依赖不对称性，揭示了在特定角尺度下非微扰动力学的出现。通过将碎片化动力学投影到梅林矩上，这些测量对核子的横向不对称性具有敏感性，同时最小化了来自非微扰碎片化函数的不确定性。这些结果确立了能量相关函数作为探测核子结构的一种新颖且精确的手段，并为未来电子-离子对撞机上的三维核子断层成像开辟了有前景的途径。
-5. **[First Nb 94 ( n , γ ) Measurement: Constraining the Nucleosynthetic Origin of Mo 94 in Presolar Grains](https://doi.org/10.1103/538w-rhqb)**  
-   Physical Review Letters · 2026-08-18  
-   Isotopic measurements of presolar silicon carbide grains from dying stars have revealed a puzzling overabundance of Mo 94 that stellar nucleosynthesis models have failed to reproduce for two decades. This discrepancy challenged our understanding of the slow neutron-capture process ( s -process) that forges approximately half of the elements heavier than iro…
-6. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
-   Physical Review Letters · 2026-08-04  
-   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
-7. **[Deformation, halo, and bubble structure: A paradigm shift of exotic phenomena in light to medium mass nuclei](https://doi.org/10.1016/j.ppnp.2026.104262)**  
-   Progress in Particle and Nuclear Physics · 2026-09-01  
-   The emergence of exotic nuclear structures, such as deformation, one- and two-neutron halos, and bubble configurations, marks a paradigm shift in our understanding of light- to medium-mass nuclei far from stability, particularly near and within the island of inversion extending across $N=20-28$. In this review, we integrate microscopic structure calculation…
-8. **[Neutron Drip Line in Calcium Isotopes from a Chiral Interaction](https://doi.org/10.1103/pz1t-q6v1)**  
-   Physical Review Letters · 2026-09-30  
-   Interactions derived from effective field theories of quantum chromodynamics have thus far failed to bind calcium nuclei beyond neutron number $N=40$, while nuclear density functionals typically place the neutron dripline near $^{70}$Ca, at $N=50$. We present the chiral interaction N$^3$LO$_{\rm Texas}$, a combination of two- and three-nucleon potentials at…
+1. **[含有PI(3,4)P 2的高尔基体来源囊泡促进线粒体融合](https://doi.org/10.1126/science.adx9628)**  
+   Science · 2026-10-08  
+   线粒体是动态的细胞器，通过改变其形态来调节细胞命运。线粒体分裂涉及与内质网（ER）、溶酶体以及来自转高尔基体网络的囊泡之间的相互作用，以促进膜断裂。细胞器间接触如何调节线粒体膜融合仍 largely 不明。在此，我们发现富含磷脂酰肌醇 3,4-二磷酸 [PI(3,4)P 2] 的高尔基体来源囊泡在调节线粒体融合中起作用。我们发现这些囊泡被招募到 ER 和线粒体融合标记物（mitofusin）所标记的融合位点。相应地，失去Ⅰ类 II PI3-激酶同型物α和β（PI3K-C2α 和 PI3K-C2β），这些激酶产生 PI(3,4)P 2，导致线粒体碎片化，这是由于融合受损所致。此外，心肌细胞特异性 PI3K-C2α 和 PI3K-C2β 双重缺失小鼠表现出线粒体碎片化和心力衰竭。因此，携带不同磷脂酰肌醇的高尔基体…
+2. **[15 C 非弹性 1 / 2 + → 5 / 2 + 激发：单粒子过程还是集体过程](https://doi.org/10.1103/x11q-ylqd)**  
+   Physical Review C · 2026-10-08  
+   背景：Argonne National Laboratory 使用 $^{15}$C 以 $7.1 A$ MeV 轰击氘化靶，测量单中子晕核 $^{15}$C 从 $1/2^+$ 基态到 $5/2^+$ 第一激发态的激发。随后使用刚性转子激发模型，在畸变波 Born 近似中分析该数据。目的：作为单中子晕核，我们预期单粒子激发比集体过程更能代表 $^{15}$C 激发。由于低单中子分离阈值在能量上接近 $^{15}$C 第一激发态，预计 $^{15}$C 破裂会影响反应机制。本工作目标是探索多种反应机制，重新解释 Ref.[1] 的 $^{15}$C 非弹性激发数据。方法：假设三体模型 $^{14}$C$+n+d$ 求解散射问题。使用连续态离散耦合道方法（CDCC），并与原实验分析所用具有四极形变的 1-ste…
+3. **[为超级Tau-charm装置设计和集成一个蟹形腰交互区域](https://doi.org/10.1007/s41365-026-02077-z)**  
+   Nuclear Science and Techniques · 2026-10-08  
+   超级τ-charm装置（STCF）是中国正在开发的一种新一代电子-正电子对撞机，设计目标是在最优束流能量2 GeV下，达到峰值亮度超过5×1034cm⁻2s⁻1\documentclass[12pt]{minimal} \usepackage{amsmath} \usepackage{wasysym} \usepackage{amsfonts} \usepackage{amssymb} \usepackage{amsbsy} \usepackage{mathrsfs} \usepackage{upgreek} \setlength{\oddsidemargin}{-69pt} \begin{document}$$5\times 10^{34}\ \textrm{cm}^{-2}\textrm{s}^{-1}$…
+4. **[测量 $^3$He 自旋结构函数及其矩在低 Q$^2$](https://arxiv.org/abs/2608.30101)**  
+   arXiv nucl-ex · 2026-10-08  
+   我们报告了在托马斯·杰斐逊国家加速器设施（杰斐逊实验室）上，使用极化$^3$He靶进行的自旋依赖电子散射实验，$\vec{^3\textrm{He}}(\vec{e},e')X$。在$0.032 \leq Q^2 \leq 0.23$~GeV$^2$范围内，提取了$^3$He的自旋依赖虚光吸收截面$\sigma_{TT}$和$\sigma_{LT}$，或者等效的自旋结构函数$g_1$和$g_2$及其矩。该范围覆盖了两体 breakup 阈值到核子共振区。矩$I_1(Q^2)$在$Q^2 \simeq 0.1$~GeV$^2$以下达到平台，与Gerasimov--Drell--Hearn (GDH) 预期一致，而矩$I_{TT}(Q^2)$仍主要由有限虚度 breakup 响应主导，在$Q^2 \simeq 0…
+5. **[高温下超子对稠密物质的多体效应](https://doi.org/10.1103/5ggk-lhmx)**  
+   Physical Review C · 2026-10-08  
+   在本工作中，我们首次将多体力（MBF）模型扩展到有限温度情形。MBF模型采用相对论量子强子动力学形式描述核物质，通过核相互作用耦合常数的场依赖性来考虑多体力。假设核物质为电中性、β平衡，并由八重态核子、电子和μ子组成，我们研究了该模型的参数、三种不同的超子耦合方案（本文首次在MBF中引入），以及温度效应，以描述核物质的基本性质，包括声速、压缩性和绝热指数。我们还通过求解零温与有限温度下的托尔曼-奥本海默-沃尔科夫方程，研究了致密星的质量-半径关系，包括固定每个核子熵的情形。我们关于有限温度的原始结果为描述中子星原初态提供了新途径。
+6. **[合并未能满足要求：需要非合并通道来产生银河系中的重元素](https://doi.org/10.3847/1538-4357/aea6aa)**  
+   The Astrophysical Journal · 2026-10-08  
+   摘要 自GW170817双中子星合并事件及其伴随的千新星被发现以来，中子星合并已被确立为宇宙中r-过程元素的重要产源之一。然而，多方面的证据，包括从银河系盘星光谱中推断出的r-过程丰度，表明可能需要额外的产源机制，以充分解释银河系中r-过程元素的富集。中子星-黑洞合并以及快速合并的双中子星系统是其中主要的替代候选者。本文结合LIGO–Virgo–KAGRA的引力波观测数据、短伽马射线暴观测、银河系脉冲星数据以及银河系[Eu/Fe]与[Fe/H]丰度观测结果，评估这些合并事件对银河系盘星r-过程富集的贡献。我们的分析采用一种统一的、基于似然的推断框架，一致地传播合并率、延迟时间分布、质量与自旋依赖的喷出物产额以及恒星丰度测量中的不确定性。我们发现，除非引入关于合并率或产额的极端假设，否则中子星-黑洞合并或快速合…
+7. **[Skyrme-夸克-介子耦合能量密度泛函对核基态性质的预测](https://doi.org/10.1140/epja/s10050-026-01969-3)**  
+   The European Physical Journal A · 2026-10-08  
+   摘要 我们系统地研究了使用Skyrme夸克-介子耦合（SQMC）能量密度泛函获得的原子核基态性质，并将其与SLy4d Skyrme参数化结果进行比较。SQMC泛函基于夸克-介子耦合（QMC）模型构建，该模型包含了核子的内部夸克结构，从而显著减少了自由参数的数量。我们研究了从广泛范围的原子核中获得的结合能、双核分离能、电荷半径和四极变形。特别关注QMC模型中推导出的同矢量依赖的自旋-轨道相互作用及其对富中子核在r过程相关结合能的影响。我们发现，SQMC泛函在与SLy4d的比较中，对原子核基态性质提供了合理的描述。
+8. **[中子从裂变碎片中带走角动量](https://doi.org/10.1103/8ptt-pvc8)**  
+   Physical Review C · 2026-10-08  
+   数据源暂未提供详细介绍。
 
 ## 物理新闻
 
+- **[短程激子相关性和增强的激子易感性在1 T-TiSe 2中](https://www.nature.com/articles/s41567-026-03423-z)**  
+   Nature Physics · 2026-10-08  
+   数据源暂未提供详细介绍。
+- **[皮秒电流脉冲探测超导体中无耗传输的内在极限](https://www.nature.com/articles/s41567-026-03477-z)**  
+   Nature Physics · 2026-10-08  
+   数据源暂未提供详细介绍。
 - **[量子技术中的非互易性](https://www.nature.com/articles/s41567-026-03464-4)**  
    Nature Physics · 2026-10-07  
    数据源暂未提供详细介绍。
 - **[关于极端压缩下碳的清晰认识](https://www.nature.com/articles/s41567-026-03460-8)**  
    Nature Physics · 2026-10-07  
    数据源暂未提供详细介绍。
-- **[一种长期寻求的CuGeO 3相追踪了自旋分数化的全过程](https://www.nature.com/articles/s41567-026-03465-3)**  
-   Nature Physics · 2026-10-07  
-   数据源暂未提供详细介绍。
-- **[量子光在电子上留下了它的指纹](http://link.aps.org/doi/10.1103/Physics.19.s123)**  
-   APS Physics · 2026-10-07  
-   作者：Ryan Wilkinson 当强烈的量子光子将电子从原子中击出时，光子的统计特性可以转移到电子上。[Physics 19, s123] 发表于 Wed Oct 07, 2026
 
 ## 科研通知
 
+- **[核物理与核技术全国重点实验室学术报告会第538期](https://sklnpt.pku.edu.cn/info/1121/4831.htm)**  
+   核物理与核技术全国重点实验室会议 · 2026-10-08  
+   ----友情链接---- ---- 北京大学 ---- ---- 北京大学物理学院 ---- ---- HIAF强流重离子加速器装置 ---- 地址：北京市海淀区成府路201号核物理与核技术全国重点实验室 邮编：100871 联系电话：010-62751870；010-62755215 邮箱：jingwu@pku.edu.cn
 - **[SCD周会](https://indico.ihep.ac.cn/event/31099/)**  
    高能所 Indico · 2026-10-04  
    2026-10-05 — 2026-10-05
@@ -55,14 +58,11 @@
 - **[关于发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100371.html)**  
    国家自然科学基金委项目指南 · 2029-12-31  
    国科金发计〔2026〕6号 国家自然科学基金委员会现发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请
-- **[上海市科学技术委员会关于发布2026年度关键技术研发计划“空天海洋”项目申报指南的通知](https://stcsm.sh.gov.cn/zwgk/kyjhxm/xmsb/20260929/c4c76bf8e96c4e04b60e9a593c4d2916.html)**  
+- **[省科技厅关于组织开展2026年国家级创新型产业集群申报工作的通知](https://kjt.hubei.gov.cn/kjdt/tzgg/202610/t20261008_6027831.shtml)**  
+   湖北省科技厅 · 2026-10-08  
+   --湖北省科学技术厅 6027831 省科技厅关于组织开展2026年国家级创新型产业集群申报工作的通知 20 湖北省科学技术厅 2026-10-08 3824 通知公告 湖北政府网 | 科技部网 | 邮箱 | 计划管理 | 奖励评审 | 登录 | 注册 湖北省科学技术厅 搜 索 首页 政府信息公开 互动交流 办事服务 科技动态 科技一网通 当前位置： 首页 > 科技动态 > 通知公告 省科技厅关于组织开展2026年国家级创新型产业集群申报工作的通知 2026-10-08 14:26 | 湖北省科学技术厅 各市、州、直管市科技局，各有关单位： 根据《工业和信息化部办公厅关于开展2026年创新型产业集群申报工作的通知》（工信厅高新函〔2026〕446号）相关要求，现就我省申报有关事项通知如下。 一、申报条件 （一…
+- **[关于发布2026年度基础研究计划“上海市自然科学基金（引领培育类）”项目申报指南的通知](https://stcsm.sh.gov.cn/zwgk/kyjhxm/xmsb/20261008/97d8e0797da34da8bdfed9789c75579b.html)**  
    上海市科委 · 2026-10-08  
-   _项目申报_上海市科学技术委员会 当前位置： 首页 > 政务公开> 科技计划项目> 项目申报> 正文 上海市科学技术委员会关于发布2026年度关键技术研发计划“空天海洋”项目申报指南的通知 发布日期：2026-09-29 文号：沪科指南〔2026〕33号 各有关单位： 为加快建设上海（长三角）国际科技创新中心，落实“十五五”规划战略部署，上海市科学技术委员会特发布2026年度关键技术研发计划“空天海洋”项目申报指南。指南内容包括天基计算通信系统、能源系统、散热系统、应用场景关键技术研究以及深地领域关键技术研究共五个专题。申请人可通过“上海市科技管理信息系统”查看指南具体内容、进行网上填报。 一、申报要求 除满足指南相应条件外，还须遵循以下要求： 1. 专题一、二、三、五中各方向的项目申报单位应当是本市的法人或…
-- **[ADOPT Facilitator support grant: round 12](https://www.ukri.org/opportunity/adopt-facilitator-support-grant-round-12/)**  
-   UKRI Opportunities · 2026-10-07  
-   Funding opportunity Funding opportunity: ADOPT Facilitator support grant: round 12 Opportunity status: Open Funders: Innovate UK Co-funders: Department for Environment, Food and Rural Affairs Funding type: Grant Publication date: 7 October 2026 Opening date: 1 October 2026 9:30am UK time Closing date: 11 November 2026 11:00am UK time See the full opportunit…
-- **[关于发布2026年度国家自然科学基金指南引导类原创探索计划项目“江门中微子实验MeV能区天体中微子与新物理前沿探索”项目指南的通告 2026-09-30](https://www.nsfc.gov.cn/p1/3381/2824/143178.html)**  
-   国家自然科学基金委数理科学部 · 2026-09-30  
-   2026年度国家自然科学基金指南引导类原创探索计划项目“江门中微子实验MeV能区天体中微子与新物理前沿探索”项目指南已通过科学基金网络信息系统（https://grants.nsfc.gov.cn）发布，请依托单位和申请人登录科学基金网络信息系统，在“项目管理-项目指南”模块查看，按项目指南所述要求和注意事项申请
+   数据源暂未提供详细介绍。
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)

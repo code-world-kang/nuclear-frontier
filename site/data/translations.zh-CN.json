@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T02:13:43.796651+00:00",
+  "generated_at": "2026-10-09T02:29:47.177006+00:00",
   "provider": "mixed",
   "items": {
     "03fb0be72e560764": {
@@ -14499,14 +14499,14 @@
       "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
     },
     "da184be777a0374c": {
-      "title_zh": "高温下超子对密集物质的多体效应",
-      "abstract_zh": "",
-      "translated_at": "2026-09-17T00:30:55.708406+00:00",
+      "title_zh": "高温下超子对稠密物质的多体效应",
+      "abstract_zh": "在本工作中，我们首次将多体力（MBF）模型扩展到有限温度情形。MBF模型采用相对论量子强子动力学形式描述核物质，通过核相互作用耦合常数的场依赖性来考虑多体力。假设核物质为电中性、β平衡，并由八重态核子、电子和μ子组成，我们研究了该模型的参数、三种不同的超子耦合方案（本文首次在MBF中引入），以及温度效应，以描述核物质的基本性质，包括声速、压缩性和绝热指数。我们还通过求解零温与有限温度下的托尔曼-奥本海默-沃尔科夫方程，研究了致密星的质量-半径关系，包括固定每个核子熵的情形。我们关于有限温度的原始结果为描述中子星原初态提供了新途径。",
+      "translated_at": "2026-10-09T01:51:28.022152+00:00",
       "provider": "open-source-local",
       "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "source_hash": "3b1a5acdf1ed3867e5876719e0a64f5a11a86edd63e1378ed1db335dbae0d244",
+      "source_hash": "18ef2aa5711906084320b17eb48df15c2a1bb956d4f1e3b0e3be4a385ce8e9b5",
       "quality": "machine_draft",
-      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
     },
     "9eaa3b93a8649fd1": {
       "title_zh": "银河系中的黑洞标量哨兵",
@@ -16090,11 +16090,11 @@
     },
     "ae39c725f195d590": {
       "title_zh": "Skyrme-夸克-介子耦合能量密度泛函对核基态性质的预测",
-      "abstract_zh": "我们对使用Skyrme夸克-介子耦合（SQMC）能量密度泛函获得的原子核基态性质进行了系统研究，并将其与SLy4d Skyrme参数化结果进行了比较。SQMC泛函基于夸克-介子耦合（QMC）模型构建，该模型包含了核子的内部夸克结构，从而显著减少了自由参数的数量。我们研究了从广范围核素中获得的结合能、双核分离能、电荷半径和四极变形。特别关注了QMC模型中推导出的同矢量依赖的自旋-轨道相互作用，及其对r过程相关中子富集核素结合能的影响。我们发现，SQMC泛函在描述核基态性质方面与SLy4d相比具有合理的准确性。",
-      "translated_at": "2026-09-24T00:34:17.204681+00:00",
+      "abstract_zh": "摘要 我们系统地研究了使用Skyrme夸克-介子耦合（SQMC）能量密度泛函获得的原子核基态性质，并将其与SLy4d Skyrme参数化结果进行比较。SQMC泛函基于夸克-介子耦合（QMC）模型构建，该模型包含了核子的内部夸克结构，从而显著减少了自由参数的数量。我们研究了从广泛范围的原子核中获得的结合能、双核分离能、电荷半径和四极变形。特别关注QMC模型中推导出的同矢量依赖的自旋-轨道相互作用及其对富中子核在r过程相关结合能的影响。我们发现，SQMC泛函在与SLy4d的比较中，对原子核基态性质提供了合理的描述。",
+      "translated_at": "2026-10-09T01:54:53.956529+00:00",
       "provider": "open-source-local",
       "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "source_hash": "89417eece50b01f47cc8c0b3168b8cd0e075fec38e6dc66ddfdf0b99b115dbc7",
+      "source_hash": "894654dc868533d1cb4012d42ae0ed63c80a354d4f6c70319a61dbe0e8213803",
       "quality": "machine_draft",
       "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
     },
@@ -19395,6 +19395,306 @@
       "provider": "open-source-local",
       "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
       "source_hash": "0331d30f5bb3f7302f93f61d8d30bd93ad09034295923a94461b3405e4d838a6",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "b9adcce7c12c74d6": {
+      "title_zh": "含有PI(3,4)P 2的高尔基体来源囊泡促进线粒体融合",
+      "abstract_zh": "线粒体是动态的细胞器，通过改变其形态来调节细胞命运。线粒体分裂涉及与内质网（ER）、溶酶体以及来自转高尔基体网络的囊泡之间的相互作用，以促进膜断裂。细胞器间接触如何调节线粒体膜融合仍 largely 不明。在此，我们发现富含磷脂酰肌醇 3,4-二磷酸 [PI(3,4)P 2] 的高尔基体来源囊泡在调节线粒体融合中起作用。我们发现这些囊泡被招募到 ER 和线粒体融合标记物（mitofusin）所标记的融合位点。相应地，失去Ⅰ类 II PI3-激酶同型物α和β（PI3K-C2α 和 PI3K-C2β），这些激酶产生 PI(3,4)P 2，导致线粒体碎片化，这是由于融合受损所致。此外，心肌细胞特异性 PI3K-C2α 和 PI3K-C2β 双重缺失小鼠表现出线粒体碎片化和心力衰竭。因此，携带不同磷脂酰肌醇的高尔基体来源囊泡亚群调控线粒体膜重塑和稳态。",
+      "translated_at": "2026-10-09T01:46:21.750672+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "cc9669c8186e02478f0d0bf3d7ac81a5742301dd40f25e1dddc0d189bec6956f",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "de9838a8d742eddd": {
+      "title_zh": "借助AI-驱动的形式化证明搜索推进数学研究",
+      "abstract_zh": "大型语言模型（LLMs）在数学任务上日益表现出色，但其不可靠性限制了其在数学研究中的实用性。一种缓解方法是使用LLMs生成形式化证明，这些证明以如Lean这样的语言编写，在其中编译器会验证每一个证明步骤。我们首次展示了该方法在大规模解决开放问题中的价值。我们构建了一个用于形式化证明搜索的人工智能代理，该代理自主解决了九个353开放的埃德尔斯问题，证明了44/492《整数序列在线百科全书》中的猜想，并正在被应用于组合数学、优化、图论、代数几何和量子光学研究中。即使是一个基础代理，交替进行LLM-为基础的生成与基于Lean的验证，也复制了埃德尔斯的成功。这些发现证明了形式化证明搜索作为自主数学发现促进器的强大潜力。",
+      "translated_at": "2026-10-09T01:47:29.737430+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "a7c57a729ba827d2bc78a9ea653661ade069abdac4c08a4b2369bc0176ef1291",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "a606f6f6fac55eb6": {
+      "title_zh": "为超级Tau-charm装置设计和集成一个蟹形腰交互区域",
+      "abstract_zh": "超级τ-charm装置（STCF）是中国正在开发的一种新一代电子-正电子对撞机，设计目标是在最优束流能量2 GeV下，达到峰值亮度超过5×1034cm⁻2s⁻1\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$5\\times 10^{34}\\ \\textrm{cm}^{-2}\\textrm{s}^{-1}$$\\end{document}的水平。实现这一目标依赖于一种具有大交叉角的蟹形束腰对撞方案——这种配置引入了强烈的非线性效应，严重限制了动态和动量通径。本文提出了一个针对STCF相互作用区（IR）的完整物理设计，系统性地解决了这些挑战。该设计采用模块化光学框架，包含最高到三阶的局部色散校正，实现色散六极子对之间的精确-I\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$-\\textrm{I}$$\\end{document}变换以实现非线性抵消，并最小化色散不变量以提高局部动量接纳度。在蟹形六极子处的光学特性被优化，以降低其强度及其相关的非线性效应。当集成到对撞环中时，该设计实现了Touschek寿命超过300秒，在2 GeV条件下，满足了STCF的要求。\n\n此外，利用八极校正器部分补偿超导四极磁体的边缘场，通过局部反螺线管完全抑制探测器螺线管效应。机器-探测器接口布局也进行了优化，以抑制相互作用点处的同步辐射背景。这种IR设计代表了当前对STCF的最优解决方案，并已纳入项目概念设计报告。",
+      "translated_at": "2026-10-09T01:50:55.749946+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "c80b7aa9daf42c002ec7a4dc0543c4cb36517111aa1a67516ac5c77c6bc983b7",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "4a3b980a0904c512": {
+      "title_zh": "短程激子相关性和增强的激子易感性在1 T-TiSe 2中",
+      "abstract_zh": "",
+      "translated_at": "2026-10-09T01:51:38.506602+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "11d20c6457882a6218deb134096733ad1db1c8d531458b2154dc8e70ed4a91ba",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+    },
+    "e80b9e3151e2fb0c": {
+      "title_zh": "合并未能满足要求：需要非合并通道来产生银河系中的重元素",
+      "abstract_zh": "摘要 自GW170817双中子星合并事件及其伴随的千新星被发现以来，中子星合并已被确立为宇宙中r-过程元素的重要产源之一。然而，多方面的证据，包括从银河系盘星光谱中推断出的r-过程丰度，表明可能需要额外的产源机制，以充分解释银河系中r-过程元素的富集。中子星-黑洞合并以及快速合并的双中子星系统是其中主要的替代候选者。本文结合LIGO–Virgo–KAGRA的引力波观测数据、短伽马射线暴观测、银河系脉冲星数据以及银河系[Eu/Fe]与[Fe/H]丰度观测结果，评估这些合并事件对银河系盘星r-过程富集的贡献。我们的分析采用一种统一的、基于似然的推断框架，一致地传播合并率、延迟时间分布、质量与自旋依赖的喷出物产额以及恒星丰度测量中的不确定性。我们发现，除非引入关于合并率或产额的极端假设，否则中子星-黑洞合并或快速合并的双中子星群体均无法主导盘星数据所要求的额外瞬时富集。在所采用的模型中，这些结果强烈支持存在一个显著的瞬时富集成分，该成分超出了本文所考虑的合并通道。",
+      "translated_at": "2026-10-09T01:54:18.176987+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "eb6e18b5ab5ac3503db41a360a3b0e2b379c7bc0c0ff3817f7ea8c81529cc3cb",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "5e2dbde1357d7042": {
+      "title_zh": "纳粹德国不可能制造原子弹，铀立方体揭示",
+      "abstract_zh": "实验反应堆需要的铀和重水远超该国所能提供的数量",
+      "translated_at": "2026-10-09T01:55:00.018267+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "c969312e2de7b6fe5ac3a8766c76a469eef7444f43989f91f0bddb4bbdcfabb7",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "138630f9e635d988": {
+      "title_zh": "皮秒电流脉冲探测超导体中无耗传输的内在极限",
+      "abstract_zh": "",
+      "translated_at": "2026-10-09T01:57:29.194827+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "d872025dead87bb416ca37dcebe6c1618f6b230444ff0e051bb8e1da2d2749e2",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+    },
+    "22b29daddd418509": {
+      "title_zh": "几何因子在多体束缚态体积依赖性中的作用",
+      "abstract_zh": "",
+      "translated_at": "2026-10-09T01:59:25.103886+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "0cd3e718379a95041ec75e4b82092e4465229803829e03ec497613e86df6b72c",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+    },
+    "0ad109f843a79aae": {
+      "title_zh": "中子星与夸克星在多信使时代",
+      "abstract_zh": "中子星（NSs）和自束缚夸克星（QSs）仍然是作为脉冲星观测到以及在双星合并产生的引力波（GW）事件中发现的致密天体的两个主要候选者。利用一种不依赖具体物理过程的致密星（CS）物质方程状态（EOS），通过非参数高斯过程回归构建，我们通过对GW170817、PSR、J0740+6620、PSR、J0030+0451、PSR、J0437 $-$ 4715以及PSR J0614 $-$ 3329的多信使观测数据进行贝叶斯推断，来研究NSs和QSs的性质。我们考虑了来自三种情景的竞争情况：NS情景，其中所有CSs均为NSs；udQS情景，其中所有CSs均为上-下夸克星（udQSs）；以及双族情景，其中NSs和奇异夸克星（SQSs）共存。基于系统的贝叶斯模型选择结果，最被支持的情况属于双族情景，相对于udQS情景，其贝叶斯因子为$6.1$。在此情况下，PSR J0740+6620被优选为一个SQS，而其余五个CSs，包括GW170817中的两个，均被优选为NSs。对应的静态CS的最大质量在NSs中为$M_\\text{TOV} = 1.72_{-0.16}^{+0.18} M_\\odot$，在SQSs中为$M_\\text{TOV} = 2.63_{-0.31}^{+0.36} M_\\odot$，置信区间为$68\\%$。此外，在NS和QS物质中，推断出的声速单调增加并在高密度下趋于饱和，而在NS情景中则发现显著的峰值结构。我们的工作为识别单个CSs的性质以及约束NSs和QSs中致密物质的性质提供了新的框架。\n\n特别是，最被青睐的情况根据Witten假设为奇异夸克物质的绝对稳定性提供了天体物理支持。",
+      "translated_at": "2026-10-09T02:03:57.775633+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "b51588bf035b3573ea4c65b5f534d489cfc408c09ad566e846522c6238781134",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "d34c4fc1f770c4f6": {
+      "title_zh": "多功能干涉极化测量用于聚变等离子体控制和物理应用（特邀）",
+      "abstract_zh": "未来聚变反应堆需要对等离子体平衡和波动进行稳健的监测，以维持和优化能量增益，尽管机器访问受到严重限制。我们在DIII-D托卡马克装置上展示了多功能干涉仪-偏振计，该装置仅使用四条径向光束，即可同时测量：(a) 干涉相移，(b) 法拉第效应，(c) 库顿-穆顿效应，(d) 密度和磁场波动高达10 MHz，以及(e) 波动的极向模式数和垂直波数。这通过一种三波双传感器方案实现，该方案包含四条在垂直和极向方向上偏移的光束。法拉第效应的测量约束了核心磁平衡，直接确定了磁轴的垂直位置。库顿-穆顿效应的测量提供了不受条纹跳变影响的稳健线积分密度测量。此外，波动和波数的测量能够实现模式定位，从而实现从等离子体核心到边缘的多尺度波动的时空调查。这些结果验证了一种紧凑的干涉测量-偏振测量方法，能够在访问受限的情况下提供全面的平衡和波动测量，满足聚变反应堆的需求。",
+      "translated_at": "2026-10-09T02:04:41.230710+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "59ca26fd8e43c78e5555268bb7d890b76b9b7705685ad7c4b51ae1eebb6b4004",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "66c9e8a5b6193ac7": {
+      "title_zh": "首个核钟启动了精确度的竞争",
+      "abstract_zh": "作者：Matteo Rini 两个独立的研究团队已经构建了运行中的核钟——装置可能在未来与最好的原子钟相媲美，并为探索基本物理提供新途径。[Physics 19, 139] 发表于 Wed Oct 07, 2026",
+      "translated_at": "2026-10-09T02:05:05.194256+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "02385a4ee05d8083f387de3f2ef5d4a514493fecd55fb81ae5cac600e570204e",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "a3d9b0c35edbcb95": {
+      "title_zh": "从多单色成像器数据中进行贝叶斯轮廓重建",
+      "abstract_zh": "多单色成像仪（MMI）是一种诊断仪器，能够对惯性约束聚变实验提供基于特征线发射/吸收的光谱分辨图像，这些特征线来自中Z掺杂剂。以往的分析方法需要在光谱或空间轴上进行某种形式的分箱，以生成复合图像或光谱。本工作采用了一种替代方法，通过自可微分的方式生成合成MMI图像，从而允许使用哈密顿蒙特卡洛方法对描述等离子体的参数复杂后验分布进行采样。该算法使用人工数据进行了测试，结果显示误差条和重建结果与真实值高度一致，其中77%的拟合参数在真实值与重建的90%可信区间之间存在重叠。如果考虑人工图像中动态范围引起的拟合偏差，一致性进一步提升至86%的拟合参数在真实值与重建的90%可信区间之间存在重叠，尽管该重建假设了球对称性，而测试图像中并不存在这种对称性。",
+      "translated_at": "2026-10-09T02:08:04.788795+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "49e1d83a1de1c39cef7398835065eeb597b5bd366add16271144aa169ebe61f6",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "38b76a9842529df1": {
+      "title_zh": "利用电子-光子碰撞搜索轻暗物质领域",
+      "abstract_zh": "暗光子是一种在许多超出标准模型的场景中自然出现的新规范玻色子，它通过动力学混合与电磁流耦合。由于这一特性，它常被视为暗物质与可见物质之间的通道，因此已成为全球众多实验搜索的目标。在本工作中，我们提出了一种基于逆康普顿散射 $\\gamma e^- \\rightarrow A' e^-$ 在电子加速器上进行暗光子搜索的方案。在此设置中，来自激光源的光子照射到加速的电子束上，在最终态中产生暗光子。我们基于由此产生的缺失能量信号，研究了两种互补的搜索策略：一种是单光子 veto 方法，另一种是测量反冲电子能量谱，其中角信息被视为后者的扩展。我们假设入射光子能量约为 1 eV，电子束能量为 3 GeV，推导了预期的灵敏度。我们表明，这种实验设置可以覆盖尚未探索的参数空间区域，并成为未来探测暗物质领域的有前景的手段。",
+      "translated_at": "2026-10-09T02:08:44.324007+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "f5c334b3b3a3c55dfa2432db510f8789f4ed147a9039eb901b389209867b49cd",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "2cbe6c4f590f15f6": {
+      "title_zh": "钍同位素在$N=82$壳闭合附近的激光光谱学研究：${}^{152\\mathrm{m}}\\mathrm{Tm}$的核磁矩和电荷半径",
+      "abstract_zh": "我们报告了对中子贫乏和中子富集的铥（$\\mathrm{Tm}, Z=69$）同位素进行共振离子化激光光谱测量的结果。在同位素${}^{152\\mathrm{m}}\\mathrm{Tm}$、${}^{153}\\mathrm{Tm}$、${}^{154\\mathrm{m}}\\mathrm{Tm}$和${}^{169}\\mathrm{Tm}$中，确定了三个原子基态跃迁在波长为$389.8\\,\\mathrm{nm}$、$388.4\\,\\mathrm{nm}$和$388.8\\,\\mathrm{nm}$处的同位素位移。此外，对于$389.8\\,\\mathrm{nm}$的跃迁，测量扩展到了同位素${}^{170}\\mathrm{Tm}$，并且对所有五个同位素的部分超精细结构得到了解析。对于该跃迁，还确定了另一个同位素${}^{154\\mathrm{m}}\\mathrm{Tm}$的同位素位移。从提取的超精细耦合常数中，首次确定了${}^{152\\mathrm{m}}\\mathrm{Tm}$的核磁偶极矩，结果为$\\mu\\left({}^{152\\mathrm{m}}\\mathrm{Tm}\\right) = 5.8(3) \\mu_\\mathrm{N}$。此外，从测得的同位素位移中提取了${}^{152\\mathrm{m}}\\mathrm{Tm}$的平均平方核电荷半径$\\delta\\langle r^2\\rangle^{152\\mathrm{m},169} = -1.87(17)\\,\\mathrm{fm}^2$。",
+      "translated_at": "2026-10-09T02:10:11.305841+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "c8dcb5aa3bd4b76aa8d2be3f1ae96851e422f15553d771c7b8da64af1dee7b54",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "27756e3eab3ff216": {
+      "title_zh": "从稳定化方法中学习形状共振",
+      "abstract_zh": "量子力学中的共振态通常被引入为嵌入在连续态中的准束缚态，这种观点由于连续态的抽象性质而可能在概念上具有挑战性。在本工作中，我们讨论了一种替代方法，该方法通过以离散量子态的形式表述问题，避免了对连续态的显式处理。我们的讨论基于稳定化方法，其中系统被限制在一个有限区域内，使得连续态被替换为离散能谱。共振态则表现为随着限制盒尺寸变化时能级中的特征现象，从而在两能级系统框架下提供直观的解释，同时仍与标准量子力学课程内容紧密相连。我们回顾了该方法，推导了部分结果，并讨论了从稳定化图中提取共振参数的实用策略。除了已有的拟合程序外，我们还提出了一种基于共振态空间局域性分析的新方法，该方法能够稳健地识别共振特性。该方法通过吸引性和排斥性δ壳势示例进行了说明，这些模型系统简单且具有教学意义，且易于进行解析处理。",
+      "translated_at": "2026-10-09T02:10:52.064132+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "2557f16968a6cca65034e710bd3244772e61bee490cc0ab1f9d4233ad3bc2ba9",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "09cda25464c48fb9": {
+      "title_zh": "诺贝尔奖：来自遥远、遥远地方的中微子",
+      "abstract_zh": "作者：Michael Schirber 中微子天文学以及在南极建造一个立方千米规模探测器的努力获得了2026物理学诺贝尔奖。[物理19, 138] 发表于Tue Oct 06, 2026",
+      "translated_at": "2026-10-09T02:11:18.774817+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "fcd4ad5c56ccc27ea4a55a1ce9a276f98a6902c2633be7f36962e0f9c534fb04",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "81cc628ae19c721d": {
+      "title_zh": "关于太阳风中磁开关回转的冕层起源",
+      "abstract_zh": "摘要 太阳持续释放出一种带电粒子流，称为太阳风，其中穿插着磁力线，这些磁力线偶尔会以尖锐的反向折叠形成所谓的磁反转结构。这类结构在太阳附近航天器的观测中频繁出现，但其形成机制仍是一个未解之谜。利用在0.55 AU处的Solar Orbiter观测数据，我们报告了磁反转结构内重离子的观测结果，这些结果提供了其太阳来源的直接证据。氧和碳的电荷态比值升高，同时氦相对于质子的丰度降低，表明磁反转结构的等离子体起源于高温的闭合日冕环结构。一个半经验的日冕模型，基于太阳动力学观测站（Solar Dynamics Observatory）提供的电子温度和密度测量数据，将离子特征追溯到日冕洞边界或日冕洞内部的环结构，暗示其来源机制为交换重连，即闭合环与开放磁力线发生重连并喷射等离子体。磁反转结构中的质子速度和磁场波动与向外传播的阿尔芬波一致。这些发现表明，交换重连机制控制磁反转结构的起源，而波或湍流机制则控制其传播。最重要的是，我们证明磁反转结构保留了可测量的特征，携带着关于加热太阳大气层和加速太阳风的物理过程的信息。",
+      "translated_at": "2026-10-09T02:16:33.099063+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "e5f8fa208c978fc2ff4751b5f1f28d465a41eb026ea4f898b010203e6cc1ecf4",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "6f69714e05711dbe": {
+      "title_zh": "原子核中一种新颖的手性摇摆激发模式",
+      "abstract_zh": "$^{74}$Br原子核中高自旋带结构的性质利用三轴投影壳模型（TPSM）和粒子三轴转子（PTR）方法进行研究。已经证明，在$^{74}$Br中观测到的最低三个带具有螺旋摇摆体的特征。第一激发带是晕带的螺旋伙伴，第二激发带是基于晕态的摇摆带。我们利用TPSM和PTR计算的量对第三激发带进行了分析，揭示了该带的独特特征。预测该带是第二激发带的螺旋伙伴，同时也是基于第一激发带的摇摆模式。",
+      "translated_at": "2026-10-09T02:16:59.201623+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "20e45dbe9e8fc8b3b62ff3df821f1f75a5801b4206b5031ac005610c23856284",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "06470e07d6820ead": {
+      "title_zh": "张量结构求和规则用于所有$Q^2$的自旋-1靶",
+      "abstract_zh": "我们推导出一类针对自旋为一或更高的靶核张量结构函数的求和规则，其根源在于精确的Siegert关系。混合秩二 $TT$--$LT$ 退化结合了具有相反交叉奇偶性的振幅，在超收敛假设下，给出在Hoodbhoy--Jaffe--Manohar (HJM) 基底下 $\\int_0^1\\! d x\\,[b_2(x,Q^2)-3b_4(x,Q^2)]=0$。在大 $Q^2$ 时，保护性矩与Detmold的靶质量完备的扭二OPE一致；在严格的Bjorken投影下，若忽略 $b_4$，则简化为Efremov--Teryaev (ET) 类型条件 $\\int_0^1\\! d x\\,x\\,b_1(x)=0$，其测量范围内的表现与HERMES数据一致。另外两个秩二组合连接了交叉偶振幅，并通过加权HJM矩确定相应的减除函数。保护性组合可以通过分离的张量 $LT$ 和 $TT$ 响应来孤立，为JLab提供了直接的实验策略，最终为未来的EIC提供可行路径。",
+      "translated_at": "2026-10-09T02:17:52.635789+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "5217944c3f435eef72e40cfba308385ef2227ce0cd1266128a2438cb34ff7343",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "14e5c093147f423c": {
+      "title_zh": "近阈值$s$波共振的复合性",
+      "abstract_zh": "近阈值聚变现象通过低能普遍性已被很好地理解，适用于阈值以下的浅束缚态。然而，阈值稍上方的共振特性仍缺乏充分阐明。我们提出了一种针对共振复合性的新概率解释方案，在该方案中，具有较大衰减宽度的共振会超出其内部结构可被概率解释的范围。通过该方案利用有效范围展开分析共振，我们证明了窄且可解释的近阈值共振具有较小的复合分数，这与阈值以下的浅束缚态形成鲜明对比。",
+      "translated_at": "2026-10-09T02:18:17.058282+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "aeb501a79a126596ef25812a444c990b2ae89245bedf69b114169c5bc5a501e6",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "69e509199b1b4439": {
+      "title_zh": "Bjorken和规则从格点数据下降到弹性区域",
+      "abstract_zh": "我们通过费曼-海伦曼计算核子极化前向康普顿振幅，给出了布克森和规则的格点确定方法。我们计算了核子极化结构函数$g_1$的最低阶矩，在$0.5\\lesssim Q^2 \\lesssim 8$ GeV$^2$范围内进行计算，涵盖了非微扰和微扰区域。我们将计算得到的矩与布克森和规则进行比较，并讨论了这对高扭效应计算以及从强子量值中评估$\\alpha_s(Q^2)$的含义，以补充唯象学和其他格点方法。",
+      "translated_at": "2026-10-09T02:20:46.657132+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "d3af1b6ffcb1d5bcb3b269125e7b2133772658d0d72d1bf41514bd83607ae242",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "fec8bb26d2607f7d": {
+      "title_zh": "一种可微的损失主导离子束传输的代理",
+      "abstract_zh": "具有极端质子-中子比的放射性原子核为研究核结构、基本对称性、天体物理过程以及医学等应用提供了独特的探针。然而，它们的半衰期短且产量低，意味着实验必须在极少数所需离子的情况下进行，常常面临杂质背景信号超过主信号六个数量级的情况。因此，高效地分离、传输并把这些离子通过多级装置输送出来，成为一个核心挑战。我们提出了一种可微分的概率代理模型，用于描述在粒子损失占主导的离子束传输情形。该模型通过结合离散时间生存分析与条件归一化流，联合捕捉离子沿束线的存活概率以及存活粒子相空间分布的演化过程。将其应用于高维静电束线，所得到的似然函数能够基于梯度优化束线工作电压，并从稀疏探测器观测中推断束流特性。一旦训练完成，该代理模型即可提供毫秒级的可微分预测，将具有硬损失的粒子轨迹模拟转化为可用于实验设计、束线优化以及未来稀有核素实验数字孪生的推断型模型。",
+      "translated_at": "2026-10-09T02:21:29.154441+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "2ee6f8dcddc349d49e79dd6f9634a3004030f8f9992087d897c8a03bd3254a70",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "e2088026047b133e": {
+      "title_zh": "太阳捕获与非弹性标量暗物质的抑制湮灭",
+      "abstract_zh": "太阳对非弹性暗物质的捕获本身并不能确定湮灭信号。我们考虑一个标量低能模型，其包含一个 $B-3L_\\tau$ 电流，该模型受到 LUX-ZEPLIN 报告的高能反冲候选事件的启发。对于 $m_\\chi=840~\\mathrm{GeV}$，一个 $320~\\mathrm{keV}$ 的分裂，以及一个 $160~\\mathrm{MeV}$ 的媒介子，公共 LZ 响应给出 0.965 个预期接受事件，而 micrOMEGAs 给出 $\\Omega h^2=0.11999834$。有限动量核响应使得铁成为重要的太阳捕获靶核，尽管其在零动量转移时的相干电荷几乎抵消。在包含热核运动、弹性与非弹性散射以及激发态衰变之后，被捕获的粒子群体仍然保持扩展，其有效半径为 $r_{\\rm eff}=0.215R_\\odot$。相同态湮灭是开放的，但推断的速率仅为公共 IceCube $W^+W^-$ 校准代理值的 0.0404，且比相应的等温估计小 628 倍。对于该基准点，显著的太阳捕获伴随着一个微弱的中微子信号。",
+      "translated_at": "2026-10-09T02:22:21.514744+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "6545074772e31951b53adac473cecb0ba469dea04c6ed6d894218914cbc5a4f5",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+    },
+    "4e7da61c53045350": {
+      "title_zh": "将重子数与价夸克电荷分离",
+      "abstract_zh": "",
+      "translated_at": "2026-10-09T02:22:24.409432+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "7f5f16231f1aac0b8b8ee4b0082315916e891340c28e802d71f878510d0d8278",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+    },
+    "5cff08301cbcf0ce": {
+      "title_zh": "在簇有效场论中，13 C( α , n ) 16 O 在低能下的 S 因子",
+      "abstract_zh": "",
+      "translated_at": "2026-10-09T02:25:10.008839+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "915d1f5b1e8aaf36a3eef8dae427cbd0837c973bab940cd7cc3fcac0806739af",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+    },
+    "ddcfe5c80e0f3a4b": {
+      "title_zh": "几何标度框架中的径向流动涨落",
+      "abstract_zh": "",
+      "translated_at": "2026-10-09T02:25:12.465375+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "a0a8dc4beddcb226a552b291722024889789475e0f3c740a882e0b7418502e73",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+    },
+    "0452acf7eaf1ad5d": {
+      "title_zh": "热中子星物质和原中子星中的核面团",
+      "abstract_zh": "",
+      "translated_at": "2026-10-09T02:25:15.131448+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "65ae41ded0a21dd891be162a94ad924bbe84fe6550c1a5f6424e2bf769fe4d99",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+    },
+    "b5395d6926c3925f": {
+      "title_zh": "使用加拿大Penning陷阱质谱仪对富中子核素进行质量测量，以指导r过程稀土峰区域的预测",
+      "abstract_zh": "",
+      "translated_at": "2026-10-09T02:25:19.764354+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "e73fdfe8a0caea3fa0d6781b07457995bba4381e36b67399525266acab507e5c",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+    },
+    "d471c96f51eb2374": {
+      "title_zh": "对Sm 144 , 148 + α在p过程核合成中的势能进行研究",
+      "abstract_zh": "",
+      "translated_at": "2026-10-09T02:28:17.689131+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "7fac1d61ca44f30860770fe2d91766904e7e1e5c20ff63ccb1a39d2053536f86",
+      "quality": "machine_draft",
+      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+    },
+    "f5da39cc4a94d8e3": {
+      "title_zh": "有限化学势下夸克-胶子等离子体的热力学和输运性质的深度神经网络框架",
+      "abstract_zh": "热系统的特性强烈依赖于其对热梯度的响应以及构成粒子之间存在的微观相互作用。在本研究中，我们采用深度学习辅助的准粒子模型（DLQPM）研究在有限重子化学势下的夸克-胶子等离子体（QGP）的热力学和输运性质。利用神经网络训练以重现基于零重子化学势附近泰勒展开得到的格点QCD（lQCD）结果中的方程状态，估算出准粒子的温度（$\\mathrm{T}$）和重子化学势（$\\mu_B$）依赖的热质量。训练后的模型作为有效模拟器，使我们能够估算有限$\\mu_B$下的热力学和输运性质。我们计算了非禁闭介质中的声速、比热、粘度和电导率。我们的结果与现有的格点计算及其他唯象模型的结果良好一致。本研究表明，基于DNN-的方法为研究有限重子密度下的QGP的性质提供了一个高效框架。",
+      "translated_at": "2026-10-09T02:29:47.176831+00:00",
+      "provider": "open-source-local",
+      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+      "source_hash": "cbb427da6773cb1eb167464803fb6064e02baf9a4383d827bdbf72a7c3cb213a",
       "quality": "machine_draft",
       "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
     }
