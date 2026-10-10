@@ -1,33 +1,33 @@
-# 小康康的物理世界 · 2026-10-08 科研简报
+# 小康康的物理世界 · 2026-10-09 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 13/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 10/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[含有PI(3,4)P 2的高尔基体来源囊泡促进线粒体融合](https://doi.org/10.1126/science.adx9628)**  
-   Science · 2026-10-08  
-   线粒体是动态的细胞器，通过改变其形态来调节细胞命运。线粒体分裂涉及与内质网（ER）、溶酶体以及来自转高尔基体网络的囊泡之间的相互作用，以促进膜断裂。细胞器间接触如何调节线粒体膜融合仍 largely 不明。在此，我们发现富含磷脂酰肌醇 3,4-二磷酸 [PI(3,4)P 2] 的高尔基体来源囊泡在调节线粒体融合中起作用。我们发现这些囊泡被招募到 ER 和线粒体融合标记物（mitofusin）所标记的融合位点。相应地，失去Ⅰ类 II PI3-激酶同型物α和β（PI3K-C2α 和 PI3K-C2β），这些激酶产生 PI(3,4)P 2，导致线粒体碎片化，这是由于融合受损所致。此外，心肌细胞特异性 PI3K-C2α 和 PI3K-C2β 双重缺失小鼠表现出线粒体碎片化和心力衰竭。因此，携带不同磷脂酰肌醇的高尔基体…
-2. **[15 C 非弹性 1 / 2 + → 5 / 2 + 激发：单粒子过程还是集体过程](https://doi.org/10.1103/x11q-ylqd)**  
-   Physical Review C · 2026-10-08  
-   背景：Argonne National Laboratory 使用 $^{15}$C 以 $7.1 A$ MeV 轰击氘化靶，测量单中子晕核 $^{15}$C 从 $1/2^+$ 基态到 $5/2^+$ 第一激发态的激发。随后使用刚性转子激发模型，在畸变波 Born 近似中分析该数据。目的：作为单中子晕核，我们预期单粒子激发比集体过程更能代表 $^{15}$C 激发。由于低单中子分离阈值在能量上接近 $^{15}$C 第一激发态，预计 $^{15}$C 破裂会影响反应机制。本工作目标是探索多种反应机制，重新解释 Ref.[1] 的 $^{15}$C 非弹性激发数据。方法：假设三体模型 $^{14}$C$+n+d$ 求解散射问题。使用连续态离散耦合道方法（CDCC），并与原实验分析所用具有四极形变的 1-ste…
-3. **[为超级Tau-charm装置设计和集成一个蟹形腰交互区域](https://doi.org/10.1007/s41365-026-02077-z)**  
-   Nuclear Science and Techniques · 2026-10-08  
-   超级τ-charm装置（STCF）是中国正在开发的一种新一代电子-正电子对撞机，设计目标是在最优束流能量2 GeV下，达到峰值亮度超过5×1034cm⁻2s⁻1\documentclass[12pt]{minimal} \usepackage{amsmath} \usepackage{wasysym} \usepackage{amsfonts} \usepackage{amssymb} \usepackage{amsbsy} \usepackage{mathrsfs} \usepackage{upgreek} \setlength{\oddsidemargin}{-69pt} \begin{document}$$5\times 10^{34}\ \textrm{cm}^{-2}\textrm{s}^{-1}$…
-4. **[测量 $^3$He 自旋结构函数及其矩在低 Q$^2$](https://arxiv.org/abs/2608.30101)**  
-   arXiv nucl-ex · 2026-10-08  
-   我们报告了在托马斯·杰斐逊国家加速器设施（杰斐逊实验室）上，使用极化$^3$He靶进行的自旋依赖电子散射实验，$\vec{^3\textrm{He}}(\vec{e},e')X$。在$0.032 \leq Q^2 \leq 0.23$~GeV$^2$范围内，提取了$^3$He的自旋依赖虚光吸收截面$\sigma_{TT}$和$\sigma_{LT}$，或者等效的自旋结构函数$g_1$和$g_2$及其矩。该范围覆盖了两体 breakup 阈值到核子共振区。矩$I_1(Q^2)$在$Q^2 \simeq 0.1$~GeV$^2$以下达到平台，与Gerasimov--Drell--Hearn (GDH) 预期一致，而矩$I_{TT}(Q^2)$仍主要由有限虚度 breakup 响应主导，在$Q^2 \simeq 0…
-5. **[高温下超子对稠密物质的多体效应](https://doi.org/10.1103/5ggk-lhmx)**  
-   Physical Review C · 2026-10-08  
-   在本工作中，我们首次将多体力（MBF）模型扩展到有限温度情形。MBF模型采用相对论量子强子动力学形式描述核物质，通过核相互作用耦合常数的场依赖性来考虑多体力。假设核物质为电中性、β平衡，并由八重态核子、电子和μ子组成，我们研究了该模型的参数、三种不同的超子耦合方案（本文首次在MBF中引入），以及温度效应，以描述核物质的基本性质，包括声速、压缩性和绝热指数。我们还通过求解零温与有限温度下的托尔曼-奥本海默-沃尔科夫方程，研究了致密星的质量-半径关系，包括固定每个核子熵的情形。我们关于有限温度的原始结果为描述中子星原初态提供了新途径。
-6. **[合并未能满足要求：需要非合并通道来产生银河系中的重元素](https://doi.org/10.3847/1538-4357/aea6aa)**  
-   The Astrophysical Journal · 2026-10-08  
-   摘要 自GW170817双中子星合并事件及其伴随的千新星被发现以来，中子星合并已被确立为宇宙中r-过程元素的重要产源之一。然而，多方面的证据，包括从银河系盘星光谱中推断出的r-过程丰度，表明可能需要额外的产源机制，以充分解释银河系中r-过程元素的富集。中子星-黑洞合并以及快速合并的双中子星系统是其中主要的替代候选者。本文结合LIGO–Virgo–KAGRA的引力波观测数据、短伽马射线暴观测、银河系脉冲星数据以及银河系[Eu/Fe]与[Fe/H]丰度观测结果，评估这些合并事件对银河系盘星r-过程富集的贡献。我们的分析采用一种统一的、基于似然的推断框架，一致地传播合并率、延迟时间分布、质量与自旋依赖的喷出物产额以及恒星丰度测量中的不确定性。我们发现，除非引入关于合并率或产额的极端假设，否则中子星-黑洞合并或快速合…
-7. **[Skyrme-夸克-介子耦合能量密度泛函对核基态性质的预测](https://doi.org/10.1140/epja/s10050-026-01969-3)**  
-   The European Physical Journal A · 2026-10-08  
-   摘要 我们系统地研究了使用Skyrme夸克-介子耦合（SQMC）能量密度泛函获得的原子核基态性质，并将其与SLy4d Skyrme参数化结果进行比较。SQMC泛函基于夸克-介子耦合（QMC）模型构建，该模型包含了核子的内部夸克结构，从而显著减少了自由参数的数量。我们研究了从广泛范围的原子核中获得的结合能、双核分离能、电荷半径和四极变形。特别关注QMC模型中推导出的同矢量依赖的自旋-轨道相互作用及其对富中子核在r过程相关结合能的影响。我们发现，SQMC泛函在与SLy4d的比较中，对原子核基态性质提供了合理的描述。
-8. **[中子从裂变碎片中带走角动量](https://doi.org/10.1103/8ptt-pvc8)**  
-   Physical Review C · 2026-10-08  
+1. **[石墨中 runaway 电子引发的爆炸；建模与受控 DIII-D 实验](https://doi.org/10.1088/1741-4326/aeb275)**  
+   Nuclear Fusion · 2026-10-09  
+   摘要 关于石墨在失控电子（RE）冲击作用下的热力学-力学响应建模的最新进展，基于单向耦合的线性热弹性理论，并结合兰金的基于强度的失效准则，且仅限于材料失效起始阶段。本文将预测能力扩展至由材料碎裂和碎片喷出所表征的非线性损伤阶段。这通过引入约翰逊-霍尔姆奎斯特本构模型、采用基于有效塑性应变的失效准则，并将有限元分析与光滑粒子水动力学方法耦合来实现。扩展的热力学-力学模型已成功与最近在DIII-D中进行的两个受控RE-诱导损伤实验结果进行了对比验证。这标志着向最终目标——定量描述钨对失控电子（REs）热力学-力学响应——迈出重要一步。
+2. **[Revisiting 7 Be weak and radiative transition rates in Big Bang nucleosynthesis: implications for the primordial lithium problem](https://doi.org/10.1051/0004-6361/202659016)**  
+   Astronomy and Astrophysics · 2026-10-09  
+   Context. The primordial 7 Li abundance predicted by standard Big Bang nucleosynthesis (BBN) exceeds the value inferred from old metal-poor stars by a factor of approximately three to four. In this model, most primordial 7 Li is produced as 7 Be in the early Universe and is subsequently converted by electron capture (EC). However, any additional production o…
+3. **[通过重离子碰撞中事件对事件的π介子不对称性探测中子皮](https://doi.org/10.1103/bw3p-lpg6)**  
+   Physical Review C · 2026-10-09  
    数据源暂未提供详细介绍。
+4. **[The effect of the coupling between the neutron multiplicity and the fission competition on the evaporation residue cross sections of the $^{48}$Ca$+^{244}$Pu reaction](https://arxiv.org/abs/2610.11311)**  
+   arXiv nucl-th · 2026-10-09  
+   The survival probability $W_{\rm sur}$ of an excited compound nucleus against fission is a key factor determining the evaporation-residue cross section in the synthesis of superheavy nuclei. The $W_{\rm sur}$ for $^{292}$Fl formed in the $^{48}$Ca+$^{244}$Pu reaction was investigated, with particular attention to the coupling between neutron multiplicity an…
+5. **[直接核反应作为核结构和天体物理的研究工具](https://doi.org/10.1088/1361-6471/aea4cb)**  
+   Journal of Physics G · 2026-10-09  
+   摘要 核结构的研究随着远离稳定性的原子核探索而显著发展，揭示了壳闭合的修改、光环的出现以及聚集体现象。本综述考察了直接核反应作为探测这些奇异结构以及约束天体物理反应速率的主要实验工具，并着重于连接奇异核结构、间接天体物理约束与现代反向动力学仪器的实验可观测量。我们讨论了弹性与非弹性散射、转移反应以及击出反应的理论框架及其实验应用。特别关注这些机制在描绘壳演化以及表征核形变和α-聚集体中的作用。此外，综述强调了核结构与天体物理的交叉点，详细介绍了诸如渐近归一化系数法和特洛伊马术法等间接方法，用于在低能条件下确定关键恒星反应速率。最后，综述了最先进的仪器，包括高分辨率谱仪、主动靶时间投影室以及储存环，这些仪器使得在反向动力学中实现高精度测量成为可能。
+6. **[Measurement of $J/\psi$-jet correlations in $pp$ and Pb+Pb collisions at $\sqrt{s_{\text{NN}}}=5.02$ TeV with the ATLAS detector](https://arxiv.org/abs/2606.31375)**  
+   arXiv nucl-ex · 2026-10-09  
+   Yields of charmonia, bound states of $c\bar{c}$ quarks, are observed to be strongly suppressed in heavy-ion collisions relative to proton-proton collisions as a result of their interaction with the quark-gluon plasma produced in such collisions. Understanding the mechanisms responsible for this suppression requires a detailed understanding of charmonium pro…
+7. **[铁-天然同位素上中子诱导的双能谱截面在GANIL-NFS](https://arxiv.org/abs/2610.10853)**  
+   arXiv nucl-ex · 2026-10-09  
+   在2023年，于法国GANIL机构的中子科学（NFS）设施中，开展了一项测量来自$^{\rm nat}$Fe的轻电荷粒子（LCPs）双差截面（DDXS）的实验活动。该实验使用了专门设计用于轻离子测量的Medley实验装置。该装置安装在白中子束线上，并用能量最高达44 MeV的中子进行辐照。采用飞行时间（TOF）技术，获得了$^{\rm nat}$Fe(n,pX)双差截面，覆盖了白中子束能量范围内的所有中子能量。本工作强调了数据处理程序中的关键步骤，并报告了此次实验活动的首次结果。
+8. **[将基于专家混合的基础模型应用于GlueX DIRC探测器](https://doi.org/10.1088/1748-0221/21/10/p10019)**  
+   Journal of Instrumentation · 2026-10-09  
+   摘要 我们提出了一种基于专家混合（Mixture-of-Experts）的基础模型，应用于杰斐逊实验室的GlueX DIRC探测器，展示了其作为统一框架在快速模拟、粒子识别以及切伦科夫光子的击点级噪声过滤方面的实用性。通过在所有任务中共享一个单一的Transformer主干结构，该方法消除了任务特定流程的碎片化，同时在多个情况下保持了与现有方法相当甚至更优的性能。该模型直接作用于探测器的低级输入，在分割的空间和时间词汇表上进行逐击自回归生成，并通过连续的动力学条件化，支持通过其专家混合架构对π介子和K介子进行类别条件生成。我们在GlueX DIRC的完整动力学相空间内，将该模型与标准几何重建方法及现有的深度学习方法进行了对比，证明了基础模型框架无需架构修改即可有效迁移到该探测器中。本工作将基础模型定位为一种实…
 
 ## 物理新闻
 
@@ -37,12 +37,12 @@
 - **[皮秒电流脉冲探测超导体中无耗传输的内在极限](https://www.nature.com/articles/s41567-026-03477-z)**  
    Nature Physics · 2026-10-08  
    数据源暂未提供详细介绍。
-- **[量子技术中的非互易性](https://www.nature.com/articles/s41567-026-03464-4)**  
-   Nature Physics · 2026-10-07  
-   数据源暂未提供详细介绍。
-- **[关于极端压缩下碳的清晰认识](https://www.nature.com/articles/s41567-026-03460-8)**  
-   Nature Physics · 2026-10-07  
-   数据源暂未提供详细介绍。
+- **[如何在两面镜子之间排列成百上千个原子](http://link.aps.org/doi/10.1103/Physics.19.s126)**  
+   APS Physics · 2026-10-08  
+   作者： Sophia Chen 一种新装置，其中在单个光学腔内操控的原子数量超过 600，可能有助于中性原子量子计算机的扩展。[Physics 19, s126] 发表于 Thu Oct 08, 2026
+- **[酶强烈影响被隔离的生物分子](http://link.aps.org/doi/10.1103/Physics.19.s139)**  
+   APS Physics · 2026-10-08  
+   作者：David Ehrenstein 在细胞内生物分子高度聚集的区域，称为凝聚体，当酶参与时，根据实验结果会形成不同的结构。[Physics 19, s139] 发表于 Thu Oct 08, 2026
 
 ## 科研通知
 
@@ -58,11 +58,11 @@
 - **[关于发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100371.html)**  
    国家自然科学基金委项目指南 · 2029-12-31  
    国科金发计〔2026〕6号 国家自然科学基金委员会现发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请
-- **[省科技厅关于组织开展2026年国家级创新型产业集群申报工作的通知](https://kjt.hubei.gov.cn/kjdt/tzgg/202610/t20261008_6027831.shtml)**  
-   湖北省科技厅 · 2026-10-08  
-   --湖北省科学技术厅 6027831 省科技厅关于组织开展2026年国家级创新型产业集群申报工作的通知 20 湖北省科学技术厅 2026-10-08 3824 通知公告 湖北政府网 | 科技部网 | 邮箱 | 计划管理 | 奖励评审 | 登录 | 注册 湖北省科学技术厅 搜 索 首页 政府信息公开 互动交流 办事服务 科技动态 科技一网通 当前位置： 首页 > 科技动态 > 通知公告 省科技厅关于组织开展2026年国家级创新型产业集群申报工作的通知 2026-10-08 14:26 | 湖北省科学技术厅 各市、州、直管市科技局，各有关单位： 根据《工业和信息化部办公厅关于开展2026年创新型产业集群申报工作的通知》（工信厅高新函〔2026〕446号）相关要求，现就我省申报有关事项通知如下。 一、申报条件 （一…
-- **[关于发布2026年度基础研究计划“上海市自然科学基金（引领培育类）”项目申报指南的通知](https://stcsm.sh.gov.cn/zwgk/kyjhxm/xmsb/20261008/97d8e0797da34da8bdfed9789c75579b.html)**  
-   上海市科委 · 2026-10-08  
-   数据源暂未提供详细介绍。
+- **[上海市科学技术委员会关于发布2026年度关键技术“先进核能技术攻关”项目申报指南的通知](https://stcsm.sh.gov.cn/zwgk/kyjhxm/xmsb/20261009/9d8046e371d3447a8f61c97201c84535.html)**  
+   上海市科委 · 2026-10-09  
+   _项目申报_上海市科学技术委员会 当前位置： 首页 > 政务公开> 科技计划项目> 项目申报> 正文 上海市科学技术委员会关于发布2026年度关键技术“先进核能技术攻关”项目申报指南的通知 发布日期：2026-10-09 文号：沪科指南〔2026〕36号 各有关单位： 上海市科学技术委员会特发布2026年度关键技术研发计划“先进核能技术攻关”项目申报指南。指南征集内容包括：前沿引导研究、AI应用与软件技术攻关、材料部件与设备技术攻关、揭榜挂帅等四个专题。申报者可通过上海市科技管理信息系统查看指南具体内容、进行网上填报。 一、申报要求 除满足指南相应条件外，还须遵循以下要求： 1.项目申报单位为本市的法人或非法人组织，具有组织项目实施的相应能力。 2.对于申请人在以往市级财政资金或其他机构（如科技部、国家自然科…
+- **[上海市科学技术委员会关于发布2026年度基础研究计划“上海市自然科学基金（引领培育类）”项目申报指南的通知](https://stcsm.sh.gov.cn/zwgk/kyjhxm/xmsb/20261009/b1447a1c7bd94b18845695f83f61b260.html)**  
+   上海市科委 · 2026-10-09  
+   _项目申报_上海市科学技术委员会 当前位置： 首页 > 政务公开> 科技计划项目> 项目申报> 正文 上海市科学技术委员会关于发布2026年度基础研究计划“上海市自然科学基金（引领培育类）”项目申报指南的通知 发布日期：2026-10-09 文号：沪科指南〔2026〕35号 各有关单位： 为加快建设上海（长三角）国际科技创新中心，落实“十五五”规划战略部署，上海市科学技术委员会特发布2026年度基础研究计划“上海市自然科学基金（引领培育类）”项目申报指南。 指南征集范围包括数理科学、生命科学、物质科学、信息科学、综合交叉等五个专题，申报者可通过“上海市科技管理信息系统”查看指南具体内容、进行网上填报。 一、申报要求 除满足前述相应条件外，还须遵循以下要求： 1.项目申报单位为本市的法人或非法人组织，具有组织项…
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)
