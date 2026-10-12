@@ -139,7 +139,7 @@
     "publisher_url": "https://www.nature.com/articles/s41586-026-11122-1",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-08T01:30:34+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -214,7 +214,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-01T01:01:12+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "citation_authors": [
       "Hu, B. S.",
       "Ekström, A.",
@@ -356,7 +356,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/science.adx9628",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-09T01:39:44+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -437,7 +437,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/gnk4-8p43",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-07T01:10:59+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -534,7 +534,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326007240",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-01T01:01:12+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-01T01:01:12+00:00",
@@ -549,6 +549,113 @@
     "abstract_checked_sources": [
       "期刊官网/Cite",
       "OpenAlex"
+    ],
+    "summary": "",
+    "content": ""
+  },
+  {
+    "id": "c78fd0d315cf6c65",
+    "type": "paper",
+    "title": "Dark matter implications from the LZ, PandaX-4T and XENONnT data",
+    "abstract": "We investigate a possible dark matter origin of the high-energy nuclear-recoil-like events in data from liquid xenon time projection chamber experiments, including LZ, PandaX-4T, and XENONnT, which cannot be explained by standard elastic spin-independent WIMP scattering. Using our unified DIAMX framework, built on openly available data and likelihood models, we perform the first combined profile-likelihood fits to multiple WIMP-search datasets with a total exposure of approximately 8.8 tonne $\\times$ year. We consider two broad classes of dark matter-nucleon interactions, involving either velocity-dependent cross sections or inelastic (endo- and exothermic) scattering, which can reproduce the observed high-energy recoil spectrum, reaching local significances up to $3.5σ$. We further quantify the impact of $^{124}$Xe double electron capture (DEC) backgrounds, finding that variations in the poorly known DEC charge yields can shift the inferred significances from a null-like result to $3.5σ$. We further note that extending the same analysis to data from all three experiments with recoil energies up to $300~\\mathrm{keV}$, when available, will provide a powerful test of the dark matter interpretation, since the $^{124}$Xe DEC background is expected to be negligible in this high-energy range.",
+    "abstract_status": "full",
+    "abstract_source": "OpenAlex",
+    "authors": [
+      "Haipeng An",
+      "Fei Gao",
+      "Jia Liu",
+      "Minghao Liu",
+      "Haoming Nie",
+      "Changlong Xu"
+    ],
+    "published": "2026-10-01",
+    "updated": "2026-10-01",
+    "source": "Physics Letters B",
+    "source_short": "PLB",
+    "source_type": "journal",
+    "doi": "10.1016/j.physletb.2026.140947",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.physletb.2026.140947",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-decay",
+      "detectors-daq",
+      "particle-cross"
+    ],
+    "tags": [
+      "electron capture",
+      "time projection chamber",
+      "dark matter"
+    ],
+    "primary_topic": "nuclear-decay",
+    "methods": [],
+    "classification_confidence": 0.72,
+    "classification_evidence": [
+      "electron capture",
+      "time projection chamber",
+      "dark matter"
+    ],
+    "importance": 68,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +22",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "An, Haipeng",
+      "Gao, Fei",
+      "Liu, Jia",
+      "Liu, Minghao",
+      "Nie, Haoming",
+      "Xu, Changlong"
+    ],
+    "journal_abbrev": "Physics Letters B",
+    "volume": "881",
+    "issue": "",
+    "pages": "140947",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326007975",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-09-11T23:48:19+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
+    "publisher_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-10-12T00:54:46+00:00",
+      "source": "Publisher",
+      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326007975"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-10-12T00:54:46+00:00",
+      "source": "OpenAlex"
+    },
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-11T23:48:19+00:00",
+      "source": "Semantic Scholar"
+    },
+    "abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-11T23:48:19+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
     ],
     "summary": "",
     "content": ""
@@ -613,7 +720,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-09-30T00:57:41+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "citation_authors": [
       "Anonymous"
     ],
@@ -714,7 +821,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-09-29T01:24:38+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "citation_authors": [
       "Li, Mengke",
       "Meyer, Bradley S."
@@ -803,7 +910,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/qlby-yll5",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-08T23:47:28+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-15T23:53:58+00:00",
@@ -877,7 +984,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "primary_topic": "nuclear-structure",
     "methods": [
       "experimental",
@@ -992,7 +1099,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "citation_authors": [
       "Ma, Yu-Gang"
     ],
@@ -1073,7 +1180,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-09-02T23:46:47+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "citation_authors": [
       "Banerjee, Gourab",
       "Sadhukhan, Jhilam",
@@ -1203,7 +1310,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001351",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-01T01:01:12+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-01T01:01:12+00:00",
@@ -1294,7 +1401,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001326",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-01T01:01:12+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-10-01T01:01:12+00:00",
@@ -1485,7 +1592,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326007136",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-01T01:01:12+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-01T01:01:12+00:00",
@@ -1589,7 +1696,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226003761",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-01T01:01:12+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-01T01:01:12+00:00",
@@ -1705,7 +1812,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-10T23:40:26+08:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "citation_authors": [
       "Arroyo, J.",
       "Garg, U.",
@@ -1931,7 +2038,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326007690",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-05T23:29:45+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-05T23:29:45+00:00",
@@ -2040,7 +2147,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001363",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-01T01:01:12+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-01T01:01:12+00:00",
@@ -2145,7 +2252,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326007987",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-01T01:01:12+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-01T01:01:12+00:00",
@@ -2235,7 +2342,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S037026932600794X",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-10T23:37:56+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-11T00:37:58+00:00",
@@ -2263,107 +2370,6 @@
       "Semantic Scholar",
       "INSPIRE"
     ],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "ee3b754801fc4919",
-    "type": "paper",
-    "title": "Puzzling isotonic odd-even staggering of charge-radii in deformed rare earth nuclei",
-    "abstract": "Abstract Isotonic (constant neutron number) systematics in the deformed rare-earth region have long suggested that nuclei with odd numbers of protons are more compact than their even-proton neighbors—except for Lu, whose recommended nuclear charge radius appeared anomalously large relative to Yb and Hf. We report a high-precision determination of the natural-abundance-averaged Lu-Yb charge-radius difference using extreme-ultraviolet spectroscopy of highly charged Na- and Mg-like ions, supported by high-accuracy relativistic atomic-structure calculations—a recently introduced method with the unique ability to measure inter-element charge-radius differences. Combined with muonic-atom and optical isotope-shift data, our results reestablish a pronounced odd-even staggering along the isotonic chain with neutron number N = 94 . Nuclear density functional theory calculations, including quantified uncertainties, fail to reproduce the large stagger, while successfully reproducing the charge-radii staggering along isotopic chains and in semi-magic nuclei. In this work, we resolve the Lu inversion anomaly and provide new constraints for experimental and theoretical studies of nuclear size.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "E. Takacs",
-      "H. Staiger",
-      "S. A. Blundell",
-      "N. Kimura",
-      "H. A. Sakaue",
-      "R. F. Garcia Ruiz",
-      "W. Nazarewicz",
-      "P.-G. Reinhard",
-      "C. A. Faiyaz",
-      "C. Suzuki",
-      "Dipti",
-      "I. Angeli",
-      "Y. Ralchenko",
-      "I. Murakami",
-      "D. Kato",
-      "Y. Nagai",
-      "R. Takaoka",
-      "Y. Miya",
-      "N. Nakamura"
-    ],
-    "published": "2026-09-26",
-    "updated": "2026-09-26",
-    "source": "Nature Communications",
-    "source_short": "Nat. Commun.",
-    "source_type": "journal",
-    "doi": "10.1038/s41467-026-77471-7",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1038/s41467-026-77471-7",
-    "pdf_url": "",
-    "categories": [
-      "theoretical-nuclear"
-    ],
-    "tags": [
-      "density functional"
-    ],
-    "primary_topic": "theoretical-nuclear",
-    "methods": [
-      "experimental",
-      "theoretical"
-    ],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "density functional"
-    ],
-    "importance": 65,
-    "score_reasons": [
-      "来源权重 +48",
-      "核物理研究侧重 +15",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Takacs, E.",
-      "Staiger, H.",
-      "Blundell, S. A.",
-      "Kimura, N.",
-      "Sakaue, H. A.",
-      "Garcia Ruiz, R. F.",
-      "Nazarewicz, W.",
-      "Reinhard, P.-G.",
-      "Faiyaz, C. A.",
-      "Suzuki, C.",
-      "Dipti",
-      "Angeli, I.",
-      "Ralchenko, Y.",
-      "Murakami, I.",
-      "Kato, D.",
-      "Nagai, Y.",
-      "Takaoka, R.",
-      "Miya, Y.",
-      "Nakamura, N."
-    ],
-    "journal_abbrev": "Nat Commun",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
-    "publisher": "Springer Science and Business Media LLC",
-    "publisher_url": "https://www.nature.com/articles/s41467-026-77471-7",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-09-27T00:06:43+00:00",
-    "last_seen": "2026-10-10T01:26:47+00:00",
-    "abstract_checked_sources": [],
     "summary": "",
     "content": ""
   },
@@ -2431,7 +2437,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/c323-g246",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-08T01:30:34+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-10-08T01:30:34+00:00",
@@ -2523,7 +2529,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/3c72-gcls",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-07T01:10:59+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-10-07T01:10:59+00:00",
@@ -2620,7 +2626,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/3mzz-nycn",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-20T23:47:15+00:00",
@@ -2738,7 +2744,7 @@
     "publisher_url": "https://link.springer.com/10.1007/s41365-026-02077-z",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-09T01:39:44+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-09T01:39:44+00:00",
@@ -2820,7 +2826,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-09-08T23:47:28+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "citation_authors": [
       "Tam, Do Quang",
       "Tung, N. Hoang",
@@ -2945,7 +2951,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326007616",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-02T23:46:47+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-02T23:46:47+00:00",
@@ -3026,7 +3032,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-25T22:20:13+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "abstract_checked_sources": [],
     "citation_authors": [
       "Deng(邓祥), Xiang-Quan",
@@ -3112,7 +3118,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S037594742600134X",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-01T01:01:12+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-01T01:01:12+00:00",
@@ -3248,7 +3254,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326007793",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-06T23:24:28+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-06T23:24:28+00:00",
@@ -3280,86 +3286,101 @@
     "content": ""
   },
   {
-    "id": "1f11b423d16f4268",
+    "id": "3488bad72aadccae",
     "type": "paper",
-    "title": "Revised error field assessment in KSTAR with profile diagnostics of resonant field penetration",
-    "abstract": "Abstract The assessment of the n = 1 intrinsic error field in KSTAR has been revised in three respects. First, a local penetration timing criterion is defined from electron cyclotron emission (ECE) and charge exchange spectroscopy (CES) signatures near the reconstructed q = 2 surface. This timing determines the in-vessel control coil current used as the penetration threshold in the compass scan analysis. Second, the compass scans with the MID and OFFMID coils in 1.8 T L-mode plasmas indicate an intrinsic EF level up to an order of magnitude larger than the 2015 KSTAR reference value, implying that the intrinsic EF can change over extended operation and following hardware modifications. Third, the inferred EF direction is assessed by comparing the MID and OFFMID results in terms of the General Perturbed Equilibrium Code overlap field, where the two configurations give nearly the same direction despite their different poloidal spectra. A rotating resonant magnetic perturbation (RMP) experiment provides an additional dynamic check of this direction, with penetration observed near the phase predicted from the static MID scan. The reversed- B t comparison further constrains the possible source symmetry and is more compatible with a PF related contribution than with a TF dominated contribution, although the specific hardware source is not identified. These results provide an updated EF reference for KSTAR operation and motivate periodic reassessment of the intrinsic EF over the operational lifetime of the device.",
+    "title": "Structure of the neutron-rich N = 126 isotones: A shell model analysis",
+    "abstract": "Shell model calculations for the neutron-rich N = 126 Hg 206 - Lu 197 ( Z = 80 − 71 ) isotones were performed with two different parametrizations. The one refined to explain the isomerism in Pt 204 was found to be the only one able to reproduce the more recent data on Ir 203 and, in general, to give a better reproduction of the nuclei in this region. For more exotic nuclei approaching the r -process path, this refined parametrization predicts the existence of isomeric states with spin-parities 5 − and 10 + in the even-mass isotones and 19 / 2 + in the odd-mass isotones. Also, it predicts ground-state spin-parities of 3 / 2 + for Re 201 and 11 / 2 − for Ta 199 and Lu 197 , with low-energy long-lived isomers present. The remaining deficiencies of the interaction are related to the properties of the π d 5 / 2 orbital and are influenced by octupole collectivity. The presented predictions provide guidance and can be tested in the near future at radioactive-beam facilities.",
     "abstract_status": "full",
-    "abstract_source": "Crossref",
+    "abstract_source": "INSPIRE",
     "authors": [
-      "G.-G. Seo",
-      "S.-J. Han",
-      "J. Kim",
-      "Y. Lee",
-      "S.M. Yang",
-      "J.W. Juhn",
-      "J.-K. Park"
+      "Zsolt Podolyák",
+      "Callum J. Wilson"
     ],
-    "published": "2026-10-07",
-    "updated": "2026-10-07",
-    "source": "Nuclear Fusion",
-    "source_short": "NF",
+    "published": "2026-10-01",
+    "updated": "2026-10-01",
+    "source": "Physical Review C",
+    "source_short": "PRC",
     "source_type": "journal",
-    "doi": "10.1088/1741-4326/aeac69",
+    "doi": "10.1103/sbnc-hccd",
     "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1741-4326/aeac69",
+    "url": "https://doi.org/10.1103/sbnc-hccd",
     "pdf_url": "",
     "categories": [
-      "nuclear-reactions",
-      "accelerators",
-      "fusion"
+      "nuclear-structure",
+      "theoretical-nuclear"
     ],
     "tags": [
-      "charge exchange",
-      "cyclotron",
-      "nuclear fusion"
+      "shell model",
+      "exotic nuclei",
+      "octupole"
     ],
-    "primary_topic": "nuclear-reactions",
+    "primary_topic": "nuclear-structure",
     "methods": [
-      "experimental"
+      "theoretical",
+      "review"
     ],
     "classification_confidence": 0.72,
     "classification_evidence": [
-      "charge exchange",
-      "cyclotron",
-      "nuclear fusion"
+      "shell model",
+      "exotic nuclei",
+      "octupole"
     ],
     "importance": 64,
     "score_reasons": [
       "来源权重 +40",
-      "核物理研究侧重 +18",
-      "跨领域关联 +4",
+      "核物理研究侧重 +20",
+      "跨领域关联 +2",
       "完整摘要 +2"
     ],
     "open_access": null,
     "license": "",
     "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0/",
-      "https://iopscience.iop.org/info/page/text-and-data-mining"
+      "https://link.aps.org/licenses/aps-default-license"
     ],
     "rights_status": "unknown",
     "figures": [],
     "figure_status": "rights_unknown",
     "citation_authors": [
-      "Seo, G.-G.",
-      "Han, S.-J.",
-      "Kim, J.",
-      "Lee, Y.",
-      "Yang, S.M.",
-      "Juhn, J.W.",
-      "Park, J.-K."
+      "Podolyák, Zsolt",
+      "Wilson, Callum J."
     ],
-    "journal_abbrev": "Nucl. Fusion",
-    "volume": "66",
-    "issue": "12",
-    "pages": "126043",
+    "journal_abbrev": "Phys. Rev. C",
+    "volume": "114",
+    "issue": "4",
+    "pages": "044302",
     "numpages": "",
-    "publisher": "IOP Publishing",
-    "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aeac69",
+    "publisher": "American Physical Society (APS)",
+    "publisher_url": "https://link.aps.org/doi/10.1103/sbnc-hccd",
     "citation_metadata_checked": true,
-    "first_seen": "2026-09-26T00:19:26+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
-    "abstract_checked_sources": [],
+    "first_seen": "2026-09-11T23:48:19+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
+    "publisher_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-18T23:48:40+00:00",
+      "source": "Publisher",
+      "url": "https://journals.aps.org/prc/accepted/10.1103/sbnc-hccd"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-10-12T00:54:46+00:00",
+      "source": "OpenAlex"
+    },
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-10-12T00:54:46+00:00",
+      "source": "Semantic Scholar"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-10-12T00:54:46+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ],
     "summary": "",
     "content": ""
   },
@@ -3465,7 +3486,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/science.aej2213",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-09T01:39:44+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -3617,7 +3638,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/ll3f-l5xv",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-29T01:24:38+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -3716,7 +3737,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-09-29T01:24:38+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "citation_authors": [
       "Aad, G.",
       "Aakvaag, E.",
@@ -3830,7 +3851,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-06T02:01:34+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "citation_authors": [
       "Williams, Jamie T.",
       "Gänsicke, Boris T.",
@@ -3854,6 +3875,90 @@
     "publisher": "Springer Science and Business Media LLC",
     "publisher_url": "https://www.nature.com/articles/s41550-026-02983-7",
     "citation_metadata_checked": true,
+    "abstract_checked_sources": [],
+    "summary": "",
+    "content": ""
+  },
+  {
+    "id": "1f11b423d16f4268",
+    "type": "paper",
+    "title": "Revised error field assessment in KSTAR with profile diagnostics of resonant field penetration",
+    "abstract": "Abstract The assessment of the n = 1 intrinsic error field in KSTAR has been revised in three respects. First, a local penetration timing criterion is defined from electron cyclotron emission (ECE) and charge exchange spectroscopy (CES) signatures near the reconstructed q = 2 surface. This timing determines the in-vessel control coil current used as the penetration threshold in the compass scan analysis. Second, the compass scans with the MID and OFFMID coils in 1.8 T L-mode plasmas indicate an intrinsic EF level up to an order of magnitude larger than the 2015 KSTAR reference value, implying that the intrinsic EF can change over extended operation and following hardware modifications. Third, the inferred EF direction is assessed by comparing the MID and OFFMID results in terms of the General Perturbed Equilibrium Code overlap field, where the two configurations give nearly the same direction despite their different poloidal spectra. A rotating resonant magnetic perturbation (RMP) experiment provides an additional dynamic check of this direction, with penetration observed near the phase predicted from the static MID scan. The reversed- B t comparison further constrains the possible source symmetry and is more compatible with a PF related contribution than with a TF dominated contribution, although the specific hardware source is not identified. These results provide an updated EF reference for KSTAR operation and motivate periodic reassessment of the intrinsic EF over the operational lifetime of the device.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "G.-G. Seo",
+      "S.-J. Han",
+      "J. Kim",
+      "Y. Lee",
+      "S.M. Yang",
+      "J.W. Juhn",
+      "J.-K. Park"
+    ],
+    "published": "2026-10-07",
+    "updated": "2026-10-07",
+    "source": "Nuclear Fusion",
+    "source_short": "NF",
+    "source_type": "journal",
+    "doi": "10.1088/1741-4326/aeac69",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1088/1741-4326/aeac69",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-reactions",
+      "accelerators",
+      "fusion"
+    ],
+    "tags": [
+      "charge exchange",
+      "cyclotron",
+      "nuclear fusion"
+    ],
+    "primary_topic": "nuclear-reactions",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.72,
+    "classification_evidence": [
+      "charge exchange",
+      "cyclotron",
+      "nuclear fusion"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +18",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://creativecommons.org/licenses/by/4.0/",
+      "https://iopscience.iop.org/info/page/text-and-data-mining"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Seo, G.-G.",
+      "Han, S.-J.",
+      "Kim, J.",
+      "Lee, Y.",
+      "Yang, S.M.",
+      "Juhn, J.W.",
+      "Park, J.-K."
+    ],
+    "journal_abbrev": "Nucl. Fusion",
+    "volume": "66",
+    "issue": "12",
+    "pages": "126043",
+    "numpages": "",
+    "publisher": "IOP Publishing",
+    "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aeac69",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-09-26T00:19:26+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -4007,7 +4112,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/2fyx-y5hr",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-08T01:30:34+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -4071,7 +4176,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-07T01:10:59+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "citation_authors": [
       "Zhao, Jing",
       "Deng, Yongjie",
@@ -4148,7 +4253,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-07T01:10:59+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
+    "last_seen": "2026-10-12T00:54:46+00:00",
     "citation_authors": [
       "Anonymous"
     ],
@@ -4189,107 +4294,5 @@
       "checked_at": "2026-10-08T01:30:34+00:00",
       "source": "Semantic Scholar"
     }
-  },
-  {
-    "id": "ce78caac233c09ee",
-    "type": "paper",
-    "title": "Real-time CXRS analysis on HL-3 tokamak with reliable neural networks and cross-device transfer learning",
-    "abstract": "Abstract We present a neural network-based method for real-time charge exchange recombination spectroscopy (CXRS) analysis on the HL-3 tokamak. To enhance model performance and reliability, we tailor the network architecture to the physical characteristics of CXRS spectra: the receptive field matches the Doppler-broadened line width, channel embedding encodes spatial awareness across diagnostic channels, and attention pooling focuses on the most informative spectral regions. These designs yield millisecond-level inference (0.56 ms per 32-channel) with accuracy comparable to conventional methods (R²_Tᵢ=0.93, R²_vₜ=0.98). Furthermore, model’s reliability is established through interpretability and uncertainty analysis. Interpretability analysis confirms that the model focuses on the Doppler-broadened wings of C VI for T_i and tracks line shifts for v_t, consistent with physical principles. Uncertainty estimates shows that the model appropriately expresses higher uncertainty in regions where predictions are inherently more challenging. To address data scarcity on new devices, transfer learning from HL-2A tokamak markedly boosts performance in low-data regimes while retaining a modest advantage even with full HL-3 data, provided that the spectra are properly aligned and baseline subtracted. This work establishes a real-time, reliable, and data-efficient AI framework for CXRS analysis, offering a practical path to deploy machine learning approaches in plasma control on future fusion devices.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Wenjing Tian",
-      "Zongyu Yang",
-      "Ting Long",
-      "Shuosu Yang",
-      "Hao Wu",
-      "Deliang Yu",
-      "Xiaoxue He",
-      "Chenchong Tang",
-      "Rui Ke",
-      "Min Xu",
-      "Zhe Gao",
-      "Wei Chen",
-      "Wulyu Zhong",
-      "Zhongbing Shi"
-    ],
-    "published": "2026-10-05",
-    "updated": "2026-10-05",
-    "source": "Nuclear Fusion",
-    "source_short": "NF",
-    "source_type": "journal",
-    "doi": "10.1088/1741-4326/aeb037",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1741-4326/aeb037",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-reactions",
-      "ai-science",
-      "fusion"
-    ],
-    "tags": [
-      "charge exchange",
-      "nuclear fusion",
-      "tokamak",
-      "machine learning",
-      "neural network"
-    ],
-    "primary_topic": "nuclear-reactions",
-    "methods": [
-      "experimental"
-    ],
-    "classification_confidence": 0.88,
-    "classification_evidence": [
-      "charge exchange",
-      "nuclear fusion",
-      "tokamak",
-      "machine learning",
-      "neural network"
-    ],
-    "importance": 64,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +18",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0/",
-      "https://iopscience.iop.org/info/page/text-and-data-mining"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Tian, Wenjing",
-      "Yang, Zongyu",
-      "Long, Ting",
-      "Yang, Shuosu",
-      "Wu, Hao",
-      "Yu, Deliang",
-      "He, Xiaoxue",
-      "Tang, Chenchong",
-      "Ke, Rui",
-      "Xu, Min",
-      "Gao, Zhe",
-      "Chen, Wei",
-      "Zhong, Wulyu",
-      "Shi, Zhongbing"
-    ],
-    "journal_abbrev": "Nucl. Fusion",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
-    "publisher": "IOP Publishing",
-    "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aeb037",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-10-06T02:01:34+00:00",
-    "last_seen": "2026-10-11T00:37:58+00:00",
-    "abstract_checked_sources": [],
-    "summary": "",
-    "content": ""
   }
 ]

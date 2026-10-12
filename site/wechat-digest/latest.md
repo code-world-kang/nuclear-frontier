@@ -1,33 +1,33 @@
-# 小康康的物理世界 · 2026-10-10 科研简报
+# 小康康的物理世界 · 2026-10-08 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 13/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 10/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[截面的 20 Ne( n , α ) 17 O 反应在 8.9 –11.5 MeV 中子能量区域](https://doi.org/10.1088/1674-1137/aeb2b4)**  
-   Chinese Physics C · 2026-10-10  
-   摘要 对 20 Ne( n , α i ) 17 O ( i =0,1,2,3) 反应的态分辨截面在 8.9 –11.5 MeV 中子能区（11 个能点）于中国原子能研究院（CIAE）的 HI-13 回旋加速器上进行了测量。本测量将 α 0 , α 1 , α 2 和 α 3 通道的数据从 9.6 MeV 延伸至 11.5 MeV，此前的测量仅报告了 ( α 0 + α 1 ) 截面的总和。采用一个双网格离子化室（GIC），填充氖基气体混合物作为带电粒子探测器，氖气作为活性样品。通过结合实验测量与详细的蒙特卡洛模拟，对探测器效率、背景干扰以及中子场非均匀性进行了修正。在 9.6 至 11.5 MeV 能区，测得的 20 Ne( n , α 0 ) 17 O 和 20 Ne( n , α 1 ) 17 O 截面…
-2. **[位于 $B\bar{D}$ 阈值附近的 $T_{bc}$ 四夸克态](https://doi.org/10.1088/1674-1137/aeb2b3)**  
-   Chinese Physics C · 2026-10-10  
-   摘要 我们在动力学双夸克模型中研究了双重重味开放味四夸克态 $T_{bc}^{(0)}$ ($J^{P}=0^{+}$) 和 $T_{bc}^{(1)}$ ($J^{P}=1^{+}$)，将系统描述为一个重反双夸克-轻双夸克对，通过格点QCD的 $\Sigma_g^+(1S)$ 波函数Born-Oppenheimer势相互作用。求解径向Schr\"odinger方程得到 $M(T_{bc}^{(0)}) = 7.143$--$7.158$ GeV 和 $M(T_{bc}^{(1)}) = 7.217$--$7.222$ GeV，超精细分裂为 $\Delta_{HF}\simeq 59$--$79$ MeV。该分裂主要由对称与反对称重反双夸克构型之间的质量差驱动，而色磁相互作用以线性方式贡献，满足 $\part…
-3. **[f(T, Τ)引力中的夸克星：结构、稳定性及观测约束](https://doi.org/10.1088/1674-1137/aeb2b1)**  
-   Chinese Physics C · 2026-10-10  
-   摘要：夸克星——由完全去束缚的夸克物质构成的假设性致密星体——为检验超越广义相对论的引力理论提供了清晰的实验平台。我们研究其在f(T, Τ)引力中的结构，这是一种平行理论，其中扭率直接通过一个常数耦合与能量-动量张量的迹相耦合。采用标准的MIT袋模型描述夸克物质，我们求解了修正的恒星结构方程，并考察了当耦合参数在整个允许范围内变化时，质量、半径、紧凑性以及表面红移如何变化。最大质量与耦合关系呈现非单调性：它先高于广义相对论值，在中等正耦合处达到约2.02个太阳质量的峰值，然后随着耦合接近一个临界值而急剧下降，此时结构方程变得奇异。两太阳质量脉冲星的约束在有限的正耦合范围内得到满足。所有候选稳定分支上的配置均满足因果性条件，并且始终低于标准广义相对论的紧凑性和表面红移基准。
-4. **[毛黑洞准正常谱中的奇点点](https://doi.org/10.1088/1674-1137/aeb2b6)**  
-   Chinese Physics C · 2026-10-10  
-   摘要 在准正常模式（QNM）谱中，异常点（EPs）是非厄米退化点，在这些点上本征值和本征函数都发生合并。在本文中，我们通过扫描参数空间，在爱因斯坦-麦克斯韦-标量理论中毛发黑洞的标量QNM谱中识别出一个EP。然后，我们通过从时域波形中提取准正常模（QNMs）来研究其对环下信号的影响。我们的结果表明，一个包含与时间线性相关的共振贡献的EP假设，在EP处比基于独立衰减模式叠加的标准假设提供了更稳健的环下信号描述。特别是，它更自然地捕捉了与谱合并相关的共振贡献；即使在使用标准假设拟合波形时，所得拟合结果仍可能表现出EP假设的典型特征。
-5. **[无质量标量和电磁扰动的准正常模式，针对被完美流体暗物质包围的欧拉-海森堡黑洞](https://doi.org/10.1088/1674-1137/aeb2b5)**  
-   Chinese Physics C · 2026-10-10  
-   摘要 我们研究了带电的欧拉-海森堡黑洞周围存在完美流体暗物质时，无质量标量和电磁扰动的准正常模式。利用渐近迭代法和六阶WKB近似计算准正常频率，并定量分析两种方法之间的相对偏差，以验证结果的可靠性。在六阶WKB框架下，也评估了两种扰动的灰体因子。我们系统地考察了黑洞电荷 $Q$、非线性电磁动力学参数 $a$、暗物质参数 $\lambda$ 以及角量子数 $l$ 对准正常频率和灰体因子的影响。我们发现这些参数显著改变了有效势垒的结构，从而影响扰动场的振荡频率、阻尼率以及波的传输和反射特性。
-6. **[首个多信使新星：T CrB下一次爆发中的外部冲击波、TeV光子和中微子](https://doi.org/10.1093/mnras/stag1929)**  
-   Monthly Notices of the Royal Astronomical Society · 2026-10-10  
-   摘要 T Coronae Borealis 是最引人注目的银河系反复爆发新星之一，也是检验新星爆发是否能成为真正的多信使瞬态事件的最佳机会。近年来对经典新星的观测研究表明，GeV γ射线亮度与相互作用喷流之间的速度差存在强相关性，表明冲击能量强烈依赖于速度对比。我们将这一经验框架应用于 T CrB，并将其与 2021 年 RS Ophiuchi 的爆发进行比较，后者是唯一被可靠探测到 TeV 能量的新星。我们认为 T CrB 可能位于新星群体中速度差 Δv 极高的极端端，其最强冲击应出现在新星喷发物与缓慢的双星周围介质之间的外部相互作用处。这使得外部冲击成为任何 TeV 发射最可能的来源，而 GeV 信号可能包含来自内部冲击（如果存在）和外部冲击的贡献。由于 T CrB 比 RS Oph 远得多，因此它成为…
-7. **[区分 $X(2356)$ 的巴约宁态和最终态相互作用解释](https://doi.org/10.1088/1674-1137/aeb2b2)**  
-   Chinese Physics C · 2026-10-10  
-   摘要 我们从近阈值动力学的角度重新审视了BESIII在$e^+e^-\to\Lambda\bar\Lambda\eta$中观测到的$X(2356)$增强现象。受轻$\Lambda\bar\Lambda$巴里翁可能性的启发，我们在一个最小的FSI-dressed pole框架内，将这一解释与最终态相互作用（FSI）解释进行了比较。对纯FSI、巴里翁样极点以及混合极点-连续谱情景对数字化BESIII谱的拟合表明，能量依赖性的FSI描述在拟合质量与模型复杂性之间提供了最佳平衡。提取的极点位置强烈依赖于振幅参数化，这表明巴里翁解释对连续谱处理方式极为敏感。我们讨论了衰变通道、自旋可观测量以及伙伴搜寻如何为揭示增强现象背后的动力学提供互补约束。本工作中的内容可按照知识共享署名3.0许可使用。任何进一步的传播必须保持对作…
-8. **[机器学习遇见高能核物理：从模式识别到物理融合发现](https://arxiv.org/abs/2610.12293)**  
-   arXiv cs.AI · 2026-10-10  
-   机器学习（ML）在高能核物理（HENP）中正进入一个新阶段，在这一阶段，物理知识被更直接地融入数据分析、模拟和物理推断之中。本简要综述聚焦于过去几年中成熟发展的成果。早期应用侧重于事件分类、模式识别以及选定可观测量的代理模型，而近期的研究则转向了与物理紧密结合的工作流程：经过校准的贝叶斯提取QCD物质性质、从重离子和中子星数据中推断密集物态方程、生成式事件建模、弱物理信号的神经展开、可微逆求解器、规范等变和基于扩散的格点场采样器，以及在全息QCD中对模型函数的神经重建。我们回顾了ML在重离子碰撞、中子星物理、格点QFT以及全息或连续QCD中的最新应用。重点不在于ML架构本身，而在于这些架构如何进入具体的物理工作流程，如何施加物理约束，如对称性、守恒律、因果性、热力学稳定性以及拓扑结构，以及如何通过不确定性量化…
+1. **[A nuclear clock synchronized to 229Th](https://doi.org/10.1038/s41586-026-11122-1)**  
+   Nature · 2026-10-07  
+   Abstract Atomic clocks have made time and frequency the most precisely measured quantities in physics, progressing from microwave standards that realize the SI second 1 to optical clocks with unprecedented precision 2 . A nuclear clock transfers the frequency reference from an electronic to a nuclear transition and the uniquely low-lying, laser-accessible,…
+2. **[The role of ab initio beta-decay calculations in light nuclei for probes of physics beyond the standard model](https://doi.org/10.1016/j.ppnp.2026.104260)**  
+   Progress in Particle and Nuclear Physics · 2026-09-01  
+   Precision beta decay experiments serve as powerful probes of physics beyond the Standard Model, enabling stringent tests of fundamental symmetries of nature. In particular, these experiments primarily focus on precise determinations of the Cabibbo-Kobayashi-Maskawa matrix element Vud and the search for exotic weak currents, both of which depend critically o…
+3. **[寻找超重核：实验视角](https://doi.org/10.1146/annurev-nucl-100324-103404)**  
+   Annual Review of Nuclear and Particle Science · 2026-09-21  
+   实验物理学家目前正致力于将周期表扩展至第八行，元素119和120的搜寻工作正在进行中，此时回顾合成元素发现近一个世纪的历史显得尤为及时。从最初生产铀以外的元素到最近完成第七行的探索，本综述全面概述了扩展周期表过程中的重要里程碑和进展。历史上，新元素的搜寻一直激发公众的想象力，同时也为基本科学提供了独特的窗口。这一点在超重元素的发现与研究中表现得尤为明显，这些元素使人们能够直接进行核科学和化学极端情况的实验探索。本综述探讨了合成元素发现中的主要发展和突破，展示了科学好奇心、创新研究与不断拓展我们对周期表理解之间的复杂关系。
+4. **[在s = 200 GeV的横向极化质子-质子碰撞中喷注内的能量相关子](https://doi.org/10.1103/fgsf-gx2q)**  
+   Physical Review Letters · 2026-09-08  
+   我们报告了在横向极化的质子-质子碰撞中，s = 200 GeV 条件下，利用相对论重离子对撞机上的STAR探测器首次测量了单点和双点能量相关函数。这些可观测量分别量化了单个强子和强子对在喷注内的能量加权角分布。对于π⁺、π⁻以及π⁺π⁻对，观察到显著的自旋依赖不对称性，揭示了在特定角尺度下非微扰动力学的出现。通过将碎片化动力学投影到梅林矩上，这些测量对核子的横向不对称性具有敏感性，同时最小化了来自非微扰碎片化函数的不确定性。这些结果确立了能量相关函数作为探测核子结构的一种新颖且精确的手段，并为未来电子-离子对撞机上的三维核子断层成像开辟了有前景的途径。
+5. **[First Nb 94 ( n , γ ) Measurement: Constraining the Nucleosynthetic Origin of Mo 94 in Presolar Grains](https://doi.org/10.1103/538w-rhqb)**  
+   Physical Review Letters · 2026-08-18  
+   Isotopic measurements of presolar silicon carbide grains from dying stars have revealed a puzzling overabundance of Mo 94 that stellar nucleosynthesis models have failed to reproduce for two decades. This discrepancy challenged our understanding of the slow neutron-capture process ( s -process) that forges approximately half of the elements heavier than iro…
+6. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
+   Physical Review Letters · 2026-08-04  
+   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
+7. **[Deformation, halo, and bubble structure: A paradigm shift of exotic phenomena in light to medium mass nuclei](https://doi.org/10.1016/j.ppnp.2026.104262)**  
+   Progress in Particle and Nuclear Physics · 2026-09-01  
+   The emergence of exotic nuclear structures, such as deformation, one- and two-neutron halos, and bubble configurations, marks a paradigm shift in our understanding of light- to medium-mass nuclei far from stability, particularly near and within the island of inversion extending across $N=20-28$. In this review, we integrate microscopic structure calculation…
+8. **[含有PI(3,4)P 2的高尔基体来源囊泡促进线粒体融合](https://doi.org/10.1126/science.adx9628)**  
+   Science · 2026-10-08  
+   线粒体是动态的细胞器，通过改变其形态来调节细胞命运。线粒体分裂涉及与内质网（ER）、溶酶体以及来自转高尔基体网络的囊泡之间的相互作用，以促进膜断裂。细胞器间接触如何调节线粒体膜融合仍 largely 不明。在此，我们发现富含磷脂酰肌醇 3,4-二磷酸 [PI(3,4)P 2] 的高尔基体来源囊泡在调节线粒体融合中起作用。我们发现这些囊泡被招募到 ER 和线粒体融合标记物（mitofusin）所标记的融合位点。相应地，失去Ⅰ类 II PI3-激酶同型物α和β（PI3K-C2α 和 PI3K-C2β），这些激酶产生 PI(3,4)P 2，导致线粒体碎片化，这是由于融合受损所致。此外，心肌细胞特异性 PI3K-C2α 和 PI3K-C2β 双重缺失小鼠表现出线粒体碎片化和心力衰竭。因此，携带不同磷脂酰肌醇的高尔基体…
 
 ## 物理新闻
 
@@ -46,12 +46,12 @@
 
 ## 科研通知
 
+- **[SCD周会](https://indico.ihep.ac.cn/event/31134/)**  
+   高能所 Indico · 2026-10-11  
+   2026-10-12 — 2026-10-12
 - **[CEPC 物理性能组会议](https://indico.ihep.ac.cn/event/31133/)**  
    高能所 Indico · 2026-10-10  
    Zoom link: https://cern.zoom.us/j/67746978760 meeting id: 677 4697 8760 密码: 六七五一八三 （ 675183 ）
-- **[核物理与核技术全国重点实验室学术报告会第538期](https://sklnpt.pku.edu.cn/info/1121/4831.htm)**  
-   核物理与核技术全国重点实验室会议 · 2026-10-08  
-   ----友情链接---- ---- 北京大学 ---- ---- 北京大学物理学院 ---- ---- HIAF强流重离子加速器装置 ---- 地址：北京市海淀区成府路201号核物理与核技术全国重点实验室 邮编：100871 联系电话：010-62751870；010-62755215 邮箱：jingwu@pku.edu.cn
 - **[关于发布原子级制造基础研究重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100397.html)**  
    国家自然科学基金委项目指南 · 2030-12-31  
    国科金发计〔2026〕12号 国家自然科学基金委员会现发布原子级制造基础研究重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请。 国家自然科学基金委员会 2026年1月26日 原子级制造基础研究重大研究计划 2026年度项目指南 原子级制造是指在原子尺度控制材料的结构与成分，其核心是通过原子的精确操控来获得特定功能，突破传统制造技术的精度极限，实现物质的原子级转化与高效利用。原子级制造的科学基础是在原子尺度下优化物质转化与能量利用，实现物质结构和材料性能的按需订制，为实现颠覆性技术、升级战略性产业和提升国家安全竞争力奠定科学与技术基础。 一、科学目标 本重大研究计划围绕批量原子操控这一核心目标，聚焦原子尺度下物质与能量的相互作用原理，实现材料成分和结构的原子级构筑和测量表征，…
