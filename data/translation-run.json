@@ -1,16 +1,17 @@
 {
   "backend": "open_source",
   "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-  "started_at": "2026-10-13T02:52:51.838442+00:00",
-  "attempted": 30,
-  "completed": 22,
-  "failed": 8,
-  "deferred": 90,
+  "started_at": "2026-10-14T00:53:16.370309+00:00",
+  "attempted": 75,
+  "completed": 57,
+  "failed": 18,
+  "deferred": 45,
   "errors": {
-    "译文数字与原文不一致": 3,
-    "公式、数值或术语保护项被遗漏/重复/改写": 5
+    "公式、数值或术语保护项被遗漏/重复/改写": 6,
+    "未产生可用中文": 9,
+    "译文数字与原文不一致": 3
   },
-  "finished_at": "2026-10-13T03:39:41.920438+00:00",
-  "pending": 4778,
+  "finished_at": "2026-10-14T01:39:29.984511+00:00",
+  "pending": 4785,
   "service_status": "partial"
 }
