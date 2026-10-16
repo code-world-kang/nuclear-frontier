@@ -139,121 +139,10 @@
     "publisher_url": "https://www.nature.com/articles/s41586-026-11122-1",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-08T01:30:34+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
-  },
-  {
-    "id": "454a0da91f9c5ba8",
-    "type": "paper",
-    "title": "Neutron Drip Line in Calcium Isotopes from a Chiral Interaction",
-    "abstract": "Interactions derived from effective field theories of quantum chromodynamics have thus far failed to bind calcium nuclei beyond neutron number $N=40$, while nuclear density functionals typically place the neutron dripline near $^{70}$Ca, at $N=50$. We present the chiral interaction N$^3$LO$_{\\rm Texas}$, a combination of two- and three-nucleon potentials at fourth and third chiral order, respectively, with low-energy constants optimized using emulator-accelerated fits to few- and many-body data. This interaction accurately reproduces binding energies and charge radii of key nuclei with mass number $A=3$ to $208$, important excited states, and nuclear matter near saturation. Using ab-initio methods, coupled cluster and valence-space in-medium similarity renormalization group, we find that the calcium two-neutron dripline extends to $^{71}$Ca.",
-    "abstract_status": "full",
-    "abstract_source": "arXiv RSS",
-    "authors": [
-      "B. S. Hu",
-      "A. Ekström",
-      "C. Forssén",
-      "G. Hagen",
-      "W. G. Jiang",
-      "T. Miyagi",
-      "T. Papenbrock"
-    ],
-    "published": "2026-09-30",
-    "updated": "2026-09-30",
-    "source": "Physical Review Letters",
-    "source_short": "PRL",
-    "source_type": "journal",
-    "doi": "10.1103/pz1t-q6v1",
-    "arxiv_id": "2512.11723",
-    "url": "https://doi.org/10.1103/pz1t-q6v1",
-    "pdf_url": "https://arxiv.org/pdf/2512.11723",
-    "categories": [
-      "nuclear-structure",
-      "theoretical-nuclear",
-      "nuclear-general",
-      "frontiers"
-    ],
-    "tags": [
-      "many-body",
-      "coupled cluster",
-      "in-medium similarity renormalization group",
-      "drip line",
-      "charge radii",
-      "nuclear matter",
-      "quantum"
-    ],
-    "primary_topic": "nuclear-structure",
-    "methods": [
-      "review"
-    ],
-    "classification_confidence": 0.98,
-    "classification_evidence": [
-      "many-body",
-      "coupled cluster",
-      "in-medium similarity renormalization group",
-      "drip line",
-      "charge radii",
-      "nuclear matter"
-    ],
-    "importance": 76,
-    "score_reasons": [
-      "来源权重 +48",
-      "核物理研究侧重 +20",
-      "跨领域关联 +6",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "http://creativecommons.org/licenses/by/4.0/",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license",
-      "https://link.aps.org/licenses/aps-default-accepted-manuscript-license"
-    ],
-    "rights_status": "reusable",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "first_seen": "2026-10-01T01:01:12+00:00",
-    "last_seen": "2026-10-14T00:49:00+00:00",
-    "citation_authors": [
-      "Hu, B. S.",
-      "Ekström, A.",
-      "Forssén, C.",
-      "Hagen, G.",
-      "Jiang, W. G.",
-      "Miyagi, T.",
-      "Papenbrock, T."
-    ],
-    "journal_abbrev": "Phys. Rev. Lett.",
-    "volume": "137",
-    "issue": "14",
-    "pages": "142502",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/pz1t-q6v1",
-    "citation_metadata_checked": true,
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-01T01:01:12+00:00",
-      "source": "OpenAlex"
-    },
-    "abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-01T01:01:12+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ],
-    "summary": "",
-    "content": "",
-    "semantic_scholar_abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-10-03T00:53:03+00:00",
-      "source": "Semantic Scholar"
-    }
   },
   {
     "id": "b9adcce7c12c74d6",
@@ -356,10 +245,105 @@
     "publisher_url": "https://www.science.org/doi/10.1126/science.adx9628",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-09T01:39:44+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
+  },
+  {
+    "id": "b9c25f53410890be",
+    "type": "paper",
+    "title": "Precision Hypernuclear Structure from Interaction Cross Sections",
+    "abstract": "We establish interaction cross sections as a quantitative structural observable for hypernuclei. Using the hypertriton, H Λ 3 , as the most stringent benchmark, microscopic three-body wave functions are combined with a finite-range coupled-channel Glauber calculation and Bayesian inversion. For H Λ 3 + C 12 at 1.5 GeV / nucleon , the interaction cross section decreases from about 1150 to 750 mb as the Λ separation energy B Λ increases from 0.1 to 0.5 MeV, while propagated reaction-model uncertainties remain near 5%. A measurement therefore supplies a direct inversion σ I → r m → B Λ , constraining both the matter radius and the Λ separation energy. The framework provides the missing quantitative link between proposed interaction-cross-section measurements and the spatial structure of an already formed hypernucleus. Although demonstrated for the hypertriton, the methodology is readily extendable to other weakly bound hypernuclei.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Carlos A. Bertulani"
+    ],
+    "published": "2026-10-15",
+    "updated": "2026-10-15",
+    "source": "Physical Review Letters",
+    "source_short": "PRL",
+    "source_type": "journal",
+    "doi": "10.1103/vzp5-ttyh",
+    "arxiv_id": "2606.02923",
+    "url": "https://doi.org/10.1103/vzp5-ttyh",
+    "pdf_url": "https://arxiv.org/pdf/2606.02923",
+    "categories": [
+      "nuclear-structure"
+    ],
+    "tags": [
+      "hypernuclei",
+      "hypernucleus"
+    ],
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "experimental",
+      "theoretical",
+      "review"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "hypernuclei",
+      "hypernucleus"
+    ],
+    "importance": 70,
+    "score_reasons": [
+      "来源权重 +48",
+      "核物理研究侧重 +20",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "publisher_licenses": [
+      "https://link.aps.org/licenses/aps-default-license",
+      "https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "first_seen": "2026-09-26T00:19:26+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
+    "citation_authors": [
+      "Bertulani, Carlos A."
+    ],
+    "journal_abbrev": "Phys. Rev. Lett.",
+    "volume": "137",
+    "issue": "16",
+    "pages": "162502",
+    "numpages": "",
+    "publisher": "American Physical Society (APS)",
+    "publisher_url": "https://link.aps.org/doi/10.1103/vzp5-ttyh",
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-09-26T00:19:26+00:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-26T00:19:26+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-26T00:19:26+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ],
+    "summary": "",
+    "content": "",
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-29T01:24:38+00:00",
+      "source": "Semantic Scholar"
+    }
   },
   {
     "id": "efc03c39f2578089",
@@ -437,7 +421,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/gnk4-8p43",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-07T01:10:59+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -703,7 +687,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "primary_topic": "nuclear-structure",
     "methods": [
       "experimental",
@@ -818,7 +802,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "citation_authors": [
       "Ma, Yu-Gang"
     ],
@@ -899,7 +883,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-09-02T23:46:47+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "citation_authors": [
       "Banerjee, Gourab",
       "Sadhukhan, Jhilam",
@@ -1133,116 +1117,6 @@
     "content": ""
   },
   {
-    "id": "0895c931820186ee",
-    "type": "paper",
-    "title": "$\\pi$-QCD; Proposal for Experiments at the GSI Pion Beam Facility",
-    "abstract": "We propose to investigate the dynamics of hadronic matter in the strong QCD regime using the pion-beam facility at GSI in conjunction with HADES. This program will study hadron physics through elementary pion-nucleon interactions up to $\\sqrt{s}\\approx$2.35 GeV, bridging cold matter research with detailed analyses of exclusive reactions. Our goals include exploring baryon resonance formation and their electromagnetic structures. This will complement photo-production experiments (e.g., ELSA) and enhance our understanding of emissivity in dense, hot hadronic matter. Key topics include examining baryon couplings to mesons and virtual photons, analyzing hyperon weak decays in exclusive reactions, and using Partial Wave Analyses with differential cross sections and polarization observables to achieve unprecedented precision in baryon-meson coupling data ($\\rho$N, $\\omega$N). Furthermore, e$^{+}$e$^{-}$ production measurements off nucleons will provide insight into the electromagnetic transition form factors of baryons in the time-like region, revealing the role of vector mesons ($\\rho$, $\\omega$). Reactions on nuclear targets allow for detailed studies of hadron properties, including vector-meson line shapes and strengths in cold nuclear matter. These measurements provide a critical reference for the interpretation of results from the hot and dense environment created in $A+A$ collisions. This research also has broader implications. It will contribute to the modeling of neutrino-nucleus interactions, facilitate unprecedented investigations into hypernuclei formation, and enhance our understanding of strong interaction dynamics across different energy regimes.",
-    "abstract_status": "full",
-    "abstract_source": "arXiv RSS",
-    "authors": [
-      "HADES Collaboration",
-      "R. Abou Yassine",
-      "J. Adamczewski-Musch",
-      "G. Appagere",
-      "M. Becker",
-      "A. Blanco",
-      "C. Blume",
-      "M. Bohman",
-      "Y. Bondar",
-      "L. Chlad",
-      "I. Ciepa{\\l}",
-      "S. Deb",
-      "M. D. Doncel Monasterio",
-      "M. Duerr",
-      "W. Esmail",
-      "L. Fabbietti",
-      "M. Firlej",
-      "T. Fiutowski",
-      "A. M. Foda",
-      "J. F\\\"{o}rtsch",
-      "P. Fonte",
-      "J. Friese",
-      "I. Fr\\\"{o}hlich",
-      "T. Galatyuk",
-      "R. Gernh\\\"{a}user",
-      "M. Grunwald",
-      "D. Grzonka",
-      "M. Gumberidze",
-      "S. Harabasz",
-      "T. Heinz",
-      "C. H\\\"{o}hne",
-      "F. Hojeij",
-      "R. Holzmann",
-      "M. Idzik",
-      "B. K\\\"{a}mpfer",
-      "K. -H. Kampert",
-      "B. Kardan",
-      "V. Kedych",
-      "S. Kim",
-      "V. Kladov"
-    ],
-    "published": "2026-09-30",
-    "updated": "2026-09-30",
-    "source": "arXiv nucl-th",
-    "source_short": "nucl-th",
-    "source_type": "preprint",
-    "doi": "",
-    "arxiv_id": "2609.37548",
-    "url": "https://arxiv.org/abs/2609.37548",
-    "pdf_url": "https://arxiv.org/pdf/2609.37548",
-    "categories": [
-      "nuclear-structure",
-      "theoretical-nuclear",
-      "high-energy-nuclear",
-      "nuclear-general"
-    ],
-    "tags": [
-      "hypernuclei",
-      "hadron",
-      "nuclear matter",
-      "neutrino"
-    ],
-    "primary_topic": "nuclear-structure",
-    "methods": [
-      "theoretical"
-    ],
-    "classification_confidence": 0.8,
-    "classification_evidence": [
-      "hypernuclei",
-      "hadron",
-      "nuclear matter",
-      "neutrino"
-    ],
-    "importance": 68,
-    "score_reasons": [
-      "来源权重 +32",
-      "核物理研究侧重 +20",
-      "突破性表述 +8",
-      "跨领域关联 +6",
-      "完整摘要 +2"
-    ],
-    "open_access": true,
-    "license": "http://creativecommons.org/licenses/by/4.0/",
-    "publisher_licenses": [],
-    "rights_status": "reusable",
-    "figures": [],
-    "figure_status": "pending",
-    "first_seen": "2026-10-01T01:01:12+00:00",
-    "last_seen": "2026-10-01T01:01:12+00:00",
-    "citation_authors": [],
-    "journal_abbrev": "",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
-    "publisher": "",
-    "publisher_url": "",
-    "citation_metadata_checked": false,
-    "summary": "",
-    "content": "",
-    "abstract_checked_sources": []
-  },
-  {
     "id": "78638b536c166d99",
     "type": "paper",
     "title": "Discrete subdomains establish epigenetic diversity in subtelomeric heterochromatin in fission yeast",
@@ -1325,7 +1199,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-78445-5",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-13T02:48:31+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -1624,6 +1498,106 @@
     "content": ""
   },
   {
+    "id": "33c5d2331e57946a",
+    "type": "paper",
+    "title": "r -process nuclei in the rare-earth region above N = 126 in relativistic Hartree-Bogoliubov theory: A preponderance of shape-coexistence in nuclei",
+    "abstract": "The shell structure of nuclei beyond N=126 relevant to the third peak at A ~ 195 in r-process nuclear abundances in investigated. Within the framework of the relativistic Hartree-Bogoliubov theory in deformed space, a comparative study of the response of nuclei with three different model Lagrangians NL-SV1, SVI-2 and NL3 is made. Ground-state properties of even-even nuclei in the isotopic chains of Z=58-72$= in the highly neutron-rich region are investigated. A comparison of binding energies with mass formulas shows that in the extreme region of the r-process path, the RMF model SVI-2 without nonlinearities of sigma and omega mesons shows an excellent agreement with the mass formula HFB-24. It is shown that in all the above Lagrangian models, in the neutron rich region between the shell closures N=126 and N=184, there is a preponderance of nuclides exhibiting coexistence of well-deformed prolate and oblate shapes in the ground state. A prolate ground state is shown to evolve smoothly to a coexisting oblate ground state via a near degeneracy with successive addition of neutrons. Induced by an onset of deformation for $N \\ge 130$, nuclei approaching the r-process path are shown to exhibit enhanced stability in many isotopic chains (Z > 60). This has the effect of shifting the expected neutron drip line significantly farther into the neutron-rich region especially for the higher Z chains. Consequences of the enhanced stability, the shape co-existence and degeneracy of shapes in nuclei on the r-process nucleosynthesis are discussed.",
+    "abstract_status": "full",
+    "abstract_source": "arXiv RSS",
+    "authors": [
+      "Anonymous"
+    ],
+    "published": "2026-10-09",
+    "updated": "2026-10-09",
+    "source": "Physical Review C",
+    "source_short": "PRC",
+    "source_type": "journal",
+    "doi": "10.1103/h2hw-k3vw",
+    "arxiv_id": "2610.19555",
+    "url": "https://doi.org/10.1103/h2hw-k3vw",
+    "pdf_url": "https://arxiv.org/pdf/2610.19555",
+    "categories": [
+      "nuclear-structure",
+      "theoretical-nuclear",
+      "nuclear-astrophysics"
+    ],
+    "tags": [
+      "HFB",
+      "drip line",
+      "nucleosynthesis",
+      "r-process"
+    ],
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "theoretical",
+      "review"
+    ],
+    "classification_confidence": 0.8,
+    "classification_evidence": [
+      "HFB",
+      "drip line",
+      "nucleosynthesis",
+      "r-process"
+    ],
+    "importance": 66,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "http://creativecommons.org/licenses/by/4.0/",
+    "publisher_licenses": [
+      "https://link.aps.org/licenses/aps-default-license"
+    ],
+    "rights_status": "reusable",
+    "figures": [],
+    "figure_status": "pending",
+    "first_seen": "2026-10-10T01:26:47+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
+    "citation_authors": [
+      "Anonymous"
+    ],
+    "journal_abbrev": "Phys. Rev. C",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "numpages": "",
+    "publisher": "American Physical Society (APS)",
+    "publisher_url": "https://link.aps.org/doi/10.1103/h2hw-k3vw",
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-10-10T01:26:47+00:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-10-10T01:26:47+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-10-10T01:26:47+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ],
+    "summary": "",
+    "content": "",
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-10-11T00:37:58+00:00",
+      "source": "Semantic Scholar"
+    }
+  },
+  {
     "id": "d8ec8e83df09826a",
     "type": "paper",
     "title": "Isoscalar giant resonances in the even- A Pd isotopes",
@@ -1721,7 +1695,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-10T23:40:26+08:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "citation_authors": [
       "Arroyo, J.",
       "Garg, U.",
@@ -2346,10 +2320,10 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/c323-g246",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-08T01:30:34+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-10-08T01:30:34+00:00",
+      "checked_at": "2026-10-16T00:00:46+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -2438,7 +2412,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/3c72-gcls",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-07T01:10:59+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-15T00:15:33+00:00",
@@ -2535,7 +2509,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/3mzz-nycn",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-20T23:47:15+00:00",
@@ -2623,7 +2597,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-09-22T00:30:33+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "citation_authors": [
       "Ramon, R. A.",
       "Atkinson, M. C.",
@@ -2754,7 +2728,7 @@
     "publisher_url": "https://link.springer.com/10.1007/s41365-026-02077-z",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-09T01:39:44+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-09T01:39:44+00:00",
@@ -3496,7 +3470,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/science.aej2213",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-09T01:39:44+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -3560,7 +3534,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-06T02:01:34+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "citation_authors": [
       "Williams, Jamie T.",
       "Gänsicke, Boris T.",
@@ -3757,7 +3731,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aeacfc",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-29T01:24:38+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -3841,7 +3815,7 @@
     "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aeac69",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-26T00:19:26+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -3995,7 +3969,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/2fyx-y5hr",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-08T01:30:34+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -4059,7 +4033,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-07T01:10:59+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "citation_authors": [
       "Zhao, Jing",
       "Deng, Yongjie",
@@ -4136,7 +4110,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-07T01:10:59+00:00",
-    "last_seen": "2026-10-15T00:15:33+00:00",
+    "last_seen": "2026-10-16T00:00:46+00:00",
     "citation_authors": [
       "Anonymous"
     ],
