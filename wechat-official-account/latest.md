@@ -1,68 +1,68 @@
-# 小康康的物理世界 · 2026-10-08 科研简报
+# 小康康的物理世界 · 2026-10-19 科研简报
 
 >今日精选 8 篇论文、4 条新闻、6 条通知；其中 10/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[A nuclear clock synchronized to 229Th](https://doi.org/10.1038/s41586-026-11122-1)**  
-   Nature · 2026-10-07  
-   Abstract Atomic clocks have made time and frequency the most precisely measured quantities in physics, progressing from microwave standards that realize the SI second 1 to optical clocks with unprecedented precision 2 . A nuclear clock transfers the frequency reference from an electronic to a nuclear transition and the uniquely low-lying, laser-accessible,…
-2. **[The role of ab initio beta-decay calculations in light nuclei for probes of physics beyond the standard model](https://doi.org/10.1016/j.ppnp.2026.104260)**  
-   Progress in Particle and Nuclear Physics · 2026-09-01  
-   Precision beta decay experiments serve as powerful probes of physics beyond the Standard Model, enabling stringent tests of fundamental symmetries of nature. In particular, these experiments primarily focus on precise determinations of the Cabibbo-Kobayashi-Maskawa matrix element Vud and the search for exotic weak currents, both of which depend critically o…
-3. **[寻找超重核：实验视角](https://doi.org/10.1146/annurev-nucl-100324-103404)**  
-   Annual Review of Nuclear and Particle Science · 2026-09-21  
-   实验物理学家目前正致力于将周期表扩展至第八行，元素119和120的搜寻工作正在进行中，此时回顾合成元素发现近一个世纪的历史显得尤为及时。从最初生产铀以外的元素到最近完成第七行的探索，本综述全面概述了扩展周期表过程中的重要里程碑和进展。历史上，新元素的搜寻一直激发公众的想象力，同时也为基本科学提供了独特的窗口。这一点在超重元素的发现与研究中表现得尤为明显，这些元素使人们能够直接进行核科学和化学极端情况的实验探索。本综述探讨了合成元素发现中的主要发展和突破，展示了科学好奇心、创新研究与不断拓展我们对周期表理解之间的复杂关系。
-4. **[在s = 200 GeV的横向极化质子-质子碰撞中喷注内的能量相关子](https://doi.org/10.1103/fgsf-gx2q)**  
-   Physical Review Letters · 2026-09-08  
-   我们报告了在横向极化的质子-质子碰撞中，s = 200 GeV 条件下，利用相对论重离子对撞机上的STAR探测器首次测量了单点和双点能量相关函数。这些可观测量分别量化了单个强子和强子对在喷注内的能量加权角分布。对于π⁺、π⁻以及π⁺π⁻对，观察到显著的自旋依赖不对称性，揭示了在特定角尺度下非微扰动力学的出现。通过将碎片化动力学投影到梅林矩上，这些测量对核子的横向不对称性具有敏感性，同时最小化了来自非微扰碎片化函数的不确定性。这些结果确立了能量相关函数作为探测核子结构的一种新颖且精确的手段，并为未来电子-离子对撞机上的三维核子断层成像开辟了有前景的途径。
-5. **[First Nb 94 ( n , γ ) Measurement: Constraining the Nucleosynthetic Origin of Mo 94 in Presolar Grains](https://doi.org/10.1103/538w-rhqb)**  
-   Physical Review Letters · 2026-08-18  
-   Isotopic measurements of presolar silicon carbide grains from dying stars have revealed a puzzling overabundance of Mo 94 that stellar nucleosynthesis models have failed to reproduce for two decades. This discrepancy challenged our understanding of the slow neutron-capture process ( s -process) that forges approximately half of the elements heavier than iro…
-6. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
-   Physical Review Letters · 2026-08-04  
-   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
-7. **[Deformation, halo, and bubble structure: A paradigm shift of exotic phenomena in light to medium mass nuclei](https://doi.org/10.1016/j.ppnp.2026.104262)**  
-   Progress in Particle and Nuclear Physics · 2026-09-01  
-   The emergence of exotic nuclear structures, such as deformation, one- and two-neutron halos, and bubble configurations, marks a paradigm shift in our understanding of light- to medium-mass nuclei far from stability, particularly near and within the island of inversion extending across $N=20-28$. In this review, we integrate microscopic structure calculation…
-8. **[含有PI(3,4)P 2的高尔基体来源囊泡促进线粒体融合](https://doi.org/10.1126/science.adx9628)**  
-   Science · 2026-10-08  
-   线粒体是动态的细胞器，通过改变其形态来调节细胞命运。线粒体分裂涉及与内质网（ER）、溶酶体以及来自转高尔基体网络的囊泡之间的相互作用，以促进膜断裂。细胞器间接触如何调节线粒体膜融合仍 largely 不明。在此，我们发现富含磷脂酰肌醇 3,4-二磷酸 [PI(3,4)P 2] 的高尔基体来源囊泡在调节线粒体融合中起作用。我们发现这些囊泡被招募到 ER 和线粒体融合标记物（mitofusin）所标记的融合位点。相应地，失去Ⅰ类 II PI3-激酶同型物α和β（PI3K-C2α 和 PI3K-C2β），这些激酶产生 PI(3,4)P 2，导致线粒体碎片化，这是由于融合受损所致。此外，心肌细胞特异性 PI3K-C2α 和 PI3K-C2β 双重缺失小鼠表现出线粒体碎片化和心力衰竭。因此，携带不同磷脂酰肌醇的高尔基体…
+1. **[229 Th带间内部转换率的从头计算在229 ThO 2中](https://doi.org/10.1103/kdw3-fdyx)**  
+   Physical Review C · 2026-10-19  
+   数据源暂未提供详细介绍。
+2. **[自发核聚变](https://doi.org/10.1103/ycnn-yqbx)**  
+   Physical Review Research · 2026-10-19  
+   我们报告了首次在地下进行的热能氘核聚变实验。使用氘化钯靶，我们测量了归因于氘核之间核聚变反应的自发质子发射。在钯箔中观察到约3 MeV能量的质子，这与氘-氘聚变反应的预期特征一致。尽管进行了大量努力，我们仍未发现预期位于反应阈值附近的0+共振态。
+3. **[一种通用的衰变形式和绝对核稳定性](https://arxiv.org/abs/2609.16550)**  
+   arXiv nucl-th · 2026-10-19  
+   一个原子核通常被称为稳定的，当没有观察到衰变时。我们用基于守恒定律的标准来替代这种唯象的定义。为此，我们为有限电中性原子核系统建立了一般衰变形式（GDF），该形式包含了所有可能的最终构型。如果没有任何允许的构型具有更低的质量，则该原子核是绝对稳定的。对所有已测量原子质量的原子核进行全局搜索，得到84个绝对稳定的原子核。除了绝对稳定性的判据之外，我们引入了一个无量纲的衰变可访问熵SGDF，作为粗粒度衡量GDF-允许衰变通道相对可访问性的量度。我们根据所有天然存在的同位素的最大SGDF值对它们进行排序，确定其偏好的衰变模式，并估算相应的部分半衰期。我们进一步识别出天然α衰变和双中微子双β衰变的有希望候选者。由此得到的框架也提供了物质远未来演化的核尺度视角，在该视角中，核衰变将使物质趋向于这些84绝对稳定的原子核的…
+4. **[The FU Ori Outburst of PR Ori B](https://doi.org/10.3847/1538-4357/aea56e)**  
+   The Astrophysical Journal · 2026-10-19  
+   Abstract We report the discovery of a nearby FU Ori–type outburst (FUor), PR Ori B, in the L1641 cluster of the Orion star-forming region. The high-amplitude variability was first identified in the NEOWISE (3–5 μ m) photometry of the unresolved PR Ori binary system. Long-term, resolved optical photometric monitoring demonstrates that PR Ori B is the driver…
+5. **[由共振主导的重离子融合以及在融合截面表示 d 2 ( E σ ) / d E 2 中具有负成分的结构](https://doi.org/10.1103/mbqf-s378)**  
+   Physical Review C · 2026-10-19  
+   数据源暂未提供详细介绍。
+6. **[149 La—149 Ce—149 Pr 等质量链的精密质量测量](https://doi.org/10.1103/vx4j-hdzg)**  
+   Physical Review C · 2026-10-19  
+   数据源暂未提供详细介绍。
+7. **[在异构、边缘和量子硬件上为粒子物理进行机器学习（ML-HEQUPP）](https://arxiv.org/abs/2602.22248)**  
+   arXiv physics.ins-det · 2026-10-19  
+   下一代粒子物理实验将面临数据获取方面的新挑战，这些挑战源于前所未有的数据速率和体积，以及极端环境和运行约束。要利用这些数据实现科学发现，需要实时推断和决策、智能数据降维以及超越当前能力的高效处理架构。这一实验范式成功的关键在于若干新兴技术，例如人工智能和机器学习（AI/ML）、硅基微电子技术，以及量子算法和处理的出现。这些技术的交叉领域包括边缘计算中的低功耗和低延迟设备、异构加速器系统、可重构硬件、新型协同设计与综合策略、用于低温或高辐射环境的读出技术，以及模拟计算。本文提出一种由社区驱动的愿景，旨在识别和优先考虑基于硬件的ML系统及其相应物理应用中的研究与开发机会，从而推动向基础科学新数据前沿的成功过渡。
+8. **[短程相关对形成和核壳结构](https://arxiv.org/abs/2606.07754)**  
+   arXiv nucl-th · 2026-10-19  
+   短程关联（SRC）核子对，由两个核子之间短暂的高动量相互作用引起，主要由相对动量大而质心动量较小的中子-质子对构成。然而，哪些核子形成对目前尚不完全清楚。对40、48Ca和54Fe的测量表明，壳内配对强度远强于壳间配对。我们测量了从具有不同壳层构型、质量数A和中子-质子比N/Z的选定原子核中通过电子散射打出的高缺失动量质子，研究对象包括9Be、10、11B、12C、40、48Ca、54Fe和197Au，重点关注四个轻核。出乎意料的是，将一个质子加入9Be（形成10B）使关联质子数量的增加远超过将一个中子加入10B或在11B中加入一个质子，这可能归因于10B具有较大的自旋（J = 3）或9Be的异常结构。此外，从9Be到12C以及从40Ca到54Fe的配对概率增加要陡于从9Be到197Au的增加。这表明低动量核…
 
 ## 物理新闻
 
-- **[从隐藏的自由度中提取功](https://www.nature.com/articles/s41567-026-03442-w)**  
-   Nature Physics · 2026-10-16  
+- **[强流重离子加速器装置通过档案专项验收](https://www.imp.cas.cn/hiaf/gcjz/202610/t20261019_8293540.html)**  
+   强流重离子加速器 HIAF 动态 · 2026-10-19  
+   9 月 28 日 ， 中国科学院档案馆组织档案专家组对国家重大科技基础设施 —— 强流重离子加速器装置 （HIAF） 项目 ， 开展了档案专项验收工作 。 专家组由来自中国科学院档案馆 、 科研院所的 7 位专家组成 ， 中国科学院科技基础能力局和近代物理研究所相关部门共 40 余人参会 。 档案验收专业组听取了项目建设情况及档案管理工作报告 ， 就报告内容进行质询 ， 现场抽查项目档案 ， 审阅相关材料 。 档案专家组认为 ， 建设单位高度重视项目档案工作 ， 工作网络健全 ， 职责明确 ， 同步管理机制完善 ， 全过程业务指导和关键节点检查落实到位 ， 做到了同部署 、 同实施 、 同验收 。 建设单位结合实际制定了项目文件材料归档范围 ， 并将归档要求纳入合同 、 协议 ， 保障了项目文件材料收集齐全…
+- **[电子掺杂铜基超导体中自旋涨落介导超导性的证据](https://www.nature.com/articles/s41567-026-03454-6)**  
+   Nature Physics · 2026-10-19  
    数据源暂未提供详细介绍。
-- **[具有破缺对称性的混沌控制](https://www.nature.com/articles/s41567-026-03480-4)**  
-   Nature Physics · 2026-10-16  
+- **[液态晶体中skyrmion霍尔效应的类比](https://www.nature.com/articles/s41567-026-03379-0)**  
+   Nature Physics · 2026-10-19  
    数据源暂未提供详细介绍。
-- **[固态连续系统中的无腔布里渊强耦合](https://www.nature.com/articles/s41567-026-03458-2)**  
-   Nature Physics · 2026-10-16  
-   数据源暂未提供详细介绍。
-- **[在自旋量子比特阵列中实现高保真度的单量子比特门的同步操作](https://www.nature.com/articles/s41567-026-03466-2)**  
-   Nature Physics · 2026-10-15  
-   数据源暂未提供详细介绍。
+- **[检测单个气体分子的冲击](http://link.aps.org/doi/10.1103/Physics.19.136)**  
+   APS Physics · 2026-10-19  
+   作者：Joanna A. Zielińska 一项实验测定了单个气体分子传递给悬浮纳米粒子的微小动量。[物理 19, 136] 发表于 Mon Oct 19, 2026
 
 ## 科研通知
 
-- **[SCD周会](https://indico.ihep.ac.cn/event/31212/)**  
-   高能所 Indico · 2026-10-18  
-   2026-10-19 — 2026-10-19
-- **[CEPC顶点探测器TDR每周会议](https://indico.ihep.ac.cn/event/31194/)**  
-   高能所 Indico · 2026-10-15  
-   2026-10-15 — 2026-10-15
+- **[核物理与核技术全国重点实验室学术报告会第539期](https://sklnpt.pku.edu.cn/info/1121/4891.htm)**  
+   核物理与核技术全国重点实验室会议 · 2026-10-19  
+   ----友情链接---- ---- 北京大学 ---- ---- 北京大学物理学院 ---- ---- HIAF强流重离子加速器装置 ---- 地址：北京市海淀区成府路201号核物理与核技术全国重点实验室 邮编：100871 联系电话：010-62751870；010-62755215 邮箱：jingwu@pku.edu.cn
+- **[核物理与核技术全国重点实验室学术报告— 核物理前沿与交叉专题（第六十六讲）](https://sklnpt.pku.edu.cn/info/1121/4881.htm)**  
+   核物理与核技术全国重点实验室会议 · 2026-10-19  
+   ----友情链接---- ---- 北京大学 ---- ---- 北京大学物理学院 ---- ---- HIAF强流重离子加速器装置 ---- 地址：北京市海淀区成府路201号核物理与核技术全国重点实验室 邮编：100871 联系电话：010-62751870；010-62755215 邮箱：jingwu@pku.edu.cn
 - **[关于发布原子级制造基础研究重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100397.html)**  
    国家自然科学基金委项目指南 · 2030-12-31  
    国科金发计〔2026〕12号 国家自然科学基金委员会现发布原子级制造基础研究重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请。 国家自然科学基金委员会 2026年1月26日 原子级制造基础研究重大研究计划 2026年度项目指南 原子级制造是指在原子尺度控制材料的结构与成分，其核心是通过原子的精确操控来获得特定功能，突破传统制造技术的精度极限，实现物质的原子级转化与高效利用。原子级制造的科学基础是在原子尺度下优化物质转化与能量利用，实现物质结构和材料性能的按需订制，为实现颠覆性技术、升级战略性产业和提升国家安全竞争力奠定科学与技术基础。 一、科学目标 本重大研究计划围绕批量原子操控这一核心目标，聚焦原子尺度下物质与能量的相互作用原理，实现材料成分和结构的原子级构筑和测量表征，…
 - **[关于发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100371.html)**  
    国家自然科学基金委项目指南 · 2029-12-31  
    国科金发计〔2026〕6号 国家自然科学基金委员会现发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请
-- **[上海市科学技术委员会关于发布2026年度“6G科技创新与未来产业培育战略前沿专项”公开征集项目申报指南的通知](https://stcsm.sh.gov.cn/zwgk/kyjhxm/xmsb/20261010/f8db554de59b4f4789a92cdc44f72f9f.html)**  
-   上海市科委 · 2026-10-16  
-   _项目申报_上海市科学技术委员会 当前位置： 首页 > 政务公开> 科技计划项目> 项目申报> 正文 上海市科学技术委员会关于发布2026年度“6G科技创新与未来产业培育战略前沿专项”公开征集项目申报指南的通知 发布日期：2026-10-10 文号：沪科指南〔2026〕38号 各有关单位： 为服务国家战略，通过实施“6G科技创新与未来产业培育战略前沿专项”，布局面向战略性产品的核心技术攻关、前沿与颠覆性技术创新和创新应用场景，加快本市6G未来产业培育。指南内容包括6G新终端与模组核心技术攻关、6G系统设备核心技术攻关、6G前沿技术和标准化研究、6G创新应用与场景建设等4个专题，可通过上海市科技管理信息系统查看指南具体内容、进行网上填报。 一、申报要求 除满足指南相应条件外，还须遵循以下要求： 1.项目申报单位…
-- **[上海市科学技术委员会关于发布2026年度关键技术“先进核能技术攻关”项目申报指南的通知](https://stcsm.sh.gov.cn/zwgk/kyjhxm/xmsb/20261009/9d8046e371d3447a8f61c97201c84535.html)**  
-   上海市科委 · 2026-10-15  
-   _项目申报_上海市科学技术委员会 当前位置： 首页 > 政务公开> 科技计划项目> 项目申报> 正文 上海市科学技术委员会关于发布2026年度关键技术“先进核能技术攻关”项目申报指南的通知 发布日期：2026-10-09 文号：沪科指南〔2026〕36号 各有关单位： 上海市科学技术委员会特发布2026年度关键技术研发计划“先进核能技术攻关”项目申报指南。指南征集内容包括：前沿引导研究、AI应用与软件技术攻关、材料部件与设备技术攻关、揭榜挂帅等四个专题。申报者可通过上海市科技管理信息系统查看指南具体内容、进行网上填报。 一、申报要求 除满足指南相应条件外，还须遵循以下要求： 1.项目申报单位为本市的法人或非法人组织，具有组织项目实施的相应能力。 2.对于申请人在以往市级财政资金或其他机构（如科技部、国家自然科…
+- **[核物理与核技术全国重点实验室学术报告— 核物理前沿与交叉专题（第六十五讲）](https://sklnpt.pku.edu.cn/info/1121/4871.htm)**  
+   核物理与核技术全国重点实验室会议 · 2026-10-19  
+   ----友情链接---- ---- 北京大学 ---- ---- 北京大学物理学院 ---- ---- HIAF强流重离子加速器装置 ---- 地址：北京市海淀区成府路201号核物理与核技术全国重点实验室 邮编：100871 联系电话：010-62751870；010-62755215 邮箱：jingwu@pku.edu.cn
+- **[转发国家自然科学基金委员会“脑科学与类脑研究”国家科技重大专项2027年度第一批项目申报指南的通知](https://gdstc.gd.gov.cn/zwgk_n/tzgg/content/post_4968141.html)**  
+   广东省科技厅 · 2026-10-19  
+   广东省科学技术厅 简体 繁体 无障碍 长者助手 首页 政务公开 科技资讯 党风廉政 办事服务 互动平台 搜 索 当前位置： 首页 > 政务公开 > 通知公告 转发国家自然科学基金委员会“脑科学与类脑研究”国家科技重大专项2027年度第一批项目申报指南的通知 时间 : 2026-10-19 16:18:22 来源 : 广东省科学技术厅 【字体: 大 中 小 】 【打印】 分享到： 各有关单位： 现将《国家自然科学基金委员会关于发布“脑科学与类脑研究”国家科技重大专项2027年度第一批项目申报指南的通知》转发给你们。有关单位和人员可登录国家科技管理信息系统（https://service.most.gov.cn/），在“公开公示—申报指南”菜单栏中查看申报指南材料。 请各有关单位高度重视，聚焦指南支持方向，整合优…
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)
