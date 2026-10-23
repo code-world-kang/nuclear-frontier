@@ -1,39 +1,48 @@
 # 小康康的物理世界 · 2026-10-22 科研简报
 
->今日精选 5 篇论文、4 条新闻、6 条通知；其中 7/15 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 9/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[Reawakening of GS 1843+00: A multiwavelength study of its 2026 giant X-ray outburst](https://doi.org/10.1051/0004-6361/202662429)**  
-   Astronomy and Astrophysics · 2026-10-22  
-   GS 1843+00 (Ginga 1843+009) is a poorly studied Be/X-ray binary system that underwent a major X-ray outburst in 2026 February-May after nearly sixteen years of quiescence. We present an X-ray, optical, and radio study of GS 1843+00 during this outburst, focusing on the evolution of the neutron star emission geometry, Be-disk connection, and possible outflow…
-2. **[CD-3011223会发生超新星爆炸吗？](https://doi.org/10.1051/0004-6361/202659729)**  
-   Astronomy and Astrophysics · 2026-10-22  
-   在二元系统中，一个低质量的碳氧白矮星从富含氦的供体那里吸积富含氦的物质，可能会引发类似于Ia型超新星的爆炸事件（尽管峰值亮度较低且核合成具有特殊性）。最近，有人质疑这种现象在某些富含氦吸积白矮星的二元系统中是否可能发生，认为如果在吸积体的演化中考虑了自转效应，该吸积体将不会发生爆炸，反而可能演变为一个具有大量氦缓冲层的白矮星。我们研究了目前处于脱耦状态的二元系统̧dth，其中包含一个0.74，碳氧白矮星，以及一个0.47，供体，其核心具有氦燃烧能力，且具有非常薄的H-包层（Δ M_H=6 ，10^ -4）。我们使用恒星演化代码FuNS计算了̧dth系统从初始阶段到两颗星接触的演化过程，以及供体进入RLOF阶段的全过程。与我们之前对系统PTF J2238+743015.1的研究相比，我们还纳入了由于吸积体内部磁…
-3. **[一个明亮的X-射线爆发事件来自中间超巨星快速X-射线暂现源IGR J00370+6122，由NuSTAR观测到](https://doi.org/10.1051/0004-6361/202662434)**  
-   Astronomy and Astrophysics · 2026-10-22  
-   我们对一次长时间的NuSTAR观测进行了分析，该观测针对的是一个中间型超巨星快速X-射线暂现源（SFXT）IGR J00370+6122，在其轨道调制峰值附近获得。该观测的净曝光时间约为~93 ks。在观测期间，源表现出一次明亮的爆发事件，该事件被分解为多个持续时间为10-1000 s的短促爆发。3-70 keV的辐射亮度覆盖了约~200的动态范围，从~1E34到~1.8E36 erg/s；最大亮度仅持续了约~40 s。光谱被一个吸收的双Compton化模型很好地描述，其参数与在类似低亮度下吸积的其他X-射线脉冲星中发现的参数一致。这是首次在IGR J00370+6122中检测到双峰连续谱，从而将这一光谱状态扩展到了中间型SFXTs的类别。我们搜索了此前报道的~346 s和~674 s的周期性信号，在这两个周…
-4. **[基于元启发式物理信息的极端学习机，用于从极短弧段确定近地小行星的初始轨道](https://doi.org/10.1051/0004-6361/202662083)**  
-   Astronomy and Astrophysics · 2026-10-22  
-   现代宽视场天文巡天显著增加了观测数据量和近地小行星（NEAs）的发现率，对高效且自动化的初始轨道确定（IOD）提出了日益增长的需求。基于物理信息的极学习机（PIELM）是一种基于人工智能（AI）的算法，用于IOD，在观测和动力学约束下重构轨道轨迹。然而，光学巡天观测通常覆盖的弧段过短，无法提供足够的几何约束，使得标准的PIELM难以确定可靠的初始轨道。因此，需要越来越多能够处理过短弧段（TSAs）的新IOD方法。我们开发了一种基于新AI-的方法，用于从TSAs中确定近地小行星的初始轨道。该方法为后续的最小二乘法优化提供了可靠的初始估计。我们提出了一种元启发式PIELM方法，称为MH-PIELM。人工蜂群（ABC）算法探索由单次视线距离定义的候选解，其中PIELM直接嵌入搜索过程，以在观测和动力学约束下重构相应…
-5. **[Lepto-hadronic modeling of blazars associated with well-reconstructed high-energy neutrino events](https://doi.org/10.1051/0004-6361/202662198)**  
-   Astronomy and Astrophysics · 2026-10-22  
-   The association of active galactic nuclei (AGN) with high-energy neutrinos has been investigated in both population studies and individual source analyses. However, whether individual associations are driven by physical processes or arise from chance coincidences remains an open question. A sample of blazars, AGN with relativistic jets closely aligned with…
+1. **[μ子-氘核深度非弹性散射中的双介子横向自旋不对称性](https://doi.org/10.1103/cbmf-s76k)**  
+   Physical Review Letters · 2026-10-22  
+   在2022年，COMPASS合作组对一个横向极化的氘核（LiD 6）靶上的深层非弹性μ子散射进行了半包容测量。从这些数据中，利用成对的带相反电荷的强子对提取了横向自旋依赖的双强子不对称性。这些不对称性直接敏感于夸克横向不透明度分布，并为这些基本量提供了相对于单强子产生中测量的Collins不对称性的独立手段。目前的结果显著优于此前COMPASS对氘核的测量，而此前的测量是全球唯一可用的氘核数据，且其统计精度已达到与COMPASS现有质子结果相当的水平。在大的Bjorken-x区域观察到一个微小但非零的不对称性，与理论预期一致。对价夸克横向不透明度分布的逐点提取，特别是显著改善了d-夸克横向不透明度的确定。这些测量标志着向完整描绘核子横向自旋结构的味映射迈出了重要一步。
+2. **[Real-time CXRS analysis on HL-3 tokamak with reliable neural networks and cross-device transfer learning](https://doi.org/10.1088/1741-4326/aeb037)**  
+   Nuclear Fusion · 2026-10-22  
+   Abstract We present a neural network-based method for real-time charge exchange recombination spectroscopy (CXRS) analysis on the HL-3 tokamak. To enhance model performance and reliability, we tailor the network architecture to the physical characteristics of CXRS spectra: the receptive field matches the Doppler-broadened line width, channel embedding encod…
+3. **[重新审视 p 11 B 融合：更新的截面、反应性以及能量平衡](https://doi.org/10.1088/1741-4326/aeb818)**  
+   Nuclear Fusion · 2026-10-22  
+   摘要 近期实验进展显著提升了p-$^{11}$B聚变反应的可用截面数据，尤其是在此前缺乏直接测量的能量区域。在本研究中，我们建立了p-$^{11}$B反应截面在0--10 MeV能量范围内的高精度解析参数化模型，并将新的实验数据整合到一个连续且数值高效的表示中。利用该参数化模型，我们评估了p-$^{11}$B反应的热核反应性，并考察了位于0.6 MeV处的主导共振以及在约4.7 MeV处新发现的共振的影响。此外，我们通过分析聚变功率密度和电子轫致辐射功率密度来评估能量平衡。我们的结果表明，当采用当前截面数据和自洽热力学建模时，p-$^{11}$B聚变并不受轫致辐射约束。
+4. **[Nanosecond-LIBS-induced deuterium outgassing, diffusion, and surface modification in tungsten coatings](https://doi.org/10.1088/1741-4326/aeb81b)**  
+   Nuclear Fusion · 2026-10-22  
+   Abstract Tritium retention in plasma-facing components(PFCs) must be strictly controlled to ensure the safe operation of fusion devices. In ITER, compliance with the tritium inventory limit and assessment of fuel-removal strategies require in situ monitoring of fuel retention in PFCs. Laser-Induced Breakdown Spectroscopy(LIBS) is a diagnostic technique that…
+5. **[质子和中子在氦靶上的弹性散射，基于从头计算的对称适应无芯壳模型光学势](https://doi.org/10.1103/bs4y-27vj)**  
+   Physical Review C · 2026-10-22  
+   数据源暂未提供详细介绍。
+6. **[轻原子核的新前景，裂变聚变能循环](https://arxiv.org/abs/2308.01434)**  
+   arXiv nucl-ex · 2026-10-22  
+   未来先进的核火箭推进，以及新型核能循环设计的可用性，将极大受益于当前正在进行的替代核能投资。我们提出一种新的核循环，该循环包括锂的初级裂变-6，随后是氘和氚的二级聚变，以及由氚引发的锂的二级裂变-7。该循环不会产生来自核燃料的核废料，因为这些级联反应的所有副产物都是稳定的，前提是初级反应中产生的氚完全被用于二级反应中。然而，该循环可能会因中子通量而激活周围的技术材料。这种轻元素核燃料可通过锂采矿业的持续扩张以及电动汽车（EV）电池回收产业的发展而轻易获得。
+7. **[技术材料中氦的检测](https://arxiv.org/abs/2405.02307)**  
+   arXiv nucl-ex · 2026-10-22  
+   用于研究核聚变的材料在实验前未经预处理的情况下会保留大气中的氦，除非预先进行处理。理解氦的逸出对于围绕核聚变实验的准确诊断至关重要。氦的存在通常被引用为核反应发生的主要证据，因此在进行新型核实验之前，必须消除已知的氦来源。此外，在将实验中的气体样品转移到质谱仪时，必须确保其Hermiticity。本文介绍了在新型核实验系统中检测氦泄漏速率的研究，也介绍了在不同加热程序和大气浓度条件下，材料中氦的保留情况。未经预处理时，不锈钢316会保留15 $\unicode{x2013}$ 240 pmol的$^{ 4}$He，或表面积逸出量为0.07 $\unicode{x2013}$ 1.20 pmol/$cm^{ 2}$。它还可能随时间从大气中重新吸收$^{ 4}$He。这些研究也表明，在使用$^{ 4}$He作为新…
+8. **[B$_{4/2}$异常与$^{94}$Zr中的形状共存有关](https://arxiv.org/abs/2610.29799)**  
+   arXiv nucl-th · 2026-10-22  
+   Bohr-Mottelson哈密顿量在六阶非谐振子势下的解，分别针对轴对称和$\gamma$-不稳定的形变情况，被应用于研究$^{94}$Zr原子核的最低能态。在当前方法中，实验观测到的$B_{4/2}$异常现象被解释为近似球形形状（$2_{1}^{+}$）与轴对称形变形状（$4_{1}^{+}$）之间的共存。另一方面，$0_{2}^{+}$和$2_{2}^{+}$能态的能量及其相关的电磁跃迁更符合动力学三轴形变构型（$\gamma$-不稳定的）的情况。$^{94}$Zr原子核最低能态的整体图景对应于一种三重形状共存情景。
 
 ## 物理新闻
 
-- **[一个用于反物质的量子回旋加速器](http://link.aps.org/doi/10.1103/Physics.19.132)**  
-   APS Physics · 2026-10-21  
-   作者： Paolo Crivelli 一种能够存储单个正电子并控制其量子态的装置，可以以前所未有的精度测量其磁矩，检验量子场论中一个核心的对称性原理。[Physics 19, 132] 发表于 Wed Oct 21, 2026
-- **[超导性和铁电轨道磁性在半金属菱形六层石墨烯中](https://www.nature.com/articles/s41567-026-03443-9)**  
-   Nature Physics · 2026-10-21  
+- **[中国散裂中子源在锂电池高镍正极重构领域取得重要进展](https://www.ihep.cas.cn/xwdt2022/rd/202610/t20261022_8296712.html)**  
+   高能物理所科研新闻 · 2026-10-22  
+   中国科学院高能物理研究所东莞研究部殷雯研究员团队充分发挥中子束双重硬核能力——高能中子辐照实现材料体内无创结构重构，中子散射技术实现原子尺度微观结构精准“透视”解析，依托中国散裂中子源大气中子辐照谱仪（CSNS‑ANIS）和多物理谱仪（CSNS-MPI），对单晶高镍NCM正极开展原创性研究，该成果以“A High‑Nickel Cathode Material for Lithium‑Ion Batteries Integrating a Proposed 3D Ionic Percolation Network and Interwoven Layered/Rock‑Salt Nanodomains”为题发表于国际顶级期刊《J. Am. Chem. Soc.》。 高镍单晶正极材料能有效解决多晶材料易开裂、副…
+- **[威格纳晶体被打扮起来](https://www.nature.com/articles/s41567-026-03516-9)**  
+   Nature Physics · 2026-10-22  
    数据源暂未提供详细介绍。
-- **[在滑动铁电体中超越振幅饱和的相干声子控制](https://www.nature.com/articles/s41567-026-03491-1)**  
-   Nature Physics · 2026-10-21  
+- **[超导量子处理器上表面码的跃迁](https://www.nature.com/articles/s41567-026-03484-0)**  
+   Nature Physics · 2026-10-22  
    数据源暂未提供详细介绍。
-- **[把动量置于显微镜下观察](http://link.aps.org/doi/10.1103/Physics.19.s129)**  
-   APS Physics · 2026-10-21  
-   作者： Ryan Wilkinson 一种新方法使量子气体显微镜不仅能测量原子的位置，还能测量它们的运动。[Physics 19, s129] 发表于 Wed Oct 21, 2026
+- **[拓扑超导体候选物中的一个令人惊讶的特性](http://link.aps.org/doi/10.1103/Physics.19.s134)**  
+   APS Physics · 2026-10-22  
+   作者： Michael Schirber 在一种铁基超导体中发现了一种拓扑超导性的新迹象。[Physics 19, s134] 发表于 Thu Oct 22, 2026
 
 ## 科研通知
 
@@ -52,8 +61,8 @@
 - **[转发关于召开2026年度粤港科技创新联合资助专题及2027年度粤澳科技创新联合资助专题申报指南宣讲会的通知](https://gdstc.gd.gov.cn/zwgk_n/tzgg/content/post_4968570.html)**  
    广东省科技厅 · 2026-10-28  
    广东省科学技术厅 简体 繁体 无障碍 长者助手 首页 政务公开 科技资讯 党风廉政 办事服务 互动平台 搜 索 当前位置： 首页 > 政务公开 > 通知公告 转发关于召开2026年度粤港科技创新联合资助专题及2027年度粤澳科技创新联合资助专题申报指南宣讲会的通知 时间 : 2026-10-20 15:46:12 来源 : 广东省科学技术厅 【字体: 大 中 小 】 【打印】 分享到： 为做好2026年度粤港科技创新联合资助和2027年度粤澳科技创新联合资助专题项目申报工作，提高项目申报质量，广东省科技合作研究促进中心拟于2026年10月28日召开申报指南宣讲会。有关事项通知详见链接网址: https://www.ste.gd.cn/article/1437/14.html 上级政府部门 中国政府网 广东省人…
-- **[省科技厅关于组织申报企业自主研发和委托研发项目纳入省级科技计划项目的通知](https://kjt.hubei.gov.cn/kjdt/tzgg/202610/t20261020_6035881.shtml)**  
-   湖北省科技厅 · 2026-10-20  
-   --湖北省科学技术厅 6035881 省科技厅关于组织申报企业自主研发和委托研发项目纳入省级科技计划项目的通知 20 湖北省科学技术厅 2026-10-20 3824 通知公告 湖北政府网 | 科技部网 | 邮箱 | 计划管理 | 奖励评审 | 登录 | 注册 湖北省科学技术厅 搜 索 首页 政府信息公开 互动交流 办事服务 科技动态 科技一网通 当前位置： 首页 > 科技动态 > 通知公告 省科技厅关于组织申报企业自主研发和委托研发项目纳入省级科技计划项目的通知 2026-10-20 10:04 | 湖北省科学技术厅 各市、州、直管市、神农架林区科技局，各扩权县（市、区）科技管理部门，东湖高新区科创局，各有关单位： 为深入贯彻省委十二届十二次全会精神，落实高水平建设武汉区域科技创新中心、加快构建现代化产业体…
+- **[关于征集2026年度中关村示范区高品质科技园区建设项目（第二批）申报的通知](https://kw.beijing.gov.cn/zwgk/zcwj/202610/t20261022_4914675.html)**  
+   北京市科委 · 2026-10-22  
+   _政策文件_北京市科学技术委员会、中关村科技园区管理委员会 首页 > 政务公开 > 政策文件 [主题分类] 科技、教育/科技 [制发单位] 北京市科学技术委员会、中关村科技园区管理委员会 [实施日期] 2026-10-23 [成文日期] 2026-10-22 [发文字号] 〔〕 号 [失效日期] [发布日期] 2026-10-22 [有效性] 现行有效 关于征集2026年度中关村示范区高品质科技园区建设项目（第二批）申报的通知 日期：2026-10-22 15:14 来源： 分享： X 各有关单位： 为加快建设世界领先的科技园区，依据《中关村国家自主创新示范区促进园区高质量发展支持资金管理办法》（京科发〔2024〕16号），现启动2026年度第二批高品质科技园区建设项目资金申报工作，有关事项通知如下： 一、申…
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)
