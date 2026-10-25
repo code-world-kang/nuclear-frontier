@@ -1,36 +1,39 @@
-# 小康康的物理世界 · 2026-10-23 科研简报
+# 小康康的物理世界 · 2026-10-21 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 11/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 7/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[直接测量 59 Cu( p , α ) 56 Ni 的激发函数，以约束 NiCu 循环的强度及其对爆炸性核合成的影响](https://doi.org/10.1103/3rxj-2hpp)**  
-   Physical Review Letters · 2026-10-23  
-   数据源暂未提供详细介绍。
-2. **[天然氯增强深海反中微子探测](https://arxiv.org/abs/2610.30754)**  
-   arXiv hep-ex · 2026-10-23  
-   大型体积中微子望远镜，如IceCube和KM3NeT，利用天然冰或水作为探测介质，但其稀疏的探测器布置使得MeV中微子相互作用难以单独识别。我们表明，海水中天然存在的氯元素提供了一个内在的中子捕获靶标，能够通过逆β衰变高效地标记电子反中微子。与氢原子上中子捕获产生的2.2 MeV $\gamma$射线不同，氯原子上的捕获产生一个$\sim$8.6 MeV $\gamma$射线级联，时间尺度更短，形成独特的延迟相关信号。利用TRIDENT站点测得的海水性质以及探测器级别的模拟，我们发现氯辅助标记可将核心坍缩超新星5$\sigma$的探测距离从$\sim$50扩展到超过100 kpc。我们通过中国锦屏地下实验室的盐水实验验证了这一探测原理，在抑制宇宙μ子背景条件下观察到了相关的中子捕获信号。因此，天然海水将深海转…
-3. **[单电荷 $^{229}$Th 核异构体的寿命](https://arxiv.org/abs/2610.31009)**  
-   arXiv nucl-ex · 2026-10-23  
-   钍-229（$^{229}$Th）原子核具有一个极低能量的同位旋态（$^{229\mathrm{m}}$Th）。由于其激发能接近价电子能级，$^{229\mathrm{m}}$Th的寿命会显著依赖于其电子态。尽管内部转换和辐射衰变最近已被观测到，但通过电子跃迁的更高阶衰变过程——$^{229\mathrm{m}}$Th的电子桥衰变，尚未得到确认。一个有希望用于搜索该衰变通道的候选体是处于电子基态的单电荷$^{229\mathrm{m}}$Th$^+$。在此我们通过离子阱中的电荷交换反应产生$^{229\mathrm{m}}$Th$^+$，并通过测量内部转换过程中发射的电子来探测同位旋态。我们测得$^{229\mathrm{m}}$Th$^+$的半衰期为0.46(8)秒。我们的结果与内部转换和辐射衰变的半衰期相…
-4. **[可以利用$N=Z$聚集体原子核的库仑分解来约束捕获截面吗？分析$\alpha(d,\gamma){}^{6}\mathrm{Li}$的情况](https://arxiv.org/abs/2610.31514)**  
-   arXiv nucl-th · 2026-10-23  
-   在核天体物理中，测量涉及带电粒子在低能下的辐射俘获反应的截面是基本要求。然而，这一工作是困难的。由于这种反应对应于辐射俘获过程的时间反演过程，因此提出将原子核在重靶上的库仑碎裂作为间接推断低能截面的方法。已经进行了两次库仑碎裂实验，旨在推断 $\alpha(d,\gamma){}^{6}\mathrm{Li}$ 辐射俘获反应的截面，实验能量分别为 26 MeV/nucleon 和 150 MeV/nucleon。在完全动力学反应模型下，我们在此报告对这些反应的新理论分析。我们的分析表明，${}^6\mathrm{Li}$ 在 ${}^{208}\mathrm{Pb}$ 上的碎裂在前向角度是核主导的，因为 ${}^6\mathrm{Li}$ 的 $N=Z$ 团簇结构抑制了库仑碎裂。我们的分析还表明，该反应表现出…
-5. **[从CE$\nu$NS数据中利用有限的狄拉克和展开低能反应堆中微子通量](https://arxiv.org/abs/2608.16107)**  
-   arXiv nucl-ex · 2026-10-23  
-   我们提出了一种新颖的方法，用于分析相干弹性中微子--原子核散射（CE$\nu$NS）数据，以提取低于逆β衰变阈值1.8 MeV处的反应堆反中微子能谱，该能谱至今尚未被测量。借鉴为直接暗物质探测开发的独立壳层分析技术，我们展示了如何在不假设能谱的参数形式或平滑先验条件下，获得积分中微子通量的最佳拟合值和逐点置信带。在我们的方法中，该方法源于凸几何学论证，中微子的微分速率被表示为Diracδ函数的线性组合——一个有限Dirac和（FDS）——其项数最大值由数据点数量决定。我们将我们的"FDS方法"应用于低阈值Ge探测器的模拟CE$\nu$NS数据，并与Tikhonov正则化反演结果进行比较。
-6. **[集体性演化及77 Br中八极相关性的出现](https://doi.org/10.1103/jv6k-txcl)**  
-   Physical Review C · 2026-10-23  
-   数据源暂未提供详细介绍。
-7. **[更正：中子富集的112 Rh的高自旋能级方案 [Phys. Rev. C 87, 057302 (2013)]](https://doi.org/10.1103/3dmw-f6js)**  
-   Physical Review C · 2026-10-23  
-   数据源暂未提供详细介绍。
-8. **[非共形动力学理论结合横向动力学以及基于CoMBolt-RTA的事件对事件模拟](https://arxiv.org/abs/2610.31611)**  
-   arXiv nucl-th · 2026-10-23  
-   引入了一种名为CoMBolt-RTA的新版本，用于在弛豫时间近似（RTA）下求解大规模准粒子的Boltzmann方程。引入常数准粒子质量使得所得到的方程状态（EOS）更接近于格点QCD的结果。研究了具有横向空间扩展的非平衡、非共形系统的动力学，特别关注准粒子质量对系统向平衡演化的影响。使用包含初始态TrENTo和后燃器UrQMD的混合版本，对模型参数进行人工调整，以描述ALICE合作组最近在OO碰撞中测得的各向异性流和电荷多重度数据。所得的$p_T$谱和$\langle p_T\rangle$预测也与ATLAS的测量结果进行了比较。基于优选的参数调整，研究了集体响应随不透明度的变化。结果表明，中央OO碰撞仍处于流体类行为区域，而较小的系统，即${}^3$He-${}^3$He和${}^4$He-${}^4$H…
+1. **[A nuclear clock synchronized to 229Th](https://doi.org/10.1038/s41586-026-11122-1)**  
+   Nature · 2026-10-07  
+   Abstract Atomic clocks have made time and frequency the most precisely measured quantities in physics, progressing from microwave standards that realize the SI second 1 to optical clocks with unprecedented precision 2 . A nuclear clock transfers the frequency reference from an electronic to a nuclear transition and the uniquely low-lying, laser-accessible,…
+2. **[The role of ab initio beta-decay calculations in light nuclei for probes of physics beyond the standard model](https://doi.org/10.1016/j.ppnp.2026.104260)**  
+   Progress in Particle and Nuclear Physics · 2026-09-01  
+   Precision beta decay experiments serve as powerful probes of physics beyond the Standard Model, enabling stringent tests of fundamental symmetries of nature. In particular, these experiments primarily focus on precise determinations of the Cabibbo-Kobayashi-Maskawa matrix element Vud and the search for exotic weak currents, both of which depend critically o…
+3. **[寻找超重核：实验视角](https://doi.org/10.1146/annurev-nucl-100324-103404)**  
+   Annual Review of Nuclear and Particle Science · 2026-09-21  
+   实验物理学家目前正致力于将周期表扩展至第八行，元素119和120的搜寻工作正在进行中，此时回顾合成元素发现近一个世纪的历史显得尤为及时。从最初生产铀以外的元素到最近完成第七行的探索，本综述全面概述了扩展周期表过程中的重要里程碑和进展。历史上，新元素的搜寻一直激发公众的想象力，同时也为基本科学提供了独特的窗口。这一点在超重元素的发现与研究中表现得尤为明显，这些元素使人们能够直接进行核科学和化学极端情况的实验探索。本综述探讨了合成元素发现中的主要发展和突破，展示了科学好奇心、创新研究与不断拓展我们对周期表理解之间的复杂关系。
+4. **[在s = 200 GeV的横向极化质子-质子碰撞中喷注内的能量相关子](https://doi.org/10.1103/fgsf-gx2q)**  
+   Physical Review Letters · 2026-09-08  
+   我们报告了在横向极化的质子-质子碰撞中，s = 200 GeV 条件下，利用相对论重离子对撞机上的STAR探测器首次测量了单点和双点能量相关函数。这些可观测量分别量化了单个强子和强子对在喷注内的能量加权角分布。对于π⁺、π⁻以及π⁺π⁻对，观察到显著的自旋依赖不对称性，揭示了在特定角尺度下非微扰动力学的出现。通过将碎片化动力学投影到梅林矩上，这些测量对核子的横向不对称性具有敏感性，同时最小化了来自非微扰碎片化函数的不确定性。这些结果确立了能量相关函数作为探测核子结构的一种新颖且精确的手段，并为未来电子-离子对撞机上的三维核子断层成像开辟了有前景的途径。
+5. **[First Nb 94 ( n , γ ) Measurement: Constraining the Nucleosynthetic Origin of Mo 94 in Presolar Grains](https://doi.org/10.1103/538w-rhqb)**  
+   Physical Review Letters · 2026-08-18  
+   Isotopic measurements of presolar silicon carbide grains from dying stars have revealed a puzzling overabundance of Mo 94 that stellar nucleosynthesis models have failed to reproduce for two decades. This discrepancy challenged our understanding of the slow neutron-capture process ( s -process) that forges approximately half of the elements heavier than iro…
+6. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
+   Physical Review Letters · 2026-08-04  
+   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
+7. **[Deformation, halo, and bubble structure: A paradigm shift of exotic phenomena in light to medium mass nuclei](https://doi.org/10.1016/j.ppnp.2026.104262)**  
+   Progress in Particle and Nuclear Physics · 2026-09-01  
+   The emergence of exotic nuclear structures, such as deformation, one- and two-neutron halos, and bubble configurations, marks a paradigm shift in our understanding of light- to medium-mass nuclei far from stability, particularly near and within the island of inversion extending across $N=20-28$. In this review, we integrate microscopic structure calculation…
+8. **[太阳系中辐射最低的环境：地下稀有事件搜索的新机遇](https://doi.org/10.1103/7fjv-rz78)**  
+   Physical Review D · 2026-10-21  
+   我们通过半解析估计和蒙特卡洛模拟研究了太阳系中地外环境中中微子、μ子和伽马射线通量。在大气可忽略的地点，我们发现宇宙射线诱导的中微子和μ子通量相对于地球上的强度显著降低。能量在50 MeV到100 TeV之间的中微子表现出特别强烈的抑制，即使在浅层深度，抑制程度也可达10^3。太阳中微子的抑制随地点距离太阳距离的平方而增加。由于核衰变引起的天然辐射在许多这些地点也预计会降低，甚至在液态水环境中可能降至可忽略不计的水平。满足这些特性的地点为地下基础物理实验提供了极大的物理探测范围，例如弱相互作用大质量粒子（WIMP）暗物质探测、无中微子双β衰变、弥漫超新星中微子以及附近超新星中微子的探测。作为潜在的短期目标，我们建议在可及的地下月球地点（如静海坑）测量μ子和伽马射线通量，以首次测量宇宙射线诱导粒子产生的瞬时成分…
 
 ## 物理新闻
 
+- **[中国散裂中子源完成重要阶段性设备安装任务，束流功率突破200 kW](https://www.ihep.cas.cn/xwdt2022/rd/202610/t20261024_8297248.html)**  
+   高能物理所科研新闻 · 2026-10-24  
+   为尽量减少对用户运行的影响，中国散裂中子源二期工程（CSNS-II）利用每年暑期停机窗口开展二期设备安装。今年暑期停机期间，项目团队完成直线加速器前端设备、全部固态调制器，以及快循环同步加速器第三台磁合金腔的安装与调试。至此，CSNS-II加速器除超导加速器外的全部设备均已完成安装。经过近一个月的束流调试，2026年10月20日，装置束流功率突破200 kW并正式投入用户运行，达到一期设计束流功率的2倍。这是CSNS-II建设的重要里程碑，为实现二期500 kW目标提供了关键验证。 本轮调束同时服务于CSNS运行性能提升和CSNS-II功率升级路线验证。设备参数变化与空间电荷效应、束流阻抗不稳定性等物理因素相互叠加，进一步增加了高功率条件下硬件匹配和束流损失控制的难度。 针对直线加速器升级改造后首次投入调束的…
 - **[量子计算机上的粒子碰撞](https://www.nature.com/articles/s41567-026-03490-2)**  
    Nature Physics · 2026-10-23  
    数据源暂未提供详细介绍。
@@ -40,9 +43,6 @@
 - **[用自主量子纠错超越盈亏平衡点](https://www.nature.com/articles/s41567-026-03486-y)**  
    Nature Physics · 2026-10-23  
    数据源暂未提供详细介绍。
-- **[中国散裂中子源在锂电池高镍正极重构领域取得重要进展](https://www.ihep.cas.cn/xwdt2022/rd/202610/t20261022_8296712.html)**  
-   高能物理所科研新闻 · 2026-10-22  
-   中国科学院高能物理研究所东莞研究部殷雯研究员团队充分发挥中子束双重硬核能力——高能中子辐照实现材料体内无创结构重构，中子散射技术实现原子尺度微观结构精准“透视”解析，依托中国散裂中子源大气中子辐照谱仪（CSNS‑ANIS）和多物理谱仪（CSNS-MPI），对单晶高镍NCM正极开展原创性研究，该成果以“A High‑Nickel Cathode Material for Lithium‑Ion Batteries Integrating a Proposed 3D Ionic Percolation Network and Interwoven Layered/Rock‑Salt Nanodomains”为题发表于国际顶级期刊《J. Am. Chem. Soc.》。 高镍单晶正极材料能有效解决多晶材料易开裂、副…
 
 ## 科研通知
 

@@ -506,8 +506,8 @@
     }
   ],
   "status": {
-    "started_at": "2026-10-24T00:11:45+00:00",
-    "last_success": "2026-10-24T00:15:54+00:00",
+    "started_at": "2026-10-24T23:56:50+00:00",
+    "last_success": "2026-10-25T00:00:11+00:00",
     "window": {
       "from": "2026-10-10",
       "to": "2026-10-24"
@@ -519,7 +519,7 @@
         "ok": true,
         "count": 80,
         "message": "",
-        "duration_ms": 377
+        "duration_ms": 546
       },
       {
         "name": "CERN News",
@@ -527,7 +527,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 1861
+        "duration_ms": 4587
       },
       {
         "name": "GSI/FAIR",
@@ -535,7 +535,7 @@
         "ok": false,
         "count": 0,
         "message": "The read operation timed out",
-        "duration_ms": 80875
+        "duration_ms": 81420
       },
       {
         "name": "IAEA",
@@ -543,7 +543,7 @@
         "ok": true,
         "count": 1,
         "message": "",
-        "duration_ms": 48
+        "duration_ms": 293
       },
       {
         "name": "Nature Machine Intelligence",
@@ -551,15 +551,15 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 29
+        "duration_ms": 52
       },
       {
         "name": "Nature Physics",
         "kind": "news",
-        "ok": true,
-        "count": 8,
-        "message": "",
-        "duration_ms": 37
+        "ok": false,
+        "count": 0,
+        "message": "not well-formed (invalid token): line 14, column 4",
+        "duration_ms": 5086
       },
       {
         "name": "上海应用物理所科研动态",
@@ -567,7 +567,7 @@
         "ok": true,
         "count": 2,
         "message": "",
-        "duration_ms": 5739
+        "duration_ms": 5715
       },
       {
         "name": "中国散裂中子源科研动态",
@@ -575,7 +575,7 @@
         "ok": false,
         "count": 0,
         "message": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1010)>",
-        "duration_ms": 2685
+        "duration_ms": 2693
       },
       {
         "name": "北大核物理与核技术全国重点实验室",
@@ -583,7 +583,7 @@
         "ok": true,
         "count": 16,
         "message": "",
-        "duration_ms": 5232
+        "duration_ms": 5374
       },
       {
         "name": "强流重离子加速器 HIAF 动态",
@@ -591,7 +591,7 @@
         "ok": true,
         "count": 5,
         "message": "",
-        "duration_ms": 7181
+        "duration_ms": 8148
       },
       {
         "name": "近代物理所核物理动态",
@@ -599,15 +599,15 @@
         "ok": true,
         "count": 1,
         "message": "",
-        "duration_ms": 3446
+        "duration_ms": 3177
       },
       {
         "name": "高能物理所科研新闻",
         "kind": "news",
         "ok": true,
-        "count": 8,
+        "count": 9,
         "message": "",
-        "duration_ms": 7715
+        "duration_ms": 8044
       },
       {
         "name": "Argonne ATLAS PAC",
@@ -615,7 +615,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 323
+        "duration_ms": 433
       },
       {
         "name": "DFG Funding Opportunities",
@@ -623,7 +623,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 2464
+        "duration_ms": 2177
       },
       {
         "name": "DOE Office of Science",
@@ -631,7 +631,7 @@
         "ok": true,
         "count": 1,
         "message": "",
-        "duration_ms": 1581
+        "duration_ms": 1692
       },
       {
         "name": "European Research Council",
@@ -639,7 +639,7 @@
         "ok": false,
         "count": 0,
         "message": "HTTP Error 403: Forbidden",
-        "duration_ms": 171
+        "duration_ms": 286
       },
       {
         "name": "FRIB Calls",
@@ -647,15 +647,15 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 867
+        "duration_ms": 773
       },
       {
         "name": "GANIL-SPIRAL2 Users",
         "kind": "notice",
-        "ok": false,
+        "ok": true,
         "count": 0,
-        "message": "<urlopen error timed out>",
-        "duration_ms": 52075
+        "message": "",
+        "duration_ms": 4004
       },
       {
         "name": "GSI/FAIR G-PAC",
@@ -663,7 +663,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 1255
+        "duration_ms": 1399
       },
       {
         "name": "HIRFL 通知公告",
@@ -671,7 +671,7 @@
         "ok": true,
         "count": 7,
         "message": "",
-        "duration_ms": 6396
+        "duration_ms": 7976
       },
       {
         "name": "IAEA Meetings and Events",
@@ -679,7 +679,7 @@
         "ok": false,
         "count": 0,
         "message": "HTTP Error 403: Forbidden",
-        "duration_ms": 24
+        "duration_ms": 34
       },
       {
         "name": "IEEE NSS/MIC/RTSD",
@@ -687,7 +687,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 628
+        "duration_ms": 671
       },
       {
         "name": "J-PARC User Office",
@@ -695,7 +695,7 @@
         "ok": true,
         "count": 1,
         "message": "",
-        "duration_ms": 1298
+        "duration_ms": 1353
       },
       {
         "name": "JSPS Fellowships",
@@ -703,7 +703,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 570
+        "duration_ms": 189
       },
       {
         "name": "NUSYS 青年核物理学校",
@@ -711,7 +711,7 @@
         "ok": true,
         "count": 1,
         "message": "",
-        "duration_ms": 3214
+        "duration_ms": 2681
       },
       {
         "name": "RIBLL合作组公开通知",
@@ -719,7 +719,7 @@
         "ok": true,
         "count": 7,
         "message": "",
-        "duration_ms": 4668
+        "duration_ms": 5806
       },
       {
         "name": "TRIUMF Experimenter Portal",
@@ -727,7 +727,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 124
+        "duration_ms": 118
       },
       {
         "name": "UKRI Opportunities",
@@ -735,7 +735,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 1286
+        "duration_ms": 2182
       },
       {
         "name": "上海光源 SSRF",
@@ -743,7 +743,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 2073
+        "duration_ms": 2521
       },
       {
         "name": "上海市科委",
@@ -751,7 +751,7 @@
         "ok": true,
         "count": 12,
         "message": "",
-        "duration_ms": 2359
+        "duration_ms": 2258
       },
       {
         "name": "上海应用物理所通知公告",
@@ -759,7 +759,7 @@
         "ok": true,
         "count": 2,
         "message": "",
-        "duration_ms": 5363
+        "duration_ms": 6491
       },
       {
         "name": "中国博士后科学基金会",
@@ -767,7 +767,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 893
+        "duration_ms": 1051
       },
       {
         "name": "中国散裂中子源 CSNS",
@@ -775,7 +775,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 1450
+        "duration_ms": 1673
       },
       {
         "name": "中国核学会会议（官方承办单位）",
@@ -783,7 +783,7 @@
         "ok": true,
         "count": 1,
         "message": "",
-        "duration_ms": 3793
+        "duration_ms": 4079
       },
       {
         "name": "中国物理学会会议",
@@ -791,7 +791,7 @@
         "ok": true,
         "count": 8,
         "message": "",
-        "duration_ms": 3326
+        "duration_ms": 2694
       },
       {
         "name": "中国科大粒子与核物理 Indico",
@@ -799,7 +799,7 @@
         "ok": true,
         "count": 1,
         "message": "",
-        "duration_ms": 3275
+        "duration_ms": 3553
       },
       {
         "name": "中国科学院人才与教育",
@@ -807,7 +807,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 1354
+        "duration_ms": 1571
       },
       {
         "name": "中国科学院通知公告",
@@ -815,7 +815,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 1903
+        "duration_ms": 1965
       },
       {
         "name": "全国先进气体探测器 Indico",
@@ -823,7 +823,7 @@
         "ok": true,
         "count": 2,
         "message": "",
-        "duration_ms": 966
+        "duration_ms": 1021
       },
       {
         "name": "全国核结构大会",
@@ -831,7 +831,7 @@
         "ok": true,
         "count": 1,
         "message": "",
-        "duration_ms": 2377
+        "duration_ms": 2551
       },
       {
         "name": "北京同步辐射装置通知公告",
@@ -839,7 +839,7 @@
         "ok": true,
         "count": 15,
         "message": "",
-        "duration_ms": 4845
+        "duration_ms": 5171
       },
       {
         "name": "北京大学 Indico 核物理会议",
@@ -847,7 +847,7 @@
         "ok": true,
         "count": 4,
         "message": "",
-        "duration_ms": 4298
+        "duration_ms": 4573
       },
       {
         "name": "北京市科委",
@@ -855,7 +855,7 @@
         "ok": true,
         "count": 4,
         "message": "",
-        "duration_ms": 2430
+        "duration_ms": 4363
       },
       {
         "name": "国家留学基金委 CSC",
@@ -863,7 +863,7 @@
         "ok": false,
         "count": 0,
         "message": "HTTP Error 412: Precondition Failed",
-        "duration_ms": 1300
+        "duration_ms": 1733
       },
       {
         "name": "国家自然科学基金委数理科学部",
@@ -871,7 +871,7 @@
         "ok": true,
         "count": 19,
         "message": "",
-        "duration_ms": 6127
+        "duration_ms": 6037
       },
       {
         "name": "国家自然科学基金委项目指南",
@@ -879,7 +879,7 @@
         "ok": true,
         "count": 18,
         "message": "",
-        "duration_ms": 4077
+        "duration_ms": 4113
       },
       {
         "name": "复旦大学核物理 Indico",
@@ -887,7 +887,7 @@
         "ok": true,
         "count": 6,
         "message": "",
-        "duration_ms": 3783
+        "duration_ms": 3601
       },
       {
         "name": "安徽省科技厅",
@@ -895,7 +895,7 @@
         "ok": false,
         "count": 0,
         "message": "HTTP Error 403: Forbidden",
-        "duration_ms": 1240
+        "duration_ms": 1455
       },
       {
         "name": "广东省科技厅",
@@ -903,7 +903,7 @@
         "ok": true,
         "count": 4,
         "message": "",
-        "duration_ms": 3311
+        "duration_ms": 3154
       },
       {
         "name": "核物理与核技术全国重点实验室会议",
@@ -911,7 +911,7 @@
         "ok": true,
         "count": 4,
         "message": "",
-        "duration_ms": 4291
+        "duration_ms": 4554
       },
       {
         "name": "核电子学与核探测技术分会",
@@ -919,7 +919,7 @@
         "ok": false,
         "count": 0,
         "message": "HTTP Error 403: Forbidden",
-        "duration_ms": 978
+        "duration_ms": 1008
       },
       {
         "name": "江苏省科技厅",
@@ -927,7 +927,7 @@
         "ok": true,
         "count": 1,
         "message": "",
-        "duration_ms": 5231
+        "duration_ms": 6050
       },
       {
         "name": "浙江省科技厅",
@@ -935,7 +935,7 @@
         "ok": false,
         "count": 0,
         "message": "<urlopen error _ssl.c:993: The handshake operation timed out>",
-        "duration_ms": 52484
+        "duration_ms": 52495
       },
       {
         "name": "湖北省科技厅",
@@ -943,7 +943,7 @@
         "ok": true,
         "count": 4,
         "message": "",
-        "duration_ms": 2551
+        "duration_ms": 2549
       },
       {
         "name": "湖南省科技厅",
@@ -951,7 +951,7 @@
         "ok": false,
         "count": 0,
         "message": "<urlopen error [SSL: BAD_ECPOINT] bad ecpoint (_ssl.c:1010)>",
-        "duration_ms": 3034
+        "duration_ms": 2700
       },
       {
         "name": "甘肃省科技厅",
@@ -959,7 +959,7 @@
         "ok": false,
         "count": 0,
         "message": "HTTP Error 412: Precondition Failed",
-        "duration_ms": 1380
+        "duration_ms": 1700
       },
       {
         "name": "科技部国家科技管理信息系统",
@@ -967,7 +967,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 1587
+        "duration_ms": 1545
       },
       {
         "name": "近代物理所 Indico",
@@ -975,7 +975,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 1702
+        "duration_ms": 2067
       },
       {
         "name": "近代物理所 Indico 全量",
@@ -983,7 +983,7 @@
         "ok": true,
         "count": 6,
         "message": "",
-        "duration_ms": 3041
+        "duration_ms": 3905
       },
       {
         "name": "近代物理所学术活动",
@@ -991,7 +991,7 @@
         "ok": true,
         "count": 1,
         "message": "",
-        "duration_ms": 4262
+        "duration_ms": 5277
       },
       {
         "name": "近代物理所通知公告",
@@ -999,7 +999,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 1741
+        "duration_ms": 1990
       },
       {
         "name": "陕西省科技厅",
@@ -1007,7 +1007,7 @@
         "ok": false,
         "count": 0,
         "message": "<urlopen error [Errno 101] Network is unreachable>",
-        "duration_ms": 52555
+        "duration_ms": 51979
       },
       {
         "name": "高能所 Indico",
@@ -1015,7 +1015,7 @@
         "ok": true,
         "count": 4,
         "message": "",
-        "duration_ms": 2765
+        "duration_ms": 2795
       },
       {
         "name": "高能所 Indico 核物理全量",
@@ -1023,7 +1023,7 @@
         "ok": true,
         "count": 10,
         "message": "",
-        "duration_ms": 13734
+        "duration_ms": 13782
       },
       {
         "name": "Annals of Nuclear Energy",
@@ -1031,7 +1031,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 540
+        "duration_ms": 3265
       },
       {
         "name": "Annual Review of Nuclear and Particle Science",
@@ -1039,7 +1039,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 373
+        "duration_ms": 295
       },
       {
         "name": "Applied Radiation and Isotopes",
@@ -1047,7 +1047,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 637
+        "duration_ms": 265
       },
       {
         "name": "Astronomy and Astrophysics",
@@ -1055,7 +1055,7 @@
         "ok": true,
         "count": 9,
         "message": "",
-        "duration_ms": 2096
+        "duration_ms": 8195
       },
       {
         "name": "Atomic Data and Nuclear Data Tables",
@@ -1063,7 +1063,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 7046
+        "duration_ms": 254
       },
       {
         "name": "Chinese Physics C",
@@ -1071,7 +1071,7 @@
         "ok": true,
         "count": 28,
         "message": "",
-        "duration_ms": 4739
+        "duration_ms": 2693
       },
       {
         "name": "Fusion Engineering and Design",
@@ -1079,7 +1079,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 1282
+        "duration_ms": 313
       },
       {
         "name": "IEEE Transactions on Nuclear Science",
@@ -1087,7 +1087,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 6111
+        "duration_ms": 3771
       },
       {
         "name": "International Journal of Modern Physics E",
@@ -1095,7 +1095,7 @@
         "ok": true,
         "count": 2,
         "message": "",
-        "duration_ms": 744
+        "duration_ms": 271
       },
       {
         "name": "Journal of Instrumentation",
@@ -1103,7 +1103,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 594
+        "duration_ms": 355
       },
       {
         "name": "Journal of Physics G",
@@ -1111,7 +1111,7 @@
         "ok": true,
         "count": 11,
         "message": "",
-        "duration_ms": 571
+        "duration_ms": 486
       },
       {
         "name": "Machine Learning Science and Technology",
@@ -1119,15 +1119,15 @@
         "ok": true,
         "count": 3,
         "message": "",
-        "duration_ms": 2964
+        "duration_ms": 2193
       },
       {
         "name": "Monthly Notices of the Royal Astronomical Society",
         "kind": "paper",
         "ok": true,
-        "count": 7,
+        "count": 8,
         "message": "",
-        "duration_ms": 4216
+        "duration_ms": 4856
       },
       {
         "name": "Nature",
@@ -1135,7 +1135,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 1223
+        "duration_ms": 858
       },
       {
         "name": "Nature Astronomy",
@@ -1143,7 +1143,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 4032
+        "duration_ms": 2706
       },
       {
         "name": "Nature Communications",
@@ -1151,7 +1151,7 @@
         "ok": true,
         "count": 5,
         "message": "",
-        "duration_ms": 5824
+        "duration_ms": 1664
       },
       {
         "name": "Nature Physics",
@@ -1159,7 +1159,7 @@
         "ok": true,
         "count": 1,
         "message": "",
-        "duration_ms": 2810
+        "duration_ms": 1383
       },
       {
         "name": "Nuclear Data Sheets",
@@ -1167,7 +1167,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 2419
+        "duration_ms": 3266
       },
       {
         "name": "Nuclear Fusion",
@@ -1175,7 +1175,7 @@
         "ok": true,
         "count": 39,
         "message": "",
-        "duration_ms": 3466
+        "duration_ms": 5908
       },
       {
         "name": "Nuclear Instruments and Methods in Physics Research A",
@@ -1183,7 +1183,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 994
+        "duration_ms": 997
       },
       {
         "name": "Nuclear Instruments and Methods in Physics Research B",
@@ -1191,7 +1191,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 470
+        "duration_ms": 357
       },
       {
         "name": "Nuclear Physics A",
@@ -1199,7 +1199,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 1274
+        "duration_ms": 3970
       },
       {
         "name": "Nuclear Physics B",
@@ -1207,15 +1207,15 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 3559
+        "duration_ms": 1716
       },
       {
         "name": "Nuclear Science and Techniques",
         "kind": "paper",
         "ok": true,
-        "count": 12,
+        "count": 14,
         "message": "",
-        "duration_ms": 465
+        "duration_ms": 481
       },
       {
         "name": "Physical Review Accelerators and Beams",
@@ -1223,7 +1223,7 @@
         "ok": true,
         "count": 30,
         "message": "",
-        "duration_ms": 681
+        "duration_ms": 586
       },
       {
         "name": "Physical Review C",
@@ -1231,7 +1231,7 @@
         "ok": true,
         "count": 88,
         "message": "",
-        "duration_ms": 1232
+        "duration_ms": 857
       },
       {
         "name": "Physical Review D",
@@ -1239,7 +1239,7 @@
         "ok": true,
         "count": 76,
         "message": "",
-        "duration_ms": 6420
+        "duration_ms": 1846
       },
       {
         "name": "Physical Review E",
@@ -1247,7 +1247,7 @@
         "ok": true,
         "count": 1,
         "message": "",
-        "duration_ms": 1521
+        "duration_ms": 2340
       },
       {
         "name": "Physical Review Letters",
@@ -1255,7 +1255,7 @@
         "ok": true,
         "count": 14,
         "message": "",
-        "duration_ms": 3532
+        "duration_ms": 1330
       },
       {
         "name": "Physical Review Research",
@@ -1263,7 +1263,7 @@
         "ok": true,
         "count": 7,
         "message": "",
-        "duration_ms": 3752
+        "duration_ms": 1094
       },
       {
         "name": "Physics Letters B",
@@ -1271,7 +1271,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 3120
+        "duration_ms": 2593
       },
       {
         "name": "Physics of Plasmas",
@@ -1279,7 +1279,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 7108
+        "duration_ms": 2716
       },
       {
         "name": "Plasma Physics and Controlled Fusion",
@@ -1287,7 +1287,7 @@
         "ok": true,
         "count": 3,
         "message": "",
-        "duration_ms": 5113
+        "duration_ms": 4399
       },
       {
         "name": "Progress in Particle and Nuclear Physics",
@@ -1295,7 +1295,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 308
+        "duration_ms": 3917
       },
       {
         "name": "Progress of Theoretical and Experimental Physics",
@@ -1303,7 +1303,7 @@
         "ok": true,
         "count": 2,
         "message": "",
-        "duration_ms": 2609
+        "duration_ms": 4205
       },
       {
         "name": "Radiation Measurements",
@@ -1311,7 +1311,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 365
+        "duration_ms": 248
       },
       {
         "name": "Radiation Physics and Chemistry",
@@ -1319,7 +1319,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 474
+        "duration_ms": 249
       },
       {
         "name": "Review of Scientific Instruments",
@@ -1327,7 +1327,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 2402
+        "duration_ms": 314
       },
       {
         "name": "Reviews of Modern Physics",
@@ -1335,7 +1335,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 4887
+        "duration_ms": 276
       },
       {
         "name": "Science",
@@ -1343,7 +1343,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 4038
+        "duration_ms": 768
       },
       {
         "name": "Science Bulletin",
@@ -1351,7 +1351,7 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 2416
+        "duration_ms": 4015
       },
       {
         "name": "The Astrophysical Journal",
@@ -1359,7 +1359,7 @@
         "ok": true,
         "count": 18,
         "message": "",
-        "duration_ms": 4915
+        "duration_ms": 3930
       },
       {
         "name": "The European Physical Journal A",
@@ -1367,119 +1367,119 @@
         "ok": true,
         "count": 0,
         "message": "",
-        "duration_ms": 371
+        "duration_ms": 3467
       },
       {
         "name": "arXiv astro-ph.HE",
         "kind": "paper",
         "ok": true,
-        "count": 18,
+        "count": 0,
         "message": "",
-        "duration_ms": 11353
+        "duration_ms": 12209
       },
       {
         "name": "arXiv astro-ph.SR",
         "kind": "paper",
         "ok": true,
-        "count": 6,
+        "count": 0,
         "message": "",
-        "duration_ms": 13183
+        "duration_ms": 15092
       },
       {
         "name": "arXiv cs.AI",
         "kind": "paper",
         "ok": true,
-        "count": 2,
+        "count": 0,
         "message": "",
-        "duration_ms": 19720
+        "duration_ms": 18870
       },
       {
         "name": "arXiv cs.LG",
         "kind": "paper",
         "ok": true,
-        "count": 3,
+        "count": 0,
         "message": "",
-        "duration_ms": 19235
+        "duration_ms": 18867
       },
       {
         "name": "arXiv hep-ex",
         "kind": "paper",
         "ok": true,
-        "count": 16,
+        "count": 0,
         "message": "",
-        "duration_ms": 5582
+        "duration_ms": 6278
       },
       {
         "name": "arXiv hep-lat",
         "kind": "paper",
         "ok": true,
-        "count": 2,
+        "count": 0,
         "message": "",
-        "duration_ms": 18627
+        "duration_ms": 18815
       },
       {
         "name": "arXiv hep-ph",
         "kind": "paper",
         "ok": true,
-        "count": 41,
+        "count": 0,
         "message": "",
-        "duration_ms": 8954
+        "duration_ms": 9226
       },
       {
         "name": "arXiv nucl-ex",
         "kind": "paper",
         "ok": true,
-        "count": 8,
+        "count": 0,
         "message": "",
-        "duration_ms": 151
+        "duration_ms": 192
       },
       {
         "name": "arXiv nucl-th",
         "kind": "paper",
         "ok": true,
-        "count": 18,
+        "count": 0,
         "message": "",
-        "duration_ms": 3546
+        "duration_ms": 3147
       },
       {
         "name": "arXiv physics.acc-ph",
         "kind": "paper",
         "ok": true,
-        "count": 2,
+        "count": 0,
         "message": "",
-        "duration_ms": 18415
+        "duration_ms": 18809
       },
       {
         "name": "arXiv physics.ins-det",
         "kind": "paper",
         "ok": true,
-        "count": 4,
+        "count": 0,
         "message": "",
-        "duration_ms": 15344
+        "duration_ms": 17735
       },
       {
         "name": "arXiv physics.plasm-ph",
         "kind": "paper",
         "ok": true,
-        "count": 1,
+        "count": 0,
         "message": "",
-        "duration_ms": 18302
+        "duration_ms": 18884
       }
     ],
     "counts": {
-      "papers": 7571,
-      "news": 378,
+      "papers": 7574,
+      "news": 380,
       "notices": 292,
       "featured": 40
     },
     "new_counts": {
-      "papers": 99,
-      "news": 3,
-      "notices": 10
+      "papers": 3,
+      "news": 2,
+      "notices": 3
     },
     "fetched_counts": {
-      "papers": 477,
-      "news": 121,
+      "papers": 359,
+      "news": 114,
       "notices": 144
     },
     "figure_enrichment": {
@@ -1495,32 +1495,32 @@
       "enriched": 0,
       "from_metadata": 0,
       "from_citation": 0,
-      "not_found": 0,
-      "blocked": 30,
+      "not_found": 14,
+      "blocked": 16,
       "failed": 0,
-      "deferred": 91,
-      "remaining": 91
+      "deferred": 67,
+      "remaining": 67
     },
     "openalex_abstract_enrichment": {
-      "checked": 20,
-      "enriched": 1,
-      "not_found": 19,
+      "checked": 2,
+      "enriched": 0,
+      "not_found": 2,
       "failed_batches": 0,
       "deferred": 0,
       "remaining": 0
     },
     "semantic_scholar_abstract_enrichment": {
-      "checked": 13,
-      "enriched": 1,
-      "not_found": 12,
-      "failed_batches": 2,
+      "checked": 0,
+      "enriched": 0,
+      "not_found": 0,
+      "failed_batches": 3,
       "deferred": 0,
-      "remaining": 20
+      "remaining": 22
     },
     "abstract_enrichment": {
-      "checked": 19,
+      "checked": 2,
       "enriched": 0,
-      "not_found": 19,
+      "not_found": 2,
       "failed_batches": 0,
       "remaining": 0
     },
@@ -1529,14 +1529,14 @@
       "updated": 0
     },
     "notice_detail_enrichment": {
-      "attempted": 36,
-      "updated": 26
+      "attempted": 33,
+      "updated": 24
     }
   },
   "insights": {
-    "latest_day": "2026-10-23",
-    "latest_count": 116,
-    "journal_count": 3840,
+    "latest_day": "2026-10-24",
+    "latest_count": 3,
+    "journal_count": 3843,
     "preprint_count": 3731,
     "source_counts": [
       {
@@ -1645,7 +1645,7 @@
       },
       {
         "name": "Nuclear Science and Techniques",
-        "count": 72
+        "count": 74
       },
       {
         "name": "Plasma Physics and Controlled Fusion",
@@ -1653,7 +1653,7 @@
       },
       {
         "name": "Monthly Notices of the Royal Astronomical Society",
-        "count": 58
+        "count": 59
       },
       {
         "name": "Nuclear Physics A",
@@ -1745,24 +1745,28 @@
       }
     ],
     "category_counts": {
-      "nuclear-reactions": 636,
-      "nuclear-astrophysics": 982,
+      "nuclear-reactions": 637,
+      "nuclear-astrophysics": 983,
+      "nuclear-general": 578,
+      "nuclear-data-applications": 327,
+      "accelerators": 690,
       "nuclear-decay": 192,
       "particle-cross": 1960,
       "nuclear-structure": 363,
       "experimental-nuclear": 161,
       "nuclear-clusters": 23,
       "theoretical-nuclear": 1011,
-      "detectors-daq": 1067,
-      "ai-science": 591,
-      "nuclear-general": 576,
       "frontiers": 1398,
       "high-energy-nuclear": 938,
       "fusion": 733,
-      "accelerators": 689,
-      "nuclear-data-applications": 326
+      "ai-science": 591,
+      "detectors-daq": 1067
     },
     "daily_counts": [
+      {
+        "date": "2026-10-24",
+        "count": 3
+      },
       {
         "date": "2026-10-23",
         "count": 116
@@ -1878,10 +1882,6 @@
       {
         "date": "2026-09-23",
         "count": 111
-      },
-      {
-        "date": "2026-09-22",
-        "count": 134
       }
     ]
   },
@@ -1889,23 +1889,23 @@
     "last_run": {
       "backend": "open_source",
       "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "started_at": "2026-10-24T00:17:38.309620+00:00",
-      "attempted": 30,
-      "completed": 22,
-      "failed": 8,
-      "deferred": 90,
+      "started_at": "2026-10-25T00:00:49.554269+00:00",
+      "attempted": 76,
+      "completed": 55,
+      "failed": 21,
+      "deferred": 44,
       "errors": {
-        "未产生可用中文": 4,
-        "公式、数值或术语保护项被遗漏/重复/改写": 3,
-        "译文数字与原文不一致": 1
+        "公式、数值或术语保护项被遗漏/重复/改写": 7,
+        "未产生可用中文": 8,
+        "译文数字与原文不一致": 6
       },
-      "finished_at": "2026-10-24T01:04:05.436931+00:00",
-      "pending": 5451,
+      "finished_at": "2026-10-25T00:46:01.907996+00:00",
+      "pending": 5399,
       "service_status": "partial"
     },
     "service_status": "partial",
-    "pending": 5451,
-    "generated_at": "2026-10-24T01:04:07.277667+00:00",
+    "pending": 5399,
+    "generated_at": "2026-10-25T00:46:03.015193+00:00",
     "model": "Qwen3-4B-Instruct-2507-Q4_K_M"
   },
   "personal_backup": {
