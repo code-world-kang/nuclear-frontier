@@ -1,47 +1,47 @@
-# 小康康的物理世界 · 2026-10-28 科研简报
+# 小康康的物理世界 · 2026-10-21 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 12/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 9/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[用于 Project 8 中微子质量实验的谐振腔回旋辐射信号表征](https://doi.org/10.1103/zgxw-xghd)**  
-   Physical Review C · 2026-10-28  
-   物理学中的许多实验方法都需要理解单粒子向非平凡电磁模式结构中的辐射。这样的表征对于回旋辐射发射谱学（CRES）至关重要；这是一种正在发展的新测量技术，有望极大促进基础物理测量。在 CRES 中，带电粒子发出回旋辐射，其频率可用于测量粒子能量。一个重要例子是 Project 8 实验，该实验旨在利用 CRES 测量氚 β 衰变所发射电子的能量，从运动学上推断中微子质量。在 Project 8 的近期实现方案中，将使用谐振圆柱腔进行 CRES 读出，其构型为磁场沿对称轴取向，电子沿被限制在腔体内部的螺旋回旋轨道运动。这些环境中的电磁辐射物理很复杂，因为它同时涉及发射粒子的运动和腔体施加的模式结构。在本工作中，我们推导并验证了一个解析模型，用以描述振荡的受陷电子如何向腔体模式辐射，以及可从这些事例中读出的辐射功率和…
-2. **[r-过程原子核在N = 126以上的稀土区域的相对论性哈特里-波戈利尤布理论中：原子核中形状共存占主导地位](https://doi.org/10.1103/h2hw-k3vw)**  
-   Physical Review C · 2026-10-28  
-   原子核的壳结构在N=126以上的区域，与r过程核丰度中A ~ 195处的第三个峰值相关，已被研究。在变形空间的相对论哈特里-博戈利乌布理论框架下，对三种不同模型拉格朗日量NL-SV1、SVI-2和NL3下原子核的响应进行了比较研究。在Z=58-72$= in the highly neutron-rich region are investigated. A comparison of binding energies with mass formulas shows that in the extreme region of the r-process path, the RMF model SVI-2 without nonlinearities of sigma and omega mesons sho…
-3. **[为校准低阈值暗物质探测器而设计一种脉冲准单能2 keV中子源的研究](https://doi.org/10.1103/fqgp-916r)**  
-   Physical Review D · 2026-10-28  
-   我们描述了一种脉冲准单能2 keV中子源的设计研究，用于校准亚keV核反冲。这种校准对于对亚GeV暗物质敏感的探测器以及反应堆中微子的相干弹性散射至关重要。在我们的设计中，来自商用氘-氚发生器的中子被调制到keV量级，随后通过滤波以利用钪在2 keV处的抗共振特性，实现单能谱。所呈现的分析和结论主要基于模拟，因为本研究是最终目标的关键第一步。我们解决了诸如未调制的高能中子以及中子在调制材料中捕获产生的伽马本底等挑战。通过优化调制器+滤波器及屏蔽几何结构，我们确定了一种配置，该配置在2 keV处实现了目标中子通量，同时在模拟中保持了本底相互作用的次主导水平。最后，我们概述了一条利用飞行时间及亚keV中子实现更低能量（几eV量级）校准的未来路径
-4. **[Coulomb and nuclear polarization of the nucleon density in the dinuclear configuration of the Ca 40 + Pb 208 system](https://doi.org/10.1103/d6vs-ppv1)**  
-   Physical Review C · 2026-10-28  
-   The change of the nucleon density distribution of a heavy nucleus caused by the presence of a second nucleus at a fixed center-to-center distance is studied in the framework of the deformed Woods–Saxon mean field. The single-particle problem of one nucleus has been solved by diagonalization in a cylindrical harmonic-oscillator basis with the external field…
-5. **[石墨中 runaway 电子引发的爆炸；建模与受控 DIII-D 实验](https://doi.org/10.1088/1741-4326/aeb275)**  
-   Nuclear Fusion · 2026-10-28  
-   摘要 关于石墨在失控电子（RE）冲击作用下的热力学-力学响应建模的最新进展，基于单向耦合的线性热弹性理论，并结合兰金的基于强度的破坏准则，且仅限于材料破坏起始阶段。本文将预测能力扩展至由材料碎裂和碎片喷出所表征的非线性损伤阶段。这通过引入约翰逊-霍尔姆奎斯特本构模型、采用基于有效塑性应变的破坏准则，并将有限元分析与光滑粒子水动力学方法耦合来实现。扩展的热力学-力学模型已成功与在DIII-D中最近进行的两个受控RE-诱导损伤实验结果进行了对比验证。这标志着向最终目标——定量描述钨对失控电子（REs）热力学-力学响应——迈出重要一步。
-6. **[钾-54的β衰变揭示了在中子丰富的原子核中两体流的作用](https://arxiv.org/abs/2610.36218)**  
-   arXiv nucl-th · 2026-10-28  
-   中子富集原子核的β衰变探测了在极端条件下核介质中弱相互作用的微观性质。这类弱衰变驱动了天体环境中重元素的合成，但其机制仍不明确。远离稳定线，实验数据稀缺，对从头计算核理论提出了强烈要求。已提出双体弱电流是导致理论上预测的Gamow-Teller衰变强度普遍淬灭的主要机制。然而，在中子富集原子核中缺乏直接的实验验证。本文测量了54K的β衰变，该原子核处于放射性离子束设施实验前沿。在本研究中，子核54Ca的双幻数特性导致其衰变模式异常简单，主要由一个跃迁到6.2 MeV的中子无束缚态主导，其相对部分半衰期logft=4.4(1) 或 Gamow-Teller衰变强度B(GT)=0.26 (+0.08) (-0.04)。我们的测量结果被最新的先进计算结果重现，提供了直接证据，表明在中子过剩显著的系统中，双体电流在核…
-7. **[ISINN32: 裂变碎片角动量的锯齿状质量依赖性在 \(^{252}\)Cf 的自发裂变中](https://doi.org/10.1088/1674-1137/aeba7a)**  
-   Chinese Physics C · 2026-10-28  
-   摘要 对 $^{252}\mathrm{Cf}$ 自发裂变过程中裂变碎片角动量的质数依赖性，在双核系统（DNS）模型中进行了研究。穿透裂变势垒后，系统在质量、电荷和形变空间中经过一系列接触碎片构型的演化，而集体角运动则采用量子力学方法处理。计算得到的碎片角动量很好地再现了实验观测到的质数依赖趋势以及在 $A\simeq132$ 附近显著的最小值。在对所有贡献于给定碎片质量的电荷分割进行平均后，锯齿结构依然保持，表明这是一种断裂构型集合的稳健性质，而非实验中选择的特定同位素序列的结果。结果强调了壳效应依赖的碎片形变在裂变碎片角动量生成过程中的核心作用。相同的断裂构型集合也再现了总动能（TKE）与总瞬发中子数之间的反相关性，进一步支持了所计算的断裂构型。
-8. **[通过重离子碰撞中事件对事件的π介子不对称性探测中子皮](https://doi.org/10.1103/bw3p-lpg6)**  
-   Physical Review C · 2026-10-28  
-   数据源暂未提供详细介绍。
+1. **[A nuclear clock synchronized to 229Th](https://doi.org/10.1038/s41586-026-11122-1)**  
+   Nature · 2026-10-07  
+   Abstract Atomic clocks have made time and frequency the most precisely measured quantities in physics, progressing from microwave standards that realize the SI second 1 to optical clocks with unprecedented precision 2 . A nuclear clock transfers the frequency reference from an electronic to a nuclear transition and the uniquely low-lying, laser-accessible,…
+2. **[The role of ab initio beta-decay calculations in light nuclei for probes of physics beyond the standard model](https://doi.org/10.1016/j.ppnp.2026.104260)**  
+   Progress in Particle and Nuclear Physics · 2026-09-01  
+   Precision beta decay experiments serve as powerful probes of physics beyond the Standard Model, enabling stringent tests of fundamental symmetries of nature. In particular, these experiments primarily focus on precise determinations of the Cabibbo-Kobayashi-Maskawa matrix element Vud and the search for exotic weak currents, both of which depend critically o…
+3. **[寻找超重核：实验视角](https://doi.org/10.1146/annurev-nucl-100324-103404)**  
+   Annual Review of Nuclear and Particle Science · 2026-09-21  
+   实验物理学家目前正致力于将周期表扩展至第八行，元素119和120的搜寻工作正在进行中，此时回顾合成元素发现近一个世纪的历史显得尤为及时。从最初生产铀以外的元素到最近完成第七行的探索，本综述全面概述了扩展周期表过程中的重要里程碑和进展。历史上，新元素的搜寻一直激发公众的想象力，同时也为基本科学提供了独特的窗口。这一点在超重元素的发现与研究中表现得尤为明显，这些元素使人们能够直接进行核科学和化学极端情况的实验探索。本综述探讨了合成元素发现中的主要发展和突破，展示了科学好奇心、创新研究与不断拓展我们对周期表理解之间的复杂关系。
+4. **[在s = 200 GeV的横向极化质子-质子碰撞中喷注内的能量相关子](https://doi.org/10.1103/fgsf-gx2q)**  
+   Physical Review Letters · 2026-09-08  
+   我们报告了在横向极化的质子-质子碰撞中，s = 200 GeV 条件下，利用相对论重离子对撞机上的STAR探测器首次测量了单点和双点能量相关函数。这些可观测量分别量化了单个强子和强子对在喷注内的能量加权角分布。对于π⁺、π⁻以及π⁺π⁻对，观察到显著的自旋依赖不对称性，揭示了在特定角尺度下非微扰动力学的出现。通过将碎片化动力学投影到梅林矩上，这些测量对核子的横向不对称性具有敏感性，同时最小化了来自非微扰碎片化函数的不确定性。这些结果确立了能量相关函数作为探测核子结构的一种新颖且精确的手段，并为未来电子-离子对撞机上的三维核子断层成像开辟了有前景的途径。
+5. **[First Nb 94 ( n , γ ) Measurement: Constraining the Nucleosynthetic Origin of Mo 94 in Presolar Grains](https://doi.org/10.1103/538w-rhqb)**  
+   Physical Review Letters · 2026-08-18  
+   Isotopic measurements of presolar silicon carbide grains from dying stars have revealed a puzzling overabundance of Mo 94 that stellar nucleosynthesis models have failed to reproduce for two decades. This discrepancy challenged our understanding of the slow neutron-capture process ( s -process) that forges approximately half of the elements heavier than iro…
+6. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
+   Physical Review Letters · 2026-08-04  
+   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
+7. **[Deformation, halo, and bubble structure: A paradigm shift of exotic phenomena in light to medium mass nuclei](https://doi.org/10.1016/j.ppnp.2026.104262)**  
+   Progress in Particle and Nuclear Physics · 2026-09-01  
+   The emergence of exotic nuclear structures, such as deformation, one- and two-neutron halos, and bubble configurations, marks a paradigm shift in our understanding of light- to medium-mass nuclei far from stability, particularly near and within the island of inversion extending across $N=20-28$. In this review, we integrate microscopic structure calculation…
+8. **[太阳系中辐射最低的环境：地下稀有事件搜索的新机遇](https://doi.org/10.1103/7fjv-rz78)**  
+   Physical Review D · 2026-10-21  
+   我们通过半解析估计和蒙特卡洛模拟研究了太阳系中地外环境中中微子、μ子和伽马射线通量。在大气可忽略的地点，我们发现宇宙射线诱导的中微子和μ子通量相对于地球上的强度显著降低。能量在50 MeV到100 TeV之间的中微子表现出特别强烈的抑制，即使在浅层深度，抑制程度也可达10^3。太阳中微子的抑制随地点距离太阳距离的平方而增加。由于核衰变引起的天然辐射在许多这些地点也预计会降低，甚至在液态水环境中可能降至可忽略不计的水平。满足这些特性的地点为地下基础物理实验提供了极大的物理探测范围，例如弱相互作用大质量粒子（WIMP）暗物质探测、无中微子双β衰变、弥漫超新星中微子以及附近超新星中微子的探测。作为潜在的短期目标，我们建议在可及的地下月球地点（如静海坑）测量μ子和伽马射线通量，以首次测量宇宙射线诱导粒子产生的瞬时成分…
 
 ## 物理新闻
 
+- **[在超越玻尔兹曼-昂萨格框架之外的热电子汤姆孙冷却成像](https://www.nature.com/articles/s41567-026-03510-1)**  
+   Nature Physics · 2026-10-29  
+   数据源暂未提供详细介绍。
+- **[思想实验：未来能源的光明愿景](http://link.aps.org/doi/10.1103/Physics.19.144)**  
+   APS Physics · 2026-10-28  
+   在科学家设想人工光合作用和聚变能源超过一个世纪之后，这两种技术尚未实现广泛应用——但进展缓慢并非放弃的理由。[物理 19, 144] 发表于 Wed Oct 28, 2026
+- **[来自无序介质的光](http://link.aps.org/doi/10.1103/Physics.19.s135)**  
+   APS Physics · 2026-10-28  
+   作者： Marric Stephens 研究人员提出，结构无序可以被利用以从带电粒子的通过中产生相干且定向的光。[Physics 19, s135] 发表于 Wed Oct 28, 2026
 - **[量子混沌海洋中的秩序](https://www.nature.com/articles/s41567-026-03513-y)**  
    Nature Physics · 2026-10-27  
-   数据源暂未提供详细介绍。
-- **[构建分子支架的方法不止一种](http://link.aps.org/doi/10.1103/Physics.19.141)**  
-   APS Physics · 2026-10-27  
-   作者：Charles Day 实验表明，重要蛋白质聚合物的单根丝束可以通过毛细力发生缠结，而不仅通过分子结合。[物理 19, 141] 发表于 Tue Oct 27, 2026
-- **[三维细胞形态由曲率感知和界面应力介导](https://www.nature.com/articles/s41567-026-03482-2)**  
-   Nature Physics · 2026-10-26  
-   数据源暂未提供详细介绍。
-- **[曲率和细胞力学控制组织的组织](https://www.nature.com/articles/s41567-026-03496-w)**  
-   Nature Physics · 2026-10-26  
    数据源暂未提供详细介绍。
 
 ## 科研通知
