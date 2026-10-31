@@ -1,54 +1,54 @@
-# 小康康的物理世界 · 2026-10-21 科研简报
+# 小康康的物理世界 · 2026-10-30 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 9/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 12/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[A nuclear clock synchronized to 229Th](https://doi.org/10.1038/s41586-026-11122-1)**  
-   Nature · 2026-10-07  
-   Abstract Atomic clocks have made time and frequency the most precisely measured quantities in physics, progressing from microwave standards that realize the SI second 1 to optical clocks with unprecedented precision 2 . A nuclear clock transfers the frequency reference from an electronic to a nuclear transition and the uniquely low-lying, laser-accessible,…
-2. **[The role of ab initio beta-decay calculations in light nuclei for probes of physics beyond the standard model](https://doi.org/10.1016/j.ppnp.2026.104260)**  
-   Progress in Particle and Nuclear Physics · 2026-09-01  
-   Precision beta decay experiments serve as powerful probes of physics beyond the Standard Model, enabling stringent tests of fundamental symmetries of nature. In particular, these experiments primarily focus on precise determinations of the Cabibbo-Kobayashi-Maskawa matrix element Vud and the search for exotic weak currents, both of which depend critically o…
-3. **[寻找超重核：实验视角](https://doi.org/10.1146/annurev-nucl-100324-103404)**  
-   Annual Review of Nuclear and Particle Science · 2026-09-21  
-   实验物理学家目前正致力于将周期表扩展至第八行，元素119和120的搜寻工作正在进行中，此时回顾合成元素发现近一个世纪的历史显得尤为及时。从最初生产铀以外的元素到最近完成第七行的探索，本综述全面概述了扩展周期表过程中的重要里程碑和进展。历史上，新元素的搜寻一直激发公众的想象力，同时也为基本科学提供了独特的窗口。这一点在超重元素的发现与研究中表现得尤为明显，这些元素使人们能够直接进行核科学和化学极端情况的实验探索。本综述探讨了合成元素发现中的主要发展和突破，展示了科学好奇心、创新研究与不断拓展我们对周期表理解之间的复杂关系。
-4. **[在s = 200 GeV的横向极化质子-质子碰撞中喷注内的能量相关子](https://doi.org/10.1103/fgsf-gx2q)**  
-   Physical Review Letters · 2026-09-08  
-   我们报告了在横向极化的质子-质子碰撞中，s = 200 GeV 条件下，利用相对论重离子对撞机上的STAR探测器首次测量了单点和双点能量相关函数。这些可观测量分别量化了单个强子和强子对在喷注内的能量加权角分布。对于π⁺、π⁻以及π⁺π⁻对，观察到显著的自旋依赖不对称性，揭示了在特定角尺度下非微扰动力学的出现。通过将碎片化动力学投影到梅林矩上，这些测量对核子的横向不对称性具有敏感性，同时最小化了来自非微扰碎片化函数的不确定性。这些结果确立了能量相关函数作为探测核子结构的一种新颖且精确的手段，并为未来电子-离子对撞机上的三维核子断层成像开辟了有前景的途径。
-5. **[First Nb 94 ( n , γ ) Measurement: Constraining the Nucleosynthetic Origin of Mo 94 in Presolar Grains](https://doi.org/10.1103/538w-rhqb)**  
-   Physical Review Letters · 2026-08-18  
-   Isotopic measurements of presolar silicon carbide grains from dying stars have revealed a puzzling overabundance of Mo 94 that stellar nucleosynthesis models have failed to reproduce for two decades. This discrepancy challenged our understanding of the slow neutron-capture process ( s -process) that forges approximately half of the elements heavier than iro…
-6. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
-   Physical Review Letters · 2026-08-04  
-   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
-7. **[Deformation, halo, and bubble structure: A paradigm shift of exotic phenomena in light to medium mass nuclei](https://doi.org/10.1016/j.ppnp.2026.104262)**  
-   Progress in Particle and Nuclear Physics · 2026-09-01  
-   The emergence of exotic nuclear structures, such as deformation, one- and two-neutron halos, and bubble configurations, marks a paradigm shift in our understanding of light- to medium-mass nuclei far from stability, particularly near and within the island of inversion extending across $N=20-28$. In this review, we integrate microscopic structure calculation…
-8. **[太阳系中辐射最低的环境：地下稀有事件搜索的新机遇](https://doi.org/10.1103/7fjv-rz78)**  
-   Physical Review D · 2026-10-21  
-   我们通过半解析估计和蒙特卡洛模拟研究了太阳系中地外环境中中微子、μ子和伽马射线通量。在大气可忽略的地点，我们发现宇宙射线诱导的中微子和μ子通量相对于地球上的强度显著降低。能量在50 MeV到100 TeV之间的中微子表现出特别强烈的抑制，即使在浅层深度，抑制程度也可达10^3。太阳中微子的抑制随地点距离太阳距离的平方而增加。由于核衰变引起的天然辐射在许多这些地点也预计会降低，甚至在液态水环境中可能降至可忽略不计的水平。满足这些特性的地点为地下基础物理实验提供了极大的物理探测范围，例如弱相互作用大质量粒子（WIMP）暗物质探测、无中微子双β衰变、弥漫超新星中微子以及附近超新星中微子的探测。作为潜在的短期目标，我们建议在可及的地下月球地点（如静海坑）测量μ子和伽马射线通量，以首次测量宇宙射线诱导粒子产生的瞬时成分…
+1. **[Accurate Charge Radius Measurement of C 14 Confronts Ab Initio Theory](https://doi.org/10.1103/f5s7-1t7w)**  
+   Physical Review Letters · 2026-10-30  
+   Located at the neutron shell closure N = 8 , the long-lived radioactive isotope C 14 plays a critical role in geochronology and nuclear structure studies. Despite its widespread use, the nuclear charge radius of C 14 has remained less precisely known than that of its stable counterpart C 12 . Here, we report a high-precision determination of the C 14 charge…
+2. **[Δ⁻ 基态的无中微子双β衰变](https://doi.org/10.1103/yh1b-mf64)**  
+   Physical Review D · 2026-10-30  
+   子过程 n n → p p e − e − 是解释核中微子less双β衰变的关键组成部分。中间态的 Δ 增强可能为这一跃迁提供额外增强。我们通过在手性有效场论框架下研究中微子less双β衰变 Δ − → p e − e −，迈出了解释 n n → p p e − e − 过程的 Δ 完整描述的第一步。我们系统地通过圈图推导出轻Majorana中微子交换的长程贡献，并通过重整化所需的抵消项引入短程部分。我们预测了在共线电子动力学构型下衰变振幅对π质量的依赖性。此外，为了便于与格点QCD进行匹配，我们计算了在Δ-核子质量退化极限下的衰变振幅，并提供了相应的长程预测。
+3. **[Sg 258, 260 自发裂变中瞬发中子的发射](https://doi.org/10.1103/c323-g246)**  
+   Physical Review C · 2026-10-30  
+   数据源暂未提供详细介绍。
+4. **[壳效应和变形在锕系元素裂变质量分布中的作用](https://doi.org/10.1088/1674-1137/aebbae)**  
+   Chinese Physics C · 2026-10-30  
+   摘要 本工作在量子力学裂变理论（QMFT）的框架下，确定了偶偶锕系元素中裂变碎片的分布情况。裂变势能通过引入可能的二元碎片的球形、二重极和八重极形变拉长构型来构建。壳闭合、结合能和形变强调了势能极小值，随后形成的簇概率展示了自发裂变通道中碎片的分布。通过集体簇化方法、BSM方法，或利用对Z在\(98\leq Z\leq102\)、N在\(150\leq N\leq164\)范围内的锕系元素的实验数据计算得到的质量产额分布，表现出单峰和双峰结构，分别与接近\ 132 Sn（球形结构）和\<sup>144\<sup>Ba（梨形结构）的裂变相关。因此，基于此，我们对属于\(90\leq Z \leq102\)和\(108\leq N \leq166\)区域的约150个偶偶锕系元素进行了研究。研究揭示了裂变质量分布的…
+5. **[通过吨级暗物质探测器中的太阳中微子-电子散射探索无奇点暗光子模型](https://doi.org/10.1103/dcmw-n3dc)**  
+   Physical Review D · 2026-10-30  
+   我们利用吨级PandaX-4T和XENONnT实验的低能太阳中微子-电子弹性散射数据，研究无奇点暗光子模型的唯象意义。聚焦于包含动力学混合和质量混合的U(1)X规范扩展，我们推导出六个基准模型参数空间中的新型排除限。我们的分析表明，这些排除限的严格程度与各模型对应的理论轻子电荷分配直接相关。此外，我们通过分离纯动力学混合和纯质量混合情形，提供了与模型无关的排除限。在亚MeV介子质量范围内，我们的结果在显著提升此前中微子-电子散射实验（如CHARM-II、TEXONO和GEMMA）的现有排除限方面具有重要意义。最终，这些发现为低质量暗光子模型提供了更严格的排除限，展示了其与其他全球暗通道搜索项目的互补性。
+6. **[形变原子核在中等能量核散射中的取向效应](https://arxiv.org/abs/2610.38132)**  
+   arXiv nucl-th · 2026-10-30  
+   我们研究了在Glauber理论框架下，核形变对中能核散射的影响。推导出一种明确包含形变本征态取向依赖性的形式化方法，在该方法中，首先以固定取向计算反应可观测量，然后对反应可观测量进行角度平均。该形式化方法应用于弹性散射和总反应截面。此外，提出了一种光学极限近似的新展开方案，并表明该方案包含了来自一类核激发态的贡献，从而能够对总非弹性散射截面的一部分进行简单估算。对于质子和碳靶的散射，取向依赖性通常很弱，支持了对轻核和中重核采用角度平均密度的常规处理方法。然而，对于强形变的重核，出现了明显的偏差。本分析进一步表明，指向旋转激发态的总非弹性散射截面可被解释为与形变相关的核表面密度涨落的表现。本研究为中能核反应中形变效应提供了量子力学解释，并建议了一条通向更可靠理论描述相互作用截面测量的途径。此外，还对核形变在低能…
+7. **["ISINN-32" 对元素 119 和 120 衰变链中 $\alpha$ 衰变和自发裂变半衰期的实证预测](https://doi.org/10.1088/1674-1137/aebb9e)**  
+   Chinese Physics C · 2026-10-30  
+   摘要 利用经验公式研究了具有$Z = 119$和$120$同位素衰变链中$\alpha$衰变与自发裂变之间的竞争。使用Viola--Seaborg半经验公式计算$\alpha$衰变的半衰期，而自发裂变半衰期则基于中子过剩$N-Z$和$\alpha$衰变能$Q_\alpha$的经验公式进行评估。该方法的可靠性通过已知核素的实验数据对$Z \ge 103$进行了验证。识别出若干$\alpha$衰变链具有实验观测的潜力，其中预计在被自发裂变终止前可连续发生六次或以上的$\alpha$~衰变。本研究结果可能对未来的超重核实验搜索具有参考意义。
+8. **[协变夸克模型中的准部分子分布函数](https://doi.org/10.1103/bl2f-xygk)**  
+   Physical Review D · 2026-10-30  
+   准部分子分布函数（QPDFs）是通过在速度为v的强子的矩阵元中评价空间类分离的QCD场来定义的。这些对象可以在格点QCD中进行研究。当v趋近于光速时，QPDFs收敛到部分子分布函数。在模型中研究QPDFs及其收敛性是有启发意义的。在本工作中，我们首先在一类具有共同特征（即没有规范自由度）的夸克模型中研究QPDFs。我们为两种选择γ 0和γ 3下的非极化夸克和反夸克QPDFs的收敛性和求和规则提供了普遍证明。我们以协变部分子模型为例，推导了QPDFs在小x v行为以及零动量转移时能量-动量张量形式因子c ¯ q ( t )的解析结果。这些结果具有意义，因为它们对应于Wandzura-Wilczek型近似。
 
 ## 物理新闻
 
-- **[在超越玻尔兹曼-昂萨格框架之外的热电子汤姆孙冷却成像](https://www.nature.com/articles/s41567-026-03510-1)**  
-   Nature Physics · 2026-10-29  
+- **[热力学证明UTe中四重临界点和多组分超导性 2](https://www.nature.com/articles/s41567-026-03504-z)**  
+   Nature Physics · 2026-10-30  
    数据源暂未提供详细介绍。
-- **[思想实验：未来能源的光明愿景](http://link.aps.org/doi/10.1103/Physics.19.144)**  
-   APS Physics · 2026-10-28  
-   在科学家设想人工光合作用和聚变能源超过一个世纪之后，这两种技术尚未实现广泛应用——但进展缓慢并非放弃的理由。[物理 19, 144] 发表于 Wed Oct 28, 2026
-- **[来自无序介质的光](http://link.aps.org/doi/10.1103/Physics.19.s135)**  
-   APS Physics · 2026-10-28  
-   作者： Marric Stephens 研究人员提出，结构无序可以被利用以从带电粒子的通过中产生相干且定向的光。[Physics 19, s135] 发表于 Wed Oct 28, 2026
-- **[量子混沌海洋中的秩序](https://www.nature.com/articles/s41567-026-03513-y)**  
-   Nature Physics · 2026-10-27  
+- **[在大型科学合作项目中识别的挑战](https://www.nature.com/articles/s41567-026-03511-0)**  
+   Nature Physics · 2026-10-30  
+   数据源暂未提供详细介绍。
+- **[在守恒偶极矩的玻色-哈伯德模型中多粒子量子行走](https://www.nature.com/articles/s41567-026-03512-z)**  
+   Nature Physics · 2026-10-30  
+   数据源暂未提供详细介绍。
+- **[电机使用偏置扩散来引导可扩散蛋白在微管上移动](https://www.nature.com/articles/s41567-026-03489-9)**  
+   Nature Physics · 2026-10-30  
    数据源暂未提供详细介绍。
 
 ## 科研通知
 
 - **[第四届核物理研究生学术论坛](https://indico.pku.edu.cn/event/87/)**  
    北京大学 Indico 核物理会议 · 2026-10-28  
-   第四届“核物理研究生学术论坛”将于 2026 年 12 月 25 日至 26 日在北京市中核北京科技园综合科研楼举行。论坛由中国原子能科学研究院和北京大学主办，由中国原子能科学研究院承办，旨在为核物理专业的研究生搭建一个高水平的学术交流平台，拓展研究生的学术视野，提高研究生的学术素养和创新意识。 请各位拟参会的老师和同学于 2026 年 xx 月 xx 日前完成注册。会务组将挑选 x 名研究生作为 x 个主题的召集人，召集人依据提交的摘要挑选报告。由于会议日程有限，未被选入的报告则进行海报展示。同时，本次论坛将评选出5名优秀摘要奖、5名优秀报告奖、若干优秀海报奖和2名优秀召集人。 会议基本信息： 1. 会议时间：2026 年 12 月 25-26 日 2. 会议地点：中核北京科技园综合科研楼 C 座第一会议室…
+   尊敬的各位老师、 各位同学： 第四届“核物理研究生学术论坛” 将于 2026 年 12 月 25 日下午至 27 日在北京市中核北京科技园综合科研楼举行。 论坛由中国原子能科学研究院和北京大学主办， 由中国原子能科学研究院承办， 旨在为核物理专业的研究生搭建一个高水平的学术交流平台， 拓展研究生的学术视野， 提高研究生的学术素养和创新意识。 请各位拟参会的老师和同学于 2026 年 11 月 22 日前在网站上完成注册， 参加会议的研究生请同时提交报名表。 本次论坛设置报告和海报两种形式， 会务组将挑选 4 名研究生作为 4 个主题的召集人。 召集人依据提交的报告摘要挑选报告， 未入选的报告则改为海报展示。 报告和海报内容应着重突出工作动机(引言)和思路， 确保听众对内容有清晰、完整的认识和理解。 同时， 本…
 - **[SCD周会](https://indico.ihep.ac.cn/event/31255/)**  
    高能所 Indico · 2026-10-25  
    2026-10-26 — 2026-10-26
