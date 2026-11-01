@@ -62,7 +62,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-09-26T00:19:26+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "citation_authors": [
       "Zhang, Xilin",
       "Detwiler, Jason",
@@ -175,8 +175,10 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/f5s7-1t7w",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-31T01:22:08+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
-    "abstract_checked_sources": []
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "abstract_checked_sources": [],
+    "summary": "",
+    "content": ""
   },
   {
     "id": "c7c33476252708f5",
@@ -324,7 +326,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/999m-b763",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-19T23:50:11+00:00",
@@ -354,6 +356,493 @@
     ],
     "summary": "",
     "content": ""
+  },
+  {
+    "id": "7d6878f956ebe47a",
+    "type": "paper",
+    "title": "Superheavy nuclei with Z = 119, 120: α-decay or spontaneous fission?",
+    "abstract": "We propose a local formula for calculating α -decay energies Q α in superheavy nuclei (SHN) with atomic numbers Z > 110, achieving a mean deviation of only 0.026 MeV and thus providing high-precision Q α predictions for the heaviest nuclei. Using these calculated Q α values, α -decay half-lives are computed where the barrier is derived from the self-consistent Skyrme energy density functional, which are in excellent agreement with available experimental data. For spontaneous fission, we adopt three independent approaches: a new formula with a good accuracy, a fission barrier penetration framework based on the Skyrme functional, and the generalized liquid-drop model with shell correction. The predicted dominant decay modes for synthesized SHN with Z > 110 are consistent with experimental observations. As an encouraging result, α -decay is predicted to be the dominant decay mode for the candidate nuclei of as-yet-unsynthesized elements Z = 119 and 120, with half-lives of 0.2–0.6 ms for Z = 119 and 0.02–0.06 ms for Z = 120 , which are many orders of magnitude shorter than their corresponding spontaneous fission half-lives. This greatly facilitates the identification of elements 119 and 120. These results along with our methods offer valuable guidance for future experiments on the synthesis of new elements.",
+    "abstract_status": "full",
+    "abstract_source": "OpenAlex",
+    "authors": [
+      "M.X. Xiao",
+      "G.Q. Wu",
+      "J.M. Dong"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Physics Letters B",
+    "source_short": "PLB",
+    "source_type": "journal",
+    "doi": "10.1016/j.physletb.2026.140984",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.physletb.2026.140984",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-decay",
+      "nuclear-structure",
+      "nuclear-reactions",
+      "theoretical-nuclear"
+    ],
+    "tags": [
+      "density functional",
+      "energy density functional",
+      "superheavy nuclei",
+      "spontaneous fission",
+      "fission"
+    ],
+    "primary_topic": "nuclear-decay",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.88,
+    "classification_evidence": [
+      "density functional",
+      "energy density functional",
+      "superheavy nuclei",
+      "spontaneous fission",
+      "fission"
+    ],
+    "importance": 70,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +22",
+      "跨领域关联 +6",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Xiao, M.X.",
+      "Wu, G.Q.",
+      "Dong, J.M."
+    ],
+    "journal_abbrev": "Physics Letters B",
+    "volume": "882",
+    "issue": "",
+    "pages": "140984",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326008348",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "publisher_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "Publisher",
+      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326008348"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex"
+    ]
+  },
+  {
+    "id": "aca341bb40d7f6cf",
+    "type": "paper",
+    "title": "Improved calibration algorithm and its validation for Guide Tube Calibration System in JUNO experiment",
+    "abstract": "The Guide Tube Calibration System (GTCS) of the Jiangmen Underground Neutrino Observatory (JUNO) is designed to calibrate the detector boundary non-uniformity, contributing to the stringent energy resolution requirement of JUNO. A 27Bq 241 Am- 9 Be neutron source is adopted for GTCS calibration, providing both point-like prompt signals from γ rays and spread-out delayed signals from neutron capture. This source is less affected by local optical shadowing and provides a prompt–delayed signature similar to inverse beta decay (IBD) and cosmogenic neutron events, enabling direct cross-checks. Additionally, realistic experimental conditions, including radioactive backgrounds and electronic noise are considered, so that a dedicated set of event selection criteria has been developed for GTCS. Comprehensive simulations and analyses under realistic background and noise conditions indicate that using 241 Am- 9 Be calibration source is feasible to meet the required 1% uncertainty for GTCS. Applying the improved GTCS calibration algorithm to experimental data collected on 23 August 2025, the energy responses at five calibration positions have been obtained, providing input to the detector non-uniformity correction function. The results have a good consistency with simulation, demonstrating the feasibility and robustness of the updated calibration approach.",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "authors": [
+      "Yankai Liu",
+      "Qingmin Zhang",
+      "Kangfu Zhu",
+      "Yuhang Guo",
+      "Shiyu Liu",
+      "Yue Meng",
+      "Junting Huang",
+      "Jianglai Liu",
+      "Akira Takenaka",
+      "Jiaqi Hui",
+      "Rui Li",
+      "Yuhang He"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Instruments and Methods in Physics Research A",
+    "source_short": "NIMA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nima.2026.171747",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nima.2026.171747",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-decay",
+      "nuclear-reactions",
+      "detectors-daq",
+      "particle-cross"
+    ],
+    "tags": [
+      "beta decay",
+      "neutron capture",
+      "neutrino"
+    ],
+    "primary_topic": "nuclear-decay",
+    "methods": [
+      "experimental",
+      "theoretical"
+    ],
+    "classification_confidence": 0.72,
+    "classification_evidence": [
+      "beta decay",
+      "neutron capture",
+      "neutrino"
+    ],
+    "importance": 70,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +22",
+      "跨领域关联 +6",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "https://doi.org/10.15223/policy-017",
+      "https://doi.org/10.15223/policy-037",
+      "https://doi.org/10.15223/policy-012",
+      "https://doi.org/10.15223/policy-029",
+      "https://doi.org/10.15223/policy-004"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Liu, Yankai",
+      "Zhang, Qingmin",
+      "Zhu, Kangfu",
+      "Guo, Yuhang",
+      "Liu, Shiyu",
+      "Meng, Yue",
+      "Huang, Junting",
+      "Liu, Jianglai",
+      "Takenaka, Akira",
+      "Hui, Jiaqi",
+      "Li, Rui",
+      "He, Yuhang"
+    ],
+    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
+    "volume": "1091",
+    "issue": "",
+    "pages": "171747",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004730",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "OpenAlex"
+    },
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "Semantic Scholar"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ]
+  },
+  {
+    "id": "73e14bf1f46961f3",
+    "type": "paper",
+    "title": "Design of a high voltage delivery system for noble liquid time projection chambers",
+    "abstract": "Noble liquid time projection chambers (TPCs) are a leading technology in the detection of ionizing radiation, particularly in applications such as accelerator neutrino physics, dark matter detection, and neutrinoless double beta decay. This paper addresses the design considerations for implementing stable high voltage (HV) systems within large noble liquid TPCs, with a focus on the nEXO experiment. Utilizing insights from prior HV research and experimental investigations, we outline factors influencing HV stability and discuss design choices to improve stability and prevent electrical discharges. A novel HV delivery system concept is presented, tailored for the nEXO TPC, which incorporates these design considerations while also meeting the stringent radiopurity requirements of the nEXO neutrinoless double beta decay search. These design considerations and their specific implementation towards a HV delivery system offer guidance to future experiments applying high voltage in noble liquid environments.",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "authors": [
+      "R. Saldanha",
+      "L. Pagani",
+      "E. Angelico",
+      "E.P. Bernard",
+      "B. Chana",
+      "S. Delaquis",
+      "R. DeVoe",
+      "M. Elbeltagi",
+      "S. Ferrara",
+      "D. Goeldi",
+      "R. Gornea",
+      "A. Odian",
+      "G.S. Ortega",
+      "C.T. Overman",
+      "L. Placzek",
+      "P.C. Rowson",
+      "K. Skarpaas",
+      "F. Spadoni",
+      "P. Acharya",
+      "A. Amy",
+      "A. Anker",
+      "I.J. Arnquist",
+      "A. Atencio",
+      "J. Bane",
+      "V. Belov",
+      "T. Bhatta",
+      "A. Bolotnikov",
+      "J. Breslin",
+      "P.A. Breur",
+      "E. Brown",
+      "T. Brunner",
+      "B. Burnell",
+      "E. Caden",
+      "G.F. Cao",
+      "L.Q. Cao",
+      "D. Cesmecioglu",
+      "D. Chernyak",
+      "M. Chiu",
+      "R. Collister",
+      "M. Marquis"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Instruments and Methods in Physics Research A",
+    "source_short": "NIMA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nima.2026.171718",
+    "arxiv_id": "2602.23564",
+    "url": "https://doi.org/10.1016/j.nima.2026.171718",
+    "pdf_url": "https://arxiv.org/pdf/2602.23564",
+    "categories": [
+      "nuclear-decay",
+      "detectors-daq",
+      "accelerators",
+      "particle-cross"
+    ],
+    "tags": [
+      "beta decay",
+      "double beta decay",
+      "neutrinoless double beta",
+      "TPC",
+      "accelerator",
+      "neutrino",
+      "dark matter"
+    ],
+    "primary_topic": "nuclear-decay",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.98,
+    "classification_evidence": [
+      "beta decay",
+      "double beta decay",
+      "neutrinoless double beta",
+      "TPC",
+      "accelerator",
+      "neutrino"
+    ],
+    "importance": 70,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +22",
+      "跨领域关联 +6",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Saldanha, R.",
+      "Pagani, L.",
+      "Angelico, E.",
+      "Bernard, E.P.",
+      "Chana, B.",
+      "Delaquis, S.",
+      "DeVoe, R.",
+      "Elbeltagi, M.",
+      "Ferrara, S.",
+      "Goeldi, D.",
+      "Gornea, R.",
+      "Odian, A.",
+      "Ortega, G.S.",
+      "Overman, C.T.",
+      "Placzek, L.",
+      "Rowson, P.C.",
+      "Skarpaas, K.",
+      "Spadoni, F.",
+      "Acharya, P.",
+      "Amy, A.",
+      "Anker, A.",
+      "Arnquist, I.J.",
+      "Atencio, A.",
+      "Bane, J.",
+      "Belov, V.",
+      "Bhatta, T.",
+      "Bolotnikov, A.",
+      "Breslin, J.",
+      "Breur, P.A.",
+      "Brown, E.",
+      "Brunner, T.",
+      "Burnell, B.",
+      "Caden, E.",
+      "Cao, G.F.",
+      "Cao, L.Q.",
+      "Cesmecioglu, D.",
+      "Chernyak, D.",
+      "Chiu, M.",
+      "Collister, R.",
+      "Marquis, M."
+    ],
+    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
+    "volume": "1091",
+    "issue": "",
+    "pages": "171718",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004444",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "OpenAlex",
+      "INSPIRE"
+    ]
+  },
+  {
+    "id": "4d126ad5bf64190f",
+    "type": "paper",
+    "title": "Updated 78mBr 2−→1+ lifetime from isomeric decay cascade in active target",
+    "abstract": "The half-life of the 2 − state at 32.3 keV in 78 Br has been measured only twice, yielding mutually inconsistent values of (14.2 ± 3) ns and (8.3 ± 0.3) ns; the currently adopted value of (11.3 ± 0.3) ns is their unweighted average. We report a new measurement of this half-life using a self-coincidence technique in which both the 148.6 keV 4 + → 2 − and 32.3 keV 2 − → 1 + transitions of the 78m Br isomeric cascade are captured within single digitized waveforms from a LaBr3(Ce) active-target detector, following production via 79 Br(n,2n) 78m Br with a pulsed deuterium–tritium neutron source. We obtain half-lives of (118.45 ± 0.72) µs and (19.8 ± 0.4) ns for the 4 + → 2 − and 2 − → 1 + transitions, respectively. The method is validated by applying it to the analogous 5 − → 2 − → 1 + cascade in 80m Br, for which all measured half-lives agree with adopted values within 1σ. The new 2 − → 1 + half-life in 78m Br exceeds the adopted value by 15.96σ, implying a 43% reduction in the reduced electric-quadrupole transition probability B(E2; 2 − → 1 + ) relative to currently evaluated data. This substantially increased hindrance of the 2 − → 1 + transition constrains the structure of low-lying negative-parity states in 78 Br and motivates renewed shell-model and beyond-mean-field calculations in the neutron-deficient A ≃ 78 mass region, where shape coexistence and proton–neutron residual interactions are expected to play important roles.",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "authors": [
+      "Valentin Fondement",
+      "Ethan Todd",
+      "Igor Jovanovic"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Physics A",
+    "source_short": "NPA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nuclphysa.2026.123485",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nuclphysa.2026.123485",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-decay",
+      "nuclear-structure",
+      "theoretical-nuclear",
+      "nuclear-data-applications"
+    ],
+    "tags": [
+      "mean-field",
+      "shape coexistence",
+      "half-life",
+      "nuclear physics",
+      "tritium",
+      "evaluated data"
+    ],
+    "primary_topic": "nuclear-decay",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.96,
+    "classification_evidence": [
+      "mean-field",
+      "shape coexistence",
+      "half-life",
+      "nuclear physics",
+      "tritium",
+      "evaluated data"
+    ],
+    "importance": 70,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +22",
+      "跨领域关联 +6",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://www.elsevier.com/open-access/userlicense/1.0/",
+      "https://doi.org/10.15223/policy-017",
+      "https://doi.org/10.15223/policy-037",
+      "https://doi.org/10.15223/policy-012",
+      "https://doi.org/10.15223/policy-029",
+      "https://doi.org/10.15223/policy-004"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Fondement, Valentin",
+      "Todd, Ethan",
+      "Jovanovic, Igor"
+    ],
+    "journal_abbrev": "Nuclear Physics A",
+    "volume": "1075",
+    "issue": "",
+    "pages": "123485",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001636",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "OpenAlex"
+    },
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "Semantic Scholar"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ]
   },
   {
     "id": "2f572a65100243d0",
@@ -432,7 +921,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "primary_topic": "nuclear-decay",
     "methods": [
       "experimental",
@@ -600,7 +1089,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-09-25T00:12:37+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "citation_authors": [
       "Wang, Yumeng",
       "Liu, Lang",
@@ -761,7 +1250,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/cbmf-s76k",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-23T00:21:25+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -843,7 +1332,177 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/yh1b-mf64",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-31T01:22:08+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "abstract_checked_sources": [],
+    "summary": "",
+    "content": ""
+  },
+  {
+    "id": "a1f94b24a86173a3",
+    "type": "paper",
+    "title": "Characterization and applications of the LaBr3 array at HUN-REN ATOMKI",
+    "abstract": "A high-efficiency γ -ray spectrometer at HUN-REN Institute for Nuclear Research (HUN-REN ATOMKI), the LAnthanum Bromide Detector Array (LABDA) has been designed and constructed to study low-probability phenomena in particle physics, nuclear spectroscopy, and nuclear astrophysics experiments. The array is comprised of 12 cylindrically shaped LaBr 3 (Ce) crystals, each measuring 3 ′ ′ × 3 ′ ′ , produced by Saint-Gobain. Key performance parameters of the array have been systematically characterized over a broad γ -ray energy range (344–10762 keV), including energy resolution, energy non-linearity, detection efficiency, time resolution and intrinsic background. Intrinsic background suppression, using pulse-shape discrimination methods has been also investigated. The prospects for applying the array to different nuclear physics measurements are discussed.",
+    "abstract_status": "full",
+    "abstract_source": "OpenAlex",
+    "authors": [
+      "L. Csedreki",
+      "M. Begala",
+      "M.M. Juhász",
+      "D. Sohler",
+      "Z. Elekes",
+      "A.J. Krasznahorkay"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Instruments and Methods in Physics Research A",
+    "source_short": "NIMA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nima.2026.171764",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nima.2026.171764",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-structure",
+      "detectors-daq",
+      "nuclear-astrophysics",
+      "nuclear-general"
+    ],
+    "tags": [
+      "nuclear spectroscopy",
+      "nuclear astrophysics",
+      "nuclear physics",
+      "particle physics"
+    ],
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.8,
+    "classification_evidence": [
+      "nuclear spectroscopy",
+      "nuclear astrophysics",
+      "nuclear physics",
+      "particle physics"
+    ],
+    "importance": 68,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +6",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Csedreki, L.",
+      "Begala, M.",
+      "Juhász, M.M.",
+      "Sohler, D.",
+      "Elekes, Z.",
+      "Krasznahorkay, A.J."
+    ],
+    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
+    "volume": "1091",
+    "issue": "",
+    "pages": "171764",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004900",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "openalex_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_checked_sources": [
+      "OpenAlex"
+    ]
+  },
+  {
+    "id": "e789969db5c09919",
+    "type": "paper",
+    "title": "A nanocomposite-mediated synergistic division inhibition strategy for selective antibacterial therapy against burn infections",
+    "abstract": "Abstract Nanomaterial-based antibacterial therapy presents an alternative solution to antibiotic resistance. However, most research focuses on enhancing antibacterial activity while neglecting the selectivity of nanomaterials, leading to indiscriminate damage to mammalian cells. Here, we design a synergistic boron nitride-polydopamine@MOF-199 nanocomposite (BPM NC) that interferes with bacterial binary fission. Its selectivity stems from suppressing FtsZ polymerization during bacterial division, while its high efficiency arises from synergistic mechanisms such as disrupting membrane potential and bacterial defense systems. These effects induce molecular-level disruptions in bacterial biological processes, enabling BPM NC (0.35 μg/mL) to rapidly inactivate bacteria (10 7 CFU/mL) in 30 min—358-fold enhancement over its precursor h-BN. In burn infection models, BPM NC exhibits significant efficacy in male mice and female pigs, outperforming the clinical drug silver sulfadiazine. This work provides a promising insight into developing antibacterial nanomaterials that combine selectivity and high activity, offering a strategy for next-generation antibacterial therapies.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Hao Liu",
+      "Zhixuan Yu",
+      "Ling Yang",
+      "Siyang Zhao",
+      "Tianzhi Li",
+      "Rui Li",
+      "Guanyu Ding",
+      "Ling Liu",
+      "Shaojun Dong"
+    ],
+    "published": "2026-10-29",
+    "updated": "2026-10-29",
+    "source": "Nature Communications",
+    "source_short": "Nat. Commun.",
+    "source_type": "journal",
+    "doi": "10.1038/s41467-026-79027-1",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1038/s41467-026-79027-1",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-reactions"
+    ],
+    "tags": [
+      "fission"
+    ],
+    "primary_topic": "nuclear-reactions",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "fission"
+    ],
+    "importance": 68,
+    "score_reasons": [
+      "来源权重 +48",
+      "核物理研究侧重 +18",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://creativecommons.org/licenses/by/4.0",
+      "https://creativecommons.org/licenses/by/4.0"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Liu, Hao",
+      "Yu, Zhixuan",
+      "Yang, Ling",
+      "Zhao, Siyang",
+      "Li, Tianzhi",
+      "Li, Rui",
+      "Ding, Guanyu",
+      "Liu, Ling",
+      "Dong, Shaojun"
+    ],
+    "journal_abbrev": "Nat Commun",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "numpages": "",
+    "publisher": "Springer Science and Business Media LLC",
+    "publisher_url": "https://www.nature.com/articles/s41467-026-79027-1",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "abstract_checked_sources": []
   },
   {
@@ -955,7 +1614,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/3rxj-2hpp",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-24T00:11:45+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-10-31T01:22:08+00:00",
@@ -1045,7 +1704,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-09-17T23:51:07+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "citation_authors": [
       "Barry, P. C.",
       "Prokudin, A.",
@@ -1170,6 +1829,123 @@
     "content": ""
   },
   {
+    "id": "9c743b681dba51f1",
+    "type": "paper",
+    "title": "Quantum theory of γ-transitions and nuclear deformation in radioactive 204−228Rn and 212−232Ra isotopes",
+    "abstract": "The present study focuses on the radon and radium isotopic chains, specifically within the ranges 204 ≤ A ≤ 228 for radon and 212 ≤ A ≤ 232 for radium. These heavy nuclei undergo α, β, and γ decay. While the α-decay systematics are well established, the role of γ-transitions as probes of nuclear structure remains less understood. The main objective of this work is to explore the role of γ-transitions, the electric quadrupole moment Q0, and the deformation parameter β2 as effective probes into the internal structure of radon and radium nuclei, using a quantum electrodynamics framework combined with Fermi’s golden rule. Partial γ-decay widths, half-lives, mean lifetimes, and reduced transition probabilities B(E2) are derived from first principles and tabulated for all studied isotopes. The analysis reveals clear structural signatures across the chains, particularly near the neutron shell closure at N = 126 . A pronounced reduction in γ-decay half-lives is observed at and beyond this magic number, reflecting enhanced transition probabilities due to shell and collective effects. Our predictions for B(E2) values and deformation parameters are compared with existing experimental data and theoretical models (RMF, FRDM, global best-fit), showing overall good agreement while extending coverage to isotopes with limited experimental data. The evolution of Q0 and β2 indicates that nuclear deformation tends to be minimal when the neutron number approaches the magic value N = 126 , and increases progressively as the number of neutrons deviates from this closed-shell configuration. These results provide refined benchmarks for electromagnetic transition systematics in 204 − 228 Rn and 212 − 232 Ra, and demonstrate the predictive potential of quantum-transition models in regions critical for both nuclear structure and applied radiation science.",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "authors": [
+      "J.M. Ndieula",
+      "A.A. Atangana Likéné",
+      "G.W. Kamkou",
+      "R. Yamapi",
+      "Saidou",
+      "M. Ndontchueng Moyo",
+      "C.J. Guembou Shouop"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Physics A",
+    "source_short": "NPA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nuclphysa.2026.123471",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nuclphysa.2026.123471",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-structure",
+      "nuclear-general",
+      "frontiers"
+    ],
+    "tags": [
+      "nuclear structure",
+      "magic number",
+      "nuclear deformation",
+      "nuclear physics",
+      "quantum"
+    ],
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.88,
+    "classification_evidence": [
+      "nuclear structure",
+      "magic number",
+      "nuclear deformation",
+      "nuclear physics",
+      "quantum"
+    ],
+    "importance": 66,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "https://doi.org/10.15223/policy-017",
+      "https://doi.org/10.15223/policy-037",
+      "https://doi.org/10.15223/policy-012",
+      "https://doi.org/10.15223/policy-029",
+      "https://doi.org/10.15223/policy-004"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Ndieula, J.M.",
+      "Atangana Likéné, A.A.",
+      "Kamkou, G.W.",
+      "Yamapi, R.",
+      "Saidou",
+      "Ndontchueng Moyo, M.",
+      "Guembou Shouop, C.J."
+    ],
+    "journal_abbrev": "Nuclear Physics A",
+    "volume": "1075",
+    "issue": "",
+    "pages": "123471",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001491",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "publisher_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "Publisher",
+      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001491"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "OpenAlex"
+    },
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "Semantic Scholar"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ]
+  },
+  {
     "id": "33c5d2331e57946a",
     "type": "paper",
     "title": "r -process nuclei in the rare-earth region above N = 126 in relativistic Hartree-Bogoliubov theory: A preponderance of shape coexistence in nuclei",
@@ -1229,7 +2005,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-10T01:26:47+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "citation_authors": [
       "Sharma, M. M."
     ],
@@ -1390,7 +2166,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-10T04:06:29+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "citation_authors": [
       "Jayawiguna, Byon N.",
       "Ajith, Siddarth",
@@ -1484,7 +2260,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/zc6z-ss9j",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-18T23:48:40+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-18T23:52:11+00:00",
@@ -1514,6 +2290,148 @@
       "checked_at": "2026-10-20T00:52:38+00:00",
       "source": "OpenAlex"
     }
+  },
+  {
+    "id": "6ecbf28a4eccd011",
+    "type": "paper",
+    "title": "Optimization of β2 and β4 deformations for 176Yb using quasi-elastic barrier distribution",
+    "abstract": "An effort has been made to optimize the quadrupole and hexadecapole deformation parameters for 176 Yb nuclei from the barrier distribution derived from quasi-elastic scattering measurements.The quasi-elastic excitation functions for the 14 N+ 176 Yb system were measured using the HYbrid Telescope ARray (HYTAR) detecting setup in the General Purpose Scattering Chamber (GPSC) at the Inter-University Accelerator Centre (IUAC), New Delhi. The barrier distribution for 14 N+ 176 Yb has been derived from the measured excitation functions. The experimental observables have been interpreted in light of full coupled channel calculations using the quantum mechanical code FRESCO. The coupled channel calculations for 14 N+ 176 Yb suggested that 176 Yb behaves as a rotational nucleus, and coupling up to the first three excited states with reported values of β2 and β4 explains the observed shape of the barrier distribution well. However, the deviation of coupled channel calculations from the precisely measured barrier distribution is further anticipated to have uncertain values for the considered deformation parameters, which have not been precisely reported in previous studies. The values of the deformation parameters β2 and β4 have been extracted using the chi-square minimization method. It has been found that β2=0.306 and β 4 = − 0.043 yielded the best fitted values to the experimental data. The present work strongly infers negative values for the hexadecapole deformation of 176 Yb and reports the values of β2=0.306 ± 0.002 and β 4 = − 0.043 ± 0.003 confidently up to three decimal places, which are consistent with those reported in the literature. Moreover, the optimized values have been corroborated by the angular distribution and fusion excitation function. The successful reproduction of the experimental observables, the angular distribution and fusion excitation function, through coupled channel calculations, substantiates the optimized values.",
+    "authors": [
+      "Gobind Ram",
+      "Manoj Kumar Sharma",
+      "Abhishek Yadav",
+      "Md. Moin Shaikh",
+      "Rayees Ahmad Yatoo",
+      "Aquib Siddique",
+      "Abhishek K. Mishra",
+      "Keshav Kapoor",
+      "Amanjot",
+      "Rishabh Prajapati",
+      "A. Jhingan",
+      "M. Kumar",
+      "N. Saneesh",
+      "Indu Bala",
+      "K.S. Golda",
+      "Pushpendra P. Singh",
+      "B.P. Singh"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Physics A",
+    "source_short": "NPA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nuclphysa.2026.123483",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nuclphysa.2026.123483",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-reactions",
+      "accelerators",
+      "nuclear-general",
+      "frontiers"
+    ],
+    "tags": [
+      "elastic scattering",
+      "angular distribution",
+      "excitation function",
+      "nuclear physics",
+      "accelerator",
+      "quantum"
+    ],
+    "importance": 66,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +18",
+      "跨领域关联 +6",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "primary_topic": "nuclear-reactions",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.96,
+    "classification_evidence": [
+      "elastic scattering",
+      "angular distribution",
+      "excitation function",
+      "nuclear physics",
+      "accelerator",
+      "quantum"
+    ],
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "https://doi.org/10.15223/policy-017",
+      "https://doi.org/10.15223/policy-037",
+      "https://doi.org/10.15223/policy-012",
+      "https://doi.org/10.15223/policy-029",
+      "https://doi.org/10.15223/policy-004"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Ram, Gobind",
+      "Sharma, Manoj Kumar",
+      "Yadav, Abhishek",
+      "Shaikh, Md. Moin",
+      "Yatoo, Rayees Ahmad",
+      "Siddique, Aquib",
+      "Mishra, Abhishek K.",
+      "Kapoor, Keshav",
+      "Amanjot",
+      "Prajapati, Rishabh",
+      "Jhingan, A.",
+      "Kumar, M.",
+      "Saneesh, N.",
+      "Bala, Indu",
+      "Golda, K.S.",
+      "Singh, Pushpendra P.",
+      "Singh, B.P."
+    ],
+    "journal_abbrev": "Nuclear Physics A",
+    "volume": "1075",
+    "issue": "",
+    "pages": "123483",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001612",
+    "citation_metadata_checked": true,
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-10T23:37:56+00:00",
+      "source": "OpenAlex"
+    },
+    "publisher_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-08-11T16:58:16+08:00",
+      "source": "Publisher",
+      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001612"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-09-10T23:37:56+00:00",
+      "source": "INSPIRE"
+    },
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-08-11T17:05:16+08:00",
+      "source": "Semantic Scholar"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ],
+    "summary": "",
+    "content": ""
   },
   {
     "id": "8d7358d4a3eabc7f",
@@ -1605,7 +2523,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/rm6z-cgrb",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-29T01:24:38+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-10-29T01:29:13+00:00",
@@ -1734,7 +2652,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/c323-g246",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-08T01:30:34+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-23T00:21:25+00:00",
@@ -1835,7 +2753,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/jhc8-1tc6",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-22T00:22:02+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-10-29T01:29:13+00:00",
@@ -1923,7 +2841,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-20T00:52:38+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "citation_authors": [
       "Perera, Udeshika C.",
       "Tan, H. B. Tran",
@@ -1969,6 +2887,915 @@
     ],
     "summary": "",
     "content": ""
+  },
+  {
+    "id": "6918baa85f852dd1",
+    "type": "paper",
+    "title": "Theoretical probe of deformed shell closure in α-Decay systematics of the superheavy region: 288,289Lv and 289Mc decay chains",
+    "abstract": "A systematic study of α-decay half-lives along the decay chains of recently discovered 288 Lv and 289 Lv isotopes by Oganessian et al. [Phys. Rev. C 112 (2025) 014603], and 289 Mc is carried out using different effective nucleon–nucleon (B3Y, M3YR, M3YP, and the density-dependent DD-M3YP and CD-M3YP) interactions within both spherical and deformed configurations. The α–daughter interaction potential is calculated using the double-folding model, with the folding integral evaluated in momentum space via a Fourier transform. The penetration probability for ground-state to ground-state α- transitions is evaluated within the semiclassical WKB approximation, while the preformation probability is determined using the cluster formation model (CFM). The calculated logarithmic half-lives are compared with experimental data, and the role of nuclear deformation is examined through multipole deformation parameters of the daughter nuclei. The results show that deformation significantly modifies the interaction barrier by lowering its height and width, leading to enhanced penetrability and improved agreement with experimental half-lives. A pronounced structural effect is observed around N = 168 , which is attributed to the presence of a deformed shell closure in the superheavy region. Benchmark comparisons with the semi-empirical modified Brown and Royer formulae demonstrate that the microscopic double-folding calculations achieve superior agreement with the experimental α-decay half-lives and provide a more reliable description of the underlying structural properties along the investigated decay chains.",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "authors": [
+      "Joshua T. Majekodunmi",
+      "B. Mukeru"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Physics A",
+    "source_short": "NPA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nuclphysa.2026.123498",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nuclphysa.2026.123498",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-structure",
+      "nuclear-general"
+    ],
+    "tags": [
+      "nuclear deformation",
+      "nuclear physics"
+    ],
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "nuclear deformation",
+      "nuclear physics"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +2",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "https://doi.org/10.15223/policy-017",
+      "https://doi.org/10.15223/policy-037",
+      "https://doi.org/10.15223/policy-012",
+      "https://doi.org/10.15223/policy-029",
+      "https://doi.org/10.15223/policy-004"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Majekodunmi, Joshua T.",
+      "Mukeru, B."
+    ],
+    "journal_abbrev": "Nuclear Physics A",
+    "volume": "1075",
+    "issue": "",
+    "pages": "123498",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001764",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-08-11T04:01:53+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-09-10T23:37:56+00:00",
+      "source": "OpenAlex"
+    },
+    "publisher_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-08-11T16:58:16+08:00",
+      "source": "Publisher",
+      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001764"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-09-10T23:37:56+00:00",
+      "source": "INSPIRE"
+    },
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-08-11T17:05:16+08:00",
+      "source": "Semantic Scholar"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ],
+    "summary": "",
+    "content": ""
+  },
+  {
+    "id": "d7d2b8aa8db6b40e",
+    "type": "paper",
+    "title": "Polarized electron scattering from light nuclei at high energies",
+    "abstract": "We present a theoretical approach to investigate the scattering of polarized electrons from light nuclei using the multipole expansion for the scattering cross section within the framework of the unified electroweak theory. The study is restricted to elastic and nuclear-level inelastic electron-nucleus scattering. Scattering processes corresponding to different electron polarizations are analyzed and compared with the unpolarized electron scattering investigated earlier. Besides, the contribution of both polarized and unpolarized terms to the scattering cross section is examined. Numerical calculations for stable 6,7 Li and unstable 7 Be nuclei using the Weinberg-Salam model show that the longitudinal polarization and weak interaction are not explicitly correlated when electrons scatter at θ ≃ 0 ∘ across all energy scales. A strong correlation emerges at the other scattering angles when the electron energy exceeds 10 GeV. This study provides additional information about nuclear structure and uncovers the role of electron polarization and its correlation with the weak interaction in each process, thus offering a more complete picture of electron-nucleus scattering.",
+    "authors": [
+      "Minh Truong Vo",
+      "Vu Dong Tran",
+      "Quang Hung Nguyen"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Physics A",
+    "source_short": "NPA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nuclphysa.2026.123488",
+    "arxiv_id": "2507.10633",
+    "url": "https://doi.org/10.1016/j.nuclphysa.2026.123488",
+    "pdf_url": "https://arxiv.org/pdf/2507.10633",
+    "categories": [
+      "nuclear-structure",
+      "nuclear-general"
+    ],
+    "tags": [
+      "nuclear structure",
+      "nuclear physics"
+    ],
+    "importance": 64,
+    "open_access": null,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +2",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-08-08T00:07:32+08:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "nuclear structure",
+      "nuclear physics"
+    ],
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "https://doi.org/10.15223/policy-017",
+      "https://doi.org/10.15223/policy-037",
+      "https://doi.org/10.15223/policy-012",
+      "https://doi.org/10.15223/policy-029",
+      "https://doi.org/10.15223/policy-004"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-08-11T16:57:44+08:00",
+      "source": "OpenAlex"
+    },
+    "publisher_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-08-11T16:58:16+08:00",
+      "source": "Publisher",
+      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001661"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-08-11T17:02:25+08:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "INSPIRE"
+    ],
+    "citation_authors": [
+      "Vo, Minh Truong",
+      "Tran, Vu Dong",
+      "Nguyen, Quang Hung"
+    ],
+    "journal_abbrev": "Nuclear Physics A",
+    "volume": "1075",
+    "issue": "",
+    "pages": "123488",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001661",
+    "citation_metadata_checked": true,
+    "summary": "",
+    "content": ""
+  },
+  {
+    "id": "c5d4ad537ae3f133",
+    "type": "paper",
+    "title": "Statistical effects of shape coexistence on fluctuation properties in even–even nuclei using the Berry–Robnik distribution",
+    "abstract": "•A comprehensive statistical analysis of experimental low-lying levels (0⁺, 2⁺, 4⁺, 6⁺) across Z = 18–82 is performed using Berry–Robnik and Gaussian models.•Statistical indicators are interpreted as complementary measures of shape coexistence, not as independent signatures.•Mass-dependent evolution of Berry–Robnik q values reveals enhanced chaotic components in heavier nuclei.•Both reported and unreported E2-active states are included to ensure complete and unbiased level sequences.•Results demonstrate that configuration mixing associated with shape coexistence produces characteristic fluctuation patterns in nuclear spectra. Shape coexistence, arising from the presence of competing spherical, oblate, and prolate configurations at low excitation energies, is a key manifestation of structural complexity in atomic nuclei. Its spectroscopic fingerprints include anomalously low‑lying 0⁺ states, irregular band structures, and strong configuration mixing. In this work, we perform a systematic statistical analysis of experimentally measured low‑lying levels (0⁺, 2⁺, 4⁺, 6⁺) in even–even nuclei across Z = 18–82 to investigate the fluctuation properties associated with shape coexistence. After unfolding the spectra using a polynomial approximation to the cumulative level density, nearest‑neighbor spacing distributions were constructed and analyzed using Gaussian and Berry–Robnik models. The Gaussian variances extracted from the unfolded spacing distributions are σ² = 10.04 (2⁺₁), 4.78 (4⁺₁), 3.12 (6⁺₁), 4.38 (0⁺₂), 4.70 (2⁺₂), 2.27 (0⁺₃), and 3.81 (2⁺₃) across the full region Z = 18–82, with smaller values in lighter nuclei and larger fluctuations in heavier ones. Berry–Robnik fits yield q values close to the Wigner limit (q → 0): q = 0.056 (2⁺₁), 0.139 (4⁺₁), 0.086 (6⁺₁), 0.139 (0⁺₂), 0.152 (2⁺₂), 0.168 (0⁺₃), and 0.078 (2⁺₃) for Z = 18–82, indicating predominantly chaotic dynamics induced by shape coexistence. The mass‑dependent evolution of q, with heavier nuclei exhibiting stronger chaotic components, further supports the interpretation that shape coexistence generates mixed regular–chaotic dynamics. These results establish spectral‑fluctuation measures as a robust, model‑independent diagnostic of shape coexistence in atomic nuclei. It is emphasized that the statistical indicators extracted in this work are not introduced as independent signatures of shape coexistence. Instead, they serve as complementary measures that reflect how shape coexistence influences the fluctuation properties of low-lying spectra across different mass regions and spin sequences. The analysis incorporates both reported and unreported E2-active states to ensure that the statistical conclusions are based on complete experimental level sequences.",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "authors": [
+      "Asgar Hosseinnezhad",
+      "Hadi Sabri"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Physics A",
+    "source_short": "NPA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nuclphysa.2026.123484",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nuclphysa.2026.123484",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-structure",
+      "nuclear-general"
+    ],
+    "tags": [
+      "shape coexistence",
+      "nuclear physics"
+    ],
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "shape coexistence",
+      "nuclear physics"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +2",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "https://doi.org/10.15223/policy-017",
+      "https://doi.org/10.15223/policy-037",
+      "https://doi.org/10.15223/policy-012",
+      "https://doi.org/10.15223/policy-029",
+      "https://doi.org/10.15223/policy-004"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Hosseinnezhad, Asgar",
+      "Sabri, Hadi"
+    ],
+    "journal_abbrev": "Nuclear Physics A",
+    "volume": "1075",
+    "issue": "",
+    "pages": "123484",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001624",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "publisher_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "Publisher",
+      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001624"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "OpenAlex"
+    },
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "Semantic Scholar"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ]
+  },
+  {
+    "id": "62e5832d15484e69",
+    "type": "paper",
+    "title": "Nuclear Structure of 118–132Xenon Nuclei: Insights from the IBM-2 Model",
+    "abstract": "•Comprehensive systematic investigation of 118-132 Xe isotopes within the IBM-2 framework.•Detailed tracking the structural evolution from γsoft O(6) to vibrational U(5) symmetry approaching the N=82 shell closure•Identification of 128 Xe as a strong candidate for the E(5) critical point symmetry.•High-precision calculations of energy spectra, B(E2) and M1 transition rates, and mixing ratios.•Successful reproduction of the latest experimental data, confirming the predictive power of the model. This study focuses on investigating the nuclear structure of even-even xenon isotopes using the second interacting boson model (IBM-2). The study involves examining energy spectra and electromagnetic transitions in a wide range of xenon isotopes, in particular those with a nucleon number close to the magic number, N = 82. The IBM framework provides a simplified and insightful description of collective properties of atomic nuclei by treating nucleons as pairs of interacting bosons. By comparing experimental data with the computed calculations, we found valuable insights into the nuclear properties of 118–132 XE isotopes. A comparison with available experimental data shows overall a good agreement, particularly in the low-lying levels. The results show that light isotopes 118–126 Xe tend to possess γ-soft properties associated with O(6) symmetry, and the 128 Xe nucleus possesses E(5) properties. Heavy isotopes 130–132 Xe gradually tend to shift to U(5) symmetry as they approach shell closure at neutrons N = 82. The results not only improve understanding of xenon isotopes but also contribute to broader insights into atomic nuclei. Our work also provides a foundation to investigate the nuclear structure of other isotopes and to broaden our knowledge of the complex nature of the atomic nuclei.",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "authors": [
+      "Ali N. Sabbar",
+      "Zainab S. Mohammad",
+      "Ali M. Abdul Hussain"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Physics A",
+    "source_short": "NPA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nuclphysa.2026.123464",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nuclphysa.2026.123464",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-structure",
+      "nuclear-general"
+    ],
+    "tags": [
+      "nuclear structure",
+      "magic number",
+      "B(E2)",
+      "nuclear physics",
+      "nuclear properties"
+    ],
+    "primary_topic": "nuclear-structure",
+    "methods": [],
+    "classification_confidence": 0.88,
+    "classification_evidence": [
+      "nuclear structure",
+      "magic number",
+      "B(E2)",
+      "nuclear physics",
+      "nuclear properties"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +2",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "https://doi.org/10.15223/policy-017",
+      "https://doi.org/10.15223/policy-037",
+      "https://doi.org/10.15223/policy-012",
+      "https://doi.org/10.15223/policy-029",
+      "https://doi.org/10.15223/policy-004"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Sabbar, Ali N.",
+      "Mohammad, Zainab S.",
+      "Hussain, Ali M. Abdul"
+    ],
+    "journal_abbrev": "Nuclear Physics A",
+    "volume": "1075",
+    "issue": "",
+    "pages": "123464",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001429",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "publisher_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "Publisher",
+      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001429"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "OpenAlex"
+    },
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "Semantic Scholar"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ]
+  },
+  {
+    "id": "51c5cf92066126be",
+    "type": "paper",
+    "title": "The STRASSE liquid hydrogen target system",
+    "abstract": "A compact liquid hydrogen target system has been developed for the Silicon Tracker for RAdioactive nuclei Studies at SAMURAI Experiments (STRASSE) at the RIKEN Nishina Center. This target, designed for proton-induced quasi-free scattering measurements in inverse kinematics, features a customizable cylindrical cell with a volume up to 125 mL which increases the reaction rate/luminosity, and thin Mylar walls to minimize the protons’ angular straggling. The cryogenic system, operated at 20 K, is optimized for rapid cool-down ( ≤ 5 h) and empty-target measurements, avoiding long experimental dead time. This new setup will allow for high-precision studies of nuclear structure using both missing-mass and in-flight prompt γ -ray spectroscopy techniques at the RIBF facility.",
+    "abstract_status": "full",
+    "abstract_source": "OpenAlex",
+    "authors": [
+      "M. Enciu",
+      "C. Xanthopoulou",
+      "A. Enciu",
+      "H.N. Liu",
+      "A. Obertelli",
+      "A.I. Stefanescu",
+      "F. Wienholtz"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Instruments and Methods in Physics Research A",
+    "source_short": "NIMA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nima.2026.171754",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nima.2026.171754",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-structure",
+      "detectors-daq"
+    ],
+    "tags": [
+      "nuclear structure"
+    ],
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "nuclear structure"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +2",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Enciu, M.",
+      "Xanthopoulou, C.",
+      "Enciu, A.",
+      "Liu, H.N.",
+      "Obertelli, A.",
+      "Stefanescu, A.I.",
+      "Wienholtz, F."
+    ],
+    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
+    "volume": "1091",
+    "issue": "",
+    "pages": "171754",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004808",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "publisher_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "Publisher",
+      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004808"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex"
+    ]
+  },
+  {
+    "id": "c0422676f64f6453",
+    "type": "paper",
+    "title": "Unified description of the moments of inertia formulas in the Bohr and VMI models",
+    "abstract": "A unified collective framework based on the Inglis formula for the nuclear moment of inertia is developed. In this approach, nuclear deformation is treated as a spin-dependent quantity that is determined self-consistently through total-energy minimization, with centrifugal stretching taken into account. In the small-deformation limit, an expansion about equilibrium yields a linear relationship between the moment of inertia and the deformation increment. This provides a microscopic foundation for Variable Moment of Inertia (VMI) models, without the need for explicit parameter mapping to quadrupole deformation. Coriolis effects are explicitly included. Bohr-type and VMI-type descriptions emerge as limiting cases of the same underlying framework.",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "authors": [
+      "Moh’d Abu El Sheikh",
+      "Abdurahim A. Okhunov",
+      "Riad S. Masharfe",
+      "Anashon A. Yokubbayev"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Physics A",
+    "source_short": "NPA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nuclphysa.2026.123463",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nuclphysa.2026.123463",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-structure",
+      "nuclear-general"
+    ],
+    "tags": [
+      "nuclear deformation",
+      "quadrupole deformation",
+      "nuclear physics"
+    ],
+    "primary_topic": "nuclear-structure",
+    "methods": [],
+    "classification_confidence": 0.72,
+    "classification_evidence": [
+      "nuclear deformation",
+      "quadrupole deformation",
+      "nuclear physics"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +2",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "https://doi.org/10.15223/policy-017",
+      "https://doi.org/10.15223/policy-037",
+      "https://doi.org/10.15223/policy-012",
+      "https://doi.org/10.15223/policy-029",
+      "https://doi.org/10.15223/policy-004"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Abu El Sheikh, Moh’d",
+      "Okhunov, Abdurahim A.",
+      "Masharfe, Riad S.",
+      "Yokubbayev, Anashon A."
+    ],
+    "journal_abbrev": "Nuclear Physics A",
+    "volume": "1075",
+    "issue": "",
+    "pages": "123463",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001417",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "OpenAlex"
+    },
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "Semantic Scholar"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ]
+  },
+  {
+    "id": "5c4cbb6040610834",
+    "type": "paper",
+    "title": "Data-driven discovery and rapid, direct synthesis of MXenes",
+    "abstract": "MXenes are a rapidly expanding family of two-dimensional transition metal carbides and nitrides, yet scalable synthesis routes remain limited and historical reports suggest a broader, largely unexplored chemical space. We used machine learning–assisted database mining to uncover hidden multilayer MXenes. Screening reveals 33 previously synthesized but unrecognized MXene candidates. Guided by these findings, we synthesized seven multilayer MXenes using a rapid, scalable self-propagating high-temperature method that requires no sustained external heating and completes within minutes. We further realized 11 previously unexplored rare earth–based MXenes (M = praseodymium, neodymium, samarium, gadolinium, terbium, holmium, and thulium). Experiments and modeling suggest semiconducting behavior and diverse magnetic states across this family. Together, these results expand the MXene family and demonstrate a data-driven strategy for accelerating materials discovery through sustainable methods.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Ali Saffar Shamshirgar",
+      "Guilherme Ribeiro Portugal",
+      "Soheil Ershadrad",
+      "Roman Ivanov",
+      "Martin Dahlqvist",
+      "Florian Chabanais",
+      "Sanjay Chakraborty",
+      "Rainer Traksmaa",
+      "Topias Jussila",
+      "Maarit Karppinen",
+      "Irina Hussainova",
+      "Fredrik Heintz",
+      "Per O. Å. Persson",
+      "Johanna Rosen"
+    ],
+    "published": "2026-10-29",
+    "updated": "2026-10-29",
+    "source": "Science",
+    "source_short": "Science",
+    "source_type": "journal",
+    "doi": "10.1126/science.aeh5957",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1126/science.aeh5957",
+    "pdf_url": "",
+    "categories": [
+      "ai-science"
+    ],
+    "tags": [
+      "machine learning"
+    ],
+    "primary_topic": "ai-science",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "machine learning"
+    ],
+    "importance": 70,
+    "score_reasons": [
+      "来源权重 +56",
+      "核物理研究侧重 +4",
+      "突破性表述 +8",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Shamshirgar, Ali Saffar",
+      "Portugal, Guilherme Ribeiro",
+      "Ershadrad, Soheil",
+      "Ivanov, Roman",
+      "Dahlqvist, Martin",
+      "Chabanais, Florian",
+      "Chakraborty, Sanjay",
+      "Traksmaa, Rainer",
+      "Jussila, Topias",
+      "Karppinen, Maarit",
+      "Hussainova, Irina",
+      "Heintz, Fredrik",
+      "Persson, Per O. Å.",
+      "Rosen, Johanna"
+    ],
+    "journal_abbrev": "Science",
+    "volume": "394",
+    "issue": "6823",
+    "pages": "eaeh5957",
+    "numpages": "",
+    "publisher": "American Association for the Advancement of Science (AAAS)",
+    "publisher_url": "https://www.science.org/doi/10.1126/science.aeh5957",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-10-30T01:30:20+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "abstract_checked_sources": [],
+    "summary": "",
+    "content": ""
+  },
+  {
+    "id": "b8703594a14e190f",
+    "type": "paper",
+    "title": "Gamow-Teller transitions and mirror energy differences for sd shell-nuclei using isospin non-conserving interaction",
+    "abstract": "In the present work, isospin asymmetry in Gamow-Teller (GT) β-decay transitions for sd-shell mirror nuclei is investigated within the nuclear shell-model framework using the USDCm interaction. This interaction explicitly incorporates Coulomb and isospin non-conserving components, which enables a consistent description of mirror asymmetry parameters and mirror energy differences (MEDs). We have calculated the ft values, the mirror asymmetry parameter, and the MED values for a wide range of mirror nuclei with mass numbers A= 20, 21, 23, 24, 25, 26, 29 and 31, and the results are compared with the available experimental data. In many transitions, the isospin symmetry is weakly broken because the GT asymmetry parameters are very small. Also, significant deviations from the experimental values are observed for almost all the mirror nuclei. For several low-lying states, calculated MEDs show noticeable Thomas-Ehrman shift, underscoring the significant influence of Coulomb and isospin non-conserving effects in proton-rich systems. Overall, the general characteristics of GT strengths are reproduced by the USDCm interaction. The current study offers a comprehensive standard for comprehending isospin-symmetry breaking in sd-shell nuclei.",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "authors": [
+      "Nidhi Pant",
+      "Praveen C. Srivastava",
+      "Kazunari Kaneko"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Physics A",
+    "source_short": "NPA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nuclphysa.2026.123472",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nuclphysa.2026.123472",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-structure",
+      "nuclear-general"
+    ],
+    "tags": [
+      "isospin symmetry",
+      "nuclear physics"
+    ],
+    "primary_topic": "nuclear-structure",
+    "methods": [],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "isospin symmetry",
+      "nuclear physics"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +2",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "https://doi.org/10.15223/policy-017",
+      "https://doi.org/10.15223/policy-037",
+      "https://doi.org/10.15223/policy-012",
+      "https://doi.org/10.15223/policy-029",
+      "https://doi.org/10.15223/policy-004"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Pant, Nidhi",
+      "Srivastava, Praveen C.",
+      "Kaneko, Kazunari"
+    ],
+    "journal_abbrev": "Nuclear Physics A",
+    "volume": "1075",
+    "issue": "",
+    "pages": "123472",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001508",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "OpenAlex",
+      "INSPIRE"
+    ]
+  },
+  {
+    "id": "b76dac74033aeb61",
+    "type": "paper",
+    "title": "Parity-pseudospin triplet bands in 153Eu",
+    "abstract": "Excited states of 153 Eu have been investigated using in-beam γ -ray spectroscopy techniques with the 150 Nd( 7 Li, 4n) fusion-evaporation reaction at a beam energy of 42 MeV. Several new levels and transitions have been identified. Two positive-parity bands and one negative-parity band have been observed in 153 Eu, with the lifetimes of 5 high-spin states measured using the Doppler-shift-attenuation method (DSAM). The three rotational bands in 153 Eu exhibit similar experimental characteristics. Meanwhile, theoretical calculations based on the particle-rotor model with octupole deformation (PRM) indicate obvious mixing among the d 5/2 , g 7/2 , and h 11/2 configurations for the three bands. Therefore, the three nearly-degenerate bands in 153 Eu are interpreted as parity-pseudospin triplet bands. The present work reports the first parity-pseudospin triplet bands in nuclei, and provides evidence that pseudospin orbitals retain near degeneracy in an octupole-deformed potential.",
+    "abstract_status": "full",
+    "abstract_source": "OpenAlex",
+    "authors": [
+      "Z.Y. Wang",
+      "C. Liu",
+      "X.D. Wang",
+      "S.Y. Wang",
+      "S.W. Wei",
+      "Y. Zheng",
+      "B. Qi",
+      "E.H. Wang",
+      "Z.Y. Liu",
+      "W.Z. Xu",
+      "H.F. Bai",
+      "G.S. Li",
+      "X.C. Han",
+      "S. Wang",
+      "D.P. Sun",
+      "Z.Q. Li",
+      "H. Jia",
+      "G.Y. Li",
+      "X.L. Luo",
+      "Y.J. Li",
+      "X. Liu",
+      "X. Xiao",
+      "S.Q. Zuo",
+      "L. Zhu",
+      "H.Y. Zhang",
+      "X.G. Wu",
+      "C.B. Li",
+      "H.Y. Wu",
+      "T.X. Li",
+      "M. Zheng",
+      "Z.H. Zhao",
+      "C.Y. He",
+      "M.L. Liu"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Physics Letters B",
+    "source_short": "PLB",
+    "source_type": "journal",
+    "doi": "10.1016/j.physletb.2026.140985",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.physletb.2026.140985",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-structure",
+      "nuclear-reactions"
+    ],
+    "tags": [
+      "octupole",
+      "fusion-evaporation"
+    ],
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "experimental",
+      "theoretical"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "octupole",
+      "fusion-evaporation"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +2",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Wang, Z.Y.",
+      "Liu, C.",
+      "Wang, X.D.",
+      "Wang, S.Y.",
+      "Wei, S.W.",
+      "Zheng, Y.",
+      "Qi, B.",
+      "Wang, E.H.",
+      "Liu, Z.Y.",
+      "Xu, W.Z.",
+      "Bai, H.F.",
+      "Li, G.S.",
+      "Han, X.C.",
+      "Wang, S.",
+      "Sun, D.P.",
+      "Li, Z.Q.",
+      "Jia, H.",
+      "Li, G.Y.",
+      "Luo, X.L.",
+      "Li, Y.J.",
+      "Liu, X.",
+      "Xiao, X.",
+      "Zuo, S.Q.",
+      "Zhu, L.",
+      "Zhang, H.Y.",
+      "Wu, X.G.",
+      "Li, C.B.",
+      "Wu, H.Y.",
+      "Li, T.X.",
+      "Zheng, M.",
+      "Zhao, Z.H.",
+      "He, C.Y.",
+      "Liu, M.L."
+    ],
+    "journal_abbrev": "Physics Letters B",
+    "volume": "882",
+    "issue": "",
+    "pages": "140985",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S037026932600835X",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "openalex_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_checked_sources": [
+      "OpenAlex"
+    ]
   },
   {
     "id": "27c7a809f2dcab61",
@@ -2038,7 +3865,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/d6vs-ppv1",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-15T00:15:33+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-15T00:15:33+00:00",
@@ -2125,9 +3952,9 @@
     ],
     "rights_status": "reusable",
     "figures": [],
-    "figure_status": "pending",
+    "figure_status": "rights_unknown",
     "first_seen": "2026-10-28T00:54:05+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "citation_authors": [
       "Zhao, Jie"
     ],
@@ -2235,7 +4062,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/wyx6-8lcz",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-17T23:51:07+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-18T23:52:11+00:00",
@@ -2267,1874 +4094,175 @@
     "content": ""
   },
   {
-    "id": "a57855b28ebe9748",
+    "id": "d59a77ef79fd34fd",
     "type": "paper",
-    "title": "Design studies of a pulsed quasimonoenergetic 2-keV neutron source for calibration of low threshold dark matter detectors",
-    "abstract": "We describe design studies for a pulsed quasi-monoenergetic 2-keV neutron source for calibration of sub-keV nuclear recoils. Such a calibration is required for detectors sensitive to sub- GeV dark matter and also the coherent elastic scattering of reactor neutrinos. In our design, neutrons from a commercial deuterium-tritium generator are moderated to the keV scale and subsequently filtered to achieve a monoenergetic spectrum utilizing the antiresonance feature, characterized by a drop in neutron transmission spectra at 2-keV for scandium. The analyses and conclusions presented are primarily based on simulations, as this study represents a critical first step toward the final goal. We address challenges such as unmoderated high-energy neutrons and gamma backgrounds from neutron capture in the moderator materials. Through optimization of the moderator+filter and shielding geometry, we identify a configuration that achieves the target neutron flux at 2 keV while maintaining subdominant rates of background interactions in simulation. Lastly, we outline a future pathway to lower-energy (few eV scale) calibrations using time-of-flight and sub-keV neutrons",
+    "title": "Transverse-spin dependent energy-energy correlators in proton-proton collisions within the dihadron fragmentation framework",
+    "abstract": "We calculate energy-energy correlations for two hadrons produced inside a jet in transversely polarized proton-proton collisions. We make numerical predictions based on a simple model that utilizes a previous global QCD analysis of dihadron fragmentation and transversity parton distribution functions. The results show remarkable agreement with a very recent STAR measurement. We also find the data at large jet transverse momentum have a slight preference for extractions of transversity that are consistent with lattice QCD computations of the nucleon tensor charges. Overall, this work provides further evidence for the underlying non-perturbative mechanism of near-side energy-energy correlators as well as highlights the potential for these observables to probe transverse-spin effects inside the nucleon.",
     "abstract_status": "full",
     "abstract_source": "arXiv RSS",
     "authors": [
-      "L. Chaplinsky",
-      "S. Fiorucci",
-      "C. W. Fink",
-      "M. Garcia-Sciveres",
-      "W. Guo",
-      "S. A. Hertel",
-      "J. K. Wuko",
-      "X. Li",
-      "J. Lin",
-      "R. Mahapatra",
-      "W. Matava",
-      "D. N. McKinsey",
-      "D. Z. Osterman",
-      "P. K. Patel",
-      "B. Penning",
-      "H. Pinckney",
-      "M. Platt",
-      "Y. Qi",
-      "M. Reed",
-      "G. R. C Rischbieter",
-      "R. K. Romani",
-      "P. Sorensen",
-      "V. Velan",
-      "G. Wang",
-      "Y. Wang",
-      "S. L. Watkins",
-      "M. R. Williams"
+      "Zhong-Bo Kang",
+      "Andreas Metz",
+      "Daniel Pitonyak",
+      "Congyue Zhang"
     ],
-    "published": "2026-10-28",
-    "updated": "2026-10-28",
-    "source": "Physical Review D",
-    "source_short": "PRD",
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Physics Letters B",
+    "source_short": "PLB",
     "source_type": "journal",
-    "doi": "10.1103/fqgp-916r",
-    "arxiv_id": "2410.14722",
-    "url": "https://doi.org/10.1103/fqgp-916r",
-    "pdf_url": "https://arxiv.org/pdf/2410.14722",
+    "doi": "10.1016/j.physletb.2026.141004",
+    "arxiv_id": "2607.02441",
+    "url": "https://doi.org/10.1016/j.physletb.2026.141004",
+    "pdf_url": "https://arxiv.org/pdf/2607.02441",
     "categories": [
       "nuclear-reactions",
-      "fusion",
-      "particle-cross"
-    ],
-    "tags": [
-      "neutron capture",
-      "elastic scattering",
-      "tritium",
-      "dark matter"
-    ],
-    "primary_topic": "nuclear-reactions",
-    "methods": [
-      "theoretical",
-      "review"
-    ],
-    "classification_confidence": 0.8,
-    "classification_evidence": [
-      "neutron capture",
-      "elastic scattering",
-      "tritium",
-      "dark matter"
-    ],
-    "importance": 64,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +18",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "http://creativecommons.org/publicdomain/zero/1.0/",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license",
-      "https://link.aps.org/licenses/aps-default-accepted-manuscript-license"
-    ],
-    "rights_status": "reusable",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "first_seen": "2026-10-07T01:10:59+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
-    "citation_authors": [
-      "Chaplinsky, L.",
-      "Fiorucci, S.",
-      "Fink, C. W.",
-      "Garcia-Sciveres, M.",
-      "Guo, W.",
-      "Hertel, S. A.",
-      "Wuko, J. K.",
-      "Li, X.",
-      "Lin, J.",
-      "Mahapatra, R.",
-      "Matava, W.",
-      "McKinsey, D. N.",
-      "Osterman, D. Z.",
-      "Patel, P. K.",
-      "Penning, B.",
-      "Pinckney, H.",
-      "Platt, M.",
-      "Qi, Y.",
-      "Reed, M.",
-      "Rischbieter, G. R. C",
-      "Romani, R. K.",
-      "Sorensen, P.",
-      "Velan, V.",
-      "Wang, G.",
-      "Wang, Y.",
-      "Watkins, S. L.",
-      "Williams, M. R."
-    ],
-    "journal_abbrev": "Phys. Rev. D",
-    "volume": "114",
-    "issue": "7",
-    "pages": "072011",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/fqgp-916r",
-    "citation_metadata_checked": true,
-    "publisher_abstract_enrichment": {
-      "status": "blocked",
-      "checked_at": "2026-10-07T01:10:59+00:00",
-      "source": "Publisher",
-      "error": "HTTP Error 403: Forbidden"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-07T01:10:59+00:00",
-      "source": "OpenAlex"
-    },
-    "abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-07T01:10:59+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ],
-    "summary": "",
-    "content": "",
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-08T01:30:34+00:00",
-      "source": "Semantic Scholar"
-    }
-  },
-  {
-    "id": "ce78caac233c09ee",
-    "type": "paper",
-    "title": "Real-time CXRS analysis on HL-3 tokamak with reliable neural networks and cross-device transfer learning",
-    "abstract": "Abstract We present a neural network-based method for real-time charge exchange recombination spectroscopy (CXRS) analysis on the HL-3 tokamak. To enhance model performance and reliability, we tailor the network architecture to the physical characteristics of CXRS spectra: the receptive field matches the Doppler-broadened line width, channel embedding encodes spatial awareness across diagnostic channels, and attention pooling focuses on the most informative spectral regions. These designs yield millisecond-level inference (0.56 ms per 32-channel) with accuracy comparable to conventional methods ( R 2 _ T i = 0.93, R 2 _ v t = 0.98). Furthermore, the model’s reliability is established through interpretability and uncertainty analysis. Interpretability analysis confirms that the model focuses on the Doppler-broadened wings of C VI for T i and tracks line shifts for v t , consistent with physical principles. Uncertainty estimates show that the model appropriately expresses higher uncertainty in regions where predictions are inherently more challenging. To address data scarcity on new devices, transfer learning from HL-2A tokamak markedly boosts performance in low-data regimes while retaining a modest advantage even with full HL-3 data, provided that the spectra are properly aligned and baseline subtracted. This work establishes a real-time, reliable, and data-efficient AI framework for CXRS analysis, offering a practical path to deploy machine learning approaches in plasma control on future fusion devices.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Wenjing Tian",
-      "Zongyu Yang",
-      "Ting Long",
-      "Shuosu Yang",
-      "Hao Wu",
-      "Deliang Yu",
-      "Xiaoxue He",
-      "Chenchong Tang",
-      "Rui Ke",
-      "Min Xu",
-      "Zhe Gao",
-      "Wei Chen",
-      "Wulyu Zhong",
-      "Zhongbing Shi"
-    ],
-    "published": "2026-10-22",
-    "updated": "2026-10-22",
-    "source": "Nuclear Fusion",
-    "source_short": "NF",
-    "source_type": "journal",
-    "doi": "10.1088/1741-4326/aeb037",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1741-4326/aeb037",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-reactions",
-      "ai-science",
-      "fusion"
-    ],
-    "tags": [
-      "charge exchange",
-      "nuclear fusion",
-      "tokamak",
-      "machine learning",
-      "neural network"
-    ],
-    "primary_topic": "nuclear-reactions",
-    "methods": [
-      "experimental"
-    ],
-    "classification_confidence": 0.88,
-    "classification_evidence": [
-      "charge exchange",
-      "nuclear fusion",
-      "tokamak",
-      "machine learning",
-      "neural network"
-    ],
-    "importance": 64,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +18",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0/",
-      "https://iopscience.iop.org/info/page/text-and-data-mining"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Tian, Wenjing",
-      "Yang, Zongyu",
-      "Long, Ting",
-      "Yang, Shuosu",
-      "Wu, Hao",
-      "Yu, Deliang",
-      "He, Xiaoxue",
-      "Tang, Chenchong",
-      "Ke, Rui",
-      "Xu, Min",
-      "Gao, Zhe",
-      "Chen, Wei",
-      "Zhong, Wulyu",
-      "Shi, Zhongbing"
-    ],
-    "journal_abbrev": "Nucl. Fusion",
-    "volume": "67",
-    "issue": "1",
-    "pages": "016004",
-    "numpages": "",
-    "publisher": "IOP Publishing",
-    "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aeb037",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-10-06T02:01:34+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
-    "abstract_checked_sources": [],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "60e131a78a4376fb",
-    "type": "paper",
-    "title": "Role of Shell-Closures and Deformations in Fission Mass Distribution of Actinides",
-    "abstract": "Abstract The present work identifies the fission fragments operating in even-even actinides within the framework of Quantum Mechanical Fragmentation Theory (QMFT). The fragmentation potential is worked out through the incorporation of spherical, quadrupole, and octupole deformed elongated configurations of the probable binary fragments. The shell-closures, binding energies, and deformations emphasize the potential energy minima, and subsequently the preformed cluster probabilities illustrate the fragment distributions in the spontaneous fission channel. The mass-yield distributions, calculated either using the collective clusterization method, or the BSM approach, or where the available experimental data for actinides with \\(98\\leq Z\\leq102\\) and \\(150\\leq N\\leq164\\), exhibit the single- and double-hump structures, as they are mutually associated with the fragmentation near \\ 132 Sn (spherical shape) and \\<sup>144\\<sup>Ba (pear-shaped), respectively. Therefore, based on this, we have examined about 150 cases of even-even actinides, belonging to \\(90\\leq Z \\leq102\\) and \\(108\\leq N \\leq166\\) regions. The study reveals a systematic evolution in fission mass distributions: beginning with near-symmetric splits driven by partial shell closures in quadrupole-deformed fragments, progressing to pronounced asymmetry governed by large shell gaps at the deformed magic numbers (\\(Z_{\\mathrm{HF}}\\approx56\\) and \\(N_{\\mathrm{HF}}\\approx88\\)) of heavy-mass fragments, and ultimately returning to symmetric patterns stabilized by the double magic configuration (\\(Z_i\\approx50\\) and \\(N_i\\approx82\\)) for binary fragments.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "SHIVANI JAIN",
-      "Amandeep Kaur",
-      "Manoj K Sharma"
-    ],
-    "published": "2026-10-30",
-    "updated": "2026-10-30",
-    "source": "Chinese Physics C",
-    "source_short": "CPC",
-    "source_type": "journal",
-    "doi": "10.1088/1674-1137/aebbae",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1674-1137/aebbae",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-decay",
-      "nuclear-clusters",
-      "nuclear-structure",
-      "nuclear-reactions"
-    ],
-    "tags": [
-      "octupole",
-      "clusterization",
-      "spontaneous fission",
-      "fission",
-      "fragmentation",
-      "quantum"
-    ],
-    "primary_topic": "nuclear-decay",
-    "methods": [
-      "theoretical"
-    ],
-    "classification_confidence": 0.96,
-    "classification_evidence": [
-      "octupole",
-      "clusterization",
-      "spontaneous fission",
-      "fission",
-      "fragmentation",
-      "quantum"
-    ],
-    "importance": 62,
-    "score_reasons": [
-      "来源权重 +32",
-      "核物理研究侧重 +22",
-      "跨领域关联 +6",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://publishingsupport.iopscience.iop.org/iop-standard/v1",
-      "https://iopscience.iop.org/info/page/text-and-data-mining"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "JAIN, SHIVANI",
-      "Kaur, Amandeep",
-      "Sharma, Manoj K"
-    ],
-    "journal_abbrev": "Chinese Phys. C",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
-    "publisher": "IOP Publishing",
-    "publisher_url": "https://iopscience.iop.org/article/10.1088/1674-1137/aebbae",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-10-31T01:22:08+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
-    "abstract_checked_sources": []
-  },
-  {
-    "id": "a024643179a1bbf0",
-    "type": "paper",
-    "title": "Natural Chlorine Enhances Antineutrino Detection in the Deep Ocean",
-    "abstract": "Large-volume neutrino telescopes such as IceCube and KM3NeT exploit natural ice or water as detection media, but their sparse instrumentation makes MeV neutrino interactions difficult to identify individually. We show that chlorine naturally abundant in seawater provides an intrinsic neutron-capture target that enables efficient tagging of electron antineutrinos through inverse beta decay. In contrast to the 2.2 MeV $\\gamma$-ray from neutron capture on hydrogen, capture on chlorine produces an $\\sim$8.6 MeV $\\gamma$-ray cascade on a shorter time scale, yielding a distinctive delayed-coincidence signature. Using measured seawater properties at the TRIDENT site and a detector-level simulation, we find that chlorine-assisted tagging can extend the core-collapse supernova 5$\\sigma$ discovery reach from $\\sim$50 to over 100 kpc. We validate the underlying detection principle with a salted-water experiment at the China Jinping Underground Laboratory, observing correlated neutron-capture signatures under suppressed cosmic muon background conditions. Natural seawater thus transforms the deep ocean into an intrinsically enhanced antineutrino detection medium, opening new opportunities for MeV neutrino astronomy and distributed measurements of reactor and geophysical antineutrinos.",
-    "abstract_status": "full",
-    "abstract_source": "arXiv RSS",
-    "authors": [
-      "Ruike Cao",
-      "Iwan Morton-Blake",
-      "Donglian Xu",
-      "Qichao Chang",
-      "Shuhua Hao",
-      "Jingtao Huang",
-      "Weilun Huang",
-      "Yifan Jiang",
-      "Shasha Liu",
-      "Hualin Mei",
-      "Hengbin Shao",
-      "Yingwei Wang",
-      "Peilian Wu",
-      "Xin Xiang",
-      "Fuyudi Zhang",
-      "Haoyan Zhang",
-      "Zhaozhi Zhang",
-      "Tailin Zhu",
-      "Yiwei Zhu"
-    ],
-    "published": "2026-10-23",
-    "updated": "2026-10-23",
-    "source": "arXiv hep-ex",
-    "source_short": "hep-ex",
-    "source_type": "preprint",
-    "doi": "",
-    "arxiv_id": "2610.30754",
-    "url": "https://arxiv.org/abs/2610.30754",
-    "pdf_url": "https://arxiv.org/pdf/2610.30754",
-    "categories": [
-      "nuclear-decay",
-      "nuclear-reactions",
-      "nuclear-astrophysics",
-      "particle-cross"
-    ],
-    "tags": [
-      "beta decay",
-      "neutron capture",
-      "supernova",
-      "core-collapse",
-      "neutrino"
-    ],
-    "primary_topic": "nuclear-decay",
-    "methods": [
-      "experimental",
-      "theoretical"
-    ],
-    "classification_confidence": 0.88,
-    "classification_evidence": [
-      "beta decay",
-      "neutron capture",
-      "supernova",
-      "core-collapse",
-      "neutrino"
-    ],
-    "importance": 62,
-    "score_reasons": [
-      "来源权重 +24",
-      "核物理研究侧重 +22",
-      "突破性表述 +8",
-      "跨领域关联 +6",
-      "完整摘要 +2"
-    ],
-    "open_access": true,
-    "license": "http://creativecommons.org/licenses/by/4.0/",
-    "publisher_licenses": [],
-    "rights_status": "reusable",
-    "figures": [],
-    "figure_status": "pending",
-    "first_seen": "2026-10-24T00:11:45+00:00",
-    "last_seen": "2026-10-24T00:11:45+00:00",
-    "abstract_checked_sources": []
-  },
-  {
-    "id": "30b3311de0d03e3d",
-    "type": "paper",
-    "title": "Lifetime of the singly charged $^{229}$Th nuclear isomer",
-    "abstract": "The nucleus of thorium-229 ($^{229}$Th) has an exceptionally low-energy isomeric state ($^{229\\mathrm{m}}$Th). Because its excitation energy is close to the energy levels of valence electrons, the lifetime of $^{229\\mathrm{m}}$Th varies substantially depending on its electronic state. Although internal conversion and radiative decay were recently observed, the electronic bridge decay of $^{229\\mathrm{m}}$Th, a higher-order decay process through an electronic transition, has not yet been confirmed. A promising candidate to search for this decay channel is singly charged $^{229\\mathrm{m}}$Th$^+$ in the electronic ground state. Here we produce $^{229\\mathrm{m}}$Th$^+$ by a charge exchange reaction in an ion trap and detect the isomers through measuring the electrons emitted from internal conversion processes. We determined the half-life of $^{229\\mathrm{m}}$Th$^+$ to be 0.46(8) s. Our result differs by several orders of magnitude from the half-lives of internal conversion and radiative decay, indirectly suggesting the existence of the electronic bridge decay of $^{229\\mathrm{m}}$Th. This will enable the direct observation and further investigation of the electronic bridge process, which will contribute to understanding nuclear-electron interactions and accelerating nuclear deexcitation in the operation of a thorium-based nuclear clock.",
-    "abstract_status": "full",
-    "abstract_source": "arXiv RSS",
-    "authors": [
-      "Y. Shigekawa",
-      "A. Yamaguchi",
-      "K. Tokoi",
-      "N. Sato",
-      "H. Kikunaga",
-      "K. Shirasaki",
-      "Y. Kasamatsu",
-      "M. Wada",
-      "H. Haba"
-    ],
-    "published": "2026-10-23",
-    "updated": "2026-10-23",
-    "source": "arXiv nucl-ex",
-    "source_short": "nucl-ex",
-    "source_type": "preprint",
-    "doi": "",
-    "arxiv_id": "2610.31009",
-    "url": "https://arxiv.org/abs/2610.31009",
-    "pdf_url": "https://arxiv.org/pdf/2610.31009",
-    "categories": [
-      "nuclear-decay",
-      "nuclear-structure",
-      "nuclear-reactions",
-      "experimental-nuclear"
-    ],
-    "tags": [
-      "nuclear isomer",
-      "internal conversion",
-      "half-life",
-      "charge exchange"
-    ],
-    "primary_topic": "nuclear-decay",
-    "methods": [
-      "experimental"
-    ],
-    "classification_confidence": 0.8,
-    "classification_evidence": [
-      "nuclear isomer",
-      "internal conversion",
-      "half-life",
-      "charge exchange"
-    ],
-    "importance": 62,
-    "score_reasons": [
-      "来源权重 +32",
-      "核物理研究侧重 +22",
-      "跨领域关联 +6",
-      "完整摘要 +2"
-    ],
-    "open_access": true,
-    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
-    "publisher_licenses": [],
-    "rights_status": "source_restricted",
-    "figures": [],
-    "figure_status": "license_blocked",
-    "first_seen": "2026-10-24T00:11:45+00:00",
-    "last_seen": "2026-10-24T00:11:45+00:00",
-    "abstract_checked_sources": []
-  },
-  {
-    "id": "c3eb40fc5ee83b7f",
-    "type": "paper",
-    "title": "Rejection of pile-up events in Li2MoO4 scintillating bolometers for neutrinoless double-beta decay detection",
-    "abstract": "",
-    "abstract_status": "unavailable",
-    "abstract_source": "",
-    "authors": [
-      "Yu Wang",
-      "Yuan-Yuan Liu",
-      "Jian-Jie Zhang",
-      "Hao-Zhe Zheng",
-      "Yi-Fei Zhang",
-      "Zhou-Hui Liu",
-      "Jian-Yong Jiang",
-      "Li Wang",
-      "Chi Xu",
-      "Huan-Zhong Huang",
-      "Jian-Ping Cheng"
-    ],
-    "published": "2026-10-21",
-    "updated": "2026-10-21",
-    "source": "Nuclear Science and Techniques",
-    "source_short": "NST",
-    "source_type": "journal",
-    "doi": "10.1007/s41365-026-02048-4",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1007/s41365-026-02048-4",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-decay"
-    ],
-    "tags": [
-      "beta decay"
-    ],
-    "primary_topic": "nuclear-decay",
-    "methods": [],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "beta decay"
-    ],
-    "importance": 62,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +22"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://www.springernature.com/gp/researchers/text-and-data-mining"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Wang, Yu",
-      "Liu, Yuan-Yuan",
-      "Zhang, Jian-Jie",
-      "Zheng, Hao-Zhe",
-      "Zhang, Yi-Fei",
-      "Liu, Zhou-Hui",
-      "Jiang, Jian-Yong",
-      "Wang, Li",
-      "Xu, Chi",
-      "Huang, Huan-Zhong",
-      "Cheng, Jian-Ping"
-    ],
-    "journal_abbrev": "NUCL SCI TECH",
-    "volume": "37",
-    "issue": "12",
-    "pages": "251",
-    "numpages": "",
-    "publisher": "Springer Science and Business Media LLC",
-    "publisher_url": "https://link.springer.com/article/10.1007/s41365-026-02048-4",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-10-22T00:22:02+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-22T00:22:02+00:00",
-      "source": "Publisher",
-      "url": "https://link.springer.com/article/10.1007/s41365-026-02048-4"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-22T00:22:02+00:00",
-      "source": "OpenAlex"
-    },
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-22T00:22:02+00:00",
-      "source": "Semantic Scholar"
-    },
-    "abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-22T00:22:02+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "1b76a364c00addff",
-    "type": "paper",
-    "title": "Isomeric states in odd- A tantalum isotopes with N = 106 – 116",
-    "abstract": "The structure of high- K isomeric states in the odd- A tantalum ( Z = 73 ) isotopes is investigated systematically within the cranked Nilsson–Strutinsky (CNS) and cranked Nilsson–Strutinsky–Bogoliubov (CNSB) frameworks, spanning neutron numbers N = 106 – 116 . The low-lying one-proton isomers are identified with the 9 / 2 − [ 514 ] , 5 / 2 + [ 402 ] , and 1 / 2 + [ 411 ] Nilsson orbitals, while the two-quasineutron configurations K π = 8 − , 10 + , and 10 − are shown to play a decisive role in driving multiquasiparticle isomer formation across the chain. High- K isomers are predicted in Ta 189 at low excitation energies, presenting a strong motivation for future experiments. The CNSB calculations predict a transition from stable prolate shapes to triaxiality and shape coexistence in odd- A Ta isotopes near N = 114 – 116 .",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "A. Kardan",
-      "P. M. Walker",
-      "A. K. Jain"
-    ],
-    "published": "2026-10-20",
-    "updated": "2026-10-20",
-    "source": "Physical Review C",
-    "source_short": "PRC",
-    "source_type": "journal",
-    "doi": "10.1103/r54y-vlpx",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/r54y-vlpx",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-structure"
-    ],
-    "tags": [
-      "shape coexistence"
-    ],
-    "primary_topic": "nuclear-structure",
-    "methods": [
-      "review"
-    ],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "shape coexistence"
-    ],
-    "importance": 62,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +20",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license",
-      "https://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Kardan, A.",
-      "Walker, P. M.",
-      "Jain, A. K."
-    ],
-    "journal_abbrev": "Phys. Rev. C",
-    "volume": "114",
-    "issue": "4",
-    "pages": "044328",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/r54y-vlpx",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-10-03T00:53:03+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-03T00:53:03+00:00",
-      "source": "Publisher",
-      "url": "https://journals.aps.org/prc/accepted/10.1103/r54y-vlpx"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-03T00:53:03+00:00",
-      "source": "OpenAlex"
-    },
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-03T00:53:03+00:00",
-      "source": "Semantic Scholar"
-    },
-    "abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-03T00:53:03+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "b3fdec4d334b80b0",
-    "type": "paper",
-    "title": "Extension of the dispersive optical model to improve the description of high-momentum components",
-    "abstract": "An improved treatment of high-momentum components in nuclei is introduced in the framework of the dispersive optical model (DOM). The well-established feature that the peak of the spectral function appears at higher excitation energy in the $A$-1 system with increasing momentum has so far not been successfully accounted for in the DOM. To achieve this feature, it is necessary to abandon the factorization of energy dependence and geometry of the DOM self-energy. The volume absorption below the Fermi energy has thus been represented by a decreasing radius at larger missing energy implying that a numerical treatment of the dispersion relations is necessitated. Earlier DOM results for ${}^{48}$Ca are also improved with this approach, demonstrating that a small neutron skin can still be accompanied by protons having a larger high-momentum tail than neutrons.",
-    "abstract_status": "full",
-    "abstract_source": "arXiv RSS",
-    "authors": [
-      "R. A. Ramon",
-      "M. C. Atkinson",
-      "W. H. Dickhoff"
-    ],
-    "published": "2026-10-20",
-    "updated": "2026-10-20",
-    "source": "Physical Review C",
-    "source_short": "PRC",
-    "source_type": "journal",
-    "doi": "10.1103/d2x4-xds7",
-    "arxiv_id": "2608.15544",
-    "url": "https://doi.org/10.1103/d2x4-xds7",
-    "pdf_url": "https://arxiv.org/pdf/2608.15544",
-    "categories": [
-      "nuclear-structure"
-    ],
-    "tags": [
-      "neutron skin"
-    ],
-    "primary_topic": "nuclear-structure",
-    "methods": [
-      "review"
-    ],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "neutron skin"
-    ],
-    "importance": 62,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +20",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license",
-      "https://link.aps.org/licenses/aps-default-accepted-manuscript-license"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
-    "abstract_checked_sources": [],
-    "citation_authors": [
-      "Ramon, R. A.",
-      "Atkinson, M. C.",
-      "Dickhoff, W. H."
-    ],
-    "journal_abbrev": "Phys. Rev. C",
-    "volume": "114",
-    "issue": "4",
-    "pages": "044325",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/d2x4-xds7",
-    "citation_metadata_checked": true,
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "34042d2b5bd937d7",
-    "type": "paper",
-    "title": "Highly deformed rotational structure in the near-spherical nucleus Te 123 at high spin",
-    "abstract": "High-spin states in Te 123 were populated in the Se 82 ( Ca 48 , α 3 n ) Te 123 reaction at a beam energy of 205 MeV, and γ -ray coincidence events were measured with the Gammasphere array. The level scheme has been extended to spin I ≈ 50 through the identification of several new γ -ray transitions, and a rotational band feeding states above I ≈ 20 . Cranked Nilsson-Strutinsky calculations are consistent with the observed low-spin yrast structure and support an interpretation of the high-spin band as a smooth terminating configuration involving two g 9 / 2 proton holes and no neutron excitations across the N = 82 shell gap. A transition from near-prolate to triaxial rotation about the intermediate axis is suggested for the band near I ≈ 40 .",
-    "abstract_status": "full",
-    "abstract_source": "INSPIRE",
-    "authors": [
-      "A. K. Singh",
-      "Atreyee Dey",
-      "I. Ragnarsson",
-      "R. V. F. Janssens",
-      "A. Al-Khatib",
-      "A. Neußer-Neffgen",
-      "C. R. Hansen",
-      "A. Bracco",
-      "F. Camera",
-      "G. Benzoni",
-      "P. Fallon"
-    ],
-    "published": "2026-10-16",
-    "updated": "2026-10-16",
-    "source": "Physical Review C",
-    "source_short": "PRC",
-    "source_type": "journal",
-    "doi": "10.1103/7pjh-r134",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/7pjh-r134",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-structure"
-    ],
-    "tags": [
-      "level scheme"
-    ],
-    "primary_topic": "nuclear-structure",
-    "methods": [
-      "experimental",
-      "review"
-    ],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "level scheme"
-    ],
-    "importance": 62,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +20",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license",
-      "https://link.aps.org/licenses/aps-default-accepted-manuscript-license"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Singh, A. K.",
-      "Dey, Atreyee",
-      "Ragnarsson, I.",
-      "Janssens, R. V. F.",
-      "Al-Khatib, A.",
-      "Neußer-Neffgen, A.",
-      "Hansen, C. R.",
-      "Bracco, A.",
-      "Camera, F.",
-      "Benzoni, G.",
-      "Fallon, P."
-    ],
-    "journal_abbrev": "Phys. Rev. C",
-    "volume": "114",
-    "issue": "4",
-    "pages": "044319",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/7pjh-r134",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-09-26T00:19:26+00:00",
-    "last_seen": "2026-10-30T01:30:20+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-12T00:54:46+00:00",
-      "source": "Publisher",
-      "url": "https://journals.aps.org/prc/accepted/10.1103/7pjh-r134"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-27T01:03:10+00:00",
-      "source": "OpenAlex"
-    },
-    "abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-10-27T01:03:10+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ],
-    "summary": "",
-    "content": "",
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-09-29T01:24:38+00:00",
-      "source": "Semantic Scholar"
-    }
-  },
-  {
-    "id": "f4ff298527372689",
-    "type": "paper",
-    "title": "Exploring anomaly-free dark photon models through solar neutrino-electron scattering in ton-scale dark matter detectors",
-    "abstract": "We study the phenomenological implications of anomaly-free dark photon models using low-energy solar neutrino-electron elastic scattering data from the ton-scale PandaX-4T and XENONnT experiments. Focusing on U ( 1 ) X gauge extensions that incorporate both kinetic and mass mixing, we derive novel exclusion limits across the parameter spaces of six benchmark models. Our analysis demonstrates that the stringency of these limits is directly correlated with the theoretical leptonic charge assignments of the respective models. Additionally, we provide model-independent limits by isolating the pure kinetic and pure mass mixing scenarios. In the sub-MeV mediator mass regime, our results meaningfully improve upon existing limits from previous neutrino-electron scattering experiments, such as CHARM-II, TEXONO, and GEMMA. Ultimately, these findings yield improved limits on low-mass dark photon models, demonstrating their complementarity with other ventures in the global search for dark portals.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "M. Demirci",
-      "G. Kaz𝚤l",
-      "M. F. Mustamin"
-    ],
-    "published": "2026-10-30",
-    "updated": "2026-10-30",
-    "source": "Physical Review D",
-    "source_short": "PRD",
-    "source_type": "journal",
-    "doi": "10.1103/dcmw-n3dc",
-    "arxiv_id": "2610.05377",
-    "url": "https://doi.org/10.1103/dcmw-n3dc",
-    "pdf_url": "https://arxiv.org/pdf/2610.05377",
-    "categories": [
-      "nuclear-reactions",
-      "particle-cross"
-    ],
-    "tags": [
-      "elastic scattering",
-      "neutrino",
-      "dark matter"
-    ],
-    "primary_topic": "nuclear-reactions",
-    "methods": [
-      "theoretical",
-      "review"
-    ],
-    "classification_confidence": 0.72,
-    "classification_evidence": [
-      "elastic scattering",
-      "neutrino",
-      "dark matter"
-    ],
-    "importance": 62,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +18",
-      "跨领域关联 +2",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "http://creativecommons.org/licenses/by/4.0/",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license",
-      "https://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "reusable",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "first_seen": "2026-10-06T02:01:34+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
-    "citation_authors": [
-      "Demirci, M.",
-      "Kaz𝚤l, G.",
-      "Mustamin, M. F."
-    ],
-    "journal_abbrev": "Phys. Rev. D",
-    "volume": "114",
-    "issue": "7",
-    "pages": "075039",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/dcmw-n3dc",
-    "citation_metadata_checked": true,
-    "publisher_abstract_enrichment": {
-      "status": "blocked",
-      "checked_at": "2026-10-06T02:01:34+00:00",
-      "source": "Publisher",
-      "error": "HTTP Error 403: Forbidden"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-06T02:01:34+00:00",
-      "source": "OpenAlex"
-    },
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-06T02:01:34+00:00",
-      "source": "Semantic Scholar"
-    },
-    "abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-06T02:01:34+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "f434f9636e354b49",
-    "type": "paper",
-    "title": "Runaway electron induced explosions of graphite; modeling versus controlled DIII-D experiments",
-    "abstract": "Abstract The state-of-the-art concerning the modeling of the thermomechanical response of graphite to runaway electron (RE) impact is based on one-way coupled linear thermoelasticity combined with Rankine’s strength-based failure criterion and limited to the onset of material failure. Here, the predictive capabilities are extended to the nonlinear damage phase characterized by material fragmentation and debris expulsion. This is achieved by introducing plasticity via the Johnson–Holmquist constitutive model, adopting an effective plastic strain-based failure criterion and coupling finite element analysis with smoothed-particle hydrodynamics. The extended thermomechanical model is successfully benchmarked against the results of two controlled RE-induced damage experiments recently carried out in DIII-D. This constitutes an important step towards the final objective of quantitatively describing the thermomechanical response of tungsten to REs.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "T. Rizzi",
-      "A. Kavroulakis",
-      "S. Ratynskaia",
-      "P. Tolias",
-      "M. Tatarakis",
-      "E. Kaselouris",
-      "V. Dimitriou",
-      "E. Hollmann",
-      "F. Brochard",
-      "A. Kulachenko",
-      "M. Beidler",
-      "C. Lasnier",
-      "R.A. Pitts"
-    ],
-    "published": "2026-10-28",
-    "updated": "2026-10-28",
-    "source": "Nuclear Fusion",
-    "source_short": "NF",
-    "source_type": "journal",
-    "doi": "10.1088/1741-4326/aeb275",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1741-4326/aeb275",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-reactions",
-      "fusion"
-    ],
-    "tags": [
-      "fragmentation",
-      "nuclear fusion"
-    ],
-    "primary_topic": "nuclear-reactions",
-    "methods": [],
-    "classification_confidence": 0.64,
-    "classification_evidence": [
-      "fragmentation",
-      "nuclear fusion"
-    ],
-    "importance": 62,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +18",
-      "跨领域关联 +2",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0/",
-      "https://iopscience.iop.org/info/page/text-and-data-mining"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Rizzi, T.",
-      "Kavroulakis, A.",
-      "Ratynskaia, S.",
-      "Tolias, P.",
-      "Tatarakis, M.",
-      "Kaselouris, E.",
-      "Dimitriou, V.",
-      "Hollmann, E.",
-      "Brochard, F.",
-      "Kulachenko, A.",
-      "Beidler, M.",
-      "Lasnier, C.",
-      "Pitts, R.A."
-    ],
-    "journal_abbrev": "Nucl. Fusion",
-    "volume": "67",
-    "issue": "1",
-    "pages": "014002",
-    "numpages": "",
-    "publisher": "IOP Publishing",
-    "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aeb275",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-10-10T01:26:47+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
-    "abstract_checked_sources": [],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "5c4cbb6040610834",
-    "type": "paper",
-    "title": "Data-driven discovery and rapid, direct synthesis of MXenes",
-    "abstract": "MXenes are a rapidly expanding family of two-dimensional transition metal carbides and nitrides, yet scalable synthesis routes remain limited and historical reports suggest a broader, largely unexplored chemical space. We used machine learning–assisted database mining to uncover hidden multilayer MXenes. Screening reveals 33 previously synthesized but unrecognized MXene candidates. Guided by these findings, we synthesized seven multilayer MXenes using a rapid, scalable self-propagating high-temperature method that requires no sustained external heating and completes within minutes. We further realized 11 previously unexplored rare earth–based MXenes (M = praseodymium, neodymium, samarium, gadolinium, terbium, holmium, and thulium). Experiments and modeling suggest semiconducting behavior and diverse magnetic states across this family. Together, these results expand the MXene family and demonstrate a data-driven strategy for accelerating materials discovery through sustainable methods.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Ali Saffar Shamshirgar",
-      "Guilherme Ribeiro Portugal",
-      "Soheil Ershadrad",
-      "Roman Ivanov",
-      "Martin Dahlqvist",
-      "Florian Chabanais",
-      "Sanjay Chakraborty",
-      "Rainer Traksmaa",
-      "Topias Jussila",
-      "Maarit Karppinen",
-      "Irina Hussainova",
-      "Fredrik Heintz",
-      "Per O. Å. Persson",
-      "Johanna Rosen"
-    ],
-    "published": "2026-10-29",
-    "updated": "2026-10-29",
-    "source": "Science",
-    "source_short": "Science",
-    "source_type": "journal",
-    "doi": "10.1126/science.aeh5957",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1126/science.aeh5957",
-    "pdf_url": "",
-    "categories": [
-      "ai-science"
-    ],
-    "tags": [
-      "machine learning"
-    ],
-    "primary_topic": "ai-science",
-    "methods": [],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "machine learning"
-    ],
-    "importance": 70,
-    "score_reasons": [
-      "来源权重 +56",
-      "核物理研究侧重 +4",
-      "突破性表述 +8",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Shamshirgar, Ali Saffar",
-      "Portugal, Guilherme Ribeiro",
-      "Ershadrad, Soheil",
-      "Ivanov, Roman",
-      "Dahlqvist, Martin",
-      "Chabanais, Florian",
-      "Chakraborty, Sanjay",
-      "Traksmaa, Rainer",
-      "Jussila, Topias",
-      "Karppinen, Maarit",
-      "Hussainova, Irina",
-      "Heintz, Fredrik",
-      "Persson, Per O. Å.",
-      "Rosen, Johanna"
-    ],
-    "journal_abbrev": "Science",
-    "volume": "394",
-    "issue": "6823",
-    "pages": "eaeh5957",
-    "numpages": "",
-    "publisher": "American Association for the Advancement of Science (AAAS)",
-    "publisher_url": "https://www.science.org/doi/10.1126/science.aeh5957",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-10-30T01:30:20+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
-    "abstract_checked_sources": [],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "3123fa21e211d74f",
-    "type": "paper",
-    "title": "Predictions for the scalar partner of the LHC tetraquark X ( 6600 )",
-    "abstract": "We consider how the recent CMS measurements of the masses and quantum numbers of X ( 6600 ) , X ( 6900 ) and X ( 7100 ) can help to reveal the internal structure of these apparent c c c ¯ c ¯ tetraquarks. The measured J P C = 2 + + quantum numbers of X ( 6600 ) are consistent with our previous prediction, and imply the inevitable existence of a lighter 0 + + partner X ( 6400 ) which also decays to J / ψ J / ψ . There are strong indications for this scalar partner in the recent CMS data fits, which include a Breit-Wigner peak with mass around 6400 MeV. We provide predictions for the masses and decay properties of the scalar and other partner states, which are key experimental tests to discriminate between quark and diquark models. Dedicated experimental scrutiny of this mass region is therefore required, to establish an S-wave multiplet of c c c ¯ c ¯ states (the first of its kind for tetraquarks), leading to a breakthrough in exotic hadron research and our understanding of heavy quark exotics.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Muhammad Naeem Anwar",
-      "Timothy J. Burns"
-    ],
-    "published": "2026-10-16",
-    "updated": "2026-10-16",
-    "source": "Physical Review D",
-    "source_short": "PRD",
-    "source_type": "journal",
-    "doi": "10.1103/1p7c-3prv",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/1p7c-3prv",
-    "pdf_url": "",
-    "categories": [
-      "high-energy-nuclear",
-      "particle-cross",
-      "frontiers"
-    ],
-    "tags": [
-      "hadron",
-      "CMS",
-      "quantum"
-    ],
-    "primary_topic": "high-energy-nuclear",
-    "methods": [
-      "experimental",
-      "theoretical",
-      "review"
-    ],
-    "classification_confidence": 0.72,
-    "classification_evidence": [
-      "hadron",
-      "CMS",
-      "quantum"
-    ],
-    "importance": 63,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +9",
-      "突破性表述 +8",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Anwar, Muhammad Naeem",
-      "Burns, Timothy J."
-    ],
-    "journal_abbrev": "Phys. Rev. D",
-    "volume": "114",
-    "issue": "7",
-    "pages": "074040",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/1p7c-3prv",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-10-17T00:06:33+00:00",
-    "last_seen": "2026-10-30T01:30:20+00:00",
-    "abstract_checked_sources": [],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "2e88fd4ba6999d95",
-    "type": "paper",
-    "title": "Revisiting p 11 B fusion: Updated cross-sections, reactivity, and energy balance",
-    "abstract": "Abstract Recent experimental progress has substantially improved the available cross-section data for the p-$^{11}$B fusion reaction, particularly in energy regions that previously lacked direct measurements. In this study, we develop a high-precision analytical parameterization of the p-$^{11}$B reaction cross-section over the 0--10 MeV energy range, incorporating the new experimental data into a continuous and numerically efficient representation. Using this parameterization, we evaluate the thermonuclear reactivity of the p-$^{11}$B reaction and examine the effects of the dominant resonance at 0.6 MeV and a newly observed resonance around 4.7 MeV. Furthermore, we assess the energy balance by analyzing the fusion power density and the electron bremsstrahlung power density. Our results indicate that p-$^{11}$B fusion is not precluded by bremsstrahlung constraints when contemporary cross-section data and self-consistent thermal modeling are employed.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Hong-Yi Wang",
-      "Yu-Qi Li",
-      "Qian Wu",
-      "Zhu-Fang Cui"
-    ],
-    "published": "2026-10-22",
-    "updated": "2026-10-22",
-    "source": "Nuclear Fusion",
-    "source_short": "NF",
-    "source_type": "journal",
-    "doi": "10.1088/1741-4326/aeb818",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1741-4326/aeb818",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-reactions",
-      "fusion"
-    ],
-    "tags": [
-      "fusion reaction",
-      "nuclear fusion"
-    ],
-    "primary_topic": "nuclear-reactions",
-    "methods": [],
-    "classification_confidence": 0.64,
-    "classification_evidence": [
-      "fusion reaction",
-      "nuclear fusion"
-    ],
-    "importance": 62,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +18",
-      "跨领域关联 +2",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0/",
-      "https://iopscience.iop.org/info/page/text-and-data-mining"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Wang, Hong-Yi",
-      "Li, Yu-Qi",
-      "Wu, Qian",
-      "Cui, Zhu-Fang"
-    ],
-    "journal_abbrev": "Nucl. Fusion",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
-    "publisher": "IOP Publishing",
-    "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aeb818",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-10-23T00:21:25+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
-    "abstract_checked_sources": [],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "f53e1bbfc28977a1",
-    "type": "paper",
-    "title": "Nanosecond-LIBS-induced deuterium outgassing, diffusion, and surface modification in tungsten coatings",
-    "abstract": "Abstract Tritium retention in plasma-facing components(PFCs) must be strictly controlled to ensure the safe operation of fusion devices. In ITER, compliance with the tritium inventory limit and assessment of fuel-removal strategies require in situ monitoring of fuel retention in PFCs. Laser-Induced Breakdown Spectroscopy(LIBS) is a diagnostic technique that can be implemented via remote handling to investigate fuel retention during maintenance shutdowns at ITER.&#xD;In LIBS diagnostics, the selection of laser parameters plays a critical role in determining the ablation characteristics and thermal perturbation of the target. Used nanosecond(ns) laser pulses deliver energy on timescales that allow substantial thermal diffusion into the target, which could result in surface heating and melting. Under multi-pulse LIBS operation, these cumulative thermal effects can alter deuterium quantification, as deuterium may diffuse or outgas due to heating induced by earlier pulses. Such laser-induced perturbations can compromise accuracy of quantitative deuterium measurements if they are not properly accounted for in modelling.&#xD;In this study, subsequent in situ ns-LIBS and in situ Nuclear Reaction Analysis(NRA) measurements were performed in Magnum-PSI on compact and porous tungsten coatings using a defocused, millimetre-scale laser spot(2.5×2.5mm). Deuterium retention and depth profiles were determined in and outside the LIBS crater. Under the investigated laser conditions, NRA measurements indicated a 66–79% reduction in retained deuterium within the sampled region of the LIBS crater, whereas pure material removal by ablation would account for only 21–42%, demonstrating additional laser-induced outgassing. Compact coatings further exhibited melting and intermixing with the underlying substrate. These findings highlight the importance of accounting for defocused ns-LIBS-induced perturbations in retention measurements. Further experimental and modelling studies are needed to assess the dependence of these effects on laser spot geometry and to determine whether picosecond(ps) LIBS, together with consideration of cumulative multi-pulse effects, could improve the reliability of fuel-retention diagnostics in future fusion devices.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Jort van Kesteren",
-      "Jasper Ristkok",
-      "Jordy Vernimmen",
-      "Sanath Shetty",
-      "Luigi Bana",
-      "Gabriele Alberti",
-      "David Dellasega",
-      "Pavel Veis",
-      "Indrek Jogi",
-      "Beata Tyburska-Pueschel"
-    ],
-    "published": "2026-10-22",
-    "updated": "2026-10-22",
-    "source": "Nuclear Fusion",
-    "source_short": "NF",
-    "source_type": "journal",
-    "doi": "10.1088/1741-4326/aeb81b",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1741-4326/aeb81b",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-reactions",
-      "fusion"
-    ],
-    "tags": [
-      "nuclear reaction",
-      "nuclear fusion",
-      "ITER",
-      "tritium"
-    ],
-    "primary_topic": "nuclear-reactions",
-    "methods": [
-      "experimental"
-    ],
-    "classification_confidence": 0.8,
-    "classification_evidence": [
-      "nuclear reaction",
-      "nuclear fusion",
-      "ITER",
-      "tritium"
-    ],
-    "importance": 62,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +18",
-      "跨领域关联 +2",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0/",
-      "https://iopscience.iop.org/info/page/text-and-data-mining"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "van Kesteren, Jort",
-      "Ristkok, Jasper",
-      "Vernimmen, Jordy",
-      "Shetty, Sanath",
-      "Bana, Luigi",
-      "Alberti, Gabriele",
-      "Dellasega, David",
-      "Veis, Pavel",
-      "Jogi, Indrek",
-      "Tyburska-Pueschel, Beata"
-    ],
-    "journal_abbrev": "Nucl. Fusion",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
-    "publisher": "IOP Publishing",
-    "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aeb81b",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-10-23T00:21:25+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
-    "abstract_checked_sources": [],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "1e5da0923e42a76d",
-    "type": "paper",
-    "title": "Measurements of local polarization of $\\Lambda$ hyperons with event shape engineering in Au+Au collisions at RHIC-STAR",
-    "abstract": "Anisotropic flow is expected to generate local vorticities along the beam direction, which in turn lead to local polarization of produced particles. Although the local polarization of hyperons has already been observed at RHIC and the LHC, its mechanism is not yet understood: model calculations indicate that the shear-induced and vorticity-induced contributions can have opposite signs and may substantially cancel, so that the resulting polarization depends sensitively on the theoretical implementation. Since both are driven by the anisotropic flow, we employ the Event Shape Engineering (ESE) method, which selects events with different flow magnitudes within a narrow centrality range, to measure the local polarization as a function of the elliptic flow at a fixed multiplicity. We report the measurements of the elliptic flow ($v_2$) and the local polarization ($P_{z,2}$) of $\\Lambda$ and $\\bar{\\Lambda}$ as a function of the reduced flow vector magnitude $q_2$ used for the ESE event selection, in Au+Au collisions at $\\sqrt{s_{\\rm NN}} = 19.6~{\\rm GeV}$ from the STAR experiment. The $v_2$ shows a clear positive dependence on $q_2$, while $P_{z,2}$ indicates a weak positive dependence on $q_2$ and $v_2$. This is the first measurement to directly investigate the relation between anisotropic flow and local polarization, providing new insight into the origin of local polarization.",
-    "abstract_status": "full",
-    "abstract_source": "arXiv RSS",
-    "authors": [
-      "Taiki Kondo (for the STAR Collaboration)"
-    ],
-    "published": "2026-10-21",
-    "updated": "2026-10-21",
-    "source": "arXiv nucl-ex",
-    "source_short": "nucl-ex",
-    "source_type": "preprint",
-    "doi": "",
-    "arxiv_id": "2610.25989",
-    "url": "https://arxiv.org/abs/2610.25989",
-    "pdf_url": "https://arxiv.org/pdf/2610.25989",
-    "categories": [
-      "experimental-nuclear",
+      "theoretical-nuclear",
       "high-energy-nuclear"
     ],
     "tags": [
-      "RHIC",
-      "elliptic flow",
-      "anisotropic flow"
-    ],
-    "primary_topic": "experimental-nuclear",
-    "methods": [
-      "experimental",
-      "theoretical"
-    ],
-    "classification_confidence": 0.72,
-    "classification_evidence": [
-      "RHIC",
-      "elliptic flow",
-      "anisotropic flow"
-    ],
-    "importance": 62,
-    "score_reasons": [
-      "来源权重 +32",
-      "核物理研究侧重 +18",
-      "突破性表述 +8",
-      "跨领域关联 +2",
-      "完整摘要 +2"
-    ],
-    "open_access": true,
-    "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
-    "publisher_licenses": [],
-    "rights_status": "source_restricted",
-    "figures": [],
-    "figure_status": "license_blocked",
-    "first_seen": "2026-10-21T00:20:16+00:00",
-    "last_seen": "2026-10-22T00:22:02+00:00",
-    "abstract_checked_sources": [],
-    "citation_authors": [],
-    "journal_abbrev": "",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
-    "publisher": "",
-    "publisher_url": "",
-    "citation_metadata_checked": false,
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "c409474e7eecb0ad",
-    "type": "paper",
-    "title": "SOLPS-ITER simulation analysis on the synergistic effect of boron and neon in detached plasma on EAST",
-    "abstract": "Abstract EAST experiments have demonstrated that combined neon (Ne) and boron (B) injection overcomes the narrow operational window of pure neon seeding, and compensates for the insufficient radiative capacity of B alone, establishing a stable ELM-suppressed H-mode with a partially detached outer divertor and good confinement (H₉₈ ~1) [Sun et al 2026 Nucl. Fusion 66 044002]. To reveal the underlying physical mechanisms, SOLPS-ITER simulations of Ne-B co-injection are performed under EAST conditions. Three mechanisms are identified. First, B and Ne form a poloidal radiation synergy: Ne radiates efficiently at Te ~20-27 eV near the X-point, while B fills the radiative gap below ~17 eV in the divertor region, together extending the energy dissipation zone from the X-point to the target and enabling deep energy detachment. Second, the B-enhanced D⁺-D charge exchange in the near-SOL amplifies momentum loss and substantially reduces the target particle flux. Third, the reduced Ne seeding rate through compensating B radiation is the dominant lever for lowering core radiation and Zeff, because core impurity content is governed by Ne, with its density exceeding that of B by nearly two orders of magnitude regardless of injection rate. Additionally, the deeper detachment state further promotes B deposition on the divertor target, reinforcing wall conditioning. These mechanisms provide a generalizable physics framework for mixed low-Z/high-Z impurity injection strategies on ITER and future fusion devices.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Lei Peng",
-      "Zhen Sun",
-      "Kedong Li",
-      "G Z Zuo",
-      "Jizhong Sun",
-      "Jinqin Ye",
-      "Qianhui Mao",
-      "Jun Ding",
-      "Haidong Li"
-    ],
-    "published": "2026-10-20",
-    "updated": "2026-10-20",
-    "source": "Nuclear Fusion",
-    "source_short": "NF",
-    "source_type": "journal",
-    "doi": "10.1088/1741-4326/aeb681",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1741-4326/aeb681",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-reactions",
-      "fusion"
-    ],
-    "tags": [
-      "charge exchange",
-      "nuclear fusion",
-      "ITER",
-      "EAST"
+      "lattice qcd",
+      "fragmentation"
     ],
     "primary_topic": "nuclear-reactions",
     "methods": [
-      "theoretical"
+      "experimental"
     ],
-    "classification_confidence": 0.8,
+    "classification_confidence": 0.64,
     "classification_evidence": [
-      "charge exchange",
-      "nuclear fusion",
-      "ITER",
-      "EAST"
+      "lattice qcd",
+      "fragmentation"
     ],
-    "importance": 62,
+    "importance": 64,
     "score_reasons": [
       "来源权重 +40",
       "核物理研究侧重 +18",
-      "跨领域关联 +2",
+      "跨领域关联 +4",
       "完整摘要 +2"
     ],
     "open_access": null,
-    "license": "",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
     "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0/",
-      "https://iopscience.iop.org/info/page/text-and-data-mining"
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by/4.0/"
     ],
     "rights_status": "unknown",
     "figures": [],
     "figure_status": "rights_unknown",
+    "first_seen": "2026-10-06T02:01:34+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
     "citation_authors": [
-      "Peng, Lei",
-      "Sun, Zhen",
-      "Li, Kedong",
-      "Zuo, G Z",
-      "Sun, Jizhong",
-      "Ye, Jinqin",
-      "Mao, Qianhui",
-      "Ding, Jun",
-      "Li, Haidong"
+      "Kang, Zhong-Bo",
+      "Metz, Andreas",
+      "Pitonyak, Daniel",
+      "Zhang, Congyue"
     ],
-    "journal_abbrev": "Nucl. Fusion",
-    "volume": "",
+    "journal_abbrev": "Physics Letters B",
+    "volume": "882",
     "issue": "",
-    "pages": "",
+    "pages": "141004",
     "numpages": "",
-    "publisher": "IOP Publishing",
-    "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aeb681",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326008543",
     "citation_metadata_checked": true,
-    "first_seen": "2026-10-21T00:20:16+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
-    "abstract_checked_sources": [],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "df7e3ef6b5f9347f",
-    "type": "paper",
-    "title": "Sizeable mixing between the coexisting normal and intruder structures of 96 Zr revealed through lifetime measurements",
-    "abstract": "Lifetimes of excited states of the nucleus $^{96}$Zr were studied with the Doppler-shift attenuation method following the $^{94}$Zr($^{18}$O,$^{16}$O)$^{96}$Zr two-neutron transfer reaction. The obtained $B(E2;2^+_2\\to0^+_2)$ and $B(E2;4^+_1\\to2^+_2)$ transition strengths, amounting to $26(2)$ and $39(7)$\\,W.u., respectively, firmly attribute the $2^+_2$ and $4^+_1$ states to the collective intruder band built on top of the $0^+_2$ state. The nature of this structure is discussed against predictions of the collective model using the Bohr Hamiltonian, the interacting boson model with configuration mixing, and the quasiparticle vacua shell model. The collective, interband $B(E2;4^+_1\\to2^+_1)=11.2(8)$\\,W.u. transition strength, refuting the previously assumed purity of both structures, is reproduced in the calculations. The quasiparticle vacua shell model predicts, in agreement with a simple two-state model based on experimental $E2$ transition strengths, considerable mixing between the normal and intruder $2^+$ states.",
-    "abstract_status": "full",
-    "abstract_source": "arXiv RSS",
-    "authors": [
-      "T. Beck",
-      "T. Stetz",
-      "N. Gavrielov",
-      "N. Pietralla",
-      "V. Werner",
-      "K. Yanase",
-      "M. Boromiza",
-      "A. Coman",
-      "C. Costache",
-      "N. M. Florea",
-      "I. Gheorghe",
-      "A. Ionescu",
-      "R. Lica",
-      "N. Mărginean",
-      "R. Mărginean",
-      "H. Mayr",
-      "C. Mihai",
-      "R. E. Mihai",
-      "A. Mitu",
-      "C. R. Nita",
-      "T. Otsuka",
-      "O. Papst",
-      "S. Pascu",
-      "C. Sotty",
-      "L. Stan",
-      "S. Toma",
-      "Y. Tsunoda",
-      "A. Turturică",
-      "S. Ujeniuc",
-      "J. Wiederhold"
-    ],
-    "published": "2026-10-20",
-    "updated": "2026-10-20",
-    "source": "Physical Review C",
-    "source_short": "PRC",
-    "source_type": "journal",
-    "doi": "10.1103/f171-t9xh",
-    "arxiv_id": "2610.40037",
-    "url": "https://doi.org/10.1103/f171-t9xh",
-    "pdf_url": "https://arxiv.org/pdf/2610.40037",
-    "categories": [
-      "nuclear-reactions",
-      "theoretical-nuclear"
-    ],
-    "tags": [
-      "shell model",
-      "transfer reaction"
-    ],
-    "primary_topic": "nuclear-reactions",
-    "methods": [
-      "theoretical",
-      "review"
-    ],
-    "classification_confidence": 0.64,
-    "classification_evidence": [
-      "shell model",
-      "transfer reaction"
-    ],
-    "importance": 62,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +18",
-      "跨领域关联 +2",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
-    "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "source_restricted",
-    "figures": [],
-    "figure_status": "license_blocked",
-    "first_seen": "2026-10-21T00:20:16+00:00",
-    "last_seen": "2026-10-31T01:22:08+00:00",
-    "citation_authors": [
-      "Beck, T.",
-      "Stetz, T.",
-      "Gavrielov, N.",
-      "Pietralla, N.",
-      "Werner, V.",
-      "Yanase, K.",
-      "Boromiza, M.",
-      "Coman, A.",
-      "Costache, C.",
-      "Florea, N. M.",
-      "Gheorghe, I.",
-      "Ionescu, A.",
-      "Lica, R.",
-      "Mărginean, N.",
-      "Mărginean, R.",
-      "Mayr, H.",
-      "Mihai, C.",
-      "Mihai, R. E.",
-      "Mitu, A.",
-      "Nita, C. R.",
-      "Otsuka, T.",
-      "Papst, O.",
-      "Pascu, S.",
-      "Sotty, C.",
-      "Stan, L.",
-      "Toma, S.",
-      "Tsunoda, Y.",
-      "Turturică, A.",
-      "Ujeniuc, S.",
-      "Wiederhold, J."
-    ],
-    "journal_abbrev": "Phys. Rev. C",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/f171-t9xh",
-    "citation_metadata_checked": true,
-    "publisher_abstract_enrichment": {
-      "status": "blocked",
-      "checked_at": "2026-10-28T00:54:05+00:00",
-      "source": "Publisher",
-      "error": "HTTP Error 403: Forbidden"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-21T00:20:16+00:00",
-      "source": "OpenAlex"
-    },
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-21T00:20:16+00:00",
-      "source": "Semantic Scholar"
-    },
-    "abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-21T00:20:16+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "83eb10a279ef8eec",
-    "type": "paper",
-    "title": "Three-nucleon dynamics in dp breakup collisions at 190 MeV/nucleon using the WASA detector at COSY-Jülich",
-    "abstract": "The differential cross section for the $^{1}\\mathrm{H}(d,pp)n$ breakup reaction at deuteron beam energy of 380 MeV has been determined with high statistical precision for 189 angular configurations of outgoing protons in the region of forward laboratory angles. The cross-section data were compared to theoretical predictions based on the state-of-the-art nucleon-nucleon potentials, combined with a three-nucleon force, the Coulomb interaction or carried out in a relativistic approach. In the region of the lowest differential cross section, the discrepancy between the data and the theoretical predictions is observed, also in the case of relativistic calculations.",
-    "abstract_status": "full",
-    "abstract_source": "Publisher metadata (APS)",
-    "authors": [
-      "P. Adlarson",
-      "W. Augustyniak",
-      "W. Bardan",
-      "M. Bashkanov",
-      "F. S. Bergmann",
-      "M. Berłowski",
-      "A. Bondar",
-      "M. Büscher",
-      "H. Calén",
-      "I. Ciepał",
-      "H. Clement",
-      "E. Czerwiński",
-      "K. Demmich",
-      "R. Engels",
-      "A. Erven",
-      "W. Eyrich",
-      "P. Fedorets",
-      "K. Föhl",
-      "K. Fransson",
-      "F. Goldenbaum",
-      "A. Goswami",
-      "K. Grigoryev",
-      "L. Heijkenskjöld",
-      "V. Hejny",
-      "L. Jarczyk",
-      "T. Johansson",
-      "B. Kamys",
-      "G. Kemmerling",
-      "A. Khoukaz",
-      "A. Khreptak",
-      "D. A. Kirillov",
-      "S. Kistryn",
-      "H. Kleines",
-      "B. Kłos",
-      "W. Krzemień",
-      "P. Kulessa",
-      "A. Kupść",
-      "K. Lalwani",
-      "D. Lersch",
-      "B. Lorentz"
-    ],
-    "published": "2026-10-16",
-    "updated": "2026-10-16",
-    "source": "Physical Review C",
-    "source_short": "PRC",
-    "source_type": "journal",
-    "doi": "10.1103/k3z6-gvpd",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/k3z6-gvpd",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-reactions",
-      "nuclear-general"
-    ],
-    "tags": [
-      "breakup reaction",
-      "nucleon-nucleon"
-    ],
-    "primary_topic": "nuclear-reactions",
-    "methods": [
-      "experimental",
-      "theoretical",
-      "review"
-    ],
-    "classification_confidence": 0.64,
-    "classification_evidence": [
-      "breakup reaction",
-      "nucleon-nucleon"
-    ],
-    "importance": 62,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +18",
-      "跨领域关联 +2",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Adlarson, P.",
-      "Augustyniak, W.",
-      "Bardan, W.",
-      "Bashkanov, M.",
-      "Bergmann, F. S.",
-      "Berłowski, M.",
-      "Bondar, A.",
-      "Büscher, M.",
-      "Calén, H.",
-      "Ciepał, I.",
-      "Clement, H.",
-      "Czerwiński, E.",
-      "Demmich, K.",
-      "Engels, R.",
-      "Erven, A.",
-      "Eyrich, W.",
-      "Fedorets, P.",
-      "Föhl, K.",
-      "Fransson, K.",
-      "Goldenbaum, F.",
-      "Goswami, A.",
-      "Grigoryev, K.",
-      "Heijkenskjöld, L.",
-      "Hejny, V.",
-      "Jarczyk, L.",
-      "Johansson, T.",
-      "Kamys, B.",
-      "Kemmerling, G.",
-      "Khoukaz, A.",
-      "Khreptak, A.",
-      "Kirillov, D. A.",
-      "Kistryn, S.",
-      "Kleines, H.",
-      "Kłos, B.",
-      "Krzemień, W.",
-      "Kulessa, P.",
-      "Kupść, A.",
-      "Lalwani, K.",
-      "Lersch, D.",
-      "Lorentz, B."
-    ],
-    "journal_abbrev": "Phys. Rev. C",
-    "volume": "114",
-    "issue": "4",
-    "pages": "044003",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/k3z6-gvpd",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-09-22T00:30:33+00:00",
-    "last_seen": "2026-10-30T01:30:20+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-10-23T00:21:25+00:00",
-      "source": "Publisher metadata (APS)",
-      "url": "https://journals.aps.org/prc/abstract/10.1103/k3z6-gvpd"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-09-22T00:30:33+00:00",
-      "source": "OpenAlex"
-    },
-    "abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-09-22T00:30:33+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ],
     "summary": "",
     "content": "",
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-09-24T00:11:08+00:00",
-      "source": "Semantic Scholar"
-    }
+    "abstract_checked_sources": []
+  },
+  {
+    "id": "a888f2c57e2e3c5a",
+    "type": "paper",
+    "title": "Measurement and compensation dynamic Lorentz force detuning of double-spoke cavity for CSNS-II",
+    "abstract": "Dynamic Lorentz force detuning (LFD) in the 324 MHz superconducting double-spoke cavities for the China Spallation Neutron Source Phase-II (CSNS-II) linac is investigated through combined modeling, simulation, and cryomodule experiments. A modal ponderomotive coupling model is established and validated against multiphysics finite-element analysis and measurements up to 9 MV/m with 1.2 ms pulses at 50 Hz. Intra-pulse detuning reconstructed from low-level RF (LLRF) waveforms agrees with full-pulse detuning inferred from piezo-sensor signals, and FFT analysis identifies dominant mechanical modes consistent with simulated eigenfrequencies. Beyond single-cavity behavior, inter-cavity mechanical coupling through a shared cryomodule and support system is experimentally verified: RF excitation of one cavity induces measurable vibration and frequency perturbation in the adjacent cavity, confirmed independently by LLRF and piezo diagnostics. Active compensation is implemented with piezo tuners using a parameterized half-sine feedforward waveform. Parameters are first optimized by systematic scanning and then refined on-line using a Proximal Policy Optimization (PPO) agent interacting with the real cavity via a gymnasium/pyepics interface. After 1 0 4 training steps, the PPO-optimized waveform reduces the effective detuning metric by about 37% relative to the initial policy, matching or surpassing the best manually scanned setting while improving robustness to operating-condition variations.",
+    "abstract_status": "full",
+    "abstract_source": "OpenAlex",
+    "authors": [
+      "Ming Liu",
+      "Zhenghui Mi",
+      "Wenzhong Zhou",
+      "Rui Ge",
+      "Weimin Pan",
+      "Feisi He",
+      "Cong Zhang",
+      "Zhexin Xie",
+      "Kai Guo",
+      "Zheyu Tan"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Instruments and Methods in Physics Research A",
+    "source_short": "NIMA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nima.2026.171758",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nima.2026.171758",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-reactions",
+      "detectors-daq",
+      "accelerators"
+    ],
+    "tags": [
+      "spallation",
+      "linac"
+    ],
+    "primary_topic": "nuclear-reactions",
+    "methods": [
+      "experimental",
+      "theoretical"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "spallation",
+      "linac"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +18",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by-nc/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Liu, Ming",
+      "Mi, Zhenghui",
+      "Zhou, Wenzhong",
+      "Ge, Rui",
+      "Pan, Weimin",
+      "He, Feisi",
+      "Zhang, Cong",
+      "Xie, Zhexin",
+      "Guo, Kai",
+      "Tan, Zheyu"
+    ],
+    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
+    "volume": "1091",
+    "issue": "",
+    "pages": "171758",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004845",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-01T00:37:12+00:00",
+    "openalex_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_checked_sources": [
+      "OpenAlex"
+    ]
   }
 ]
