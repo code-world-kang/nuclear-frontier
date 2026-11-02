@@ -1,33 +1,33 @@
-# 小康康的物理世界 · 2026-11-01 科研简报
+# 小康康的物理世界 · 2026-10-21 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 10/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 9/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[Z = 119, 120的超重核：α衰变或自发裂变？](https://doi.org/10.1016/j.physletb.2026.140984)**  
-   Physics Letters B · 2026-11-01  
-   我们提出了一种用于计算超重核（SHN）中原子数Z > 110的α衰变能Qα的局部公式，其平均偏差仅为0.026 MeV，从而为最重的原子核提供了高精度的Qα预测。利用这些计算得到的Qα值，计算出α衰变的半衰期，其中势垒来源于自洽的Skyrme能量密度泛函，其结果与现有实验数据高度一致。对于自发裂变，我们采用了三种独立的方法：一种精度较高的新公式、基于Skyrme泛函的裂变势垒穿透框架，以及包含壳效应的广义液滴模型。对于合成的Z > 110的SHN，其预测的主导衰变模式与实验观测结果一致。一个令人鼓舞的结果是，对于尚未合成的元素Z = 119和120的候选核素，预测α衰变是主导衰变模式，其半衰期分别为0.2–0.6 ms（Z = 119）和0.02–0.06 ms（Z = 120），这些半衰期比其相应的自发裂变…
-2. **[Improved calibration algorithm and its validation for Guide Tube Calibration System in JUNO experiment](https://doi.org/10.1016/j.nima.2026.171747)**  
-   Nuclear Instruments and Methods in Physics Research A · 2026-11-01  
-   The Guide Tube Calibration System (GTCS) of the Jiangmen Underground Neutrino Observatory (JUNO) is designed to calibrate the detector boundary non-uniformity, contributing to the stringent energy resolution requirement of JUNO. A 27Bq 241 Am- 9 Be neutron source is adopted for GTCS calibration, providing both point-like prompt signals from γ rays and sprea…
-3. **[为稀有液体时间投影室设计高压供电系统](https://doi.org/10.1016/j.nima.2026.171718)**  
-   Nuclear Instruments and Methods in Physics Research A · 2026-11-01  
-   稀有液体时间投影室（TPCs）是探测电离辐射的领先技术，尤其在加速器中微子物理、暗物质探测以及中微子less双β衰变等应用中。本文针对在大型稀有液体TPCs中实现稳定高压（HV）系统的设计考虑，重点讨论nEXO实验。利用先前HV研究和实验调查的成果，我们概述了影响HV稳定性的因素，并讨论了提高稳定性和防止电击穿的设计选择。提出了一种新型HV供液系统概念，专为nEXO TPC设计，该系统融合了上述设计考虑，同时满足nEXO中微子less双β衰变搜索对放射纯度的严格要求。这些设计考虑及其在HV供液系统中的具体实施，为未来在稀有液体环境中应用高压的实验提供了指导。
-4. **[Updated 78mBr 2−→1+ lifetime from isomeric decay cascade in active target](https://doi.org/10.1016/j.nuclphysa.2026.123485)**  
-   Nuclear Physics A · 2026-11-01  
-   The half-life of the 2 − state at 32.3 keV in 78 Br has been measured only twice, yielding mutually inconsistent values of (14.2 ± 3) ns and (8.3 ± 0.3) ns; the currently adopted value of (11.3 ± 0.3) ns is their unweighted average. We report a new measurement of this half-life using a self-coincidence technique in which both the 148.6 keV 4 + → 2 − and 32.…
-5. **[LaBr3阵列在HUN-REN ATOMKI的表征与应用](https://doi.org/10.1016/j.nima.2026.171764)**  
-   Nuclear Instruments and Methods in Physics Research A · 2026-11-01  
-   在HUN-REN核研究所（HUN-REN ATOMKI）内，设计并建造了一种高效率的γ射线谱仪——镧溴探测器阵列（LABDA），用于研究粒子物理、核谱学以及核天体物理实验中的低概率现象。该阵列由12个圆柱形LaBr 3（Ce）晶体组成，每个晶体尺寸为3 ′ ′ × 3 ′ ′，由圣戈班公司生产。阵列的关键性能参数已在广泛的γ射线能量范围内（344–10762 keV）进行了系统表征，包括能量分辨率、能量非线性、探测效率、时间分辨率和本征背景。还研究了采用脉冲形状鉴别方法对本征背景的抑制效果。讨论了该阵列在不同核物理测量中的应用前景。
-6. **[使用准弹性势垒分布对176Yb的β2和β4变形进行优化](https://doi.org/10.1016/j.nuclphysa.2026.123483)**  
-   Nuclear Physics A · 2026-11-01  
-   已尝试优化176 Yb原子核的四极和十六极形变参数，这些参数是从准弹性散射测量得到的势垒分布中推导出的。使用在印度新德里印度大学加速器中心（IUAC）的通用散射室（GPSC）中配备的HYbrid Telescope ARray（HYTAR）探测装置，测得了14 N + 176 Yb系统的准弹性激发函数。14 N + 176 Yb系统的势垒分布是从测得的激发函数中推导出的。实验可观测量是基于使用量子力学代码FRESCO进行的全耦合通道计算进行解释的。对14 N + 176 Yb的耦合通道计算表明，176 Yb表现为一个旋转原子核，且与前三个激发态的耦合，结合报道的β2和β4值，能够很好地解释观测到的势垒分布形状。然而，耦合通道计算与精确测量的势垒分布之间的偏差，预计在所考虑的形变参数上具有不确定值，这些值在以往…
-7. **[放射性204−228Rn和212−232Ra同位素的γ跃迁和核形变的量子理论](https://doi.org/10.1016/j.nuclphysa.2026.123471)**  
-   Nuclear Physics A · 2026-11-01  
-   本研究聚焦于氡和镭的同位素链，具体范围为氡的204 ≤ A ≤ 228 和镭的212 ≤ A ≤ 232。这些重核经历α、β和γ衰变。虽然α衰变规律已较为明确，但γ跃迁作为核结构探针的作用仍不够清楚。本工作的主要目标是利用量子电动力学框架结合费米黄金规则，探讨γ跃迁、电四极矩Q0以及形变参数β2作为探针，揭示氡和镭核内部结构的作用。所有研究同位素的部分γ衰变宽度、半衰期、平均寿命以及减少跃迁概率B(E2)均从第一原理出发推导并列出。分析显示，在链中特别是靠近中子壳层闭合处N = 126时，存在明显的结构特征。在该幻数处及之后，γ衰变半衰期出现显著降低，反映了由于壳层和集体效应导致跃迁概率增强。我们对B(E2)值和形变参数的预测与现有实验数据及理论模型（RMF、FRDM、全局最佳拟合）进行了比较，总体上表现出良…
-8. **[Theoretical probe of deformed shell closure in α-Decay systematics of the superheavy region: 288,289Lv and 289Mc decay chains](https://doi.org/10.1016/j.nuclphysa.2026.123498)**  
-   Nuclear Physics A · 2026-11-01  
-   A systematic study of α-decay half-lives along the decay chains of recently discovered 288 Lv and 289 Lv isotopes by Oganessian et al. [Phys. Rev. C 112 (2025) 014603], and 289 Mc is carried out using different effective nucleon–nucleon (B3Y, M3YR, M3YP, and the density-dependent DD-M3YP and CD-M3YP) interactions within both spherical and deformed configura…
+1. **[A nuclear clock synchronized to 229Th](https://doi.org/10.1038/s41586-026-11122-1)**  
+   Nature · 2026-10-07  
+   Abstract Atomic clocks have made time and frequency the most precisely measured quantities in physics, progressing from microwave standards that realize the SI second 1 to optical clocks with unprecedented precision 2 . A nuclear clock transfers the frequency reference from an electronic to a nuclear transition and the uniquely low-lying, laser-accessible,…
+2. **[The role of ab initio beta-decay calculations in light nuclei for probes of physics beyond the standard model](https://doi.org/10.1016/j.ppnp.2026.104260)**  
+   Progress in Particle and Nuclear Physics · 2026-09-01  
+   Precision beta decay experiments serve as powerful probes of physics beyond the Standard Model, enabling stringent tests of fundamental symmetries of nature. In particular, these experiments primarily focus on precise determinations of the Cabibbo-Kobayashi-Maskawa matrix element Vud and the search for exotic weak currents, both of which depend critically o…
+3. **[寻找超重核：实验视角](https://doi.org/10.1146/annurev-nucl-100324-103404)**  
+   Annual Review of Nuclear and Particle Science · 2026-09-21  
+   实验物理学家目前正致力于将周期表扩展至第八行，元素119和120的搜寻工作正在进行中，此时回顾合成元素发现近一个世纪的历史显得尤为及时。从最初生产铀以外的元素到最近完成第七行的探索，本综述全面概述了扩展周期表过程中的重要里程碑和进展。历史上，新元素的搜寻一直激发公众的想象力，同时也为基本科学提供了独特的窗口。这一点在超重元素的发现与研究中表现得尤为明显，这些元素使人们能够直接进行核科学和化学极端情况的实验探索。本综述探讨了合成元素发现中的主要发展和突破，展示了科学好奇心、创新研究与不断拓展我们对周期表理解之间的复杂关系。
+4. **[在s = 200 GeV的横向极化质子-质子碰撞中喷注内的能量相关子](https://doi.org/10.1103/fgsf-gx2q)**  
+   Physical Review Letters · 2026-09-08  
+   我们报告了在横向极化的质子-质子碰撞中，s = 200 GeV 条件下，利用相对论重离子对撞机上的STAR探测器首次测量了单点和双点能量相关函数。这些可观测量分别量化了单个强子和强子对在喷注内的能量加权角分布。对于π⁺、π⁻以及π⁺π⁻对，观察到显著的自旋依赖不对称性，揭示了在特定角尺度下非微扰动力学的出现。通过将碎片化动力学投影到梅林矩上，这些测量对核子的横向不对称性具有敏感性，同时最小化了来自非微扰碎片化函数的不确定性。这些结果确立了能量相关函数作为探测核子结构的一种新颖且精确的手段，并为未来电子-离子对撞机上的三维核子断层成像开辟了有前景的途径。
+5. **[First Nb 94 ( n , γ ) Measurement: Constraining the Nucleosynthetic Origin of Mo 94 in Presolar Grains](https://doi.org/10.1103/538w-rhqb)**  
+   Physical Review Letters · 2026-08-18  
+   Isotopic measurements of presolar silicon carbide grains from dying stars have revealed a puzzling overabundance of Mo 94 that stellar nucleosynthesis models have failed to reproduce for two decades. This discrepancy challenged our understanding of the slow neutron-capture process ( s -process) that forges approximately half of the elements heavier than iro…
+6. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
+   Physical Review Letters · 2026-08-04  
+   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
+7. **[Deformation, halo, and bubble structure: A paradigm shift of exotic phenomena in light to medium mass nuclei](https://doi.org/10.1016/j.ppnp.2026.104262)**  
+   Progress in Particle and Nuclear Physics · 2026-09-01  
+   The emergence of exotic nuclear structures, such as deformation, one- and two-neutron halos, and bubble configurations, marks a paradigm shift in our understanding of light- to medium-mass nuclei far from stability, particularly near and within the island of inversion extending across $N=20-28$. In this review, we integrate microscopic structure calculation…
+8. **[太阳系中辐射最低的环境：地下稀有事件搜索的新机遇](https://doi.org/10.1103/7fjv-rz78)**  
+   Physical Review D · 2026-10-21  
+   我们通过半解析估计和蒙特卡洛模拟研究了太阳系中地外环境中中微子、μ子和伽马射线通量。在大气可忽略的地点，我们发现宇宙射线诱导的中微子和μ子通量相对于地球上的强度显著降低。能量在50 MeV到100 TeV之间的中微子表现出特别强烈的抑制，即使在浅层深度，抑制程度也可达10^3。太阳中微子的抑制随地点距离太阳距离的平方而增加。由于核衰变引起的天然辐射在许多这些地点也预计会降低，甚至在液态水环境中可能降至可忽略不计的水平。满足这些特性的地点为地下基础物理实验提供了极大的物理探测范围，例如弱相互作用大质量粒子（WIMP）暗物质探测、无中微子双β衰变、弥漫超新星中微子以及附近超新星中微子的探测。作为潜在的短期目标，我们建议在可及的地下月球地点（如静海坑）测量μ子和伽马射线通量，以首次测量宇宙射线诱导粒子产生的瞬时成分…
 
 ## 物理新闻
 
@@ -46,12 +46,12 @@
 
 ## 科研通知
 
+- **[SCD周会](https://indico.ihep.ac.cn/event/31335/)**  
+   高能所 Indico · 2026-11-01  
+   2026-11-02 — 2026-11-02
 - **[第四届核物理研究生学术论坛](https://indico.pku.edu.cn/event/87/)**  
    北京大学 Indico 核物理会议 · 2026-10-28  
    尊敬的各位老师、 各位同学： 第四届“核物理研究生学术论坛” 将于 2026 年 12 月 25 日下午至 27 日在北京市中核北京科技园综合科研楼举行。 论坛由中国原子能科学研究院和北京大学主办， 由中国原子能科学研究院承办， 旨在为核物理专业的研究生搭建一个高水平的学术交流平台， 拓展研究生的学术视野， 提高研究生的学术素养和创新意识。 请各位拟参会的老师和同学于 2026 年 11 月 22 日前在网站上完成注册， 参加会议的研究生请同时提交报名表。 本次论坛设置报告和海报两种形式， 会务组将挑选 4 名研究生作为 4 个主题的召集人。 召集人依据提交的报告摘要挑选报告， 未入选的报告则改为海报展示。 报告和海报内容应着重突出工作动机(引言)和思路， 确保听众对内容有清晰、完整的认识和理解。 同时， 本…
-- **[SCD周会](https://indico.ihep.ac.cn/event/31255/)**  
-   高能所 Indico · 2026-10-25  
-   2026-10-26 — 2026-10-26
 - **[关于发布原子级制造基础研究重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100397.html)**  
    国家自然科学基金委项目指南 · 2030-12-31  
    国科金发计〔2026〕12号 国家自然科学基金委员会现发布原子级制造基础研究重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请。 国家自然科学基金委员会 2026年1月26日 原子级制造基础研究重大研究计划 2026年度项目指南 原子级制造是指在原子尺度控制材料的结构与成分，其核心是通过原子的精确操控来获得特定功能，突破传统制造技术的精度极限，实现物质的原子级转化与高效利用。原子级制造的科学基础是在原子尺度下优化物质转化与能量利用，实现物质结构和材料性能的按需订制，为实现颠覆性技术、升级战略性产业和提升国家安全竞争力奠定科学与技术基础。 一、科学目标 本重大研究计划围绕批量原子操控这一核心目标，聚焦原子尺度下物质与能量的相互作用原理，实现材料成分和结构的原子级构筑和测量表征，…
