@@ -162,7 +162,9 @@ Thank you to arXiv for use of its open access interoperability.
 - 每批最多 5 条，默认每次 24 条、15 分钟预算；论文、新闻、通知按 4:1:1 配额交替。新资料优先，同日论文优先 NIMA。旧 Qwen 的失败记录不影响 Sol 首次尝试。
 - 独立临时工作目录、只读沙箱、关闭 shell/子代理/搜索，源内容仅作为数据。按用户要求采用直接翻译：不再因数字、公式、单位、缩写、术语、中文比例或长度差异拦截译文。仅保留调用完成、JSON/文章 ID、非空结果及源文未变化等基础运行检查，防止写错文章或损坏数据。长原文不截断，调用失败按 1—7 天退避；旧内容校验失败立即重新进入待译队列。重复启动用文件锁防止竞争，每批原子保存，成功结果可断点续跑。
 - 用户术语优先于默认核物理词表；补摘要尽量保留已有有效中文题目。用户术语仍作为翻译提示，不再逐条验收。新产出标注直接机器初译、未经内容校验或人工校对；不修改已有译文的历史来源标记。
-- 脚本不自动执行 Git 拉取/推送，不改收藏、笔记或个人配置。发布前同步仓库、构建、测试，再提交译文。数据类提交不会立即触发当前 Pages 工作流，可手动执行网站工作流或等待下一次日更。代码变更推送会触发构建发布。
+- `scripts/translate_codex.py` 是仅翻译入口；`scripts/run_local_translation.py` 是本机翻译并发布入口。后者自动读取 GitHub 最新数据，在临时目录翻译，只提交译文、翻译队列、批次报告及重试记录这四类文件，不改收藏、笔记、个人配置或当前工作区。
+- 本机发布程序通过 GitHub CLI 已有登录创建非强推提交；遇到并发更新先读取最新版本再合并，不覆盖别人已完成的译文。调用独立的 `deploy_only` 发布模式，不重新抓取文章、不重复发布公众号。只有 GitHub Pages 作业成功后才记录已发布。
+- 正常完成后清理本轮临时译文，只留运行状态；上传或发布失败时，在忽略的 `output/local-translation/pending.json` 保留待重传内容，下次优先补传，不再次消耗模型额度翻译相同内容。登录凭据始终留在本机，不上传 GitHub。
 
 在可信且已有 CLI 登录的机器上：
 
@@ -170,6 +172,10 @@ Thank you to arXiv for use of its open access interoperability.
 python3 scripts/translate_codex.py --dry-run --limit 12
 python3 scripts/translate_codex.py --limit 24 --batch-size 4 --max-minutes 15
 python3 scripts/build_site.py
+
+# 翻译并自动更新网站，不需要再手动提交。
+python3 scripts/run_local_translation.py --limit 24 --batch-size 4 --max-minutes 15
+# 如当前网络需要本机代理，可仅为本次命令设置 HTTPS_PROXY，不修改全局配置。
 ```
 
 `data/translation-run.json` 记录真实批次结果；`data/translation-sol-retries.json` 记录 Sol 重试状态。保留旧离线脚本仅用于人工比较，不再自动启动。

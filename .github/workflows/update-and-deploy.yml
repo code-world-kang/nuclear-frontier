@@ -1,10 +1,20 @@
 name: 每日更新并发布网站
+run-name: ${{ inputs.translation_commit && format('发布翻译 {0}', inputs.translation_commit) || github.event.head_commit.message || '每日更新并发布网站' }}
 
 on:
   schedule:
     # GitHub 使用 UTC：前一日 22:00 对应北京时间当日 06:00。
     - cron: "0 22 * * *"
   workflow_dispatch:
+    inputs:
+      deploy_only:
+        description: 只构建发布已有数据，不重复采集或发布公众号
+        type: boolean
+        default: false
+      translation_commit:
+        description: 翻译提交编号，用于关联发布记录
+        type: string
+        default: ""
   push:
     branches: [main]
     paths-ignore:
@@ -38,15 +48,15 @@ jobs:
           python-version: "3.12"
 
       - name: 拉取每日论文、新闻与通知
-        if: github.event_name != 'push'
+        if: github.event_name != 'push' && inputs.deploy_only != true
         run: python scripts/update_content.py --days 14 --strict
 
       - name: 逐月扩展 2001 年以来的历史论文库
-        if: github.event_name != 'push'
+        if: github.event_name != 'push' && inputs.deploy_only != true
         run: python scripts/backfill_history.py --next 6 --max-workers 4
 
       - name: 备份已配置国内主站的公开个人快照
-        if: github.event_name != 'push'
+        if: github.event_name != 'push' && inputs.deploy_only != true
         continue-on-error: true
         env:
           PERSONAL_STATE_URL: ${{ vars.PERSONAL_STATE_URL }}
@@ -91,7 +101,7 @@ jobs:
           fi
 
       - name: 自动发布公众号科研简报
-        if: github.event_name != 'push'
+        if: github.event_name != 'push' && inputs.deploy_only != true
         env:
           WECHAT_OFFICIAL_PUBLISH_ENABLED: ${{ secrets.WECHAT_OFFICIAL_PUBLISH_ENABLED }}
           WECHAT_OFFICIAL_APP_ID: ${{ secrets.WECHAT_OFFICIAL_APP_ID }}

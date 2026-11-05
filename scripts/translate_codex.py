@@ -190,7 +190,7 @@ def translation_record(item, value, previous):
     return result
 
 
-def run(args, root=ROOT):
+def run(args, root=ROOT, on_checkpoint=None):
     data = root / "data"
     path = data / "translations.zh-CN.json"
     existing = read(path, {"items": {}}).get("items", {})
@@ -274,6 +274,8 @@ def run(args, root=ROOT):
                                 "provider": "mixed", "provider_note": "来源以条目 provider/model/note 为准。"})
                 write_json(path, payload)
                 write_json(retry_path, retries)
+                if on_checkpoint:
+                    on_checkpoint(payload, retries, report)
                 print(f"Sol 已尝试 {report['attempted']}，写入 {report['completed']}，待重试 {report['failed']}。", flush=True)
         finally:
             report["finished_at"] = dt.datetime.now(dt.timezone.utc).isoformat()
@@ -287,6 +289,8 @@ def run(args, root=ROOT):
             write_json(retry_path, retries)
             write_json(data / "translation-run.json", report)
             write_json(data / "translation-queue.json", queue_payload(remaining, MODEL, "manual"))
+            if on_checkpoint:
+                on_checkpoint(read(path, {"items": {}}), retries, report)
         return report
 
 
