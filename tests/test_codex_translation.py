@@ -46,14 +46,25 @@ class SolTranslationTests(unittest.TestCase):
         self.assertEqual(result["p"]["quality"], "machine_draft")
         self.assertEqual(sol.read(self.root / "data/personal/state.json"), self.personal)
 
-    def test_bad_number_does_not_overwrite(self):
+    def test_content_differences_are_saved_without_quality_gate(self):
         self.old["items"]["p"] = {"title_zh": "原来只有题目"}
         self.save("data/translations.zh-CN.json", self.old)
         self.value["abstract_zh"] = self.value["abstract_zh"].replace("42.5", "42.6")
         with patch.object(sol, "request_batch", return_value={"translations": [self.value]}):
             report = sol.run(self.args, self.root)
+        self.assertEqual(report["completed"], 1)
+        self.assertEqual(report["failed"], 0)
+        record = sol.read(self.root / "data/translations.zh-CN.json")["items"]["p"]
+        self.assertEqual(record["abstract_zh"], self.value["abstract_zh"])
+        self.assertEqual(record["title_zh"], "原来只有题目")
+        self.assertEqual(record["content_validation"], "disabled")
+        self.assertIn("未进行译文内容一致性校验", record["note"])
+
+    def test_empty_response_never_overwrites_existing_record(self):
+        self.value["abstract_zh"] = ""
+        with patch.object(sol, "request_batch", return_value={"translations": [self.value]}):
+            report = sol.run(self.args, self.root)
         self.assertEqual(report["completed"], 0)
-        self.assertEqual(report["failed"], 1)
         self.assertEqual(sol.read(self.root / "data/translations.zh-CN.json")["items"], self.old["items"])
 
     def test_duplicate_missing_and_unknown_ids_rejected(self):
@@ -69,21 +80,21 @@ class SolTranslationTests(unittest.TestCase):
 
     def test_preserves_title_when_filling_abstract(self):
         prior = {"title_zh": "关于 52Ca 的核结构"}
-        result = sol.checked_record(self.item, self.value, prior, {})
+        result = sol.translation_record(self.item, self.value, prior)
         self.assertEqual(result["title_zh"], prior["title_zh"])
         self.assertTrue(result["preserved_previous_title"])
 
     def test_changed_source_does_not_reuse_stale_title(self):
         prior = {"title_zh": "原来的题目", "source_hash": "stale"}
-        self.assertEqual(sol.checked_record(self.item, self.value, prior, {})["title_zh"], self.value["title_zh"])
+        self.assertEqual(sol.translation_record(self.item, self.value, prior)["title_zh"], self.value["title_zh"])
 
-    def test_personal_terms_take_precedence_and_are_required(self):
+    def test_personal_terms_are_prompt_guidance_not_a_quality_gate(self):
         self.personal["personal"]["translationGlossary"] = [{"source": "nuclear structure", "target": "原子核结构"}]
         self.save("data/personal/state.json", self.personal)
-        terms, user = sol.glossary(self.root)
+        terms, _ = sol.glossary(self.root)
         self.assertEqual(terms["nuclear structure"], "原子核结构")
-        with self.assertRaises(sol.QualityError):
-            sol.checked_record(self.item, self.value, {}, user)
+        self.assertIn("原子核结构", sol.prompt_for([self.item], terms))
+        self.assertEqual(sol.translation_record(self.item, self.value, {})["title_zh"], self.value["title_zh"])
 
     def test_long_source_not_truncated(self):
         self.item["abstract"] = "Original English material. " * 600
@@ -94,18 +105,38 @@ class SolTranslationTests(unittest.TestCase):
         self.assertEqual(report["failed"], 1)
         self.assertEqual(report["pending"], 1)
 
-    def test_empty_abstract_cannot_be_fabricated(self):
+    def test_missing_source_abstract_stays_empty(self):
         self.item["abstract"] = ""
-        with self.assertRaises(sol.QualityError):
-            sol.checked_record(self.item, self.value, {}, {})
+        self.assertEqual(sol.translation_record(self.item, self.value, {})["abstract_zh"], "")
 
-    def test_compound_unit_must_remain_verbatim(self):
+    def test_compound_unit_difference_does_not_block_translation(self):
         self.item["abstract"] = "Beam energy 49 MeV/nucleon."
         self.value["abstract_zh"] = "束流能量为 49 MeV/核子。"
-        with self.assertRaises(sol.QualityError):
-            sol.checked_record(self.item, self.value, {}, {})
-        self.value["abstract_zh"] = "束流能量为 49 MeV/nucleon。"
-        self.assertEqual(sol.checked_record(self.item, self.value, {}, {})["abstract_zh"], self.value["abstract_zh"])
+        self.assertEqual(sol.translation_record(self.item, self.value, {})["abstract_zh"], self.value["abstract_zh"])
+
+    def test_no_language_or_length_gate_and_no_duplicate_queue(self):
+        self.item["abstract"] = "Original material with a long abstract. " * 20
+        self.save("data/papers.json", [self.item])
+        self.value["abstract_zh"] = "Short response"
+        with patch.object(sol, "request_batch", return_value={"translations": [self.value]}) as request:
+            first = sol.run(self.args, self.root)
+            sol.run(self.args, self.root)
+        self.assertEqual(first["completed"], 1)
+        self.assertEqual(first["pending"], 0)
+        self.assertEqual(request.call_count, 1)
+        record = sol.read(self.root / "data/translations.zh-CN.json")["items"]
+        self.assertTrue(sol.needs_translation({**self.item, "abstract": "Changed source"}, record))
+
+    def test_previous_quality_failures_retry_immediately(self):
+        self.save("data/translation-sol-retries.json", {"p": {
+            "source_hash": sol.source_hash(self.item), "attempts": 3,
+            "last_attempt": dt.datetime.now(dt.timezone.utc).isoformat(),
+            "error": "原文公式、数值或缩写未完整保留"}})
+        with patch.object(sol, "request_batch", return_value={"translations": [self.value]}) as request:
+            report = sol.run(self.args, self.root)
+        self.assertEqual(request.call_count, 1)
+        self.assertEqual(report["completed"], 1)
+        self.assertEqual(sol.read(self.root / "data/translation-sol-retries.json"), {})
 
     def test_source_change_during_request_is_rejected(self):
         def respond(*args):

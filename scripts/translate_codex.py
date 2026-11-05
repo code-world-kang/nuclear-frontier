@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-from collections import Counter
 import datetime as dt
 import fcntl
 import json
@@ -16,7 +15,7 @@ import subprocess
 import tempfile
 import time
 
-from offline_translation import QualityError, check_user_terms, validate_literals
+from offline_translation import QualityError
 from translate_content import (
     is_chinese, needs_translation, queue_payload, requires_translation,
     select_balanced, source_hash, source_text, write_json,
@@ -24,8 +23,11 @@ from translate_content import (
 
 ROOT = Path(__file__).resolve().parents[1]
 MODEL = "gpt-5.6-sol"
-# 补充旧校验器没有覆盖的复合单位和频率单位，避免只保留 MeV 却丢失 /nucleon。
-UNIT_RE = re.compile(r"\b(?:[kMGT]?eV/(?:nucleon|u|c(?:\^2)?)|[kMG]?Hz|[kM]?V/m)\b", re.ASCII)
+CONTENT_VALIDATION_ERRORS = {
+    "原文公式、数值或缩写未完整保留", "复合单位或频率单位未原样保留",
+    "未采用个人指定译法，等待重试", "译文过短，疑似缩写", "未返回完整中文",
+    "原文为空却补写译文",
+}
 SCHEMA = {
     "type": "object", "additionalProperties": False, "required": ["translations"],
     "properties": {"translations": {"type": "array", "items": {
@@ -161,36 +163,24 @@ def validate_response(batch, response):
     return {x["id"]: x for x in values}
 
 
-def checked_record(item, value, previous, user_terms):
+def translation_record(item, value, previous):
+    """直接保存模型译文；只检查是否实际返回内容，不作译文质量拦截。"""
     result = {}
     for source, field in ((str(item.get("title", "")), "title_zh"), (source_text(item), "abstract_zh")):
         translated = value[field].strip() if requires_translation(source) else source
-        if requires_translation(source):
-            if not is_chinese(translated):
-                raise QualityError("未返回完整中文")
-            if len(source) > 200 and len(translated) < len(source) * 0.23:
-                raise QualityError("译文过短，疑似缩写")
-            validate_literals(source, translated)
-            if Counter(UNIT_RE.findall(source)) != Counter(UNIT_RE.findall(translated)):
-                raise QualityError("复合单位或频率单位未原样保留")
-            check_user_terms(source, translated, user_terms)
-        elif not source and value[field].strip():
-            raise QualityError("原文为空却补写译文")
+        if requires_translation(source) and not translated:
+            raise QualityError("模型未返回译文")
         result[field] = translated
     # 补全摘要时保留已有题目；源内容变化则重新翻译，避免套用旧题目。
     preserved = False
     if previous.get("source_hash") in (None, "", source_hash(item)) and is_chinese(previous.get("title_zh", "")):
-        try:
-            validate_literals(str(item.get("title", "")), previous["title_zh"])
-            check_user_terms(str(item.get("title", "")), previous["title_zh"], user_terms)
-            result["title_zh"] = previous["title_zh"]
-            preserved = True
-        except QualityError:
-            pass
+        result["title_zh"] = previous["title_zh"]
+        preserved = True
     result.update({"translated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
                    "source_hash": source_hash(item), "provider": "codex-cli", "model": MODEL,
                    "quality": "machine_draft", "preserved_previous_title": preserved,
-                   "note": "Sol 机器初译，已做数字/公式/指定术语检查，未经人工精校。"})
+                   "content_validation": "disabled",
+                   "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"})
     if preserved:
         result["note"] += " 题目沿用已有译文。"
     if not source_text(item):
@@ -208,7 +198,9 @@ def run(args, root=ROOT):
     if args.ids:
         candidates = [x for x in candidates if x["id"] in set(args.ids.split(","))]
     retry_path = data / "translation-sol-retries.json"
-    retries = read(retry_path, {})
+    # 用户已取消内容校验：原先仅因这些规则被拦下的条目立即重试，不继续退避。
+    retries = {key: value for key, value in read(retry_path, {}).items()
+               if value.get("error") not in CONTENT_VALIDATION_ERRORS}
     now = dt.datetime.now(dt.timezone.utc)
     selected = select_balanced(candidates, args.limit, {} if args.retry_failed else retries, now)
     if args.dry_run:
@@ -221,8 +213,9 @@ def run(args, root=ROOT):
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError:
             raise RuntimeError("已有 Sol 翻译进程运行，本次不重复启动")
-        terms, user_terms = glossary(root)
+        terms, _ = glossary(root)
         report = {"backend": "codex_cli", "model": MODEL, "automatic": False,
+                  "content_validation": "disabled",
                   "started_at": now.isoformat(), "attempted": 0, "completed": 0,
                   "failed": 0, "deferred": 0, "errors": {}}
         started = time.monotonic()
@@ -256,7 +249,7 @@ def run(args, root=ROOT):
                         fail(item, reason)
                     # 登录、额度或连接错误不连续轰炸服务；下批留待重试。
                     break
-                # 仅留本机审阅证据，不提交公开站点；失败译文也可追溯，不为提高通过率放宽检查。
+                # 仅留本机返回结果，便于追溯；不提交公开站点，也不进行内容复核。
                 audit = output / "sol-translation-audit"
                 audit.mkdir(exist_ok=True)
                 write_json(audit / f"{now.strftime('%Y%m%dT%H%M%S')}-{os.getpid()}-{offset}.json",
@@ -271,7 +264,7 @@ def run(args, root=ROOT):
                             raise QualityError("翻译期间原文变化，保留待译")
                         if not needs_translation(item, current):
                             continue
-                        record = checked_record(item, values[item["id"]], current.get(item["id"], {}), user_terms)
+                        record = translation_record(item, values[item["id"]], current.get(item["id"], {}))
                         current[item["id"]] = record
                         retries.pop(item["id"], None)
                         report["completed"] += 1

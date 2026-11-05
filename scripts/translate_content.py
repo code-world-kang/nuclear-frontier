@@ -74,6 +74,12 @@ def needs_translation(item: dict[str, Any], existing: dict[str, Any]) -> bool:
     if not title:
         return False
     translated = existing.get(item["id"], {})
+    # Sol 直接翻译模式不再按中文比例等内容规则重新排队；仍须与当前源文对应且非空。
+    if (translated.get("content_validation") == "disabled"
+            and translated.get("source_hash") == source_hash(item)
+            and str(translated.get("title_zh") or "").strip()
+            and (not source_text(item) or str(translated.get("abstract_zh") or "").strip())):
+        return False
     if requires_translation(title) and not is_chinese(translated.get("title_zh", "")):
         return True
     body = source_text(item)

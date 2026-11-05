@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T07:12:57.243135+00:00",
+  "generated_at": "2026-11-05T07:56:52.941852+00:00",
   "provider": "mixed",
   "items": {
     "03fb0be72e560764": {
@@ -26032,6 +26032,66 @@
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "note": "Sol 机器初译，已做数字/公式/指定术语检查，未经人工精校。"
+    },
+    "aca341bb40d7f6cf": {
+      "title_zh": "JUNO 实验中导管标定系统的改进标定算法及其验证",
+      "abstract_zh": "江门地下中微子观测站（JUNO）的导管标定系统（GTCS）旨在标定探测器边界的非均匀性，从而有助于满足 JUNO 严格的能量分辨率要求。GTCS 标定采用一个 27Bq 241 Am- 9 Be 中子源，该源既提供来自 γ 射线的点状瞬发信号，也提供来自中子俘获的弥散延迟信号。该源受局部光学遮蔽的影响较小，并提供与逆 β 衰变（IBD）和宇生中子事例相似的瞬发–延迟特征，从而能够进行直接交叉核验。此外，还考虑了包括放射性本底和电子学噪声在内的实际实验条件，因此为 GTCS 制定了一套专用的事例选择判据。在实际本底和噪声条件下进行的综合模拟与分析表明，使用 241 Am- 9 Be 标定源能够满足 GTCS 所要求的 1% 不确定度。将改进的 GTCS 标定算法应用于 2025 年 8 月 23 日采集的实验数据，获得了五个标定位置处的能量响应，为探测器非均匀性修正函数提供了输入。结果与模拟具有良好的一致性，证明了更新后标定方法的可行性和稳健性。",
+      "translated_at": "2026-11-05T07:56:52.940914+00:00",
+      "source_hash": "9c0fc950c53e26a88a358bcc7cfe8690a66d6949d6d9abe289ae02f9013150f3",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "a888f2c57e2e3c5a": {
+      "title_zh": "CSNS-II 双辐条腔动态洛伦兹力失谐的测量与补偿",
+      "abstract_zh": "通过建模、模拟和低温恒温器模块实验相结合的方法，研究了中国散裂中子源二期（CSNS-II）直线加速器中 324 MHz 超导双辐条腔的动态洛伦兹力失谐（LFD）。建立了模态有质动力耦合模型，并通过多物理场有限元分析以及在 50 Hz、1.2 ms 脉冲条件下最高达 9 MV/m 的测量对其进行了验证。由低电平 RF（LLRF）波形重建的脉冲内失谐与根据压电传感器信号推断的全脉冲失谐一致，FFT 分析识别出的主要机械模态与模拟本征频率一致。除单腔行为之外，还通过实验验证了经由共用低温恒温器模块和支撑系统产生的腔间机械耦合：一个腔的 RF 激励会在相邻腔中引起可测量的振动和频率扰动，并分别由 LLRF 和压电诊断独立证实。采用压电调谐器和参数化半正弦前馈波形实现了主动补偿。首先通过系统扫描优化参数，随后使用经由 gymnasium/pyepics 接口与真实腔交互的近端策略优化（PPO）智能体进行在线细化。经过 1 0 4 个训练步骤后，相对于初始策略，PPO 优化的波形将有效失谐度量降低了约 37%，达到或超过了人工扫描得到的最佳设置，同时提高了对运行条件变化的稳健性。",
+      "translated_at": "2026-11-05T07:56:52.941154+00:00",
+      "source_hash": "8d15a69cf51510d9778e3b5cedd077f751b41f3bfdb6e78f6c752a2cfa946ee1",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "4466df54a697b9e9": {
+      "title_zh": "基于光阴极注入器的电子加速器中使用 SiC 二极管进行超高瞬时剂量率剂量测定",
+      "abstract_zh": "我们首次报告了一种对 PHIL（线性加速器实验室光注入器）电子加速器束线进行剂量学表征的方法，该方法使用了多种为超高剂量率（UHDR）应用开发的新型抗辐照碳化硅（SiC）探测器，包括单二极管（0.6–2.2 mm）和一个 4 × 4 像素阵列。7 MeV 电子以 ps 尺度的束团形式、按 10 Hz 的频率产生脉冲。尽管测得的最大平均剂量率（ ∼ 1.2 Gy/s）仍低于在 UHDR 条件下触发生物学 FLASH 效应的 UHDR 阈值（ > 40 Gy/s），但瞬时剂量率处于 1 0 10 Gy/s 的量级。SiC 探测器在每束团 2–36 pC 的束流电荷范围内表现出线性响应，也能够使用这些探测器进行束流剖面测量。所有 SiC 器件均未观察到饱和效应，而由于束团持续时间极短（ ∼ 20 ps），瞬时剂量率远高于 FLASH 研究中使用的剂量率。这些结果构成了迄今报道的使用 SiC 剂量计测得的最高瞬时剂量率，验证了其适合作为剂量计，用于未来加速器的开发，这些加速器的能力将超越目前 FLASH 治疗所使用的 UHDR。本工作标志着针对具有极短皮秒电子束团和 RF 诱导寄生信号的加速器在方法学上的重大进展。",
+      "translated_at": "2026-11-05T07:56:52.941407+00:00",
+      "source_hash": "1119e02cf92865b11d6e74bbc4626ab9e1df60f932f2918f61f6d2e78ec19dff",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "3f32fa1195baf74a": {
+      "title_zh": "proANUBIS 的建造：ANUBIS 实验的概念验证探测器",
+      "abstract_zh": "ANUBIS 实验旨在欧洲核子研究中心（CERN）的大型强子对撞机（LHC）上搜寻长寿命粒子。为评估该项目的可行性，设计并建造了原型探测器 pro ANUBIS，并为将其安装在 LHC 的 UX15 ATLAS 实验洞室内做好了准备。pro ANUBIS的主要物理目标是确定探测器技术的技术局限，并通过原位测量 ATLAS 洞室内的 μ 子和强子通量来探索 ANUBIS 探测器概念，这些测量可用于进一步改进此类通量的蒙特卡洛模拟。本报告介绍了使用阻性板室（RPCs）的 pro ANUBIS实验装置的设计与建造，并着重说明了该技术未来可能在 ANUBIS 中的应用情形。文中讨论了 RPC 技术、建造流程、质量控制措施和性能研究的详细情况。宇宙射线测量表明，探测器运行稳定，受测 RPC 室的效率超过 95%。此外，还介绍了 pro ANUBIS的 RPC 探测器上前端电子学和数据采集组件。",
+      "translated_at": "2026-11-05T07:56:52.941601+00:00",
+      "source_hash": "4917e1c4fa648303cb92347eed54eaeaf25360a1acfbb2383ba6a3020a9daa7e",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "d65a750e9c74cd70": {
+      "title_zh": "CMS DT ϕ 超层读出电子学升级",
+      "abstract_zh": "在 CMS 探测器的桶部区域，漂移管室（DT）提供 μ 子径迹测量和触发。由于预计在高亮度 LHC 运行期间会出现更高的事例率，CMS 的新触发要求将超出当前漂移管探测器上电子学的能力。出于提高性能、减缓室老化以及可维护性等原因，DT 合作组将在第三次长期停机（LS3）期间更换原有的读出和触发电子学；LS3 预计从 2026 年开始，持续四年。用于方位角 ϕ 测量的 DT 超层现有探测器上电子学将由称为用于 ϕ 视图的板载漂移管（OBDT- ϕ ）电子模块的新电路板取代。这种新电子学在每块电路板上配置 240 个时间数字转换器，直接从后端获取 LHC 时钟信息，以 10 Gbps 的速率提供多个数据流，并可实现约 1 ns 的分辨率。本文将介绍该系统的设计、性能和鉴定。",
+      "translated_at": "2026-11-05T07:56:52.941791+00:00",
+      "source_hash": "ce46417cf2b503c72562ff71a134a17da1c6f7a8718f752ff0a5724c1520bcc5",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     }
   },
   "provider_note": "来源以条目 provider/model/note 为准。"
