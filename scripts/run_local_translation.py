@@ -220,9 +220,10 @@ def run(args, root=ROOT, client=None):
         sol.write_json(outbox, value)
         outbox.chmod(0o600)
     client = client or GitHub(root)
-    with (runtime / "run.lock").open("a+") as lock:
+    with (runtime / "run.lock").open("a+") as lock, (root / "output/translation-worker.lock").open("a+") as model_lock:
         try:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            fcntl.flock(model_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError:
             return {"status": "busy", "message": "上一轮仍在运行，本轮不重复启动"}
         state = sol.read(outbox, {})

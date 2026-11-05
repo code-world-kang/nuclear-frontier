@@ -32,8 +32,12 @@ def main() -> None:
     old_queue = load(queue_file) if queue_file.exists() else {}
     worker_file = CONFIG / "translation-worker.json"
     worker = load(worker_file) if worker_file.exists() else {}
-    if worker.get("backend") == "codex_cli" and not worker.get("automatic"):
-        old_queue.update({"model": worker["model"], "service_status": "manual"})
+    if worker.get("backend") == "codex_cli":
+        old_queue["model"] = worker["model"]
+        if worker.get("automatic") and worker.get("execution_location") == "local":
+            old_queue["service_status"] = "local_scheduled"
+        elif not worker.get("automatic"):
+            old_queue["service_status"] = "manual"
     queue = queue_payload(collect_candidates(load(DATA / "translations.zh-CN.json").get("items", {})), old_queue.get("model", ""), old_queue.get("service_status", "not_configured"))
     if {key: value for key, value in queue.items() if key != "generated_at"} == {key: value for key, value in old_queue.items() if key != "generated_at"}:
         queue["generated_at"] = old_queue["generated_at"]

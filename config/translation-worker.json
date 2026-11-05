@@ -1,8 +1,15 @@
 {
   "backend": "codex_cli",
   "model": "gpt-5.6-sol",
-  "automatic": false,
+  "automatic": true,
   "previous_backend_enabled": false,
-  "note": "旧 Qwen 日更翻译已停用。Sol 在可信机器按批执行，Myservers 无人值守调度尚未接通。采集与发布仍计划每天北京时间 06:00。",
-  "content_validation": "disabled"
+  "note": "本机每小时启动一轮 Sol 直接翻译并自动提交发布，需电脑开机联网且 Codex 运行。睡眠或关机时不执行；下次从待译队列继续。GitHub 云端采集仍计划每天北京时间 06:00，旧 Qwen 不再自动运行。",
+  "content_validation": "disabled",
+  "execution_location": "local",
+  "scheduler": "codex_heartbeat",
+  "interval_minutes": 60,
+  "limit_per_run": 24,
+  "batch_size": 4,
+  "max_minutes": 15,
+  "requires_codex_running": true
 }

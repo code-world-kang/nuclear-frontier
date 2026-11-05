@@ -1,4 +1,5 @@
 import json
+import fcntl
 from argparse import Namespace
 from pathlib import Path
 import shutil
@@ -132,6 +133,13 @@ class LocalTranslationTests(unittest.TestCase):
         self.assertTrue(payload["inputs"]["deploy_only"])
         self.assertEqual(payload["inputs"]["translation_commit"], "b" * 40)
 
+    def test_workflow_keeps_daily_collection_but_skips_it_on_translation_publish(self):
+        workflow = (Path(__file__).resolve().parents[1] / ".github/workflows/update-and-deploy.yml").read_text()
+        self.assertIn('cron: "0 22 * * *"', workflow)
+        self.assertEqual(workflow.count("if: github.event_name != 'push' && inputs.deploy_only != true"), 4)
+        self.assertIn("translation_commit:", workflow)
+        self.assertNotIn("scripts/translate_codex.py", workflow)
+
     def test_pending_dry_run_does_not_publish(self):
         path = self.root / "output/local-translation/pending.json"
         path.parent.mkdir(parents=True)
@@ -140,6 +148,14 @@ class LocalTranslationTests(unittest.TestCase):
         result = local.run(self.args, self.root, self.client)
         self.assertEqual(result["status"], "pending")
         self.client.commit.assert_not_called()
+
+    def test_manual_translation_lock_prevents_duplicate_automatic_run(self):
+        (self.root / "output").mkdir()
+        with (self.root / "output/translation-worker.lock").open("w") as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            result = local.run(self.args, self.root, self.client)
+        self.assertEqual(result["status"], "busy")
+        self.client.snapshot.assert_not_called()
 
     def test_previously_published_commit_only_waits_for_deployment(self):
         path = self.root / "output/local-translation/pending.json"

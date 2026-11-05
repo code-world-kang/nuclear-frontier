@@ -3343,7 +3343,7 @@ function renderBriefing() {
   $('#translationProgressCount').textContent = `${translatedCount.toLocaleString('zh-CN')} / ${translationTotal.toLocaleString('zh-CN')} 条已译完可获取内容`;
   $('#translationProgressBar').style.width = `${Math.min(100, translationPercent).toFixed(2)}%`;
   $('#translationProgressTrack').setAttribute('aria-valuenow', translationPercent.toFixed(1));
-  const serviceLabel = { manual: 'Sol 直接翻译已接入（不拦截内容差异），无人值守调度尚未接通；旧 Qwen 自动翻译已停用', ready: '自动翻译最近执行成功', partial: '自动翻译已完成一批，部分内容待重试', idle: '自动翻译已启用，等待下次批处理', failed: '自动翻译暂未成功，保留原文等待重试', configured: '翻译服务已配置，待执行', not_configured: '自动翻译未连接，仅维护待译队列' }[state.meta.translation_service?.service_status] || '自动翻译服务状态未确认';
+  const serviceLabel = { local_scheduled: '本机每小时翻译与发布已配置（需电脑联网且 Codex 运行）', manual: 'Sol 直接翻译已接入（不拦截内容差异），无人值守调度尚未接通；旧 Qwen 自动翻译已停用', ready: '自动翻译最近执行成功', partial: '自动翻译已完成一批，部分内容待重试', idle: '自动翻译已启用，等待下次批处理', failed: '自动翻译暂未成功，保留原文等待重试', configured: '翻译服务已配置，待执行', not_configured: '自动翻译未连接，仅维护待译队列' }[state.meta.translation_service?.service_status] || '自动翻译服务状态未确认';
   const translationRun = state.meta.translation_service?.last_run;
   const runLabel = translationRun
     ? `最近一批（${translationRun.model || '模型未记录'}）：尝试 ${translationRun.attempted ?? 0} 条，新增 ${translationRun.completed ?? 0} 条，未写入 ${translationRun.failed ?? 0} 条。采集与发布计划每天北京时间 06:00 启动（可能延迟）；翻译执行状态单独显示。机器初译不等于人工校对；进度仅含当前日常库，不含全部历史库。`

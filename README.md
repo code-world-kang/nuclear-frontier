@@ -158,7 +158,8 @@ Thank you to arXiv for use of its open access interoperability.
 
 - **旧 Qwen 日更翻译已停用**，采集、历史回填、个人数据备份、构建及发布仍保留每天北京时间 **06:00** 的计划（GitHub 可能延迟）。不新增 Codex 侧边栏定时任务。
 - `scripts/translate_codex.py` 使用 **gpt-5.6-sol / low**，调用可信机器上已登录 ChatGPT 的 Codex CLI。使用订阅额度，不等于无限免费；未配置新的付费 API。登录凭据绝不能放入公开仓库、Actions Secrets 或公开 CI。
-- **当前只完成按批执行接入，Myservers 无人值守调度尚未接通。** Mac 关闭后，本机 worker 不会继续。`config/translation-worker.json` 保持 `automatic: false`，不能只改成 true 就声称已部署。
+- **已配置本机每小时翻译与自动发布**：通过 Codex 当前聊天关联的 heartbeat 任务运行，不反复创建独立聊天，通知仅限失败。每轮最多 24 条、每批 4 条、翻译预算 15 分钟；需电脑开机、联网并保持 Codex 运行。电脑睡眠或关机时不执行，下次按待译队列继续。不是云端翻译，也没有迁移到 Myservers。
+- 已用 5 篇 NIMA 论文验证本机翻译、自动提交与 GitHub Pages 发布完整通道；定时任务创建时尚未经历首次计划触发。`config/translation-worker.json` 描述配置状态，不是单靠修改该文件就能创建任务。
 - 每批最多 5 条，默认每次 24 条、15 分钟预算；论文、新闻、通知按 4:1:1 配额交替。新资料优先，同日论文优先 NIMA。旧 Qwen 的失败记录不影响 Sol 首次尝试。
 - 独立临时工作目录、只读沙箱、关闭 shell/子代理/搜索，源内容仅作为数据。按用户要求采用直接翻译：不再因数字、公式、单位、缩写、术语、中文比例或长度差异拦截译文。仅保留调用完成、JSON/文章 ID、非空结果及源文未变化等基础运行检查，防止写错文章或损坏数据。长原文不截断，调用失败按 1—7 天退避；旧内容校验失败立即重新进入待译队列。重复启动用文件锁防止竞争，每批原子保存，成功结果可断点续跑。
 - 用户术语优先于默认核物理词表；补摘要尽量保留已有有效中文题目。用户术语仍作为翻译提示，不再逐条验收。新产出标注直接机器初译、未经内容校验或人工校对；不修改已有译文的历史来源标记。
@@ -175,8 +176,11 @@ python3 scripts/build_site.py
 
 # 翻译并自动更新网站，不需要再手动提交。
 python3 scripts/run_local_translation.py --limit 24 --batch-size 4 --max-minutes 15
+# 定时任务会额外传入 --scheduled，便于区分计划运行和人工测试。
 # 如当前网络需要本机代理，可仅为本次命令设置 HTTPS_PROXY，不修改全局配置。
 ```
+
+本机运行状态在忽略的 `output/local-translation/status.json`，包含提交编号与发布记录链接；待重传数据只在失败时保留。当前环境使用已有的本机代理连接 GitHub，不修改系统代理配置。
 
 `data/translation-run.json` 记录真实批次结果；`data/translation-sol-retries.json` 记录 Sol 重试状态。保留旧离线脚本仅用于人工比较，不再自动启动。
 
