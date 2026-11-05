@@ -1813,4 +1813,4 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .journal-focus-panel button[aria-pressed="true"] { border-radius: 8px; background: #dcebc9; outline: 2px solid #6b9153; }
 .nima-spotlight button:hover { background: #254c36; }
 .nima-spotlight button:focus-visible, .journal-focus-panel button:focus-visible { outline: 3px solid #b27b28; outline-offset: 4px; }
-@media (max-width: 760px) { .nima-spotlight { flex-wrap: wrap; gap: 14px; padding: 16px; } .nima-emblem { width: 48px; height: 60px; } .nima-spotlight-copy { flex-basis: calc(100% - 90px); } .nima-spotlight h3 { font-size: 20px; } .nima-spotlight button { width: 100%; } }
+@media (max-width: 760px) { .nima-spotlight { flex-wrap: wrap; gap: 14px; padding: 16px; } .nima-emblem { width: 48px; height: 72px; padding: 6px; font-size: 13px; } .nima-emblem span { font-size: 28px; } .nima-spotlight-copy { flex-basis: calc(100% - 90px); } .nima-spotlight h3 { font-size: 20px; } .nima-spotlight button { width: 100%; } }
