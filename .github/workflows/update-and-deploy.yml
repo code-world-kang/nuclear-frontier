@@ -52,20 +52,8 @@ jobs:
           PERSONAL_STATE_URL: ${{ vars.PERSONAL_STATE_URL }}
         run: python scripts/backup_cloud_personal.py
 
-      - name: 缓存开放翻译模型（不使用商业 API）
-        uses: actions/cache@v4
-        with:
-          path: output/llama-model
-          key: translation-qwen3-4b-instruct-q4-b10516-${{ runner.os }}-v1
-
-      - name: 自动翻译新增内容并逐步消化积压
-        timeout-minutes: 60
-        run: |
-          if [ "${{ github.event_name }}" = "push" ]; then
-            python scripts/translate_content.py --limit 6 --backend offline --max-minutes 8
-          else
-            python scripts/translate_content.py --limit 120 --backend offline --max-minutes 45
-          fi
+      # 旧 Qwen CPU 翻译已停用，不再阻塞每日采集和发布。
+      # Sol 在可信机器的独立 CLI worker 中运行；不向公开 CI 上传订阅凭据。
 
       - name: 构建站点数据
         run: python scripts/build_site.py
