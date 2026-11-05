@@ -30,6 +30,10 @@ def main() -> None:
     # 即使未配置翻译服务或首次构建，也应有真实可用的待译队列。
     queue_file = DATA / "translation-queue.json"
     old_queue = load(queue_file) if queue_file.exists() else {}
+    worker_file = CONFIG / "translation-worker.json"
+    worker = load(worker_file) if worker_file.exists() else {}
+    if worker.get("backend") == "codex_cli" and not worker.get("automatic"):
+        old_queue.update({"model": worker["model"], "service_status": "manual"})
     queue = queue_payload(collect_candidates(load(DATA / "translations.zh-CN.json").get("items", {})), old_queue.get("model", ""), old_queue.get("service_status", "not_configured"))
     if {key: value for key, value in queue.items() if key != "generated_at"} == {key: value for key, value in old_queue.items() if key != "generated_at"}:
         queue["generated_at"] = old_queue["generated_at"]
@@ -73,7 +77,7 @@ def main() -> None:
         "categories": topics["categories"],
         "status": status,
         "insights": insights,
-        "translation_service": {**({"last_run": load(DATA / "translation-run.json")} if (DATA / "translation-run.json").exists() else {}), **{key: queue.get(key) for key in ("service_status", "pending", "generated_at", "model")}},
+        "translation_service": {**({"last_run": load(DATA / "translation-run.json")} if (DATA / "translation-run.json").exists() else {}), **{key: queue.get(key) for key in ("service_status", "pending", "generated_at", "model")}, "worker": worker},
         "personal_backup": {"snapshot_at": personal_payload.get("updated_at", "")},
         "notice": "本站汇总官方公开元数据，不代表数据源机构背书。请以原始页面为准。",
     }

@@ -148,28 +148,30 @@ Thank you to arXiv for use of its open access interoperability.
 - **收录与推荐分离**：核结构、团簇结构、实验、理论、反应、衰变、探测器、核天体、高能核物理、核数据、加速器及聚变均可分类。`nucl-ex`、`nucl-th` 和核心核物理专刊全量接收；综合期刊仍按涉核内容筛选。新增 Science、Nature Communications，Crossref 使用分页而非只读前 500 条。这里的“全量”指配置来源在指定时间窗返回的数据，不是保证全球零漏收。
 - **历史检索**：旧论文构建索引时补充团簇标签，识别 `8B`、`⁸B`、`B-8` 和 `52,54Ca` 等写法。历史完整性以月度索引覆盖为准，不把仍未回填的月份称为已覆盖。
 - **内容清洗**：访问验证页不充当新闻介绍；通知去掉明确的网页导航前缀；列表使用官网声明的标题，避免把预览和日期拼进题目。英文主题按词匹配，防止 `International` 被 `RNA` 规则误删；测试会议排除，学术例会标明类型；通用基金标明须核对申请资格。
-- **翻译透明**：原生中文、题目、摘要/介绍、部分译文和原文缺失分开统计。无服务时只建立待译队列。GitHub Models 已退休，不再使用其接口和权限，也不把其他模型的结果标成 Codex。默认每日在 GitHub runner 内运行 Qwen3 开放模型，不用商业 API、订阅凭据或个人电脑；可选 API 后端仍只接受显式配置的 HTTPS 服务。机器初译与人工校对分开，不声称整库已译完。
+- **翻译透明**：原生中文、题目、摘要/介绍、部分译文和原文缺失分开统计。无服务时只建立待译队列。GitHub Models 已退休，不再使用其接口和权限，也不把其他模型的结果标成 Codex。旧 GitHub runner Qwen3 翻译已停用，Sol 改为可信机器的独立 CLI 分批执行；无人值守调度尚未接通，不能保证关机后继续翻译。可选 API 后端仍只接受显式配置的 HTTPS 服务。机器初译与人工校对分开，不声称整库已译完。
 - **个人数据保护**：保存过程中发生的新编辑继续排队；失败保留未提交副本；旧副本不因云端时间较新而直接删除。EdgeOne 覆盖前留存历史快照并拒绝已知的过时写入。当前 Blob 时间戳检查不是原子事务，尚不承诺多设备同时编辑无冲突。
 - **GitHub 备份**：每日流程预留 `PERSONAL_STATE_URL`（国内主站 HTTPS `/api/personal-state` 地址）。未配置时不连接未知站点，不修改个人数据；有效快照才备份，拒绝缺字段及旧快照。EdgeOne 保存成功和 GitHub 备份成功是两个独立状态。跨设备及真实云端写入仍需在实际主站验证。
 - **验证**：Python 测试、JavaScript 语法检查和 `node --test tests/*.test.mjs`。包含真实函数执行的核素识别、空译文统计、保存期间继续编辑、旧副本保留和云端冲突保护测试；这些测试不代替手机及真实跨设备验收。
 
 
-## 自动中文初译（开放模型）
+## 中文初译（Codex Sol 独立 worker）
 
-- 日更计划仍是北京时间 **06:00**（GitHub 可能延迟）；在同一次 Actions 内采集、翻译、构建和发布，不创建 Codex 独立任务。
-- 默认采用 [Qwen3-4B-Instruct-2507](https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507) 的 [Unsloth Q4_K_M 量化版本](https://huggingface.co/unsloth/Qwen3-4B-Instruct-2507-GGUF)，Apache-2.0；使用 [llama.cpp](https://github.com/ggml-org/llama.cpp) 官方发行版，MIT。两个下载均固定版本与 SHA-256。模型约 2.5 GB，缓存在 runner，不打包进网页或 Git 仓库。
-- CPU 推理只绑定 `127.0.0.1`，任务结束即关闭；不上传资料给在线翻译服务，不使用 API Key，不扣 ChatGPT 订阅额度。公开仓库标准 runner 的免费政策以 GitHub 为准，不开通付费 runner。
-- 每次日更最多尝试 120 条、约 45 分钟预算（在文章边界停止）；论文优先，同时给新闻和通知留配额。代码推送时仅尝试 6 条，避免长时间阻塞更新。积压会分批消化，历史月库暂不纳入翻译总进度。
-- 先校验数学表达式、数字和缩写的原样保留，失败才使用保护标记重试，完整处理题目及已获取的摘要/介绍；输出截断、保护项变化、数字不一致或明显过短都会拒绝写入，失败按 1—7 天退避重试。**自动校验不代表语义准确，不是人工精校。** 无原文摘要的文章只译题目。
-- `config/translation-glossary.json` 是核物理词表；已同步到 `data/personal/state.json` 的个人指定译法也会读入后续翻译。浏览器里尚未成功同步的词表不会被云端任务凭空读取。
-- `data/translation-run.json` 记录最近一批尝试、写入、失败与剩余数量；`data/translation-retries.json` 保存失败条目的退避状态；首页展示真实批次结果。已有完整译文不重复覆盖，补摘要时保留有效中文题目。
-- Argos 模型的首轮实验在核物理术语上出现明显误译，未采用为默认服务，也未把该轮结果写入网站。
+- **旧 Qwen 日更翻译已停用**，采集、历史回填、个人数据备份、构建及发布仍保留每天北京时间 **06:00** 的计划（GitHub 可能延迟）。不新增 Codex 侧边栏定时任务。
+- `scripts/translate_codex.py` 使用 **gpt-5.6-sol / low**，调用可信机器上已登录 ChatGPT 的 Codex CLI。使用订阅额度，不等于无限免费；未配置新的付费 API。登录凭据绝不能放入公开仓库、Actions Secrets 或公开 CI。
+- **当前只完成按批执行接入，Myservers 无人值守调度尚未接通。** Mac 关闭后，本机 worker 不会继续。`config/translation-worker.json` 保持 `automatic: false`，不能只改成 true 就声称已部署。
+- 每批最多 5 条，默认每次 24 条、15 分钟预算；论文、新闻、通知按 4:1:1 配额交替。新资料优先，同日论文优先 NIMA。旧 Qwen 的失败记录不影响 Sol 首次尝试。
+- 独立临时工作目录、只读沙箱、关闭 shell/子代理/搜索，源内容仅作为数据。返回 ID、中文、数字/公式/缩写与个人术语校验失败时不覆盖译文；长原文不截断，失败按 1—7 天退避。重复启动用文件锁防止竞争，每批原子保存，成功结果可断点续跑。
+- 用户术语优先于默认核物理词表；补摘要尽量保留已有有效中文题目。全部产出标注机器初译，自动校验不能证明语义准确，不能修复源站已经丢失的上下标。
+- 脚本不自动执行 Git 拉取/推送，不改收藏、笔记或个人配置。发布前同步仓库、构建、测试，再提交译文。数据类提交不会立即触发当前 Pages 工作流，可手动执行网站工作流或等待下一次日更。代码变更推送会触发构建发布。
 
-本机人工测试（不是日常运行要求）：
+在可信且已有 CLI 登录的机器上：
 
 ```sh
-python3 scripts/translate_content.py --backend offline --limit 6 --max-minutes 8
+python3 scripts/translate_codex.py --dry-run --limit 12
+python3 scripts/translate_codex.py --limit 24 --batch-size 4 --max-minutes 15
 python3 scripts/build_site.py
 ```
+
+`data/translation-run.json` 记录真实批次结果；`data/translation-sol-retries.json` 记录 Sol 重试状态。保留旧离线脚本仅用于人工比较，不再自动启动。
 
 国内收藏同步仍需有效的腾讯云登录以及真实主站验证；未取得合法访问时不修改密码、不替换云存储，不把静态站误报为已经跨设备同步。2026-09-05 从旧部署记录找回的地址为 `https://nuclear-frontier-402lzxdr.edgeone.cool`，当日首页及 `/api/personal-state` 均返回 EdgeOne 401（访问受限或授权失效），不是有效公开快照，因此没有盲目配置备份地址。

@@ -120,16 +120,24 @@ class RepositoryTests(unittest.TestCase):
                 else:
                     self.assertIn("跳过翻译", item.get("note", ""))
 
-    def test_translation_queue_uses_open_model_without_credentials(self):
+    def test_translation_worker_is_separate_and_daily_collection_kept(self):
         workflow = (ROOT / ".github" / "workflows" / "update-and-deploy.yml").read_text(encoding="utf-8")
         script = (ROOT / "scripts" / "translate_content.py").read_text(encoding="utf-8")
         queue = json.loads((ROOT / "data" / "translation-queue.json").read_text(encoding="utf-8"))
         self.assertNotIn("models: read", workflow)
         self.assertNotIn("GITHUB_MODELS_TOKEN", workflow)
-        self.assertIn("translate_content.py --limit", workflow)
+        self.assertNotIn("translate_content.py --limit", workflow)
         self.assertIn('DEFAULT_ENDPOINT = ""', script)
-        self.assertIn("--backend offline", workflow)
-        self.assertIn("actions/cache@v4", workflow)
+        self.assertNotIn("--backend offline", workflow)
+        self.assertNotIn("output/llama-model", workflow)
+        self.assertNotIn("translate_codex.py", workflow)
+        self.assertIn('cron: "0 22 * * *"', workflow)
+        self.assertIn("scripts/update_content.py --days 14 --strict", workflow)
+        self.assertIn("scripts/build_site.py", workflow)
+        self.assertIn("actions/deploy-pages@v4", workflow)
+        worker = json.loads((ROOT / "config/translation-worker.json").read_text())
+        self.assertEqual(worker["model"], "gpt-5.6-sol")
+        self.assertFalse(worker["automatic"])
         self.assertNotIn("secrets.TRANSLATION_API_KEY", workflow)
         self.assertGreaterEqual(queue.get("pending", 0), 0)
         self.assertEqual(sum(queue.get("counts", {}).values()), queue.get("pending"))

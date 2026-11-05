@@ -1887,24 +1887,33 @@
   },
   "translation_service": {
     "last_run": {
-      "backend": "open_source",
-      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "started_at": "2026-11-05T03:46:57.135177+00:00",
-      "attempted": 5,
-      "completed": 4,
-      "failed": 1,
-      "deferred": 1,
+      "backend": "codex_cli",
+      "model": "gpt-5.6-sol",
+      "automatic": false,
+      "started_at": "2026-11-05T07:09:54.585221+00:00",
+      "attempted": 10,
+      "completed": 5,
+      "failed": 5,
+      "deferred": 0,
       "errors": {
-        "译文数字与原文不一致": 1
+        "原文公式、数值或缩写未完整保留": 5
       },
-      "finished_at": "2026-11-05T03:56:09.280336+00:00",
-      "pending": 6459,
+      "finished_at": "2026-11-05T07:12:57.253296+00:00",
+      "elapsed_seconds": 182.67,
+      "pending": 6454,
       "service_status": "partial"
     },
-    "service_status": "partial",
-    "pending": 6459,
-    "generated_at": "2026-11-05T03:56:11.214232+00:00",
-    "model": "Qwen3-4B-Instruct-2507-Q4_K_M"
+    "service_status": "manual",
+    "pending": 6454,
+    "generated_at": "2026-11-05T07:14:17.949294+00:00",
+    "model": "gpt-5.6-sol",
+    "worker": {
+      "backend": "codex_cli",
+      "model": "gpt-5.6-sol",
+      "automatic": false,
+      "previous_backend_enabled": false,
+      "note": "旧 Qwen 日更翻译已停用。Sol 在可信机器按批执行，Myservers 无人值守调度尚未接通。采集与发布仍计划每天北京时间 06:00。"
+    }
   },
   "personal_backup": {
     "snapshot_at": "2026-08-20T02:05:13.625Z"
