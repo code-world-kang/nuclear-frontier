@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
-import { scientificText, nuclidesIn, searchText, translationCoverage, isChinese } from '../site/research-utils.js';
+import { scientificText, nuclidesIn, searchText, translationCoverage, isChinese, isNimaPaper } from '../site/research-utils.js';
 
 test('核素：单字母、双字母、上标、连字符及合写', () => {
   assert.deepEqual(nuclidesIn('8B and B-8, ⁸B, 52,54Ca and $^{53,55}$Sc'), ['8B', '52Ca', '54Ca', '53Sc', '55Sc']);
@@ -45,7 +45,7 @@ function appHarness() {
   source = source.replace(/^import .*;\n/m, '').replace(/initialize\(\);\s*$/, '');
   const storage = new Map();
   const context = vm.createContext({
-    URL, scientificText, nuclidesIn, searchText, translationCoverage, AbortController, console,
+    URL, scientificText, nuclidesIn, searchText, translationCoverage, isNimaPaper, AbortController, console,
     window: { location: { href: 'https://example.org/' } },
     document: { querySelector: () => null },
     setTimeout: () => 1, clearTimeout: () => {},
@@ -96,4 +96,49 @@ test('远端时间较新，不得丢掉本机尚未提交的收藏', () => {
   assert.equal(h.run('Object.keys(state.personal.favorites).length'), 2);
   assert.equal(h.run('state.personalDirty'), true);
   assert.equal(h.storage.size, 1);
+});
+
+test('NIMA 兼容期刊全称、缩写与新旧 DOI，但不误收 NIM B', () => {
+  for (const item of [
+    { source_short: 'NIMA' }, { source: 'NIM-A' }, { source_short: 'NIM A' },
+    { source: 'Nuclear Instruments and Methods in Physics Research A' },
+    { source: 'Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment' },
+    { doi: '10.1016/j.nima.2026.123456' }, { doi: 'https://doi.org/10.1016/S0168-9002(11)02174-7' },
+  ]) assert.equal(isNimaPaper(item), true);
+  for (const item of [
+    { source_short: 'NIMB', doi: '10.1016/j.nimb.2026.123456' },
+    { source: 'Nuclear Instruments and Methods in Physics Research B' },
+    { title: 'A NIMA paper mentioned here', source: 'Physical Review C' }, {},
+  ]) assert.equal(isNimaPaper(item), false);
+});
+
+test('首页给 NIMA 四个优先位置，仍保留其他重点期刊且不会重复条目', () => {
+  const h = appHarness();
+  const values = [...Array.from({ length: 30 }, (_, i) => ({ id: `p${i}`, source_short: 'PRL' })),
+    ...Array.from({ length: 10 }, (_, i) => ({ id: `n${i}`, source_short: 'NIMA' }))];
+  h.context.fixtures = values;
+  const result = h.run('prioritizeNima(fixtures)');
+  assert.equal(result.length, 24);
+  assert.equal(result.slice(0, 4).every(isNimaPaper), true);
+  assert.equal(result.filter(isNimaPaper).length, 4);
+  assert.equal(new Set(result.map(x => x.id)).size, 24);
+  assert.equal(h.run('homeJournalLabel({source_short: "NIMA"})'), 'NIMA');
+  assert.equal(h.run('homeJournalLabel({source_short: "NIMB"})'), '');
+  assert.equal(h.run('prioritizeNima([], 24).length'), 0);
+  assert.equal(h.run('prioritizeNima(fixtures, 2).length'), 2);
+});
+
+test('NIMA 筛选聚合同刊别名，尊重忽略，不混入其他期刊', () => {
+  const h = appHarness();
+  h.context.fixtures = [
+    { id: 'a', source_short: 'NIMA', source: 'Name A', published: '2026-11-01' },
+    { id: 'b', source_short: 'NIM-A', source: 'Name B', published: '2026-11-01' },
+    { id: 'c', source_short: 'NIMB', source: 'Other', published: '2026-11-01' },
+  ];
+  h.run("state.papers = fixtures; state.scope = 'all'; state.source = NIMA_SOURCE; state.personal.ignoredItems = ['b'];");
+  assert.deepEqual([...h.run('filteredItems().map(x => x.id)')], ['a']);
+  h.run("state.featured = [fixtures[0], fixtures[2]];");
+  assert.deepEqual([...h.run('featuredWithNima().map(x => x.id)')].sort(), ['a', 'b', 'c']);
+  h.run("state.papers.push({id:'old', source_short:'NIMA',published:'2025-01-01'})");
+  assert.equal(h.run('featuredWithNima().some(x => x.id === "old")'), false);
 });

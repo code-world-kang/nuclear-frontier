@@ -26,6 +26,15 @@ export function searchText(value = '') {
   return `${scientificText(value)} ${nuclidesIn(value).join(' ')}`.toLocaleLowerCase('zh-CN');
 }
 
+// 只匹配期刊元数据，避免把 NIM B 或正文提及 NIMA 的文章误认为 NIM A。
+export function isNimaPaper(item = {}) {
+  const names = [item.source_short, item.source].map(value => String(value || '').trim().toLowerCase());
+  if (names.some(name => /^nim[\s-]?a$/.test(name))) return true;
+  if (names.some(name => /^nuclear instruments (?:and|&) methods in physics research[,:]?\s*(?:section\s+)?a\b/.test(name))) return true;
+  const doi = String(item.doi || '').replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, '').toLowerCase();
+  return /^10\.1016\/(?:j\.nima\.|s?0168-9002[/(])/.test(doi);
+}
+
 export function isChinese(value = '') {
   // 数学排版命令不参与中英文比例统计，与服务端待译判定保持一致。
   const content = String(value).replace(/https?:\/\/[^\s<>，。；]+/g, '')

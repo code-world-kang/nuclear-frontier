@@ -228,6 +228,19 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn(".home-translation-progress", styles)
         self.assertIn("display: grid", styles)
 
+    def test_nima_is_collected_and_highlighted_without_nimb_confusion(self):
+        for filename, key in (("sources.json", "crossref_journals"), ("history_sources.json", "sources")):
+            sources = json.loads((ROOT / "config" / filename).read_text())[key]
+            matches = [source for source in sources if source.get("short") == "NIMA"]
+            self.assertEqual(len(matches), 1)
+            self.assertEqual(matches[0]["issn"], "0168-9002")
+            self.assertEqual(matches[0]["mode"], "all")
+            self.assertIn("detectors-daq", matches[0]["default_categories"])
+        index = (ROOT / "site" / "index.html").read_text()
+        self.assertIn('id="nimaSpotlightTitle"', index)
+        self.assertIn('id="journalFocusPanel"', index)
+        self.assertIn('data-nima-toggle aria-pressed="false"', index)
+
     def test_papers_can_be_ignored_and_restored(self):
         index = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
         app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
@@ -322,7 +335,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn(".paper-actions .cite-button", styles)
         self.assertIn(".assistant-cite-button", styles)
         self.assertIn(".inline-citation-panel", styles)
-        self.assertIn("localeCompare(b[0], 'en'", app)
+        self.assertIn("localeCompare(label(b[0]), 'en'", app)
         self.assertIn("std.samr.gov.cn/gb/search/gbDetailed", index)
 
     def test_notice_portal_is_official_categorized_and_searchable(self):

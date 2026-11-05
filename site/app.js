@@ -1,4 +1,4 @@
-import { scientificText, nuclidesIn, searchText, translationCoverage } from './research-utils.js?v=20260905-codex-batch';
+import { scientificText, nuclidesIn, searchText, translationCoverage, isNimaPaper } from './research-utils.js?v=20261105-nima';
 
 const PATH = new URL('.', window.location.href).pathname;
 // GitHub 仍是个人数据的最终来源；本地副本只用来防止“已点收藏、未提交 GitHub”时刷新丢失。
@@ -56,6 +56,29 @@ const HOME_FEATURED_JOURNALS = new Map([
   ['nature physics', 'Nature Physics'],
   ['nature communications', 'Nature Communications'],
 ]);
+
+const NIMA_SOURCE = 'journal:nima';
+
+function nimaPapers() {
+  return state.papers.filter(isNimaPaper)
+    .sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.importance || 0) - (a.importance || 0));
+}
+
+function featuredWithNima() {
+  const latest = latestPaperDay();
+  const cutoff = latest ? new Date(`${latest}T00:00:00Z`) : null;
+  if (cutoff) cutoff.setUTCDate(cutoff.getUTCDate() - 30);
+  const recent = nimaPapers().filter(item => !cutoff || paperDay(item) >= cutoff.toISOString().slice(0, 10));
+  return [...new Map([...state.featured, ...recent].map(item => [item.id, item])).values()];
+}
+
+function prioritizeNima(items, limit = 24) {
+  // 最多四个近期 NIMA 首屏席位，其余期刊继续按日期展示，不改变质量评分。
+  const first = items.filter(isNimaPaper).slice(0, Math.min(4, limit));
+  const other = items.filter(item => !isNimaPaper(item));
+  const extra = items.filter(isNimaPaper).slice(first.length);
+  return [...first, ...other, ...extra].slice(0, limit);
+}
 
 const NUCLEAR_PRIORITY = new Map([
   ['experimental-nuclear', 12], ['nuclear-structure', 12], ['nuclear-clusters', 12], ['nuclear-decay', 12],
@@ -534,7 +557,7 @@ function showToast(message) {
 }
 
 function currentItems() {
-  if (state.view === 'featured') return state.featured;
+  if (state.view === 'featured') return featuredWithNima();
   if (state.view === 'news') return state.news;
   if (state.view === 'notices') return state.notices;
   if (state.view === 'ignored') {
@@ -707,7 +730,9 @@ function filteredItems() {
     if (state.view !== 'ignored' && ignored.has(item.id)) return false;
     if (!inPaperScope(item, focusIds, latest)) return false;
     if (state.category !== 'all' && !(item.categories || []).includes(state.category)) return false;
-    if (!['news', 'notices'].includes(state.view) && state.source !== 'all' && item.source !== state.source) return false;
+    if (!['news', 'notices'].includes(state.view) && state.source !== 'all') {
+      if (state.source === NIMA_SOURCE ? !isNimaPaper(item) : item.source !== state.source) return false;
+    }
     if (state.view === 'favorites' && state.mySection === 'papers' && state.favoriteKeyword !== 'all') {
       const keywords = favoriteKeywords(item.id);
       if (state.favoriteKeyword === 'missing' && keywords.length) return false;
@@ -1399,6 +1424,12 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
   source.className = 'source-badge';
   source.textContent = item.source_short || item.source || '官方来源';
   meta.append(source);
+  if (isNimaPaper(item)) {
+    card.classList.add('nima-paper-card');
+    source.classList.add('nima-source-badge');
+    source.textContent = 'NIMA · 重点关注';
+    source.title = 'Nuclear Instruments and Methods in Physics Research A；关注标识不代表科学质量评分';
+  }
   if (item.type === 'paper' && item.abstract) {
     const abstractSource = document.createElement('span');
     abstractSource.className = 'abstract-source-badge';
@@ -1715,6 +1746,7 @@ function renderMyCollection() {
 }
 
 function renderCards() {
+  renderNimaFocus();
   if (state.view === 'favorites' && ['code', 'references'].includes(state.mySection)) {
     renderMyCollection();
     return;
@@ -1752,7 +1784,7 @@ function renderActiveFilters() {
   if (!['news', 'notices'].includes(state.view) && state.source !== 'all') {
     const tag = document.createElement('span');
     tag.className = 'active-filter';
-    tag.innerHTML = `${text(state.source)}<button aria-label="清除来源">×</button>`;
+    tag.innerHTML = `${text(state.source === NIMA_SOURCE ? 'NIMA · 重点关注' : state.source)}<button aria-label="清除来源">×</button>`;
     $('button', tag).addEventListener('click', () => {
       state.source = 'all';
       $('#sourceSelect').value = 'all';
@@ -1797,6 +1829,7 @@ function renderActiveFilters() {
 
 function updateMySpaceUI() {
   const isMy = state.view === 'favorites';
+  $('#journalFocusPanel').hidden = !['papers', 'featured', 'unread', 'ignored'].includes(state.view);
   const isPaperShelf = !isMy || ['papers', 'translations'].includes(state.mySection);
   $('#mySpaceNav').hidden = !isMy;
   $('.view-tabs').hidden = isMy;
@@ -1909,13 +1942,45 @@ function setCategory(id) {
 function renderSourceOptions() {
   const counts = new Map();
   const values = state.view === 'papers' && state.globalKeyword ? state.historyResults : state.papers;
-  values.forEach(item => counts.set(item.source, (counts.get(item.source) || 0) + 1));
+  values.forEach(item => {
+    const key = isNimaPaper(item) ? NIMA_SOURCE : item.source;
+    counts.set(key, (counts.get(key) || 0) + 1);
+  });
   const select = $('#sourceSelect');
   select.replaceChildren(new Option('所有来源', 'all'));
-  [...counts.entries()].sort((a, b) => a[0].localeCompare(b[0], 'en', { sensitivity: 'base', numeric: true })).forEach(([source, count]) => {
-    select.add(new Option(`${source} (${count})`, source));
+  const label = source => source === NIMA_SOURCE ? 'NIMA · Nuclear Instruments and Methods A' : source;
+  [...counts.entries()].sort((a, b) => label(a[0]).localeCompare(label(b[0]), 'en', { sensitivity: 'base', numeric: true })).forEach(([source, count]) => {
+    select.add(new Option(`${label(source)} (${count})`, source));
   });
   select.value = state.source;
+}
+
+function openNimaPapers() {
+  clearGlobalKeywordSearch({ render: false });
+  state.category = 'all';
+  state.categorySelections.papers = 'all';
+  state.source = NIMA_SOURCE;
+  state.query = '';
+  state.searchField = 'all';
+  state.scope = 'all';
+  state.sort = 'date';
+  $('#searchInput').value = '';
+  $('#searchFieldSelect').value = 'all';
+  $('#scopeSelect').value = 'all';
+  $('#sortSelect').value = 'date';
+  setView('papers');
+  renderSourceOptions();
+  $('#sectionTitle').focus({ preventScroll: true });
+  $('#stream').scrollIntoView({ behavior: 'smooth' });
+}
+
+function renderNimaFocus() {
+  const papers = nimaPapers();
+  $('#nimaSummary').textContent = papers.length
+    ? `日常库已收录 ${papers.length.toLocaleString('zh-CN')} 篇 · 最新论文日期 ${prettyDate(papers[0].published)}。历史月库仍可通过关键词检索。`
+    : '暂未取得 NIMA 文章，保留自动采集配置，等待下一次更新。';
+  $('#nimaQuickCount').textContent = papers.length.toLocaleString('zh-CN');
+  $('[data-nima-toggle]').setAttribute('aria-pressed', String(state.source === NIMA_SOURCE));
 }
 
 function favoriteSuggestionValues(item) {
@@ -2855,6 +2920,7 @@ function clearPaperFilters() {
 }
 
 function homeJournalLabel(item) {
+  if (isNimaPaper(item)) return 'NIMA';
   const values = [item.source, item.source_short].map(value => String(value || '').trim().toLowerCase());
   for (const value of values) {
     if (HOME_FEATURED_JOURNALS.has(value)) return HOME_FEATURED_JOURNALS.get(value);
@@ -2885,6 +2951,7 @@ function homeFeaturedCard(item) {
 }
 
 function renderHomeDashboard() {
+  renderNimaFocus();
   const news = [...state.news]
     .sort((a, b) => (b.published || '').localeCompare(a.published || '')
       || Number(isPrimaryNuclear(b)) - Number(isPrimaryNuclear(a))
@@ -2908,18 +2975,17 @@ function renderHomeDashboard() {
     })
     .sort((a, b) => (b.published || '').localeCompare(a.published || '')
       || Number(isPrimaryNuclear(b)) - Number(isPrimaryNuclear(a))
-      || (b.importance || 0) - (a.importance || 0))
-    .slice(0, 24);
+      || (b.importance || 0) - (a.importance || 0));
 
   $('#homeNewsCount').textContent = `${state.news.length.toLocaleString('zh-CN')} 条`;
   $('#homeNoticeCount').textContent = `${state.notices.length.toLocaleString('zh-CN')} 条`;
   $('#homeNewsList').replaceChildren(...news.map(item => homeFeedCard(item, 'news')));
   $('#homeNoticeList').replaceChildren(...notices.map(item => homeFeedCard(item, 'notice')));
-  $('#homeFeaturedList').replaceChildren(...featured.map(homeFeaturedCard));
+  $('#homeFeaturedList').replaceChildren(...prioritizeNima(featured).map(homeFeaturedCard));
 
   if (!news.length) $('#homeNewsList').innerHTML = '<p class="home-feed-empty">等待下一次自动更新。</p>';
   if (!notices.length) $('#homeNoticeList').innerHTML = '<p class="home-feed-empty">等待下一次自动更新。</p>';
-  if (!featured.length) $('#homeFeaturedList').innerHTML = '<p class="home-feed-empty">五种重点期刊暂时没有可展示的新文章。</p>';
+  if (!featured.length) $('#homeFeaturedList').innerHTML = '<p class="home-feed-empty">六种重点期刊暂时没有可展示的新文章。</p>';
 }
 
 function noticeGroup(item) {
@@ -3271,7 +3337,7 @@ function renderBriefing() {
   $('#dailyJournalCount').textContent = journalCount.toLocaleString('zh-CN');
   $('#dailyPreprintCount').textContent = preprintCount.toLocaleString('zh-CN');
   $('#briefingSummary').textContent = items.length
-    ? `最新论文发布日期 ${latest}：${allItems.length} 篇，其中涉核 ${items.length} 篇（期刊 ${journalCount}、预印本 ${preprintCount}）。最近一次更新实际新入库 ${state.meta.status.new_counts?.papers ?? '—'} 篇。重点推荐仅限五种期刊，论文库不受此限制。`
+    ? `最新论文发布日期 ${latest}：${allItems.length} 篇，其中涉核 ${items.length} 篇（期刊 ${journalCount}、预印本 ${preprintCount}）。最近一次更新实际新入库 ${state.meta.status.new_counts?.papers ?? '—'} 篇。首页重点展示 NIMA 等六种期刊，论文库不受此限制。`
     : '尚无可用的当日元数据。';
   $('#translationProgressPercent').textContent = translationPercentLabel;
   $('#translationProgressCount').textContent = `${translatedCount.toLocaleString('zh-CN')} / ${translationTotal.toLocaleString('zh-CN')} 条已译完可获取内容`;
@@ -3491,6 +3557,13 @@ function saveMyItem(event) {
 }
 
 function bindEvents() {
+  $$('[data-nima-open]').forEach(button => button.addEventListener('click', openNimaPapers));
+  $('[data-nima-toggle]').addEventListener('click', () => {
+    if (state.source !== NIMA_SOURCE) return openNimaPapers();
+    state.source = 'all';
+    $('#sourceSelect').value = 'all';
+    renderCards();
+  });
   $$('.nav-link[data-view], .view-tab[data-view]').forEach(button => button.addEventListener('click', () => setView(button.dataset.view)));
   $('.brand').addEventListener('click', event => {
     event.preventDefault();

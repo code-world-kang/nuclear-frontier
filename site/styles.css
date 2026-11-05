@@ -1792,3 +1792,25 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .translation-provenance { display: block; color: #6d7c67; font-size: 12px; line-height: 1.6; margin: 8px 0; }
+
+/* NIMA 专属关注：延续浅绿暖色，不用质量评分冒充期刊关注。 */
+.nima-spotlight { display: flex; align-items: center; gap: 20px; padding: 22px; margin: 18px 0; border: 1px solid #b9cfa3; border-radius: 22px; background: linear-gradient(120deg, #eef6e5, #fff7e3); }
+.nima-emblem { flex: 0 0 auto; display: grid; place-items: center; width: 68px; height: 78px; border-radius: 18px 18px 28px 18px; background: #315d43; color: #fff9df; font-size: 16px; font-weight: 750; padding: 8px; }
+.nima-emblem span { font-size: 32px; line-height: 1; }
+.nima-spotlight-copy { flex: 1; min-width: 0; }
+.nima-spotlight h3 { margin: 6px 0; font-size: 23px; color: #315d43; }
+.nima-spotlight p { margin: 4px 0 8px; color: #52684d; }
+.nima-spotlight small { color: #52684d; line-height: 1.6; }
+.nima-spotlight button { flex-shrink: 0; padding: 12px 16px; background: #315d43; color: #fffdf3; border: 0; border-radius: 14px; font: inherit; cursor: pointer; }
+.featured-journal-list .nima-journal-chip, .source-badge.nima-source-badge { background: #e1efce; color: #315d43; border: 1px solid #a9c589; font-weight: 750; }
+.paper-card.nima-paper-card { border-inline-start: 4px solid #82a765; }
+.journal-focus-panel { margin: 12px 0 20px; padding: 12px; border: 1px solid #bed2b0; border-radius: 16px; background: #f4f8ec; }
+.journal-focus-panel > span { font-size: 12px; color: #52684d; }
+.journal-focus-panel > small { display: block; margin-top: 7px; font-size: 11px; color: #52684d; }
+.journal-focus-panel button { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; width: 100%; padding: 10px 0; color: #315d43; background: transparent; border: 0; cursor: pointer; font: inherit; text-align: left; }
+.journal-focus-panel button small { font-size: 11px; }
+.journal-focus-panel button strong { margin-left: auto; font-size: 13px; }
+.journal-focus-panel button[aria-pressed="true"] { border-radius: 8px; background: #dcebc9; outline: 2px solid #6b9153; }
+.nima-spotlight button:hover { background: #254c36; }
+.nima-spotlight button:focus-visible, .journal-focus-panel button:focus-visible { outline: 3px solid #b27b28; outline-offset: 4px; }
+@media (max-width: 760px) { .nima-spotlight { flex-wrap: wrap; gap: 14px; padding: 16px; } .nima-emblem { width: 48px; height: 60px; } .nima-spotlight-copy { flex-basis: calc(100% - 90px); } .nima-spotlight h3 { font-size: 20px; } .nima-spotlight button { width: 100%; } }

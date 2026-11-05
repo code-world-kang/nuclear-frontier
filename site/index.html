@@ -27,7 +27,7 @@
   </script>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20260905-nuclear-reliability">
+  <link rel="stylesheet" href="./styles.css?v=20261105-nima">
 </head>
 <body>
   <div class="shell">
@@ -117,10 +117,15 @@
           <header class="home-featured-head">
             <div><span class="section-kicker">SELECTED PAPERS</span><h2 id="homeFeaturedTitle">重点文章</h2></div>
             <div class="featured-journal-list" aria-label="重点文章期刊范围">
-              <span>PRL</span><span>Nature</span><span>Science</span><span>Nature Physics</span><span>Nature Communications</span>
+              <span class="nima-journal-chip">NIMA</span><span>PRL</span><span>Nature</span><span>Science</span><span>Nature Physics</span><span>Nature Communications</span>
             </div>
           </header>
-          <p class="home-scroll-hint">仅显示以上五种期刊；使用鼠标滚轮向下浏览</p>
+          <section class="nima-spotlight" aria-labelledby="nimaSpotlightTitle">
+            <div class="nima-emblem" aria-hidden="true">NIM<span>A</span></div>
+            <div class="nima-spotlight-copy"><span class="section-kicker">JOURNAL FOCUS · 实验探测</span><h3 id="nimaSpotlightTitle">NIMA · 重点关注</h3><p>探测器 · 核电子学 · 加速器 · 实验仪器</p><small id="nimaSummary">正在统计 NIMA 收录情况…</small></div>
+            <button type="button" data-nima-open>查看 NIMA 全部论文 <span aria-hidden="true">→</span></button>
+          </section>
+          <p class="home-scroll-hint">前排优先呈现最多 4 篇近期 NIMA 文章；其余重点期刊按日期展示。使用鼠标滚轮向下浏览</p>
           <div class="home-featured-list" id="homeFeaturedList" tabindex="0" aria-label="向下滚动浏览重点文章">
             <div class="skeleton tall"></div>
           </div>
@@ -185,6 +190,10 @@
         <aside class="filters-panel" aria-label="论文筛选与排列">
           <div class="filter-panel-heading"><span>我的筛选</span><button id="editFilterLayout" type="button" aria-pressed="false">编辑排列</button></div>
           <p class="layout-edit-hint" id="layoutEditHint" hidden>拖动领域或使用上下按钮调整，完成后从同步栏提交到 GitHub。</p>
+          <section class="journal-focus-panel" id="journalFocusPanel" aria-label="重点期刊筛选">
+            <span>重点期刊</span><button type="button" data-nima-toggle aria-pressed="false"><b>NIMA</b><small>只看本刊</small><strong id="nimaQuickCount">—</strong></button>
+            <small>探测器与实验仪器</small>
+          </section>
           <div class="filter-modules" id="filterModules">
             <section class="filter-module" data-filter-module="categories">
               <div class="panel-title">
@@ -212,7 +221,7 @@
           <div class="content-head">
             <div>
               <span class="section-kicker" id="sectionKicker">LATEST PAPERS</span>
-              <h2 id="sectionTitle">最新论文</h2>
+              <h2 id="sectionTitle" tabindex="-1">最新论文</h2>
             </div>
             <div class="view-tabs" role="tablist">
               <button class="view-tab active" data-view="papers">全部</button>
@@ -460,6 +469,6 @@
     </article>
   </template>
 
-  <script type="module" src="./app.js?v=20260905-codex-batch"></script>
+  <script type="module" src="./app.js?v=20261105-nima"></script>
 </body>
 </html>
