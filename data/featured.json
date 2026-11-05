@@ -65,7 +65,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-10T04:06:29+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "citation_authors": [
       "Hoffmann, Hans F. R.",
       "Lehnert, Björn",
@@ -84,85 +84,115 @@
     "content": ""
   },
   {
-    "id": "7359c69e413dbe84",
+    "id": "a290d457281f2ab9",
     "type": "paper",
-    "title": "Lowest-radiation environments in the Solar System: New opportunities for underground rare-event searches",
-    "abstract": "We study neutrino, muon, and gamma-ray fluxes in extraterrestrial environments in our Solar System via semianalytical estimates and Monte Carlo simulations. In sites with negligible atmosphere, we find a strong reduction in the cosmic-ray-induced neutrino and muon fluxes relative to their intensities on Earth. Neutrinos with energies between 50 MeV and 100 TeV show particularly strong suppression, by as much as 10 3 , even at shallow depths. The solar neutrino suppression increases as the square of the site’s distance from the Sun. Natural radiation due to nuclear decay is also expected to be lower in many of these locations and may be reduced to effectively negligible levels in liquid water environments. The sites satisfying these characteristics represent an opportunity for greatly extending the physics reach of underground searches in fundamental physics, such as searches for weakly interacting massive particle (WIMP) dark matter, neutrinoless double-beta decay, the diffuse supernova neutrinos, and neutrinos from nearby supernova. As a potential near-term target, we propose a measurement of muon and gamma-ray fluxes in an accessible underground lunar site such as the Mare Tranquillitatis pit to perform a first measurement of the prompt component in cosmic-ray-induced particle production, and to constrain lunar evolution models. Although the focus of this work is on fundamental physics, the finding of this work—that the existence of an atmosphere in a planet enhances cosmic-ray-induced radiation in its underground—could be relevant for a broader range of sciences, such as radiobiology deep underground and searches for extraterrestrial life.",
+    "title": "Bayesian inference of the Landau parameter G ′ 0 from joint Gamow-Teller measurements",
+    "abstract": "$G'_0$ is the leading-order Landau-Migdal parameter that characterizes the spin-isospin dependent nucleon-nucleon interaction. Consequently, the $G'_0$ is closely related to the Gamow-Teller resonance (GTR), the beta and double-beta decay rates of finite nuclei, the response of hot and dense nucleonic matter that modifies the neutrino-nucleon absorption rates in core-collapse supernovae (CCSNe) and binary neutron star (BNS) mergers, and finally the critical density for pion condensation in neutron stars. In this letter, for the first time, we report the $G'_0$ with quantified uncertainty in the framework of Bayesian inference, using a self-consistent standard Skyrme Random Phase Approximation (RPA) model and joint constraints from experimental GTR measurements on $^{208}\\mathrm{Pb}$, $^{132}\\mathrm{Sn}$, $^{90}\\mathrm{Zr}$. Our extracted $G_0'$ at saturation density is $0.48\\pm0.034$, which is close to the prediction of a few existing Skyrme models that consider spin-isospin observables but smaller than the traditional ones extracted from pion-exchange models. The reasons for this deviation, like the value of the nucleon effective mass $\\frac{m^*}{m}$ and the density dependence of $G'_0$, are investigated. The density-dependent $G_0'$ values extracted in this work may guide the construction of new energy density functionals that aims to self-consistently describe the dense matter properties in the spin-isospin channel.",
     "abstract_status": "full",
-    "abstract_source": "Crossref",
+    "abstract_source": "arXiv RSS",
     "authors": [
-      "Xilin Zhang",
-      "Jason Detwiler",
-      "Clint Wiseman"
+      "Zidu Lin",
+      "Gianluca Colò",
+      "Andrew W. Steiner",
+      "Amber Stinson"
     ],
-    "published": "2026-10-21",
-    "updated": "2026-10-21",
-    "source": "Physical Review D",
-    "source_short": "PRD",
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "source": "Physical Review Letters",
+    "source_short": "PRL",
     "source_type": "journal",
-    "doi": "10.1103/7fjv-rz78",
-    "arxiv_id": "2411.09634",
-    "url": "https://doi.org/10.1103/7fjv-rz78",
-    "pdf_url": "https://arxiv.org/pdf/2411.09634",
+    "doi": "10.1103/kn6h-dkxb",
+    "arxiv_id": "2506.05564",
+    "url": "https://doi.org/10.1103/kn6h-dkxb",
+    "pdf_url": "https://arxiv.org/pdf/2506.05564",
     "categories": [
       "nuclear-decay",
       "nuclear-astrophysics",
-      "particle-cross"
+      "nuclear-general",
+      "ai-science"
     ],
     "tags": [
-      "nuclear decay",
       "beta decay",
-      "supernova",
-      "neutrino",
-      "dark matter"
+      "neutron star",
+      "core-collapse",
+      "nucleon-nucleon",
+      "Bayesian inference",
+      "neutrino"
     ],
     "primary_topic": "nuclear-decay",
     "methods": [
-      "experimental",
+      "theoretical",
       "review"
     ],
-    "classification_confidence": 0.88,
+    "classification_confidence": 0.96,
     "classification_evidence": [
-      "nuclear decay",
       "beta decay",
-      "supernova",
-      "neutrino",
-      "dark matter"
+      "neutron star",
+      "core-collapse",
+      "nucleon-nucleon",
+      "Bayesian inference",
+      "neutrino"
     ],
-    "importance": 76,
+    "importance": 78,
     "score_reasons": [
-      "来源权重 +40",
+      "来源权重 +48",
       "核物理研究侧重 +22",
-      "突破性表述 +8",
-      "跨领域关联 +4",
+      "跨领域关联 +6",
       "完整摘要 +2"
     ],
     "open_access": null,
-    "license": "http://creativecommons.org/licenses/by/4.0/",
+    "license": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
     "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0/"
+      "https://link.aps.org/licenses/aps-default-license"
     ],
-    "rights_status": "reusable",
+    "rights_status": "source_restricted",
     "figures": [],
-    "figure_status": "rights_unknown",
-    "first_seen": "2026-09-26T00:19:26+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "figure_status": "license_blocked",
+    "first_seen": "2026-11-03T03:15:49+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "citation_authors": [
-      "Zhang, Xilin",
-      "Detwiler, Jason",
-      "Wiseman, Clint"
+      "Lin, Zidu",
+      "Colò, Gianluca",
+      "Steiner, Andrew W.",
+      "Stinson, Amber"
     ],
-    "journal_abbrev": "Phys. Rev. D",
-    "volume": "114",
-    "issue": "7",
-    "pages": "076023",
+    "journal_abbrev": "Phys. Rev. Lett.",
+    "volume": "",
+    "issue": "",
+    "pages": "",
     "numpages": "",
     "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/7fjv-rz78",
+    "publisher_url": "https://link.aps.org/doi/10.1103/kn6h-dkxb",
     "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-11-03T03:15:49+00:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-03T03:15:49+00:00",
+      "source": "OpenAlex"
+    },
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-03T03:15:49+00:00",
+      "source": "Semantic Scholar"
+    },
+    "abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-03T03:15:49+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ],
     "summary": "",
-    "content": "",
-    "abstract_checked_sources": []
+    "content": ""
   },
   {
     "id": "28fff76f209d4962",
@@ -259,185 +289,8 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/f5s7-1t7w",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-31T01:22:08+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "abstract_checked_sources": [],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "c7c33476252708f5",
-    "type": "paper",
-    "title": "Measurement of Coherent Elastic Neutrino-Nucleus Scattering on Germanium by COHERENT",
-    "abstract": "The COHERENT Collaboration reports the most precise measurement of the coherent elastic neutrino-nucleus scattering cross section to date. This measurement was performed with COHERENT’s germanium detector array, Ge-Mini, at the Spallation Neutron Source at Oak Ridge National Laboratory. A cumulative exposure of 4.69 × 10 22 protons on target yielded a total number of observed counts of 124 − 12 + 14 and a flux-averaged cross section of 0.98 ± 0.10 ( statistical ) ± 0.10 ( systematic ) relative to the standard-model expectation of 5.9 × 10 − 39 cm 2 . The well-understood energy and timing distributions of the neutrino source allow for independent measurements of muon- and electron-neutrino scattering rates. This information is used to improve constraints on nonstandard neutrino interactions mediated by heavy particles.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "M. Adhikari",
-      "M. Ahn",
-      "D. Amaya Matamoros",
-      "P. S. Barbeau",
-      "V. Belov",
-      "I. Bernardi",
-      "C. Bock",
-      "A. Bolozdynya",
-      "R. Bouabid",
-      "A. Bracho",
-      "J. Browning",
-      "B. Cabrera-Palmer",
-      "N. Cedarblade-Jones",
-      "S. Chen",
-      "A. I. Colón Rivera",
-      "V. da Silva",
-      "Y. Efremenko",
-      "S. R. Elliott",
-      "A. Erlandson",
-      "L. Fabris",
-      "S. Foster",
-      "A. Galindo-Uribarri",
-      "E. Granados Vazquez",
-      "M. P. Green",
-      "B. Hackett",
-      "J. Hakenmüller",
-      "M. Harada",
-      "M. R. Heath",
-      "S. C. Hedges",
-      "Y. Hino",
-      "H. Huang",
-      "W. Huang",
-      "H. Jeong",
-      "B. A. Johnson",
-      "T. Johnson",
-      "H. Jones",
-      "A. Khromov",
-      "D. Kim",
-      "C. Koh",
-      "L. Kong"
-    ],
-    "published": "2026-10-20",
-    "updated": "2026-10-20",
-    "source": "Physical Review Letters",
-    "source_short": "PRL",
-    "source_type": "journal",
-    "doi": "10.1103/999m-b763",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/999m-b763",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-reactions",
-      "detectors-daq",
-      "particle-cross"
-    ],
-    "tags": [
-      "spallation",
-      "germanium detector",
-      "neutrino"
-    ],
-    "primary_topic": "nuclear-reactions",
-    "methods": [
-      "experimental",
-      "review"
-    ],
-    "classification_confidence": 0.72,
-    "classification_evidence": [
-      "spallation",
-      "germanium detector",
-      "neutrino"
-    ],
-    "importance": 72,
-    "score_reasons": [
-      "来源权重 +48",
-      "核物理研究侧重 +18",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license",
-      "https://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Adhikari, M.",
-      "Ahn, M.",
-      "Amaya Matamoros, D.",
-      "Barbeau, P. S.",
-      "Belov, V.",
-      "Bernardi, I.",
-      "Bock, C.",
-      "Bolozdynya, A.",
-      "Bouabid, R.",
-      "Bracho, A.",
-      "Browning, J.",
-      "Cabrera-Palmer, B.",
-      "Cedarblade-Jones, N.",
-      "Chen, S.",
-      "Colón Rivera, A. I.",
-      "da Silva, V.",
-      "Efremenko, Y.",
-      "Elliott, S. R.",
-      "Erlandson, A.",
-      "Fabris, L.",
-      "Foster, S.",
-      "Galindo-Uribarri, A.",
-      "Granados Vazquez, E.",
-      "Green, M. P.",
-      "Hackett, B.",
-      "Hakenmüller, J.",
-      "Harada, M.",
-      "Heath, M. R.",
-      "Hedges, S. C.",
-      "Hino, Y.",
-      "Huang, H.",
-      "Huang, W.",
-      "Jeong, H.",
-      "Johnson, B. A.",
-      "Johnson, T.",
-      "Jones, H.",
-      "Khromov, A.",
-      "Kim, D.",
-      "Koh, C.",
-      "Kong, L."
-    ],
-    "journal_abbrev": "Phys. Rev. Lett.",
-    "volume": "137",
-    "issue": "17",
-    "pages": "171801",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/999m-b763",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-08-28T05:54:28+00:00",
-    "last_seen": "2026-11-03T03:15:49+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-09-19T23:50:11+00:00",
-      "source": "Publisher",
-      "url": "https://journals.aps.org/prl/accepted/10.1103/999m-b763"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-09-28T00:15:21+00:00",
-      "source": "OpenAlex"
-    },
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-09-28T00:15:21+00:00",
-      "source": "Semantic Scholar"
-    },
-    "abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-09-28T00:15:21+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ],
     "summary": "",
     "content": ""
   },
@@ -525,7 +378,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001636",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -626,7 +479,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326008348",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -741,7 +594,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004730",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-03T03:15:49+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -918,7 +771,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004444",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-03T03:15:49+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -1013,7 +866,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "primary_topic": "nuclear-decay",
     "methods": [
       "experimental",
@@ -1115,89 +968,6 @@
     "citation_metadata_checked": true,
     "summary": "",
     "content": ""
-  },
-  {
-    "id": "c420200594c171e5",
-    "type": "paper",
-    "title": "Shell structure and spontaneous decay of superheavy Z = 124 isotopes with the deformed relativistic Hartree-Bogoliubov theory in continuum",
-    "abstract": "Shell structure and spontaneous decay of $Z = 124$ isotopes are systematically investigated using the deformed relativistic Hartree-Bogoliubov theory in continuum (DRHBc) with the PC-PK1 density functional. By accounting for deformation and continuum effects, the neutron drip line is predicted to be located at $N = 320$, and eight potential multi-neutron emitters beyond the neutron drip line are identified. The results, compared with the spherically constrained case, highlight the critical role of deformation effects in determining the ground-state properties of superheavy nuclei. In addition, potential neutron shell closures emerge at $N = 258$ and $350$, alongside subshell closures at $N = 232$ and $320$. The results disfavor $Z = 124$ as a possible proton magic number and suggest $Z = 120$ and $138$ as more favorable candidates for proton shell closures in the superheavy region. Finally, the competition between $\\alpha$ decay, $\\beta$ decay, and spontaneous fission is analyzed by calculating half-lives within various semi-empirical formulas. The results indicate that $\\alpha$ decay is the predominant mode on the proton-rich side, whereas spontaneous fission and $\\beta^-$ decay gradually become dominant with increasing neutron number.",
-    "abstract_status": "full",
-    "abstract_source": "arXiv RSS",
-    "authors": [
-      "Yumeng Wang",
-      "Lang Liu",
-      "Cong Pan"
-    ],
-    "published": "2026-10-21",
-    "updated": "2026-10-21",
-    "source": "Physical Review C",
-    "source_short": "PRC",
-    "source_type": "journal",
-    "doi": "10.1103/9qrt-cspl",
-    "arxiv_id": "2609.27737",
-    "url": "https://doi.org/10.1103/9qrt-cspl",
-    "pdf_url": "https://arxiv.org/pdf/2609.27737",
-    "categories": [
-      "nuclear-decay",
-      "nuclear-structure",
-      "nuclear-reactions",
-      "theoretical-nuclear"
-    ],
-    "tags": [
-      "density functional",
-      "magic number",
-      "drip line",
-      "superheavy nuclei",
-      "spontaneous fission",
-      "fission"
-    ],
-    "primary_topic": "nuclear-decay",
-    "methods": [
-      "theoretical",
-      "review"
-    ],
-    "classification_confidence": 0.96,
-    "classification_evidence": [
-      "density functional",
-      "magic number",
-      "drip line",
-      "superheavy nuclei",
-      "spontaneous fission",
-      "fission"
-    ],
-    "importance": 70,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +22",
-      "跨领域关联 +6",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "first_seen": "2026-09-25T00:12:37+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
-    "citation_authors": [
-      "Wang, Yumeng",
-      "Liu, Lang",
-      "Pan, Cong"
-    ],
-    "journal_abbrev": "Phys. Rev. C",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/9qrt-cspl",
-    "citation_metadata_checked": true,
-    "summary": "",
-    "content": "",
-    "abstract_checked_sources": []
   },
   {
     "id": "c9a2f3185b1e9bae",
@@ -1342,7 +1112,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/cbmf-s76k",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-23T00:21:25+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -1424,7 +1194,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/yh1b-mf64",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-31T01:22:08+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -1510,7 +1280,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004900",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-03T03:15:49+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -1595,7 +1365,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-79027-1",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -1709,7 +1479,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/3rxj-2hpp",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-24T00:11:45+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-10-31T01:22:08+00:00",
@@ -1739,189 +1509,6 @@
       "checked_at": "2026-10-28T00:54:05+00:00",
       "source": "Semantic Scholar"
     }
-  },
-  {
-    "id": "7c86b78b59cc769d",
-    "type": "paper",
-    "title": "First Simultaneous Analysis of Transverse Momentum Dependent and Collinear Parton Distributions in the Proton",
-    "abstract": "We present the first simultaneous global QCD analysis of unpolarized transverse momentum dependent (TMD) and collinear parton distribution functions (PDFs) in the proton. Our Letter incorporates data from deep-inelastic scattering, Drell-Yan, inclusive weak boson, W + charm, and jet production involving PDFs, as well as TMD Drell-Yan and Z -boson production data from fixed target and collider experiments sensitive to both TMD and collinear distributions. The analysis is performed at next-to-next-to-leading logarithmic accuracy for QCD resummation in TMD observables and next-to-leading order for observables described in collinear factorization. The combined analysis improves knowledge of both TMD and collinear PDFs, particularly in the sea-quark sector, providing a consistent simultaneous description of the aforementioned observables.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "P. C. Barry",
-      "A. Prokudin",
-      "T. Anderson",
-      "C. Cocuzza",
-      "L. Gamberg",
-      "W. Melnitchouk",
-      "E. Moffat",
-      "D. Pitonyak",
-      "J.-W. Qiu",
-      "N. Sato",
-      "A. Vladimirov",
-      "R. M. Whitehill"
-    ],
-    "published": "2026-10-21",
-    "updated": "2026-10-21",
-    "source": "Physical Review Letters",
-    "source_short": "PRL",
-    "source_type": "journal",
-    "doi": "10.1103/m23z-bt9y",
-    "arxiv_id": "2510.13771",
-    "url": "https://doi.org/10.1103/m23z-bt9y",
-    "pdf_url": "https://arxiv.org/pdf/2510.13771",
-    "categories": [
-      "nuclear-reactions"
-    ],
-    "tags": [
-      "inelastic scattering"
-    ],
-    "primary_topic": "nuclear-reactions",
-    "methods": [
-      "review"
-    ],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "inelastic scattering"
-    ],
-    "importance": 68,
-    "score_reasons": [
-      "来源权重 +48",
-      "核物理研究侧重 +18",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
-    "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "first_seen": "2026-09-17T23:51:07+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
-    "citation_authors": [
-      "Barry, P. C.",
-      "Prokudin, A.",
-      "Anderson, T.",
-      "Cocuzza, C.",
-      "Gamberg, L.",
-      "Melnitchouk, W.",
-      "Moffat, E.",
-      "Pitonyak, D.",
-      "Qiu, J.-W.",
-      "Sato, N.",
-      "Vladimirov, A.",
-      "Whitehill, R. M."
-    ],
-    "journal_abbrev": "Phys. Rev. Lett.",
-    "volume": "137",
-    "issue": "17",
-    "pages": "171902",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/m23z-bt9y",
-    "citation_metadata_checked": true,
-    "summary": "",
-    "content": "",
-    "abstract_checked_sources": []
-  },
-  {
-    "id": "87a83eb1cd069801",
-    "type": "paper",
-    "title": "First measurement of kaonic deuterium X-ray transitions",
-    "abstract": "The study of the strong interaction among hadrons at low energies remains one of the key challenges in fundamental physics because of its non-perturbative nature, which makes theoretical descriptions strongly dependent on experimental input. Although substantial progress has been made for systems involving up and down quarks, theoretical models in the strangeness sector continue to face limitations due to the lack of experimental data. Kaonic atoms provide a powerful tool to study the low-energy strong interaction with strangeness through the energy shifts and widths induced on their lowest atomic levels. In this context, kaonic deuterium X-ray spectroscopy has long represented one of the major open challenges in hadronic-atom physics because of its extremely low X-ray yield. This measurement is particularly important because it gives access to the poorly constrained $K^-n$ interaction at threshold. Here, we report the first observation of kaonic deuterium X-ray transitions, performed with the SIDDHARTA-2 experiment at the DA$\\Phi$NE collider. We determine the strong-interaction shift and width of the $1s$ level to be $\\varepsilon_{1s}=-810.9\\pm24.5\\,(\\mathrm{stat})\\pm2.1\\,(\\mathrm{syst})\\,\\mathrm{eV}$ and $\\Gamma_{1s}=812\\pm97\\,(\\mathrm{stat})\\pm33\\,(\\mathrm{syst})\\,\\mathrm{eV}$, respectively. This measurement constitutes the most precise experimental determination of the $K^-d$ strong interaction at threshold and allows discrimination among competing theoretical models. Combined with the kaonic hydrogen measurement, this result provides the experimental input required to determine the isospin-dependent $K^-N$ scattering lengths, with implications for the description of the nature of the molecular interpretation of the $\\Lambda(1405)$, and neutron-rich matter.",
-    "abstract_status": "full",
-    "abstract_source": "arXiv RSS",
-    "authors": [
-      "Massimiliano Bazzi",
-      "Francesco Clozza",
-      "Carlo Guaraldo",
-      "Mihail Antoniu Iliescu",
-      "Alessandro Scordo",
-      "Francesco Sgaramella",
-      "Diana Sirghi",
-      "Florin Sirghi",
-      "Johann Zmeskal",
-      "Leonardo Abbene",
-      "Claude Amsler",
-      "Francesco Artibani",
-      "Giacomo Borghi",
-      "Damir Bosnar",
-      "Mario Bragadireanu",
-      "Antonino Buttacavoli",
-      "Marco Carminati",
-      "Alberto Clozza",
-      "Luca De Paolis",
-      "Raffaele Del Grande",
-      "Kamil Dulski",
-      "Carlo Fiorini",
-      "Ivica Fri\\v{s}\\v{c}i\\'c",
-      "Masa Iwasaki",
-      "Aleksander Khreptak",
-      "Simone Manti",
-      "Johann Marton",
-      "Catia Milardi",
-      "Pawel Moskal",
-      "Fabrizio Napolitano",
-      "Hiroaki Ohnishi",
-      "Kristian Piscicchia",
-      "Fabio Principato",
-      "Micha{\\l} Silarski",
-      "Magdalena Skurzok",
-      "Antonio Spallone",
-      "Kairo Toho",
-      "Marlene T\\\"uchler",
-      "Oton Vazquez Doce",
-      "Eberhard Widmann"
-    ],
-    "published": "2026-10-20",
-    "updated": "2026-10-20",
-    "source": "arXiv nucl-ex",
-    "source_short": "nucl-ex",
-    "source_type": "preprint",
-    "doi": "",
-    "arxiv_id": "2608.10749",
-    "url": "https://arxiv.org/abs/2608.10749",
-    "pdf_url": "https://arxiv.org/pdf/2608.10749",
-    "categories": [
-      "experimental-nuclear"
-    ],
-    "tags": [],
-    "primary_topic": "experimental-nuclear",
-    "methods": [
-      "experimental",
-      "theoretical"
-    ],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
-    "importance": 68,
-    "score_reasons": [
-      "来源权重 +32",
-      "核物理研究侧重 +18",
-      "突破性表述 +16",
-      "完整摘要 +2"
-    ],
-    "open_access": true,
-    "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
-    "publisher_licenses": [],
-    "rights_status": "source_restricted",
-    "figures": [],
-    "figure_status": "license_blocked",
-    "first_seen": "2026-08-12T04:12:38+00:00",
-    "last_seen": "2026-10-21T00:20:16+00:00",
-    "abstract_checked_sources": [],
-    "citation_authors": [],
-    "journal_abbrev": "",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
-    "publisher": "",
-    "publisher_url": "",
-    "citation_metadata_checked": false,
-    "summary": "",
-    "content": ""
   },
   {
     "id": "9c743b681dba51f1",
@@ -2011,7 +1598,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001491",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -2100,9 +1687,9 @@
     ],
     "rights_status": "reusable",
     "figures": [],
-    "figure_status": "pending",
+    "figure_status": "rights_unknown",
     "first_seen": "2026-10-10T01:26:47+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "citation_authors": [
       "Sharma, M. M."
     ],
@@ -2205,190 +1792,6 @@
     "abstract_checked_sources": []
   },
   {
-    "id": "c4d038d2ae66d94e",
-    "type": "paper",
-    "title": "New universal relations for magnetized neutron stars",
-    "abstract": "Unlike the neutron-star mass--radius relation, which depends sensitively on the internal stellar structure through the equation of state of dense nuclear matter, certain neutron-star properties obey approximately universal relations that exhibit only weak dependence on the equation of state. In this paper, we explore new universal relations for magnetized neutron stars. We focus on a purely poloidal dipolar magnetic-field configuration and treat the effects of the magnetic field perturbatively to second order in the field strength. After appropriately normalizing the relevant quantities by the stellar mass and the magnetic-field strength at the pole, we first identify an exact universal relation between the magnetic dipole moment and stellar compactness. We then find approximate universal relations among the magnetic dipole moment, magnetically-induced stellar quadrupole moment, and ellipticity, with fractional variations due to the equation of state at the level of O(10%). We support these numerical findings with analytic estimates for Newtonian polytropes, which reproduce the observed behavior. Among the newly discovered relations, the one connecting the magnetic dipole moment and stellar quadrupole moment may be particularly useful for the analysis of gravitational-wave signals from binaries containing magnetized neutron stars.",
-    "abstract_status": "full",
-    "abstract_source": "arXiv RSS",
-    "authors": [
-      "Byon N. Jayawiguna",
-      "Siddarth Ajith",
-      "Takuya Katagiri",
-      "Kent Yagi",
-      "Piyabut Burikham"
-    ],
-    "published": "2026-10-21",
-    "updated": "2026-10-21",
-    "source": "Physical Review D",
-    "source_short": "PRD",
-    "source_type": "journal",
-    "doi": "10.1103/7y5z-x6dk",
-    "arxiv_id": "2608.07172",
-    "url": "https://doi.org/10.1103/7y5z-x6dk",
-    "pdf_url": "https://arxiv.org/pdf/2608.07172",
-    "categories": [
-      "nuclear-structure",
-      "nuclear-astrophysics",
-      "nuclear-general"
-    ],
-    "tags": [
-      "quadrupole moment",
-      "equation of state",
-      "nuclear matter"
-    ],
-    "primary_topic": "nuclear-structure",
-    "methods": [
-      "review"
-    ],
-    "classification_confidence": 0.72,
-    "classification_evidence": [
-      "quadrupole moment",
-      "equation of state",
-      "nuclear matter"
-    ],
-    "importance": 66,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +20",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "first_seen": "2026-08-10T04:06:29+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
-    "citation_authors": [
-      "Jayawiguna, Byon N.",
-      "Ajith, Siddarth",
-      "Katagiri, Takuya",
-      "Yagi, Kent",
-      "Burikham, Piyabut"
-    ],
-    "journal_abbrev": "Phys. Rev. D",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/7y5z-x6dk",
-    "citation_metadata_checked": true,
-    "abstract_checked_sources": [],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "b0374f59f2082a29",
-    "type": "paper",
-    "title": "Probing the neutron skin thickness through jet charge in deep-inelastic scattering",
-    "abstract": "The neutron-skin thickness in neutron-rich nuclei has traditionally been measured using low-energy hadronic and electronic scatterings at hadronic level. In this paper, we propose an alternative probe to the neutron-skin thickness through deep-inelastic scattering in high-energy electron-ion collisions, leveraging the intrinsic correlation between final-state jet charge distribution and initial-state partonic distributions in nucleons. Specifically, we demonstrate the sensitivity of jet charge distribution to the neutron skin-thickness and density profile in e + Pb collisions with varying centralities as determined using Glauber model, and in isobar collisions of e + Ru and e + Zr . We predict a strong suppression of positive jet charge distribution and an enhancement for negative jet charge distribution in peripheral electron-ion collisions, revealing the neutron-skin effect. Premised on the effective determination of centrality, this proposal can also be extended to photon and -boson tagged jet charge distribution in proton-nucleus collisions at the Large Hadron Collider, providing another similar access to neutron-skin structure.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Shan-Liang Zhang",
-      "Enke Wang",
-      "Xin-Nian Wang",
-      "Hongxi Xing"
-    ],
-    "published": "2026-10-20",
-    "updated": "2026-10-20",
-    "source": "Physical Review C",
-    "source_short": "PRC",
-    "source_type": "journal",
-    "doi": "10.1103/zc6z-ss9j",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/zc6z-ss9j",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-structure",
-      "nuclear-reactions",
-      "high-energy-nuclear"
-    ],
-    "tags": [
-      "neutron skin",
-      "inelastic scattering",
-      "hadron"
-    ],
-    "primary_topic": "nuclear-structure",
-    "methods": [
-      "experimental",
-      "review"
-    ],
-    "classification_confidence": 0.72,
-    "classification_evidence": [
-      "neutron skin",
-      "inelastic scattering",
-      "hadron"
-    ],
-    "importance": 66,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +20",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license",
-      "https://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Zhang, Shan-Liang",
-      "Wang, Enke",
-      "Wang, Xin-Nian",
-      "Xing, Hongxi"
-    ],
-    "journal_abbrev": "Phys. Rev. C",
-    "volume": "114",
-    "issue": "4",
-    "pages": "L041901",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/zc6z-ss9j",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-09-18T23:48:40+00:00",
-    "last_seen": "2026-11-03T03:15:49+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-18T23:52:11+00:00",
-      "source": "Publisher",
-      "url": "https://journals.aps.org/prc/accepted/10.1103/zc6z-ss9j"
-    },
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-20T00:52:38+00:00",
-      "source": "Semantic Scholar"
-    },
-    "abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-18T23:52:11+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ],
-    "summary": "",
-    "content": "",
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-20T00:52:38+00:00",
-      "source": "OpenAlex"
-    }
-  },
-  {
     "id": "6ecbf28a4eccd011",
     "type": "paper",
     "title": "Optimization of β2 and β4 deformations for 176Yb using quasi-elastic barrier distribution",
@@ -2444,7 +1847,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-reactions",
@@ -2613,7 +2016,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/3c72-gcls",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-07T01:10:59+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-15T00:15:33+00:00",
@@ -2742,7 +2145,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/c323-g246",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-08T01:30:34+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-23T00:21:25+00:00",
@@ -2762,107 +2165,6 @@
     "abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-08T01:30:34+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "b3000ce58781182e",
-    "type": "paper",
-    "title": "Determination of the spatial extent of a neutrino wave packet from electron capture decay experiments",
-    "abstract": "",
-    "abstract_status": "unavailable",
-    "abstract_source": "",
-    "authors": [
-      "Amlan Ray",
-      "Arindam Kumar Sikdar",
-      "Parnika Das",
-      "Abraham G. Kofman",
-      "Gershon Kurizki"
-    ],
-    "published": "2026-10-21",
-    "updated": "2026-10-21",
-    "source": "Physical Review D",
-    "source_short": "PRD",
-    "source_type": "journal",
-    "doi": "10.1103/jhc8-1tc6",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/jhc8-1tc6",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-decay",
-      "particle-cross"
-    ],
-    "tags": [
-      "electron capture",
-      "neutrino"
-    ],
-    "primary_topic": "nuclear-decay",
-    "methods": [
-      "review"
-    ],
-    "classification_confidence": 0.64,
-    "classification_evidence": [
-      "electron capture",
-      "neutrino"
-    ],
-    "importance": 64,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +22",
-      "跨领域关联 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Ray, Amlan",
-      "Sikdar, Arindam Kumar",
-      "Das, Parnika",
-      "Kofman, Abraham G.",
-      "Kurizki, Gershon"
-    ],
-    "journal_abbrev": "Phys. Rev. D",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/jhc8-1tc6",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-10-22T00:22:02+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "blocked",
-      "checked_at": "2026-10-29T01:29:13+00:00",
-      "source": "Publisher",
-      "error": "HTTP Error 403: Forbidden"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-22T00:22:02+00:00",
-      "source": "OpenAlex"
-    },
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-22T00:22:02+00:00",
-      "source": "Semantic Scholar"
-    },
-    "abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-22T00:22:02+00:00",
       "source": "INSPIRE"
     },
     "abstract_checked_sources": [
@@ -2949,7 +2251,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001417",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -3044,7 +2346,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001764",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-11T04:01:53+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-10T23:37:56+00:00",
@@ -3150,7 +2452,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004808",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-03T03:15:49+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -3240,7 +2542,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001624",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -3307,7 +2609,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -3499,7 +2801,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S037026932600835X",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -3508,93 +2810,6 @@
     "abstract_checked_sources": [
       "OpenAlex"
     ],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "5c4cbb6040610834",
-    "type": "paper",
-    "title": "Data-driven discovery and rapid, direct synthesis of MXenes",
-    "abstract": "MXenes are a rapidly expanding family of two-dimensional transition metal carbides and nitrides, yet scalable synthesis routes remain limited and historical reports suggest a broader, largely unexplored chemical space. We used machine learning–assisted database mining to uncover hidden multilayer MXenes. Screening reveals 33 previously synthesized but unrecognized MXene candidates. Guided by these findings, we synthesized seven multilayer MXenes using a rapid, scalable self-propagating high-temperature method that requires no sustained external heating and completes within minutes. We further realized 11 previously unexplored rare earth–based MXenes (M = praseodymium, neodymium, samarium, gadolinium, terbium, holmium, and thulium). Experiments and modeling suggest semiconducting behavior and diverse magnetic states across this family. Together, these results expand the MXene family and demonstrate a data-driven strategy for accelerating materials discovery through sustainable methods.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Ali Saffar Shamshirgar",
-      "Guilherme Ribeiro Portugal",
-      "Soheil Ershadrad",
-      "Roman Ivanov",
-      "Martin Dahlqvist",
-      "Florian Chabanais",
-      "Sanjay Chakraborty",
-      "Rainer Traksmaa",
-      "Topias Jussila",
-      "Maarit Karppinen",
-      "Irina Hussainova",
-      "Fredrik Heintz",
-      "Per O. Å. Persson",
-      "Johanna Rosen"
-    ],
-    "published": "2026-10-29",
-    "updated": "2026-10-29",
-    "source": "Science",
-    "source_short": "Science",
-    "source_type": "journal",
-    "doi": "10.1126/science.aeh5957",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1126/science.aeh5957",
-    "pdf_url": "",
-    "categories": [
-      "ai-science"
-    ],
-    "tags": [
-      "machine learning"
-    ],
-    "primary_topic": "ai-science",
-    "methods": [],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "machine learning"
-    ],
-    "importance": 70,
-    "score_reasons": [
-      "来源权重 +56",
-      "核物理研究侧重 +4",
-      "突破性表述 +8",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Shamshirgar, Ali Saffar",
-      "Portugal, Guilherme Ribeiro",
-      "Ershadrad, Soheil",
-      "Ivanov, Roman",
-      "Dahlqvist, Martin",
-      "Chabanais, Florian",
-      "Chakraborty, Sanjay",
-      "Traksmaa, Rainer",
-      "Jussila, Topias",
-      "Karppinen, Maarit",
-      "Hussainova, Irina",
-      "Heintz, Fredrik",
-      "Persson, Per O. Å.",
-      "Rosen, Johanna"
-    ],
-    "journal_abbrev": "Science",
-    "volume": "394",
-    "issue": "6823",
-    "pages": "eaeh5957",
-    "numpages": "",
-    "publisher": "American Association for the Advancement of Science (AAAS)",
-    "publisher_url": "https://www.science.org/doi/10.1126/science.aeh5957",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-10-30T01:30:20+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
-    "abstract_checked_sources": [],
     "summary": "",
     "content": ""
   },
@@ -3675,7 +2890,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001429",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -3777,7 +2992,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001508",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -3863,7 +3078,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/d6vs-ppv1",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-15T00:15:33+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-15T00:15:33+00:00",
@@ -3952,7 +3167,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-28T00:54:05+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "citation_authors": [
       "Zhao, Jie"
     ],
@@ -3983,103 +3198,6 @@
     "abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-28T00:54:05+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "9380a0ec07646287",
-    "type": "paper",
-    "title": "Nuclear binding, correlations, and the A dependence of the EMC effect",
-    "abstract": "The measurements of inclusive electron scattering from nuclear targets carried out at the Thomas Jefferson National Accelerator Facility in the mid 2000s have provided valuable novel information on the A dependence of the modifications of nuclear structure functions known as the EMC effect. We argue that these data are best described in terms of the scaling variable y ̃ , designed to take into account dynamical effects in interacting many-particle systems, and analyze the A dependence of the slope of the inclusive cross-section ratios, R A = ( σ A / A ) / ( σ 2 / 2 ) , providing a measure of the size of the EMC effect in the region where nuclear binding plays a leading role. The results of our study clearly hint at a linear correlation between d R A ( y ̃ ) / d y ̃ and the average nucleon removal energy 〈 E A 〉 . The role of correlation effects in the determination of 〈 E A 〉 is highlighted.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Omar Benhar",
-      "Alessandro Lovato"
-    ],
-    "published": "2026-10-20",
-    "updated": "2026-10-20",
-    "source": "Physical Review C",
-    "source_short": "PRC",
-    "source_type": "journal",
-    "doi": "10.1103/wyx6-8lcz",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/wyx6-8lcz",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-structure",
-      "accelerators"
-    ],
-    "tags": [
-      "nuclear structure",
-      "accelerator"
-    ],
-    "primary_topic": "nuclear-structure",
-    "methods": [
-      "review"
-    ],
-    "classification_confidence": 0.64,
-    "classification_evidence": [
-      "nuclear structure",
-      "accelerator"
-    ],
-    "importance": 64,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +20",
-      "跨领域关联 +2",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license",
-      "https://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Benhar, Omar",
-      "Lovato, Alessandro"
-    ],
-    "journal_abbrev": "Phys. Rev. C",
-    "volume": "114",
-    "issue": "4",
-    "pages": "L042501",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/wyx6-8lcz",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-09-17T23:51:07+00:00",
-    "last_seen": "2026-11-03T03:15:49+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-18T23:52:11+00:00",
-      "source": "Publisher",
-      "url": "https://journals.aps.org/prc/accepted/10.1103/wyx6-8lcz"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-18T23:52:11+00:00",
-      "source": "OpenAlex"
-    },
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-20T00:52:38+00:00",
-      "source": "Semantic Scholar"
-    },
-    "abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-18T23:52:11+00:00",
       "source": "INSPIRE"
     },
     "abstract_checked_sources": [
@@ -4149,7 +3267,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-06T02:01:34+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "citation_authors": [
       "Kang, Zhong-Bo",
       "Metz, Andreas",
@@ -4261,7 +3379,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001533",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-04T01:50:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -4284,5 +3402,898 @@
     ],
     "summary": "",
     "content": ""
+  },
+  {
+    "id": "a888f2c57e2e3c5a",
+    "type": "paper",
+    "title": "Measurement and compensation dynamic Lorentz force detuning of double-spoke cavity for CSNS-II",
+    "abstract": "Dynamic Lorentz force detuning (LFD) in the 324 MHz superconducting double-spoke cavities for the China Spallation Neutron Source Phase-II (CSNS-II) linac is investigated through combined modeling, simulation, and cryomodule experiments. A modal ponderomotive coupling model is established and validated against multiphysics finite-element analysis and measurements up to 9 MV/m with 1.2 ms pulses at 50 Hz. Intra-pulse detuning reconstructed from low-level RF (LLRF) waveforms agrees with full-pulse detuning inferred from piezo-sensor signals, and FFT analysis identifies dominant mechanical modes consistent with simulated eigenfrequencies. Beyond single-cavity behavior, inter-cavity mechanical coupling through a shared cryomodule and support system is experimentally verified: RF excitation of one cavity induces measurable vibration and frequency perturbation in the adjacent cavity, confirmed independently by LLRF and piezo diagnostics. Active compensation is implemented with piezo tuners using a parameterized half-sine feedforward waveform. Parameters are first optimized by systematic scanning and then refined on-line using a Proximal Policy Optimization (PPO) agent interacting with the real cavity via a gymnasium/pyepics interface. After 1 0 4 training steps, the PPO-optimized waveform reduces the effective detuning metric by about 37% relative to the initial policy, matching or surpassing the best manually scanned setting while improving robustness to operating-condition variations.",
+    "abstract_status": "full",
+    "abstract_source": "OpenAlex",
+    "authors": [
+      "Ming Liu",
+      "Zhenghui Mi",
+      "Wenzhong Zhou",
+      "Rui Ge",
+      "Weimin Pan",
+      "Feisi He",
+      "Cong Zhang",
+      "Zhexin Xie",
+      "Kai Guo",
+      "Zheyu Tan"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Instruments and Methods in Physics Research A",
+    "source_short": "NIMA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nima.2026.171758",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nima.2026.171758",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-reactions",
+      "detectors-daq",
+      "accelerators"
+    ],
+    "tags": [
+      "spallation",
+      "linac"
+    ],
+    "primary_topic": "nuclear-reactions",
+    "methods": [
+      "experimental",
+      "theoretical"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "spallation",
+      "linac"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +18",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by-nc/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Liu, Ming",
+      "Mi, Zhenghui",
+      "Zhou, Wenzhong",
+      "Ge, Rui",
+      "Pan, Weimin",
+      "He, Feisi",
+      "Zhang, Cong",
+      "Xie, Zhexin",
+      "Guo, Kai",
+      "Tan, Zheyu"
+    ],
+    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
+    "volume": "1091",
+    "issue": "",
+    "pages": "171758",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004845",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
+    "openalex_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_checked_sources": [
+      "OpenAlex"
+    ],
+    "summary": "",
+    "content": ""
+  },
+  {
+    "id": "5c4cbb6040610834",
+    "type": "paper",
+    "title": "Data-driven discovery and rapid, direct synthesis of MXenes",
+    "abstract": "MXenes are a rapidly expanding family of two-dimensional transition metal carbides and nitrides, yet scalable synthesis routes remain limited and historical reports suggest a broader, largely unexplored chemical space. We used machine learning–assisted database mining to uncover hidden multilayer MXenes. Screening reveals 33 previously synthesized but unrecognized MXene candidates. Guided by these findings, we synthesized seven multilayer MXenes using a rapid, scalable self-propagating high-temperature method that requires no sustained external heating and completes within minutes. We further realized 11 previously unexplored rare earth–based MXenes (M = praseodymium, neodymium, samarium, gadolinium, terbium, holmium, and thulium). Experiments and modeling suggest semiconducting behavior and diverse magnetic states across this family. Together, these results expand the MXene family and demonstrate a data-driven strategy for accelerating materials discovery through sustainable methods.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Ali Saffar Shamshirgar",
+      "Guilherme Ribeiro Portugal",
+      "Soheil Ershadrad",
+      "Roman Ivanov",
+      "Martin Dahlqvist",
+      "Florian Chabanais",
+      "Sanjay Chakraborty",
+      "Rainer Traksmaa",
+      "Topias Jussila",
+      "Maarit Karppinen",
+      "Irina Hussainova",
+      "Fredrik Heintz",
+      "Per O. Å. Persson",
+      "Johanna Rosen"
+    ],
+    "published": "2026-10-29",
+    "updated": "2026-10-29",
+    "source": "Science",
+    "source_short": "Science",
+    "source_type": "journal",
+    "doi": "10.1126/science.aeh5957",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1126/science.aeh5957",
+    "pdf_url": "",
+    "categories": [
+      "ai-science"
+    ],
+    "tags": [
+      "machine learning"
+    ],
+    "primary_topic": "ai-science",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "machine learning"
+    ],
+    "importance": 70,
+    "score_reasons": [
+      "来源权重 +56",
+      "核物理研究侧重 +4",
+      "突破性表述 +8",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Shamshirgar, Ali Saffar",
+      "Portugal, Guilherme Ribeiro",
+      "Ershadrad, Soheil",
+      "Ivanov, Roman",
+      "Dahlqvist, Martin",
+      "Chabanais, Florian",
+      "Chakraborty, Sanjay",
+      "Traksmaa, Rainer",
+      "Jussila, Topias",
+      "Karppinen, Maarit",
+      "Hussainova, Irina",
+      "Heintz, Fredrik",
+      "Persson, Per O. Å.",
+      "Rosen, Johanna"
+    ],
+    "journal_abbrev": "Science",
+    "volume": "394",
+    "issue": "6823",
+    "pages": "eaeh5957",
+    "numpages": "",
+    "publisher": "American Association for the Advancement of Science (AAAS)",
+    "publisher_url": "https://www.science.org/doi/10.1126/science.aeh5957",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-10-30T01:30:20+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
+    "abstract_checked_sources": [],
+    "summary": "",
+    "content": ""
+  },
+  {
+    "id": "2ee9e90d9ddefb3e",
+    "type": "paper",
+    "title": "High-Pressure Reinforced Vessel, produced by Additive Manufacturing, to be used as a gas target for the measurement program at n_TOF - Multiple Argon Experiments (MArEX)",
+    "abstract": "The n_TOF collaboration has expressed interest in conducting transmission experiments with liquid Ar and gaseous Ar (GAr) to improve the understanding of neutron propagation and capture in Ar. This topic is relevant to both nuclear and particle physics, as liquid Ar is widely used in neutrino experiments, dark matter searches, and other applications. Despite its widespread use, neutron interactions on Ar are still poorly characterized. In this context, the Multiple Argon Experiments (MArEX) initiative aims to address these gaps by providing detailed measurements of neutron and Ar interactions, including resolved resonance parameters and radiative capture widths, across an unprecedented energy range from 1 eV to 200 MeV. As part of MArEX research activities, this paper presents the development of an innovative High-Pressure Reinforced Vessel for GAr targets, produced by Additive Manufacturing and reinforced with carbon fibre. The experimental results confirmed the capability of the vessel to withstand high operating pressure without any issues, and the capability of the Multi-layers Finite Element Model to simulate and predict the stress behaviour and the operation limit of the vessel.",
+    "abstract_status": "full",
+    "abstract_source": "OpenAlex",
+    "authors": [
+      "D. Cortis",
+      "E. Musacchio-Gonzalez",
+      "D. Tatananni",
+      "P. Mastinu",
+      "D. Orlandi"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Instruments and Methods in Physics Research A",
+    "source_short": "NIMA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nima.2026.171702",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nima.2026.171702",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-reactions",
+      "detectors-daq",
+      "particle-cross"
+    ],
+    "tags": [
+      "radiative capture",
+      "TOF",
+      "particle physics",
+      "neutrino",
+      "dark matter"
+    ],
+    "primary_topic": "nuclear-reactions",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.88,
+    "classification_evidence": [
+      "radiative capture",
+      "TOF",
+      "particle physics",
+      "neutrino",
+      "dark matter"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +18",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Cortis, D.",
+      "Musacchio-Gonzalez, E.",
+      "Tatananni, D.",
+      "Mastinu, P.",
+      "Orlandi, D."
+    ],
+    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
+    "volume": "1091",
+    "issue": "",
+    "pages": "171702",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004286",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
+    "openalex_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_checked_sources": [
+      "OpenAlex"
+    ],
+    "summary": "",
+    "content": ""
+  },
+  {
+    "id": "c0a4e314e0ef8654",
+    "type": "paper",
+    "title": "Effect of the projectile breakup in the 6He+58Ni scattering",
+    "abstract": "We report new measurements of the 6 He+ 58 Ni elastic scattering at four bombarding energies: 14.3, 15.5, 17.1, and 17.9 MeV, all above the Coulomb barrier. The corresponding elastic angular distributions are presented and analyzed within the three-body (3b) and four-body (4b) Continuum-Discretized Coupled-Channels (CDCC) frameworks, explicitly accounting for the breakup of the weakly bound 6 He projectile. Total reaction cross sections were extracted from the analysis and compared with those of other systems involving different projectiles.",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "authors": [
+      "O.C.B. Santos",
+      "R. Lichtenthäler Filho",
+      "K.C.C. Pires",
+      "U. Umbelino",
+      "M. Rodríguez-Gallardo",
+      "A.S. Serra",
+      "V. Morcelle"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Physics A",
+    "source_short": "NPA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nuclphysa.2026.123477",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.nuclphysa.2026.123477",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-reactions",
+      "theoretical-nuclear",
+      "nuclear-general"
+    ],
+    "tags": [
+      "CDCC",
+      "coulomb barrier",
+      "elastic scattering",
+      "nuclear physics"
+    ],
+    "primary_topic": "nuclear-reactions",
+    "methods": [],
+    "classification_confidence": 0.8,
+    "classification_evidence": [
+      "CDCC",
+      "coulomb barrier",
+      "elastic scattering",
+      "nuclear physics"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +18",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "https://doi.org/10.15223/policy-017",
+      "https://doi.org/10.15223/policy-037",
+      "https://doi.org/10.15223/policy-012",
+      "https://doi.org/10.15223/policy-029",
+      "https://doi.org/10.15223/policy-004"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Santos, O.C.B.",
+      "Lichtenthäler Filho, R.",
+      "Pires, K.C.C.",
+      "Umbelino, U.",
+      "Rodríguez-Gallardo, M.",
+      "Serra, A.S.",
+      "Morcelle, V."
+    ],
+    "journal_abbrev": "Nuclear Physics A",
+    "volume": "1075",
+    "issue": "",
+    "pages": "123477",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001557",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-01T00:37:12+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-01T00:37:12+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "OpenAlex",
+      "INSPIRE"
+    ],
+    "summary": "",
+    "content": ""
+  },
+  {
+    "id": "c0dedeaf37190f1a",
+    "type": "paper",
+    "title": "Application and optimization of the GET electronics system for double-sided silicon strip detector readout",
+    "abstract": "Double-sided silicon strip detectors (DSSDs) are widely used for charged-particle detection in nuclear reaction experiments. However, the large number of readout channels associated with DSSDs places stringent demands on front-end electronics and data acquisition systems, particularly in experiments employing large detector arrays. In this work, we investigate the application and optimization of the Generic Electronics for Time Projection Chambers (GET) system for multi-channel DSSD readout. Through optimization of the DC-blocking capacitors on the custom-designed interface board and waveform-based energy extraction algorithms, the readout system achieves an energy resolution of {\\sigma} = 22 keV for 5.49 MeV alpha particles. Its performance is further validated in a representative nuclear physics experiment employing charged-particle telescopes. The results demonstrate that the GET system provides a versatile and scalable waveform-sampling solution for multi-channel DSSD readout.",
+    "abstract_status": "full",
+    "abstract_source": "arXiv RSS",
+    "authors": [
+      "Jiawei Bian",
+      "Zaihong Yang",
+      "Qite Li",
+      "Zeyu Du",
+      "Xuan Wang",
+      "Ningtao Zhang",
+      "Pengjie Li",
+      "Zhongtao Shen",
+      "Kaijie Zhou",
+      "Cheng Wang"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Nuclear Instruments and Methods in Physics Research A",
+    "source_short": "NIMA",
+    "source_type": "journal",
+    "doi": "10.1016/j.nima.2026.171772",
+    "arxiv_id": "2610.12923",
+    "url": "https://doi.org/10.1016/j.nima.2026.171772",
+    "pdf_url": "https://arxiv.org/pdf/2610.12923",
+    "categories": [
+      "nuclear-reactions",
+      "detectors-daq",
+      "nuclear-general"
+    ],
+    "tags": [
+      "nuclear reaction",
+      "data acquisition",
+      "front-end electronics",
+      "nuclear physics"
+    ],
+    "primary_topic": "nuclear-reactions",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.8,
+    "classification_evidence": [
+      "nuclear reaction",
+      "data acquisition",
+      "front-end electronics",
+      "nuclear physics"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +18",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "https://doi.org/10.15223/policy-017",
+      "https://doi.org/10.15223/policy-037",
+      "https://doi.org/10.15223/policy-012",
+      "https://doi.org/10.15223/policy-029",
+      "https://doi.org/10.15223/policy-004"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "first_seen": "2026-10-13T02:48:31+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
+    "citation_authors": [
+      "Bian, Jiawei",
+      "Yang, Zaihong",
+      "Li, Qite",
+      "Du, Zeyu",
+      "Wang, Xuan",
+      "Zhang, Ningtao",
+      "Li, Pengjie",
+      "Shen, Zhongtao",
+      "Zhou, Kaijie",
+      "Wang, Cheng"
+    ],
+    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
+    "volume": "1091",
+    "issue": "",
+    "pages": "171772",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004985",
+    "citation_metadata_checked": true,
+    "summary": "",
+    "content": "",
+    "abstract_checked_sources": []
+  },
+  {
+    "id": "a57855b28ebe9748",
+    "type": "paper",
+    "title": "Design studies of a pulsed quasimonoenergetic 2-keV neutron source for calibration of low threshold dark matter detectors",
+    "abstract": "We describe design studies for a pulsed quasi-monoenergetic 2-keV neutron source for calibration of sub-keV nuclear recoils. Such a calibration is required for detectors sensitive to sub- GeV dark matter and also the coherent elastic scattering of reactor neutrinos. In our design, neutrons from a commercial deuterium-tritium generator are moderated to the keV scale and subsequently filtered to achieve a monoenergetic spectrum utilizing the antiresonance feature, characterized by a drop in neutron transmission spectra at 2-keV for scandium. The analyses and conclusions presented are primarily based on simulations, as this study represents a critical first step toward the final goal. We address challenges such as unmoderated high-energy neutrons and gamma backgrounds from neutron capture in the moderator materials. Through optimization of the moderator+filter and shielding geometry, we identify a configuration that achieves the target neutron flux at 2 keV while maintaining subdominant rates of background interactions in simulation. Lastly, we outline a future pathway to lower-energy (few eV scale) calibrations using time-of-flight and sub-keV neutrons",
+    "abstract_status": "full",
+    "abstract_source": "arXiv RSS",
+    "authors": [
+      "L. Chaplinsky",
+      "S. Fiorucci",
+      "C. W. Fink",
+      "M. Garcia-Sciveres",
+      "W. Guo",
+      "S. A. Hertel",
+      "J. K. Wuko",
+      "X. Li",
+      "J. Lin",
+      "R. Mahapatra",
+      "W. Matava",
+      "D. N. McKinsey",
+      "D. Z. Osterman",
+      "P. K. Patel",
+      "B. Penning",
+      "H. Pinckney",
+      "M. Platt",
+      "Y. Qi",
+      "M. Reed",
+      "G. R. C Rischbieter",
+      "R. K. Romani",
+      "P. Sorensen",
+      "V. Velan",
+      "G. Wang",
+      "Y. Wang",
+      "S. L. Watkins",
+      "M. R. Williams"
+    ],
+    "published": "2026-10-28",
+    "updated": "2026-10-28",
+    "source": "Physical Review D",
+    "source_short": "PRD",
+    "source_type": "journal",
+    "doi": "10.1103/fqgp-916r",
+    "arxiv_id": "2410.14722",
+    "url": "https://doi.org/10.1103/fqgp-916r",
+    "pdf_url": "https://arxiv.org/pdf/2410.14722",
+    "categories": [
+      "nuclear-reactions",
+      "fusion",
+      "particle-cross"
+    ],
+    "tags": [
+      "neutron capture",
+      "elastic scattering",
+      "tritium",
+      "dark matter"
+    ],
+    "primary_topic": "nuclear-reactions",
+    "methods": [
+      "theoretical",
+      "review"
+    ],
+    "classification_confidence": 0.8,
+    "classification_evidence": [
+      "neutron capture",
+      "elastic scattering",
+      "tritium",
+      "dark matter"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +18",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+    "publisher_licenses": [
+      "https://link.aps.org/licenses/aps-default-license",
+      "https://link.aps.org/licenses/aps-default-accepted-manuscript-license"
+    ],
+    "rights_status": "reusable",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "first_seen": "2026-10-07T01:10:59+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
+    "citation_authors": [
+      "Chaplinsky, L.",
+      "Fiorucci, S.",
+      "Fink, C. W.",
+      "Garcia-Sciveres, M.",
+      "Guo, W.",
+      "Hertel, S. A.",
+      "Wuko, J. K.",
+      "Li, X.",
+      "Lin, J.",
+      "Mahapatra, R.",
+      "Matava, W.",
+      "McKinsey, D. N.",
+      "Osterman, D. Z.",
+      "Patel, P. K.",
+      "Penning, B.",
+      "Pinckney, H.",
+      "Platt, M.",
+      "Qi, Y.",
+      "Reed, M.",
+      "Rischbieter, G. R. C",
+      "Romani, R. K.",
+      "Sorensen, P.",
+      "Velan, V.",
+      "Wang, G.",
+      "Wang, Y.",
+      "Watkins, S. L.",
+      "Williams, M. R."
+    ],
+    "journal_abbrev": "Phys. Rev. D",
+    "volume": "114",
+    "issue": "7",
+    "pages": "072011",
+    "numpages": "",
+    "publisher": "American Physical Society (APS)",
+    "publisher_url": "https://link.aps.org/doi/10.1103/fqgp-916r",
+    "citation_metadata_checked": true,
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-10-07T01:10:59+00:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-10-07T01:10:59+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-10-07T01:10:59+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ],
+    "summary": "",
+    "content": "",
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-10-08T01:30:34+00:00",
+      "source": "Semantic Scholar"
+    }
+  },
+  {
+    "id": "ce78caac233c09ee",
+    "type": "paper",
+    "title": "Real-time CXRS analysis on HL-3 tokamak with reliable neural networks and cross-device transfer learning",
+    "abstract": "Abstract We present a neural network-based method for real-time charge exchange recombination spectroscopy (CXRS) analysis on the HL-3 tokamak. To enhance model performance and reliability, we tailor the network architecture to the physical characteristics of CXRS spectra: the receptive field matches the Doppler-broadened line width, channel embedding encodes spatial awareness across diagnostic channels, and attention pooling focuses on the most informative spectral regions. These designs yield millisecond-level inference (0.56 ms per 32-channel) with accuracy comparable to conventional methods ( R 2 _ T i = 0.93, R 2 _ v t = 0.98). Furthermore, the model’s reliability is established through interpretability and uncertainty analysis. Interpretability analysis confirms that the model focuses on the Doppler-broadened wings of C VI for T i and tracks line shifts for v t , consistent with physical principles. Uncertainty estimates show that the model appropriately expresses higher uncertainty in regions where predictions are inherently more challenging. To address data scarcity on new devices, transfer learning from HL-2A tokamak markedly boosts performance in low-data regimes while retaining a modest advantage even with full HL-3 data, provided that the spectra are properly aligned and baseline subtracted. This work establishes a real-time, reliable, and data-efficient AI framework for CXRS analysis, offering a practical path to deploy machine learning approaches in plasma control on future fusion devices.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Wenjing Tian",
+      "Zongyu Yang",
+      "Ting Long",
+      "Shuosu Yang",
+      "Hao Wu",
+      "Deliang Yu",
+      "Xiaoxue He",
+      "Chenchong Tang",
+      "Rui Ke",
+      "Min Xu",
+      "Zhe Gao",
+      "Wei Chen",
+      "Wulyu Zhong",
+      "Zhongbing Shi"
+    ],
+    "published": "2026-10-22",
+    "updated": "2026-10-22",
+    "source": "Nuclear Fusion",
+    "source_short": "NF",
+    "source_type": "journal",
+    "doi": "10.1088/1741-4326/aeb037",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1088/1741-4326/aeb037",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-reactions",
+      "ai-science",
+      "fusion"
+    ],
+    "tags": [
+      "charge exchange",
+      "nuclear fusion",
+      "tokamak",
+      "machine learning",
+      "neural network"
+    ],
+    "primary_topic": "nuclear-reactions",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.88,
+    "classification_evidence": [
+      "charge exchange",
+      "nuclear fusion",
+      "tokamak",
+      "machine learning",
+      "neural network"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +18",
+      "跨领域关联 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://creativecommons.org/licenses/by/4.0/",
+      "https://iopscience.iop.org/info/page/text-and-data-mining"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Tian, Wenjing",
+      "Yang, Zongyu",
+      "Long, Ting",
+      "Yang, Shuosu",
+      "Wu, Hao",
+      "Yu, Deliang",
+      "He, Xiaoxue",
+      "Tang, Chenchong",
+      "Ke, Rui",
+      "Xu, Min",
+      "Gao, Zhe",
+      "Chen, Wei",
+      "Zhong, Wulyu",
+      "Shi, Zhongbing"
+    ],
+    "journal_abbrev": "Nucl. Fusion",
+    "volume": "67",
+    "issue": "1",
+    "pages": "016004",
+    "numpages": "",
+    "publisher": "IOP Publishing",
+    "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aeb037",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-10-06T02:01:34+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
+    "abstract_checked_sources": [],
+    "summary": "",
+    "content": ""
+  },
+  {
+    "id": "1ce0a708871b3382",
+    "type": "paper",
+    "title": "Probing α clustering in 12 C at energies available at the Cooling Storage Ring facility using the jet A A microscopic transport model",
+    "abstract": "",
+    "abstract_status": "unavailable",
+    "abstract_source": "",
+    "authors": [
+      "Subhash Singha"
+    ],
+    "published": "2026-11-04",
+    "updated": "2026-11-04",
+    "source": "Physical Review C",
+    "source_short": "PRC",
+    "source_type": "journal",
+    "doi": "10.1103/vjcq-rdgb",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1103/vjcq-rdgb",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-clusters",
+      "accelerators"
+    ],
+    "tags": [
+      "α cluster",
+      "storage ring"
+    ],
+    "primary_topic": "nuclear-clusters",
+    "methods": [
+      "review"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "α cluster",
+      "storage ring"
+    ],
+    "importance": 63,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +21",
+      "跨领域关联 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://link.aps.org/licenses/aps-default-license"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Singha, Subhash"
+    ],
+    "journal_abbrev": "Phys. Rev. C",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "numpages": "",
+    "publisher": "American Physical Society (APS)",
+    "publisher_url": "https://link.aps.org/doi/10.1103/vjcq-rdgb",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
+    "publisher_abstract_enrichment": {
+      "status": "blocked",
+      "checked_at": "2026-11-05T01:57:11+00:00",
+      "source": "Publisher",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-05T01:57:11+00:00",
+      "source": "OpenAlex"
+    },
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-05T01:57:11+00:00",
+      "source": "Semantic Scholar"
+    },
+    "abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-05T01:57:11+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ]
+  },
+  {
+    "id": "219e6479c046fbac",
+    "type": "paper",
+    "title": "Intruder-driven mirror energy differences between 29Cl and 29Mg studied with antisymmetrized molecular dynamics",
+    "abstract": "To clarify the mirror energy differences (MEDs) of the proton-unbound nucleus $^{29}$Cl and their microscopic origins, we investigate the low-lying states of the $^{29}$Cl-$^{29}$Mg mirror pair using antisymmetrized molecular dynamics. The calculation reasonably reproduces the normal and intruder states of $^{29}$Mg, while suggesting alternative spin-parity assignments for $^{29}$Cl. The $1/2^+$ and $3/2^+$ states are predicted to form a nearly degenerate ground-state doublet with a small MED because of their similar intrinsic structures. In contrast, the $3/2^-$ and $7/2^-$ intruder states exhibit large negative MEDs and are assigned to the observed resonances at approximately 500~keV and 1.1~MeV, respectively. Their large MEDs originate from the reduced Coulomb energies associated with the stronger deformation and spatially extended proton distributions in the intruder configurations.",
+    "abstract_status": "full",
+    "abstract_source": "arXiv RSS",
+    "authors": [
+      "Dae Ik Kim",
+      "Masaaki Kimura",
+      "Chang-Hwan Lee",
+      "Youngman Kim"
+    ],
+    "published": "2026-11-01",
+    "updated": "2026-11-01",
+    "source": "Physics Letters B",
+    "source_short": "PLB",
+    "source_type": "journal",
+    "doi": "10.1016/j.physletb.2026.141009",
+    "arxiv_id": "2607.26546",
+    "url": "https://doi.org/10.1016/j.physletb.2026.141009",
+    "pdf_url": "https://arxiv.org/pdf/2607.26546",
+    "categories": [
+      "nuclear-clusters"
+    ],
+    "tags": [
+      "antisymmetrized molecular dynamics"
+    ],
+    "primary_topic": "nuclear-clusters",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "antisymmetrized molecular dynamics"
+    ],
+    "importance": 63,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +21",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "publisher_licenses": [
+      "https://www.elsevier.com/tdm/userlicense/1.0/",
+      "https://www.elsevier.com/legal/tdmrep-license",
+      "http://creativecommons.org/licenses/by/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "first_seen": "2026-10-02T01:15:29+00:00",
+    "last_seen": "2026-11-05T01:57:11+00:00",
+    "citation_authors": [
+      "Kim, Dae Ik",
+      "Kimura, Masaaki",
+      "Lee, Chang-Hwan",
+      "Kim, Youngman"
+    ],
+    "journal_abbrev": "Physics Letters B",
+    "volume": "882",
+    "issue": "",
+    "pages": "141009",
+    "numpages": "",
+    "publisher": "Elsevier BV",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326008592",
+    "citation_metadata_checked": true,
+    "summary": "",
+    "content": "",
+    "abstract_checked_sources": []
   }
 ]
