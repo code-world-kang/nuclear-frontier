@@ -65,7 +65,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-08-10T04:06:29+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "citation_authors": [
       "Hoffmann, Hans F. R.",
       "Lehnert, Björn",
@@ -145,11 +145,11 @@
     "publisher_licenses": [
       "https://link.aps.org/licenses/aps-default-license"
     ],
-    "rights_status": "source_restricted",
+    "rights_status": "unknown",
     "figures": [],
-    "figure_status": "license_blocked",
+    "figure_status": "rights_unknown",
     "first_seen": "2026-11-03T03:15:49+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "citation_authors": [
       "Lin, Zidu",
       "Colò, Gianluca",
@@ -289,10 +289,292 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/f5s7-1t7w",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-31T01:22:08+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
+  },
+  {
+    "id": "850fff87d430ca33",
+    "type": "paper",
+    "title": "Search for Diffuse Supernova Neutrino Background in the Full KamLAND Dataset with Neural-network-based Event Classification",
+    "abstract": "Abstract We report a search for the diffuse supernova neutrino background (DSNB) with the KamLAND detector, targeting electron antineutrinos ( ν ¯ e ) via inverse beta decay in the neutrino energy range of 8.3–30.8 MeV. Using an exposure of 9.02 kton-yr (8.3–9.3 MeV) and 9.42 kton-yr (9.3–30.8 MeV) with a liquid scintillator, we observe seven candidate events after applying a new deep-neural-network-based event classification technique. This is consistent with the background-only expectation of 16.2 ± 9.4 events, which includes systematic uncertainties associated with the neural-network selection. A spectral analysis of the energy and radial distributions finds no significant excess attributable to the DSNB. We therefore set 90% confidence-level upper limits on the DSNB flux of 38–43 cm −2 s −1 , depending on the assumed DSNB model. We also derive model-independent 90% confidence-level upper limits on the ν ¯ e flux, which are among the most stringent constraints below 13.3 MeV. Beyond the DSNB search itself, this work establishes neural-network-based event classification as a promising approach for suppressing neutron-associated backgrounds in liquid-scintillator neutrino detectors. The improved sensitivity also enables an astrophysical interpretation of the average neutrino emission from core-collapse supernovae and highlights the complementary role of low-threshold liquid-scintillator detectors in future DSNB searches.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "D. Chernyak",
+      "T. Eda",
+      "M. Eizuka",
+      "R. Endo",
+      "A. Gando",
+      "Y. Gando",
+      "T. Hachiya",
+      "F. Haneishi",
+      "K. Hata",
+      "T. Hirai",
+      "K. Hosokawa",
+      "K. Ichimura",
+      "H. Ikeda",
+      "K. Inoue",
+      "K. Ishidoshiro",
+      "Y. Kamei",
+      "N. Kawada",
+      "Y. Kishimoto",
+      "M. Koga",
+      "K. Mikami",
+      "H. Miyake",
+      "K. Mizukoshi",
+      "D. Morita",
+      "K. Nakamura",
+      "R. Nakamura",
+      "J. Nakane",
+      "Y. Nakano",
+      "N. Obata",
+      "Y. Ota",
+      "K. Saito",
+      "I. Sakaki",
+      "I. Shimizu",
+      "J. Shirai",
+      "A. Suzuki",
+      "K. Tachibana",
+      "A. Takeuchi",
+      "K. Tamae",
+      "H. Watanabe",
+      "Z. Xu",
+      "S. Yoshida"
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "source": "The Astrophysical Journal",
+    "source_short": "ApJ",
+    "source_type": "journal",
+    "doi": "10.3847/1538-4357/aeb2ea",
+    "arxiv_id": "2606.29381",
+    "url": "https://doi.org/10.3847/1538-4357/aeb2ea",
+    "pdf_url": "https://arxiv.org/pdf/2606.29381",
+    "categories": [
+      "nuclear-decay",
+      "detectors-daq",
+      "nuclear-astrophysics",
+      "particle-cross"
+    ],
+    "tags": [
+      "beta decay",
+      "supernova",
+      "core-collapse",
+      "scintillator",
+      "neutrino"
+    ],
+    "primary_topic": "nuclear-decay",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.88,
+    "classification_evidence": [
+      "beta decay",
+      "supernova",
+      "core-collapse",
+      "scintillator",
+      "neutrino"
+    ],
+    "importance": 70,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +22",
+      "跨领域关联 +6",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "publisher_licenses": [
+      "https://creativecommons.org/licenses/by/4.0/",
+      "https://iopscience.iop.org/info/page/text-and-data-mining"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "first_seen": "2026-10-22T00:22:02+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
+    "citation_authors": [
+      "Chernyak, D.",
+      "Eda, T.",
+      "Eizuka, M.",
+      "Endo, R.",
+      "Gando, A.",
+      "Gando, Y.",
+      "Hachiya, T.",
+      "Haneishi, F.",
+      "Hata, K.",
+      "Hirai, T.",
+      "Hosokawa, K.",
+      "Ichimura, K.",
+      "Ikeda, H.",
+      "Inoue, K.",
+      "Ishidoshiro, K.",
+      "Kamei, Y.",
+      "Kawada, N.",
+      "Kishimoto, Y.",
+      "Koga, M.",
+      "Mikami, K.",
+      "Miyake, H.",
+      "Mizukoshi, K.",
+      "Morita, D.",
+      "Nakamura, K.",
+      "Nakamura, R.",
+      "Nakane, J.",
+      "Nakano, Y.",
+      "Obata, N.",
+      "Ota, Y.",
+      "Saito, K.",
+      "Sakaki, I.",
+      "Shimizu, I.",
+      "Shirai, J.",
+      "Suzuki, A.",
+      "Tachibana, K.",
+      "Takeuchi, A.",
+      "Tamae, K.",
+      "Watanabe, H.",
+      "Xu, Z.",
+      "Yoshida, S."
+    ],
+    "journal_abbrev": "ApJ",
+    "volume": "1011",
+    "issue": "2",
+    "pages": "227",
+    "numpages": "",
+    "publisher": "American Astronomical Society",
+    "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/aeb2ea",
+    "citation_metadata_checked": true,
+    "summary": "",
+    "content": "",
+    "abstract_checked_sources": []
+  },
+  {
+    "id": "6e5b8b643472b4ca",
+    "type": "paper",
+    "title": "Decay spectroscopy of Tb 152 : A diagnostic component of the terbium theragnostic toolbox",
+    "abstract": "Terbium-152, decaying by electron capture and β + emission to the ground and excited states in Gd 152 , shows potential for use in PET imaging as part of personalized cancer treatments. We report results of decay spectroscopy measurements, providing nuclear data necessary for medical use of this radionuclide. Sources of Tb 152 were prepared at CERN-ISOLDE by proton-induced spallation of a tantalum target, followed by on-line mass separation. The decay of these sources was measured at ILL Grenoble using the γ -ray coincidence spectrometer FIPPS and the PN1 electron- γ coincidence spectroscopy setup. We present an updated level scheme for the decay, comprising 751 γ -ray transitions placed to 200 excited states. Angular correlation analysis and conversion-electron spectroscopy provide spin-parity assignments to levels, multipolarity assignments to γ rays, and measurements of electric monopole transition strengths. A transition intensity balance of the resulting level scheme provides beta feeding intensities for each level, showing an 8.9% reduction in the positron emission probability and an increase of 4.5% in the γ -ray energy emitted per decay compared to the existing evaluated data for this decay.",
+    "abstract_status": "full",
+    "abstract_source": "INSPIRE",
+    "authors": [
+      "E. B. O'Sullivan",
+      "S. M. Collins",
+      "J.-M. Daugas",
+      "L. Domenichetti",
+      "J. Heery",
+      "J. Henderson",
+      "U. Köster",
+      "C. Michelagnoli",
+      "T. Parry",
+      "S. Pascu",
+      "P. H. Regan",
+      "R. Shearman"
+    ],
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "source": "Physical Review C",
+    "source_short": "PRC",
+    "source_type": "journal",
+    "doi": "10.1103/3c72-gcls",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1103/3c72-gcls",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-decay",
+      "nuclear-structure",
+      "experimental-nuclear",
+      "nuclear-data-applications"
+    ],
+    "tags": [
+      "decay spectroscopy",
+      "level scheme",
+      "electron capture",
+      "spallation",
+      "nuclear data",
+      "evaluated data"
+    ],
+    "primary_topic": "nuclear-decay",
+    "methods": [
+      "experimental",
+      "review"
+    ],
+    "classification_confidence": 0.96,
+    "classification_evidence": [
+      "decay spectroscopy",
+      "level scheme",
+      "electron capture",
+      "spallation",
+      "nuclear data",
+      "evaluated data"
+    ],
+    "importance": 70,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +22",
+      "跨领域关联 +6",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://link.aps.org/licenses/aps-default-license"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "O'Sullivan, E. B.",
+      "Collins, S. M.",
+      "Daugas, J.-M.",
+      "Domenichetti, L.",
+      "Heery, J.",
+      "Henderson, J.",
+      "Köster, U.",
+      "Michelagnoli, C.",
+      "Parry, T.",
+      "Pascu, S.",
+      "Regan, P. H.",
+      "Shearman, R."
+    ],
+    "journal_abbrev": "Phys. Rev. C",
+    "volume": "114",
+    "issue": "5",
+    "pages": "054301",
+    "numpages": "",
+    "publisher": "American Physical Society (APS)",
+    "publisher_url": "https://link.aps.org/doi/10.1103/3c72-gcls",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-10-07T01:10:59+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
+    "publisher_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-10-15T00:15:33+00:00",
+      "source": "Publisher",
+      "url": "https://journals.aps.org/prc/accepted/10.1103/3c72-gcls"
+    },
+    "openalex_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-11-06T01:57:29+00:00",
+      "source": "OpenAlex"
+    },
+    "abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-06T01:57:29+00:00",
+      "source": "INSPIRE"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ],
+    "summary": "",
+    "content": "",
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-10-09T01:39:44+00:00",
+      "source": "Semantic Scholar"
+    }
   },
   {
     "id": "4d126ad5bf64190f",
@@ -378,7 +660,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001636",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -479,7 +761,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326008348",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -594,7 +876,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004730",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -771,7 +1053,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004444",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -866,7 +1148,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "primary_topic": "nuclear-decay",
     "methods": [
       "experimental",
@@ -970,154 +1252,6 @@
     "content": ""
   },
   {
-    "id": "c9a2f3185b1e9bae",
-    "type": "paper",
-    "title": "Dihadron Transverse-Spin Asymmetries in Muon-Deuteron Deep-Inelastic Scattering",
-    "abstract": "In 2022, the COMPASS collaboration performed semi-inclusive measurements of deep-inelastic muon-scattering on a transversely polarized deuteron ( LiD 6 ) target. From these data, transverse-spin-dependent dihadron asymmetries are extracted using pairs of oppositely charged hadrons. These asymmetries are directly sensitive to the quark transversity distributions and provide an independent handle on these fundamental quantities with respect to the Collins asymmetries measured in single-hadron production. The present results significantly improve upon the previous COMPASS deuteron measurements, which were the only available deuteron data worldwide, and reach a statistical precision comparable to that of the existing proton results from COMPASS. A small but nonzero asymmetry is observed at large Bjorken- x , consistent with theoretical expectations. A point-by-point extraction of the valence-quark transversity distributions yields, in particular, a substantially improved determination of the d -quark transversity. These measurements represent a major step towards a complete flavor mapping of the transverse-spin structure of the nucleon.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "G. D. Alexeev",
-      "M. G. Alexeev",
-      "C. Alice",
-      "A. Amoroso",
-      "V. Andrieux",
-      "V. Anosov",
-      "S. Asatryan",
-      "K. Augsten",
-      "W. Augustyniak",
-      "C. D. R. Azevedo",
-      "B. Badelek",
-      "R. Beck",
-      "J. Beckers",
-      "Y. Bedfer",
-      "V. Benesova",
-      "J. Bernhard",
-      "F. Bradamante",
-      "A. Bressan",
-      "W.-C. Chang",
-      "C. Chatterjee",
-      "M. Chiosso",
-      "S.-U. Chung",
-      "A. Cicuttin",
-      "M. L. Crespo",
-      "D. D’Ago",
-      "S. Dalla Torre",
-      "S. S. Dasgupta",
-      "S. Dasgupta",
-      "M. Dehpour",
-      "F. Delcarro",
-      "I. Denisenko",
-      "O. Yu. Denisov",
-      "S. V. Donskov",
-      "N. Doshita",
-      "Ch. Dreisbach",
-      "W. Dünnweber",
-      "R. R. Dusaev",
-      "D. Ecker",
-      "P. Faccioli",
-      "M. Faessler"
-    ],
-    "published": "2026-10-22",
-    "updated": "2026-10-22",
-    "source": "Physical Review Letters",
-    "source_short": "PRL",
-    "source_type": "journal",
-    "doi": "10.1103/cbmf-s76k",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/cbmf-s76k",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-reactions",
-      "high-energy-nuclear"
-    ],
-    "tags": [
-      "inelastic scattering",
-      "hadron"
-    ],
-    "primary_topic": "nuclear-reactions",
-    "methods": [
-      "experimental",
-      "theoretical",
-      "review"
-    ],
-    "classification_confidence": 0.64,
-    "classification_evidence": [
-      "inelastic scattering",
-      "hadron"
-    ],
-    "importance": 70,
-    "score_reasons": [
-      "来源权重 +48",
-      "核物理研究侧重 +18",
-      "跨领域关联 +2",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Alexeev, G. D.",
-      "Alexeev, M. G.",
-      "Alice, C.",
-      "Amoroso, A.",
-      "Andrieux, V.",
-      "Anosov, V.",
-      "Asatryan, S.",
-      "Augsten, K.",
-      "Augustyniak, W.",
-      "Azevedo, C. D. R.",
-      "Badelek, B.",
-      "Beck, R.",
-      "Beckers, J.",
-      "Bedfer, Y.",
-      "Benesova, V.",
-      "Bernhard, J.",
-      "Bradamante, F.",
-      "Bressan, A.",
-      "Chang, W.-C.",
-      "Chatterjee, C.",
-      "Chiosso, M.",
-      "Chung, S.-U.",
-      "Cicuttin, A.",
-      "Crespo, M. L.",
-      "D’Ago, D.",
-      "Torre, S. Dalla",
-      "Dasgupta, S. S.",
-      "Dasgupta, S.",
-      "Dehpour, M.",
-      "Delcarro, F.",
-      "Denisenko, I.",
-      "Denisov, O. Yu.",
-      "Donskov, S. V.",
-      "Doshita, N.",
-      "Dreisbach, Ch.",
-      "Dünnweber, W.",
-      "Dusaev, R. R.",
-      "Ecker, D.",
-      "Faccioli, P.",
-      "Faessler, M."
-    ],
-    "journal_abbrev": "Phys. Rev. Lett.",
-    "volume": "137",
-    "issue": "17",
-    "pages": "171903",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/cbmf-s76k",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-10-23T00:21:25+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
-    "abstract_checked_sources": [],
-    "summary": "",
-    "content": ""
-  },
-  {
     "id": "905c646b114699be",
     "type": "paper",
     "title": "Neutrinoless double-beta decay of the Δ − resonance",
@@ -1194,7 +1328,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/yh1b-mf64",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-31T01:22:08+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -1280,7 +1414,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004900",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -1365,7 +1499,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-79027-1",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": ""
@@ -1479,7 +1613,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/3rxj-2hpp",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-24T00:11:45+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-10-31T01:22:08+00:00",
@@ -1509,6 +1643,83 @@
       "checked_at": "2026-10-28T00:54:05+00:00",
       "source": "Semantic Scholar"
     }
+  },
+  {
+    "id": "307f1d11b2aec1b6",
+    "type": "paper",
+    "title": "Bag Parameters for Heavy Meson Lifetimes from a Lattice QCD Calculation at the SU ( 3 ) F -symmetric Point",
+    "abstract": "We calculate the dimension-six Δ Q = 0 four-quark matrix elements describing heavy-meson lifetime ratios using the gradient flow with its short flow-time expansion (SFTX) as a renormalization procedure. On six RBC/UKQCD 2 + 1 -flavor domain-wall fermion ensembles, we determine flowed bag parameters for physical charm and strange quarks and match to the MS ¯ scheme with perturbative SFTX coefficients through next-to-next-to-leading order (NNLO). A multiscale matching procedure using renormalization-group running improves the extrapolation to zero flow time. For the operators relevant to τ ( D s ) / τ ( D 0 ) at the SU ( 3 ) F symmetric point, we obtain B 1 MS ¯ ( 3 GeV ) = 1.0524 ( 97 ) , B 2 MS ¯ ( 3 GeV ) = 0.9621 ( 70 ) , ε 1 MS ¯ ( 3 GeV ) = − 0.2275 ( 76 ) , and ε 2 MS ¯ ( 3 GeV ) = − 0.0005 ( 8 ) using a specific choice of evanescent operators. This is the first lattice-QCD determination of Δ Q = 0 four-quark operators with a full error budget. It opens the path toward higher-precision predictions of heavy-meson lifetimes and similar quantities exhibiting operator mixing under renormalization.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Matthew Black",
+      "Robert V. Harlander",
+      "Jonas T. Kohnen",
+      "Fabian Lange",
+      "Antonio Rago",
+      "Andrea Shindler",
+      "Oliver Witzel"
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "source": "Physical Review Letters",
+    "source_short": "PRL",
+    "source_type": "journal",
+    "doi": "10.1103/2vg9-34y9",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1103/2vg9-34y9",
+    "pdf_url": "",
+    "categories": [
+      "theoretical-nuclear",
+      "high-energy-nuclear"
+    ],
+    "tags": [
+      "lattice qcd"
+    ],
+    "primary_topic": "theoretical-nuclear",
+    "methods": [
+      "theoretical",
+      "review"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "lattice qcd"
+    ],
+    "importance": 67,
+    "score_reasons": [
+      "来源权重 +48",
+      "核物理研究侧重 +15",
+      "跨领域关联 +2",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Black, Matthew",
+      "Harlander, Robert V.",
+      "Kohnen, Jonas T.",
+      "Lange, Fabian",
+      "Rago, Antonio",
+      "Shindler, Andrea",
+      "Witzel, Oliver"
+    ],
+    "journal_abbrev": "Phys. Rev. Lett.",
+    "volume": "137",
+    "issue": "19",
+    "pages": "191905",
+    "numpages": "",
+    "publisher": "American Physical Society (APS)",
+    "publisher_url": "https://link.aps.org/doi/10.1103/2vg9-34y9",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-06T01:57:29+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
+    "abstract_checked_sources": []
   },
   {
     "id": "9c743b681dba51f1",
@@ -1598,7 +1809,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001491",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -1689,7 +1900,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-10T01:26:47+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "citation_authors": [
       "Sharma, M. M."
     ],
@@ -1847,7 +2058,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-reactions",
@@ -1934,103 +2145,99 @@
     "content": ""
   },
   {
-    "id": "6e5b8b643472b4ca",
+    "id": "c8b5289f0bfabbf4",
     "type": "paper",
-    "title": "Decay spectroscopy of Tb 152 : A diagnostic component of the terbium theragnostic toolbox",
-    "abstract": "",
-    "abstract_status": "unavailable",
-    "abstract_source": "",
+    "title": "Ab initio calculations of Th 229 band-to-band internal conversion rate in ThO 2 229",
+    "abstract": "We present an ab initio calculation of the band-to-band internal-conversion rate of the $\\hbar\\omega_{\\rm nuc} \\approx 8.35$ eV isomeric transition in $^{229}$ThO$_2$. Because the nuclear transition energy exceeds the electronic band gap of ThO$_2$, the isomer can decay nonradiatively by resonantly promoting a valence electron into the conduction band. We formulate this process as a Brillouin-zone sum over vertical interband transitions weighted by local Th-centered hyperfine matrix elements, which are evaluated directly from all-electron full-potential linearized augmented-plane-wave Bloch spinors. A finite nuclear magnetization model is included to regularize the short-range hyperfine interaction and to account for the Bohr-Weisskopf effect. After applying scissor shifts to span the experimentally reported ThO$_2$ band gaps, we find calculated internal-conversion lifetimes in the range of $1-16~\\mu{\\rm s}$. The lifetime increases strongly as the band gap approaches $\\omega_{\\rm nuc}$ because the resonant interband phase space at the nuclear transition energy is reduced. For the larger reported ThO$_2$ gaps, the calculated lifetime is comparable to the measured conversion-electron M\\\"ossbauer lifetime [Nature 648, 300 (2025)]. Our analysis implies that choosing solid-state hosts with band-gap values slightly lower than $\\omega_{\\rm nuc}$ can optimize solid-state nuclear clock performance with internal-conversion electron readout.",
+    "abstract_status": "full",
+    "abstract_source": "arXiv RSS",
     "authors": [
-      "E. B. O'Sullivan",
-      "S. M. Collins",
-      "J.-M. Daugas",
-      "L. Domenichetti",
-      "J. Heery",
-      "J. Henderson",
-      "U. Köster",
-      "C. Michelagnoli",
-      "T. Parry",
-      "S. Pascu",
-      "P. H. Regan",
-      "R. Shearman"
+      "Udeshika C. Perera",
+      "H. B. Tran Tan",
+      "H. W. T. Morgan",
+      "Eric R. Hudson",
+      "Daniel A. Rehn",
+      "Andrei Derevianko"
     ],
-    "published": "2026-11-02",
-    "updated": "2026-11-02",
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
     "source": "Physical Review C",
     "source_short": "PRC",
     "source_type": "journal",
-    "doi": "10.1103/3c72-gcls",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/3c72-gcls",
-    "pdf_url": "",
+    "doi": "10.1103/kdw3-fdyx",
+    "arxiv_id": "2607.08941",
+    "url": "https://doi.org/10.1103/kdw3-fdyx",
+    "pdf_url": "https://arxiv.org/pdf/2607.08941",
     "categories": [
-      "nuclear-decay",
-      "experimental-nuclear"
+      "nuclear-decay"
     ],
     "tags": [
-      "decay spectroscopy"
+      "internal conversion",
+      "isomeric transition"
     ],
     "primary_topic": "nuclear-decay",
     "methods": [
       "experimental",
+      "theoretical",
       "review"
     ],
-    "classification_confidence": 0.56,
+    "classification_confidence": 0.64,
     "classification_evidence": [
-      "decay spectroscopy"
+      "internal conversion",
+      "isomeric transition"
     ],
     "importance": 64,
     "score_reasons": [
       "来源权重 +40",
       "核物理研究侧重 +22",
-      "跨领域关联 +2"
+      "完整摘要 +2"
     ],
     "open_access": null,
-    "license": "",
+    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
     "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license"
+      "https://link.aps.org/licenses/aps-default-license",
+      "https://link.aps.org/licenses/aps-default-accepted-manuscript-license"
     ],
     "rights_status": "unknown",
     "figures": [],
     "figure_status": "rights_unknown",
+    "first_seen": "2026-10-20T00:52:38+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "citation_authors": [
-      "O'Sullivan, E. B.",
-      "Collins, S. M.",
-      "Daugas, J.-M.",
-      "Domenichetti, L.",
-      "Heery, J.",
-      "Henderson, J.",
-      "Köster, U.",
-      "Michelagnoli, C.",
-      "Parry, T.",
-      "Pascu, S.",
-      "Regan, P. H.",
-      "Shearman, R."
+      "Perera, Udeshika C.",
+      "Tan, H. B. Tran",
+      "Morgan, H. W. T.",
+      "Hudson, Eric R.",
+      "Rehn, Daniel A.",
+      "Derevianko, Andrei"
     ],
     "journal_abbrev": "Phys. Rev. C",
     "volume": "114",
     "issue": "5",
-    "pages": "054301",
+    "pages": "054309",
     "numpages": "",
     "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/3c72-gcls",
+    "publisher_url": "https://link.aps.org/doi/10.1103/kdw3-fdyx",
     "citation_metadata_checked": true,
-    "first_seen": "2026-10-07T01:10:59+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
     "publisher_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-15T00:15:33+00:00",
+      "status": "blocked",
+      "checked_at": "2026-10-27T01:03:10+00:00",
       "source": "Publisher",
-      "url": "https://journals.aps.org/prc/accepted/10.1103/3c72-gcls"
+      "error": "HTTP Error 403: Forbidden"
     },
     "openalex_abstract_enrichment": {
       "status": "not_found",
-      "checked_at": "2026-10-07T01:10:59+00:00",
+      "checked_at": "2026-10-20T00:52:38+00:00",
       "source": "OpenAlex"
+    },
+    "semantic_scholar_abstract_enrichment": {
+      "status": "not_found",
+      "checked_at": "2026-10-20T00:52:38+00:00",
+      "source": "Semantic Scholar"
     },
     "abstract_enrichment": {
       "status": "not_found",
-      "checked_at": "2026-10-07T01:10:59+00:00",
+      "checked_at": "2026-10-20T00:52:38+00:00",
       "source": "INSPIRE"
     },
     "abstract_checked_sources": [
@@ -2040,12 +2247,7 @@
       "INSPIRE"
     ],
     "summary": "",
-    "content": "",
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-10-09T01:39:44+00:00",
-      "source": "Semantic Scholar"
-    }
+    "content": ""
   },
   {
     "id": "26f8db062e6ea603",
@@ -2145,7 +2347,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/c323-g246",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-08T01:30:34+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-23T00:21:25+00:00",
@@ -2175,6 +2377,81 @@
     ],
     "summary": "",
     "content": ""
+  },
+  {
+    "id": "30ac76f9fbd6c241",
+    "type": "paper",
+    "title": "Theoretical Study of i -process Contribution to the Post-AGB Star IRAS 14325-6428",
+    "abstract": "Abstract The post-asymptotic giant branch (post-AGB) star IRAS 14325-6428 exhibits a peculiar heavy-element abundance pattern, characterized by a high [Ba/La] ratio and an anomalous odd-isotope Ba ratio ( f odd,Ba = 0.25 ± 0.08), which is difficult to explain via the classical slow neutron-capture process ( s -process). We theoretically investigate this abundance pattern by considering the intermediate neutron-capture process ( i -process) nucleosynthesis. The i -process nucleosynthesis calculations are performed with a one-zone network (NucNet Tools) at constant temperature and density, using intershell abundances obtained from a stellar model (1.5 M ⊙ , Z = 0.003) evolved with MESA to the thermally pulsing AGB phase. The observed heavy-element abundances are best reproduced by a model with neutron density N n = 5 × 10 13 cm −3 and neutron exposure τ = 1.4 mbarn −1 , followed by dilution with a scaled-solar composition. This model reproduces the high [Ba/La] and [Ba/Ce] ratios and yields a postdilution odd-isotope fraction f odd,Ba ≈ 0.51, which is supported by the observed value being substantially above the expectations of the pure s -process. The abundance pattern arises from the i -process path approaching the neutron magic number N = 82, where the flow slows, and the material accumulates at 135 I, which subsequently β − decays to 135 Ba, enhancing Ba production and reducing the synthesis of heavier species. Combined with its multielement i -process classification, our results provide quantitative support for a dominant i -process origin of the heavy elements in IRAS 14325−6428, likely triggered by a relatively short-lived proton-ingestion episode in its AGB progenitor.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Guo Li",
+      "Jian-Rong Shi",
+      "Su-Ya-La-Tu Zhang",
+      "Hong-Liang Yan",
+      "Yong-Shou Chen"
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "source": "The Astrophysical Journal",
+    "source_short": "ApJ",
+    "source_type": "journal",
+    "doi": "10.3847/1538-4357/aeb015",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3847/1538-4357/aeb015",
+    "pdf_url": "",
+    "categories": [
+      "nuclear-structure",
+      "nuclear-astrophysics"
+    ],
+    "tags": [
+      "magic number",
+      "nucleosynthesis"
+    ],
+    "primary_topic": "nuclear-structure",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "magic number",
+      "nucleosynthesis"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +40",
+      "核物理研究侧重 +20",
+      "跨领域关联 +2",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://creativecommons.org/licenses/by/4.0/",
+      "https://iopscience.iop.org/info/page/text-and-data-mining"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Li, Guo",
+      "Shi, Jian-Rong",
+      "Zhang, Su-Ya-La-Tu",
+      "Yan, Hong-Liang",
+      "Chen, Yong-Shou"
+    ],
+    "journal_abbrev": "ApJ",
+    "volume": "1011",
+    "issue": "2",
+    "pages": "229",
+    "numpages": "",
+    "publisher": "American Astronomical Society",
+    "publisher_url": "https://iopscience.iop.org/article/10.3847/1538-4357/aeb015",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-06T01:57:29+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
+    "abstract_checked_sources": []
   },
   {
     "id": "c0422676f64f6453",
@@ -2251,7 +2528,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001417",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -2346,7 +2623,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001764",
     "citation_metadata_checked": true,
     "first_seen": "2026-08-11T04:01:53+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-09-10T23:37:56+00:00",
@@ -2452,7 +2729,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004808",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -2542,7 +2819,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001624",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -2609,7 +2886,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "abstract_status": "full",
     "abstract_source": "INSPIRE",
     "primary_topic": "nuclear-structure",
@@ -2801,7 +3078,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S037026932600835X",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -2890,7 +3167,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001429",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -2992,7 +3269,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001508",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -3078,7 +3355,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/d6vs-ppv1",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-15T00:15:33+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-10-15T00:15:33+00:00",
@@ -3167,7 +3444,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-28T00:54:05+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "citation_authors": [
       "Zhao, Jie"
     ],
@@ -3206,6 +3483,93 @@
       "Semantic Scholar",
       "INSPIRE"
     ],
+    "summary": "",
+    "content": ""
+  },
+  {
+    "id": "5c4cbb6040610834",
+    "type": "paper",
+    "title": "Data-driven discovery and rapid, direct synthesis of MXenes",
+    "abstract": "MXenes are a rapidly expanding family of two-dimensional transition metal carbides and nitrides, yet scalable synthesis routes remain limited and historical reports suggest a broader, largely unexplored chemical space. We used machine learning–assisted database mining to uncover hidden multilayer MXenes. Screening reveals 33 previously synthesized but unrecognized MXene candidates. Guided by these findings, we synthesized seven multilayer MXenes using a rapid, scalable self-propagating high-temperature method that requires no sustained external heating and completes within minutes. We further realized 11 previously unexplored rare earth–based MXenes (M = praseodymium, neodymium, samarium, gadolinium, terbium, holmium, and thulium). Experiments and modeling suggest semiconducting behavior and diverse magnetic states across this family. Together, these results expand the MXene family and demonstrate a data-driven strategy for accelerating materials discovery through sustainable methods.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Ali Saffar Shamshirgar",
+      "Guilherme Ribeiro Portugal",
+      "Soheil Ershadrad",
+      "Roman Ivanov",
+      "Martin Dahlqvist",
+      "Florian Chabanais",
+      "Sanjay Chakraborty",
+      "Rainer Traksmaa",
+      "Topias Jussila",
+      "Maarit Karppinen",
+      "Irina Hussainova",
+      "Fredrik Heintz",
+      "Per O. Å. Persson",
+      "Johanna Rosen"
+    ],
+    "published": "2026-10-29",
+    "updated": "2026-10-29",
+    "source": "Science",
+    "source_short": "Science",
+    "source_type": "journal",
+    "doi": "10.1126/science.aeh5957",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1126/science.aeh5957",
+    "pdf_url": "",
+    "categories": [
+      "ai-science"
+    ],
+    "tags": [
+      "machine learning"
+    ],
+    "primary_topic": "ai-science",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "machine learning"
+    ],
+    "importance": 70,
+    "score_reasons": [
+      "来源权重 +56",
+      "核物理研究侧重 +4",
+      "突破性表述 +8",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Shamshirgar, Ali Saffar",
+      "Portugal, Guilherme Ribeiro",
+      "Ershadrad, Soheil",
+      "Ivanov, Roman",
+      "Dahlqvist, Martin",
+      "Chabanais, Florian",
+      "Chakraborty, Sanjay",
+      "Traksmaa, Rainer",
+      "Jussila, Topias",
+      "Karppinen, Maarit",
+      "Hussainova, Irina",
+      "Heintz, Fredrik",
+      "Persson, Per O. Å.",
+      "Rosen, Johanna"
+    ],
+    "journal_abbrev": "Science",
+    "volume": "394",
+    "issue": "6823",
+    "pages": "eaeh5957",
+    "numpages": "",
+    "publisher": "American Association for the Advancement of Science (AAAS)",
+    "publisher_url": "https://www.science.org/doi/10.1126/science.aeh5957",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-10-30T01:30:20+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
+    "abstract_checked_sources": [],
     "summary": "",
     "content": ""
   },
@@ -3267,7 +3631,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-06T02:01:34+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "citation_authors": [
       "Kang, Zhong-Bo",
       "Metz, Andreas",
@@ -3379,7 +3743,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001533",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -3488,7 +3852,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004845",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -3497,93 +3861,6 @@
     "abstract_checked_sources": [
       "OpenAlex"
     ],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "5c4cbb6040610834",
-    "type": "paper",
-    "title": "Data-driven discovery and rapid, direct synthesis of MXenes",
-    "abstract": "MXenes are a rapidly expanding family of two-dimensional transition metal carbides and nitrides, yet scalable synthesis routes remain limited and historical reports suggest a broader, largely unexplored chemical space. We used machine learning–assisted database mining to uncover hidden multilayer MXenes. Screening reveals 33 previously synthesized but unrecognized MXene candidates. Guided by these findings, we synthesized seven multilayer MXenes using a rapid, scalable self-propagating high-temperature method that requires no sustained external heating and completes within minutes. We further realized 11 previously unexplored rare earth–based MXenes (M = praseodymium, neodymium, samarium, gadolinium, terbium, holmium, and thulium). Experiments and modeling suggest semiconducting behavior and diverse magnetic states across this family. Together, these results expand the MXene family and demonstrate a data-driven strategy for accelerating materials discovery through sustainable methods.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Ali Saffar Shamshirgar",
-      "Guilherme Ribeiro Portugal",
-      "Soheil Ershadrad",
-      "Roman Ivanov",
-      "Martin Dahlqvist",
-      "Florian Chabanais",
-      "Sanjay Chakraborty",
-      "Rainer Traksmaa",
-      "Topias Jussila",
-      "Maarit Karppinen",
-      "Irina Hussainova",
-      "Fredrik Heintz",
-      "Per O. Å. Persson",
-      "Johanna Rosen"
-    ],
-    "published": "2026-10-29",
-    "updated": "2026-10-29",
-    "source": "Science",
-    "source_short": "Science",
-    "source_type": "journal",
-    "doi": "10.1126/science.aeh5957",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1126/science.aeh5957",
-    "pdf_url": "",
-    "categories": [
-      "ai-science"
-    ],
-    "tags": [
-      "machine learning"
-    ],
-    "primary_topic": "ai-science",
-    "methods": [],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "machine learning"
-    ],
-    "importance": 70,
-    "score_reasons": [
-      "来源权重 +56",
-      "核物理研究侧重 +4",
-      "突破性表述 +8",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Shamshirgar, Ali Saffar",
-      "Portugal, Guilherme Ribeiro",
-      "Ershadrad, Soheil",
-      "Ivanov, Roman",
-      "Dahlqvist, Martin",
-      "Chabanais, Florian",
-      "Chakraborty, Sanjay",
-      "Traksmaa, Rainer",
-      "Jussila, Topias",
-      "Karppinen, Maarit",
-      "Hussainova, Irina",
-      "Heintz, Fredrik",
-      "Persson, Per O. Å.",
-      "Rosen, Johanna"
-    ],
-    "journal_abbrev": "Science",
-    "volume": "394",
-    "issue": "6823",
-    "pages": "eaeh5957",
-    "numpages": "",
-    "publisher": "American Association for the Advancement of Science (AAAS)",
-    "publisher_url": "https://www.science.org/doi/10.1126/science.aeh5957",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-10-30T01:30:20+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
-    "abstract_checked_sources": [],
     "summary": "",
     "content": ""
   },
@@ -3667,7 +3944,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004286",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "openalex_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -3763,7 +4040,7 @@
     "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0375947426001557",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "openalex_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-01T00:37:12+00:00",
@@ -3853,7 +4130,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-13T02:48:31+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "citation_authors": [
       "Bian, Jiawei",
       "Yang, Zaihong",
@@ -3963,7 +4240,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-07T01:10:59+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
+    "last_seen": "2026-11-06T01:57:29+00:00",
     "citation_authors": [
       "Chaplinsky, L.",
       "Fiorucci, S.",
@@ -4030,270 +4307,5 @@
       "checked_at": "2026-10-08T01:30:34+00:00",
       "source": "Semantic Scholar"
     }
-  },
-  {
-    "id": "ce78caac233c09ee",
-    "type": "paper",
-    "title": "Real-time CXRS analysis on HL-3 tokamak with reliable neural networks and cross-device transfer learning",
-    "abstract": "Abstract We present a neural network-based method for real-time charge exchange recombination spectroscopy (CXRS) analysis on the HL-3 tokamak. To enhance model performance and reliability, we tailor the network architecture to the physical characteristics of CXRS spectra: the receptive field matches the Doppler-broadened line width, channel embedding encodes spatial awareness across diagnostic channels, and attention pooling focuses on the most informative spectral regions. These designs yield millisecond-level inference (0.56 ms per 32-channel) with accuracy comparable to conventional methods ( R 2 _ T i = 0.93, R 2 _ v t = 0.98). Furthermore, the model’s reliability is established through interpretability and uncertainty analysis. Interpretability analysis confirms that the model focuses on the Doppler-broadened wings of C VI for T i and tracks line shifts for v t , consistent with physical principles. Uncertainty estimates show that the model appropriately expresses higher uncertainty in regions where predictions are inherently more challenging. To address data scarcity on new devices, transfer learning from HL-2A tokamak markedly boosts performance in low-data regimes while retaining a modest advantage even with full HL-3 data, provided that the spectra are properly aligned and baseline subtracted. This work establishes a real-time, reliable, and data-efficient AI framework for CXRS analysis, offering a practical path to deploy machine learning approaches in plasma control on future fusion devices.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Wenjing Tian",
-      "Zongyu Yang",
-      "Ting Long",
-      "Shuosu Yang",
-      "Hao Wu",
-      "Deliang Yu",
-      "Xiaoxue He",
-      "Chenchong Tang",
-      "Rui Ke",
-      "Min Xu",
-      "Zhe Gao",
-      "Wei Chen",
-      "Wulyu Zhong",
-      "Zhongbing Shi"
-    ],
-    "published": "2026-10-22",
-    "updated": "2026-10-22",
-    "source": "Nuclear Fusion",
-    "source_short": "NF",
-    "source_type": "journal",
-    "doi": "10.1088/1741-4326/aeb037",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1088/1741-4326/aeb037",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-reactions",
-      "ai-science",
-      "fusion"
-    ],
-    "tags": [
-      "charge exchange",
-      "nuclear fusion",
-      "tokamak",
-      "machine learning",
-      "neural network"
-    ],
-    "primary_topic": "nuclear-reactions",
-    "methods": [
-      "experimental"
-    ],
-    "classification_confidence": 0.88,
-    "classification_evidence": [
-      "charge exchange",
-      "nuclear fusion",
-      "tokamak",
-      "machine learning",
-      "neural network"
-    ],
-    "importance": 64,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +18",
-      "跨领域关联 +4",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0/",
-      "https://iopscience.iop.org/info/page/text-and-data-mining"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Tian, Wenjing",
-      "Yang, Zongyu",
-      "Long, Ting",
-      "Yang, Shuosu",
-      "Wu, Hao",
-      "Yu, Deliang",
-      "He, Xiaoxue",
-      "Tang, Chenchong",
-      "Ke, Rui",
-      "Xu, Min",
-      "Gao, Zhe",
-      "Chen, Wei",
-      "Zhong, Wulyu",
-      "Shi, Zhongbing"
-    ],
-    "journal_abbrev": "Nucl. Fusion",
-    "volume": "67",
-    "issue": "1",
-    "pages": "016004",
-    "numpages": "",
-    "publisher": "IOP Publishing",
-    "publisher_url": "https://iopscience.iop.org/article/10.1088/1741-4326/aeb037",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-10-06T02:01:34+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
-    "abstract_checked_sources": [],
-    "summary": "",
-    "content": ""
-  },
-  {
-    "id": "1ce0a708871b3382",
-    "type": "paper",
-    "title": "Probing α clustering in 12 C at energies available at the Cooling Storage Ring facility using the jet A A microscopic transport model",
-    "abstract": "",
-    "abstract_status": "unavailable",
-    "abstract_source": "",
-    "authors": [
-      "Subhash Singha"
-    ],
-    "published": "2026-11-04",
-    "updated": "2026-11-04",
-    "source": "Physical Review C",
-    "source_short": "PRC",
-    "source_type": "journal",
-    "doi": "10.1103/vjcq-rdgb",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1103/vjcq-rdgb",
-    "pdf_url": "",
-    "categories": [
-      "nuclear-clusters",
-      "accelerators"
-    ],
-    "tags": [
-      "α cluster",
-      "storage ring"
-    ],
-    "primary_topic": "nuclear-clusters",
-    "methods": [
-      "review"
-    ],
-    "classification_confidence": 0.64,
-    "classification_evidence": [
-      "α cluster",
-      "storage ring"
-    ],
-    "importance": 63,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +21",
-      "跨领域关联 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://link.aps.org/licenses/aps-default-license"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Singha, Subhash"
-    ],
-    "journal_abbrev": "Phys. Rev. C",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/vjcq-rdgb",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-11-05T01:57:11+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "blocked",
-      "checked_at": "2026-11-05T01:57:11+00:00",
-      "source": "Publisher",
-      "error": "HTTP Error 403: Forbidden"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-11-05T01:57:11+00:00",
-      "source": "OpenAlex"
-    },
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-11-05T01:57:11+00:00",
-      "source": "Semantic Scholar"
-    },
-    "abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-11-05T01:57:11+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ]
-  },
-  {
-    "id": "219e6479c046fbac",
-    "type": "paper",
-    "title": "Intruder-driven mirror energy differences between 29Cl and 29Mg studied with antisymmetrized molecular dynamics",
-    "abstract": "To clarify the mirror energy differences (MEDs) of the proton-unbound nucleus $^{29}$Cl and their microscopic origins, we investigate the low-lying states of the $^{29}$Cl-$^{29}$Mg mirror pair using antisymmetrized molecular dynamics. The calculation reasonably reproduces the normal and intruder states of $^{29}$Mg, while suggesting alternative spin-parity assignments for $^{29}$Cl. The $1/2^+$ and $3/2^+$ states are predicted to form a nearly degenerate ground-state doublet with a small MED because of their similar intrinsic structures. In contrast, the $3/2^-$ and $7/2^-$ intruder states exhibit large negative MEDs and are assigned to the observed resonances at approximately 500~keV and 1.1~MeV, respectively. Their large MEDs originate from the reduced Coulomb energies associated with the stronger deformation and spatially extended proton distributions in the intruder configurations.",
-    "abstract_status": "full",
-    "abstract_source": "arXiv RSS",
-    "authors": [
-      "Dae Ik Kim",
-      "Masaaki Kimura",
-      "Chang-Hwan Lee",
-      "Youngman Kim"
-    ],
-    "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "source": "Physics Letters B",
-    "source_short": "PLB",
-    "source_type": "journal",
-    "doi": "10.1016/j.physletb.2026.141009",
-    "arxiv_id": "2607.26546",
-    "url": "https://doi.org/10.1016/j.physletb.2026.141009",
-    "pdf_url": "https://arxiv.org/pdf/2607.26546",
-    "categories": [
-      "nuclear-clusters"
-    ],
-    "tags": [
-      "antisymmetrized molecular dynamics"
-    ],
-    "primary_topic": "nuclear-clusters",
-    "methods": [
-      "theoretical"
-    ],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "antisymmetrized molecular dynamics"
-    ],
-    "importance": 63,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +21",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "first_seen": "2026-10-02T01:15:29+00:00",
-    "last_seen": "2026-11-05T01:57:11+00:00",
-    "citation_authors": [
-      "Kim, Dae Ik",
-      "Kimura, Masaaki",
-      "Lee, Chang-Hwan",
-      "Kim, Youngman"
-    ],
-    "journal_abbrev": "Physics Letters B",
-    "volume": "882",
-    "issue": "",
-    "pages": "141009",
-    "numpages": "",
-    "publisher": "Elsevier BV",
-    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0370269326008592",
-    "citation_metadata_checked": true,
-    "summary": "",
-    "content": "",
-    "abstract_checked_sources": []
   }
 ]
