@@ -266,9 +266,9 @@ def run(args, root=ROOT, client=None):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--limit", type=int, default=24)
+    parser.add_argument("--limit", type=int, default=100)
     parser.add_argument("--batch-size", type=int, default=4)
-    parser.add_argument("--max-minutes", type=float, default=15)
+    parser.add_argument("--max-minutes", type=float, default=30)
     parser.add_argument("--deploy-timeout", type=float, default=480)
     parser.add_argument("--ids", default="")
     parser.add_argument("--retry-failed", action="store_true")

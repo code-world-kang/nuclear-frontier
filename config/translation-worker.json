@@ -8,8 +8,8 @@
   "execution_location": "local",
   "scheduler": "codex_heartbeat",
   "interval_minutes": 60,
-  "limit_per_run": 24,
+  "limit_per_run": 100,
   "batch_size": 4,
-  "max_minutes": 15,
+  "max_minutes": 30,
   "requires_codex_running": true
 }
