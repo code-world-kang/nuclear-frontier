@@ -960,10 +960,10 @@
     }
   ],
   "counts": {
-    "papers": 8870,
+    "papers": 8850,
     "news": 404,
     "notices": 330,
-    "featured": 40
+    "featured": 80
   },
   "new_counts": {
     "papers": 97,
@@ -1024,5 +1024,9 @@
   "notice_detail_enrichment": {
     "attempted": 44,
     "updated": 35
+  },
+  "paper_identity": {
+    "linked_versions": 42,
+    "alias_ids": 61
   }
 }

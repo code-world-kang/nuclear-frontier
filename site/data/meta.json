@@ -16,6 +16,7 @@
       "storage": "Blob",
       "region": "ap-beijing"
     },
+    "arxiv_publication_enrichment_limit": 120,
     "figure_enrichment_limit": 0,
     "publisher_abstract_enrichment_limit": 30,
     "publisher_abstract_enrichment_workers": 4,
@@ -505,6 +506,71 @@
       "priority": 0
     }
   ],
+  "featured_journals": {
+    "groups": [
+      {
+        "id": "nima",
+        "label": "NIMA",
+        "names": [
+          "NIMA",
+          "NIM-A",
+          "Nuclear Instruments and Methods in Physics Research A"
+        ],
+        "doi_prefixes": [
+          "10.1016/j.nima.",
+          "10.1016/s0168-9002"
+        ]
+      },
+      {
+        "id": "prl",
+        "label": "PRL",
+        "names": [
+          "PRL",
+          "Physical Review Letters",
+          "Phys. Rev. Lett."
+        ]
+      },
+      {
+        "id": "nature",
+        "label": "Nature 系列",
+        "names": [
+          "Nature",
+          "Scientific Reports",
+          "Communications Physics",
+          "Communications Materials"
+        ],
+        "name_prefixes": [
+          "Nature ",
+          "Nat. ",
+          "npj "
+        ]
+      },
+      {
+        "id": "science",
+        "label": "Science 系列",
+        "names": [
+          "Science",
+          "Science Advances",
+          "Science Robotics",
+          "Sci. Adv.",
+          "Sci. Robot."
+        ]
+      },
+      {
+        "id": "sb",
+        "label": "SB / 科学通报",
+        "names": [
+          "SB",
+          "Science Bulletin",
+          "Chinese Science Bulletin",
+          "Chinese Science Bulletin (Chinese Version)",
+          "Sci. Bull.",
+          "科学通报",
+          "科学通报(英文版)"
+        ]
+      }
+    ]
+  },
   "status": {
     "started_at": "2026-11-06T01:57:29+00:00",
     "last_success": "2026-11-06T02:02:35+00:00",
@@ -1467,10 +1533,10 @@
       }
     ],
     "counts": {
-      "papers": 8870,
+      "papers": 8850,
       "news": 404,
       "notices": 330,
-      "featured": 40
+      "featured": 80
     },
     "new_counts": {
       "papers": 97,
@@ -1531,29 +1597,33 @@
     "notice_detail_enrichment": {
       "attempted": 44,
       "updated": 35
+    },
+    "paper_identity": {
+      "linked_versions": 42,
+      "alias_ids": 61
     }
   },
   "insights": {
     "latest_day": "2026-11-06",
     "latest_count": 4,
-    "journal_count": 4494,
-    "preprint_count": 4376,
+    "journal_count": 4516,
+    "preprint_count": 4334,
     "source_counts": [
       {
         "name": "arXiv hep-ph",
-        "count": 1369
+        "count": 1361
       },
       {
         "name": "arXiv nucl-th",
-        "count": 648
-      },
-      {
-        "name": "arXiv astro-ph.HE",
-        "count": 522
+        "count": 630
       },
       {
         "name": "Physics Letters B",
-        "count": 517
+        "count": 525
+      },
+      {
+        "name": "arXiv astro-ph.HE",
+        "count": 519
       },
       {
         "name": "Physical Review D",
@@ -1561,15 +1631,15 @@
       },
       {
         "name": "Physical Review C",
-        "count": 494
+        "count": 493
       },
       {
         "name": "arXiv physics.ins-det",
-        "count": 494
+        "count": 491
       },
       {
         "name": "Nuclear Instruments and Methods in Physics Research A",
-        "count": 404
+        "count": 408
       },
       {
         "name": "Nuclear Fusion",
@@ -1577,7 +1647,7 @@
       },
       {
         "name": "arXiv hep-ex",
-        "count": 287
+        "count": 286
       },
       {
         "name": "Chinese Physics C",
@@ -1593,39 +1663,39 @@
       },
       {
         "name": "arXiv cs.LG",
-        "count": 192
-      },
-      {
-        "name": "arXiv physics.acc-ph",
-        "count": 177
+        "count": 191
       },
       {
         "name": "The Astrophysical Journal",
         "count": 176
       },
       {
+        "name": "arXiv physics.acc-ph",
+        "count": 176
+      },
+      {
         "name": "arXiv hep-lat",
-        "count": 165
+        "count": 162
       },
       {
         "name": "arXiv astro-ph.SR",
-        "count": 164
+        "count": 162
       },
       {
         "name": "arXiv physics.plasm-ph",
         "count": 155
       },
       {
-        "name": "arXiv nucl-ex",
-        "count": 147
+        "name": "Astronomy and Astrophysics",
+        "count": 145
       },
       {
-        "name": "Astronomy and Astrophysics",
-        "count": 146
+        "name": "arXiv nucl-ex",
+        "count": 145
       },
       {
         "name": "Nuclear Instruments and Methods in Physics Research B",
-        "count": 115
+        "count": 114
       },
       {
         "name": "Physical Review Accelerators and Beams",
@@ -1633,7 +1703,7 @@
       },
       {
         "name": "Physical Review Letters",
-        "count": 101
+        "count": 103
       },
       {
         "name": "Journal of Instrumentation",
@@ -1644,16 +1714,16 @@
         "count": 83
       },
       {
+        "name": "The European Physical Journal A",
+        "count": 81
+      },
+      {
         "name": "Plasma Physics and Controlled Fusion",
         "count": 77
       },
       {
-        "name": "The European Physical Journal A",
-        "count": 77
-      },
-      {
         "name": "Nuclear Physics A",
-        "count": 72
+        "count": 76
       },
       {
         "name": "Radiation Physics and Chemistry",
@@ -1669,7 +1739,7 @@
       },
       {
         "name": "Journal of Physics G",
-        "count": 58
+        "count": 61
       },
       {
         "name": "arXiv cs.AI",
@@ -1745,22 +1815,22 @@
       }
     ],
     "category_counts": {
-      "nuclear-astrophysics": 1134,
-      "frontiers": 1628,
-      "nuclear-decay": 222,
-      "detectors-daq": 1320,
-      "particle-cross": 2254,
-      "theoretical-nuclear": 1179,
-      "high-energy-nuclear": 1102,
-      "nuclear-structure": 421,
-      "nuclear-general": 660,
+      "nuclear-astrophysics": 1126,
+      "frontiers": 1637,
+      "nuclear-decay": 221,
+      "detectors-daq": 1321,
+      "particle-cross": 2380,
+      "theoretical-nuclear": 1172,
+      "high-energy-nuclear": 1100,
+      "nuclear-structure": 420,
+      "accelerators": 828,
+      "nuclear-reactions": 739,
+      "nuclear-general": 686,
+      "experimental-nuclear": 177,
       "nuclear-clusters": 30,
-      "accelerators": 829,
-      "nuclear-reactions": 742,
-      "experimental-nuclear": 178,
-      "nuclear-data-applications": 400,
       "fusion": 858,
-      "ai-science": 687
+      "ai-science": 685,
+      "nuclear-data-applications": 400
     },
     "daily_counts": [
       {
@@ -1769,7 +1839,7 @@
       },
       {
         "date": "2026-11-05",
-        "count": 122
+        "count": 121
       },
       {
         "date": "2026-11-04",
@@ -1777,11 +1847,11 @@
       },
       {
         "date": "2026-11-03",
-        "count": 204
+        "count": 202
       },
       {
         "date": "2026-11-02",
-        "count": 113
+        "count": 112
       },
       {
         "date": "2026-11-01",
@@ -1793,7 +1863,7 @@
       },
       {
         "date": "2026-10-30",
-        "count": 184
+        "count": 183
       },
       {
         "date": "2026-10-29",
@@ -1801,7 +1871,7 @@
       },
       {
         "date": "2026-10-28",
-        "count": 158
+        "count": 159
       },
       {
         "date": "2026-10-27",
@@ -1809,7 +1879,7 @@
       },
       {
         "date": "2026-10-26",
-        "count": 72
+        "count": 74
       },
       {
         "date": "2026-10-25",
@@ -1829,15 +1899,19 @@
       },
       {
         "date": "2026-10-21",
-        "count": 112
+        "count": 110
       },
       {
         "date": "2026-10-20",
-        "count": 124
+        "count": 125
       },
       {
         "date": "2026-10-19",
-        "count": 92
+        "count": 90
+      },
+      {
+        "date": "2026-10-18",
+        "count": 1
       },
       {
         "date": "2026-10-17",
@@ -1845,23 +1919,23 @@
       },
       {
         "date": "2026-10-16",
-        "count": 89
+        "count": 88
       },
       {
         "date": "2026-10-15",
-        "count": 93
+        "count": 94
       },
       {
         "date": "2026-10-14",
-        "count": 209
+        "count": 207
       },
       {
         "date": "2026-10-13",
-        "count": 59
+        "count": 57
       },
       {
         "date": "2026-10-12",
-        "count": 81
+        "count": 78
       },
       {
         "date": "2026-10-11",
@@ -1878,10 +1952,6 @@
       {
         "date": "2026-10-08",
         "count": 89
-      },
-      {
-        "date": "2026-10-07",
-        "count": 123
       }
     ]
   },
@@ -1933,8 +2003,8 @@
       "publication_started_at": "2026-11-06T01:06:35.508095+00:00"
     },
     "service_status": "local_scheduled",
-    "pending": 6530,
-    "generated_at": "2026-11-06T02:02:36.837391+00:00",
+    "pending": 6538,
+    "generated_at": "2026-11-06T02:18:28.872006+00:00",
     "model": "gpt-5.6-sol",
     "worker": {
       "backend": "codex_cli",
