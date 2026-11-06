@@ -18,7 +18,7 @@ import time
 from offline_translation import QualityError
 from translate_content import (
     is_chinese, needs_translation, queue_payload, requires_translation,
-    select_balanced, source_hash, source_text, write_json,
+    select_balanced, source_hash, source_text, write_json, translation_for, store_translation,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -264,8 +264,8 @@ def run(args, root=ROOT, on_checkpoint=None):
                             raise QualityError("翻译期间原文变化，保留待译")
                         if not needs_translation(item, current):
                             continue
-                        record = translation_record(item, values[item["id"]], current.get(item["id"], {}))
-                        current[item["id"]] = record
+                        record = translation_record(item, values[item["id"]], translation_for(item, current))
+                        store_translation(payload, item, record)
                         retries.pop(item["id"], None)
                         report["completed"] += 1
                     except QualityError as exc:

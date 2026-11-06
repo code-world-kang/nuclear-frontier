@@ -30,6 +30,9 @@ from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, Iterable
 
+from paper_identity import arxiv_key, doi_key, merge_papers, paper_change_counts, record_ids
+from featured_journals import featured_label
+
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "config"
@@ -368,8 +371,7 @@ def iso_date(value: Any) -> str:
 
 
 def extract_arxiv_id(url: str) -> str:
-    match = re.search(r"arxiv\.org/(?:abs|pdf)/([^?#/]+)", url, re.I)
-    return match.group(1).removesuffix(".pdf") if match else ""
+    return arxiv_key(url)
 
 
 class AnchorParser(HTMLParser):
@@ -1131,6 +1133,51 @@ def crossref_citation_fields(item: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def crossref_publication_links(item):
+    """只接收明确的预印本/正式发表关联，不把参考文献、勘误或附件当同篇。"""
+    return [{"relation": relation, "id": value.get("id", ""), "id_type": value.get("id-type", "")}
+            for relation in ("has-preprint", "is-preprint-of")
+            for value in (item.get("relation") or {}).get(relation, []) if value.get("id")]
+
+
+def enrich_arxiv_publication_links(records, run_at, limit=120):
+    """轮询未关联预印本的官方 DOI；单连接、限量、7 天冷却，不阻塞主采集。"""
+    groups = {}
+    for item in records:
+        aid = arxiv_key(item.get("arxiv_id"))
+        if aid and item.get("source_type") == "preprint":
+            groups.setdefault(aid, []).append(item)
+    cutoff = (dt.datetime.fromisoformat(run_at) - dt.timedelta(days=7)).isoformat()
+    selected = sorted((aid for aid, items in groups.items()
+                       if max((x.get("arxiv_publication_checked", "") for x in items), default="") < cutoff),
+                      key=lambda aid: max(x.get("arxiv_publication_checked", "") for x in groups[aid]))[:limit]
+    stats = {"attempted": 0, "linked": 0, "failed": 0}
+    for offset in range(0, len(selected), 20):
+        batch = selected[offset:offset + 20]
+        stats["attempted"] += len(batch)
+        for aid in batch:
+            for item in groups[aid]:
+                item["arxiv_publication_checked"] = run_at
+        try:
+            url = "https://export.arxiv.org/api/query?" + urllib.parse.urlencode({"id_list": ",".join(batch), "max_results": len(batch)})
+            root = ET.fromstring(fetch_arxiv_resource(url, accept="application/atom+xml", attempts=2))
+            ns = {"a": "http://www.w3.org/2005/Atom", "ar": "http://arxiv.org/schemas/atom"}
+            for entry in root.findall("a:entry", ns):
+                aid = arxiv_key(entry.findtext("a:id", "", ns))
+                doi = doi_key(entry.findtext("ar:doi", "", ns))
+                if aid not in batch or not doi.startswith("10.") or arxiv_key(doi):
+                    continue
+                stats["linked"] += 1
+                for item in groups[aid]:
+                    item["publication_links"] = [{"relation": "is-preprint-of", "id": doi, "id_type": "doi"}]
+                    item["journal_ref"] = entry.findtext("ar:journal_ref", "", ns)
+                    item["publication_link_source"] = "arXiv API"
+        except Exception as error:
+            stats["failed"] += len(batch)
+            stats["error"] = str(error)[:200]
+    return stats
+
+
 def fetch_crossref(source: dict[str, Any], classifier: Classifier, start: str, end: str) -> tuple[list[dict[str, Any]], SourceResult]:
     try:
         raw_items: list[dict[str, Any]] = []
@@ -1195,7 +1242,8 @@ def fetch_crossref(source: dict[str, Any], classifier: Classifier, start: str, e
                 "source_short": source["short"],
                 "source_type": "journal",
                 "doi": doi,
-                "arxiv_id": "",
+                "arxiv_id": next((arxiv_key(x.get("id")) for x in crossref_publication_links(item) if arxiv_key(x.get("id"))), ""),
+                "publication_links": crossref_publication_links(item),
                 "url": url,
                 "pdf_url": "",
                 "categories": categories,
@@ -2361,6 +2409,12 @@ def fetch_notice(source: dict[str, Any], classifier: Classifier) -> tuple[list[d
 
 
 def merge_records(existing: list[dict[str, Any]], incoming: list[dict[str, Any]], max_items: int) -> list[dict[str, Any]]:
+    if any(item.get("type") == "paper" or item.get("source_type") in {"journal", "preprint"} for item in existing + incoming):
+        papers = merge_papers(existing, incoming, max_items)
+        for paper in papers:
+            if "figures" in paper:
+                paper["figures"] = filter_arxiv_figures(paper["figures"])
+        return papers
     merged: dict[str, dict[str, Any]] = {}
     for item in existing:
         if not item.get("id"):
@@ -2444,6 +2498,8 @@ def merge_records(existing: list[dict[str, Any]], incoming: list[dict[str, Any]]
 
 def count_new_records(existing: list[dict[str, Any]], incoming: list[dict[str, Any]]) -> int:
     """统计真正首次出现的条目，而不是把回溯窗口中重复抓取的条目当成新增。"""
+    if any(item.get("type") == "paper" or item.get("source_type") in {"journal", "preprint"} for item in existing + incoming):
+        return paper_change_counts(existing, merge_papers(existing, incoming))["new"]
     existing_ids = {item.get("id") for item in existing if item.get("id")}
     existing_titles = {
         title_key for item in existing
@@ -2524,6 +2580,9 @@ def main() -> int:
         item["first_seen"] = run_at
         item["last_seen"] = run_at
 
+    arxiv_publication_stats = enrich_arxiv_publication_links(
+        existing_papers + papers_new, run_at, int(runtime.get("arxiv_publication_enrichment_limit", 120)))
+
     true_new_counts = {
         "papers": count_new_records(existing_papers, papers_new),
         "news": count_new_records(existing_news, news_new),
@@ -2531,6 +2590,8 @@ def main() -> int:
     }
     max_items = int(runtime.get("daily_limit", 900)) * 20
     papers = merge_records(existing_papers, papers_new, max_items)
+    publication_changes = paper_change_counts(existing_papers, papers)
+    true_new_counts["papers"] = publication_changes["new"]
     paper_sources = source_config.get("crossref_journals", []) + source_config.get("arxiv_feeds", [])
     source_modes = {source["name"]: source.get("mode", "all") for source in paper_sources}
     source_weights = {source["name"]: int(source.get("weight", 3)) for source in paper_sources}
@@ -2599,6 +2660,10 @@ def main() -> int:
     figure_stats = enrich_arxiv_figures(
         papers, int(runtime.get("figure_enrichment_limit", 16)), run_at=run_at
     )
+    # INSPIRE 等补充了 arXiv 关联后再归并一次，避免保留已确认的重复项。
+    papers = merge_papers(papers)
+    publication_changes = paper_change_counts(existing_papers, papers)
+    true_new_counts["papers"] = publication_changes["new"]
     news = merge_records(existing_news, news_new, 1500)
     notices = merge_records(existing_notices, notices_new, 1500)
     news_detail_stats = enrich_missing_news_details(
@@ -2682,7 +2747,8 @@ def main() -> int:
     ]
     latest_day = max((paper.get("published", "")[:10] for paper in papers), default=today.isoformat())
     featured_cutoff = (dt.date.fromisoformat(latest_day) - dt.timedelta(days=14)).isoformat()
-    featured_candidates = [paper for paper in papers if paper.get("published", "")[:10] >= featured_cutoff]
+    featured_config = read_json(CONFIG / "featured-journals.json", {})
+    featured_candidates = [paper for paper in papers if paper.get("published", "")[:10] >= featured_cutoff and featured_label(paper, featured_config)]
     def research_priority(item: dict[str, Any]) -> int:
         return max((classifier.category_priorities.get(category, 0) for category in item.get("categories", [])), default=0)
 
@@ -2708,6 +2774,8 @@ def main() -> int:
         "source_results": [asdict(item) for item in sorted(results, key=lambda result: (result.kind, result.name))],
         "counts": {"papers": len(papers), "news": len(news), "notices": len(notices), "featured": len(featured)},
         "new_counts": true_new_counts,
+        "publication_updates": publication_changes["published"],
+        "arxiv_publication_enrichment": arxiv_publication_stats,
         "fetched_counts": {"papers": len(papers_new), "news": len(news_new), "notices": len(notices_new)},
         "figure_enrichment": figure_stats,
         "publisher_abstract_enrichment": publisher_abstract_stats,

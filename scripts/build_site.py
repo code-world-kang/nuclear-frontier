@@ -8,9 +8,11 @@ import shutil
 from collections import Counter
 from pathlib import Path
 
-from build_history import build_history_site
+from build_history import build_history_site, all_history_records
+from paper_identity import record_ids
+from featured_journals import featured_label
 from build_wechat_digest import build_digest
-from translate_content import collect_candidates, queue_payload
+from translate_content import collect_candidates, queue_payload, source_hash
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,6 +29,18 @@ def load(path: Path):
 
 def main() -> None:
     PUBLIC_DATA.mkdir(parents=True, exist_ok=True)
+    # 统一日常库与历史索引的身份；历史原始分片、译文、笔记和收藏不改写。
+    old_papers = load(DATA / "papers.json")
+    daily_ids = {key for item in old_papers for key in record_ids(item)}
+    history_records = all_history_records()
+    papers = [item for item in history_records if daily_ids.intersection(record_ids(item))]
+    represented = {key for item in papers for key in record_ids(item)}
+    # 缺出版日期或早于历史索引起点的日常条目也必须保留。
+    papers.extend({**item, "translation_source_hash": source_hash(item)} for item in old_papers if item["id"] not in represented)
+    featured_config = load(CONFIG / "featured-journals.json")
+    featured = [item for item in papers if featured_label(item, featured_config)][:80]
+    for name, value in (("papers.json", papers), ("featured.json", featured)):
+        (DATA / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     # 即使未配置翻译服务或首次构建，也应有真实可用的待译队列。
     queue_file = DATA / "translation-queue.json"
     old_queue = load(queue_file) if queue_file.exists() else {}
@@ -59,6 +73,11 @@ def main() -> None:
     topics = load(CONFIG / "topics.json")
     runtime = load(CONFIG / "runtime.json")
     status = load(DATA / "status.json")
+    status["counts"].update({"papers": len(papers), "featured": len(featured)})
+    status["paper_identity"] = {"linked_versions": sum(item.get("publication_status") == "published" for item in papers),
+                                "alias_ids": sum(len(item.get("record_aliases", [])) for item in papers)}
+    for path in (DATA / "status.json", PUBLIC_DATA / "status.json"):
+        path.write_text(json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     papers = load(DATA / "papers.json")
     latest_day = max((item.get("published", "")[:10] for item in papers), default="")
     latest_papers = [item for item in papers if item.get("published", "")[:10] == latest_day]
@@ -79,6 +98,7 @@ def main() -> None:
     meta = {
         "site": runtime,
         "categories": topics["categories"],
+        "featured_journals": featured_config,
         "status": status,
         "insights": insights,
         "translation_service": {**({"last_run": load(DATA / "translation-run.json")} if (DATA / "translation-run.json").exists() else {}), **{key: queue.get(key) for key in ("service_status", "pending", "generated_at", "model")}, "worker": worker},
@@ -93,7 +113,7 @@ def main() -> None:
         PUBLIC_MINIPROGRAM_PREVIEW.mkdir(parents=True, exist_ok=True)
         for name in ("index.html", "preview.css", "preview.js"):
             shutil.copy2(MINIPROGRAM_PREVIEW / name, PUBLIC_MINIPROGRAM_PREVIEW / name)
-    history_manifest = build_history_site()
+    history_manifest = build_history_site(history_records)
     wechat_digest = build_digest()
     print(f"站点数据已构建：{PUBLIC_DATA}")
     print(f"历史索引：{history_manifest['indexed_papers']} 篇 / {history_manifest['indexed_months']} 个月份")

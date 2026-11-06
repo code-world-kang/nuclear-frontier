@@ -44,12 +44,25 @@ export function isChinese(value = '') {
   return han >= 2 && han / Math.max(1, han + latin) >= 0.25;
 }
 
+export function translationForRecord(item, translations = {}) {
+  const expected = item.translation_source_hash;
+  for (const id of [item.id, ...(item.record_aliases || [])]) {
+    const value = translations[id];
+    if (!value) continue;
+    const actual = value.source_hash || item.translation_legacy_hashes?.[id];
+    if (expected && actual && actual !== expected) continue;
+    if (id !== item.id && (!expected || actual !== expected)) continue;
+    if (value.title_zh || value.abstract_zh) return value;
+  }
+  return null;
+}
+
 export function translationCoverage(records, translations = {}) {
   const stats = { total: 0, complete: 0, native: 0, titleDone: 0, titleTotal: 0, bodyDone: 0, bodyTotal: 0, missingBody: 0, partial: 0 };
   for (const item of records) {
     const title = String(item.title || '').trim();
     const body = String(item.abstract || item.content || item.summary || '').trim();
-    const translated = translations[item.id] || item;
+    const translated = translationForRecord(item, translations) || item;
     const titleNative = isChinese(title) || (title && !/[A-Za-z]{2,}/.test(title));
     const bodyNative = body && (isChinese(body) || !/[A-Za-z]{2,}/.test(body));
     if (!body) stats.missingBody += 1;

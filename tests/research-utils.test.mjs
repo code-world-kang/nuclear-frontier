@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
-import { scientificText, nuclidesIn, searchText, translationCoverage, isChinese, isNimaPaper } from '../site/research-utils.js';
+import { scientificText, nuclidesIn, searchText, translationCoverage, isChinese, isNimaPaper, translationForRecord } from '../site/research-utils.js';
 
 test('核素：单字母、双字母、上标、连字符及合写', () => {
   assert.deepEqual(nuclidesIn('8B and B-8, ⁸B, 52,54Ca and $^{53,55}$Sc'), ['8B', '52Ca', '54Ca', '53Sc', '55Sc']);
@@ -45,13 +45,15 @@ function appHarness() {
   source = source.replace(/^import .*;\n/m, '').replace(/initialize\(\);\s*$/, '');
   const storage = new Map();
   const context = vm.createContext({
-    URL, scientificText, nuclidesIn, searchText, translationCoverage, isNimaPaper, AbortController, console,
+    URL, scientificText, nuclidesIn, searchText, translationCoverage, isNimaPaper, translationForRecord, AbortController, console,
     window: { location: { href: 'https://example.org/' } },
     document: { querySelector: () => null },
     setTimeout: () => 1, clearTimeout: () => {},
     localStorage: { setItem: (k, v) => storage.set(k, v), getItem: k => storage.get(k) || null, removeItem: k => storage.delete(k) },
   });
   vm.runInContext(source, context);
+  context.featuredConfig = JSON.parse(readFileSync(new URL('../config/featured-journals.json', import.meta.url), 'utf8'));
+  vm.runInContext('state.meta = {featured_journals: featuredConfig}', context);
   return { context, storage, run: code => vm.runInContext(code, context) };
 }
 
@@ -138,7 +140,84 @@ test('NIMA 筛选聚合同刊别名，尊重忽略，不混入其他期刊', () 
   h.run("state.papers = fixtures; state.scope = 'all'; state.source = NIMA_SOURCE; state.personal.ignoredItems = ['b'];");
   assert.deepEqual([...h.run('filteredItems().map(x => x.id)')], ['a']);
   h.run("state.featured = [fixtures[0], fixtures[2]];");
-  assert.deepEqual([...h.run('featuredWithNima().map(x => x.id)')].sort(), ['a', 'b', 'c']);
+  assert.deepEqual([...h.run('featuredWithNima().map(x => x.id)')].sort(), ['a', 'b']);
   h.run("state.papers.push({id:'old', source_short:'NIMA',published:'2025-01-01'})");
-  assert.equal(h.run('featuredWithNima().some(x => x.id === "old")'), false);
+  assert.equal(h.run('featuredWithNima().some(x => x.id === "old")'), true);
+});
+
+test('版本合并：旧 ID 收藏、关键词、笔记、阅读和忽略状态仍可读取，且不改写个人数据', () => {
+  const h = appHarness();
+  h.run(`state.papers = [{ id: 'journal', record_aliases: ['arxiv'], type: 'paper', title: 'Official', source_type: 'journal' }];
+    state.personal.favorites = { arxiv: { id: 'arxiv', title: 'Preprint', keywords: ['核结构'] }, journal: { id: 'journal', title: 'Official', keywords: ['探测器'] } };
+    state.personal.notes = { arxiv: '预印本笔记', journal: '正式版笔记' };
+    state.personal.readStatus = { arxiv: 'read' };
+    state.personal.ignoredItems = ['arxiv'];
+    state.personal.translationFavorites = { arxiv: { id: 'arxiv' } };
+    state.view = 'favorites'; state.mySection = 'papers';`);
+  const before = h.run('JSON.stringify(state.personal)');
+  assert.equal(h.run(`isFavorite('journal')`), true);
+  assert.deepEqual([...h.run(`favoriteKeywords('journal')`)].sort(), ['探测器', '核结构']);
+  assert.match(h.run(`noteText('journal')`), /预印本笔记[\s\S]*正式版笔记|正式版笔记[\s\S]*预印本笔记/);
+  assert.equal(h.run(`readStatusFor('journal')`), 'read');
+  assert.equal(h.run(`isIgnored('journal')`), true);
+  assert.equal(h.run(`isTranslationFavorite('journal')`), true);
+  assert.equal(h.run('currentItems().length'), 1);
+  assert.equal(h.run('currentItems()[0].id'), 'journal');
+  assert.equal(h.run('JSON.stringify(state.personal)'), before);
+  h.run(`state.mySection = 'translations'`);
+  assert.equal(h.run('currentItems().length'), 1, '新版本待译也不能隐藏原翻译收藏');
+});
+
+test('取消合并论文收藏和保存笔记会处理全部别名，保存失败恢复原笔记', async () => {
+  const h = appHarness();
+  h.run(`state.papers = [{ id: 'j', record_aliases: ['p'], title: 'Paper' }];
+    state.personal.favorites = { p: { id: 'p', title: 'Paper', keywords: ['核结构'] } };
+    state.publicFavorites = [{ id: 'p', title: 'Paper' }];
+    state.personal.notes = { p: '旧笔记', j: '新笔记' };
+    savePersonal = () => true; refreshPaperCardViews = () => {}; renderHomeHub = () => {}; showToast = () => {};`);
+  await h.run(`toggleFavorite(state.papers[0], { classList: { toggle() {} }, setAttribute() {} })`);
+  assert.equal(h.run(`isFavorite('j')`), false);
+  h.run(`savePersonal = () => false; saveInlineNote(state.papers[0], '替换')`);
+  assert.equal(h.run('state.personal.notes.p'), '旧笔记');
+  assert.equal(h.run('state.personal.notes.j'), '新笔记');
+  h.run(`savePersonal = () => true; saveInlineNote(state.papers[0], '整理后的笔记')`);
+  assert.equal(h.run(`noteText('j')`), '整理后的笔记');
+  assert.equal(h.run('state.personal.notes.p'), undefined);
+});
+
+test('译文仅在源文一致时复用，旧摘要不计为新版本已译', () => {
+  const item = { id: 'j', record_aliases: ['p'], title: 'Title', abstract: 'Body', translation_source_hash: 'current', translation_legacy_hashes: { j: 'old' } };
+  const old = { title_zh: '旧题目', abstract_zh: '旧摘要', source_hash: 'old' };
+  assert.equal(translationForRecord(item, { j: old }), null);
+  assert.equal(translationForRecord(item, { j: { title_zh: '旧译文' } }), null);
+  assert.equal(translationCoverage([item], { j: old }).complete, 0);
+  const matching = { title_zh: '当前题目', abstract_zh: '当前摘要', source_hash: 'current' };
+  assert.equal(translationForRecord(item, { p: matching }), matching);
+});
+
+test('Cite 默认正式版，可选择预印本，输出不混用期刊 DOI', () => {
+  const h = appHarness();
+  h.run(`var article = { id: 'j', title: 'Published title', source: 'Physical Review C', source_type: 'journal', doi: '10.1234/a', published: '2026-05-01', authors: ['Alice Smith'],
+    versions: [{ id: 'p', title: 'Preprint title', source_type: 'preprint', arxiv_id: '2601.00001', url: 'https://arxiv.org/abs/2601.00001', published: '2026-01-01', authors: ['Alice Smith'] }] };`);
+  assert.equal(h.run('citationVersions(article).length'), 2);
+  assert.match(h.run(`citationValue(citationVersions(article)[0].item, 'bibtex')`), /10.1234\/a/);
+  const preprint = h.run(`citationValue(citationVersions(article)[1].item, 'bibtex')`);
+  assert.match(preprint, /2601.00001/);
+  assert.doesNotMatch(preprint, /10.1234\/a/);
+  assert.match(h.run(`citationValue(citationVersions(article)[1].item, 'gbt7714-2025')`), /PP\/OL/);
+});
+
+test('重点期刊包含五组及系列刊，首页和重点选项排除其他刊与预印本', () => {
+  const h = appHarness();
+  for (const source of ['NIMA', 'Physical Review Letters', 'Nature', 'Nature Physics', 'Nature Astronomy', 'Nature Materials', 'Nature Computational Science', 'Communications Physics', 'npj Quantum Information', 'Science', 'Science Advances', 'Science Robotics', 'SB', 'Science Bulletin', 'Chinese Science Bulletin (Chinese Version)', '科学通报']) {
+    h.context.sample = { source, source_type: 'journal' };
+    assert.ok(h.run('homeJournalLabel(sample)'), source);
+  }
+  for (const source of ['NIMB', 'Physical Review C', 'National Science Review', 'Science China Physics, Mechanics & Astronomy', 'arXiv nucl-ex']) {
+    h.context.sample = { source, source_type: 'journal' };
+    assert.equal(h.run('homeJournalLabel(sample)'), '', source);
+  }
+  h.context.samples = [{ id: 'sb', source: 'Science Bulletin' }, { id: 'nature', source: 'Nature Astronomy' }, { id: 'science', source: 'Science Advances' }, { id: 'prc', source: 'Physical Review C' }, { id: 'pre', source_short: 'PRL', source_type: 'preprint' }];
+  h.run('state.papers = samples; state.view = "featured"');
+  assert.deepEqual([...h.run('currentItems().map(x => x.id)')].sort(), ['nature', 'sb', 'science']);
 });

@@ -123,7 +123,7 @@ def merge_bundle(folder, bundle):
     """只合并本批新增译文；并发更新、个人数据和已完成译文以最新仓库为准。"""
     payload = sol.read(folder / "data/translations.zh-CN.json", {"items": {}})
     existing = payload.setdefault("items", {})
-    sources = {item["id"]: item for item in sol.records(folder)}
+    sources = {key: item for item in sol.records(folder) for key in [item["id"], *item.get("record_aliases", [])]}
     written, stale, skipped = [], [], []
     for key, record in bundle["records"].items():
         item = sources.get(key)
@@ -134,10 +134,10 @@ def merge_bundle(folder, bundle):
             skipped.append(key)
             continue
         # 不做内容校验；保留翻译期间在网站新增的中文题目。
-        merged = sol.translation_record(item, record, existing.get(key, {}))
+        merged = sol.translation_record(item, record, sol.translation_for(item, existing))
         merged["translated_at"] = record["translated_at"]
-        existing[key] = merged
-        written.append(key)
+        sol.store_translation(payload, item, merged)
+        written.append(item["id"])
     payload.update({"generated_at": now(), "provider": "mixed",
                     "provider_note": "来源以条目 provider/model/note 为准。"})
     retries = sol.read(folder / "data/translation-sol-retries.json", {})

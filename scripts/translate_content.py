@@ -69,11 +69,37 @@ def source_hash(item: dict[str, Any]) -> str:
     return hashlib.sha256((str(item.get("title", "")) + "\n" + source_text(item)).encode()).hexdigest()
 
 
+def translation_for(item: dict[str, Any], existing: dict[str, Any]) -> dict[str, Any]:
+    """旧 ID 的同源译文可以复用，改题目/摘要后的译文不得冒充正式版本。"""
+    expected = source_hash(item)
+    legacy = item.get("translation_legacy_hashes", {})
+    for key in [item["id"], *item.get("record_aliases", [])]:
+        value = existing.get(key, {})
+        actual = value.get("source_hash") or legacy.get(key)
+        if actual and actual != expected:
+            continue
+        if key != item["id"] and not actual:
+            continue
+        if value.get("title_zh") or value.get("abstract_zh"):
+            return value
+    return {}
+
+
+def store_translation(payload, item, value):
+    """源文更新时归档上一版译文；不删除旧 ID 的收藏译文。"""
+    existing = payload.setdefault("items", {})
+    previous = existing.get(item["id"], {})
+    previous_hash = previous.get("source_hash") or item.get("translation_legacy_hashes", {}).get(item["id"])
+    if previous and previous_hash and previous_hash != source_hash(item):
+        payload.setdefault("versions", {}).setdefault(item["id"], {})[previous_hash] = previous
+    existing[item["id"]] = value
+
+
 def needs_translation(item: dict[str, Any], existing: dict[str, Any]) -> bool:
     title = str(item.get("title") or "").strip()
     if not title:
         return False
-    translated = existing.get(item["id"], {})
+    translated = translation_for(item, existing)
     # Sol 直接翻译模式不再按中文比例等内容规则重新排队；仍须与当前源文对应且非空。
     if (translated.get("content_validation") == "disabled"
             and translated.get("source_hash") == source_hash(item)

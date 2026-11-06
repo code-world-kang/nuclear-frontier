@@ -86,7 +86,7 @@ jobs:
               git fetch origin main
               git rebase origin/main
               python scripts/build_site.py
-              git add data/translation-queue.json site/data site/wechat-digest wechat-official-account
+              git add data/papers.json data/featured.json data/status.json data/translation-queue.json site/data site/wechat-digest wechat-official-account
               if ! git diff --cached --quiet; then
                 git commit --amend --no-edit
               fi

@@ -1814,3 +1814,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .nima-spotlight button:hover { background: #254c36; }
 .nima-spotlight button:focus-visible, .journal-focus-panel button:focus-visible { outline: 3px solid #b27b28; outline-offset: 4px; }
 @media (max-width: 760px) { .nima-spotlight { flex-wrap: wrap; gap: 14px; padding: 16px; } .nima-emblem { width: 48px; height: 72px; padding: 6px; font-size: 13px; } .nima-emblem span { font-size: 28px; } .nima-spotlight-copy { flex-basis: calc(100% - 90px); } .nima-spotlight h3 { font-size: 20px; } .nima-spotlight button { width: 100%; } }
+
+/* 同篇论文的预印本与期刊版：沿用温暖绿色信息卡，不增加弹窗。 */
+.publication-badge { color: #376948; background: #edf7e9; border: 1px solid #d1e5c9; border-radius: 999px; padding: .18rem .55rem; font-size: .73rem; }
+.paper-versions .version-dates { font-size: .78rem; color: var(--muted, #637766); line-height: 1.6; }
+.paper-versions details { margin-top: .65rem; font-size: .83rem; overflow-wrap: anywhere; }
+.paper-versions summary { cursor: pointer; color: #426b4b; line-height: 1.6; }
+.paper-versions details p { line-height: 1.7; white-space: pre-wrap; }

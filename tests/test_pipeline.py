@@ -153,12 +153,12 @@ class PipelineTests(unittest.TestCase):
         ))
 
     def test_merge_deduplicates_title_and_preserves_identifiers(self):
-        old = [{"id": "a", "title": "Same Paper", "published": "2026-01-01", "source_type": "preprint", "arxiv_id": "2601.1", "categories": ["theoretical-nuclear"], "tags": [], "importance": 30}]
-        new = [{"id": "b", "title": "Same Paper", "published": "2026-01-02", "source_type": "journal", "doi": "10.1/x", "categories": ["nuclear-structure"], "tags": [], "importance": 50}]
+        old = [{"id": "a", "title": "Same Paper", "authors": ["A. Researcher"], "published": "2026-01-01", "source_type": "preprint", "arxiv_id": "2601.00001", "categories": ["theoretical-nuclear"], "tags": [], "importance": 30}]
+        new = [{"id": "b", "title": "Same Paper", "authors": ["A. Researcher"], "published": "2026-01-02", "source_type": "journal", "doi": "10.1/x", "categories": ["nuclear-structure"], "tags": [], "importance": 50}]
         merged = merge_records(old, new, 10)
         self.assertEqual(len(merged), 1)
         self.assertEqual(merged[0]["doi"], "10.1/x")
-        self.assertEqual(merged[0]["arxiv_id"], "2601.1")
+        self.assertEqual(merged[0]["arxiv_id"], "2601.00001")
 
     def test_normalize_title(self):
         self.assertEqual(normalize_title("A: Nuclear-Physics!"), "anuclearphysics")
@@ -432,14 +432,14 @@ class PipelineTests(unittest.TestCase):
 
     def test_merge_keeps_existing_full_abstract_and_figures(self):
         old = [{
-            "id": "a", "title": "Licensed Paper", "published": "2026-01-01", "source_type": "preprint",
+            "id": "a", "title": "Licensed Paper", "authors": ["A. Researcher"], "published": "2026-01-01", "source_type": "preprint",
             "abstract": "Complete abstract", "license": "https://creativecommons.org/licenses/by/4.0/",
             "figures": [{
                 "url": "https://arxiv.org/html/2601.00001/x1.png", "caption": "Figure 1: Main result."
             }], "categories": ["nuclear-decay"], "tags": [],
         }]
         new = [{
-            "id": "b", "title": "Licensed Paper", "published": "2026-01-02", "source_type": "journal",
+            "id": "b", "title": "Licensed Paper", "authors": ["A. Researcher"], "published": "2026-01-02", "source_type": "journal",
             "abstract": "", "license": "", "figures": [], "categories": ["nuclear-general"], "tags": [],
         }]
         merged = merge_records(old, new, 10)

@@ -11,6 +11,8 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 from update_content import Classifier
+from paper_identity import merge_papers
+from translate_content import source_hash
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -41,16 +43,17 @@ def record_key(item: dict[str, Any]) -> str:
 
 
 def all_history_records() -> list[dict[str, Any]]:
-    values: dict[str, dict[str, Any]] = {}
+    records = []
     for item in load(DATA / "papers.json", []):
         if str(item.get("published", ""))[:4].isdigit() and int(str(item["published"])[:4]) >= 2001:
-            values[record_key(item)] = item
+            records.append(item)
     for path in sorted((DATA / "history" / "papers").glob("*/*.json")):
         for item in load(path, []):
-            key = record_key(item)
-            current = values.get(key)
-            if not current or (not current.get("abstract") and item.get("abstract")):
-                values[key] = item
+            records.append(item)
+    # 日常库在前，保留收藏使用的站内 ID；同时归并跨月份的 arXiv/期刊版本。
+    values = {item["id"]: item for item in merge_papers(records)}
+    for item in values.values():
+        item["translation_source_hash"] = source_hash(item)
     # 旧论文也应能用新增的团簇类别检索，不必等待逐月重抓所有元数据。
     topics = load(ROOT / "config" / "topics.json", {})
     classifier = Classifier(topics)
@@ -94,10 +97,10 @@ def consecutive_coverage(completed: set[str], start: str) -> str:
         year, month = (year + 1, 1) if month == 12 else (year, month + 1)
 
 
-def build_history_site() -> dict[str, Any]:
+def build_history_site(records=None) -> dict[str, Any]:
     if PUBLIC.exists():
         shutil.rmtree(PUBLIC)
-    records = all_history_records()
+    records = all_history_records() if records is None else records
     by_month: dict[str, list[dict[str, Any]]] = {}
     for item in records:
         month = str(item.get("published", ""))[:7]

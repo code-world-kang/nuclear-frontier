@@ -1,4 +1,4 @@
-import { scientificText, nuclidesIn, searchText, translationCoverage, isNimaPaper } from './research-utils.js?v=20261105-nima';
+import { scientificText, nuclidesIn, searchText, translationCoverage, isNimaPaper, translationForRecord } from './research-utils.js?v=20261106-versions';
 
 const PATH = new URL('.', window.location.href).pathname;
 // GitHub 仍是个人数据的最终来源；本地副本只用来防止“已点收藏、未提交 GitHub”时刷新丢失。
@@ -13,7 +13,7 @@ const DEFAULT_CATEGORY_ORDER = [
 const DEFAULT_FILTER_MODULE_ORDER = ['categories', 'keywords'];
 
 const state = {
-  papers: [], featured: [], news: [], notices: [], publicFavorites: [], translations: {}, referenceResources: [], noticePortals: { categories: [], entries: [] },
+  papers: [], featured: [], news: [], notices: [], publicFavorites: [], translations: {}, translationVersions: {}, referenceResources: [], noticePortals: { categories: [], entries: [] },
   meta: null, view: 'papers', category: 'all', source: 'all', query: '', searchField: 'all', sort: 'date', scope: 'daily-focus', visible: 20,
   dateFrom: '', dateTo: '', favoriteKeyword: 'all', favoriteDraft: null, inlineNoteId: '', inlineCitationId: '', citationDraft: null, mySection: 'papers', referenceGroup: 'all', translatedIds: new Set(),
   selectedPaperId: '',
@@ -48,14 +48,7 @@ const CORE_CATEGORIES = new Set([
   'fusion', 'nuclear-data-applications',
 ]);
 
-const HOME_FEATURED_JOURNALS = new Map([
-  ['physical review letters', 'PRL'],
-  ['prl', 'PRL'],
-  ['nature', 'Nature'],
-  ['science', 'Science'],
-  ['nature physics', 'Nature Physics'],
-  ['nature communications', 'Nature Communications'],
-]);
+
 
 const NIMA_SOURCE = 'journal:nima';
 
@@ -65,11 +58,8 @@ function nimaPapers() {
 }
 
 function featuredWithNima() {
-  const latest = latestPaperDay();
-  const cutoff = latest ? new Date(`${latest}T00:00:00Z`) : null;
-  if (cutoff) cutoff.setUTCDate(cutoff.getUTCDate() - 30);
-  const recent = nimaPapers().filter(item => !cutoff || paperDay(item) >= cutoff.toISOString().slice(0, 10));
-  return [...new Map([...state.featured, ...recent].map(item => [item.id, item])).values()];
+  return state.papers.filter(item => homeJournalLabel(item))
+    .sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.importance || 0) - (a.importance || 0));
 }
 
 function prioritizeNima(items, limit = 24) {
@@ -561,13 +551,12 @@ function currentItems() {
   if (state.view === 'news') return state.news;
   if (state.view === 'notices') return state.notices;
   if (state.view === 'ignored') {
-    const ignored = new Set(state.personal.ignoredItems);
-    return state.papers.filter(item => ignored.has(item.id));
+    return state.papers.filter(item => isIgnored(item.id));
   }
   if (state.view === 'favorites') {
     if (state.mySection === 'translations') {
       const ids = new Set(Object.keys(state.personal.translationFavorites));
-      return state.papers.filter(item => ids.has(item.id) && Boolean(translationFor(item)));
+      return state.papers.filter(item => isTranslationFavorite(item.id));
     }
     const hidden = new Set(state.personal.hiddenPublicFavorites);
     const ids = new Set([
@@ -575,9 +564,9 @@ function currentItems() {
       ...state.publicFavorites.map(item => typeof item === 'string' ? item : item.id).filter(id => !hidden.has(id)),
     ]);
     const known = new Map([...state.papers, ...state.news, ...state.notices].map(item => [item.id, item]));
-    return [...ids].map(id => known.get(id) || favoriteSnapshotItem(favoriteRecord(id))).filter(Boolean);
+    return [...new Map([...ids].map(id => identityIndex().get(id) || known.get(id) || favoriteSnapshotItem(favoriteRecord(id))).filter(Boolean).map(item => [item.id, item])).values()];
   }
-  if (state.view === 'unread') return state.papers.filter(item => state.personal.readStatus[item.id] !== 'read');
+  if (state.view === 'unread') return state.papers.filter(item => readStatusFor(item.id) !== 'read');
   if (state.view === 'papers' && state.globalKeyword) return state.historyResults;
   return state.papers;
 }
@@ -588,23 +577,53 @@ function allKnownPapers() {
   return [...values.values()];
 }
 
+let identityCache = { papers: null, history: null, length: 0, index: new Map() };
+function identityIndex() {
+  if (identityCache.papers !== state.papers || identityCache.history !== state.historyResults || identityCache.length !== state.historyResults.length) {
+    const index = new Map();
+    [...state.historyResults, ...state.papers].forEach(item => {
+      [item.id, ...(item.record_aliases || [])].forEach(id => index.set(id, item));
+    });
+    identityCache = { papers: state.papers, history: state.historyResults, length: state.historyResults.length, index };
+  }
+  return identityCache.index;
+}
+
+function personalIds(id) {
+  const item = identityIndex().get(id);
+  return item ? [item.id, ...(item.record_aliases || [])] : [id];
+}
+
+function canonicalId(id) { return identityIndex().get(id)?.id || id; }
+
+function noteText(id) {
+  const notes = [...new Set(personalIds(id).map(key => state.personal.notes[key]).filter(value => value?.trim()))];
+  // 不静默覆盖两个版本上分别写下的笔记；用户保存编辑前只做读取汇总。
+  return notes.join('\n\n—— 另一版本的笔记 ——\n\n');
+}
+
+function readStatusFor(id) {
+  const values = personalIds(id).map(key => state.personal.readStatus[key]);
+  return values.includes('read') ? 'read' : values.includes('reading') ? 'reading' : 'unread';
+}
+
 function isPrimaryNuclear(item) {
   return (item.categories || []).some(category => PRIMARY_NUCLEAR_CATEGORIES.has(category));
 }
 
 function publicFavoriteRecord(id) {
-  if (state.personal.hiddenPublicFavorites.includes(id)) return null;
-  return state.publicFavorites.find(item => typeof item === 'object' && item.id === id) || null;
+  const ids = personalIds(id);
+  return state.publicFavorites.find(item => typeof item === 'object' && ids.includes(item.id) && !state.personal.hiddenPublicFavorites.includes(item.id)) || null;
 }
 
 function hasPublicFavorite(id) {
-  return state.publicFavorites.some(item => (typeof item === 'string' ? item : item.id) === id);
+  return state.publicFavorites.some(item => personalIds(id).includes(typeof item === 'string' ? item : item.id));
 }
 
 function favoriteRecord(id) {
-  const local = state.personal.favorites[id];
-  if (local && typeof local === 'object') return local;
-  return publicFavoriteRecord(id);
+  const ids = personalIds(id);
+  const values = ids.flatMap(key => [state.personal.favorites[key], ...state.publicFavorites.filter(item => typeof item === 'object' && item.id === key && !state.personal.hiddenPublicFavorites.includes(key))]).filter(item => item && typeof item === 'object');
+  return values.length ? { ...values[0], id: canonicalId(id), keywords: uniqueKeywords(values.flatMap(item => item.keywords || [])) } : null;
 }
 
 function favoriteSnapshotItem(record) {
@@ -725,9 +744,8 @@ function filteredItems() {
   const query = scientificText(state.query.trim()).replace(/\b([A-Z][a-z]?)-(\d{1,3})\b/g, '$2$1').toLowerCase();
   const latest = latestPaperDay();
   const focusIds = state.scope === 'daily-focus' ? dailyFocusIds() : new Set();
-  const ignored = new Set(state.personal.ignoredItems);
   const values = currentItems().filter(item => {
-    if (state.view !== 'ignored' && ignored.has(item.id)) return false;
+    if (state.view !== 'ignored' && isIgnored(item.id)) return false;
     if (!inPaperScope(item, focusIds, latest)) return false;
     if (state.category !== 'all' && !(item.categories || []).includes(state.category)) return false;
     if (!['news', 'notices'].includes(state.view) && state.source !== 'all') {
@@ -989,16 +1007,16 @@ function categoryName(id) {
 }
 
 function isFavorite(id) {
-  return Boolean(state.personal.favorites[id]) || (hasPublicFavorite(id) && !state.personal.hiddenPublicFavorites.includes(id));
+  return personalIds(id).some(key => Boolean(state.personal.favorites[key]) || (state.publicFavorites.some(item => (typeof item === 'string' ? item : item.id) === key) && !state.personal.hiddenPublicFavorites.includes(key)));
 }
 
 function isIgnored(id) {
-  return state.personal.ignoredItems.includes(id);
+  return personalIds(id).some(key => state.personal.ignoredItems.includes(key));
 }
 
 function toggleIgnored(item) {
   if (isIgnored(item.id)) {
-    state.personal.ignoredItems = state.personal.ignoredItems.filter(id => id !== item.id);
+    state.personal.ignoredItems = state.personal.ignoredItems.filter(id => !personalIds(item.id).includes(id));
     showToast('已恢复这篇论文');
   } else {
     state.personal.ignoredItems.push(item.id);
@@ -1009,29 +1027,28 @@ function toggleIgnored(item) {
 }
 
 function readingLabel(id) {
-  return { reading: '在读', read: '已读' }[state.personal.readStatus[id]] || '未读';
+  return { reading: '在读', read: '已读' }[readStatusFor(id)] || '未读';
 }
 
 function cycleReadingStatus(item) {
-  const current = state.personal.readStatus[item.id] || 'unread';
+  const current = readStatusFor(item.id);
   const next = { unread: 'reading', reading: 'read', read: 'unread' }[current];
-  if (next === 'unread') delete state.personal.readStatus[item.id];
-  else state.personal.readStatus[item.id] = next;
+  personalIds(item.id).forEach(id => delete state.personal.readStatus[id]);
+  if (next !== 'unread') state.personal.readStatus[item.id] = next;
   savePersonal();
   showToast(`已标记为${readingLabel(item.id)}`);
   refreshPaperCardViews();
 }
 
 function markOpened(item) {
-  if (!state.personal.readStatus[item.id]) {
+  if (readStatusFor(item.id) === 'unread') {
     state.personal.readStatus[item.id] = 'reading';
     savePersonal();
   }
 }
 
 function translationFor(item) {
-  const translation = state.translations[item.id] || null;
-  return translation && (translation.title_zh || translation.abstract_zh) ? translation : null;
+  return translationForRecord(item, state.translations);
 }
 
 function escapeRegExp(value = '') {
@@ -1051,13 +1068,13 @@ function translationGlossaryMatches(item) {
 }
 
 function isTranslationFavorite(id) {
-  return Boolean(state.personal.translationFavorites[id]);
+  return personalIds(id).some(key => Boolean(state.personal.translationFavorites[key]));
 }
 
 function toggleTranslationFavorite(item) {
   if (!translationFor(item)) return showToast('这篇论文暂时还没有可收藏的中文译文');
   if (isTranslationFavorite(item.id)) {
-    delete state.personal.translationFavorites[item.id];
+    personalIds(item.id).forEach(id => delete state.personal.translationFavorites[id]);
     showToast('已取消收藏译文');
   } else {
     state.personal.translationFavorites[item.id] = { id: item.id, added_at: new Date().toISOString() };
@@ -1147,7 +1164,7 @@ function zoteroPayload(item) {
     categories: (item.categories || []).map(categoryName),
     tags: item.tags || [],
     keywords: favoriteKeywords(item.id),
-    note: state.personal.notes[item.id] || '',
+    note: noteText(item.id),
     remarks: favoriteKeywords(item.id).length ? `网站收藏关键词：${favoriteKeywords(item.id).join('、')}` : '',
   };
 }
@@ -1352,13 +1369,17 @@ function openInlineNote(item) {
 }
 
 function saveInlineNote(item, value) {
-  const previous = state.personal.notes[item.id];
+  const previous = { ...state.personal.notes };
   const noteValue = String(value || '').trim();
+  if (noteValue.length > 12000) {
+    showToast('合并后的笔记超过 12000 字，请先精简；原来的各版本笔记未修改。');
+    return;
+  }
+  personalIds(item.id).forEach(id => delete state.personal.notes[id]);
   if (noteValue) state.personal.notes[item.id] = noteValue;
   else delete state.personal.notes[item.id];
   if (!savePersonal()) {
-    if (previous === undefined) delete state.personal.notes[item.id];
-    else state.personal.notes[item.id] = previous;
+    state.personal.notes = previous;
     return;
   }
   state.inlineNoteId = '';
@@ -1367,10 +1388,10 @@ function saveInlineNote(item, value) {
 }
 
 function deleteInlineNote(item) {
-  const previous = state.personal.notes[item.id];
-  delete state.personal.notes[item.id];
+  const previous = { ...state.personal.notes };
+  personalIds(item.id).forEach(id => delete state.personal.notes[id]);
   if (!savePersonal()) {
-    if (previous !== undefined) state.personal.notes[item.id] = previous;
+    state.personal.notes = previous;
     return;
   }
   state.inlineNoteId = '';
@@ -1380,7 +1401,7 @@ function deleteInlineNote(item) {
 
 function inlineNoteEditorFor(item) {
   if (state.inlineNoteId !== item.id) return null;
-  const value = state.personal.notes[item.id] || '';
+  const value = noteText(item.id);
   const section = document.createElement('section');
   section.className = 'inline-note-editor';
   section.dataset.inlineNote = item.id;
@@ -1443,6 +1464,12 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
     const preprint = document.createElement('span');
     preprint.textContent = 'PREPRINT';
     meta.append(preprint);
+  }
+  if (item.publication_status === 'published') {
+    const published = document.createElement('span');
+    published.className = 'publication-badge';
+    published.textContent = '已发表 · arXiv 已关联';
+    meta.append(published);
   }
   if ((item.importance || 0) >= 60) {
     const score = document.createElement('span');
@@ -1596,7 +1623,7 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
       actions.append(saveTranslation);
     }
 
-    const hasNote = Boolean((state.personal.notes[item.id] || '').trim());
+    const hasNote = Boolean((noteText(item.id)).trim());
     const note = document.createElement('button');
     note.type = 'button';
     note.className = `note-button${hasNote ? ' has-note' : ''}`;
@@ -2054,6 +2081,8 @@ async function saveFavoriteDraft() {
     return;
   }
   const item = draft.item;
+  const addedAt = favoriteRecord(item.id)?.added_at || new Date().toISOString();
+  personalIds(item.id).forEach(id => delete state.personal.favorites[id]);
   state.personal.favorites[item.id] = {
     id: item.id, type: item.type || 'paper', title: item.title,
     authors: item.authors || [], published: item.published || '', source: item.source || '',
@@ -2061,9 +2090,9 @@ async function saveFavoriteDraft() {
     doi: item.doi || '', arxiv_id: item.arxiv_id || '', url: item.url, pdf_url: item.pdf_url || '',
     categories: item.categories || [], tags: item.tags || [], methods: item.methods || [],
     importance: item.importance || 0, keywords,
-    added_at: new Date().toISOString(),
+    added_at: addedAt,
   };
-  state.personal.hiddenPublicFavorites = state.personal.hiddenPublicFavorites.filter(id => id !== item.id);
+  state.personal.hiddenPublicFavorites = state.personal.hiddenPublicFavorites.filter(id => !personalIds(item.id).includes(id));
   state.personal.keywords = uniqueKeywords([...state.personal.keywords, ...keywords]);
   savePersonal();
   closeFavoriteDialog();
@@ -2075,11 +2104,9 @@ async function saveFavoriteDraft() {
 }
 
 async function toggleFavorite(item, button) {
-  if (state.personal.favorites[item.id]) {
-    delete state.personal.favorites[item.id];
-    if (hasPublicFavorite(item.id) && !state.personal.hiddenPublicFavorites.includes(item.id)) {
-      state.personal.hiddenPublicFavorites.push(item.id);
-    }
+  if (isFavorite(item.id)) {
+    personalIds(item.id).forEach(id => delete state.personal.favorites[id]);
+    state.personal.hiddenPublicFavorites = [...new Set([...state.personal.hiddenPublicFavorites, ...personalIds(item.id)])];
     savePersonal();
     const active = isFavorite(item.id);
     button.textContent = active ? '★' : '☆';
@@ -2089,15 +2116,6 @@ async function toggleFavorite(item, button) {
     else refreshPaperCardViews();
     renderHomeHub();
     showToast('已取消收藏，请提交到 GitHub');
-    return;
-  }
-  if (hasPublicFavorite(item.id) && !state.personal.hiddenPublicFavorites.includes(item.id)) {
-    state.personal.hiddenPublicFavorites.push(item.id);
-    savePersonal();
-    if (state.view === 'notices') renderDailyNotices();
-    else refreshPaperCardViews();
-    renderHomeHub();
-    showToast('已隐藏，请提交到 GitHub');
     return;
   }
   openFavoriteDialog(item);
@@ -2267,30 +2285,41 @@ function citationValue(item, format = $('#citationFormat')?.value || 'bibtex') {
   return format === 'gbt7714-2025' ? toGBT7714_2025(item) : toBibTeX(item);
 }
 
+function citationVersions(item) {
+  return [{ label: item.source_type === 'journal' ? '正式期刊版（默认）' : '预印本版', item },
+    ...(item.source_type === 'journal' ? (item.versions || []).filter(version => version.source_type === 'preprint') : [])
+      .map(version => ({ label: `arXiv 预印本 ${version.arxiv_id || ''}`, item: { ...version, doi: '', source: 'arXiv' } }))];
+}
+
 function citationPanelFor(item, { compact = false } = {}) {
+  const versions = citationVersions(item);
   const panel = document.createElement('section');
   panel.className = `inline-citation-panel${compact ? ' compact' : ''}`;
   panel.dataset.inlineCitation = item.id;
   panel.innerHTML = `
     <div class="inline-panel-head"><b>Cite / 引用</b><small>引用内容在当前位置展开</small></div>
+    ${versions.length > 1 ? `<label class="inline-citation-format"><span>引用版本</span><select data-citation-version aria-label="引用版本">${versions.map((version, index) => `<option value="${index}">${text(version.label)}</option>`).join('')}</select></label>` : ''}
     <label class="inline-citation-format"><span>输出格式</span><select aria-label="引用输出格式"><option value="bibtex">BibTeX</option><option value="gbt7714-2025">GB/T 7714—2025</option></select></label>
     <textarea class="inline-citation-output" readonly spellcheck="false" aria-label="引用内容"></textarea>
     <p class="inline-citation-hint"></p>
     <div class="inline-citation-actions"><a href="https://std.samr.gov.cn/gb/search/gbDetailed?id=4507EFE13D37CB6AE06397BE0A0A601F" target="_blank" rel="noreferrer">查看国家标准 ↗</a><span></span><button type="button" data-copy-citation>复制</button><button type="button" data-download-citation>下载</button></div>`;
-  const format = $('select', panel);
+  const format = $('select[aria-label="引用输出格式"]', panel);
+  const versionSelect = $('[data-citation-version]', panel);
+  const selectedItem = () => versions[Number(versionSelect?.value || 0)].item;
   const output = $('.inline-citation-output', panel);
   const hint = $('.inline-citation-hint', panel);
   const render = () => {
-    output.value = citationValue(item, format.value);
+    output.value = citationValue(selectedItem(), format.value);
     hint.textContent = format.value === 'gbt7714-2025'
       ? '按 GB/T 7714—2025 和现有元数据生成；缺失的卷、期和页码不会虚构。'
       : 'BibTeX 优先包含作者、期刊、卷期、页码、出版社与 DOI；数据源没有的字段不会虚构。';
   };
   format.addEventListener('change', render);
-  $('[data-copy-citation]', panel).addEventListener('click', () => copyText(citationValue(item, format.value), '引用格式已复制'));
+  versionSelect?.addEventListener('change', render);
+  $('[data-copy-citation]', panel).addEventListener('click', () => copyText(citationValue(selectedItem(), format.value), '引用格式已复制'));
   $('[data-download-citation]', panel).addEventListener('click', () => {
     const isBibTeX = format.value === 'bibtex';
-    downloadText(`${citationKey(item)}.${isBibTeX ? 'bib' : 'txt'}`, citationValue(item, format.value), isBibTeX ? 'application/x-bibtex' : 'text/plain');
+    downloadText(`${citationKey(selectedItem())}.${isBibTeX ? 'bib' : 'txt'}`, citationValue(selectedItem(), format.value), isBibTeX ? 'application/x-bibtex' : 'text/plain');
     showToast(`已下载${isBibTeX ? ' BibTeX' : ' GB/T 7714—2025 引用'}`);
   });
   render();
@@ -2411,7 +2440,7 @@ function openDetails(item) {
       <button id="openCitationFromDetail">Cite</button>
       ${translation ? `<button id="toggleDetailTranslation">${translated ? '查看英文原文' : '查看中文译文'}</button>` : ''}
       <a id="detailGoogleTranslate" class="google-translation-link" href="${text(googleTranslationPageUrl(item))}" target="_blank" rel="noreferrer">Google 翻译官网 ↗</a>
-      ${item.type === 'paper' ? `<button id="openDetailNote">📝 ${state.personal.notes[item.id] ? '编辑已有笔记' : '写笔记'}</button><button id="toggleDetailIgnore" class="ignore-button${isIgnored(item.id) ? ' active' : ''}">${isIgnored(item.id) ? '恢复论文' : '忽略论文'}</button>` : ''}
+      ${item.type === 'paper' ? `<button id="openDetailNote">📝 ${noteText(item.id) ? '编辑已有笔记' : '写笔记'}</button><button id="toggleDetailIgnore" class="ignore-button${isIgnored(item.id) ? ' active' : ''}">${isIgnored(item.id) ? '恢复论文' : '忽略论文'}</button>` : ''}
     </div>
     <div class="detail-inline-citation" data-detail-citation></div>
     ${item.type === 'paper' ? '<p class="note-privacy">笔记提交后将写入 GitHub 并公开展示。</p>' : ''}
@@ -2756,6 +2785,26 @@ function renderAssistantNewsDetail(item) {
   }));
 }
 
+function paperVersionsMarkup(item) {
+  if (!item.arxiv_id) return '';
+  const arxiv = `https://arxiv.org/abs/${encodeURI(item.arxiv_id)}`;
+  const journalDoi = item.source_type === 'journal' ? item.doi : (item.publication_links || []).find(link => link.relation === 'is-preprint-of' && link.id_type === 'doi')?.id;
+  return `<section class="assistant-section paper-detail-section paper-versions">
+    <div class="assistant-section-head"><span>论文版本</span><small>${item.publication_status === 'published' ? '同一篇论文，不重复计数' : '版本关联'}</small></div>
+    <div class="assistant-paper-actions">
+      ${journalDoi ? `<a href="https://doi.org/${text(journalDoi)}" target="_blank" rel="noreferrer">正式期刊版 ↗</a>` : ''}
+      <a href="${text(arxiv)}" target="_blank" rel="noreferrer">arXiv 预印本 ↗</a>
+      <a href="https://arxiv.org/pdf/${text(item.arxiv_id)}" target="_blank" rel="noreferrer">arXiv PDF ↗</a>
+    </div>
+    <p class="version-dates">${item.preprint_published ? `预印本：${text(prettyDate(item.preprint_published))}` : ''}${item.journal_published ? ` · 正式发表：${text(prettyDate(item.journal_published))}` : ''}</p>
+    ${(item.versions || []).filter(version => version.source_type === 'preprint').map(version => {
+      const archived = state.translationVersions[version.id]?.[version.translation_source_hash];
+      const translation = translationForRecord(version, archived ? { [version.id]: archived } : state.translations);
+      return `<details><summary>展开预印本${translation ? '译文与' : ''}原文（与期刊版可能不同）</summary>${translation ? `<h4>${text(translation.title_zh)}</h4><p>${text(translation.abstract_zh)}</p><small>以上为预印本译文，不替代期刊版摘要。</small>` : ''}<h4>${text(version.title)}</h4><p>${text(version.abstract || '来源未提供摘要')}</p></details>`;
+    }).join('')}
+  </section>`;
+}
+
 function renderAssistantPaperDetail(item) {
   if (item.type === 'news') return renderAssistantNewsDetail(item);
   const host = $('#assistantPaperDetail');
@@ -2784,6 +2833,7 @@ function renderAssistantPaperDetail(item) {
       </dl>
       <div class="paper-identifiers">${identifiers.length ? identifiers.map(value => `<span>${text(value)}</span>`).join('') : '<span>暂无 DOI/arXiv 编号</span>'}</div>
     </section>
+    ${paperVersionsMarkup(item)}
     <section class="assistant-section paper-detail-section">
       <div class="assistant-section-head"><span>摘要与操作</span><small>优先展示已有中文译文</small></div>
       <p class="assistant-paper-summary">${text(localizedAbstract(item) || missingAbstractMessage(item))}</p>
@@ -2792,7 +2842,7 @@ function renderAssistantPaperDetail(item) {
         <a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">原始页面 ↗</a>
         ${item.pdf_url ? `<a href="${text(item.pdf_url)}" target="_blank" rel="noreferrer">PDF ↗</a>` : ''}
         <button type="button" class="zotero-button" data-zotero-save="${text(item.id)}">${text(zoteroButtonLabel(item))}</button>
-        <button type="button" data-assistant-note>📝 ${state.personal.notes[item.id] ? '编辑笔记' : '写笔记'}</button>
+        <button type="button" data-assistant-note>📝 ${noteText(item.id) ? '编辑笔记' : '写笔记'}</button>
         <button type="button" class="ignore-button${isIgnored(item.id) ? ' active' : ''}" data-assistant-ignore>${isIgnored(item.id) ? '恢复论文' : '忽略'}</button>
       </div>
       <div data-zotero-panel-host></div>
@@ -2840,7 +2890,7 @@ function renderPaperAssistant(items = filteredItems()) {
   if (!$('#assistantMetrics')) return;
   const favorites = items.filter(item => isFavorite(item.id)).length;
   const matched = items.filter(personalMatch).length;
-  const notes = items.filter(item => Boolean(state.personal.notes[item.id]?.trim())).length;
+  const notes = items.filter(item => Boolean(noteText(item.id).trim())).length;
   $('#assistantMetrics').innerHTML = [
     ['当前结果', items.length], ['已收藏', favorites], ['关注词命中', matched], ['有笔记', notes],
   ].map(([label, value]) => `<div class="assistant-metric"><span>${label}</span><b>${Number(value).toLocaleString('zh-CN')}</b></div>`).join('');
@@ -2859,8 +2909,8 @@ function renderPaperAssistant(items = filteredItems()) {
     : '<span class="assistant-chip empty">当前没有可统计的主题</span>';
 
   const favoriteIds = new Set([...Object.keys(state.personal.favorites), ...state.publicFavorites.map(item => typeof item === 'string' ? item : item.id)]);
-  $('#assistantFavoriteTotal').textContent = favoriteIds.size.toLocaleString('zh-CN');
-  $('#assistantUnreadTotal').textContent = state.papers.filter(item => state.personal.readStatus[item.id] !== 'read').length.toLocaleString('zh-CN');
+  $('#assistantFavoriteTotal').textContent = new Set([...favoriteIds].filter(isFavorite).map(canonicalId)).size.toLocaleString('zh-CN');
+  $('#assistantUnreadTotal').textContent = state.papers.filter(item => readStatusFor(item.id) !== 'read').length.toLocaleString('zh-CN');
   $('#assistantDailyTotal').textContent = `${state.notices.length + state.news.length}`;
 
   const selected = state.selectedPaperId ? [...allKnownPapers(), ...state.news].find(item => item.id === state.selectedPaperId) : null;
@@ -2920,10 +2970,15 @@ function clearPaperFilters() {
 }
 
 function homeJournalLabel(item) {
+  if (item.source_type === 'preprint') return '';
   if (isNimaPaper(item)) return 'NIMA';
-  const values = [item.source, item.source_short].map(value => String(value || '').trim().toLowerCase());
-  for (const value of values) {
-    if (HOME_FEATURED_JOURNALS.has(value)) return HOME_FEATURED_JOURNALS.get(value);
+  const normalize = value => String(value || '').toLowerCase().replace(/\./g, '').replace(/\s+/g, ' ').trim();
+  const values = [item.source, item.source_short, item.journal_abbrev].map(normalize);
+  const doi = String(item.doi || '').toLowerCase().replace(/^https?:\/\/(?:dx\.)?doi\.org\//, '');
+  for (const group of state.meta?.featured_journals?.groups || []) {
+    if (values.some(value => value && (group.names || []).map(normalize).includes(value))
+      || values.some(value => (group.name_prefixes || []).some(prefix => value.startsWith(`${normalize(prefix)} `)))
+      || (group.doi_prefixes || []).some(prefix => doi.startsWith(prefix))) return group.label;
   }
   return '';
 }
@@ -2963,9 +3018,8 @@ function renderHomeDashboard() {
       || (b.importance || 0) - (a.importance || 0))
     .slice(0, 30);
   const seen = new Set();
-  const ignored = new Set(state.personal.ignoredItems);
   const featured = [...state.papers]
-    .filter(item => !ignored.has(item.id))
+    .filter(item => !isIgnored(item.id))
     .filter(item => homeJournalLabel(item))
     .filter(item => {
       const key = item.doi || item.id || `${item.source}:${item.title}`;
@@ -2985,7 +3039,7 @@ function renderHomeDashboard() {
 
   if (!news.length) $('#homeNewsList').innerHTML = '<p class="home-feed-empty">等待下一次自动更新。</p>';
   if (!notices.length) $('#homeNoticeList').innerHTML = '<p class="home-feed-empty">等待下一次自动更新。</p>';
-  if (!featured.length) $('#homeFeaturedList').innerHTML = '<p class="home-feed-empty">六种重点期刊暂时没有可展示的新文章。</p>';
+  if (!featured.length) $('#homeFeaturedList').innerHTML = '<p class="home-feed-empty">所选重点期刊组暂时没有可展示的新文章。</p>';
 }
 
 function noticeGroup(item) {
@@ -3294,12 +3348,12 @@ function renderHomeHub() {
     ...state.publicFavorites.map(item => typeof item === 'string' ? item : item.id).filter(id => !hiddenFavorites.has(id)),
   ]);
   const myItems = [
-    ...state.papers.filter(item => favoriteIds.has(item.id)).slice(0, 2).map(item => ({ ...item, source_short: '我的论文' })),
-    ...state.papers.filter(item => state.personal.translationFavorites[item.id]).slice(0, 1).map(item => ({ ...item, source_short: '翻译收藏' })),
+    ...state.papers.filter(item => isFavorite(item.id)).slice(0, 2).map(item => ({ ...item, source_short: '我的论文' })),
+    ...state.papers.filter(item => isTranslationFavorite(item.id)).slice(0, 1).map(item => ({ ...item, source_short: '翻译收藏' })),
     ...myCollectionItems('code').slice(0, 1).map(item => ({ ...item, source_short: '我的代码' })),
     ...myCollectionItems('references').slice(0, 1).map(item => ({ ...item, source_short: '参考资料' })),
   ];
-  const myCount = favoriteIds.size + Object.keys(state.personal.translationFavorites).length + myCollectionItems('code').length + myCollectionItems('references').length;
+  const myCount = new Set([...favoriteIds].map(canonicalId)).size + new Set(Object.keys(state.personal.translationFavorites).map(canonicalId)).size + myCollectionItems('code').length + myCollectionItems('references').length;
   host.replaceChildren(
     homeLane({ kicker: 'TODAY', title: '今日核物理', count: todayNuclear.length, items: todayNuclear, view: 'papers', tone: 'papers-lane', scope: 'daily-focus' }),
     homeLane({ kicker: 'NEWS', title: '科研新闻', count: state.news.length, items: news, view: 'news', tone: 'news-lane' }),
@@ -3337,7 +3391,7 @@ function renderBriefing() {
   $('#dailyJournalCount').textContent = journalCount.toLocaleString('zh-CN');
   $('#dailyPreprintCount').textContent = preprintCount.toLocaleString('zh-CN');
   $('#briefingSummary').textContent = items.length
-    ? `最新论文发布日期 ${latest}：${allItems.length} 篇，其中涉核 ${items.length} 篇（期刊 ${journalCount}、预印本 ${preprintCount}）。最近一次更新实际新入库 ${state.meta.status.new_counts?.papers ?? '—'} 篇。首页重点展示 NIMA 等六种期刊，论文库不受此限制。`
+    ? `最新论文发布日期 ${latest}：${allItems.length} 篇，其中涉核 ${items.length} 篇（期刊 ${journalCount}、预印本 ${preprintCount}）。最近一次更新实际新入库 ${state.meta.status.new_counts?.papers ?? '—'} 篇，预印本转正式发表 ${state.meta.status.publication_updates ?? '—'} 篇（不重复计入新增）。重点范围：NIMA、PRL、Nature 系列、Science 系列、SB／科学通报；论文库不受此限制。`
     : '尚无可用的当日元数据。';
   $('#translationProgressPercent').textContent = translationPercentLabel;
   $('#translationProgressCount').textContent = `${translatedCount.toLocaleString('zh-CN')} / ${translationTotal.toLocaleString('zh-CN')} 条已译完可获取内容`;
@@ -3410,7 +3464,7 @@ function allFavoriteKeywordStats() {
     ...Object.keys(state.personal.favorites),
     ...state.publicFavorites.map(item => typeof item === 'string' ? item : item.id).filter(id => !state.personal.hiddenPublicFavorites.includes(id)),
   ]);
-  ids.forEach(id => {
+  new Set([...ids].map(canonicalId)).forEach(id => {
     const values = favoriteKeywords(id);
     if (!values.length) uncategorized += 1;
     values.forEach(label => {
@@ -3465,7 +3519,7 @@ function renderTranslationShelfPanel() {
   panel.hidden = !visible;
   if (!visible) return;
   const rules = state.personal.translationGlossary;
-  $('#translationFavoriteCount').textContent = Object.keys(state.personal.translationFavorites).length.toLocaleString('zh-CN');
+  $('#translationFavoriteCount').textContent = new Set(Object.keys(state.personal.translationFavorites).map(canonicalId)).size.toLocaleString('zh-CN');
   $('#translationGlossaryCount').textContent = rules.length.toLocaleString('zh-CN');
   $('#translationGlossaryPreview').innerHTML = rules.length
     ? rules.slice(0, 8).map(rule => `<span><b>${text(rule.source)}</b><i>→</i>${text(rule.target)}</span>`).join('')
@@ -3718,7 +3772,9 @@ async function loadData() {
   state.historyManifest = historyManifest;
   applyPublicPersonalState(personalPayload);
   state.translations = translationPayload.items || {};
+  state.translationVersions = translationPayload.versions || {};
   Object.keys(state.translations).forEach(id => state.translatedIds.add(id));
+  state.papers.filter(translationFor).forEach(item => state.translatedIds.add(item.id));
   state.meta.categories.forEach(category => state.categoryMap.set(category.id, category));
   await loadCloudPersonalState();
   configureDateRangeInputs();

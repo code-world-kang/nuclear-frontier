@@ -185,3 +185,19 @@ python3 scripts/run_local_translation.py --limit 100 --batch-size 4 --max-minute
 `data/translation-run.json` 记录真实批次结果；`data/translation-sol-retries.json` 记录 Sol 重试状态。保留旧离线脚本仅用于人工比较，不再自动启动。
 
 国内收藏同步仍需有效的腾讯云登录以及真实主站验证；未取得合法访问时不修改密码、不替换云存储，不把静态站误报为已经跨设备同步。2026-09-05 从旧部署记录找回的地址为 `https://nuclear-frontier-402lzxdr.edgeone.cool`，当日首页及 `/api/personal-state` 均返回 EdgeOne 401（访问受限或授权失效），不是有效公开快照，因此没有盲目配置备份地址。
+
+
+## 论文版本关联（2026-11）
+
+- 日常采集与全历史索引共用归并规则：相同 DOI、去版本号的 arXiv ID、Crossref 明确的 `has-preprint` / `is-preprint-of` 关系优先；无强标识时只允许标准化题目完全相同且作者吻合，不进行模糊标题自动合并。不同期刊 DOI 的勘误、评论等保持独立。
+- 每日采集按轮转队列检查最多 120 条预印本的 arXiv 官方发表关联；使用单连接和不少于 3 秒的请求间隔，7 天复查间隔。来源未提供 DOI 时不会猜测已发表；查不到或请求失败不删除原记录。字段依据 [arXiv API 手册](https://info.arxiv.org/help/api/user-manual.html) 与 [Crossref 关联元数据](https://www.crossref.org/documentation/schema-library/markup-guide-metadata-segments/relationships/)。
+- 已发表版本优先展示期刊元数据，保留 `record_aliases`、预印本原始题目/摘要、两种版本链接及各自日期。Cite 默认期刊版，可在下方切换预印本；期刊缺摘要时保留已有预印本摘要并标注来源，不将两个摘要拼接。
+- 收藏、关键词、笔记、忽略和阅读状态按旧 ID 兼容读取；两份不同笔记同时显示，直到用户主动编辑合并。构建过程不改写个人数据。历史原始分片保留，发布索引按合并后的论文计数。
+- 相同源文才复用旧 ID 的译文；正式版本源文变化会重新排队，旧译文不冒充新摘要。新译文写入前，上一版按源文哈希归档到翻译数据的 `versions` 中；右侧预印本展开区可显示对应旧译文。只做源文对应保护，不恢复数字、公式、术语等内容质量拦截。
+- 每日统计把“新入库论文”与“预印本转正式发表”分开；历史去重清理不冒充当日新增。采集与元数据不完整时仍可能存在未识别版本，不保证零遗漏。
+
+### 重点文献期刊范围
+
+重点文献统一使用 `config/featured-journals.json`：NIMA、PRL、Nature 系列、Science 系列、SB / Science Bulletin（含中文《科学通报》）。首页和论文“重点”选项共用该范围，NIMA 仍保留最多四个首页优先位置；这里只是个人关注范围，不代表文章质量评价。
+
+在原有 Nature、Nature Physics、Nature Astronomy、Nature Communications、Science 和 Science Bulletin 来源基础上，新增已核对 Crossref ISSN 的 Communications Physics、Nature Materials、Nature Photonics、Nature Computational Science、npj Quantum Information、Science Advances 和中文《科学通报》。新来源从下一次每日采集开始获取文章，仍执行物理相关性筛选；未宣称全系列所有期刊、全部历史文章都已抓取。名单可继续在上述配置及 `config/sources.json` 扩展。
