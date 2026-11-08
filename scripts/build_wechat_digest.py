@@ -14,6 +14,7 @@ import re
 from datetime import datetime
 from pathlib import Path
 from typing import Any
+from paper_scope import eligible_paper
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -193,7 +194,7 @@ def markdown_item(item: dict[str, Any], translations: dict[str, Any], index: int
 
 
 def build_digest(output_dir: Path = OUTPUT, public_dir: Path = PUBLIC_OUTPUT) -> dict[str, Any]:
-    papers = load_json(DATA / "papers.json")
+    papers = [item for item in load_json(DATA / "papers.json") if eligible_paper(item)]
     news = load_json(DATA / "news.json")
     notices = load_json(DATA / "notices.json")
     status_payload = load_json(DATA / "status.json")

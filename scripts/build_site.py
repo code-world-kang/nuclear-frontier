@@ -10,6 +10,7 @@ from pathlib import Path
 
 from build_history import build_history_site, all_history_records
 from paper_identity import record_ids
+from paper_scope import eligible_paper
 from featured_journals import featured_label
 from build_wechat_digest import build_digest
 from translate_content import collect_candidates, queue_payload, source_hash
@@ -32,15 +33,18 @@ def main() -> None:
     # 统一日常库与历史索引的身份；历史原始分片、译文、笔记和收藏不改写。
     old_papers = load(DATA / "papers.json")
     daily_ids = {key for item in old_papers for key in record_ids(item)}
-    history_records = all_history_records()
+    history_records = all_history_records(include_excluded=True)
     papers = [item for item in history_records if daily_ids.intersection(record_ids(item))]
     represented = {key for item in papers for key in record_ids(item)}
     # 缺出版日期或早于历史索引起点的日常条目也必须保留。
     papers.extend({**item, "translation_source_hash": source_hash(item)} for item in old_papers if item["id"] not in represented)
+    # 源文留档保留全部记录；收录范围仅作用于公开列表、索引和待译队列。
+    (DATA / "papers.json").write_text(json.dumps(papers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    papers = [item for item in papers if eligible_paper(item)]
     featured_config = load(CONFIG / "featured-journals.json")
     featured = [item for item in papers if featured_label(item, featured_config)][:80]
     for name, value in (("papers.json", papers), ("featured.json", featured)):
-        (DATA / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        (PUBLIC_DATA / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     # 即使未配置翻译服务或首次构建，也应有真实可用的待译队列。
     queue_file = DATA / "translation-queue.json"
     old_queue = load(queue_file) if queue_file.exists() else {}
@@ -57,7 +61,7 @@ def main() -> None:
         queue["generated_at"] = old_queue["generated_at"]
     queue_file.write_text(json.dumps(queue, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for name in (
-        "papers.json", "news.json", "notices.json", "featured.json", "status.json",
+        "news.json", "notices.json", "status.json",
         "translations.zh-CN.json", "translation-queue.json", "reference-resources.json",
     ):
         shutil.copy2(DATA / name, PUBLIC_DATA / name)
@@ -78,7 +82,6 @@ def main() -> None:
                                 "alias_ids": sum(len(item.get("record_aliases", [])) for item in papers)}
     for path in (DATA / "status.json", PUBLIC_DATA / "status.json"):
         path.write_text(json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    papers = load(DATA / "papers.json")
     latest_day = max((item.get("published", "")[:10] for item in papers), default="")
     latest_papers = [item for item in papers if item.get("published", "")[:10] == latest_day]
     source_counts = Counter(item.get("source", "未知来源") for item in papers)

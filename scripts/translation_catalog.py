@@ -2,6 +2,7 @@
 from functools import lru_cache
 import json
 from pathlib import Path
+from paper_scope import eligible_paper
 
 
 def source_paths(data):
@@ -20,7 +21,7 @@ def _read_sources(signature):
     if history:
         # 日常库在前，和网站构建一样保留日常 ID 及跨月份版本别名。
         papers = merge_papers([*papers, *(item for month in history for item in month)])
-    return papers + news + notices
+    return [item for item in papers if eligible_paper(item)] + news + notices
 
 
 def source_records(root=None, *, data=None):

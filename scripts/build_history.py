@@ -13,6 +13,7 @@ from typing import Any
 from update_content import Classifier
 from paper_identity import merge_papers
 from translate_content import source_hash
+from paper_scope import eligible_paper
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -42,7 +43,7 @@ def record_key(item: dict[str, Any]) -> str:
     return f"doi:{doi}" if doi else f"id:{item.get('id', '')}"
 
 
-def all_history_records() -> list[dict[str, Any]]:
+def all_history_records(*, include_excluded=False) -> list[dict[str, Any]]:
     records = []
     for item in load(DATA / "papers.json", []):
         if str(item.get("published", ""))[:4].isdigit() and int(str(item["published"])[:4]) >= 2001:
@@ -65,7 +66,7 @@ def all_history_records() -> list[dict[str, Any]]:
             if hits and classifier.category_hits_allowed("nuclear-clusters", text, hits, item.get("source", "")):
                 item["categories"] = list(dict.fromkeys([*item.get("categories", []), "nuclear-clusters"]))
                 item["tags"] = list(dict.fromkeys([*item.get("tags", []), *hits[:2]]))
-    return list(values.values())
+    return [item for item in values.values() if include_excluded or eligible_paper(item)]
 
 
 def search_text(item: dict[str, Any]) -> str:
@@ -100,7 +101,7 @@ def consecutive_coverage(completed: set[str], start: str) -> str:
 def build_history_site(records=None) -> dict[str, Any]:
     if PUBLIC.exists():
         shutil.rmtree(PUBLIC)
-    records = all_history_records() if records is None else records
+    records = all_history_records() if records is None else [item for item in records if eligible_paper(item)]
     by_month: dict[str, list[dict[str, Any]]] = {}
     for item in records:
         month = str(item.get("published", ""))[:7]

@@ -32,6 +32,7 @@ from typing import Any, Iterable
 
 from paper_identity import arxiv_key, doi_key, merge_papers, paper_change_counts, record_ids
 from featured_journals import featured_label
+from paper_scope import eligible_paper
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -1262,6 +1263,7 @@ def fetch_crossref(source: dict[str, Any], classifier: Classifier, start: str, e
                 "figure_status": "rights_unknown",
                 **crossref_citation_fields(item),
             })
+        records = [item for item in records if eligible_paper(item)]
         return records, SourceResult(source["name"], "paper", True, len(records), message)
     except Exception as exc:  # noqa: BLE001 - 单源失败不应终止整个日更
         return [], SourceResult(source["name"], "paper", False, 0, str(exc)[:240])
@@ -2171,6 +2173,7 @@ def fetch_arxiv(source: dict[str, Any], classifier: Classifier) -> tuple[list[di
                 "figures": [],
                 "figure_status": "pending" if reusable_license(item.get("rights", "")) else "license_blocked",
             })
+        records = [item for item in records if eligible_paper(item)]
         if source["mode"] == "important-ai":
             records.sort(key=lambda item: (item["importance"], item["published"]), reverse=True)
             records = records[: int(source.get("limit", 6))]
