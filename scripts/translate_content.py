@@ -19,6 +19,7 @@ import urllib.parse
 import hashlib
 from pathlib import Path
 from typing import Any
+from translation_catalog import source_records
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -117,10 +118,9 @@ def needs_translation(item: dict[str, Any], existing: dict[str, Any]) -> bool:
 def collect_candidates(existing: dict[str, Any]) -> list[dict[str, Any]]:
     candidates: list[dict[str, Any]] = []
     kind_priority = {"notice": 3, "news": 2, "paper": 1}
-    for filename in ("notices.json", "news.json", "papers.json"):
-        for item in load_json(DATA / filename):
-            if needs_translation(item, existing):
-                candidates.append(item)
+    for item in source_records(data=DATA):
+        if needs_translation(item, existing):
+            candidates.append(item)
     candidates.sort(
         key=lambda item: (
             kind_priority.get(str(item.get("type")), 0),

@@ -45,7 +45,9 @@ class LocalTranslationTests(unittest.TestCase):
         sol.write_json(path, content)
 
     def snapshot(self, folder):
-        for name in local.SNAPSHOT_FILES:
+        history = [str(path.relative_to(self.remote)) for path in
+                   (self.remote / "data/history/papers").glob("*/*.json")]
+        for name in (*local.SNAPSHOT_FILES, *history):
             target = folder / name
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(self.remote / name, target)
@@ -84,6 +86,60 @@ class LocalTranslationTests(unittest.TestCase):
             self.client.commit.side_effect = self.commit
             local.run(self.args, self.root, self.client)
         self.assertEqual(model.call_count, 1)
+
+    def test_historical_paper_publishes_and_resume_does_not_translate_again(self):
+        self.save("data/papers.json", [])
+        self.save("data/history/papers/2001/01.json", [self.item])
+        self.save("data/news.json", [{**self.item, "id": "news", "type": "news"}])
+        self.args.papers_only = True
+        self.client.commit.side_effect = local.CommandError("network")
+        with patch.object(sol, "request_batch", return_value={"translations": [self.value]}) as model:
+            with self.assertRaises(local.CommandError):
+                local.run(self.args, self.root, self.client)
+            self.client.commit.side_effect = self.commit
+            result = local.run(self.args, self.root, self.client)
+        self.assertEqual(model.call_count, 1)
+        self.assertEqual(result["report"]["pending_papers"], 0)
+        self.assertEqual(result["report"]["pending"], 1)
+        self.assertEqual(result["report"]["published_ids"], ["p"])
+        self.assertNotIn("news", sol.read(self.remote / "data/translations.zh-CN.json")["items"])
+        self.assertEqual(sol.read(self.remote / "data/personal/state.json"), self.personal)
+
+    def test_changed_historical_source_is_deferred_before_publish(self):
+        bundle = self.bundle()
+        self.save("data/papers.json", [])
+        self.save("data/history/papers/2001/01.json", [{**self.item, "abstract": "Changed history."}])
+        report = local.merge_bundle(self.remote, bundle)
+        self.assertEqual(report["completed"], 0)
+        self.assertEqual(report["deferred_source_changed"], 1)
+
+    def test_git_snapshot_reads_history_from_same_revision(self):
+        client = local.GitHub(self.root)
+        shard = "data/history/papers/2001/01.json"
+        sha = "a" * 40
+        def command(args, **kwargs):
+            if args[:3] == ["git", "remote", "get-url"]:
+                return f"https://github.com/{local.REPOSITORY}.git"
+            if args[:2] == ["git", "rev-parse"]:
+                return sha
+            if args[:2] == ["git", "ls-tree"]:
+                self.assertIn(sha, args)
+                return shard + "\n"
+            if args[:2] == ["git", "show"]:
+                self.assertTrue(args[2].startswith(sha + ":"))
+                kwargs["output"].write("[]")
+            return ""
+        client.command = Mock(side_effect=command)
+        target = self.root / "snapshot"
+        self.assertEqual(client.snapshot(target), sha)
+        self.assertEqual(sol.read(target / shard), [])
+
+    def test_git_snapshot_rejects_unexpected_history_paths(self):
+        client = local.GitHub(self.root)
+        client.command = Mock(side_effect=[f"https://github.com/{local.REPOSITORY}.git", "", "a" * 40,
+                                           "data/history/papers/../../personal/state.json\n"])
+        with self.assertRaisesRegex(RuntimeError, "分片路径"):
+            client.snapshot(self.root / "snapshot")
 
     def test_publish_conflict_reloads_snapshot_without_force(self):
         self.client.commit.side_effect = [local.CommandError("conflict", 422), "b" * 40]

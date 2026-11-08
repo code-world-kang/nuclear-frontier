@@ -16,6 +16,7 @@ import tempfile
 import time
 
 from offline_translation import QualityError
+from translation_catalog import source_records
 from translate_content import (
     is_chinese, needs_translation, queue_payload, requires_translation,
     select_balanced, source_hash, source_text, write_json, translation_for, store_translation,
@@ -43,8 +44,7 @@ def read(path, default=None):
 
 
 def records(root):
-    return [item for name in ("papers", "news", "notices")
-            for item in read(root / f"data/{name}.json", [])]
+    return source_records(root)
 
 
 def pending(root, existing):
@@ -163,6 +163,40 @@ def validate_response(batch, response):
     return {x["id"]: x for x in values}
 
 
+def request_long_translation(item, terms, timeout):
+    """长摘要逐段翻译，全部成功后才交给原有原文检查与写入流程。"""
+    title = str(item.get("title", ""))
+    budget = 12000 - len(title)
+    if budget < 1:
+        raise QualityError("超长题目待处理，不截断")
+    remaining_text = source_text(item)
+    chunks = []
+    while remaining_text:
+        end = min(budget, len(remaining_text))
+        if end < len(remaining_text):
+            # 保留源文每个字符；优先完整段落/句子，其次单词边界。
+            boundaries = list(re.finditer(r"\n\n+|(?<=[.!?。！？])\s+", remaining_text[:end]))
+            end = boundaries[-1].end() if boundaries else remaining_text.rfind(" ", 0, end) + 1
+            if end <= 0:
+                raise QualityError("超长原文无法安全分段，不截断")
+        chunks.append(remaining_text[:end])
+        remaining_text = remaining_text[end:]
+    deadline = time.monotonic() + timeout
+    translated = []
+    translated_title = ""
+    for chunk in chunks:
+        remaining = deadline - time.monotonic()
+        if remaining < 1:
+            raise TimeoutError("长摘要翻译超时")
+        part = {**item, "abstract": chunk}
+        value = validate_response([part], request_batch([part], terms, remaining))[item["id"]]
+        if not value["title_zh"].strip() or not value["abstract_zh"].strip():
+            raise QualityError("模型未返回完整分段译文")
+        translated_title = translated_title or value["title_zh"]
+        translated.append(value["abstract_zh"])
+    return {"id": item["id"], "title_zh": translated_title, "abstract_zh": "\n\n".join(translated)}
+
+
 def translation_record(item, value, previous):
     """直接保存模型译文；只检查是否实际返回内容，不作译文质量拦截。"""
     result = {}
@@ -195,6 +229,8 @@ def run(args, root=ROOT, on_checkpoint=None):
     path = data / "translations.zh-CN.json"
     existing = read(path, {"items": {}}).get("items", {})
     candidates = pending(root, existing)
+    if getattr(args, "papers_only", False):
+        candidates = [item for item in candidates if item.get("type", "paper") == "paper"]
     if args.ids:
         candidates = [x for x in candidates if x["id"] in set(args.ids.split(","))]
     retry_path = data / "translation-sol-retries.json"
@@ -215,6 +251,7 @@ def run(args, root=ROOT, on_checkpoint=None):
             raise RuntimeError("已有 Sol 翻译进程运行，本次不重复启动")
         terms, _ = glossary(root)
         report = {"backend": "codex_cli", "model": MODEL, "automatic": False,
+                  "scope": "papers" if getattr(args, "papers_only", False) else "all",
                   "content_validation": "disabled",
                   "started_at": now.isoformat(), "attempted": 0, "completed": 0,
                   "failed": 0, "deferred": 0, "errors": {}}
@@ -233,19 +270,22 @@ def run(args, root=ROOT, on_checkpoint=None):
                     break
                 batch = selected[offset:offset + args.batch_size]
                 eligible = []
+                long_items = []
                 for item in batch:
                     report["attempted"] += 1
                     if len(source_text(item)) + len(str(item.get("title", ""))) > 12000:
-                        fail(item, "超长原文待分段处理，不截断")
+                        long_items.append(item)
                     else:
                         eligible.append(item)
-                if not eligible:
-                    continue
                 try:
-                    values = validate_response(eligible, request_batch(eligible, terms, min(240, remaining)))
+                    values = (validate_response(eligible, request_batch(eligible, terms, min(240, remaining)))
+                              if eligible else {})
+                    for item in long_items:
+                        remaining = args.max_minutes * 60 - (time.monotonic() - started)
+                        values[item["id"]] = request_long_translation(item, terms, min(240, remaining))
                 except (OSError, ValueError, RuntimeError, subprocess.SubprocessError) as exc:
                     reason = str(exc) if isinstance(exc, QualityError) else f"模型调用失败：{type(exc).__name__}"
-                    for item in eligible:
+                    for item in batch:
                         fail(item, reason)
                     # 登录、额度或连接错误不连续轰炸服务；下批留待重试。
                     break
@@ -253,11 +293,11 @@ def run(args, root=ROOT, on_checkpoint=None):
                 audit = output / "sol-translation-audit"
                 audit.mkdir(exist_ok=True)
                 write_json(audit / f"{now.strftime('%Y%m%dT%H%M%S')}-{os.getpid()}-{offset}.json",
-                           {"model": MODEL, "sources": eligible, "translations": list(values.values())})
+                           {"model": MODEL, "sources": batch, "translations": list(values.values())})
                 payload = read(path, {"items": {}})
                 current = payload.setdefault("items", {})
                 current_sources = {x["id"]: x for x in records(root)}
-                for item in eligible:
+                for item in batch:
                     try:
                         latest = current_sources.get(item["id"])
                         if latest is None or source_hash(latest) != source_hash(item):
@@ -283,6 +323,7 @@ def run(args, root=ROOT, on_checkpoint=None):
             report["deferred"] = len(selected) - report["attempted"]
             remaining = pending(root, read(path, {"items": {}}).get("items", {}))
             report["pending"] = len(remaining)
+            report["pending_papers"] = sum(item.get("type", "paper") == "paper" for item in remaining)
             report["service_status"] = "partial" if report["failed"] else "ready" if report["completed"] else "idle"
             if report["failed"] and not report["completed"]:
                 report["service_status"] = "failed"
@@ -300,6 +341,7 @@ def main():
     parser.add_argument("--batch-size", type=int, default=4)
     parser.add_argument("--max-minutes", type=float, default=30)
     parser.add_argument("--ids", default="")
+    parser.add_argument("--papers-only", action="store_true", help="仅翻译论文，包含全部历史分片")
     parser.add_argument("--retry-failed", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()

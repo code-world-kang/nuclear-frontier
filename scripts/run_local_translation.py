@@ -74,7 +74,12 @@ class GitHub:
         sha = self.command(["git", "rev-parse", "FETCH_HEAD"]).strip()
         if not re.fullmatch(r"[0-9a-f]{40}", sha):
             raise RuntimeError("无法确认远端版本")
-        for name in SNAPSHOT_FILES:
+        historical = self.command([
+            "git", "ls-tree", "-r", "--name-only", sha, "--", "data/history/papers",
+        ]).splitlines()
+        if any(not re.fullmatch(r"data/history/papers/\d{4}/\d{2}\.json", name) for name in historical):
+            raise RuntimeError("历史论文分片路径不符合预期，停止读取")
+        for name in (*SNAPSHOT_FILES, *historical):
             path = folder / name
             path.parent.mkdir(parents=True, exist_ok=True)
             with path.open("w", encoding="utf-8") as stream:
@@ -155,6 +160,7 @@ def merge_bundle(folder, bundle):
     report = {**bundle["report"], "completed": len(written), "published_ids": written,
               "skipped_already_translated": len(skipped), "deferred_source_changed": len(stale),
               "pending": len(remaining), "publication_started_at": now()}
+    report["pending_papers"] = sum(item.get("type", "paper") == "paper" for item in remaining)
     report["deferred"] = report.get("deferred", 0) + len(stale)
     report["service_status"] = ("partial" if report.get("failed") or stale else "ready")
     if report.get("failed") and not written:
@@ -271,6 +277,7 @@ def main():
     parser.add_argument("--max-minutes", type=float, default=30)
     parser.add_argument("--deploy-timeout", type=float, default=480)
     parser.add_argument("--ids", default="")
+    parser.add_argument("--papers-only", action="store_true", help="仅翻译论文，包含全部历史分片")
     parser.add_argument("--retry-failed", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--scheduled", action="store_true")

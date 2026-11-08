@@ -79,6 +79,16 @@ GitHub Actions 在每天北京时间 10:17 左右执行（预留 arXiv 冬令时
 
 ## 2001 年以来的历史库
 
+日常库与 `data/history/papers/YYYY/MM.json` 中的论文共用翻译队列，按同一 GitHub 提交读取，沿用论文身份归并及源文哈希检查。历史论文译文仍写入现有译文库，不改写原始论文分片或个人数据；网站载入历史结果时可直接使用对应译文。
+
+在已登录 Codex ChatGPT 和 GitHub CLI 的本机执行下列命令，可只推进论文（包括历史论文），每轮最多 100 篇，完成后提交译文并等待网站发布：
+
+```bash
+python3 scripts/run_local_translation.py --scheduled --papers-only --limit 100 --batch-size 4 --max-minutes 30 --deploy-timeout 480
+```
+
+每轮优先恢复尚未发布的结果。`pending_papers` 表示全库尚需翻译的论文数，`pending` 包含论文、新闻和通知；失败重试退避中的论文也计入待译数。缺失摘要的论文只翻译题目，不补写摘要；长摘要按段落、句子或单词边界分段，所有分段成功后才保存完整结果，不能安全分段时保留待处理。机器译文不等于人工校对。命令本身只执行一轮，不安装定时任务。
+
 - 核心回填源包括 PRC、PRL、Nuclear Physics A、Physics Letters B、NIMA、EPJ A、J. Phys. G 与 Nuclear Fusion；期刊配置可在 [`config/history_sources.json`](config/history_sources.json)继续增加。
 - 数据保存为 `data/history/papers/YYYY/MM.json`，站点构建后生成 `site/data/history/papers/`、`search/`、`stats/` 与 `manifest.json`。
 - 回填采用逐月检查点；某个来源临时失败时该月不会标记完成，下一次自动任务会优先重试。

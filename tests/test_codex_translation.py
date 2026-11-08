@@ -99,15 +99,68 @@ class SolTranslationTests(unittest.TestCase):
     def test_long_source_not_truncated(self):
         self.item["abstract"] = "Original English material. " * 600
         self.save("data/papers.json", [self.item])
-        with patch.object(sol, "request_batch") as request:
+        parts = []
+        def respond(batch, *args):
+            self.assertEqual(len(batch), 1)
+            part = batch[0]
+            self.assertLessEqual(len(part["title"]) + len(part["abstract"]), 12000)
+            parts.append(part["abstract"])
+            return {"translations": [{**self.value, "abstract_zh": f"第{len(parts)}段译文。"}]}
+        with patch.object(sol, "request_batch", side_effect=respond):
             report = sol.run(self.args, self.root)
-        request.assert_not_called()
+        self.assertEqual("".join(parts), sol.source_text(self.item))
+        self.assertGreater(len(parts), 1)
+        self.assertEqual(report["completed"], 1)
+        translated = sol.read(self.root / "data/translations.zh-CN.json")["items"]["p"]
+        self.assertEqual(translated["source_hash"], sol.source_hash(self.item))
+        self.assertIn(f"第{len(parts)}段译文。", translated["abstract_zh"])
+
+    def test_long_source_partial_failure_never_saves_partial_translation(self):
+        self.item["abstract"] = "Original English material. " * 600
+        self.save("data/papers.json", [self.item])
+        with patch.object(sol, "request_batch", side_effect=[{"translations": [self.value]}, RuntimeError("failed")]):
+            report = sol.run(self.args, self.root)
         self.assertEqual(report["failed"], 1)
         self.assertEqual(report["pending"], 1)
+        self.assertEqual(sol.read(self.root / "data/translations.zh-CN.json"), self.old)
 
     def test_missing_source_abstract_stays_empty(self):
         self.item["abstract"] = ""
         self.assertEqual(sol.translation_record(self.item, self.value, {})["abstract_zh"], "")
+
+    def test_history_duplicates_keep_daily_identity_and_queue_counts_once(self):
+        import translate_content
+        daily = {**self.item, "doi": "10.1234/paper", "source_type": "journal"}
+        self.save("data/papers.json", [daily])
+        folder = self.root / "data/history/papers/2001"
+        folder.mkdir(parents=True)
+        (folder / "01.json").write_text(json.dumps([{**daily, "id": "historic"}]))
+        values = sol.records(self.root)
+        self.assertEqual(len(values), 1)
+        self.assertEqual(values[0]["id"], "p")
+        self.assertIn("historic", values[0]["record_aliases"])
+        with patch.object(translate_content, "DATA", self.root / "data"):
+            self.assertEqual(len(translate_content.collect_candidates({})), 1)
+
+    def test_history_cache_detects_source_change_during_model_request(self):
+        self.save("data/papers.json", [])
+        path = self.root / "data/history/papers/2001/01.json"
+        path.parent.mkdir(parents=True)
+        path.write_text(json.dumps([self.item]))
+        def respond(*args):
+            path.write_text(json.dumps([{**self.item, "abstract": "Changed historical source."}]))
+            return {"translations": [self.value]}
+        with patch.object(sol, "request_batch", side_effect=respond):
+            report = sol.run(self.args, self.root)
+        self.assertEqual(report["completed"], 0)
+        self.assertEqual(report["failed"], 1)
+
+    def test_malformed_history_fails_instead_of_silently_claiming_complete(self):
+        path = self.root / "data/history/papers/2001/01.json"
+        path.parent.mkdir(parents=True)
+        path.write_text("broken JSON")
+        with self.assertRaises(json.JSONDecodeError):
+            sol.pending(self.root, {})
 
     def test_compound_unit_difference_does_not_block_translation(self):
         self.item["abstract"] = "Beam energy 49 MeV/nucleon."
