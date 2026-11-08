@@ -1,30 +1,30 @@
 # 小康康的物理世界 · 2026-11-06 科研简报
 
->今日精选 4 篇论文、4 条新闻、6 条通知；其中 3/14 条已有中文内容。
+>今日精选 4 篇论文、4 条新闻、6 条通知；其中 9/14 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[Phase-resolved X-ray spectroscopy of the Vela pulsar with NICER observations](https://doi.org/10.1051/0004-6361/202661041)**  
+1. **[利用 NICER 观测对船帆座脉冲星进行相位分辨 X 射线光谱研究](https://doi.org/10.1051/0004-6361/202661041)**  
    Astronomy and Astrophysics · 2026-11-06  
-   PSR J0835-4510 (the Vela pulsar) is the best studied pulsar in the southern hemisphere given its high radio brightness and large glitch activity. However, its X-ray brightness is lower, making the study of its X-ray profile difficult. We aim to investigate the X-ray emission of the Vela pulsar coming from the surface of the neutron star to infer the propert…
-2. **[Neutron star-companion interaction in core-collapse supernovae. Population synthesis based on detailed binary evolution models](https://doi.org/10.1051/0004-6361/202661032)**  
+   鉴于 PSR J0835-4510（船帆座脉冲星）具有较高的射电亮度和频繁的大幅自转突变活动，它是南半球研究最为充分的脉冲星。然而，其 X 射线亮度较低，使其 X 射线轮廓的研究较为困难。我们的目标是研究来自中子星表面的船帆座脉冲星 X 射线辐射，以推断其热点的性质，并评估它们是否具有共同的光谱形状。我们还旨在证实 2021 年的自转突变是否影响了这些热点。我们使用通过阿根廷射电天文研究所射电望远镜的高频次射电观测获得的星历，将船帆座脉冲星在其 2019 年自转突变之后和 2024 年自转突变之前的所有观测合并起来。我们获得了三个不同能区的折叠脉冲轮廓，随后研究了它们的相位分辨能谱。我们还分析了一次观测，以量化脉冲星对 所探测到的软 X 射线总辐射的贡献， 无法在空间上将脉冲星与周围的脉冲星风云（PWN）分辨…
+2. **[核心坍缩超新星中的中子星—伴星相互作用：基于详细双星演化模型的种群综合](https://doi.org/10.1051/0004-6361/202661032)**  
    Astronomy and Astrophysics · 2026-11-06  
-   Most massive stars live in binary systems. When the first supernova in a binary occurs, the ejecta hit the companion, which may inflate as a consequence, and then interact with the newly formed compact object. The recent Type Ic supernova shows a periodic modulation in its emission, which is interpreted as evidence of such interaction. 2022jli We derive pre…
-3. **[Contributions of massive stars and classical novae to Galactic Al 26](https://doi.org/10.1051/0004-6361/202660873)**  
+   大多数大质量恒星存在于双星系统中。当双星中的第一次超新星发生时，抛射物撞击伴星，伴星可能因此膨胀，随后与新形成的致密天体相互作用。近期的 Ic 型超新星在其辐射中呈现周期性调制，这被解释为此类相互作用的证据。2022jli 我们推导了呈现这些致密天体--伴星相互作用（CCI）的超新星的发生率和可观测量的预测。我们分析了一个全面、最先进的详细双星恒星演化模型网格，并实施了解析处方来描述伴星与超新星抛射物相互作用后的膨胀。随后，我们采用新开发的种群综合代码，推导受 CCI 影响的超新星及其伴星性质的分布函数，其中使用了不同的可爆性和中子星诞生踢速分布。SN-ORACLE 我们发现，在产生贫氢核心坍缩超新星且未被瓦解的双星系统中，预计超过一半会发生周期性 CCI，而在产生富氢超新星的系统中，其发生率很低。我们发现了…
+3. **[大质量恒星和经典新星对银河系 Al 26 的贡献](https://doi.org/10.1051/0004-6361/202660873)**  
    Astronomy and Astrophysics · 2026-11-06  
-   The radioactive isotope is believed to be mainly produced by massive stars and ejected into the interstellar medium through their winds and supernovae. Due to its lifetime of 1.04,Myr, it traces recent nucleosynthesis and star formation. The isotope Al 26 Fe 60 is similarly long-lived, with a lifetime of 3.8,Myr, and originates only in core-collapse superno…
-4. **[JWST reveals two overmassive black hole candidates in dwarf galaxies at z~0.7. Pushing black hole searches into the dwarf-galaxy regime](https://doi.org/10.1051/0004-6361/202659944)**  
+   这种放射性同位素被认为主要由大质量恒星产生，并通过其恒星风和超新星被抛射到星际介质中。由于其寿命为 1.04,Myr，它可以示踪近期的核合成和恒星形成。同位素 Al 26 Fe 60 同样长寿，寿命为 3.8,Myr，并且仅起源于核心坍缩超新星（ccSNe）。恒星演化模型与银河系化学演化（GCE）模型相结合时，往往会高估 nuc Fe 60 / 比值。种群综合模型试图通过与 1.8,MeV 衰变 γ 射线谱线进行比较，解释整个银河系中的质量及其空间分布，但只有采用增大至 ≳ 5, 的恒星形成率（SFR）才能符合观测约束。经典新星可能对其产生作出显著贡献，从而可能降低由大质量恒星推断出的 SFR，尽管先前研究表明其贡献可以忽略不计或 łeq,10%。然而，较大的新星贡献也会缓解 Al 26 Al 26 -1 A…
+4. **[JWST 揭示 z~0.7 矮星系中的两个超大质量黑洞候选体：将黑洞搜寻推进至矮星系区间](https://doi.org/10.1051/0004-6361/202659944)**  
    Astronomy and Astrophysics · 2026-11-06  
-   We report the discovery and characterisation of two compact galaxies, and at z łeq 1). Given the very low M_⋆ of the hosts, this corresponds to black hole–to–stellar mass ratios of approx4 - 60%, well above the extrapolation of local scaling relations. The lack of X-ray detections suggests the accretion may either be heavily obscured or intrinsically X-ray…
+   我们报告了两个致密星系的发现与表征，且位于 z łeq 1)。鉴于宿主的 M_⋆ 极低，这对应于约 approx4 - 60% 的黑洞–恒星质量比，远高于局域标度关系的外推值。未探测到 X 射线表明，吸积可能受到严重遮蔽，或者本征上 X 射线较弱。此外，和 z łambdałambda4959,5007, Hα) 的整体 SED 具有极端等值宽度（≳ 1000 Å），表明存在低金属丰度（Z）的年轻、由暴发主导的星族，这意味着 M_∙ ̊m M_⊙（假设爱丁顿极限吸积 λ_）；它们是在 MACS J0416.1-2403 和 GOODS-North 中识别出的。两者均呈现异常的光谱能量分布（SED），具有非常蓝的静止系紫外（UV）–光学辐射，并朝近红外（NIR）和中红外（MIR）波长陡峭上升。来自 JWST 近…
 
 ## 物理新闻
 
-- **[Atomic Wave Simulates Black Hole Properties](http://link.aps.org/doi/10.1103/Physics.19.149)**  
+- **[原子波模拟黑洞性质](http://link.aps.org/doi/10.1103/Physics.19.149)**  
    APS Physics · 2026-11-04  
-   Author(s): Susan Curtis Using sheets of light to corral waves of ultracold atoms, researchers have created an experimental platform for studying the event horizons of black holes. [Physics 19, 149] Published Wed Nov 04, 2026
-- **[A Metal with Two Heat Carriers](http://link.aps.org/doi/10.1103/Physics.19.s136)**  
+   作者：Susan Curtis 研究人员利用光片约束超冷原子波，创建了一个用于研究黑洞事件视界的实验平台。[Physics 19, 149] 发表于2026年11月04日，星期三
+- **[具有两种热载流子的金属](http://link.aps.org/doi/10.1103/Physics.19.s136)**  
    APS Physics · 2026-11-04  
-   Author(s): Ryan Wilkinson Metals typically rely on electrons to transport heat, but one has been identified that conducts heat efficiently through both electrons and phonons. [Physics 19, s136] Published Wed Nov 04, 2026
+   作者：Ryan Wilkinson 金属通常依靠电子传输热量，但已发现一种金属能够通过电子和声子高效导热。[Physics 19, s136] 发表于 2026 年 11 月 04 日，星期三
 - **[从零开始计算超导体](http://link.aps.org/doi/10.1103/Physics.19.s138)**  
    APS Physics · 2026-11-03  
    作者： Charles Day 一种新的形式化方法能够得到表征常规超导体的量，且无需可调参数。[Physics 19, s138] 发表于 Tue Nov 03, 2026
