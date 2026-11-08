@@ -1,716 +1,16 @@
 {
-  "generated_at": "2026-11-08T09:42:35.559123+00:00",
+  "generated_at": "2026-11-08T10:11:46.387287+00:00",
   "model": "gpt-5.6-sol",
   "service_status": "local_scheduled",
-  "pending": 88163,
+  "pending": 88063,
   "counts": {
-    "paper": 88163,
+    "paper": 88063,
     "news": 0,
     "notice": 0
   },
   "listed": 1000,
   "items_truncated": true,
   "items": [
-    {
-      "id": "6303ad4c278eb597",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Reference-covariant optical holonomy in finite-distance black-hole lensing",
-      "source": "PLB"
-    },
-    {
-      "id": "14e048dcdd9d9199",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Octupole deformation in even-even Ra isotopes from covariant density functional theory with localized exchange terms in a three-dimensional lattice space",
-      "source": "PLB"
-    },
-    {
-      "id": "8dc34b58be9d8044",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Exact equivalence of the observed redshift and the pulsar timing modulation in the infinitesimal-pulse limit",
-      "source": "PLB"
-    },
-    {
-      "id": "cfc2b4044dea26dd",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Dynamic CFT phase transition of RN-AdS black holes",
-      "source": "PLB"
-    },
-    {
-      "id": "4bc21444e0bc633e",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Construction and physical analysis of complexity control decoupled stellar configurations beyond general relativity",
-      "source": "PLB"
-    },
-    {
-      "id": "eb8fe3c531d58169",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Accessing zero-point fluctuations in high-energy nuclear collisions",
-      "source": "PLB"
-    },
-    {
-      "id": "6692597cbccb7627",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Thermal-hydraulic analysis and dimensional optimization of annular fuel elements for HPR1000",
-      "source": "ANE"
-    },
-    {
-      "id": "2bbd87960443615a",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Study on three-dimensional multiphysics-coupled load-following operation of small lead-cooled fast reactors for grid peak shaving",
-      "source": "ANE"
-    },
-    {
-      "id": "27b6cf6b0512c6cc",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Research on nuclear power plant sensor fault diagnosis based on DSW-TSA-MDI-LNN model",
-      "source": "ANE"
-    },
-    {
-      "id": "fec29eee3a26869f",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Recrystallization and texture evolution of FeCrAl alloy tubes during Pilger cold rolling and inter-pass annealing process",
-      "source": "ANE"
-    },
-    {
-      "id": "3ed16c9826950e65",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Prediction of critical heat flux under non-uniform heating in a 3 × 3 rod bundle based on CMFD",
-      "source": "ANE"
-    },
-    {
-      "id": "bac8a86922d59804",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Prediction of U-235 nuclide density distribution in HTR-PM operation history using long short-term memory networks",
-      "source": "ANE"
-    },
-    {
-      "id": "bf1cce73f4538912",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Parametric calculation method for prompt nuclear radiation dose fields in urban areas",
-      "source": "ANE"
-    },
-    {
-      "id": "724ad27a837f3cab",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Numerical modelling of thermo-hydro-mechano-chemical processes in a shale-based nuclear waste repository within the near-field zone",
-      "source": "ANE"
-    },
-    {
-      "id": "72d9716c5f56593d",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Nuclear renewable hybrid energy systems: a comprehensive study of integration strategies, status, economics, application, and challenges",
-      "source": "ANE"
-    },
-    {
-      "id": "ee5a7efd7862afb9",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Multi-objective optimization based on reduced order model for VHTR design",
-      "source": "ANE"
-    },
-    {
-      "id": "a625853502fb1f22",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Modeling, analysis, and program development for multi-configuration modes of the reactor cavity cooling system of high temperature gas-cooled reactor",
-      "source": "ANE"
-    },
-    {
-      "id": "e0084ab211a51b46",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Investigating thermal-hydraulic characteristics of liquid lead-bismuth eutectic flow: a novel CFD-DNN coupled prediction approach",
-      "source": "ANE"
-    },
-    {
-      "id": "f2786773d8b56a36",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Fuel-cycle-aware data structuring for predictive and diagnostic modeling of Co-58 CRUD activity in pressurized water reactors",
-      "source": "ANE"
-    },
-    {
-      "id": "3ae0d60e2d3b9a53",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Formulation and verification of a channel-wise axial homogenization method for Ants steady state nodal calculations",
-      "source": "ANE"
-    },
-    {
-      "id": "b0001b98759e6f81",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Experimental investigation on flow instability characteristics in a single helically coiled tube",
-      "source": "ANE"
-    },
-    {
-      "id": "01c142a311511828",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Evaluating the reliability of fault diagnosis in nuclear facility via uncertainty analysis",
-      "source": "ANE"
-    },
-    {
-      "id": "d853d3f52a037e7c",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Evaluating nuclear power plant safety under pipe whip: Damage modes, high-g vibration response, and design implications",
-      "source": "ANE"
-    },
-    {
-      "id": "668665c0d31ba947",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Editorial Board",
-      "source": "ANE"
-    },
-    {
-      "id": "aa2f81fc4c1a3d54",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Digital twins in nuclear science and Engineering: Bridging AI, Real-Time Data, and physical systems",
-      "source": "ANE"
-    },
-    {
-      "id": "bf695a00e8cd67d3",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Development of Cs transfer models with multi-phase, multi-components, multi-velocity thermal-hydraulics code, ASTERIA-SFR",
-      "source": "ANE"
-    },
-    {
-      "id": "e91ec3e4f25d2627",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Conceptual model for the acquirement of the requirements for inventory data",
-      "source": "ANE"
-    },
-    {
-      "id": "97236c709a19b0b0",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Comparative Analysis of ANN and Nuclear Code Predictions for Neutron-Induced Reactions on Ga and As Isotopes",
-      "source": "ARI"
-    },
-    {
-      "id": "6023176bd9e0b0fe",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Characterization of neutron-activated radionuclides in the biological shield of the TRIGA 2000 reactor using PHITS 3.34",
-      "source": "ANE"
-    },
-    {
-      "id": "1f723ff2a4e2a055",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Analysis of monitoring site selection criteria for supporting aerosol source term estimation over hilly terrain",
-      "source": "ANE"
-    },
-    {
-      "id": "df2894b0ef350f65",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "An improved response matrix derivation model for fast calculation of neutron moderation spectra",
-      "source": "ARI"
-    },
-    {
-      "id": "cc80c95c77c052c4",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "An adaptive cross-section clustering framework for ultra-fine group transport analysis of broad-spectrum assemblies",
-      "source": "ANE"
-    },
-    {
-      "id": "57291e9b0a4e4d19",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "A nonlinear optimal control approach for pressurized-water nuclear reactors",
-      "source": "ANE"
-    },
-    {
-      "id": "9b5918bb4ce0f6ae",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Λ-Gravity from entropy",
-      "source": "PLB"
-    },
-    {
-      "id": "f4f11387c9937ffb",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Timelike thin-shell gravastar configurations in bumblebee gravity",
-      "source": "PLB"
-    },
-    {
-      "id": "8d32fd11cf7ce260",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Theory-constrained hierarchical inference of primordial black holes in f(Q, T) gravity with GWTC-3",
-      "source": "PLB"
-    },
-    {
-      "id": "4db55e2c738f86ce",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Revisiting the Wess-Zumino-Witten term in nuclear and quark matter under magnetic fields and rotation",
-      "source": "PLB"
-    },
-    {
-      "id": "9a70fb4bdf1776df",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Parameter constraints on rotating ABG regular black holes from quasi-periodic oscillations",
-      "source": "PLB"
-    },
-    {
-      "id": "10b9ad04e7b7f261",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Neutron skin from conserved charge measurements at collider experiments",
-      "source": "PLB"
-    },
-    {
-      "id": "55def3178ddf5891",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Local scale symmetry and black holes",
-      "source": "PLB"
-    },
-    {
-      "id": "55fb7f5af9676f82",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "From Bertotti–Robinson to vacuum: New exact solutions in general relativity via Harrison and Inversion symmetries",
-      "source": "PLB"
-    },
-    {
-      "id": "9829953faf4d6b1c",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Epicyclic frequencies around Proca-induced black holes with primary hair",
-      "source": "PLB"
-    },
-    {
-      "id": "8b78c9bf87623e05",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Dirac production near the horizon and massive escape in Yukawa black holes with a fixed constitutive law",
-      "source": "PLB"
-    },
-    {
-      "id": "387c5d24f939b08c",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Density-driven α-particle clustering in neutron-rich oxygen isotopes",
-      "source": "PLB"
-    },
-    {
-      "id": "544ddc503261ff74",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Dark energy in non-linear f(Q,Lm) gravity with exponential parametrization of Hubble parameter",
-      "source": "PLB"
-    },
-    {
-      "id": "3a20115d9990a78e",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Black holes in thermal bath live shorter: Implications for primordial black holes",
-      "source": "PLB"
-    },
-    {
-      "id": "966464268cb481ff",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Amortized Simulation-Based Inference of Relativistic Mean-Field Couplings for Neutron-Star Equations of State",
-      "source": "PLB"
-    },
-    {
-      "id": "0a7fe979092cb932",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Addressing the ground state of the deuteron by physics-informed neural networks",
-      "source": "PLB"
-    },
-    {
-      "id": "a4a189e4b040600c",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "A Note on a High-Energy Limit of Gravitational Perturbation Theory",
-      "source": "PLB"
-    },
-    {
-      "id": "65259e4dc121bf56",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Topological inversion of the Schwarzschild event horizon: Causal decoupling in the conformally flat ghost star",
-      "source": "PLB"
-    },
-    {
-      "id": "8aabceca3f550b7c",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Topological graviton mass generation and Chern-Simons graviton scattering amplitudes",
-      "source": "PLB"
-    },
-    {
-      "id": "e2996613672c0385",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Thermodynamic volumes of extended black hole thermodynamics with auxiliary gauge fields",
-      "source": "PLB"
-    },
-    {
-      "id": "af890b476ffff63f",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "The generalized i-boson model and the BUC hierarchy",
-      "source": "PLB"
-    },
-    {
-      "id": "79c3df306a10b9b4",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Testing a quantum motivated effective black hole geometry with photon ring and orbital diagnostics",
-      "source": "PLB"
-    },
-    {
-      "id": "96473f79647a3d26",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Spontaneous wandering of the magnetic axis in pulsars: 3D magneto-thermal simulations and the imprint on braking indices",
-      "source": "A&A"
-    },
-    {
-      "id": "a2d78128234454e4",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Signature splitting and inversion in neutron-deficient 117–127 Ba isotopes: a systematic total-Routhian-surface study*",
-      "source": "CPC"
-    },
-    {
-      "id": "aff8dd58f82f8fdc",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Shadow signatures and near-horizon energy accumulation in coherent quantum sine-integral black holes",
-      "source": "PLB"
-    },
-    {
-      "id": "fa2bbf6c3d286086",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Self-consistent phonon inputs for vibrationally corrected combinatorial nuclear level densities*",
-      "source": "CPC"
-    },
-    {
-      "id": "1ca297b58ea28d0d",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Schwinger instability for near-extremal charged BTZ black hole",
-      "source": "PLB"
-    },
-    {
-      "id": "10ef47c6384edf42",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Probabilistic safety assessment in medical cyclotron facilities",
-      "source": "ANE"
-    },
-    {
-      "id": "264cc47c9bba58a7",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Open quantum battery in the background of a three-dimensional rotating black hole",
-      "source": "PLB"
-    },
-    {
-      "id": "d0a0a8055e89914f",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "On modified Hawking radiation under quantum gravity effects in the fermion sector",
-      "source": "PLB"
-    },
-    {
-      "id": "8fb41795afad0a08",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "On entropic cosmology, late-time acceleration and the quantum bounce",
-      "source": "PLB"
-    },
-    {
-      "id": "45f5ac42447d9547",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Noncommutative wormholes with generalized uncertainty principle in f(R, T) gravity: Energy conditions and gravitational wave echo time delay",
-      "source": "PLB"
-    },
-    {
-      "id": "548e77976736b580",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Non-perturbative transitions in the island formula: A finite-N resolution of the page curve kink",
-      "source": "PLB"
-    },
-    {
-      "id": "e6d4f5f93cc7ca29",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Joule Thomson expansion of κ-deformed Schwarzschild-AdS black hole",
-      "source": "PLB"
-    },
-    {
-      "id": "b9a4182adefdc0c5",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Gauge conditions in the perturbative quantization of quadratic gravity and its quantum Lagrangian",
-      "source": "PLB"
-    },
-    {
-      "id": "7bffe96bec766b77",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Entropy quantization and quasi-normal modes of dyonic Kerr-Sen black holes",
-      "source": "PLB"
-    },
-    {
-      "id": "f392faef962f7480",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Entanglement inequalities, black holes and the architecture of typical states",
-      "source": "PLB"
-    },
-    {
-      "id": "d765f3cac2017d5d",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Coherent quantum state corrections in RN–black holes: Photon dynamics, shadow casts, and energy backreaction",
-      "source": "PLB"
-    },
-    {
-      "id": "c79c2cabe6adf0ee",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Probing quantum anomaly corrections on black hole physics through chaos",
-      "source": "PLB"
-    },
-    {
-      "id": "178344e48efd46e5",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Primordial black hole interpretation of the subsolar merger event S251112cm",
-      "source": "PLB"
-    },
-    {
-      "id": "411774e75b5bb87c",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Landauer’s principle as a criterion for thermodynamic consistency in generalized black hole entropies",
-      "source": "PLB"
-    },
-    {
-      "id": "6b5c58e4a35d2155",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Tuning of generalized k-omega turbulence model for prediction of heat transfer and pressure drop for helium cooled demo FW",
-      "source": "FED"
-    },
-    {
-      "id": "c2d04c58c2e2ba84",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Transient behavior analysis of the intermediate-circuit-balanced HCPB fusion power plant",
-      "source": "FED"
-    },
-    {
-      "id": "625b5c86f68afc3f",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Thermal-hydraulic analysis of the HTS part of the hybrid Central Solenoid designed for the next generation experimental fusion device",
-      "source": "FED"
-    },
-    {
-      "id": "3d6758df7c5fea44",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Thermal-hydraulic analysis of energy storage and intermediate heat transfer systems for tokamak fusion reactors",
-      "source": "FED"
-    },
-    {
-      "id": "d882d8479d2fc9c3",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "The Helios cryostat, maintenance schemes, and cryogenic production system",
-      "source": "FED"
-    },
-    {
-      "id": "d38bf41d83bc1a22",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Performance evaluation of CAD-to-MCNP conversion tools in complex fusion systems: A case study of VUV diagnostics in JT-60SA",
-      "source": "FED"
-    },
-    {
-      "id": "d40b24c216ac06f1",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Overview of the helios design: A practical planar coil stellarator fusion power plant",
-      "source": "FED"
-    },
-    {
-      "id": "34860fdb5edcae9c",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Optical diagnostic design for measuring the radiation front with a mid-leg pumped divertor on DIII-D",
-      "source": "FED"
-    },
-    {
-      "id": "c844dc11e346a9d4",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Integrated workflow for DEMO divertor design using Reduced Order Models",
-      "source": "FED"
-    },
-    {
-      "id": "b8136d5c9fd5410f",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Influence of tritium aging and helium-3 content on fracture resistance in austenitic stainless steel GTA welds and heat-affected zones",
-      "source": "FED"
-    },
-    {
-      "id": "1e15dc75b8a89886",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Fluid dynamics simulations of gas retention systems for shattered pellet injectors",
-      "source": "FED"
-    },
-    {
-      "id": "0b5edd88072c974b",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "FEM-based plasma equilibrium reconstruction for transient and off-normal phases in KSTAR",
-      "source": "FED"
-    },
-    {
-      "id": "e733f4883d5b1a7d",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Evaluated nuclear data for the optimum cyclotron production of 169Yb",
-      "source": "RPC"
-    },
-    {
-      "id": "c97accef853106a4",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Development of a flow distributor for the actively pumped open-surface lithium loop",
-      "source": "FED"
-    },
-    {
-      "id": "ff6c542d1261cdb5",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Design trends and challenges in fusion reactor Remote Handling Systems",
-      "source": "FED"
-    },
-    {
-      "id": "01b33fb495e77b9d",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Application of the RCC-MRx entrance key to the structural design of HCCP TBM-set components",
-      "source": "FED"
-    },
-    {
-      "id": "ed9d84bb5cefdb83",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "A statistical study on as-built deviation of ITER blanket shield block interfaces",
-      "source": "FED"
-    },
-    {
-      "id": "64bb30ea2cddffde",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Unstructured mesh-based global variance reduction method for deep-penetration fusion neutronics calculations in RMC",
-      "source": "FED"
-    },
-    {
-      "id": "701d5bb91b13dc46",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Thermomechanical analysis of the conceptual design of the ITER loss alpha monitor probe head",
-      "source": "FED"
-    },
-    {
-      "id": "d8f0d87c43f101ab",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Thermoluminescence dosimetry features of highly sensitive LiF: Ba, Cu, Na-Si under X-ray irradiation",
-      "source": "RPC"
-    },
-    {
-      "id": "a4b5e5e75945791e",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Thermoluminescence characterization of smartphone screen glass for emergency retrospective dosimetry across selected phone models",
-      "source": "RPC"
-    },
-    {
-      "id": "ae9f2b935d82e414",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Testing of cold trap for removal of water vapor from helium gas for hydrogen isotope recovery system",
-      "source": "FED"
-    },
-    {
-      "id": "33947e7f3294ef11",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Study on Neutron Detection Efficiency of a Compact Plastic Scintillation Detector Based on Monte Carlo",
-      "source": "RPC"
-    },
-    {
-      "id": "b4f477e7afb2c567",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Shielding and tritium breeding performance assessment for magnetic mirror fusion devices: a parametric neutronics study with ParaTAN",
-      "source": "FED"
-    },
-    {
-      "id": "1cadd8457cba4263",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Radiation-induced effects in polytetrafluoroethylene (PTFE): Dose-response linearity and low-dose skin dosimetry",
-      "source": "RPC"
-    },
-    {
-      "id": "4f113a7f2c90a92a",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "R&D of ITER GDC power supply",
-      "source": "FED"
-    },
-    {
-      "id": "54ea28057ae4a7b0",
-      "type": "paper",
-      "published": "2026-11-01",
-      "title": "Preliminary design of DTT vacuum pumping system",
-      "source": "FED"
-    },
     {
       "id": "d77945debd864bbf",
       "type": "paper",
@@ -7010,6 +6310,706 @@
       "published": "2026-10-06",
       "title": "Systematics on cluster production and kinetic energy spectra in spallation reactions",
       "source": "PRC"
+    },
+    {
+      "id": "5a8ea06d5f328f83",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Charged-current neutrino opacity within the relativistic Hartree-Fock framework for astrophysical simulations of core-collapse supernovae and binary neutron star mergers",
+      "source": "PRD"
+    },
+    {
+      "id": "8a9bf2bd6b5cfac4",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Daily briefing: Physics Nobel for founder of neutrino-hunting observatory",
+      "source": "Nature"
+    },
+    {
+      "id": "cb023e56ec3670f2",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Emulation of coupled-channels scattering for strongly deformed nuclei",
+      "source": "nucl-th"
+    },
+    {
+      "id": "d5c0919b5a9b0732",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Description of anti-magnetic rotation in nuclei within the generalized variable moment of inertia model",
+      "source": "EPJ A"
+    },
+    {
+      "id": "0277e5b90dd62788",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Study of $\\chi_{\\mathrm{c}}$ production in pPb collisions at $\\sqrt{s_{\\mathrm{NN}}}$ = 8.16 TeV",
+      "source": "nucl-ex"
+    },
+    {
+      "id": "c4f00c4237c198c9",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Particle emission from $^{40}$Ar nuclei excited in fixed-target $^{208}$Pb+$^{40}$Ar UPC at the LH",
+      "source": "nucl-ex"
+    },
+    {
+      "id": "2821f87df1396e00",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "The flash-ionised SN Ibn 2025kzr: H-free circumstellar material formed during a precursor outburst 55 days prior to explosion",
+      "source": "A&A"
+    },
+    {
+      "id": "e11798b8e8ff577f",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Systematic description of α-induced reactions at intermediate energies within an intranuclear cascade framework",
+      "source": "PRC"
+    },
+    {
+      "id": "7814fb1a22db1f9a",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "On the frequency-dependent time lags of the intermediate polar V709 Cas",
+      "source": "MNRAS"
+    },
+    {
+      "id": "0d7da4cae7e96fdf",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Constraints from big bang nucleosynthesis and cosmological observations on varying Higgs vacuum expectation value",
+      "source": "PRD"
+    },
+    {
+      "id": "d5aea0d76698e221",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Projection of purification performance for the RELICS experiment",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "d1b7d13698bb1836",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "FPGA-based muon shower identification and graph neural network tracking algorithms for HL-LHC triggers",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "8e0bc9ec3d44ea95",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Systems analysis of reactor-scale stellarators with optimised plasma–coil spacing",
+      "source": "NF"
+    },
+    {
+      "id": "45f084da444a3f11",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "On the relationship between the H-mode separatrix density and engineering parameters across multiple tokamaks: physics-based models, regression, and extrapolations to next-step devices",
+      "source": "NF"
+    },
+    {
+      "id": "62cca7fc8acd550d",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Migration and release mechanism of hydrogen and helium in Li 2 O: a first-principles study",
+      "source": "NF"
+    },
+    {
+      "id": "aafec06701ae8b85",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Extension of the RAPDENS control-oriented model with a scrape-off layer particle balance model for ASDEX Upgrade and ITER",
+      "source": "NF"
+    },
+    {
+      "id": "34dc9cd607b345ca",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Expanding Neutron Capacity at the ESS through Symbiotic Instruments: SLEIPNIR & Remora",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "22d2be5888143d2c",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Advanced plasma sources for plasma-based particle accelerators",
+      "source": "PPCF"
+    },
+    {
+      "id": "a55fc5f1bb3cadaa",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Polyurethane Scintillators for High-Energy Physics Detectors: Optimization, Scale-up, and Radiation Response",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "7d59ed6b33a467c0",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Investigating Optical Coupling Material Candidates in NaI(Tl) Detectors for the SABRE-North Dark Matter Experiment",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "76a0df56d97f2bc4",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Automated Physics-Informed Neural-Networks-Based Calibration of Highly Segmented Silicon Telescopes",
+      "source": "cs.LG"
+    },
+    {
+      "id": "c7af49146f3cfb05",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Towards 6D Tracking: A Study Of Using Fast-Timing For Measuring Track Position, Time, And Angles",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "4aa8378c269de550",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "ToF-PAX-RIXS: A Time-of-Flight Spectrometer for combined ARPES and RIXS",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "45bf727b4f3cd7b6",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Energy, time, and position resolution measurements of an array of large tapered LYSO crystals",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "e32696ee2baf4b0e",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Covariance scaling and a dual-mode torque diagnostic in measurements of the gravitational constant",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "1c04fa97f6c5f959",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "A cryogenic apparatus with a rotatable substrate for matrix isolation spectroscopy of BaF in neon crystals down to 3.2 K",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "7396cffa4fbe19a1",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "A Cryogenic Geophone with stable response from Room Temperature to millikelvin",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "6297c545b5727e16",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Angular momentum drives proton-rich nucleosynthesis in hyperaccreting neutron stars in common envelopes",
+      "source": "MNRAS"
+    },
+    {
+      "id": "5520031eb62fb1a9",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Radiation Reaction in Relativistic Magnetized Shocks of Neutron Star Magnetospheres",
+      "source": "physics.plasm-ph"
+    },
+    {
+      "id": "e6819d7b2a5cd432",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Fast Bayesian Updating of the Neutron-Star Equation of State with Neural Posterior and Evidence Estimation",
+      "source": "astro-ph.HE"
+    },
+    {
+      "id": "b140af480516524f",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Data-driven measurements of the beauty hadron production in p-Pb collisions at \\sqrt{s_{\\mathrm{NN}}} = 5.02 and 8.16 TeV",
+      "source": "hep-ex"
+    },
+    {
+      "id": "d71fc041a307974e",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Reveal normal form structure for nonlinear map in accelerator beam physics with symplectic neural network",
+      "source": "physics.acc-ph"
+    },
+    {
+      "id": "b9cbb23c31e1352c",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Measurement of the $\\gamma\\gamma \\to \\tau \\tau$ cross section and constraints on the anomalous magnetic moment of the $\\tau$ lepton in ultraperipheral PbPb collisions at $\\sqrt{s_\\mathrm{NN}}$ = 5.02 TeV",
+      "source": "hep-ex"
+    },
+    {
+      "id": "d29e762f2bff6f4c",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Interplay between final-state nucleon distortion, nuclear transparency and intranuclear cascade models in neutrino event generators",
+      "source": "hep-ph"
+    },
+    {
+      "id": "d2e1361254587091",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Quarter-wave shift for an extra pass in an energy recovery linac",
+      "source": "physics.acc-ph"
+    },
+    {
+      "id": "ae9312558245fadc",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Effect of transition layer on wakefield in plasma waveguide",
+      "source": "physics.acc-ph"
+    },
+    {
+      "id": "d2a072cb8e9bfd59",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Design of the Electron-Beam Collimator for the Electron-Ion Collider",
+      "source": "physics.acc-ph"
+    },
+    {
+      "id": "727af77b84eb4b7c",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Dark matter in neutron stars: two-fluid $f$-mode oscillations in full general relativity",
+      "source": "astro-ph.HE"
+    },
+    {
+      "id": "159b9c263cf50c55",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Construction of Approximate Invariants Across Nonlinear Resonances",
+      "source": "physics.acc-ph"
+    },
+    {
+      "id": "04b3f70d2dd0c24c",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Rapidity-dependent charge dynamics in high-energy nuclear collisions from dynamical core-corona initialization",
+      "source": "hep-ph"
+    },
+    {
+      "id": "7ea4a61e83a18f88",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Dijet acoplanarity as a function of flattenicity in proton-proton collisions at $\\sqrt{s}=13$ TeV",
+      "source": "hep-ph"
+    },
+    {
+      "id": "065598d0b823f69a",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "The fading superorbital clock of Hercules X-1 in its 2025--2026 extended low state",
+      "source": "astro-ph.HE"
+    },
+    {
+      "id": "e02c7d3b3749751c",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Spontaneous Spin Polarization in Dense Quark Matter Reexamined",
+      "source": "hep-ph"
+    },
+    {
+      "id": "822df43d13ef5d1b",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "A Vortex Avalanche Model for Pulsar Glitches",
+      "source": "astro-ph.HE"
+    },
+    {
+      "id": "f35244ec96574119",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "A Physically Motivated Compact Parameterization of Neutron Star Atmosphere Emission for Thermal X-ray Pulse-Profile Modeling",
+      "source": "astro-ph.SR"
+    },
+    {
+      "id": "fb8a9fde2a1d36d1",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Spectral diagnosis of quantum turbulence beyond the Ehrenfest time",
+      "source": "PoP"
+    },
+    {
+      "id": "e44b7f310de1ae09",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Landau damping and mode-selective instability of a vortex gas",
+      "source": "physics.plasm-ph"
+    },
+    {
+      "id": "d04446cc91d51d23",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Phase-Resolved Ultra-High-Energy Emission Defines an Energetic Boundary for Compact-Object Engines and Dense-Matter Structure",
+      "source": "astro-ph.HE"
+    },
+    {
+      "id": "5bb1ed3807864a36",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Continuous Gravitational Waves from Thermo-Elastic Mountains in Ultraluminous X-ray Pulsars",
+      "source": "astro-ph.HE"
+    },
+    {
+      "id": "7aad8cf0ddcaf6ab",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Chiral Vortical Transport under Minimal-Length Deformations in Rotating Relativistic Matter",
+      "source": "hep-ph"
+    },
+    {
+      "id": "9f910224fdb024ef",
+      "type": "paper",
+      "published": "2026-10-06",
+      "title": "Amplitude-level NLO predictions for exclusive $J/\\psi+\\gamma$ production in ultraperipheral collisions",
+      "source": "hep-ph"
+    },
+    {
+      "id": "9babfa87c89d80d3",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Proton emission half-lives and shape coexistence for 71 ≤ Z ≤ 83 odd- Z nuclei",
+      "source": "PRC"
+    },
+    {
+      "id": "b28de7a017a73405",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Physics-informed interpretable forms for dipole resonances and quantities relevant for astrophysics",
+      "source": "PRC"
+    },
+    {
+      "id": "9d8adb17fe5ac26e",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Yrast and nonyrast spectroscopy of Po 209",
+      "source": "PRC"
+    },
+    {
+      "id": "5c640fdae866b40d",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Measurement of charged-current ν μ and ν ¯ μ cross sections on hydrocarbon in a shallow inelastic scattering region",
+      "source": "PRD"
+    },
+    {
+      "id": "abb274f89cf1a919",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Electrochemiluminescence shunt via bi-based co-reaction accelerator for the identification of pentanol isomers",
+      "source": "Nat. Commun."
+    },
+    {
+      "id": "499bdc8e0e96e992",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Analysis of the energy and angular distributions of photoneutrons from nat Pb , Au 197 , nat Sn , nat Cu , nat Fe , and nat Ti using resonance direct theory",
+      "source": "PRC"
+    },
+    {
+      "id": "b88e3b84e9d76a2f",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Effect of density dependence of the symmetry energy and effective mass on the liquid-gas phase transition in hot asymmetric nuclear matter",
+      "source": "PRC"
+    },
+    {
+      "id": "5298532a3f7f6d52",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Deformation-driven intruder states in light island-of-inversion nuclei",
+      "source": "PRC"
+    },
+    {
+      "id": "fe8d781e539c5ac7",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Conformal prediction for uncertainties in the neutron star equation of state",
+      "source": "PRC"
+    },
+    {
+      "id": "9207a35c2906e1c9",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Impact of magnetic field topology on electromagnetic and gravitational waves from binary neutron star merger remnants",
+      "source": "PRD"
+    },
+    {
+      "id": "99cc17643b8a0bf8",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Piston-cylinder apparatus with a working volume of 22 cm3 and pressure up to 23 kbar for ultra-high-pressure synthesis in the liquid phase",
+      "source": "RSI"
+    },
+    {
+      "id": "c3e6ef3990d17848",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Ab initio Green's function theory of superfluid neutron matter",
+      "source": "nucl-th"
+    },
+    {
+      "id": "36b82c28113f4597",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "AI-Assisted GPU optimization of the Stochastic Variational Method for Few-Body Boson System",
+      "source": "nucl-th"
+    },
+    {
+      "id": "5a3fd4ebf6de5800",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "The Isotopic and Elemental Abundances of Planet-host-star TRAPPIST-1",
+      "source": "ApJ"
+    },
+    {
+      "id": "a7cf63c19c428ad7",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Resolving Structure within the Iron Line Profile of Serpens X-1 with XRISM and NuSTAR",
+      "source": "ApJ"
+    },
+    {
+      "id": "9b4dc28f17539e50",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "A Data-driven Model for r -Process Production Patterns",
+      "source": "ApJ"
+    },
+    {
+      "id": "aec7384e31340ce0",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Under the spell of chiral symmetry",
+      "source": "nucl-th"
+    },
+    {
+      "id": "3df03934abaef0a7",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "The causal diamond of relativistic hydrodynamics",
+      "source": "nucl-th"
+    },
+    {
+      "id": "e0e47897eecf1ee3",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Real-time decay dynamics of the low-lying $1/2^+$ state in $^9$Be: Signatures of virtual-state behavior",
+      "source": "nucl-th"
+    },
+    {
+      "id": "f75003875c1a8c61",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Bogoliubov self-consistent $GW$ and second-order Green's function methods for attractive fermionic interactions",
+      "source": "nucl-th"
+    },
+    {
+      "id": "16cf9233de0ebdfb",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Robustness of the \\textit{smartpixels} classifier for different simulated sensor geometries and non-ideal detector conditions",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "c3120f4b5ee933e7",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Uncertainty quantification of holographic transport and energy loss for the hot and baryon-dense QGP",
+      "source": "hep-ph"
+    },
+    {
+      "id": "47e2610b04a2f16d",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Towards Precision-Controlled Partonic Structures from First Principles",
+      "source": "hep-lat"
+    },
+    {
+      "id": "097ff145d21e657d",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "The QICK Box: A Modular RF Front-End System for Quantum Control and Readout",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "91639c547b6e7702",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "MOTION, a liquid xenon time projection chamber platform for high voltage technologies in dark matter detectors",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "58b0393d55257304",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Optimal state detection without likelihood estimation",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "135b18616e446a69",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "NeutronGym: Physics-Graded Neutron Instrument Design for LLM Agents",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "40b5595db533a0e3",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Development of Small-pitch, Ultra-thin 3D Silicon Sensors at USTC",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "a6543132d788efc1",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Controlled-illumination smartphone imaging for quantitative turbidity measurement and cross-device transfer",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "b62186701ea7c94b",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "A Student Sounding Rocket Experiment to Probe Electron Density in the Lower Ionosphere",
+      "source": "physics.ins-det"
+    },
+    {
+      "id": "4efb554fb2784db0",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Globular cluster formation with multiple stellar populations: A comprehensive overview of a star-cloud interaction scenario",
+      "source": "MNRAS"
+    },
+    {
+      "id": "44f8e0d50e971f54",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "4U 1538–52 in a heartbeat",
+      "source": "A&A"
+    },
+    {
+      "id": "735f486d352a78de",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "CP-violation or Nuclear Excitation: Reviewing the Role of Neutrino Interaction Model Uncertainties on Accelerator-Based Neutrino Oscillation Measurements",
+      "source": "hep-ph"
+    },
+    {
+      "id": "022fb9315bbd7940",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "First strength measurements of low-energy resonances in the $^{45}$Sc($p,\\gamma$)$^{46}$Ti reaction and its astrophysical implications",
+      "source": "astro-ph.SR"
+    },
+    {
+      "id": "952b539812168eab",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Direct observation of saturated heat-flux inhibition by magnetic fields in laser-produced plasmas",
+      "source": "PRResearch"
+    },
+    {
+      "id": "1dc5c63bd9283bd6",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "How Quantum Is Bottomonium in the Quark-Gluon Plasma?",
+      "source": "hep-ph"
+    },
+    {
+      "id": "3c0409bef97c353b",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "First Light of Neutron Star Mergers: Off-axis Cocoon Cooling X-ray Emission from Short Gamma-Ray Burst Jets",
+      "source": "astro-ph.HE"
+    },
+    {
+      "id": "909a6ff0d014d18c",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Continuous-Wave Operation at 30 MV/m of a Superconducting Radio-Frequency Gun Cryomodule with an Exchangeable Cathode Plug",
+      "source": "physics.acc-ph"
+    },
+    {
+      "id": "6c430604681b083b",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Big Bang Nucleosynthesis Constraint on $B$-mesogenesis",
+      "source": "hep-ph"
+    },
+    {
+      "id": "ba6a0e09a55d275e",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Twins in the Shadow: Phase Transitions in Proto-Neutron Stars",
+      "source": "astro-ph.HE"
+    },
+    {
+      "id": "7596abeb73a62094",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Spatiotemporal ionization dynamics in nonthermal copper plasma pumped by femtosecond relativistic laser pulse",
+      "source": "PRResearch"
+    },
+    {
+      "id": "77241321c4a962ab",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Primitive recovery methods for binary neutron star mergers with tabulated equations of state in SPHINCS_BSSN",
+      "source": "astro-ph.HE"
+    },
+    {
+      "id": "73abc9c1d6c7e24d",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Natal Kicks of Compact Binaries: I. Population Synthesis Framework and Illustrative Examples",
+      "source": "MNRAS"
+    },
+    {
+      "id": "fbc7051e5797a1aa",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Validation of first-principles turbulence simulation in diverted negative triangularity plasmas on DIII-D",
+      "source": "PoP"
+    },
+    {
+      "id": "5e694a61d33a3114",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "A Pati-Salam realization of the Nelson-Barr mechanism",
+      "source": "hep-ph"
+    },
+    {
+      "id": "de4d183e4952115e",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "Testing internal dynamics in neutron stars with radio pulsar timing",
+      "source": "astro-ph.HE"
+    },
+    {
+      "id": "a699f35b3f4b06cd",
+      "type": "paper",
+      "published": "2026-10-05",
+      "title": "A Refined Analytic Oblate--Schwarzschild Model for Thermal X-Ray Pulse Profiles of Rotating Neutron Stars",
+      "source": "astro-ph.HE"
+    },
+    {
+      "id": "b7c1236e9caa222b",
+      "type": "paper",
+      "published": "2026-10-02",
+      "title": "Thick-target Yield of $^{65}$Cu($\\alpha,n)^{68}$Ga Near Threshold and Implications for Nuclear Medicine, Deep Underground Detector Backgrounds, and Nucleosynthesis",
+      "source": "nucl-ex"
+    },
+    {
+      "id": "d5bd7b5b2f5c9310",
+      "type": "paper",
+      "published": "2026-10-02",
+      "title": "Continual learning via ensemble-based depth-wise masked autoencoders for data quality monitoring in high-energy physics",
+      "source": "JINST"
     }
   ]
 }
