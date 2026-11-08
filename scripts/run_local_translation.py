@@ -90,6 +90,7 @@ class GitHub:
         base_tree = self.api(f"git/commits/{base}")["tree"]["sha"]
         tree = []
         for name in PUBLISH_FILES:
+            print(f"正在上传 {name}（{(folder / name).stat().st_size:,} 字节）", flush=True)
             blob = self.api("git/blobs", "POST", {
                 "content": (folder / name).read_text(encoding="utf-8"), "encoding": "utf-8"})
             tree.append({"path": name, "mode": "100644", "type": "blob", "sha": blob["sha"]})

@@ -162,6 +162,19 @@ class SolTranslationTests(unittest.TestCase):
         with self.assertRaises(json.JSONDecodeError):
             sol.pending(self.root, {})
 
+    def test_public_queue_preview_does_not_cap_actual_pending_count(self):
+        candidates = [{**self.item, "id": str(i)} for i in range(1105)]
+        payload = sol.queue_payload(candidates, sol.MODEL)
+        self.assertEqual(payload["pending"], 1105)
+        self.assertEqual(payload["counts"]["paper"], 1105)
+        self.assertEqual(len(payload["items"]), 1000)
+        self.assertEqual(payload["listed"], 1000)
+        self.assertTrue(payload["items_truncated"])
+        self.assertEqual(len(candidates), 1105)
+        short = sol.queue_payload(candidates[:1], sol.MODEL)
+        self.assertEqual(short["listed"], 1)
+        self.assertFalse(short["items_truncated"])
+
     def test_compound_unit_difference_does_not_block_translation(self):
         self.item["abstract"] = "Beam energy 49 MeV/nucleon."
         self.value["abstract_zh"] = "束流能量为 49 MeV/核子。"

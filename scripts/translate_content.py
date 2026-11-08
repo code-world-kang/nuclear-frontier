@@ -133,6 +133,9 @@ def collect_candidates(existing: dict[str, Any]) -> list[dict[str, Any]]:
 
 
 def queue_payload(candidates: list[dict[str, Any]], model: str, service_status: str = "not_configured") -> dict[str, Any]:
+    # 真正的待译队列始终从源文计算；公开 JSON 只需总数和有限的预览，
+    # 避免全历史库每轮经 GitHub API 重传数十 MB 的相同题目。
+    preview_limit = 1000
     counts = {"paper": 0, "news": 0, "notice": 0}
     for item in candidates:
         counts[str(item.get("type") or "paper")] = counts.get(str(item.get("type") or "paper"), 0) + 1
@@ -142,12 +145,14 @@ def queue_payload(candidates: list[dict[str, Any]], model: str, service_status: 
         "service_status": service_status,
         "pending": len(candidates),
         "counts": counts,
+        "listed": min(len(candidates), preview_limit),
+        "items_truncated": len(candidates) > preview_limit,
         "items": [
             {
                 "id": item["id"], "type": item.get("type"), "published": item.get("published"),
                 "title": item.get("title"), "source": item.get("source_short") or item.get("source"),
             }
-            for item in candidates
+            for item in candidates[:preview_limit]
         ],
     }
 
