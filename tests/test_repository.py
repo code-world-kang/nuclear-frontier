@@ -115,7 +115,12 @@ class RepositoryTests(unittest.TestCase):
                     self.assertTrue(item.get("title_zh"))
                     self.assertTrue(item.get("abstract_zh"))
                 elif item.get("title_zh"):
-                    self.assertIn("未提供 abstract/summary", item.get("note", ""))
+                    self.assertTrue(
+                        any(message in item.get("note", "") for message in (
+                            "未提供 abstract/summary", "原始来源未提供摘要/介绍",
+                        )),
+                        "仅题目译文应注明原始来源未提供摘要/介绍",
+                    )
                     self.assertFalse(item.get("abstract_zh"))
                 else:
                     self.assertIn("跳过翻译", item.get("note", ""))
