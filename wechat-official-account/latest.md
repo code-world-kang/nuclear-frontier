@@ -1,15 +1,15 @@
 # 小康康的物理世界 · 2026-11-03 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 6/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 7/18 条已有中文内容。
 
 ## 今日重点论文
 
 1. **[与 229Th 同步的核钟](https://doi.org/10.1038/s41586-026-11122-1)**  
    Nature · 2026-10-07  
    摘要 原子钟已使时间和频率成为物理学中测量最精确的量，从实现 SI 秒 1 的微波基准发展到具有前所未有精度 2 的光钟。核钟将频率参考从电子跃迁转移至核跃迁，而 229 Th 中独特的低能、激光可访问的同质异能跃迁目前为实现紧凑、稳健的计时以及对基础物理学的灵敏检验提供了最切实可行的途径 3–8。实现这样的钟需要将 229 Th 核共振的光谱学研究 9–17 转化为一个稳定的鉴频器，以调控可溯源振荡器。在此，我们通过将连续波、窄线宽 148.4 nm 真空紫外（VUV）激光器 18 稳定到 229 Th:CaF 2 晶体 20–22 中一条已分辨、温度敏感性弱的核跃迁 17,19，实现了 229 Th 核钟。由镉蒸气中的四波混频 18,23,24 产生的 10-μW VUV 光源，以及基于光电管的频率调制吸…
-2. **[The role of ab initio beta-decay calculations in light nuclei for probes of physics beyond the standard model](https://doi.org/10.1016/j.ppnp.2026.104260)**  
+2. **[轻原子核从头算 β 衰变计算在探索超越标准模型物理中的作用](https://doi.org/10.1016/j.ppnp.2026.104260)**  
    Progress in Particle and Nuclear Physics · 2026-09-01  
-   Precision beta decay experiments serve as powerful probes of physics beyond the Standard Model, enabling stringent tests of fundamental symmetries of nature. In particular, these experiments primarily focus on precise determinations of the Cabibbo-Kobayashi-Maskawa matrix element Vud and the search for exotic weak currents, both of which depend critically o…
+   精密 β 衰变实验是探索超越标准模型物理的有力手段，能够对自然界的基本对称性进行严格检验。特别是，这些实验主要聚焦于精确确定 Cabibbo-Kobayashi-Maskawa 矩阵元 Vud 以及寻找奇异弱流，而这两者都关键依赖于对辐射修正、反冲阶修正和同位旋破缺修正进行具有量化不确定度的理论计算。近年来，以现实的核子-核子相互作用和可系统改进的近似为基础的从头算核多体方法，在计算各种原子核的这些高阶修正方面取得了长足进展。本综述全面概述了最先进的 β 衰变修正从头算计算，涵盖辐射修正和反冲阶项，并考察了它们对于精密检验标准模型的重要意义。我们讨论了所采用的理论形式体系，包括将有效场论框架与多体方法相结合。本文特别关注了超允许 Fermi 衰变（例如 10C ->10B 和 14O ->14C）以及允许的…
 3. **[$^{76}$As 到 $^{76}$Ge 第一激发态的电子俘获测量](https://doi.org/10.1103/2w69-czyv)**  
    Physical Review C · 2026-11-03  
    大型实验 LEGEND 正在搜寻 $^{76}$Ge 的无中微子双 $β$ 衰变。测量该过程的半衰期可借助核矩阵元获得中微子质量。实验上，可通过其 $\beta^-$ 衰变和电子俘获衰变的分支比研究 $^{76}$As 基态对核矩阵元的贡献。尽管从能量上 $^{76}$As 到 $^{76}$Ge 第一激发态的电子俘获是可能的，且在本工作之前曾被测量过一次，但到 $^{76}$Ge 基态的电子俘获尚未被观测到。本研究考察由薄 As$_2$O$_3$ 样品上的 $^{75}$As(n,$\gamma$) 反应产生的 $^{76}$As 的分支。硅漂移探测器测量电子俘获后内层空位导致锗原子发出的特征 X 射线。高纯锗探测器用于测量电子俘获到激发态后发射的 562.9$\,$keV $\gamma$ 射线。对两台探…
