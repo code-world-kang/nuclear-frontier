@@ -1,6 +1,6 @@
 # 小康康的物理世界 · 2026-11-03 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 7/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 8/18 条已有中文内容。
 
 ## 今日重点论文
 
@@ -22,9 +22,9 @@
 6. **[在s = 200 GeV的横向极化质子-质子碰撞中喷注内的能量相关子](https://doi.org/10.1103/fgsf-gx2q)**  
    Physical Review Letters · 2026-09-08  
    我们报告了在横向极化的质子-质子碰撞中，s = 200 GeV 条件下，利用相对论重离子对撞机上的STAR探测器首次测量了单点和双点能量相关函数。这些可观测量分别量化了单个强子和强子对在喷注内的能量加权角分布。对于π⁺、π⁻以及π⁺π⁻对，观察到显著的自旋依赖不对称性，揭示了在特定角尺度下非微扰动力学的出现。通过将碎片化动力学投影到梅林矩上，这些测量对核子的横向不对称性具有敏感性，同时最小化了来自非微扰碎片化函数的不确定性。这些结果确立了能量相关函数作为探测核子结构的一种新颖且精确的手段，并为未来电子-离子对撞机上的三维核子断层成像开辟了有前景的途径。
-7. **[First Nb 94 ( n , γ ) Measurement: Constraining the Nucleosynthetic Origin of Mo 94 in Presolar Grains](https://doi.org/10.1103/538w-rhqb)**  
+7. **[首次 Nb 94 ( n , γ ) 测量：约束前太阳颗粒中 Mo 94 的核合成起源](https://doi.org/10.1103/538w-rhqb)**  
    Physical Review Letters · 2026-08-18  
-   Isotopic measurements of presolar silicon carbide grains from dying stars have revealed a puzzling overabundance of Mo 94 that stellar nucleosynthesis models have failed to reproduce for two decades. This discrepancy challenged our understanding of the slow neutron-capture process ( s -process) that forges approximately half of the elements heavier than iro…
+   对来自濒死恒星的前太阳碳化硅颗粒进行的同位素测量揭示了令人困惑的 Mo 94 过丰度，而恒星核合成模型二十年来一直未能再现这一现象。这一差异对我们关于慢中子俘获过程（ s -过程）的理解提出了挑战，该过程生成了约一半比铁重的元素。关键的不确定性位于 Nb 94，这是一个放射性分支点，中子俘获与 β 衰变之间的竞争支配着 Mo 94 的生成，但其中子俘获截面此前从未得到测量。在此，我们报告了对 Mo 同位素丰度具有重要意义的 Nb 94 ( n , γ ) Nb 95 截面的首次实验测定。这项测量由一项协同工作实现，其中包括在德累斯顿固体与材料研究所制备高纯度靶、在格勒诺布尔劳厄-朗之万研究所制备放射性样品、在菲利根保罗·谢勒研究所进行放射化学表征，以及在飞行时间 CERN n_TOF 装置首次使用分段式总能量…
 8. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
    Physical Review Letters · 2026-08-04  
    核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
