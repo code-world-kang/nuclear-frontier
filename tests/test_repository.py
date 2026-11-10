@@ -207,7 +207,7 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("期刊官网元数据", app)
         for workflow_name in ["update-and-deploy.yml", "sync-personal.yml"]:
             workflow = (ROOT / ".github" / "workflows" / workflow_name).read_text(encoding="utf-8")
-            self.assertIn("git rebase origin/main", workflow)
+            self.assertIn("python scripts/rebase_generated.py" if workflow_name == "update-and-deploy.yml" else "git rebase origin/main", workflow)
             self.assertIn("for attempt in 1 2 3", workflow)
 
     def test_monthly_history_index_is_reconciled_and_lazy(self):
