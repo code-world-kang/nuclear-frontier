@@ -5,6 +5,8 @@ from argparse import Namespace
 from pathlib import Path
 import sys
 import tempfile
+import threading
+import time
 import unittest
 from unittest.mock import patch
 
@@ -34,6 +36,68 @@ class SolTranslationTests(unittest.TestCase):
 
     def save(self, name, value):
         (self.root / name).write_text(json.dumps(value, ensure_ascii=False))
+
+    def test_two_requests_overlap_but_checkpoints_have_one_writer(self):
+        items = [{**self.item, "id": f"p{i}", "title": f"Nuclear structure study {i}"} for i in range(4)]
+        self.save("data/papers.json", items)
+        self.args.batch_size = 1
+        self.args.workers = 2
+        gate = threading.Barrier(2)
+        main_thread = threading.get_ident()
+        saved_counts = []
+        def respond(batch, *args):
+            gate.wait(timeout=3)
+            return {"translations": [{**self.value, "id": batch[0]["id"]}]}
+        def checkpoint(payload, retries, report):
+            self.assertEqual(threading.get_ident(), main_thread)
+            saved_counts.append(report["completed"])
+        with patch.object(sol, "request_batch", side_effect=respond):
+            report = sol.run(self.args, self.root, on_checkpoint=checkpoint)
+        self.assertEqual(report["completed"], 4)
+        self.assertEqual(report["pending"], 0)
+        self.assertEqual(saved_counts, [1, 2, 3, 4, 4])
+        self.assertEqual(set(sol.read(self.root / "data/translations.zh-CN.json")["items"]),
+                         {"other", "p0", "p1", "p2", "p3"})
+        self.assertEqual(sol.read(self.root / "data/personal/state.json"), self.personal)
+
+    def test_parallel_error_stops_dispatch_and_saves_inflight_success(self):
+        items = [{**self.item, "id": f"p{i}", "title": f"Nuclear structure study {i}"} for i in range(6)]
+        self.save("data/papers.json", items)
+        self.args.batch_size = 1
+        self.args.workers = 2
+        gate = threading.Barrier(2)
+        failure_saved = threading.Event()
+        counter_lock = threading.Lock()
+        calls = []
+        def respond(batch, *args):
+            with counter_lock:
+                index = len(calls)
+                calls.append(batch[0]["id"])
+            gate.wait(timeout=3)
+            if index == 0:
+                raise RuntimeError("simulated transient failure")
+            self.assertTrue(failure_saved.wait(timeout=3))
+            return {"translations": [{**self.value, "id": batch[0]["id"]}]}
+        def checkpoint(payload, retries, report):
+            if report["failed"]:
+                failure_saved.set()
+        with patch.object(sol, "request_batch", side_effect=respond):
+            report = sol.run(self.args, self.root, on_checkpoint=checkpoint)
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(report["attempted"], 2)
+        self.assertEqual(report["completed"], 1)
+        self.assertEqual(report["failed"], 1)
+        self.assertEqual(report["deferred"], 4)
+        self.assertEqual(report["pending"], 5)
+        saved = sol.read(self.root / "data/translations.zh-CN.json")["items"]
+        self.assertIn(calls[1], saved)
+        self.assertNotIn(calls[0], saved)
+
+    def test_parallel_deadline_does_not_dispatch_more_requests(self):
+        with patch.object(sol, "request_batch") as request:
+            values = list(sol.completed_batches([self.item], {}, 1, 2, time.monotonic() + 10))
+        self.assertEqual(values, [])
+        request.assert_not_called()
 
     def test_success_preserves_existing_and_personal_data(self):
         with patch.object(sol, "request_batch", return_value={"translations": [self.value]}):

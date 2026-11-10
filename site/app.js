@@ -16,7 +16,7 @@ const state = {
   papers: [], featured: [], news: [], notices: [], publicFavorites: [], translations: {}, translationVersions: {}, referenceResources: [], noticePortals: { categories: [], entries: [] },
   meta: null, view: 'papers', category: 'all', source: 'all', query: '', searchField: 'all', sort: 'date', scope: 'daily-focus', visible: 20,
   dateFrom: '', dateTo: '', favoriteKeyword: 'all', favoriteDraft: null, inlineNoteId: '', inlineCitationId: '', citationDraft: null, mySection: 'papers', referenceGroup: 'all', translatedIds: new Set(),
-  selectedPaperId: '',
+  selectedPaperId: '', paperMetric: '',
   selectedNoticeId: '', expandedNoticeIds: new Set(),
   cloudUpdatedAt: '',
   cloudSyncAvailable: false,
@@ -30,7 +30,7 @@ const state = {
   noticePortalCategory: 'all', noticePortalQuery: '', personal: loadPersonal(), paperLayout: loadPaperLayout(),
   layoutEditing: false, draggedCategory: '', categoryMap: new Map(),
   categorySelections: { papers: 'all', news: 'all' },
-  historyManifest: null, globalKeyword: '', historyResults: [], historyMatchEntries: [],
+  historyManifest: null, globalKeyword: '', historyBrowseAll: false, historyResults: [], historyMatchEntries: [],
   historyMonthQueue: [], historyLoadedMonths: new Set(), historySearching: false,
   historyProgress: '', historyRequestToken: 0, historyTotalMatches: 0,
   zoteroStatusById: new Map(),
@@ -747,6 +747,7 @@ function filteredItems() {
   const values = currentItems().filter(item => {
     if (state.view !== 'ignored' && isIgnored(item.id)) return false;
     if (!inPaperScope(item, focusIds, latest)) return false;
+    if (state.view === 'papers' && !matchesPaperMetric(item, state.paperMetric)) return false;
     if (state.category !== 'all' && !(item.categories || []).includes(state.category)) return false;
     if (!['news', 'notices'].includes(state.view) && state.source !== 'all') {
       if (state.source === NIMA_SOURCE ? !isNimaPaper(item) : item.source !== state.source) return false;
@@ -798,6 +799,7 @@ function historyCoverageLabel() {
 function clearGlobalKeywordSearch({ render = true } = {}) {
   state.historyRequestToken += 1;
   state.globalKeyword = '';
+  state.historyBrowseAll = false;
   state.historyResults = [];
   state.historyMatchEntries = [];
   state.historyMonthQueue = [];
@@ -876,17 +878,19 @@ async function loadNextHistoryBatch() {
   }
 }
 
-async function searchAllHistory(keyword) {
-  const normalized = normalizeKeyword(keyword);
+async function searchAllHistory(keyword, { browseAll = false } = {}) {
+  const normalized = browseAll ? '全部论文' : normalizeKeyword(keyword);
   if (!normalized) return clearGlobalKeywordSearch();
   const token = state.historyRequestToken + 1;
   state.historyRequestToken = token;
   state.globalKeyword = normalized;
-  state.historyResults = [];
+  state.historyBrowseAll = browseAll;
+  state.paperMetric = '';
+  state.historyResults = browseAll ? [...state.papers] : [];
   state.historyMatchEntries = [];
   state.historyMonthQueue = [];
   state.historyLoadedMonths = new Set();
-  state.historyTotalMatches = 0;
+  state.historyTotalMatches = browseAll ? (state.meta?.paper_library?.total ?? state.papers.length) : 0;
   state.historySearching = true;
   state.historyProgress = '正在准备全库索引…';
   state.scope = 'all';
@@ -900,9 +904,9 @@ async function searchAllHistory(keyword) {
   renderCategories();
   renderGlobalKeywordPanel();
   renderCards();
-  const terms = scientificText(normalized).replace(/\b([A-Z][a-z]?)-(\d{1,3})\b/g, '$2$1').toLocaleLowerCase('zh-CN').split(/\s+/).filter(Boolean);
+  const terms = browseAll ? [] : scientificText(normalized).replace(/\b([A-Z][a-z]?)-(\d{1,3})\b/g, '$2$1').toLocaleLowerCase('zh-CN').split(/\s+/).filter(Boolean);
   const years = [...(state.historyManifest?.years || [])].sort((a, b) => b.year - a.year);
-  const matched = new Map();
+  const matched = new Map(browseAll ? state.papers.map(item => [item.id, { ...item, month: paperDay(item).slice(0, 7) }]) : []);
   try {
     for (let index = 0; index < years.length; index += 1) {
       if (token !== state.historyRequestToken) return;
@@ -921,7 +925,7 @@ async function searchAllHistory(keyword) {
     if (token !== state.historyRequestToken) return;
     state.historyMatchEntries = [...matched.values()];
     state.historyTotalMatches = state.historyMatchEntries.length;
-    state.historyMonthQueue = [...new Set(state.historyMatchEntries.map(item => item.month))].sort().reverse();
+    state.historyMonthQueue = [...new Set(state.historyMatchEntries.map(item => item.month).filter(month => /^\d{4}-\d{2}$/.test(month)))].sort().reverse();
     state.historyProgress = state.historyTotalMatches ? '索引检索完成，正在载入最新命中月份…' : '全库暂未找到匹配论文';
     if (state.historyMonthQueue.length) await loadHistoryMonths(state.historyMonthQueue.slice(0, 6), token);
     if (token !== state.historyRequestToken) return;
@@ -970,10 +974,10 @@ function renderGlobalKeywordPanel() {
     hint.textContent = '先添加个人关键词，或在右侧输入任意关键词。';
     chipHost.append(hint);
   }
-  $('#historyKeywordInput').value = state.globalKeyword;
+  $('#historyKeywordInput').value = state.historyBrowseAll ? '' : state.globalKeyword;
   $('#clearHistoryKeyword').hidden = !state.globalKeyword;
   $('#historySearchStatus').textContent = state.globalKeyword
-    ? `“${state.globalKeyword}”全库命中 ${state.historyTotalMatches.toLocaleString('zh-CN')} 篇；网页仅按月分批载入详情，不一次占满内存。${state.historyProgress ? ` ${state.historyProgress}` : ''}`
+    ? `${state.historyBrowseAll ? '全部论文' : `“${state.globalKeyword}”全库命中`} ${state.historyTotalMatches.toLocaleString('zh-CN')} 篇；网页仅按月分批载入详情，不一次占满内存。${state.historyProgress ? ` ${state.historyProgress}` : ''}`
     : '选择关键词后，会逐年检索轻量索引，并按月分批载入论文详情。';
   const stats = historyMonthStats();
   const max = Math.max(1, ...stats.map(([, count]) => count));
@@ -1801,6 +1805,13 @@ function renderCards() {
 function renderActiveFilters() {
   const host = $('#activeFilters');
   host.replaceChildren();
+  if (state.view === 'papers' && state.paperMetric) {
+    const tag = document.createElement('span');
+    tag.className = 'active-filter';
+    tag.innerHTML = `${text({ nuclear: '核物理相关', journal: '期刊论文', preprint: '预印本' }[state.paperMetric])}<button aria-label="清除论文类型">×</button>`;
+    $('button', tag).addEventListener('click', () => { state.paperMetric = ''; renderCards(); });
+    host.append(tag);
+  }
   if (state.category !== 'all') {
     const tag = document.createElement('span');
     tag.className = 'active-filter';
@@ -2952,6 +2963,7 @@ function closePaperAssistant() {
 }
 
 function clearPaperFilters() {
+  state.paperMetric = '';
   state.category = 'all';
   state.source = 'all';
   state.query = '';
@@ -3417,13 +3429,53 @@ function renderBriefing() {
   `).join('') || '<small>暂无数据</small>';
 }
 
+function beijingToday() {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+}
+
+function matchesPaperMetric(item, kind) {
+  if (kind === 'nuclear') return isPrimaryNuclear(item);
+  if (kind === 'journal' || kind === 'preprint') return item.source_type === kind && isPrimaryNuclear(item);
+  return true;
+}
+
+async function openPaperMetric(kind) {
+  if (!['latest', 'nuclear', 'journal', 'preprint', 'all', 'today'].includes(kind)) return;
+  clearGlobalKeywordSearch({ render: false });
+  state.paperMetric = ['nuclear', 'journal', 'preprint'].includes(kind) ? kind : '';
+  state.category = 'all';
+  state.categorySelections.papers = 'all';
+  state.source = 'all';
+  state.query = '';
+  state.searchField = 'all';
+  state.sort = 'date';
+  const day = kind === 'today' ? beijingToday() : (state.meta.insights?.latest_day || latestPaperDay());
+  state.scope = kind === 'all' ? 'all' : 'custom';
+  state.dateFrom = kind === 'all' ? '' : day;
+  state.dateTo = state.dateFrom;
+  $('#scopeSelect').value = state.scope;
+  $('#dateFrom').value = state.dateFrom;
+  $('#dateTo').value = state.dateTo;
+  $('#searchInput').value = '';
+  $('#searchFieldSelect').value = 'all';
+  $('#sortSelect').value = 'date';
+  renderSourceOptions();
+  $('#sourceSelect').value = 'all';
+  setView('papers');
+  const label = { latest: '最新发表日论文', nuclear: '核物理相关论文', journal: '核物理相关期刊论文', preprint: '核物理相关预印本', all: '全部论文', today: '今日发表论文' }[kind];
+  $('#sectionTitle').textContent = `${label}${kind === 'all' ? '' : ` · ${day}`}`;
+  $('#stream').scrollIntoView({ behavior: 'smooth' });
+  history.replaceState(null, '', `${PATH}#papers-${kind}`);
+  if (kind === 'all') await searchAllHistory('', { browseAll: true });
+}
+
 function renderMetrics() {
   const status = state.meta.status;
   const indexedPapers = state.meta.paper_library?.total;
   const indexedMonths = Number(state.historyManifest?.indexed_months || 0);
   $('#paperCount').textContent = indexedPapers == null ? '—' : indexedPapers.toLocaleString('zh-CN');
   $('#paperCountHint').textContent = `历史与最新收录合并去重${indexedMonths ? ` · ${indexedMonths} 个月` : ''}`;
-  const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  const today = beijingToday();
   $('#featuredCount').textContent = state.meta.paper_library
     ? (state.meta.paper_library.published_counts[today] ?? 0).toLocaleString('zh-CN') : '—';
   $('#featuredCountHint').textContent = `发表日期 ${today}（北京时间）`;
@@ -3616,6 +3668,11 @@ function saveMyItem(event) {
 }
 
 function bindEvents() {
+  $$('[data-paper-jump]').forEach(link => link.addEventListener('click', event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    if (state.meta) void openPaperMetric(link.dataset.paperJump);
+  }));
   $$('[data-nima-open]').forEach(button => button.addEventListener('click', openNimaPapers));
   $('[data-nima-toggle]').addEventListener('click', () => {
     if (state.source !== NIMA_SOURCE) return openNimaPapers();
@@ -3795,7 +3852,10 @@ async function initialize() {
     renderCategories(); renderSourceOptions(); renderHomeHub(); renderBriefing(); renderMetrics(); renderKeywords(); renderGlobalKeywordPanel(); renderHomeDashboard(); renderNoticePortal();
     const hash = location.hash.slice(1);
     const myMatch = hash.match(/^favorites-(papers|translations|code|references)$/);
-    if (myMatch) {
+    const paperMatch = hash.match(/^papers-(latest|nuclear|journal|preprint|all|today)$/);
+    if (paperMatch) {
+      await openPaperMetric(paperMatch[1]);
+    } else if (myMatch) {
       state.mySection = myMatch[1];
       setView('favorites');
     } else {

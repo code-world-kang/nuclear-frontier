@@ -14,6 +14,7 @@ import signal
 import subprocess
 import tempfile
 import time
+from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
 
 from offline_translation import QualityError
 from translation_catalog import source_records
@@ -224,6 +225,50 @@ def translation_record(item, value, previous):
     return result
 
 
+def translate_batch_until(batch, terms, deadline):
+    eligible = [item for item in batch if len(source_text(item)) + len(str(item.get("title", ""))) <= 12000]
+    long_items = [item for item in batch if item not in eligible]
+    remaining = deadline - time.monotonic()
+    if remaining <= 0:
+        raise TimeoutError("本轮翻译时间已到")
+    values = validate_response(eligible, request_batch(eligible, terms, min(240, remaining))) if eligible else {}
+    for item in long_items:
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            raise TimeoutError("本轮翻译时间已到")
+        values[item["id"]] = request_long_translation(item, terms, min(240, remaining))
+    return values
+
+
+def completed_batches(selected, terms, batch_size, workers, deadline):
+    """只并行模型请求；主线程逐批保存。失败后停止派发并收回已在途结果。"""
+    offset = 0
+    active = {}
+    halted = False
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        while active or (not halted and offset < len(selected)):
+            while not halted and len(active) < workers and offset < len(selected):
+                if deadline - time.monotonic() < 20:
+                    halted = True
+                    break
+                batch = selected[offset:offset + batch_size]
+                active[pool.submit(translate_batch_until, batch, terms, deadline)] = (offset, batch)
+                offset += len(batch)
+            if not active:
+                break
+            done, _ = wait(active, return_when=FIRST_COMPLETED)
+            results = []
+            for future in done:
+                index, batch = active.pop(future)
+                try:
+                    results.append((index, batch, future.result(), None))
+                except (OSError, ValueError, RuntimeError, subprocess.SubprocessError) as error:
+                    halted = True
+                    results.append((index, batch, None, error))
+            for result in sorted(results, key=lambda result: result[0]):
+                yield result
+
+
 def run(args, root=ROOT, on_checkpoint=None):
     data = root / "data"
     path = data / "translations.zh-CN.json"
@@ -251,6 +296,7 @@ def run(args, root=ROOT, on_checkpoint=None):
             raise RuntimeError("已有 Sol 翻译进程运行，本次不重复启动")
         terms, _ = glossary(root)
         report = {"backend": "codex_cli", "model": MODEL, "automatic": False,
+                  "workers": getattr(args, "workers", 1),
                   "scope": "papers" if getattr(args, "papers_only", False) else "all",
                   "content_validation": "disabled",
                   "started_at": now.isoformat(), "attempted": 0, "completed": 0,
@@ -264,31 +310,18 @@ def run(args, root=ROOT, on_checkpoint=None):
             report["failed"] += 1
             report["errors"][reason] = report["errors"].get(reason, 0) + 1
         try:
-            for offset in range(0, len(selected), args.batch_size):
-                remaining = args.max_minutes * 60 - (time.monotonic() - started)
-                if remaining < 20:
-                    break
-                batch = selected[offset:offset + args.batch_size]
-                eligible = []
-                long_items = []
-                for item in batch:
-                    report["attempted"] += 1
-                    if len(source_text(item)) + len(str(item.get("title", ""))) > 12000:
-                        long_items.append(item)
-                    else:
-                        eligible.append(item)
-                try:
-                    values = (validate_response(eligible, request_batch(eligible, terms, min(240, remaining)))
-                              if eligible else {})
-                    for item in long_items:
-                        remaining = args.max_minutes * 60 - (time.monotonic() - started)
-                        values[item["id"]] = request_long_translation(item, terms, min(240, remaining))
-                except (OSError, ValueError, RuntimeError, subprocess.SubprocessError) as exc:
+            for offset, batch, values, exc in completed_batches(
+                    selected, terms, args.batch_size, getattr(args, "workers", 1),
+                    started + args.max_minutes * 60):
+                report["attempted"] += len(batch)
+                if exc is not None:
                     reason = str(exc) if isinstance(exc, QualityError) else f"模型调用失败：{type(exc).__name__}"
                     for item in batch:
                         fail(item, reason)
-                    # 登录、额度或连接错误不连续轰炸服务；下批留待重试。
-                    break
+                    write_json(retry_path, retries)
+                    if on_checkpoint:
+                        on_checkpoint(read(path, {"items": {}}), retries, report)
+                    continue
                 # 仅留本机返回结果，便于追溯；不提交公开站点，也不进行内容复核。
                 audit = output / "sol-translation-audit"
                 audit.mkdir(exist_ok=True)
@@ -339,6 +372,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--limit", type=int, default=100)
     parser.add_argument("--batch-size", type=int, default=4)
+    parser.add_argument("--workers", type=int, default=1, choices=(1, 2), help="并行模型请求数；保存与发布仍串行")
     parser.add_argument("--max-minutes", type=float, default=30)
     parser.add_argument("--ids", default="")
     parser.add_argument("--papers-only", action="store_true", help="仅翻译论文，包含全部历史分片")

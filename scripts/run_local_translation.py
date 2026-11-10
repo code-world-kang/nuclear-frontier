@@ -275,6 +275,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--limit", type=int, default=100)
     parser.add_argument("--batch-size", type=int, default=4)
+    parser.add_argument("--workers", type=int, default=1, choices=(1, 2), help="并行模型请求数；保存与发布仍串行")
     parser.add_argument("--max-minutes", type=float, default=30)
     parser.add_argument("--deploy-timeout", type=float, default=480)
     parser.add_argument("--ids", default="")
