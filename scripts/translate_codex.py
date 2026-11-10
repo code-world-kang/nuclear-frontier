@@ -372,7 +372,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--limit", type=int, default=100)
     parser.add_argument("--batch-size", type=int, default=4)
-    parser.add_argument("--workers", type=int, default=1, choices=(1, 2), help="并行模型请求数；保存与发布仍串行")
+    parser.add_argument("--workers", type=int, default=1, choices=range(1, 11), help="并行模型请求数（1—10）；保存与发布仍串行")
     parser.add_argument("--max-minutes", type=float, default=30)
     parser.add_argument("--ids", default="")
     parser.add_argument("--papers-only", action="store_true", help="仅翻译论文，包含全部历史分片")

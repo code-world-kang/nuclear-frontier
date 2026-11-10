@@ -60,6 +60,32 @@ class SolTranslationTests(unittest.TestCase):
                          {"other", "p0", "p1", "p2", "p3"})
         self.assertEqual(sol.read(self.root / "data/personal/state.json"), self.personal)
 
+    def test_ten_requests_overlap_with_bounded_dispatch(self):
+        items = [{**self.item, "id": f"p{i}"} for i in range(20)]
+        gate = threading.Barrier(10)
+        guard = threading.Lock()
+        active = 0
+        peak = 0
+        main_thread = threading.get_ident()
+        def respond(batch, *args):
+            nonlocal active, peak
+            with guard:
+                active += 1
+                peak = max(peak, active)
+            gate.wait(timeout=5)
+            with guard:
+                active -= 1
+            return {batch[0]["id"]: self.value}
+        results = []
+        with patch.object(sol, "translate_batch_until", side_effect=respond):
+            for result in sol.completed_batches(items, {}, 1, 10, time.monotonic() + 60):
+                self.assertEqual(threading.get_ident(), main_thread)
+                results.append(result)
+        self.assertEqual(peak, 10)
+        self.assertEqual(active, 0)
+        self.assertEqual(sorted(result[0] for result in results), list(range(20)))
+        self.assertTrue(all(result[3] is None for result in results))
+
     def test_parallel_error_stops_dispatch_and_saves_inflight_success(self):
         items = [{**self.item, "id": f"p{i}", "title": f"Nuclear structure study {i}"} for i in range(6)]
         self.save("data/papers.json", items)
