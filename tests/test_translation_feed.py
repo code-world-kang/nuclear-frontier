@@ -44,5 +44,6 @@ class FeedTests(unittest.TestCase):
             stage(source, target)
             self.assertFalse((target / 'data/history').exists())
             self.assertTrue((source / 'data/history/manifest.json').exists())
-            self.assertTrue((target / 'data/meta.json').exists())
+            self.assertFalse((target / 'data').exists())
+            self.assertTrue((source / 'data/meta.json').exists())
             self.assertEqual((target / 'index.html').read_text(), 'page')

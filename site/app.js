@@ -1,7 +1,8 @@
 import { loadTranslationFeed } from './translation-feed.js?v=20261110-incremental';
 import { scientificText, nuclidesIn, searchText, isNimaPaper, translationForRecord } from './research-utils.js?v=20261106-versions';
 
-const HISTORY_DATA_ROOT = 'https://raw.githubusercontent.com/code-world-kang/nuclear-frontier/main/site/data/history/';
+const PUBLIC_DATA_ROOT = 'https://raw.githubusercontent.com/code-world-kang/nuclear-frontier/main/site/data/';
+const HISTORY_DATA_ROOT = `${PUBLIC_DATA_ROOT}history/`;
 const PATH = new URL('.', window.location.href).pathname;
 // GitHub 仍是个人数据的最终来源；本地副本只用来防止“已点收藏、未提交 GitHub”时刷新丢失。
 const PERSONAL_DRAFT_KEY = 'nuclear-frontier.personal.v1';
@@ -3855,7 +3856,7 @@ async function refreshTranslationFeed() {
 async function loadData() {
   const files = ['meta', 'papers', 'featured', 'news', 'notices', 'public-favorites', 'notice-portals', 'reference-resources', 'personal-state', 'translations.zh-CN'];
   const [responses, historyManifest] = await Promise.all([Promise.all(files.map(async name => {
-    const response = await fetch(`./data/${name}.json`, { cache: 'no-store' });
+    const response = await fetch(`${PUBLIC_DATA_ROOT}${name}.json`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
     return response.json();
   })), fetch(`${HISTORY_DATA_ROOT}manifest.json`, { cache: 'no-store' }).then(response => {
