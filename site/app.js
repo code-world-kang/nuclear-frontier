@@ -1,4 +1,4 @@
-import { scientificText, nuclidesIn, searchText, translationCoverage, isNimaPaper, translationForRecord } from './research-utils.js?v=20261106-versions';
+import { scientificText, nuclidesIn, searchText, isNimaPaper, translationForRecord } from './research-utils.js?v=20261106-versions';
 
 const PATH = new URL('.', window.location.href).pathname;
 // GitHub 仍是个人数据的最终来源；本地副本只用来防止“已点收藏、未提交 GitHub”时刷新丢失。
@@ -3378,14 +3378,11 @@ function renderBriefing() {
   $('#briefingDate').textContent = latest ? `${prettyDate(latest)} · 核物理相关 ${items.length} 篇` : '等待今日数据';
   const journalCount = items.filter(item => item.source_type === 'journal').length;
   const preprintCount = items.filter(item => item.source_type === 'preprint').length;
-  const translationGroups = [
-    ['论文', state.papers], ['新闻', state.news], ['通知', state.notices],
-  ].map(([label, records]) => ({ label, ...translationCoverage(records, state.translations) }));
-  const translationTotal = translationGroups.reduce((sum, group) => sum + group.total, 0);
-  const translatedCount = translationGroups.reduce((sum, group) => sum + group.complete, 0);
-  const totals = translationCoverage([...state.papers, ...state.news, ...state.notices], state.translations);
+  const library = state.meta.paper_library;
+  const translationTotal = library?.total ?? 0;
+  const translatedCount = library?.complete ?? 0;
   const translationPercent = translationTotal ? translatedCount / translationTotal * 100 : 0;
-  const translationPercentLabel = translationPercent >= 100 ? '100%' : `${translationPercent.toFixed(1)}%`;
+  const translationPercentLabel = !library ? '—' : translationPercent >= 100 ? '100%' : `${translationPercent.toFixed(1)}%`;
   $('#dailyPaperCount').textContent = allItems.length.toLocaleString('zh-CN');
   $('#dailyNuclearCount').textContent = items.length.toLocaleString('zh-CN');
   $('#dailyJournalCount').textContent = journalCount.toLocaleString('zh-CN');
@@ -3394,15 +3391,17 @@ function renderBriefing() {
     ? `最新论文发布日期 ${latest}：${allItems.length} 篇，其中涉核 ${items.length} 篇（期刊 ${journalCount}、预印本 ${preprintCount}）。最近一次更新实际新入库 ${state.meta.status.new_counts?.papers ?? '—'} 篇，预印本转正式发表 ${state.meta.status.publication_updates ?? '—'} 篇（不重复计入新增）。重点范围：NIMA、PRL、Nature 系列、Science 系列、SB／科学通报；论文库不受此限制。`
     : '尚无可用的当日元数据。';
   $('#translationProgressPercent').textContent = translationPercentLabel;
-  $('#translationProgressCount').textContent = `${translatedCount.toLocaleString('zh-CN')} / ${translationTotal.toLocaleString('zh-CN')} 条已译完可获取内容`;
+  $('#translationProgressCount').textContent = library
+    ? `${translatedCount.toLocaleString('zh-CN')} / ${translationTotal.toLocaleString('zh-CN')} 篇已完成或无需翻译`
+    : '全库统计尚未生成';
   $('#translationProgressBar').style.width = `${Math.min(100, translationPercent).toFixed(2)}%`;
   $('#translationProgressTrack').setAttribute('aria-valuenow', translationPercent.toFixed(1));
-  const serviceLabel = { local_scheduled: '本机每小时翻译与发布已配置（需电脑联网且 Codex 运行）', manual: 'Sol 直接翻译已接入（不拦截内容差异），无人值守调度尚未接通；旧 Qwen 自动翻译已停用', ready: '自动翻译最近执行成功', partial: '自动翻译已完成一批，部分内容待重试', idle: '自动翻译已启用，等待下次批处理', failed: '自动翻译暂未成功，保留原文等待重试', configured: '翻译服务已配置，待执行', not_configured: '自动翻译未连接，仅维护待译队列' }[state.meta.translation_service?.service_status] || '自动翻译服务状态未确认';
+  const serviceLabel = { local_scheduled: '本机定时翻译与发布已配置（需电脑联网且 Codex 运行）', manual: 'Sol 直接翻译已接入（不拦截内容差异），无人值守调度尚未接通；旧 Qwen 自动翻译已停用', ready: '自动翻译最近执行成功', partial: '自动翻译已完成一批，部分内容待重试', idle: '自动翻译已启用，等待下次批处理', failed: '自动翻译暂未成功，保留原文等待重试', configured: '翻译服务已配置，待执行', not_configured: '自动翻译未连接，仅维护待译队列' }[state.meta.translation_service?.service_status] || '自动翻译服务状态未确认';
   const translationRun = state.meta.translation_service?.last_run;
   const runLabel = translationRun
-    ? `最近一批（${translationRun.model || '模型未记录'}）：尝试 ${translationRun.attempted ?? 0} 条，新增 ${translationRun.completed ?? 0} 条，未写入 ${translationRun.failed ?? 0} 条。采集与发布计划每天北京时间 06:00 启动（可能延迟）；翻译执行状态单独显示。机器初译不等于人工校对；进度仅含当前日常库，不含全部历史库。`
+    ? `最近一批（${translationRun.model || '模型未记录'}）：尝试 ${translationRun.attempted ?? 0} 条，新增 ${translationRun.completed ?? 0} 条，未写入 ${translationRun.failed ?? 0} 条。采集计划每天北京时间 06:00 启动（可能延迟）；翻译执行状态单独显示。机器初译不等于人工校对。`
     : '';
-  $('#translationProgressStats').innerHTML = `${translationGroups.map(group => `<span>${group.label} <b>${group.complete.toLocaleString('zh-CN')}</b> / ${group.total.toLocaleString('zh-CN')}</span>`).join('')}<small>中文或无需翻译 ${totals.native} · 题目 ${totals.titleDone}/${totals.titleTotal} · 摘要/介绍 ${totals.bodyDone}/${totals.bodyTotal} · 部分已译 ${totals.partial} · 原文缺正文 ${totals.missingBody}</small><small>${text(serviceLabel)}。空记录不计完成；缺少原文的摘要不补写。</small><small>${text(runLabel)}</small>`;
+  $('#translationProgressStats').innerHTML = `${library ? `<span>已译 <b>${library.translated.toLocaleString('zh-CN')}</b> 篇</span><span>无需翻译 ${library.native.toLocaleString('zh-CN')} 篇</span><span>待译 <b>${library.pending.toLocaleString('zh-CN')}</b> 篇</span>` : ''}<small>包含全部历史与最新收录论文，合并去重；仅统计题目及已有摘要，不是全文翻译。新闻和通知不计入此进度。</small><small>${text(serviceLabel)}。缺少原文的摘要不补写。</small><small>${text(runLabel)}</small>`;
 
 
   const renderBars = (host, values, labelFor) => {
@@ -3420,12 +3419,18 @@ function renderBriefing() {
 
 function renderMetrics() {
   const status = state.meta.status;
-  const indexedPapers = Number(state.historyManifest?.indexed_papers || state.papers.length);
+  const indexedPapers = state.meta.paper_library?.total;
   const indexedMonths = Number(state.historyManifest?.indexed_months || 0);
-  $('#paperCount').textContent = indexedPapers.toLocaleString('zh-CN');
-  $('#paperCountHint').textContent = indexedMonths ? `${indexedMonths} 个月已建索引` : '持续累积';
-  $('#featuredCount').textContent = (state.meta.insights?.latest_count ?? state.featured.length).toLocaleString('zh-CN');
-  $('#newsCount').textContent = state.news.length.toLocaleString('zh-CN');
+  $('#paperCount').textContent = indexedPapers == null ? '—' : indexedPapers.toLocaleString('zh-CN');
+  $('#paperCountHint').textContent = `历史与最新收录合并去重${indexedMonths ? ` · ${indexedMonths} 个月` : ''}`;
+  const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  $('#featuredCount').textContent = state.meta.paper_library
+    ? (state.meta.paper_library.published_counts[today] ?? 0).toLocaleString('zh-CN') : '—';
+  $('#featuredCountHint').textContent = `发表日期 ${today}（北京时间）`;
+  $('#recentAddedCount').textContent = status.new_counts?.papers == null ? '—' : status.new_counts.papers.toLocaleString('zh-CN');
+  $('#recentAddedHint').textContent = status.last_success
+    ? `${new Date(status.last_success).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false })} · 可含补录`
+    : '最近一次采集新增，可能包含补录';
   const results = status.source_results || [];
   const ok = results.filter(item => item.ok).length;
   const empty = results.filter(item => item.ok && !item.count).length;

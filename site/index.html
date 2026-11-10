@@ -62,22 +62,22 @@
         <p class="briefing-summary" id="briefingSummary">正在生成基于原始元数据的可核验摘要。</p>
         <section class="home-translation-progress" aria-labelledby="translationProgressTitle">
           <div class="home-translation-progress-head">
-            <div><span class="section-kicker">CHINESE TRANSLATION</span><h2 id="translationProgressTitle">中文翻译进度</h2></div>
+            <div><span class="section-kicker">CHINESE TRANSLATION</span><h2 id="translationProgressTitle">全库论文翻译进度</h2></div>
             <div><strong id="translationProgressPercent">—</strong><span id="translationProgressCount">正在统计…</span></div>
           </div>
-          <div class="home-translation-progress-track" role="progressbar" aria-label="中文翻译完成比例" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="translationProgressTrack"><i id="translationProgressBar"></i></div>
-          <div class="home-translation-progress-stats" id="translationProgressStats"><span>论文 —</span><span>新闻 —</span><span>通知 —</span><small>正在读取翻译数据</small></div>
+          <div class="home-translation-progress-track" role="progressbar" aria-label="全库论文翻译完成比例" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="translationProgressTrack"><i id="translationProgressBar"></i></div>
+          <div class="home-translation-progress-stats" id="translationProgressStats"><small>正在读取全库论文统计…</small></div>
         </section>
         <section class="metrics briefing-metrics briefing-daily-metrics" aria-label="今日论文统计">
-          <article><span>最新日论文</span><strong id="dailyPaperCount">—</strong><small>最新发布日期</small></article>
+          <article><span>最新发表日论文</span><strong id="dailyPaperCount">—</strong><small>对应上方标注的发表日期</small></article>
           <article><span>核物理相关</span><strong id="dailyNuclearCount">—</strong><small>核心核物理分类</small></article>
           <article><span>期刊论文</span><strong id="dailyJournalCount">—</strong><small>正式期刊来源</small></article>
           <article><span>预印本</span><strong id="dailyPreprintCount">—</strong><small>开放预印本来源</small></article>
         </section>
         <section class="metrics briefing-metrics" aria-label="科研简报数据统计">
-          <article><span>历史论文索引</span><strong id="paperCount">—</strong><small id="paperCountHint">持续累积</small></article>
-          <article><span>最新日论文</span><strong id="featuredCount">—</strong><small>按发布日期计数</small></article>
-          <article><span>官方新闻</span><strong id="newsCount">—</strong><small>只保留原始来源</small></article>
+          <article><span>全部论文</span><strong id="paperCount">—</strong><small id="paperCountHint">历史与最新收录合并去重</small></article>
+          <article><span>今日发表</span><strong id="featuredCount">—</strong><small id="featuredCountHint">按北京时间日期统计</small></article>
+          <article><span>最近一次入库</span><strong id="recentAddedCount">—</strong><small id="recentAddedHint">新增论文，可能包含补录</small></article>
           <article><span>数据源状态</span><strong id="sourceHealth">—</strong><small id="sourceHealthHint">正在检查</small></article>
         </section>
         <div class="briefing-grid">
@@ -469,6 +469,6 @@
     </article>
   </template>
 
-  <script type="module" src="./app.js?v=20261106-versions"></script>
+  <script type="module" src="./app.js?v=20261110-full-library"></script>
 </body>
 </html>

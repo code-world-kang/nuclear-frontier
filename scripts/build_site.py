@@ -13,7 +13,8 @@ from paper_identity import record_ids
 from paper_scope import eligible_paper
 from featured_journals import featured_label
 from build_wechat_digest import build_digest
-from translate_content import collect_candidates, queue_payload, source_hash
+from translate_content import collect_candidates, queue_payload, source_hash, needs_translation
+from translation_catalog import source_records
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,6 +27,20 @@ PUBLIC_MINIPROGRAM_PREVIEW = ROOT / "site" / "miniprogram-preview"
 
 def load(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def paper_library_stats(data: Path) -> dict:
+    """首页与翻译任务共用全库筛选、版本归并和待译判定。"""
+    papers = [item for item in source_records(data=data) if item.get("type", "paper") == "paper"]
+    translations = load(data / "translations.zh-CN.json").get("items", {})
+    pending = sum(needs_translation(item, translations) for item in papers)
+    native = sum(not needs_translation(item, {}) for item in papers)
+    published = Counter(str(item.get("published", ""))[:10] for item in papers if item.get("published"))
+    return {
+        "total": len(papers), "complete": len(papers) - pending,
+        "translated": len(papers) - pending - native, "native": native, "pending": pending,
+        "published_counts": dict(sorted(published.items(), reverse=True)),
+    }
 
 
 def main() -> None:
@@ -104,6 +119,7 @@ def main() -> None:
         "featured_journals": featured_config,
         "status": status,
         "insights": insights,
+        "paper_library": paper_library_stats(DATA),
         "translation_service": {**({"last_run": load(DATA / "translation-run.json")} if (DATA / "translation-run.json").exists() else {}), **{key: queue.get(key) for key in ("service_status", "pending", "generated_at", "model")}, "worker": worker},
         "personal_backup": {"snapshot_at": personal_payload.get("updated_at", "")},
         "notice": "本站汇总官方公开元数据，不代表数据源机构背书。请以原始页面为准。",
