@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import datetime as dt
 import shutil
 from collections import Counter
 from pathlib import Path
@@ -15,6 +16,7 @@ from featured_journals import featured_label
 from build_wechat_digest import build_digest
 from translate_content import collect_candidates, queue_payload, source_hash, needs_translation
 from translation_catalog import source_records
+from translation_feed import load_translations
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,7 +34,7 @@ def load(path: Path):
 def paper_library_stats(data: Path) -> dict:
     """首页与翻译任务共用全库筛选、版本归并和待译判定。"""
     papers = [item for item in source_records(data=data) if item.get("type", "paper") == "paper"]
-    translations = load(data / "translations.zh-CN.json").get("items", {})
+    translations = load_translations(data).get("items", {})
     pending = sum(needs_translation(item, translations) for item in papers)
     native = sum(not needs_translation(item, {}) for item in papers)
     published = Counter(str(item.get("published", ""))[:10] for item in papers if item.get("published"))
@@ -71,7 +73,7 @@ def main() -> None:
             old_queue["service_status"] = "local_scheduled"
         elif not worker.get("automatic"):
             old_queue["service_status"] = "manual"
-    queue = queue_payload(collect_candidates(load(DATA / "translations.zh-CN.json").get("items", {})), old_queue.get("model", ""), old_queue.get("service_status", "not_configured"))
+    queue = queue_payload(collect_candidates(load_translations(DATA).get("items", {})), old_queue.get("model", ""), old_queue.get("service_status", "not_configured"))
     if {key: value for key, value in queue.items() if key != "generated_at"} == {key: value for key, value in old_queue.items() if key != "generated_at"}:
         queue["generated_at"] = old_queue["generated_at"]
     queue_file.write_text(json.dumps(queue, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -80,6 +82,7 @@ def main() -> None:
         "translations.zh-CN.json", "translation-queue.json", "reference-resources.json",
     ):
         shutil.copy2(DATA / name, PUBLIC_DATA / name)
+    (PUBLIC_DATA / "translations.zh-CN.json").write_text(json.dumps(load_translations(DATA), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     shutil.copy2(CONFIG / "notice_portals.json", PUBLIC_DATA / "notice-portals.json")
     personal_state = DATA / "personal" / "state.json"
     shutil.copy2(personal_state, PUBLIC_DATA / "personal-state.json")
@@ -114,6 +117,7 @@ def main() -> None:
         ],
     }
     meta = {
+        "built_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "site": runtime,
         "categories": topics["categories"],
         "featured_journals": featured_config,

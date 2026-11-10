@@ -42,7 +42,7 @@ test('复杂公式和核素命令不会把中文译文误判为英文', () => {
 
 function appHarness() {
   let source = readFileSync(new URL('../site/app.js', import.meta.url), 'utf8');
-  source = source.replace(/^import .*;\n/m, '').replace(/initialize\(\);\s*$/, '');
+  source = source.replace(/^import .*;\n/gm, '').replace(/initialize\(\);\s*$/, '');
   const storage = new Map();
   const context = vm.createContext({
     URL, scientificText, nuclidesIn, searchText, translationCoverage, isNimaPaper, translationForRecord, AbortController, console,

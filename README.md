@@ -84,12 +84,12 @@ GitHub Actions 在每天北京时间 10:17 左右执行（预留 arXiv 冬令时
 在已登录 Codex ChatGPT 和 GitHub CLI 的本机执行下列命令，可只推进论文（包括历史论文），每轮最多 1000 篇、最多十路并行模型请求，完成后提交译文并等待网站发布：
 
 ```bash
-python3 scripts/run_local_translation.py --scheduled --papers-only --limit 1000 --batch-size 4 --workers 10 --max-minutes 30 --deploy-timeout 480
+python3 scripts/run_local_translation.py --scheduled --incremental --papers-only --limit 1000 --batch-size 4 --workers 10 --max-minutes 30 --deploy-timeout 480
 ```
 
 可用 `--workers 1` 至 `--workers 10` 调节模型请求并行数；保存和发布仍由单个主线程完成。并行增加不会扩大账号额度，实际吞吐需按摘要长度和服务响应实测。
 
-每轮优先恢复尚未发布的结果。`pending_papers` 表示全库尚需翻译的论文数，`pending` 包含论文、新闻和通知；失败重试退避中的论文也计入待译数。缺失摘要的论文只翻译题目，不补写摘要；长摘要按段落、句子或单词边界分段，所有分段成功后才保存完整结果，不能安全分段时保留待处理。机器译文不等于人工校对。命令本身只执行一轮，不安装定时任务。
+每轮优先恢复尚未发布的结果。使用 `--incremental` 时，新增译文写入 `data/translation-feed/batches/<sha256>.json`，索引与批次在同一提交中发布，旧译文基线和个人数据不改写。原有 Pages 待发布提交经祖先校验后可迁移，不重复调用模型。公开地址及文件哈希确认成功后清理本机待重传记录，后续翻译不等待 Pages。网页每分钟检查索引，校验批次后按论文 ID 合并；失败时保留已加载版本并重试。GitHub 公开文件服务有缓存和网络延迟，因此提交完成不代表所有浏览器立即刷新。页面程序仍需要一次 Pages 更新，历史数据从仓库公开地址按需读取，不再打入页面发布包。`pending_papers` 表示全库尚需翻译的论文数，`pending` 包含论文、新闻和通知；失败重试退避中的论文也计入待译数。缺失摘要的论文只翻译题目，不补写摘要；长摘要按段落、句子或单词边界分段，所有分段成功后才保存完整结果，不能安全分段时保留待处理。机器译文不等于人工校对。命令本身只执行一轮，不安装定时任务。
 
 公开 `translation-queue.json` 的 `pending` 和 `counts` 统计全部待译资料，`items` 仅预览前 1000 条，`listed` 和 `items_truncated` 明确标记预览范围。翻译程序始终从全量源文计算下一批，不会受预览数量限制。
 

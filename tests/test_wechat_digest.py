@@ -41,7 +41,8 @@ class WechatDigestTests(unittest.TestCase):
         workflow = (ROOT / ".github" / "workflows" / "update-and-deploy.yml").read_text(encoding="utf-8")
         self.assertIn("site/wechat-digest", workflow)
         self.assertIn("wechat-official-account", workflow)
-        self.assertIn("path: site", workflow)
+        self.assertIn("path: output/pages", workflow)
+        self.assertIn("python scripts/stage_pages.py", workflow)
 
     def test_fixed_wechat_entry_and_menu_are_complete(self):
         entry = (ROOT / "site" / "wechat-entry" / "index.html").read_text(encoding="utf-8")

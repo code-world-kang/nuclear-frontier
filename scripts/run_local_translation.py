@@ -6,6 +6,7 @@ import argparse
 import datetime as dt
 import fcntl
 import json
+import hashlib
 import os
 from pathlib import Path
 import re
@@ -14,6 +15,7 @@ import tempfile
 import time
 
 import translate_codex as sol
+from translation_feed import MANIFEST, batch_path, load_translations
 
 ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = "code-world-kang/nuclear-frontier"
@@ -75,21 +77,27 @@ class GitHub:
         if not re.fullmatch(r"[0-9a-f]{40}", sha):
             raise RuntimeError("无法确认远端版本")
         historical = self.command([
-            "git", "ls-tree", "-r", "--name-only", sha, "--", "data/history/papers",
+            "git", "ls-tree", "-r", "--name-only", sha, "--", "data/history/papers", "data/translation-feed",
         ]).splitlines()
-        if any(not re.fullmatch(r"data/history/papers/\d{4}/\d{2}\.json", name) for name in historical):
+        if any(not (re.fullmatch(r"data/history/papers/\d{4}/\d{2}\.json", name) or
+                    name == MANIFEST or re.fullmatch(r"data/translation-feed/batches/[0-9a-f]{64}\.json", name))
+               for name in historical):
             raise RuntimeError("历史论文分片路径不符合预期，停止读取")
         for name in (*SNAPSHOT_FILES, *historical):
             path = folder / name
             path.parent.mkdir(parents=True, exist_ok=True)
             with path.open("w", encoding="utf-8") as stream:
                 self.command(["git", "show", f"{sha}:{name}"], output=stream)
+        if (folder / MANIFEST).exists():
+            sol.write_json(folder / "data/translations.zh-CN.json", load_translations(folder / "data"))
         return sha
 
-    def commit(self, folder, base):
+    def commit(self, folder, base, files=PUBLISH_FILES):
         base_tree = self.api(f"git/commits/{base}")["tree"]["sha"]
         tree = []
-        for name in PUBLISH_FILES:
+        for name in files:
+            if name not in PUBLISH_FILES and name != MANIFEST and not re.fullmatch(r"data/translation-feed/batches/[0-9a-f]{64}\.json", name):
+                raise ValueError("禁止发布非译文文件")
             print(f"正在上传 {name}（{(folder / name).stat().st_size:,} 字节）", flush=True)
             blob = self.api("git/blobs", "POST", {
                 "content": (folder / name).read_text(encoding="utf-8"), "encoding": "utf-8"})
@@ -104,6 +112,20 @@ class GitHub:
             if self.api("git/ref/heads/main")["object"]["sha"] != commit:
                 raise
         return commit
+
+    def confirm_incremental(self, state):
+        # Public, unauthenticated read: no login material is sent to the data endpoint.
+        commit = state["commit"]
+        if not re.fullmatch(r"[0-9a-f]{40}", commit):
+            raise ValueError("Invalid feed commit")
+        for name, digest in state["public_files"].items():
+            if name != MANIFEST and name != batch_path(digest):
+                raise ValueError("Invalid public translation path")
+            raw = self.command(["curl", "--fail", "--silent", "--show-error", "--max-time", "45",
+                                f"https://raw.githubusercontent.com/{REPOSITORY}/{commit}/{name}"], timeout=50)
+            if hashlib.sha256(raw.encode()).hexdigest() != digest:
+                raise RuntimeError("增量译文尚未通过公开读取确认；已保留待重传记录")
+        return f"https://github.com/{REPOSITORY}/commit/{commit}"
 
     def find_deployment(self, commit):
         runs = self.api(f"actions/workflows/{WORKFLOW}/runs?event=workflow_dispatch&per_page=30")
@@ -188,6 +210,57 @@ def publish(client, bundle):
     raise RuntimeError("远端持续更新，本批保留到下次重传")
 
 
+def publish_incremental(client, bundle=None, legacy=None):
+    for attempt in range(3):
+        with tempfile.TemporaryDirectory(prefix="nuclear-feed-") as path:
+            folder = Path(path)
+            base = client.snapshot(folder)
+            before = sol.read(folder / "data/translations.zh-CN.json")["items"]
+            if legacy:
+                # An old Pages outbox already committed its translations. Verify ancestry,
+                # expose its current statistics, and never ask the model to redo the batch.
+                client.command(["git", "merge-base", "--is-ancestor", legacy["commit"], base])
+                report = dict(legacy["report"])
+                after = before
+            else:
+                report = merge_bundle(folder, bundle)
+                after = sol.read(folder / "data/translations.zh-CN.json")["items"]
+            papers = [x for x in sol.records(folder) if x.get("type", "paper") == "paper"]
+            pending = sum(sol.needs_translation(x, after) for x in papers)
+            native = sum(not sol.needs_translation(x, {}) for x in papers)
+            library = {"total": len(papers), "pending": pending, "complete": len(papers) - pending,
+                       "native": native, "translated": len(papers) - pending - native}
+            report.update(pending_papers=pending, publication_mode="incremental")
+            changed = {key: value for key, value in after.items() if value != before.get(key)}
+            manifest = sol.read(folder / MANIFEST, {"version": 1, "batches": []})
+            files = [] if legacy else [x for x in PUBLISH_FILES if x != "data/translations.zh-CN.json"]
+            public_files = {}
+            if changed:
+                batch = {"version": 1, "items": changed, "previous": {key: before.get(key) for key in changed}}
+                raw = json.dumps(batch, ensure_ascii=False, indent=2) + "\n"
+                digest = hashlib.sha256(raw.encode()).hexdigest()
+                name = batch_path(digest)
+                target = folder / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text(raw, encoding="utf-8")
+                if digest not in manifest["batches"]:
+                    manifest["batches"].append(digest)
+                files.append(name)
+                public_files[name] = digest
+            manifest.update(updated_at=now(), report=report, paper_library=library)
+            (folder / MANIFEST).parent.mkdir(parents=True, exist_ok=True)
+            sol.write_json(folder / MANIFEST, manifest)
+            public_files[MANIFEST] = hashlib.sha256((folder / MANIFEST).read_bytes()).hexdigest()
+            files.append(MANIFEST)
+            try:
+                commit = client.commit(folder, base, files=files)
+                return {"phase": "feed_committed", "commit": commit, "report": report, "public_files": public_files}
+            except CommandError as error:
+                if error.status not in (409, 422) or attempt == 2:
+                    raise
+    raise RuntimeError("远端持续更新，保留本批到下次重传")
+
+
 def complete_deployment(client, state, save, timeout):
     commit = state["commit"]
     run = client.find_deployment(commit)
@@ -253,6 +326,17 @@ def run(args, root=ROOT, client=None):
                         sol.write_json(status_file, result)
                         return result
                 state = sol.read(outbox)
+            if getattr(args, "incremental", False) and state["phase"] in ("translated", "committed"):
+                state = publish_incremental(client, bundle=state.get("bundle"),
+                                            legacy=state if state["phase"] == "committed" else None)
+                save(state)
+            if state["phase"] == "feed_committed":
+                url = client.confirm_incremental(state)
+                result = {"status": "published", "finished_at": now(), "commit": state["commit"],
+                          "publication_mode": "incremental", "deployment_url": url, "report": state["report"]}
+                sol.write_json(status_file, result)
+                outbox.unlink(missing_ok=True)
+                return result
             if state["phase"] == "translated":
                 commit, report = publish(client, state["bundle"])
                 state = {"phase": "committed", "commit": commit, "report": report}
@@ -283,6 +367,7 @@ def main():
     parser.add_argument("--retry-failed", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--scheduled", action="store_true")
+    parser.add_argument("--incremental", action="store_true", help="只提交新增译文批次，公开读取确认后继续，不等待 Pages")
     args = parser.parse_args()
     if args.limit < 1 or not 1 <= args.batch_size <= 5 or args.max_minutes <= 0 or args.deploy_timeout <= 0:
         parser.error("数量与时间必须为正，每批 1—5 条")

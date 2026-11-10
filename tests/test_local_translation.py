@@ -10,6 +10,7 @@ from unittest.mock import Mock, patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import run_local_translation as local
+from translation_feed import load_translations, MANIFEST
 import translate_codex as sol
 
 
@@ -47,15 +48,19 @@ class LocalTranslationTests(unittest.TestCase):
     def snapshot(self, folder):
         history = [str(path.relative_to(self.remote)) for path in
                    (self.remote / "data/history/papers").glob("*/*.json")]
-        for name in (*local.SNAPSHOT_FILES, *history):
+        feed = [str(p.relative_to(self.remote)) for p in (self.remote / "data/translation-feed").rglob("*.json")]
+        for name in (*local.SNAPSHOT_FILES, *history, *feed):
             target = folder / name
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(self.remote / name, target)
+        if (folder / MANIFEST).exists():
+            sol.write_json(folder / "data/translations.zh-CN.json", load_translations(folder / "data"))
         return "a" * 40
 
-    def commit(self, folder, base):
+    def commit(self, folder, base, files=local.PUBLISH_FILES):
         self.assertEqual(base, "a" * 40)
-        for name in local.PUBLISH_FILES:
+        for name in files:
+            (self.remote / name).parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(folder / name, self.remote / name)
         return "b" * 40
 
@@ -64,6 +69,52 @@ class LocalTranslationTests(unittest.TestCase):
         return {"records": {"p": record}, "retries": {}, "report": {
             "model": sol.MODEL, "automatic": True, "content_validation": "disabled",
             "attempted": 1, "completed": 1, "failed": 0, "deferred": 0, "errors": {}}}
+
+    def test_incremental_saves_only_delta_and_next_round_skips_it(self):
+        self.args.incremental = True
+        self.client.confirm_incremental.return_value = "https://github.com/test/commit/b"
+        with patch.object(sol, "request_batch", return_value={"translations": [self.value]}) as model:
+            result = local.run(self.args, self.root, self.client)
+            again = local.run(self.args, self.root, self.client)
+        self.assertEqual(result["publication_mode"], "incremental")
+        self.assertEqual(again["status"], "idle")
+        self.assertEqual(model.call_count, 1)
+        self.assertNotIn("p", sol.read(self.remote / "data/translations.zh-CN.json")["items"])
+        self.assertEqual(load_translations(self.remote / "data")["items"]["p"]["title_zh"], "核结构")
+        self.assertEqual(sol.read(self.remote / MANIFEST)["paper_library"]["pending"], 0)
+        self.assertNotIn("data/translations.zh-CN.json", self.client.commit.call_args.kwargs["files"])
+        self.client.dispatch.assert_not_called()
+        self.assertEqual(sol.read(self.remote / "data/personal/state.json"), self.personal)
+
+    def test_incremental_read_failure_resumes_without_model_or_commit(self):
+        self.args.incremental = True
+        self.client.confirm_incremental.side_effect = [RuntimeError("not readable"), "verified"]
+        with patch.object(sol, "request_batch", return_value={"translations": [self.value]}) as model:
+            with self.assertRaisesRegex(RuntimeError, "not readable"):
+                local.run(self.args, self.root, self.client)
+            outbox = self.root / "output/local-translation/pending.json"
+            self.assertEqual(sol.read(outbox)["phase"], "feed_committed")
+            result = local.run(self.args, self.root, self.client)
+        self.assertEqual(result["status"], "published")
+        self.assertEqual(model.call_count, 1)
+        self.assertEqual(self.client.commit.call_count, 1)
+        self.assertFalse(outbox.exists())
+
+    def test_old_pages_pending_is_migrated_without_losing_committed_translations(self):
+        self.args.incremental = True
+        self.save("data/translations.zh-CN.json", {"items": {"p": sol.translation_record(self.item, self.value, {})}})
+        outbox = self.root / "output/local-translation/pending.json"
+        outbox.parent.mkdir(parents=True)
+        sol.write_json(outbox, {"phase": "committed", "commit": "c" * 40, "report": self.bundle()["report"]})
+        self.client.confirm_incremental.return_value = "verified"
+        with patch.object(sol, "request_batch") as model:
+            result = local.run(self.args, self.root, self.client)
+        model.assert_not_called()
+        self.client.dispatch.assert_not_called()
+        self.assertEqual(result["report"]["completed"], 1)
+        self.assertEqual(result["report"]["pending_papers"], 0)
+        self.assertEqual(self.client.commit.call_args.kwargs["files"], [MANIFEST])
+        self.client.command.assert_called_once_with(["git", "merge-base", "--is-ancestor", "c" * 40, "a" * 40])
 
     def test_end_to_end_publishes_without_changing_local_data(self):
         with patch.object(sol, "request_batch", return_value={"translations": [self.value]}):

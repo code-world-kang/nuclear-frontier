@@ -1,5 +1,7 @@
+import { loadTranslationFeed } from './translation-feed.js?v=20261110-incremental';
 import { scientificText, nuclidesIn, searchText, isNimaPaper, translationForRecord } from './research-utils.js?v=20261106-versions';
 
+const HISTORY_DATA_ROOT = 'https://raw.githubusercontent.com/code-world-kang/nuclear-frontier/main/site/data/history/';
 const PATH = new URL('.', window.location.href).pathname;
 // GitHub 仍是个人数据的最终来源；本地副本只用来防止“已点收藏、未提交 GitHub”时刷新丢失。
 const PERSONAL_DRAFT_KEY = 'nuclear-frontier.personal.v1';
@@ -37,6 +39,10 @@ const state = {
   zoteroDraft: null,
 };
 const citationMetadataRequests = new Map();
+const translationFeedCache = new Map();
+let translationFeedBusy = false;
+let translationFeedUpdatedAt = '';
+let translationFeedError = '';
 let cloudSyncTimer = 0;
 const PRIMARY_NUCLEAR_CATEGORIES = new Set([
   'experimental-nuclear', 'theoretical-nuclear', 'nuclear-structure', 'nuclear-clusters', 'nuclear-decay', 'nuclear-reactions',
@@ -834,7 +840,7 @@ async function loadHistoryMonths(months, token) {
     const batch = months.slice(index, index + 3);
     const results = await Promise.all(batch.map(async month => {
       const [year, number] = month.split('-');
-      const response = await fetch(`./data/history/papers/${year}/${number}.json`);
+      const response = await fetch(`${HISTORY_DATA_ROOT}papers/${year}/${number}.json`);
       if (!response.ok) throw new Error(`${month} 论文分片 HTTP ${response.status}`);
       const values = await response.json();
       const wanted = wantedByMonth.get(month) || new Set();
@@ -913,7 +919,7 @@ async function searchAllHistory(keyword, { browseAll = false } = {}) {
       const year = years[index].year;
       state.historyProgress = `正在检索 ${year} 年 · ${index + 1} / ${years.length}`;
       renderGlobalKeywordPanel();
-      const response = await fetch(`./data/history/search/${year}.json`);
+      const response = await fetch(`${HISTORY_DATA_ROOT}search/${year}.json`);
       if (!response.ok) throw new Error(`${year} 年索引 HTTP ${response.status}`);
       const payload = await response.json();
       (payload.items || []).forEach(item => {
@@ -3413,7 +3419,7 @@ function renderBriefing() {
   const runLabel = translationRun
     ? `最近一批（${translationRun.model || '模型未记录'}）：尝试 ${translationRun.attempted ?? 0} 条，新增 ${translationRun.completed ?? 0} 条，未写入 ${translationRun.failed ?? 0} 条。采集计划每天北京时间 06:00 启动（可能延迟）；翻译执行状态单独显示。机器初译不等于人工校对。`
     : '';
-  $('#translationProgressStats').innerHTML = `${library ? `<span>已译 <b>${library.translated.toLocaleString('zh-CN')}</b> 篇</span><span>无需翻译 ${library.native.toLocaleString('zh-CN')} 篇</span><span>待译 <b>${library.pending.toLocaleString('zh-CN')}</b> 篇</span>` : ''}<small>包含全部历史与最新收录论文，合并去重；仅统计题目及已有摘要，不是全文翻译。新闻和通知不计入此进度。</small><small>${text(serviceLabel)}。缺少原文的摘要不补写。</small><small>${text(runLabel)}</small>`;
+  $('#translationProgressStats').innerHTML = `${library ? `<span>已译 <b>${library.translated.toLocaleString('zh-CN')}</b> 篇</span><span>无需翻译 ${library.native.toLocaleString('zh-CN')} 篇</span><span>待译 <b>${library.pending.toLocaleString('zh-CN')}</b> 篇</span>` : ''}<small>包含全部历史与最新收录论文，合并去重；仅统计题目及已有摘要，不是全文翻译。新闻和通知不计入此进度。</small><small>${text(serviceLabel)}。缺少原文的摘要不补写。</small><small>${text(runLabel)}</small><small>${text(translationFeedError || (translationFeedUpdatedAt ? "译文已独立同步，无需等待整站发布。" : ""))}</small>`;
 
 
   const renderBars = (host, values, labelFor) => {
@@ -3816,13 +3822,43 @@ function bindEvents() {
   });
 }
 
+async function refreshTranslationFeed() {
+  if (translationFeedBusy || !state.meta) return;
+  translationFeedBusy = true;
+  try {
+    const { payload, manifest } = await loadTranslationFeed({ items: state.translations, versions: state.translationVersions }, { cache: translationFeedCache });
+    const changed = translationFeedUpdatedAt !== manifest.updated_at || translationFeedError;
+    translationFeedError = '';
+    translationFeedUpdatedAt = manifest.updated_at;
+    state.translations = payload.items;
+    state.translationVersions = payload.versions;
+    Object.keys(state.translations).forEach(id => state.translatedIds.add(id));
+    if (manifest.updated_at > (state.meta.built_at || '')) {
+      state.meta.paper_library = { ...state.meta.paper_library, ...manifest.paper_library };
+      state.meta.translation_service = { ...state.meta.translation_service, last_run: manifest.report,
+        service_status: manifest.report?.service_status || 'ready' };
+    }
+    if (changed) {
+      renderBriefing();
+      if (!document.activeElement?.matches('input, textarea, [contenteditable="true"]')) {
+        renderCards(); renderHomeHub(); renderHomeDashboard();
+      }
+    }
+  } catch (error) {
+    translationFeedError = '最新译文暂未同步，当前显示已加载的版本；稍后自动重试。';
+    renderBriefing();
+  } finally {
+    translationFeedBusy = false;
+  }
+}
+
 async function loadData() {
   const files = ['meta', 'papers', 'featured', 'news', 'notices', 'public-favorites', 'notice-portals', 'reference-resources', 'personal-state', 'translations.zh-CN'];
   const [responses, historyManifest] = await Promise.all([Promise.all(files.map(async name => {
     const response = await fetch(`./data/${name}.json`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
     return response.json();
-  })), fetch('./data/history/manifest.json', { cache: 'no-store' }).then(response => {
+  })), fetch(`${HISTORY_DATA_ROOT}manifest.json`, { cache: 'no-store' }).then(response => {
     if (!response.ok) throw new Error(`history manifest: HTTP ${response.status}`);
     return response.json();
   })]);
@@ -3861,6 +3897,8 @@ async function initialize() {
     } else {
       setView(['home', 'papers', 'featured', 'news', 'notices', 'favorites', 'unread', 'ignored'].includes(hash) ? hash : 'home');
     }
+    refreshTranslationFeed();
+    setInterval(() => { if (!document.hidden) refreshTranslationFeed(); }, 60000);
   } catch (error) {
     console.error(error);
     const hint = location.protocol === 'file:'
