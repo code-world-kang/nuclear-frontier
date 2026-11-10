@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-10T14:24:03.509156+00:00",
+  "generated_at": "2026-11-10T14:31:12.190818+00:00",
   "model": "gpt-5.6-sol",
-  "service_status": "manual",
+  "service_status": "local_scheduled",
   "pending": 79991,
   "counts": {
     "paper": 79983,
@@ -150,6 +150,13 @@
       "published": "2025-03-01",
       "title": "Geant4 simulations of sampling and homogeneous hadronic calorimeters with dual readout for future colliders",
       "source": "NIMA"
+    },
+    {
+      "id": "93adf6de9d65cc58",
+      "type": "paper",
+      "published": "2024-10-01",
+      "title": "Exploring asymmetric fission in 180Hg⁎ compound nucleus using dynamical cluster-decay model",
+      "source": "NPA"
     },
     {
       "id": "95cfac3f1565de54",
@@ -514,13 +521,6 @@
       "published": "2024-10-01",
       "title": "A novel electromagnetic analysis of a TM02 mode dielectric assist accelerating structure",
       "source": "NIMA"
-    },
-    {
-      "id": "93adf6de9d65cc58",
-      "type": "paper",
-      "published": "2024-10-01",
-      "title": "Exploring asymmetric fission in 180Hg⁎ compound nucleus using dynamical cluster-decay model",
-      "source": "NPA"
     },
     {
       "id": "b837ce2b11ba9e11",
@@ -1419,6 +1419,27 @@
       "source": "NIMA"
     },
     {
+      "id": "a04e9484b0bd05dd",
+      "type": "paper",
+      "published": "2024-09-01",
+      "title": "Nuclear matrix elements of neutrinoless double-beta decay in covariant density functional theory with different mechanisms",
+      "source": "PLB"
+    },
+    {
+      "id": "e2c765691faa7a82",
+      "type": "paper",
+      "published": "2024-09-01",
+      "title": "Nuclear charge radii of germanium isotopes around N = 40",
+      "source": "PLB"
+    },
+    {
+      "id": "bfe9228f5174870e",
+      "type": "paper",
+      "published": "2024-09-01",
+      "title": "Coexistence of pure octupole shapes in the superheavy nucleus 286No",
+      "source": "PLB"
+    },
+    {
       "id": "4f9b6d532cc64479",
       "type": "paper",
       "published": "2024-09-01",
@@ -1832,6 +1853,13 @@
       "source": "NIMA"
     },
     {
+      "id": "58102cb7a3a1e7b7",
+      "type": "paper",
+      "published": "2024-09-01",
+      "title": "Corrigendum to “Stellar weak-interaction rates for rp-process waiting-point nuclei from projected shell model” [Phys. Lett. B 848 (2024) 138338]",
+      "source": "PLB"
+    },
+    {
       "id": "f277ef44ebd00f39",
       "type": "paper",
       "published": "2024-09-01",
@@ -1907,34 +1935,6 @@
       "published": "2024-09-01",
       "title": "A SoC-FPGA based readout platform for the free-running AMBER data acquisition system",
       "source": "NIMA"
-    },
-    {
-      "id": "a04e9484b0bd05dd",
-      "type": "paper",
-      "published": "2024-09-01",
-      "title": "Nuclear matrix elements of neutrinoless double-beta decay in covariant density functional theory with different mechanisms",
-      "source": "PLB"
-    },
-    {
-      "id": "e2c765691faa7a82",
-      "type": "paper",
-      "published": "2024-09-01",
-      "title": "Nuclear charge radii of germanium isotopes around N = 40",
-      "source": "PLB"
-    },
-    {
-      "id": "bfe9228f5174870e",
-      "type": "paper",
-      "published": "2024-09-01",
-      "title": "Coexistence of pure octupole shapes in the superheavy nucleus 286No",
-      "source": "PLB"
-    },
-    {
-      "id": "58102cb7a3a1e7b7",
-      "type": "paper",
-      "published": "2024-09-01",
-      "title": "Corrigendum to “Stellar weak-interaction rates for rp-process waiting-point nuclei from projected shell model” [Phys. Lett. B 848 (2024) 138338]",
-      "source": "PLB"
     },
     {
       "id": "465cdb267ebd7c77",
@@ -2854,11 +2854,53 @@
       "source": "NF"
     },
     {
+      "id": "00affaffaf7efb34",
+      "type": "paper",
+      "published": "2024-08-01",
+      "title": "Relativistic model-free prediction for neutrinoless double beta decay at leading order",
+      "source": "PLB"
+    },
+    {
+      "id": "c51bba4a6c155c31",
+      "type": "paper",
+      "published": "2024-08-01",
+      "title": "Location of the neutron drip line for Sn and its impact on r-process abundances",
+      "source": "PLB"
+    },
+    {
       "id": "7f17df94f79e3ff9",
       "type": "paper",
       "published": "2024-08-01",
       "title": "Research on particle accelerator control network deformation prediction algorithm with machine learning",
       "source": "NIMA"
+    },
+    {
+      "id": "824d05c8e7476e9e",
+      "type": "paper",
+      "published": "2024-08-01",
+      "title": "Neutron-transfer induced breakup of the Borromean nucleus 9Be",
+      "source": "PLB"
+    },
+    {
+      "id": "11b4a1cb33a3e3b8",
+      "type": "paper",
+      "published": "2024-08-01",
+      "title": "Uncovering the mechanism of chiral three-nucleon force in driving spin-orbit splitting",
+      "source": "PLB"
+    },
+    {
+      "id": "f8ed619c942fe414",
+      "type": "paper",
+      "published": "2024-08-01",
+      "title": "Study of binary fragmentation dynamics of 260Rf compound nucleus at an excitation energy of 85.7 MeV",
+      "source": "NPA"
+    },
+    {
+      "id": "66b9b0672c40cb23",
+      "type": "paper",
+      "published": "2024-08-01",
+      "title": "Nuclear magnetism in the deformed halo nucleus 31Ne",
+      "source": "PLB"
     },
     {
       "id": "2ce20705e42f38c6",
@@ -2880,6 +2922,13 @@
       "published": "2024-08-01",
       "title": "The BM@N spectrometer at the NICA accelerator complex",
       "source": "NIMA"
+    },
+    {
+      "id": "a9705628fd8fd31f",
+      "type": "paper",
+      "published": "2024-08-01",
+      "title": "Secondary scintillation yield from GEM electron avalanches in - and - -isobutane for CYGNO — Directional Dark Matter search with an optical TPC",
+      "source": "PLB"
     },
     {
       "id": "20708a67b88e5bb6",
@@ -3370,55 +3419,6 @@
       "published": "2024-08-01",
       "title": "4D Tomography for neutron depth profiling applications",
       "source": "NIMA"
-    },
-    {
-      "id": "00affaffaf7efb34",
-      "type": "paper",
-      "published": "2024-08-01",
-      "title": "Relativistic model-free prediction for neutrinoless double beta decay at leading order",
-      "source": "PLB"
-    },
-    {
-      "id": "c51bba4a6c155c31",
-      "type": "paper",
-      "published": "2024-08-01",
-      "title": "Location of the neutron drip line for Sn and its impact on r-process abundances",
-      "source": "PLB"
-    },
-    {
-      "id": "824d05c8e7476e9e",
-      "type": "paper",
-      "published": "2024-08-01",
-      "title": "Neutron-transfer induced breakup of the Borromean nucleus 9Be",
-      "source": "PLB"
-    },
-    {
-      "id": "11b4a1cb33a3e3b8",
-      "type": "paper",
-      "published": "2024-08-01",
-      "title": "Uncovering the mechanism of chiral three-nucleon force in driving spin-orbit splitting",
-      "source": "PLB"
-    },
-    {
-      "id": "f8ed619c942fe414",
-      "type": "paper",
-      "published": "2024-08-01",
-      "title": "Study of binary fragmentation dynamics of 260Rf compound nucleus at an excitation energy of 85.7 MeV",
-      "source": "NPA"
-    },
-    {
-      "id": "66b9b0672c40cb23",
-      "type": "paper",
-      "published": "2024-08-01",
-      "title": "Nuclear magnetism in the deformed halo nucleus 31Ne",
-      "source": "PLB"
-    },
-    {
-      "id": "a9705628fd8fd31f",
-      "type": "paper",
-      "published": "2024-08-01",
-      "title": "Secondary scintillation yield from GEM electron avalanches in - and - -isobutane for CYGNO — Directional Dark Matter search with an optical TPC",
-      "source": "PLB"
     },
     {
       "id": "199ab0fbfbeb28de",
@@ -4289,6 +4289,20 @@
       "source": "NF"
     },
     {
+      "id": "5a8ac7ddd6bbb33a",
+      "type": "paper",
+      "published": "2024-07-01",
+      "title": "A systematic study of the ground state properties of gold nuclei near the neutron drip line using HFB formalism",
+      "source": "NPA"
+    },
+    {
+      "id": "a407960689a59815",
+      "type": "paper",
+      "published": "2024-07-01",
+      "title": "Converging many-body perturbation theory for ab-initio nuclear structure: Brillouin-Wigner perturbation series for closed-shell nuclei",
+      "source": "PLB"
+    },
+    {
       "id": "3443dec43c8c5c25",
       "type": "paper",
       "published": "2024-07-01",
@@ -4301,6 +4315,13 @@
       "published": "2024-07-01",
       "title": "The energy-resolved neutron imaging instrument at the China spallation neutron source",
       "source": "NIMA"
+    },
+    {
+      "id": "df2d21bb07ed08d4",
+      "type": "paper",
+      "published": "2024-07-01",
+      "title": "Probing deformed nuclei: Experimental insights into excited states of 152,153,154Gd isotopes through fusion-evaporation reactions",
+      "source": "NPA"
     },
     {
       "id": "2e284b8a9464a03b",
@@ -5309,27 +5330,6 @@
       "published": "2024-07-01",
       "title": "3x3 array module of 8×8×32 mm3 position-sensitive virtual frisch-grid CdZnTe detectors for imaging and spectroscopy of cosmic gamma-rays",
       "source": "NIMA"
-    },
-    {
-      "id": "5a8ac7ddd6bbb33a",
-      "type": "paper",
-      "published": "2024-07-01",
-      "title": "A systematic study of the ground state properties of gold nuclei near the neutron drip line using HFB formalism",
-      "source": "NPA"
-    },
-    {
-      "id": "a407960689a59815",
-      "type": "paper",
-      "published": "2024-07-01",
-      "title": "Converging many-body perturbation theory for ab-initio nuclear structure: Brillouin-Wigner perturbation series for closed-shell nuclei",
-      "source": "PLB"
-    },
-    {
-      "id": "df2d21bb07ed08d4",
-      "type": "paper",
-      "published": "2024-07-01",
-      "title": "Probing deformed nuclei: Experimental insights into excited states of 152,153,154Gd isotopes through fusion-evaporation reactions",
-      "source": "NPA"
     },
     {
       "id": "5b96562dd9cf70f7",
