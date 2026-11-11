@@ -31,18 +31,18 @@
 
 ## 物理新闻
 
+- **[The Gurzhi Effect Reaches Three Dimensions](http://link.aps.org/doi/10.1103/Physics.19.148)**  
+   APS Physics · 2026-11-09  
+   Author(s): Davis Thuillier Measurements on micrometer-scale cadmium samples provide definitive evidence of an unusual charge-transport regime in a 3D metal. [Physics 19, 148] Published Mon Nov 09, 2026
+- **[Snapshot: A Dragon Rouses out of the Sea Spray](http://link.aps.org/doi/10.1103/Physics.19.150)**  
+   APS Physics · 2026-11-09  
+   The violent breaking of waves is both visually spectacular and meteorologically impactful. [Physics 19, 150] Published Mon Nov 09, 2026
 - **[Coherence enhancement through equilibration to near-zero optical temperatures](https://www.nature.com/articles/s41567-026-03520-z)**  
    Nature Physics · 2026-11-06  
    数据源暂未提供详细介绍。
 - **[Why Brittle Solids Crack Under Pressure](http://link.aps.org/doi/10.1103/Physics.19.151)**  
    APS Physics · 2026-11-06  
    Author(s): Ryan Wilkinson Theory and experiments suggest that the mysterious fractures that appear when a brittle material is compressed result from a hidden buildup of internal tension. [Physics 19, 151] Published Fri Nov 06, 2026
-- **[Probing Strangeness](http://link.aps.org/doi/10.1103/Physics.19.s145)**  
-   APS Physics · 2026-11-05  
-   Author(s): Charles Day Close encounters between kaons and deuterons help to elucidate quantum chromodynamics in a challenging mass range. [Physics 19, s145] Published Thu Nov 05, 2026
-- **[Images Capture Unusual Quantum Turbulence](http://link.aps.org/doi/10.1103/Physics.19.s137)**  
-   APS Physics · 2026-11-05  
-   Author(s): Rachel Berkowitz Random tangles of vortex lines have been observed untangling in an ultracold gas. [Physics 19, s137] Published Thu Nov 05, 2026
 
 ## 科研通知
 
@@ -58,11 +58,11 @@
 - **[关于发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100371.html)**  
    国家自然科学基金委项目指南 · 2029-12-31  
    国科金发计〔2026〕6号 国家自然科学基金委员会现发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请
+- **[广东省科学技术厅关于转发国家重点研发计划“三峡水运新通道数智增效”重点专项、“尖刀”技术攻关工程重点专项2026年度申报指南的通知](https://gdstc.gd.gov.cn/zwgk_n/tzgg/content/post_4977393.html)**  
+   广东省科技厅 · 2026-11-10  
+   广东省科学技术厅 简体 繁体 无障碍 长者助手 首页 政务公开 科技资讯 党风廉政 办事服务 互动平台 搜 索 当前位置： 首页 > 政务公开 > 通知公告 广东省科学技术厅关于转发国家重点研发计划“三峡水运新通道数智增效”重点专项、“尖刀”技术攻关工程重点专项2026年度申报指南的通知 时间 : 2026-11-10 15:06:11 来源 : 广东省科学技术厅 【字体: 大 中 小 】 【打印】 分享到： 各有关单位： 近日，湖北省人民政府、中国三峡集团分别发布了国家重点研发计划“三峡水运新通道数智增效”和“尖刀”技术攻关工程重点专项2026年度项目申报指南。现转发给你们，请对照指南要求做好项目申报工作。 查阅网址如下： 1.国家重点研发计划“三峡水运新通道数智增效”重点专项2026年度公开竞争项目申报指…
 - **[AGORA/CEPC Detector and Physics Plenary Meeting](https://indico.ihep.ac.cn/event/31430/)**  
    高能所 Indico · 2026-11-09  
    2026-11-11 — 2026-11-11 Meeting URL: https://zoom.us/j/99845275219?pwd=JOSplxGdFI1DI5KCKaCbvfwNZ205N3.1 ID: 998 4527 5219 Password: 773321
-- **[202611-Mechanical & Integretion Weekly meeting](https://indico.ihep.ac.cn/event/31434/)**  
-   高能所 Indico · 2026-11-09  
-   2026-11-09 — 2026-12-05
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)
