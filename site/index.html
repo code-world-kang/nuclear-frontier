@@ -221,7 +221,7 @@
           <div class="content-head">
             <div>
               <span class="section-kicker" id="sectionKicker">LATEST PAPERS</span>
-              <h2 id="sectionTitle" tabindex="-1">最新论文</h2>
+              <h2 id="sectionTitle" tabindex="-1">全部论文</h2>
             </div>
             <div class="view-tabs" role="tablist">
               <button class="view-tab active" data-view="papers">全部</button>
@@ -293,16 +293,16 @@
           <div class="active-filters" id="activeFilters"></div>
           <section class="history-keyword-panel" id="historyKeywordPanel" aria-labelledby="historyKeywordTitle">
             <header>
-              <div><span class="section-kicker">2001—NOW · MONTHLY INDEX</span><h3 id="historyKeywordTitle">按我的关键词检索全部历史论文</h3></div>
+              <div><span class="section-kicker">2001—NOW · MONTHLY INDEX</span><h3 id="historyKeywordTitle">全部论文与全库检索</h3></div>
               <small id="historyCoverage">历史索引信息载入中</small>
             </header>
-            <p>点选个人关键词即可跨年份检索。系统先逐年读取轻量索引，再按月分批载入命中的完整论文，不会一次把全部历史库塞进浏览器。</p>
+            <p>进入论文页后会自动加载全部历史与最新论文。加载期间可先浏览已有结果；完成后，左侧分类、搜索和日期筛选均覆盖全库。卡片分批展示，避免页面卡顿。</p>
             <div class="history-keyword-tools">
               <div class="history-keyword-chips" id="historyKeywordChips"></div>
               <form id="historyKeywordForm">
                 <input id="historyKeywordInput" type="search" placeholder="也可输入核素、反应道或装置…" autocomplete="off">
                 <button type="submit">检索全库</button>
-                <button type="button" id="clearHistoryKeyword" hidden>返回最新论文</button>
+                <button type="button" id="clearHistoryKeyword" hidden>返回全部论文</button>
               </form>
             </div>
             <div class="history-search-status" id="historySearchStatus" aria-live="polite">选择关键词后，会逐年检索轻量索引，并按月分批载入论文详情。</div>
@@ -469,6 +469,6 @@
     </article>
   </template>
 
-  <script type="module" src="./app.js?v=20261110-data-source"></script>
+  <script type="module" src="./app.js?v=20261111-full-library"></script>
 </body>
 </html>

@@ -1,8 +1,10 @@
+import { createPaperLibraryLoader } from './paper-library.js?v=20261111-full';
 import { loadTranslationFeed } from './translation-feed.js?v=20261110-incremental';
 import { scientificText, nuclidesIn, searchText, isNimaPaper, translationForRecord } from './research-utils.js?v=20261106-versions';
 
 const PUBLIC_DATA_ROOT = 'https://raw.githubusercontent.com/code-world-kang/nuclear-frontier/main/site/data/';
 const HISTORY_DATA_ROOT = `${PUBLIC_DATA_ROOT}history/`;
+const loadFullLibrary = createPaperLibraryLoader({ root: HISTORY_DATA_ROOT });
 const PATH = new URL('.', window.location.href).pathname;
 // GitHub 仍是个人数据的最终来源；本地副本只用来防止“已点收藏、未提交 GitHub”时刷新丢失。
 const PERSONAL_DRAFT_KEY = 'nuclear-frontier.personal.v1';
@@ -35,7 +37,7 @@ const state = {
   categorySelections: { papers: 'all', news: 'all' },
   historyManifest: null, globalKeyword: '', historyBrowseAll: false, historyResults: [], historyMatchEntries: [],
   historyMonthQueue: [], historyLoadedMonths: new Set(), historySearching: false,
-  historyProgress: '', historyRequestToken: 0, historyTotalMatches: 0,
+  historyProgress: '', historyRequestToken: 0, historyTotalMatches: 0, historyLoadError: false,
   zoteroStatusById: new Map(),
   zoteroDraft: null,
 };
@@ -60,7 +62,7 @@ const CORE_CATEGORIES = new Set([
 const NIMA_SOURCE = 'journal:nima';
 
 function nimaPapers() {
-  return state.papers.filter(isNimaPaper)
+  return (state.view === 'papers' && state.historyBrowseAll ? state.historyResults : state.papers).filter(isNimaPaper)
     .sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.importance || 0) - (a.importance || 0));
 }
 
@@ -887,7 +889,7 @@ async function loadNextHistoryBatch() {
 
 async function searchAllHistory(keyword, { browseAll = false } = {}) {
   const normalized = browseAll ? '全部论文' : normalizeKeyword(keyword);
-  if (!normalized) return clearGlobalKeywordSearch();
+  if (!normalized) return searchAllHistory('', { browseAll: true });
   const token = state.historyRequestToken + 1;
   state.historyRequestToken = token;
   state.globalKeyword = normalized;
@@ -899,6 +901,7 @@ async function searchAllHistory(keyword, { browseAll = false } = {}) {
   state.historyLoadedMonths = new Set();
   state.historyTotalMatches = browseAll ? (state.meta?.paper_library?.total ?? state.papers.length) : 0;
   state.historySearching = true;
+  state.historyLoadError = false;
   state.historyProgress = '正在准备全库索引…';
   state.scope = 'all';
   state.category = 'all';
@@ -908,9 +911,36 @@ async function searchAllHistory(keyword, { browseAll = false } = {}) {
   $('#scopeSelect').value = 'all';
   $('#sourceSelect').value = 'all';
   $('#searchInput').value = '';
+  updateMySpaceUI();
   renderCategories();
   renderGlobalKeywordPanel();
   renderCards();
+  if (browseAll) {
+    $('#sectionTitle').textContent = '全部论文';
+    const update = ({ items, loaded, total }) => {
+      if (token !== state.historyRequestToken) return;
+      state.historyResults = items;
+      state.historyMatchEntries = items.map(item => ({ id: item.id, month: paperDay(item).slice(0, 7) }));
+      state.historyProgress = `已载入 ${items.length.toLocaleString('zh-CN')} 篇 · ${loaded}/${total || '…'} 个月，正在自动加载全库…`;
+      if (state.view === 'papers') { renderCategories(); renderSourceOptions(); renderCards(); }
+    };
+    try {
+      const result = await loadFullLibrary({ daily: state.papers, years: state.historyManifest?.years || [], onProgress: update });
+      if (token !== state.historyRequestToken) return;
+      state.historyTotalMatches = result.items.length;
+      state.historyProgress = '全库已全部加载；分类、搜索与日期筛选覆盖全部论文。';
+    } catch (error) {
+      if (token !== state.historyRequestToken) return;
+      state.historyProgress = `全库尚未加载完成：${error.message}。点击“重试加载全库”继续，已加载结果保留。`;
+      state.historyLoadError = true;
+    } finally {
+      if (token === state.historyRequestToken) {
+        state.historySearching = false;
+        if (state.view === 'papers') { renderCategories(); renderSourceOptions(); renderCards(); }
+      }
+    }
+    return;
+  }
   const terms = browseAll ? [] : scientificText(normalized).replace(/\b([A-Z][a-z]?)-(\d{1,3})\b/g, '$2$1').toLocaleLowerCase('zh-CN').split(/\s+/).filter(Boolean);
   const years = [...(state.historyManifest?.years || [])].sort((a, b) => b.year - a.year);
   const matched = new Map(browseAll ? state.papers.map(item => [item.id, { ...item, month: paperDay(item).slice(0, 7) }]) : []);
@@ -982,9 +1012,9 @@ function renderGlobalKeywordPanel() {
     chipHost.append(hint);
   }
   $('#historyKeywordInput').value = state.historyBrowseAll ? '' : state.globalKeyword;
-  $('#clearHistoryKeyword').hidden = !state.globalKeyword;
+  $('#clearHistoryKeyword').hidden = !state.globalKeyword || state.historyBrowseAll;
   $('#historySearchStatus').textContent = state.globalKeyword
-    ? `${state.historyBrowseAll ? '全部论文' : `“${state.globalKeyword}”全库命中`} ${state.historyTotalMatches.toLocaleString('zh-CN')} 篇；网页仅按月分批载入详情，不一次占满内存。${state.historyProgress ? ` ${state.historyProgress}` : ''}`
+    ? `${state.historyBrowseAll ? '全部论文' : `“${state.globalKeyword}”全库命中`} ${state.historyTotalMatches.toLocaleString('zh-CN')} 篇；${state.historyBrowseAll ? '自动载入全部月份，卡片分批展示。' : '按月载入关键词命中详情。'}${state.historyProgress ? ` ${state.historyProgress}` : ''}`
     : '选择关键词后，会逐年检索轻量索引，并按月分批载入论文详情。';
   const stats = historyMonthStats();
   const max = Math.max(1, ...stats.map(([, count]) => count));
@@ -1793,13 +1823,14 @@ function renderCards() {
   const list = $('#cardList');
   list.replaceChildren(...items.slice(0, state.visible).map(cardFor));
   $('#resultCount').textContent = state.view === 'papers' && state.globalKeyword
-    ? `全库命中 ${state.historyTotalMatches.toLocaleString('zh-CN')} 篇 · 已载入 ${items.length.toLocaleString('zh-CN')} 篇详情`
+    ? `全库 ${state.historyTotalMatches.toLocaleString('zh-CN')} 篇 · 已载入 ${state.historyResults.length.toLocaleString('zh-CN')} 篇 · 当前筛选 ${items.length.toLocaleString('zh-CN')} 篇${state.historySearching ? '（加载中）' : ''}`
     : `共 ${items.length.toLocaleString('zh-CN')} 条结果`;
   $('#emptyState').hidden = items.length !== 0;
   const hasQueuedHistory = state.view === 'papers' && state.globalKeyword && state.historyMonthQueue.length;
-  $('#loadMore').hidden = items.length <= state.visible && !hasQueuedHistory;
-  $('#loadMore').disabled = state.historySearching;
-  $('#loadMore').textContent = hasQueuedHistory
+  const retryFullLibrary = state.view === 'papers' && state.historyBrowseAll && state.historyLoadError;
+  $('#loadMore').hidden = items.length <= state.visible && !hasQueuedHistory && !retryFullLibrary;
+  $('#loadMore').disabled = state.historySearching && !state.historyBrowseAll;
+  $('#loadMore').textContent = retryFullLibrary ? '重试加载全库' : hasQueuedHistory
     ? (state.historySearching ? '正在载入…' : '继续载入更早月份')
     : '显示更多';
   renderActiveFilters();
@@ -1924,7 +1955,7 @@ function setMySection(section) {
   history.replaceState(null, '', `${PATH}#favorites-${section}`);
 }
 
-function setView(view) {
+function setView(view, { fullLibrary = true } = {}) {
   closePaperAssistant();
   state.selectedPaperId = '';
   state.inlineCitationId = '';
@@ -1936,7 +1967,7 @@ function setView(view) {
   state.visible = 20;
   const labels = {
     home: ['HOME', '首页', '今日科研简报、新闻、通知与重点文章'],
-    papers: ['LATEST PAPERS', '最新论文', '题目与摘要保留原文'],
+    papers: ['PAPER LIBRARY', '全部论文', '历史与最新论文合并去重，题目与摘要保留原文'],
     featured: ['EDITOR\'S RADAR', '重点文献', '基于来源、新颖性与关注词评分'],
     news: ['OFFICIAL NEWS', '科研新闻', '仅保留官方原始链接'],
     notices: ['DAILY NOTICES', '每日科研通知', '基金·束流·博后·CSC·涉核会议'],
@@ -1974,6 +2005,7 @@ function setView(view) {
   renderGlobalKeywordPanel();
   renderCards();
   history.replaceState(null, '', `${PATH}#${view}`);
+  if (view === 'papers' && fullLibrary && !state.historyBrowseAll) void searchAllHistory('', { browseAll: true });
 }
 
 function setCategory(id) {
@@ -2013,7 +2045,9 @@ function openNimaPapers() {
   $('#searchFieldSelect').value = 'all';
   $('#scopeSelect').value = 'all';
   $('#sortSelect').value = 'date';
-  setView('papers');
+  setView('papers', { fullLibrary: false });
+  void searchAllHistory('', { browseAll: true });
+  state.source = NIMA_SOURCE;
   renderSourceOptions();
   $('#sectionTitle').focus({ preventScroll: true });
   $('#stream').scrollIntoView({ behavior: 'smooth' });
@@ -2985,6 +3019,7 @@ function clearPaperFilters() {
   renderSourceOptions();
   updateMySpaceUI();
   renderCards();
+  if (state.view === 'papers') void searchAllHistory('', { browseAll: true });
   showToast('已清除论文筛选');
 }
 
@@ -3347,7 +3382,7 @@ function homeLane({ kicker, title, count, items, view, tone, scope = '' }) {
       state.scope = scope;
       $('#scopeSelect').value = scope;
     }
-    setView(view);
+    setView(view, { fullLibrary: !scope });
     $('#stream').scrollIntoView({ behavior: 'smooth' });
   });
   return article;
@@ -3468,7 +3503,7 @@ async function openPaperMetric(kind) {
   $('#sortSelect').value = 'date';
   renderSourceOptions();
   $('#sourceSelect').value = 'all';
-  setView('papers');
+  setView('papers', { fullLibrary: false });
   const label = { latest: '最新发表日论文', nuclear: '核物理相关论文', journal: '核物理相关期刊论文', preprint: '核物理相关预印本', all: '全部论文', today: '今日发表论文' }[kind];
   $('#sectionTitle').textContent = `${label}${kind === 'all' ? '' : ` · ${day}`}`;
   $('#stream').scrollIntoView({ behavior: 'smooth' });
@@ -3734,6 +3769,7 @@ function bindEvents() {
   });
   $('#sourceSelect').addEventListener('change', event => { state.source = event.target.value; state.visible = 20; renderCards(); });
   $('#loadMore').addEventListener('click', () => {
+    if (state.view === 'papers' && state.historyBrowseAll && state.historyLoadError) { void searchAllHistory('', { browseAll: true }); return; }
     if (state.view === 'papers' && state.globalKeyword && state.historyMonthQueue.length) {
       void loadNextHistoryBatch();
       return;
@@ -3745,7 +3781,7 @@ function bindEvents() {
     event.preventDefault();
     void searchAllHistory($('#historyKeywordInput').value);
   });
-  $('#clearHistoryKeyword').addEventListener('click', () => clearGlobalKeywordSearch());
+  $('#clearHistoryKeyword').addEventListener('click', () => void searchAllHistory('', { browseAll: true }));
   $('#keywordButton').addEventListener('click', () => $('#keywordDialog').showModal());
   $('#addKeywordAside').addEventListener('click', () => $('#keywordDialog').showModal());
   $('#keywordForm').addEventListener('submit', event => {

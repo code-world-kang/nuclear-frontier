@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
+import { createPaperLibraryLoader } from '../site/paper-library.js';
 import { scientificText, nuclidesIn, searchText, translationCoverage, isChinese, isNimaPaper, translationForRecord } from '../site/research-utils.js';
 
 test('核素：单字母、双字母、上标、连字符及合写', () => {
@@ -45,6 +46,7 @@ function appHarness() {
   source = source.replace(/^import .*;\n/gm, '').replace(/initialize\(\);\s*$/, '');
   const storage = new Map();
   const context = vm.createContext({
+    createPaperLibraryLoader: options => createPaperLibraryLoader({ ...options, fetchImpl: (...args) => context.fetch(...args) }),
     URL, scientificText, nuclidesIn, searchText, translationCoverage, isNimaPaper, translationForRecord, AbortController, console,
     window: { location: { href: 'https://example.org/' } },
     document: { querySelector: () => null },
@@ -93,12 +95,12 @@ test('首页论文卡片按日期跳转并清除旧筛选，期刊和预印本�
 test('全部论文跳转合并日常与历史且分月加载，不把全部论文当作检索词', async () => {
   const h = appHarness();
   h.context.document.querySelector = () => ({value: ''});
-  h.run(`renderCategories = renderGlobalKeywordPanel = renderCards = renderSourceOptions = () => {};
+  h.run(`updateMySpaceUI = renderCategories = renderGlobalKeywordPanel = renderCards = renderSourceOptions = () => {};
     state.papers = [{id:'daily', published:'2026-11-10'}, {id:'undated'}];
     state.historyManifest = {years:[{year:2001},{year:2026}]};`);
   h.context.fetch = async url => ({ok:true, json:async () => {
-    if (url.includes('/search/2026')) return {items:[{id:'daily',month:'2026-11',search_text:'nuclear structure'}]};
-    if (url.includes('/search/2001')) return {items:[{id:'old',month:'2001-01',search_text:'nuclear reactions'}]};
+    if (url.includes('/stats/2026')) return {months:[{month:'2026-11'}]};
+    if (url.includes('/stats/2001')) return {months:[{month:'2001-01'}]};
     if (url.includes('/papers/2026')) return [{id:'daily',published:'2026-11-10'}];
     return [{id:'old',published:'2001-01-01'}];
   }});
