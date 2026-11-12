@@ -1,57 +1,57 @@
-# 小康康的物理世界 · 2026-11-03 科研简报
+# 小康康的物理世界 · 2026-11-11 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 8/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 1/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[与 229Th 同步的核钟](https://doi.org/10.1038/s41586-026-11122-1)**  
-   Nature · 2026-10-07  
-   摘要 原子钟已使时间和频率成为物理学中测量最精确的量，从实现 SI 秒 1 的微波基准发展到具有前所未有精度 2 的光钟。核钟将频率参考从电子跃迁转移至核跃迁，而 229 Th 中独特的低能、激光可访问的同质异能跃迁目前为实现紧凑、稳健的计时以及对基础物理学的灵敏检验提供了最切实可行的途径 3–8。实现这样的钟需要将 229 Th 核共振的光谱学研究 9–17 转化为一个稳定的鉴频器，以调控可溯源振荡器。在此，我们通过将连续波、窄线宽 148.4 nm 真空紫外（VUV）激光器 18 稳定到 229 Th:CaF 2 晶体 20–22 中一条已分辨、温度敏感性弱的核跃迁 17,19，实现了 229 Th 核钟。由镉蒸气中的四波混频 18,23,24 产生的 10-μW VUV 光源，以及基于光电管的频率调制吸…
-2. **[轻原子核从头算 β 衰变计算在探索超越标准模型物理中的作用](https://doi.org/10.1016/j.ppnp.2026.104260)**  
-   Progress in Particle and Nuclear Physics · 2026-09-01  
-   精密 β 衰变实验是探索超越标准模型物理的有力手段，能够对自然界的基本对称性进行严格检验。特别是，这些实验主要聚焦于精确确定 Cabibbo-Kobayashi-Maskawa 矩阵元 Vud 以及寻找奇异弱流，而这两者都关键依赖于对辐射修正、反冲阶修正和同位旋破缺修正进行具有量化不确定度的理论计算。近年来，以现实的核子-核子相互作用和可系统改进的近似为基础的从头算核多体方法，在计算各种原子核的这些高阶修正方面取得了长足进展。本综述全面概述了最先进的 β 衰变修正从头算计算，涵盖辐射修正和反冲阶项，并考察了它们对于精密检验标准模型的重要意义。我们讨论了所采用的理论形式体系，包括将有效场论框架与多体方法相结合。本文特别关注了超允许 Fermi 衰变（例如 10C ->10B 和 14O ->14C）以及允许的…
-3. **[$^{76}$As 到 $^{76}$Ge 第一激发态的电子俘获测量](https://doi.org/10.1103/2w69-czyv)**  
-   Physical Review C · 2026-11-03  
-   大型实验 LEGEND 正在搜寻 $^{76}$Ge 的无中微子双 $β$ 衰变。测量该过程的半衰期可借助核矩阵元获得中微子质量。实验上，可通过其 $\beta^-$ 衰变和电子俘获衰变的分支比研究 $^{76}$As 基态对核矩阵元的贡献。尽管从能量上 $^{76}$As 到 $^{76}$Ge 第一激发态的电子俘获是可能的，且在本工作之前曾被测量过一次，但到 $^{76}$Ge 基态的电子俘获尚未被观测到。本研究考察由薄 As$_2$O$_3$ 样品上的 $^{75}$As(n,$\gamma$) 反应产生的 $^{76}$As 的分支。硅漂移探测器测量电子俘获后内层空位导致锗原子发出的特征 X 射线。高纯锗探测器用于测量电子俘获到激发态后发射的 562.9$\,$keV $\gamma$ 射线。对两台探…
-4. **[由联合 Gamow-Teller 测量对 Landau 参数 G ′ 0 进行贝叶斯推断](https://doi.org/10.1103/kn6h-dkxb)**  
-   Physical Review Letters · 2026-11-02  
-   $G'_0$ 是表征自旋-同位旋相关核子-核子相互作用的领头阶 Landau-Migdal 参数。因此，$G'_0$ 与 Gamow-Teller 共振（GTR）、有限原子核的 β 衰变和双 β 衰变率、会改变核心坍缩超新星（CCSNe）和双中子星（BNS）并合中中微子-核子吸收率的高温致密核子物质响应，以及中子星中 pion 凝聚的临界密度密切相关。本文首次报告了贝叶斯推断框架下具有量化不确定度的 $G'_0$，其中采用自洽的标准 Skyrme 随机相位近似（RPA）模型，并使用来自 $^{208}\mathrm{Pb}$、$^{132}\mathrm{Sn}$、$^{90}\mathrm{Zr}$ 实验 GTR 测量的联合约束。我们提取的饱和密度下 $G_0'$ 为 $0.48\pm0.034$，这接近少…
-5. **[寻找超重核：实验视角](https://doi.org/10.1146/annurev-nucl-100324-103404)**  
-   Annual Review of Nuclear and Particle Science · 2026-09-21  
-   实验物理学家目前正致力于将周期表扩展至第八行，元素119和120的搜寻工作正在进行中，此时回顾合成元素发现近一个世纪的历史显得尤为及时。从最初生产铀以外的元素到最近完成第七行的探索，本综述全面概述了扩展周期表过程中的重要里程碑和进展。历史上，新元素的搜寻一直激发公众的想象力，同时也为基本科学提供了独特的窗口。这一点在超重元素的发现与研究中表现得尤为明显，这些元素使人们能够直接进行核科学和化学极端情况的实验探索。本综述探讨了合成元素发现中的主要发展和突破，展示了科学好奇心、创新研究与不断拓展我们对周期表理解之间的复杂关系。
-6. **[在s = 200 GeV的横向极化质子-质子碰撞中喷注内的能量相关子](https://doi.org/10.1103/fgsf-gx2q)**  
-   Physical Review Letters · 2026-09-08  
-   我们报告了在横向极化的质子-质子碰撞中，s = 200 GeV 条件下，利用相对论重离子对撞机上的STAR探测器首次测量了单点和双点能量相关函数。这些可观测量分别量化了单个强子和强子对在喷注内的能量加权角分布。对于π⁺、π⁻以及π⁺π⁻对，观察到显著的自旋依赖不对称性，揭示了在特定角尺度下非微扰动力学的出现。通过将碎片化动力学投影到梅林矩上，这些测量对核子的横向不对称性具有敏感性，同时最小化了来自非微扰碎片化函数的不确定性。这些结果确立了能量相关函数作为探测核子结构的一种新颖且精确的手段，并为未来电子-离子对撞机上的三维核子断层成像开辟了有前景的途径。
-7. **[首次 Nb 94 ( n , γ ) 测量：约束前太阳颗粒中 Mo 94 的核合成起源](https://doi.org/10.1103/538w-rhqb)**  
-   Physical Review Letters · 2026-08-18  
-   对来自濒死恒星的前太阳碳化硅颗粒进行的同位素测量揭示了令人困惑的 Mo 94 过丰度，而恒星核合成模型二十年来一直未能再现这一现象。这一差异对我们关于慢中子俘获过程（ s -过程）的理解提出了挑战，该过程生成了约一半比铁重的元素。关键的不确定性位于 Nb 94，这是一个放射性分支点，中子俘获与 β 衰变之间的竞争支配着 Mo 94 的生成，但其中子俘获截面此前从未得到测量。在此，我们报告了对 Mo 同位素丰度具有重要意义的 Nb 94 ( n , γ ) Nb 95 截面的首次实验测定。这项测量由一项协同工作实现，其中包括在德累斯顿固体与材料研究所制备高纯度靶、在格勒诺布尔劳厄-朗之万研究所制备放射性样品、在菲利根保罗·谢勒研究所进行放射化学表征，以及在飞行时间 CERN n_TOF 装置首次使用分段式总能量…
-8. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
-   Physical Review Letters · 2026-08-04  
-   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
+1. **[Hyper-Nuclei $^4_{\Lambda}\hbox{He}$ Production in $\sqrt{s_{\rm{NN}}}$ = 3 GeV Au+Au collisions at RHIC](https://arxiv.org/abs/2606.22457)**  
+   arXiv nucl-ex · 2026-11-11  
+   The STAR experiment reports the first measurement of the $^4_{\Lambda}\hbox{He}$ hyper-nuclei yield as a function of rapidity and transverse momentum in 0-50% central Au+Au collisions at $\sqrt{s_{\rm{NN}}} =$ 3 GeV. The $^4_{\Lambda}\hbox{He}$ is reconstructed through its three-body decay channel, $^4_{\Lambda}\rm{He} \rightarrow {}^{3}\rm{He} + \rm{p} + \…
+2. **[Spurious Isospin Breaking in the In-medium Similarity Renormalization Group](https://arxiv.org/abs/2412.10693)**  
+   arXiv nucl-th · 2026-11-11  
+   The in-medium similarity renormalization group is a promising ab initio approach for computing the isospin-related theoretical correction $\delta_C$ to superallowed beta decay rates, relevant for tests of CKM unitarity. An essential requirement of such corrections is a properly quantified theoretical uncertainty. While isospin symmetry is explicitly broken…
+3. **[Precision Mass Measurements of \textsuperscript{130}Te, \textsuperscript{130}Sn, and Their Impact on Models for R-Process Nucleosynthesis](https://arxiv.org/abs/2603.05628)**  
+   arXiv nucl-ex · 2026-11-11  
+   The astrophysical rapid neutron capture nucleosynthesis process (r-process) remains an active area of research due to the fact that it occurs in extreme conditions and involves reactions with exotic nuclei that are difficult to study experimentally. For the first time using the Phase-Imaging Ion Cyclotron Resonance (PI-ICR) technique, we measured the mass e…
+4. **[Formation of superheavy elements 119 and 120 in the $^{50}$Ti+$^{249}$Bk and $^{50}$Ti+$^{249}$Cf reactions: dinuclear system dynamics, survival probability, and decay chains of the evaporation residues](https://arxiv.org/abs/2611.13953)**  
+   arXiv nucl-th · 2026-11-11  
+   The $^{50}$Ti+$^{249}$Bk and $^{50}$Ti+$^{249}$Cf reactions leading to the compound nuclei $^{299}$119 and $^{299}$120 are studied in the framework of the dinuclear system (DNS) model. The capture cross section has been calculated by solving the dynamical equations of motion for all orientation angles of the deformed target nucleus and for the zero-point vi…
+5. **[中微子是马约拉纳粒子吗？固定靶实验和高能天体物理搜寻将作出判定](https://arxiv.org/abs/2606.17132)**  
+   arXiv nucl-th · 2026-11-11  
+   本文的原始版本提出了一种确定中微子是狄拉克费米子还是马约拉纳费米子的新方法，这是粒子物理学中的一个基本开放问题。传统搜寻依赖无中微子双 β 衰变，但这种仅涉及电子的道存在盲区。我们提出了一种新的互补探针来克服这一局限。重中性轻子（HNL）会使活性中微子味（$\nu_e$、$\nu_\mu$、$\nu_\tau$）的混合方式发生高能偏移——但仅当中微子是马约拉纳粒子时才会如此。对于 GeV 尺度的 HNL，即将开展的束流倾倒实验 SHiP 能够发现 HNL，并测量它与活性味的混合方式。然而，所提出的中微子马约拉纳性质的信号并不存在。其原因在此予以说明。该分析已被 Ref.~\cite{Barenboim:2026udr} 取代。原始版本保留为 v1，以供记录。
+6. **[The Alpha Clustering Model of the EMC Effect](https://arxiv.org/abs/2611.13234)**  
+   arXiv nucl-th · 2026-11-11  
+   For more than forty years, the EMC effect, the observation that nuclear structure functions in deep-inelastic scattering appear to be modified relative to the free-nucleon expectation, has resisted a consensus microscopic explanation. In this letter, we argue that the strength and $A$ dependence of the EMC effect may be governed by the phenomena of $\alpha$…
+7. **[Measurement of the $^{169}$Tm$(\gamma,n)$$^{168}$Tm Cross Section and Implications for $\gamma$-Process Calculations](https://arxiv.org/abs/2611.12994)**  
+   arXiv nucl-ex · 2026-11-11  
+   The $^{169}\mathrm{Tm}(\gamma,n)^{168}\mathrm{Tm}$ cross section has been measured at the Shanghai Laser Electron Gamma Source (SLEGS) using quasi-monoenergetic laser-Compton-scattering $\gamma$ rays over the energy range from the neutron threshold to 14.61~MeV. The photon flux and energy distribution were determined with a LaBr$3$(Ce) spectrometer, and mon…
+8. **[Machine Learning-Based Reconstruction for Resistive Silicon Sensors](https://arxiv.org/abs/2607.11585)**  
+   arXiv nucl-ex · 2026-11-11  
+   Low-Gain Avalanche Diodes (LGADs) and AC-coupled Low-Gain Avalanche Diodes (AC-LGADs) are promising technologies for precision timing and four-dimensional tracking. In AC-LGADs, the AC pad is coupled to the resistive n$^{+}$ layer through a dielectric layer, while the gain layer remains unsegmented. This structure provides a 100\% fill factor and enables go…
 
 ## 物理新闻
 
-- **[The Gurzhi Effect Reaches Three Dimensions](http://link.aps.org/doi/10.1103/Physics.19.148)**  
-   APS Physics · 2026-11-09  
-   Author(s): Davis Thuillier Measurements on micrometer-scale cadmium samples provide definitive evidence of an unusual charge-transport regime in a 3D metal. [Physics 19, 148] Published Mon Nov 09, 2026
-- **[Snapshot: A Dragon Rouses out of the Sea Spray](http://link.aps.org/doi/10.1103/Physics.19.150)**  
-   APS Physics · 2026-11-09  
-   The violent breaking of waves is both visually spectacular and meteorologically impactful. [Physics 19, 150] Published Mon Nov 09, 2026
-- **[Coherence enhancement through equilibration to near-zero optical temperatures](https://www.nature.com/articles/s41567-026-03520-z)**  
-   Nature Physics · 2026-11-06  
+- **[Altermagnetism in a new light](https://www.nature.com/articles/s41567-026-03532-9)**  
+   Nature Physics · 2026-11-11  
    数据源暂未提供详细介绍。
-- **[Why Brittle Solids Crack Under Pressure](http://link.aps.org/doi/10.1103/Physics.19.151)**  
-   APS Physics · 2026-11-06  
-   Author(s): Ryan Wilkinson Theory and experiments suggest that the mysterious fractures that appear when a brittle material is compressed result from a hidden buildup of internal tension. [Physics 19, 151] Published Fri Nov 06, 2026
+- **[Gravitational-Wave Observations Implicate Failed Supernovae](http://link.aps.org/doi/10.1103/Physics.19.s149)**  
+   APS Physics · 2026-11-10  
+   Author(s): Sophia Chen Stars collapsing directly into black holes might explain the surprising number of merging black holes of about 10 solar masses. [Physics 19, s149] Published Tue Nov 10, 2026
+- **[Granular Matter Carries Hidden Memory](http://link.aps.org/doi/10.1103/Physics.19.s141)**  
+   APS Physics · 2026-11-10  
+   Author(s): Ryan Wilkinson A memory phenomenon known as the anomalous Kovacs effect has been experimentally observed in a granular system for the first time. [Physics 19, s141] Published Tue Nov 10, 2026
+- **[The edge of the Sun](https://www.nature.com/articles/s41567-026-03515-w)**  
+   Nature Physics · 2026-11-09  
+   数据源暂未提供详细介绍。
 
 ## 科研通知
 
+- **[CEPC Vertex detector TDR weekly meeting](https://indico.ihep.ac.cn/event/31465/)**  
+   高能所 Indico · 2026-11-12  
+   2026-11-12 — 2026-11-12
 - **[核物理与核技术全国重点实验室学术报告— 核物理前沿与交叉专题（第六十七讲）](https://sklnpt.pku.edu.cn/info/1121/4921.htm)**  
    核物理与核技术全国重点实验室会议 · 2026-11-10  
    ----友情链接---- ---- 北京大学 ---- ---- 北京大学物理学院 ---- ---- HIAF强流重离子加速器装置 ---- 地址：北京市海淀区成府路201号核物理与核技术全国重点实验室 邮编：100871 联系电话：010-62751870；010-62755215 邮箱：jingwu@pku.edu.cn
-- **[CEPC Silicon Inner Tracker meeting](https://indico.ihep.ac.cn/event/31444/)**  
-   高能所 Indico · 2026-11-09  
-   2026-11-10 — 2026-11-10 Join Zoom Meeting https://cern.zoom.us/j/65113799897?pwd=r9rqHU2OULV0tuzN2PKEhsWCeGB7DJ.1 Meeting ID: 651 1379 9897 Passcode: 258765
 - **[关于发布原子级制造基础研究重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100397.html)**  
    国家自然科学基金委项目指南 · 2030-12-31  
    国科金发计〔2026〕12号 国家自然科学基金委员会现发布原子级制造基础研究重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请。 国家自然科学基金委员会 2026年1月26日 原子级制造基础研究重大研究计划 2026年度项目指南 原子级制造是指在原子尺度控制材料的结构与成分，其核心是通过原子的精确操控来获得特定功能，突破传统制造技术的精度极限，实现物质的原子级转化与高效利用。原子级制造的科学基础是在原子尺度下优化物质转化与能量利用，实现物质结构和材料性能的按需订制，为实现颠覆性技术、升级战略性产业和提升国家安全竞争力奠定科学与技术基础。 一、科学目标 本重大研究计划围绕批量原子操控这一核心目标，聚焦原子尺度下物质与能量的相互作用原理，实现材料成分和结构的原子级构筑和测量表征，…
@@ -61,8 +61,8 @@
 - **[广东省科学技术厅关于转发国家重点研发计划“三峡水运新通道数智增效”重点专项、“尖刀”技术攻关工程重点专项2026年度申报指南的通知](https://gdstc.gd.gov.cn/zwgk_n/tzgg/content/post_4977393.html)**  
    广东省科技厅 · 2026-11-10  
    广东省科学技术厅 简体 繁体 无障碍 长者助手 首页 政务公开 科技资讯 党风廉政 办事服务 互动平台 搜 索 当前位置： 首页 > 政务公开 > 通知公告 广东省科学技术厅关于转发国家重点研发计划“三峡水运新通道数智增效”重点专项、“尖刀”技术攻关工程重点专项2026年度申报指南的通知 时间 : 2026-11-10 15:06:11 来源 : 广东省科学技术厅 【字体: 大 中 小 】 【打印】 分享到： 各有关单位： 近日，湖北省人民政府、中国三峡集团分别发布了国家重点研发计划“三峡水运新通道数智增效”和“尖刀”技术攻关工程重点专项2026年度项目申报指南。现转发给你们，请对照指南要求做好项目申报工作。 查阅网址如下： 1.国家重点研发计划“三峡水运新通道数智增效”重点专项2026年度公开竞争项目申报指…
-- **[AGORA/CEPC Detector and Physics Plenary Meeting](https://indico.ihep.ac.cn/event/31430/)**  
+- **[CEPC Silicon Inner Tracker meeting](https://indico.ihep.ac.cn/event/31444/)**  
    高能所 Indico · 2026-11-09  
-   2026-11-11 — 2026-11-11 Meeting URL: https://zoom.us/j/99845275219?pwd=JOSplxGdFI1DI5KCKaCbvfwNZ205N3.1 ID: 998 4527 5219 Password: 773321
+   2026-11-10 — 2026-11-10 Join Zoom Meeting https://cern.zoom.us/j/65113799897?pwd=r9rqHU2OULV0tuzN2PKEhsWCeGB7DJ.1 Meeting ID: 651 1379 9897 Passcode: 258765
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)
