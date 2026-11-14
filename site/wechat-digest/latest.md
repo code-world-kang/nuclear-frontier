@@ -1,6 +1,6 @@
 # 小康康的物理世界 · 2026-11-13 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 6/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 8/18 条已有中文内容。
 
 ## 今日重点论文
 
@@ -10,24 +10,24 @@
 2. **[在一个异常宽的双星系统中发现一颗可能的超大质量中子星](https://doi.org/10.1126/sciadv.aeg3307)**  
    Science Advances · 2026-11-13  
    超大质量中子星（ M ≳ 2 M ⊙ ）对致密物质的状态方程施加了严格约束。我们报告发现了一个由一颗红巨星和一个不可见伴星组成的宽双星系统，其轨道周期为 P ≈ 1218 ± 3 天，偏心率相对较低，为 e ≈ 0.09 ± 0.01（具有 1σ 不确定度）。通过将大天区面积多目标光纤光谱望远镜和阿帕奇点天文台银河系演化实验（APOGEE）的径向速度测量结果与 Gaia DR2 和 DR3 星表的天体测量数据相结合，我们推导出一条倾角为 i ≈ 73 ∘ ± 11 ∘ 的开普勒轨道。该不可见伴星的质量范围为 1.8 至 2.8 M ⊙（涵盖所有估计值的完整分布范围），最佳拟合值为 2.20 − 0.13 + 0.14 M ⊙。这可能使该不可见伴星处于中子星与黑洞之间的质量间隙内。使用高分辨率近红外 APOGE…
-3. **[研究 $^{9}_{\Omega/\Omega_{ccc}}{\mathrm{Be}}$ 核中 $\alpha\alpha\Omega/\Omega_{ccc}$ 团簇的三体共振](https://doi.org/10.1103/b4d3-cr4q)**  
+3. **[研究 Ω / Ω c c c 9 Be 原子核内 α α Ω / Ω c c c 团簇中的三体共振](https://doi.org/10.1103/b4d3-cr4q)**  
    Physical Review D · 2026-11-13  
-   我们结合高斯展开法与复标度法，研究了分别对应于 $^{9}_{\Omega}{\mathrm{Be}}$ 和 $^{9}_{\Omega_{ccc}}{\mathrm{Be}}$ 的 $\alpha+\alpha+\Omega$ 与 $\alpha+\alpha+\Omega_{ccc}$ 三体体系的束缚态和共振态。将 HAL QCD 合作组通过格点 QCD 计算获得的 $N\Omega$ 和 $N\Omega_{ccc}$ 势，与 $\alpha$ 粒子的核子密度分布进行折叠，构造出 $\alpha\Omega$ 和 $\alpha\Omega_{ccc}$ 相互作用。同时考察了与 $\alpha$ 粒子物质半径相关的不确定性。 对于 $\Omega$ 体系，强烈的 $N\Omega$ 吸引作用在 $^{9…
-4. **[在LHC能量下的p p碰撞中，基于色玻璃凝聚框架的事件生成器所预测的前向强子产生](https://doi.org/10.1103/7hvz-pjps)**  
+   我们采用高斯展开法结合复标度法，研究与 Be Ω 9 和 Be Ω c c c 9 相对应的 α + α + Ω 和 α + α + Ω c c c 三体系统的束缚态和共振态。α Ω 和 α Ω c c c 相互作用通过将 HAL QCD Collaboration 的格点 QCD 计算所得 N Ω 和 N Ω c c c 势与 α 粒子的核子密度分布进行折叠来构建。我们还考察了与 α 粒子物质半径相关的不确定性。对于 Ω 部分，强 N Ω 吸引在 Be Ω 9 中产生深束缚的 0 1 +、2 1 + 和 4 1 + 态，并伴随 α α 核芯的显著收缩，表明 Ω 重子具有很强的类胶效应。我们还预言了 0 1 + 与 4 1 + 能级之间的非常规反转。相比之下，Ω c c c 重子产生的吸引显著较弱：Be Ω…
+4. **[基于色玻璃凝聚框架的事件生成器研究 LHC 能区 p p 碰撞中的前向强子产生](https://doi.org/10.1103/7hvz-pjps)**  
    Physical Review D · 2026-11-13  
-   We investigate inclusive forward single-hadron production in high-energy proton-proton collisions using a color glass condensate-inspired Monte Carlo event generator, MC-CGC. We carried out a systematic study of the sensitivity of the running-coupling Balitsky-Kovchegov evolution equation to its initial conditions by comparing three parametrizations: the Mc…
-5. **[Exclusive cross section measurements of $^{12}$C(n,p$_\text{n}$) and $^{12}$C(n,d$_\text{n}$) reactions](https://arxiv.org/abs/2611.16075)**  
+   我们使用受色玻璃凝聚启发的蒙特卡洛事件生成器 MC-CGC，研究高能质子-质子碰撞中的包容性前向单强子产生。我们通过比较三种参数化方案，即 McLerran-Venugopalan (MV) 模型及其两个受 HERA 深度非弹性散射约束的变体 MV γ 和 MV e，对含跑动耦合的 Balitsky-Kovchegov 演化方程对其初始条件的敏感性进行了系统研究。我们的结果表明，当前的 LHCb 数据倾向于支持 MV γ 和 MV e 模型，而在更高横动量和中快度处，它们与原始 MV 模型的差异变得更加显著。作为补充分析，我们还比较了稀疏-致密[Dumitru–Hayashigaki–Jalilian-Marian (DHJ) 因子化]和致密-致密（k T 因子化）框架。我们发现，在 LHC 能区投射粒子和靶…
+5. **[$^{12}$C(n,p$_\text{n}$) 和 $^{12}$C(n,d$_\text{n}$) 反应的专有截面测量](https://arxiv.org/abs/2611.16075)**  
    arXiv nucl-ex · 2026-11-13  
-   A single-crystal chemical vapor deposited (sCVD) diamond detector was used at LANSCE to measure neutron-induced reactions on carbon. Neutrons with a broad energy spectrum were produced via spallation. Relative cross sections are reported from above threshold up to 26 MeV incident neutron energy for $^{12}$C(n,p$_2$)$^{12}$B, up to 23 MeV for $^{12}$C(n,p$_{…
-6. **[107 Ag中高度受阻的B ( E 1 ) 跃迁强度](https://doi.org/10.1103/9xnt-k5tf)**  
+   在 LANSCE 使用单晶化学气相沉积 (sCVD) 金刚石探测器测量了碳上的中子诱发反应。通过散裂产生具有宽能谱的中子。报告了从阈值以上直至入射中子能量 26 MeV 的 $^{12}$C(n,p$_2$)$^{12}$B 相对截面、直至 23 MeV 的 $^{12}$C(n,p$_{3+4}$)$^{12}$B 相对截面，以及直至 35 MeV 的 $^{12}$C(n,d$_1$)$^{11}$B 和 $^{12}$C(n,d$_2$)$^{11}$B 相对截面；所有这些测量都是迄今这些反应的最高能量测量，其中 (n,d$_2$) 为首次测量。还报告了由各分截面求和得到的 $^{12}$C(n,p)$^{12}$B$_\text{total}$ 和 $^{12}$C(n,d)$^{11}$B$_\te…
+6. **[Ag 107 中高度阻碍的 B ( E 1 ) 跃迁强度](https://doi.org/10.1103/9xnt-k5tf)**  
    Physical Review C · 2026-11-13  
-   The excited states of $^{107}\mathrm{Ag}$ were populated via $^{100}\mathrm{Mo}(^{11}\mathrm{B},\phantom{\rule{0.28em}{0ex}}4n)$ reaction at the BARC-TIFR Pelletron Linac Facility located at TIFR Mumbai. The mean-life of $15/{2}^{\ensuremath{-}}$ state at 2299-keV energy level was measured using the fast timing method. The $B(E1)$ transition strengths of 13…
-7. **[寿命测量揭示96 Zr中共存的正常结构与闯入者结构之间存在显著混合](https://doi.org/10.1103/f171-t9xh)**  
+   在位于 TIFR Mumbai 的 BARC-TIFR Pelletron Linac Facility，通过 $^{100}\mathrm{Mo}(^{11}\mathrm{B},\phantom{\rule{0.28em}{0ex}}4n)$ 反应布居了 $^{107}\mathrm{Ag}$ 的激发态。采用快定时法测量了能量为 2299-keV 的能级上 $15/{2}^{\ensuremath{-}}$ 态的平均寿命。利用所测平均寿命得到的 1307- 和 498-keV $\ensuremath{\gamma}$ 射线的 $B(E1)$ 跃迁强度分别为 $4.8(9)\ifmmode\times\else\texttimes\fi{}{10}^{\ensuremath{-}7}$ 和 $1.7(4)…
+7. **[通过寿命测量揭示的 Zr 96 共存正常结构与入侵者结构之间的显著混合](https://doi.org/10.1103/f171-t9xh)**  
    Physical Review C · 2026-11-13  
-   在$^{94}$Zr($^{18}$O,$^{16}$O)$^{96}$Zr双中子转移反应之后，采用多普勒频移衰减法研究了原子核$^{96}$Zr激发态的寿命。所获得的$B(E2;2^+_2\to0^+_2)$和$B(E2;4^+_1\to2^+_2)$跃迁强度分别为$26(2)$和$39(7)$\,W.u.，明确地将$2^+_2$和$4^+_1$态归属于构建在$0^+_2$态之上的集体闯入者带。结合使用Bohr哈密顿量的集体模型、具有组态混合的相互作用玻色子模型以及准粒子真空壳模型的预测，讨论了这一结构的性质。计算再现了集体的带间$B(E2;4^+_1\to2^+_1)=11.2(8)$\,W.u.跃迁强度，该结果否定了此前所假定的两种结构的纯粹性。准粒子真空壳模型预言正常与闯入者$2^+$态之间存在显著混…
-8. **[Observation of the $\Lambda(1520)$ suppression in Pb-Pb collisions at $\sqrt{s_{\rm NN}} = 5.02$ TeV](https://arxiv.org/abs/2611.17010)**  
+   在 Zr 94 ( O 18 , O 16 ) Zr 96 双中子转移反应之后，采用多普勒频移衰减法研究了原子核 Zr 96 激发态的寿命。所获得的 B ( E 2 ; 2 2 + → 0 2 + ) 和 B ( E 2 ; 4 1 + → 2 2 + ) 跃迁强度分别为 26 ( 2 ) 和 39 ( 7 ) W . u .，明确地将 2 2 + 和 4 1 + 态归属于建立在 0 2 + 态之上的集体入侵者带。结合使用 Bohr Hamiltonian 的集体模型、具有组态混合的相互作用玻色子模型以及准粒子真空壳模型的预言，对这一结构的性质进行了讨论。计算再现了集体的带间 B ( E 2 ; 4 1 + → 2 1 + ) = 11.2 ( 8 ) W . u . 跃迁强度，否定了此前关于两种结构均为纯结…
+8. **[在 $\sqrt{s_{\rm NN}} = 5.02$ TeV 的 Pb-Pb 碰撞中观测到 $\Lambda(1520)$ 抑制](https://arxiv.org/abs/2611.17010)**  
    arXiv nucl-ex · 2026-11-13  
-   A suppression of the baryonic $\Lambda(1520)$ resonance yield relative to the $\Lambda$ ground state by $0.589 \pm 0.015^{\rm stat} \pm 0.086^{\rm syst}$ is observed in central relative to peripheral Pb-Pb collisions, with a significance of $6.8\sigma$. The $\Lambda(1520)$ production at midrapidity is measured in six centrality classes in Pb-Pb collisions f…
+   在中心 Pb-Pb 碰撞相对于外周 Pb-Pb 碰撞中，观测到重子 $\Lambda(1520)$ 共振态相对于 $\Lambda$ 基态的产额受到 $0.589 \pm 0.015^{\rm stat} \pm 0.086^{\rm syst}$ 的抑制，显著性为 $6.8\sigma$。ALICE 首次在 $\sqrt{s_{\rm NN}} = 5.02$ TeV 的 Pb-Pb 碰撞中测量了六个中心度类别的中快度 $\Lambda(1520)$ 产生。由于 $\Lambda(1520)$ 的寿命与 LHC 重离子碰撞中强子相的寿命相当，因此它是晚期强子相互作用的灵敏探针。预言化学冻结时产额的统计强子化模型计算高估了测得的比值。只有当 MUSIC 流体动力学模型与 SMASH 强子输运余辉模型耦合时，才…
 
 ## 物理新闻
 
