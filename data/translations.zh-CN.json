@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T22:47:15.410578+00:00",
+  "generated_at": "2026-11-15T22:41:45.299698+00:00",
   "provider": "mixed",
   "items": {
     "03fb0be72e560764": {
@@ -11156,10 +11156,16 @@
       "note": "完整翻译 title 与 abstract/summary；保留原始公式、LaTeX、核素、反应道、变量、单位、数值、误差、专名、DOI 和引用标记。"
     },
     "9f18805332a11c11": {
-      "title_zh": "能量–动量平方引力：统一相互作用物质下的带电夸克星解",
-      "abstract_zh": "摘要 我们在能量—动量平方引力（EMSG）框架内研究带电夸克星的平衡结构，采用纳入微扰 QCD 修正、色超导和有限奇异夸克质量效应的统一相互作用夸克物质状态方程。通过在广泛 EMSG 耦合强度和相互作用参数范围求解修正 Tolman-Oppenheimer-Volkoff 方程，我们表明，与中性构型相比，纳入电荷会显著增加最大质量和半径。对于强负耦合和显著相互作用强度，所得恒星模型质量接近 $3\\,M_{\\odot}$，致密度比约为 $0.34$，与 GW190814 推断的高质量致密天体一致。电荷存在使最大质量处中心密度降低约 $10$--$15\\%$，同时完全满足因果性要求。此外，与 PSR J1614$-$2230、J0348$+$0432、J0740$+$6620、J0952$-$0607 及近期 NICER 半径测量的观测约束比较表明，带电 EMSG 构型在广泛参数空间内与当前天体物理界限一致。这些结果证明，适中电荷与非线性物质—几何耦合结合，可支持明显比广义相对论预言更大质量的夸克星，凸显修正引力和多信使天体物理中带电致密天体的潜在观测相关性。",
-      "translated_at": "2026-08-12T16:07:37.052Z",
-      "note": "完整翻译 title 与 abstract/summary；保留原始公式、LaTeX、核素、反应道、变量、单位、数值、误差、专名、DOI 和引用标记。"
+      "title_zh": "能量–动量–平方引力：具有统一相互作用物质的带电夸克星解*",
+      "abstract_zh": "摘要 我们在能量-动量平方引力（EMSG）框架内研究带电夸克星的平衡结构，采用一种统一的相互作用夸克物质状态方程，其中纳入了微扰量子色动力学（QCD）修正、色超导性以及有限奇异夸克质量效应。通过在广泛的EMSG耦合强度和相互作用参数范围内求解修正的Tolman-Oppenheimer-Volkoff（TOV）方程，我们表明，与中性构型相比，引入电荷会显著增大最大质量和半径。对于强负耦合和显著的相互作用强度，所得恒星模型的质量接近，致密度比的量级为，使其处于对GW190814次级组分所推断的质量范围内，而该组分的性质在观测上仍未确定。电荷的存在使最大质量处的中心密度降低约–，同时满足因果性要求。此外，与PSR J1614 2230、J0348 0432、J0740 6620、J0952 0607的观测约束以及近期NICER半径测量结果的比较表明，带电EMSG构型在广泛的参数空间内仍与当前天体物理界限一致。这些结果表明，适度电荷与非线性物质-几何耦合相结合，可以支撑质量显著大于广义相对论预测值的夸克星，突显了修正引力和多信使天体物理学中带电致密天体潜在的观测相关性。",
+      "translated_at": "2026-11-15T22:37:27.846987+00:00",
+      "source_hash": "72b724809fa406972e29203ead1be08955cc75209059373975448b8ddcaa7784",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "a6edcda716d9bdd4": {
       "title_zh": "利用 NICER、IXPE 和 NuSTAR 探测 X 射线脉冲星 2S 1417−624 在一次弱爆发期间的发射几何结构",
@@ -23299,14 +23305,16 @@
       "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
     },
     "b6b30d4b7a2af4ba": {
-      "title_zh": "多任务高斯过程对低激发态可观测量及N、Z=20和28附近壳演化进行预测",
-      "abstract_zh": "",
-      "translated_at": "2026-10-14T01:05:20.289868+00:00",
-      "provider": "open-source-local",
-      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "source_hash": "d01ed125ae1ac059aaea6e080d6fbf04dc30ec3a7a1f1792ec46fa7c88b0c87d",
+      "title_zh": "N , Z = 20 和 28 附近低激发观测量及壳演化的多任务高斯过程预测",
+      "abstract_zh": "偶偶核的低激发观测量，例如首个 ${2}^{+}$ 和 ${4}^{+}$ 态的激发能 $E({2}_{1}^{+})$ 和 $E({4}_{1}^{+})$，以及基态与首个 ${2}^{+}$ 态之间的约化电四极跃迁概率 $B(E2;{0}_{1}^{+}\\ensuremath{\\rightarrow}{2}_{1}^{+})$，可作为远离 $\\ensuremath{\\beta}$ 稳定线的不稳定原子核中核壳演化的有前景实验探针。以往关于低激发核态的机器学习研究通常采用彼此独立的单任务模型，忽略了 $B(E2;{0}_{1}^{+}\\ensuremath{\\rightarrow}{2}_{1}^{+}), E({2}_{1}^{+})$ 和 $E({4}_{1}^{+})$ 之间的内在关联，这可能导致实际外推中出现非物理发散。此外，超参数的人工选择会引入主观调节偏差和模型依赖性。为克服这些局限，我们提出一种多任务高斯过程（MTGP）方法，在保留三个观测量相互物理耦合的同时对其进行联合预测。MTGP 超参数通过贝叶斯优化自动进行优化。对所建立 MTGP 方法的检验表明，无论在预测精度方面，还是在描述三个观测量之间内在关联方面，其预测稳健性相较以往的单任务方法均有显著提升。随后，我们应用 MTGP 模型预测幻数壳层 $N,Z=20$ 和 28 附近尚未测量的 $B(E2;{0}_{1}^{+}\\ensuremath{\\rightarrow}{2}_{1}^{+}), E({2}_{1}^{+})$ 和 $E({4}_{1}^{+})$ 值。沿各自同中子素链和同位素链对 MTGP 预测观测量进行的系统分析揭示了 $N,Z=20$ 和 28 处细致入微的壳演化模式：$N=20$ 壳闭合在富中子的 $Z=8--12$ 区域减弱，在 $Z=14--20$ 增强，并在 $Z\\ensuremath{\\ge}22$ 时再次减弱；$N=28$ 壳闭合在 $Z=12,14$ 时受到淬灭，在 $Z=16--28$ 时保持稳健，并在 $^{58}\\mathrm{Zn}$ 和 $^{60}\\mathrm{Ge}$ 中显现出减弱迹象；$Z=20$ 壳闭合在 $^{34,36}\\mathrm{Ca}$ 中持续存在，但在 $N=32$ 以上逐渐减弱；而 $Z=28$ 壳闭合在 $^{48,50,52}\\mathrm{Ni}$ 中仍然很强，并在 $N=46$ 以上的富中子镍同位素中减弱。这些数据驱动的结果支持基于 MTGP 的系统学能够捕捉壳隙和集体性的演化，表明 MTGP 可作为核结构研究的潜在工具。",
+      "translated_at": "2026-11-15T22:36:38.498007+00:00",
+      "source_hash": "9590d3f4429daebf0e4c0119c3620b06007b889174b0d6ca615b4ede4a8b1f50",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
       "quality": "machine_draft",
-      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "f5b86e90c9bb877b": {
       "title_zh": "量子概率需要概率",
@@ -23511,14 +23519,16 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "e10e2e0acc407cfd": {
-      "title_zh": "CSNS中子散射用低温自动样品更换机的开发与优化分析",
-      "abstract_zh": "",
-      "translated_at": "2026-10-14T01:21:52.111102+00:00",
-      "provider": "open-source-local",
-      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "source_hash": "d0f569cb1a10d175ee0cc7771a3de672b50a318c22736d7d9fdf87d5a984ddab",
+      "title_zh": "CSNS用于中子散射的低温自动换样器的研制与优化分析",
+      "abstract_zh": "采用自动换样技术可以显著提高中子散射实验的效率。中国散裂中子源（CSNS）研制了一种低温换样器，设计用于在100–300 K温度范围内换样，并实现了80 K的最低工作温度。通过闭循环制冷机（CCR）和加热器，使用CCR-02为样品提供4.2至800 K范围内的温度。本文介绍了该换样器的结构，其最多可容纳24个样品，每个样品的更换时间不超过2 min。CSNS II期将研制工作温度范围为10–350 K的第二代换样器。为满足这一要求，我们研究了80 K下链传动卡滞的根本原因，并重新设计了链条和支撑件。通过在Ansys Workbench中进行仿真，我们得出结论：重新设计的链条在低温下具有更好的性能，其应力较小且均匀。由于应力集中，选用了夹角为20∘\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$${20}^\\circ$$\\end{document}的S形链板。Fluent中的新支撑件达到了4.48 K（316不锈钢）和4.23 K（钛）的最低温度。新设计将在加工完成后进行测试。",
+      "translated_at": "2026-11-15T22:38:24.112710+00:00",
+      "source_hash": "a69795e04cb79a1ce8beaa34c6bbe6242e3ca5cab57e3fb0314758e51f338078",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
       "quality": "machine_draft",
-      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "55b8816657ffcbbe": {
       "title_zh": "基于深度神经网络由目标等离子体位形确定极向场线圈电流",
@@ -28289,14 +28299,16 @@
       "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
     },
     "1e26c08fb7f6fafb": {
-      "title_zh": "在强激光场中α衰变过程的时间演化",
-      "abstract_zh": "",
-      "translated_at": "2026-11-03T04:02:19.740116+00:00",
-      "provider": "open-source-local",
-      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "source_hash": "af9615b5e9bafb3929c4725e9eba073dea6e905d37b8c4c88463510e8775094e",
+      "title_zh": "强激光场中 α 衰变过程的时间演化",
+      "abstract_zh": "近年来，强场对核衰变过程的影响正逐渐成为一个备受关注且存在一些歧义的课题。在本研究中，采用约化 $r$ 依赖的 Schr\\\"odinger 方程近似计算来代替经典的库仑波函数程序，以描述准静态（绝热）激光场中的衰变宽度和衰变能。更重要的是，通过采用分裂算符方法求解含时 Schr\\\"odinger 方程，超越准静态近似，研究波函数的严格时间演化和衰变能的周期性调制，从而捕捉衰变过程中 $\\ensuremath{\\alpha}$ 团簇的动力学行为。首先，我们的结果证实了早先的报告，即强激光场对衰变宽度的改变可以忽略不计。同样，所发现的衰变能偏移极小，这验证了早先研究中使用固定实验衰变能的合理性。对于质子-中子不对称性更高、衰变能更低且具有八极形变的原子核，这种改变效应将更加明显。其次，我们的结果表明，强场确实能够产生衰变能的周期性调制；在强度为 ${10}^{24}\\phantom{\\rule{4pt}{0ex}}\\mathrm{W}/{\\mathrm{cm}}^{2}$ 时，周期平均偏移的量级为 ${10}^{\\ensuremath{-}7}\\phantom{\\rule{4pt}{0ex}}\\mathrm{eV}$。",
+      "translated_at": "2026-11-15T22:36:38.497626+00:00",
+      "source_hash": "799d88f3ec9cdf45b8074a0bca0cdc27aa3a759c31b01d5db73832c2e58a6f4a",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
       "quality": "machine_draft",
-      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "3af3e221ce808172": {
       "title_zh": "非Efimov型双中子晕，具有s波核心-中子共振",
@@ -28597,14 +28609,16 @@
       "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
     },
     "0707e19fca16040d": {
-      "title_zh": "使用N 3 LO旋量有效场论的核子-核子势",
-      "abstract_zh": "",
-      "translated_at": "2026-11-05T02:20:21.130734+00:00",
-      "provider": "open-source-local",
-      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "source_hash": "0fa20ea01e6ff8d35d4ba9afb45e4a115e629feea29b519016b5f92513ed37a0",
+      "title_zh": "使用 N 3 LO 手征有效场论的核子-核子势",
+      "abstract_zh": "使用次次次领头阶 N3LO 的手征有效场论（chiEFT），建立了核子-核子（NN）和核子-原子核（NA）散射的微观描述。NN 相互作用取自 EGM 公式，该公式引入谱函数正则化 Lambda-tilde 以控制双π交换力的短程分量，同时采用高斯调节量 Lambda 以确保 Lippmann-Schwinger（LS）方程收敛。调节量参数为 (Lambda, Lambda-tilde) = (450, 500), (550, 600), (600, 600) MeV。由此得到的 chiEFT NN t-矩阵用于构建一阶光学势，并由此计算 Wolfenstein 振幅和弹性微分截面。100 和 200 MeV 下 pp 和 pn 散射的理论振幅 (B) 和 (C) 总体上与实验数据符合良好，最大偏差出现在自旋轨道振幅较小的实部中。100 和 200 MeV 下 p + 16O 和 p + 40Ca 弹性散射的计算以高精度再现了测得的角分布，尤其是在前向角和中间角处。这些结果表明，EGM chiEFT 势为描述 100-200 MeV 能区内的 NN 可观测量和 NA 弹性散射提供了一个一致且定量可靠的框架，同时凸显出在更高能量下改进短程和自旋相关贡献处理的必要性。",
+      "translated_at": "2026-11-15T22:36:07.966838+00:00",
+      "source_hash": "841dda6abe0f31e12cf53b0f11f6dc05986e033607e2dc95d22a148afe69d6df",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
       "quality": "machine_draft",
-      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "454aaa9c61ba8e6d": {
       "title_zh": "仪器效应和靶材厚度对SPARC磁性质子反冲谱仪响应函数的影响",
@@ -36304,15 +36318,15 @@
     },
     "55def3178ddf5891": {
       "title_zh": "局域尺度对称性与黑洞",
-      "abstract_zh": "",
-      "translated_at": "2026-11-08T10:04:46.766294+00:00",
-      "source_hash": "6efcef3008af00940927c90c1df991b6d887ee1fda6c9d320bdd26b4bfaf70cf",
+      "abstract_zh": "我们推导了在局域尺度对称性条件下与实标量场耦合的黑洞解。从简单情形（ λ = 0 ）开始，我们求得这些解，并推导出黑洞的温度、熵及其有效质量，同时观察到标量场向黑洞的绝热吸积。因此，黑洞的有效质量增大。在一般情形（ λ ≠ 0）下，情况变得更加复杂；视界（g tt 的零点）取决于黑洞的质量、标量场强度、λ以及另一个正参数R ϕ。在这种情况下，我们提出两种可能的行为：当黑洞的质量足够小时，场主要集中在远离黑洞之处；而当黑洞的质量足够大时，场主要集中在黑洞内部。",
+      "translated_at": "2026-11-15T22:37:27.847321+00:00",
+      "source_hash": "fd74ed59af9e64ef8edb465c2123ccad16afb5f44822bd49123718c481605246",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "55fb7f5af9676f82": {
       "title_zh": "从 Bertotti–Robinson 到真空：通过 Harrison 和 Inversion 对称性获得广义相对论中的新精确解",
@@ -36687,16 +36701,16 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
     },
     "411774e75b5bb87c": {
-      "title_zh": "朗道尔原理作为广义黑洞熵热力学一致性的判据",
-      "abstract_zh": "",
-      "translated_at": "2026-11-08T10:08:48.301420+00:00",
-      "source_hash": "9927e451be26bb35c1e4467b74602909fbad24f63fa8959c9127b0761d28b92c",
+      "title_zh": "朗道尔原理作为广义黑洞熵热力学自洽性的判据",
+      "abstract_zh": "在假设黑洞视界面积量子化的情况下，每一个霍金蒸发步骤——在此过程中黑洞损失质量并跃迁至较低的面积能级——都被解释为擦除一比特信息。根据朗道尔原理，擦除一比特所需的能量由周围环境的温度决定。对于黑洞，我们将该温度认定为霍金温度，而由广义熵关系导出的热力学温度可能不同于霍金温度。这一区别使朗道尔原理可以用作附加的自洽性判据，同时使其与根据热力学第一定律得到的热力学温度相区别。本文采用朗道尔原理，在这一框架内检验各种黑洞熵关系的自洽性。对于贝肯斯坦-霍金熵，每一步发射的能量达到朗道尔界限。我们将这一分析扩展至一大类广义熵模型，得到三种不同的结果。在第一类中，朗道尔原理对霍金温度施加约束，进而对黑洞质量施加约束。在第二类中，它限制熵模型的自由参数。第三类以Kaniadakis熵为例，与本文所采用的固定背景温度框架下的朗道尔条件不相容。对于所有相容的模型，我们推导了面积量子化参数及相应的面积谱。该参数对于贝肯斯坦-霍金熵是常数，但对于本文研究的广义熵则变得依赖于能级编号。尽管如此，在经典极限下，相继面积能级之间的相对间隔趋于零。我们的研究结果在所采用的框架内建立了信息论与黑洞热力学之间的联系。",
+      "translated_at": "2026-11-15T22:37:59.539584+00:00",
+      "source_hash": "d1ee63bdfeb79256606a8baeb25a33647d876b308308c040a815e19778e15326",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "6b5c58e4a35d2155": {
       "title_zh": "用于预测氦冷DEMO第一壁传热和压降的广义k-omega湍流模型调校",
@@ -39759,10 +39773,10 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "5cc2937227fcd50e": {
-      "title_zh": "Rarita-Schwinger 场的协变 Wigner 函数和自旋极化",
-      "abstract_zh": "我们研究自旋-$3/2$ Rarita-Schwinger 场的协变 Wigner 函数及其与自旋密度矩阵和平均自旋极化矢量的关系。我们获得了一个将协变 Wigner 函数与弱相互作用场的平均自旋矢量联系起来的公式。随后，我们计算了在 Belinfante、正则和 GLW 赝规范下，局域热平衡时由热涡旋、热剪切和自旋势诱导的平均自旋矢量。所得公式可用于预测重离子碰撞中自旋-$3/2$ 强子（如 $\\Omega^-$）的自旋极化。正则赝规范与 Belinfante 赝规范下热剪切诱导极化的差异，使得可以利用 $\\Omega^-$ 的局域自旋极化测量来区分这两种赝规范。",
-      "translated_at": "2026-11-08T11:48:04.836835+00:00",
-      "source_hash": "786bc291ec5a4c15c9ff04258d526d5e662ad8600575d4325b1d22e999b69d15",
+      "title_zh": "Rarita-Schwinger 场的协变 Wigner 函数与自旋极化",
+      "abstract_zh": "我们研究自旋-$3/2$ Rarita-Schwinger 场的协变 Wigner 函数及其与自旋密度矩阵和平均自旋极化矢量的关系。我们得到一个将协变 Wigner 函数与弱相互作用场的平均自旋矢量联系起来的公式。随后，我们计算了在 Belinfante、正则和 GLW 伪规范下，局域热平衡时由热涡旋、热剪切和自旋势诱导的平均自旋矢量。所得公式可用于预测重离子碰撞中自旋-$3/2$ 强子的自旋极化，例如 $\\Omega^-$。正则伪规范与 Belinfante 伪规范下热剪切诱导的极化存在差异，这使得利用 $\\Omega^-$ 的局域自旋极化测量来区分这两种伪规范成为可能。最后，我们得到了自由有质量自旋-$3/2$ Rarita-Schwinger 场的轴向涡旋效应电导率。",
+      "translated_at": "2026-11-15T22:35:26.059791+00:00",
+      "source_hash": "fd004f5c70ba253a724704cec6171b06b7a58f74e0aff5bf72cd998fc1d7562e",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
@@ -44031,16 +44045,16 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "f3f943f2b37d9b7e": {
-      "title_zh": "N = 40附近集体性的演化：通过γ − γ快速定时测量得到的Ga 69第一激发1 / 2 −态的寿命和电磁跃迁强度",
-      "abstract_zh": "",
-      "translated_at": "2026-11-10T04:41:14.758276+00:00",
-      "source_hash": "8f870a151c86758450e9af46be0a931e4bc2668d305015dc3d883be66ab8b5a1",
+      "title_zh": "N = 40 附近集体性的演化：通过 γ − γ 快定时测量研究 Ga 69 中第一激发 1 / 2 − 态的寿命和电磁跃迁强度",
+      "abstract_zh": "通过结合实验和理论方法，研究了 $N=40$ 附近奇质子原子核 $^{69}\\mathrm{Ga}$（$N=38$）的低自旋结构。首次使用具有皮秒分辨率的 $\\ensuremath{\\gamma}\\text{\\ensuremath{-}}\\ensuremath{\\gamma}$ 快定时技术测量了第一激发态 $1/{2}^{\\ensuremath{-}}$ 的寿命，得到平均寿命 $\\ensuremath{\\tau}=106(8)$ ps，等效于半衰期 ${t}_{1/2}=73(6)$ ps，并由此提取了 $1/{2}_{1}^{\\ensuremath{-}}\\ensuremath{\\rightarrow}3/{2}^{\\ensuremath{-}}$（基态）跃迁的约化跃迁概率 $B(M1)$ 和 $B(E2)$。采用 GX1APN 和 JUN45PN 有效相互作用，对 $N=34$ 至 40 的奇-$A$ Ga 同位素进行了大规模壳模型计算以供比较。在大规模壳模型计算的支持下，对整个奇-$A$ Ga 同位素链中跃迁强度的系统比较与以下情形一致：随着接近 $N=40$，结构从具有集体性混合的质子-中子组态逐渐转变为更多由单粒子主导的结构。",
+      "translated_at": "2026-11-15T22:36:07.966601+00:00",
+      "source_hash": "ce36eb06b3206cf6c64418ff6dbe156731009ecde5c379f2897e86833937bdd1",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "789c55fe9b6ffaef": {
       "title_zh": "允许 β 衰变的协变方法",
@@ -49263,16 +49277,16 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "d95890ffb14fc95b": {
-      "title_zh": "用于 CERN 北部实验区横向剖面测量的直径 5 mm 薄壁吸管探测器的研制",
-      "abstract_zh": "",
-      "translated_at": "2026-11-08T17:36:13.622164+00:00",
-      "source_hash": "41348e372158773e8753f7ea91e3f23210fa472c92de52463db97d8d802ebba7",
+      "title_zh": "用于CERN北部实验区横向剖面测量的直径5 mm薄壁吸管的研制",
+      "abstract_zh": "作为为CERN北区研制未来耐辐射横向剖面监测器工作的一部分，我们在此报告一种直径5 mm的薄壁吸管探测器的研制。我们展示了一种新颖的3D打印吸管端盖设计，并验证了这些端盖能够保持正确的丝张力。我们证明了吸管探测器增益的Garfield++仿真结果与使用X射线源获得的测量结果在2%以内一致，并且与在CERN的T10束线上获取的数据在3%以内一致。利用经过验证的仿真，我们计算出采用当前50/50 Ar/ CO 2混合气体时可能达到的单吸管分辨率为0.20 mm。未来工作包括使用束流望远镜对此进行验证，以及研究更高束流强度下吸管的行为。还应研究辐射损伤对吸管的影响。",
+      "translated_at": "2026-11-15T22:38:24.112972+00:00",
+      "source_hash": "59111e66483916259eedae2666830617b6438631d752eec78a637f673f6b7dbd",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "c887c969fe12c911": {
       "title_zh": "采用 FeCo 合金磁体的紧凑型质子治疗旋转机架设计",
@@ -435400,15 +435414,15 @@
     },
     "bd746bf5de6f766a": {
       "title_zh": "利用相关重离子数据集进行序贯贝叶斯推断",
-      "abstract_zh": "",
-      "translated_at": "2026-11-12T22:44:35.936590+00:00",
-      "source_hash": "8f0d9dcd876df75f1d9e1c0bbc6c53e71ef3ad9d2d9a22512671e5709af18189",
+      "abstract_zh": "贝叶斯推断为在新信息出现时更新知识提供了一个自然框架，通常通过分阶段纳入数据集或将先前的后验分布重新用作先验分布，以序贯方式进行。一种常见的实现采用因子化更新，其中数据集被视为条件独立。然而，当数据集具有统计相关的不确定度时，这种近似通常会与联合似然不一致，并可能导致后验约束失真。在本工作中，我们利用具有可调协方差结构的伪数据，在受控环境中研究这一问题。我们比较了联合推断、因子化序贯更新以及基于精确条件似然的表述。我们表明，在条件独立的情况下，因子化更新可再现联合后验分布；但当相关性被忽略时，会产生系统性偏差，并且在我们的数值示例中，差异随相关强度增大而增大。相比之下，条件序贯更新可精确再现联合后验分布。为解释这些偏差，我们引入了一种信息分解，将联合信息分为来自第一个数据集的贡献和第二个数据集提供的条件信息。通过比较边缘信息和条件信息，我们表明，相关性会对不同参数组合的约束产生结构化变化，反映了协方差结构与数据集敏感性之间的相互作用。这种基于信息的分析为所观察到的后验差异提供了定量解释。这些结果为评估使用相关数据集进行序贯贝叶斯推断的一致性提供了一种实用诊断方法，并凸显了在统一概率框架内一致处理相关性的必要性。",
+      "translated_at": "2026-11-15T22:37:27.846567+00:00",
+      "source_hash": "92460e6a44dce8db087a181697402ee22f0a32b422c95ab89416a0a1426ca871",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "ab82c262614051f3": {
       "title_zh": "DIN 6809-4:2020 千伏级 X 射线束质在次级标准剂量学应用中的实验与蒙特卡罗验证",
@@ -435880,15 +435894,15 @@
     },
     "83561015423a5871": {
       "title_zh": "LHC 离子注入器链中空间电荷与束内散射的相互作用",
-      "abstract_zh": "",
-      "translated_at": "2026-11-13T22:36:03.179842+00:00",
-      "source_hash": "5adb32a1d4942bda757d9c51a652878ea679a1fb9b00d35f015a783231002331",
+      "abstract_zh": "CERN 加速器链的离子注入器，特别是超级质子同步加速器（SPS）和低能离子环（LEIR），在强空间电荷（SC）和束内散射（IBS）状态下运行，这可能降低束流质量。因此，优化离子束性能需要在跟踪模拟中研究这两种效应的相互作用，将 SC 和 IBS 效应与晶格非线性效应交错结合。为此，采用了处理 IBS 效应的动理学理论方法。引入了一种修正的随机 IBS 踢，其摩擦和扩散系数以两种形式导出：一种是基于第二类完全椭圆积分的高效 Nagaitsev 公式，另一种是完整的 Bjorken-Mtingwa 公式。该 IBS 踢在 PyORBIT 中实现，并与解析模型进行了广泛的基准比较。给出了 SPS 和 LEIR 的空间电荷与束内散射联合模拟结果，并将其与束流测量的观测结果进行了比较。",
+      "translated_at": "2026-11-15T22:36:07.966374+00:00",
+      "source_hash": "677fc984514a3e581d478ff17acf4e035517cbc27e245e2b1433cb544d8c2089",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "7c099e2fff6bf0d1": {
       "title_zh": "TwinEBIS 中 MEDeGUN 的硬件升级与性能评估",
@@ -436035,16 +436049,16 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "1fc4b7be1b6169d6": {
-      "title_zh": "环形时空中的 Unruh–DeWitt 探测器响应",
-      "abstract_zh": "",
-      "translated_at": "2026-11-13T22:37:49.702059+00:00",
-      "source_hash": "746326aed52f447458b5cde1c5d13a9b80f4249f8a4c9a196bd421ee9daf1afb",
+      "title_zh": "环形时空中的Unruh–DeWitt探测器响应",
+      "abstract_zh": "时空的整体拓扑虽然无法通过局域曲率测量观察到，但会在量子场的关联函数中留下特征。我们利用一个在四维Minkowski时空中工作的Unruh-DeWitt粒子探测器研究这些特征，其中两个空间方向被周期性等同，从而形成空间拓扑$\\mathbb{R}\\times T^2$。我们计算了三种轨迹的探测器跃迁率：匀速惯性运动、沿其中一个紧致轴方向的均匀固有加速，以及沿非紧致轴方向的均匀固有加速。我们的结果表明，局域量子测量如何能够揭示大尺度空间拓扑的特征。",
+      "translated_at": "2026-11-15T22:36:59.917943+00:00",
+      "source_hash": "ab4f44708abfb8270ba34758551e8e1740571081b4652e36126ede12910231d9",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "0d7434464aad432b": {
       "title_zh": "一种基于图像响应校正的编码孔径中子成像源强估计方法",
@@ -437151,10 +437165,10 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "3db4f00ca505228f": {
-      "title_zh": "关于中子星冷却中的核子有效质量",
-      "abstract_zh": "由超高密度核物质构成的中子星的冷却强烈依赖于状态方程，因为主要冷却源是在其内部产生的中微子。在此，我们研究中子星的冷却性质，重点关注核子有效质量；其影响最近已在超新星爆炸和原中子星冷却中得到考察。有效质量的不确定性源于标量介子吸引相互作用的差异以及Dirac质量和Landau质量定义的差异。首先，我们采用所谓的Walecka模型，该模型允许在统一框架内引入这两种质量，并评估由此得到的冷却曲线。基于Walecka模型，我们计算中子的发射率、直接Urca过程及其冷却曲线。我们证明，Dirac质量和Landau质量会影响大质量中子星的冷却，尽管先前大多数冷却模拟并不区分二者。我们还使用基于相对论平均场（RMF）理论的两个现实状态方程进行冷却模拟，这两个状态方程在特征参数中的差异仅源于有效质量的性质。这些结果与通过Walecka模型获得的结果大体一致，表明核子有效质量的处理可能是中子星冷却中一个重要的不确定性来源。",
-      "translated_at": "2026-11-14T22:41:43.519734+00:00",
-      "source_hash": "d0b17b47f3c91cf50a221622ddd90527ce5420bb8fbd38fe494598f30ceb4367",
+      "title_zh": "中子星冷却中的核子有效质量",
+      "abstract_zh": "由超高密度核物质构成的中子星的冷却强烈依赖于状态方程，因为主要的冷却来源是在其内部产生的中微子。在此，我们研究中子星的冷却性质，重点关注核子有效质量，近来已在超新星爆发和原中子星冷却中考察了其影响。有效质量的不确定性源于标量介子吸引相互作用的差异以及 Dirac 质量和 Landau 质量定义的差异。首先，我们采用所谓的 Walecka 模型，该模型允许在统一框架内引入这两种质量，并评估由此得到的冷却曲线。基于 Walecka 模型，我们计算中子的发射率和直接 Urca 过程的发射率及其冷却曲线。我们证明，Dirac 质量和 Landau 质量会影响大质量中子星的冷却，尽管以往大多数冷却模拟并不区分二者。我们还使用基于相对论平均场（RMF）理论的两个现实状态方程进行了冷却模拟，这两个状态方程在特征参数中仅有效质量的性质存在差异。这些结果与从 Walecka 模型得到的结果大体一致，表明核子有效质量的处理可能是中子星冷却中一个重要的不确定性来源。",
+      "translated_at": "2026-11-15T22:36:07.967058+00:00",
+      "source_hash": "ea0f025cca3074a3cd2ab2bfa929925f8e703e258d9deb7da46b06edae0279cf",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
@@ -437569,6 +437583,1038 @@
       "preserved_previous_title": false,
       "content_validation": "disabled",
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "cb564939f81b105d": {
+      "title_zh": "基于贝叶斯推断的超重核核同位旋不对称性与α粒子预形成概率之间的关联",
+      "abstract_zh": "在超重核区域（Z≥90\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$Z \\ge 90$$\\end{document}且N≥140\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$N \\ge 140$$\\end{document}）内α\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\alpha$$\\end{document}衰变的研究中，α\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\alpha$$\\end{document}粒子预形成概率Pα\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$P_{\\alpha }$$\\end{document}是连接核结构与衰变观测量的关键物理量。我们引入了一个纳入衰变能Qα\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$Q_{\\alpha }$$\\end{document}、质量数A、轨道角动量l、同位旋不对称性I以及未配对核子效应的唯象模型。采用结合马尔可夫链蒙特卡洛（MCMC）采样的贝叶斯推断对模型参数进行全局校准，从而能够系统且更精确地确定Pα\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$P_{\\alpha }$$\\end{document}。结果表明，同位旋不对称性显著抑制Pα\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$P_{\\alpha }$$\\end{document}；基于随机森林的特征重要性分析独立证实了这一发现，并同样将I识别为不可忽略的预测因子。此外，使用最大后验（MAP）参数进行的计算不仅再现了N=152\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$N=152$$\\end{document}和N=162\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$N=162$$\\end{document}附近的壳效应，而且给出的α\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\alpha$$\\end{document}衰变半衰期预测总体上与实验符合良好。本工作在cosh型势（CTP）框架内提供了用于探究超重核中α\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\alpha$$\\end{document}团簇预形成的全局校准分析，展示了贝叶斯校准对于核物理反问题的效用，并为未来的实验研究确立了理论基准。",
+      "translated_at": "2026-11-15T22:33:01.752679+00:00",
+      "source_hash": "eb64cbfbe6f168a4bd7700f22a564282ab096b7433ce230bc3086fb06f974530",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "3de2c8e4c8961be7": {
+      "title_zh": "对神秘暂现源GRB 250702B进行一年的宽带射电监测揭示相对论性喷流的演化",
+      "abstract_zh": "摘要 我们介绍了对独特的河外暂现源GRB 250702B开展的大规模射电监测，该暂现源伴随着持续超过3 hr、时长前所未有的伽马射线辐射。我们的观测覆盖发现后6–356 d（观测者参考系）的0.65–233 GHz。射电辐射呈现平滑演化的峰状同步辐射谱，与在分层环境介质（ne∝R−k；k = 1.5 − 2）中膨胀的绝热激波一致。我们在低频（≤3 GHz）光变曲线中探测到显著变化，并将其解释为星际闪烁，由此对爆炸波图像尺寸给出约束1.2 × 1016 ≲ R⊥ ≲ 5 × 1017 cm。流量密度和同步辐射临界频率的时间演化表明，为射电辐射供能的激波可能是一个大张角θj ≳ 15 deg、低洛伦兹因子（Γ ≲ 10）喷流，或一个窄θj ≲ 2 deg（Γ0 &gt; 50）高度相对论性喷流。对于恒星质量黑洞中心引擎，例如氦星并合，预期会产生窄喷流，并且该情景中经集束修正的动能与已知长GRB分布一致（EK ~ 1051 erg）。大张角喷流情景则需要涉及长期吸积的前身星。我们推导并表明，中等质量或恒星质量黑洞潮汐瓦解事件都是可行情形。该情景中经集束修正的动能处于已知相对论性SMBH TDE分布的低端（EK ~ 1050 erg）。由于与观测到的时间尺度不相容，我们不支持SMBH TDE。由于WD-IMBH TDE的超爱丁顿吸积理论持续时间短于主序星TDE通道，若在未来一年内探测到喷流关闭，将更支持WD-IMBH TDE。",
+      "translated_at": "2026-11-15T22:33:01.753479+00:00",
+      "source_hash": "56bd6309a005af6ed71906d5d53c8243399da839dfb9d35a720f27c28fda4715",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "e023b99fb13266a5": {
+      "title_zh": "厘清AMPT模型中分阶段输运性质对椭圆流中心度依赖性的影响",
+      "abstract_zh": "使用能够分阶段控制部分子和强子输运性质的AMPT模型，研究了$\\sqrt{s_{NN}}=200~\\rm{GeV}$下Au+Au碰撞中带电强子椭圆流$v_{2}$的中心度依赖性。通过分别改变剪切黏度$\\eta/s$、相变温度$T_{tr}$和强子散射截面，我们分离出它们对各向异性流的不同影响。研究发现，强子再散射对$v_{2}$的贡献随中心度增加而增大，并在外周碰撞中占据主导。将强子截面扩大为原来的四倍，会显著放大外周碰撞中的$v_{2}$并改善与STAR数据的符合程度，这表明$v_{2}$在高中心度下的趋平可能反映了更大的有效强子截面，并凸显了强子相在小系统中的重要作用。",
+      "translated_at": "2026-11-15T22:33:01.753812+00:00",
+      "source_hash": "39e4d7a05d6e4121ac591c8bb2566b76d3090a0bb323fa4f0cd0a97d0edccaab",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "9f787335afe603f7": {
+      "title_zh": "加速的相对论流体动力学精确解与L\\'evy形状的冻结源",
+      "abstract_zh": "重离子碰撞中的飞米尺度测量表明，π介子源是L\\'evy稳定的而非高斯型的，而源半径仍遵循流体动力学标度$R^2\\propto 1/m_T$。我们将这种共存称为L\\'evy流体谜题。对于满足$\\varepsilon=\\kappa p$和$p=nT$的理想流体，流动与压强构成封闭系统，而密度和温度可由任意共动函数进行“修饰”，从而将已知源自Hubble型解的一种自由度推广至任意流动。我们证明，在非零粒子对动量下，源受到冻结超曲面上压强的限制，因此其尾部绝不可能比压强尾部更重。这给出了具有两种途径的幂律源尾判据：要么外部流动是超相对论性的且温度至少线性增长（Hubble型解），要么流动缓慢、温度均匀且固有加速度按$1/r$衰减。我们提出了一族新的相对论性、加速、自相似势流（$\\lambda$-PF），以及一种新的Gubser流修饰。$\\lambda$-PF的加速不会产生幂律尾，但在采用Hubble型修饰后，其源尾在一定参数范围内是L\\'evy稳定的，从而将Hubble型L\\'evy源推广到加速核心。等温修饰的Gubser流实现了$1/r$途径：其尾指数位于L\\'evy稳定范围之外，但在测量范围内，它给出L\\'evy型源，且$1/R^2$与$m_T$呈线性关系。因此，L\\'evy型源和流体动力学$m_T$标度在理想流体动力学中是相容的，但流体动力学并不产生幂律尾：它要么继承自需要$1/r$加速度的幂律压强，要么通过修饰引入。我们概述了向非球形几何和椭圆流推广的方向。",
+      "translated_at": "2026-11-15T22:33:01.754164+00:00",
+      "source_hash": "7456170084efb2e962a445fec5a0474ad2f1b51f04fe56754a7595b6738c040f",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "3295dbe29c1a733a": {
+      "title_zh": "年轻超新星的 X 射线发射能告诉我们关于其前身星的哪些信息",
+      "abstract_zh": "我们讨论超新星的 X 射线发射能够对其前身星施加的约束。由于几乎所有 X 射线超新星都源自大质量恒星，我们重点讨论其对大质量恒星的启示。这些恒星在其整个寿命期间以恒星风的形式损失质量。通过各种技术，可以利用 X 射线发射来衡量恒星风的性质，尤其是质量损失率。恒星内部通过核合成形成并在恒星爆炸中释放的各种元素的丰度，可以根据 X 射线光谱进行估算。在许多情况下，结合 X 射线光变曲线和光谱，可以使我们分辨出由超新星前质量损失形成、超新星激波正向其中膨胀的周围介质的结构和形态。",
+      "translated_at": "2026-11-15T22:33:39.139870+00:00",
+      "source_hash": "c5e3763951c07854cafbb158582422fb80089fe966c81151062df1140f33bae9",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "e4d75dc16486102c": {
+      "title_zh": "银河系化学演化中钾的起源——大质量恒星中 C-O 壳层合并的影响",
+      "abstract_zh": "钾 (K) 以及大多数其他奇 Z 元素的银河系化学演化 (GCE) 仍未得到充分理解：取决于所采用的大质量恒星产额，模型通常会在很宽的金属丰度范围内低估观测到的 [K/Fe]。一个被提出的高效 K 核合成场所是氧壳层与碳壳层之间的合并（C-O 壳层合并），这种合并可能在大质量恒星核心坍缩前数小时发生。已有研究表明，采用特定产额集的一些 GCE 模型能够使预测与观测相符。在此，我们重新分析这些产额集，以量化 C-O 壳层合并对 K 产生的贡献，以及 K 的银河系演化对这些事件发生情况的制约。我们分析了来自三个独立产额集的 194 个超新星前模型，涵盖很宽的初始质量、金属丰度和旋转速度范围，并包括单星和双星剥离恒星。我们识别出发生 C-O 壳层合并的前身星，并计算包含和不包含其贡献的 GCE 模型。在所有三个产额集中，增强的 K 产生都可追溯至少量 C-O 合并前身星，它们喷出的 K 多达质量相近的非合并前身星的 ~10-50 倍。若无这些前身星，则没有任何模型能够再现观测结果，并且在大部分金属丰度范围内 [K/Fe] 低于太阳值。若包含这些前身星，则 [K/Fe] 仅在各模型网格中发生合并的金属丰度区间内得到增强。双星性本身仅起次要作用，因为仅单星就能产生相近数量的 K。由于 C-O 合并中合成的 K 本质上是初生的，只有当 C-O 壳层合并在所有金属丰度下以相近频率发生时，才能再现观测到的 [K/H] 随 [Fe/H] 近乎线性的增长。因此，可以利用 K 推断大质量恒星中 C-O 壳层合并发生率随时间的变化。",
+      "translated_at": "2026-11-15T22:33:39.140205+00:00",
+      "source_hash": "ce840220f5ca8d5047b675830ba3c728227fafdfc7c57d7f82d262bf6038b50f",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "ab0c7f363d60c586": {
+      "title_zh": "具有形变的有效表面的中子星的缓慢宏观旋转",
+      "abstract_zh": "通过在有效表面 (ES) 方法中，在 Schwarzschild 引力度规附近对小频率 $\\omega$ 进行线性微扰展开，将作为平衡态有限理想流体的中子星 (NS) 宏观模型扩展至旋转的形变系统。采用椭球坐标中的 Kerr 度规方法，计算了绕对称轴缓慢定常方位旋转的 NS 角动量 $I$ 和转动惯量 (MI)，并与球形结果进行了比较。在薄表层参数 $a/R \\ll 1$ 的最低阶，同时考虑了宏观 NS 能量密度 $\\mathcal{E}(\\rho)$（状态方程）的梯度表面项和体积项，其中 $a$ 是 ES 壳层厚度，$R$ 是 NS 有效半径。以统计平均 MI $\\tilde{\\Theta}$ 及其时间和方位角 $t,\\varphi$ 关联 $\\mathcal{T}_{t\\varphi}$ 表示的宏观 NS MI 解析表达式 $\\Theta = dI/d\\omega = \\widetilde{\\Theta}/(1-\\mathcal{T}_{t\\varphi})$ 已经获得，它们是体积分量与表面分量之和。由于强引力，MI $\\Theta$ 随有效半径 $R$ 和形变参数发生显著变化。我们发现了对 NS 半径的额外、更窄的约束，这主要归因于 $t,\\varphi$ 关联、表面贡献以及 NS 表面形变。对于若干具有强引力和相对较大旋转周期的中子星，给出了应用线性微扰理论的绝热条件。",
+      "translated_at": "2026-11-15T22:33:39.140438+00:00",
+      "source_hash": "ef99a29629b2cbe89d61c7cc32923e1d31e0b7d0f98687d93a4d6d44f3eac5cd",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "4a39eb2b8189ee4d": {
+      "title_zh": "热中子星时期强磁应力驱动的残余椭率",
+      "abstract_zh": "具有非轴对称质量分布的中子星会持续辐射引力波。振幅取决于形变的大小，并且对引力波天文学至关重要。我们研究了中子星壳层中磁致椭率的一种演化效应。假定在固化前的高温时期，通过磁流体动力学过程产生了较大的形变，而由于与电流衰减和重新分布相关的力减小，随后时期的演化结果也随之确定。我们没有模拟形变随磁场在长时间尺度上的演化，而是通过比较固化前后的两个平衡模型，估算固体壳层形成后保留下来的椭率。对于表面偶极场强度 $B_{0}$，残余椭率的大小为 $\\sim 10^{-8} (B_0/10^{13}{\\rm{G}})^2$。该值主要由较晚时期的磁场决定，对初始大形变的依赖较弱。固化前状态的记忆得以保留，但很小，因为弹性力对平衡的贡献很小。",
+      "translated_at": "2026-11-15T22:33:39.140626+00:00",
+      "source_hash": "bcc71d91435e9ee47be23cd109c29f84f67de9f354d488f9fe86768d806eeaae",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "f10c1e34f66619e5": {
+      "title_zh": "致密双星的诞生踢：II. 中子星和黑洞系统具有相似的踢速分布",
+      "abstract_zh": "诞生踢——中子星和黑洞诞生时受到的运动学冲量——在含有大质量恒星的双星的末期演化中、在决定致密天体的整体相空间性质方面，以及在设定可通过引力波观测探测到的预期并合率方面发挥着决定性作用。推断单个系统的踢速（$v_{\\rm NK}$）需要得到良好约束的双星系统性质和质心运动学信息，随后必须对其进行建模，以约束超新星爆发时可能的系统特征。因此，针对整个星族的踢速研究仍然寥寥无几。在此，我们对68个吸积双星的合理演化历史进行建模，其中涵盖了几乎所有具有3D运动学测量结果的黑洞和中子星X射线双星，并使用我们上一篇论文中提出的模拟框架约束每个源允许的$v_{\\rm NK}$分布。所得样本的$v_{\\rm NK}$分布可由一个宽Gamma分布简单表示，其平均值$v_{\\rm NK}$ = $128^{+17}_{-15}$ km s$^{-1}$，离散度$\\sigma$ = 117 km s$^{-1}$。耐人寻味的是，黑洞系统与中子星系统的分布在形式上不可区分。尽管仍受小样本统计的限制，我们发现黑洞可以获得很大的诞生踢，并且所有遗迹类型的踢速都跨越相似的范围（0-700 km s$^{-1}$）。目前存在$v_{\\rm NK}$与黑洞质量成反比变化的迹象，但没有统计显著性证据。我们的工作表明，或者相似的物理机制驱动踢速，并显示出黑洞中存在超越简单的后备吸积调节标度关系的效应的证据；或者选择效应共同作用，抹除了当前吸积双星样本中不同遗迹类型之间的差异。需要更大的样本，才能对这些可能性进行稳健的区分检验。",
+      "translated_at": "2026-11-15T22:34:10.416066+00:00",
+      "source_hash": "f019923661954b0aa6e3aebba0ace1b3d0078043428c7d80362ad392875de749",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "673063cbbad12292": {
+      "title_zh": "天鹰座X-1的Suzaku能谱中约30 keV处的隆起——强快质子俘获过程的可能证据——",
+      "abstract_zh": "在中子星低质量X射线双星中，据信重元素（质量数~100）通过快质子（rp）俘获过程合成，X射线暴光变曲线的长尾间接表明了这一点。尽管迄今仍缺乏rp过程的直接证据，但我们在先前的研究中报告称，处于硬态的天鹰座X-1的Suzaku能谱在~30 keV处存在一个未识别的隆起。该特征被初步鉴定为来自镉或铟的高电离离子的复合准连续谱；这些离子可能由X射线暴期间的rp过程产生，并被抬升至中子星大气中。为加强这一情景，我们定量评估了所假定的大气发射区的物理条件，并确认当大气中假定的rp过程灰烬的丰度比其太阳丰度值高~10^7倍时，这一情景是可能的。我们将这些结果与X射线暴中核合成的理论模型计算进行了比较。我们提出，观测到的能谱隆起是来自稳定同位素106Cd的辐射复合特征，该同位素通过X射线暴中的rp过程产生。文中还简要讨论了与可探测性有关的其他问题。",
+      "translated_at": "2026-11-15T22:34:10.416308+00:00",
+      "source_hash": "c18a4c3dc88d11a39ba5c8d4055b5e12105ba534d17a56edf825a8feb45a2a89",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "fd1637039c1bf887": {
+      "title_zh": "NICER观测到的来自SAX~J1808.4--3658的微弱热核X射线暴：暴驱动内盘结构变化的可能证据",
+      "abstract_zh": "我们给出了NICER观测到的来自SAX~J1808.4--3658的一次微弱热核X射线暴的能谱和时间性质。与对同一次X射线暴的先前分析\\citep{2023ApJ...948..117C}不同，我们的分析侧重于持续辐射的能谱演化和吸积环境的变化。在峰值流量达到Eddington极限的约5\\%后，X射线暴发射进入稳定状态，其特征是温度为0.46 keV，且尾部流量比暴前值高14\\%。尽管观测被中断，但在3小时后恢复，显示源流量已回到暴前水平。我们的能谱拟合结果表明，在X射线暴峰值时，中子星表面发射完全显露，随后在仍高于暴前发射的同时受到越来越强的遮蔽。对持续辐射能谱的拟合还显示，在暴后100 s至550 s期间，中子星表面的可见比例从25\\%增至41\\%，表明盘结构（高度或内半径）发生了变化。能谱演化表明，在X射线暴峰值期间，内部吸积流发生了短暂重组，随后随着暴流量下降而部分恢复。",
+      "translated_at": "2026-11-15T22:34:10.416531+00:00",
+      "source_hash": "d9842f9a4a1ca8c9f495a2141afd53b68869f0fc64c284bec405e3da42da96a7",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "4e2f7ade4f7a961a": {
+      "title_zh": "聚变等离子体中测地声学模与共振磁扰动之间的相互作用",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:34:10.416585+00:00",
+      "source_hash": "e5a876bc40dab2b57751142f1ed3ed41d18103e0728e0bf974bf133ff051b875",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "9d619c8a775d22ba": {
+      "title_zh": "具有质量的费米子参与的磁单极催化：扭曲扇区的命运",
+      "abstract_zh": "在无质量极限下，最低分波中的费米子在最小 $SU(5)$ 磁单极上发生散射，会产生一个在每种味中都具有半整数费米子数的出射态。该态存在于希尔伯特空间的一个扭曲扇区中，目前被理解为一个普通费米子附着在一条延伸回磁单极的拓扑线上。在标准模型中，费米子质量和禁闭会在大于质量尺度倒数的距离处破坏这条线，使扭曲态衰变为费米子数为整数的物理渐近态。我们研究单代入射轻子或夸克的这种衰变。该分波中的截面达到幺正性上限，$\\sigma=\\pi/p^2$，出射态的能量以宽广的狄利克雷分布在四种费米子味之间共享，该分布决定阈值和运动学。对于每种入射费米子，守恒定律恰好允许两个衰变道：螺旋度翻转及其破坏 $(B+L)$ 的伙伴过程。对于入射电子，破坏 $(B+L)$ 的道是反核子合成；我们确定了两种极限下的分支比：在高能下两个道等可能，而在低于反核子阈值的低能下，仅剩螺旋度翻转。在两者之间，我们对能量依赖性进行建模。对于慢质子中的夸克，破坏 $(B+L)$ 的道是催化质子衰变，该过程没有阈值，并以接近一的概率发生。Callan 对分数态的统计解释以更明确的形式呈现：该态并非两个具有相等权重的终态的叠加，而是一个以依赖能量的概率衰变为这两个终态的单一态，且仅在高能下概率相等。",
+      "translated_at": "2026-11-15T22:34:51.013254+00:00",
+      "source_hash": "f5fe4310585785d33c2925c0a2ba1bc98b354d9897438c3898602b0a12699ee3",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "07c7e8380b43e107": {
+      "title_zh": "$\\nu_\\tau$-原子核超子产生中的 Tau 极化、新物理和 CP 破坏",
+      "abstract_zh": "$\\tau$ 中微子的带电流相互作用是标准模型 (SM) 味结构中约束最弱的扇区，而所产生的 $\\tau$ 轻子的极化可探测新物理 (NP) 耦合，包括破坏 CP 的耦合。超子和粲重子产生使得研究 $u\\to s$ 和 $d\\to c$ 跃迁成为可能，但任何测量都将在原子核上进行，这要求适当处理核效应。因此，我们在冲量近似下研究级联反应 $\\nu_\\tau\\,{}^A Z\\to\\tau^-(\\to\\pi^-\\nu_\\tau)\\,\\Lambda_c^+ X$ 和 $\\bar\\nu_\\tau\\,{}^A Z\\to\\tau^+ (\\to\\pi^+\\bar\\nu_\\tau)\\,\\Lambda X$。对于任意核空穴谱函数，我们推导了编码 $\\tau$ 极化信息的 pion 能量和角分布。与自由核子的情形一样，研究表明，相对于由中微子和出射重子张成的平面，pion 方位角不对称性仍然存在。这是一个在 SM 中为零的 CP 奇观测量，因此，无论强子形状因子如何，非零值都将表明 CP 破坏。${}^{16}$O 的局域费米气体结果表明，核效应会降低反应阈值，但使 pion 分布以及由此携带的极化信息保持接近其自由核子形式。对于有代表性的 NP 情景，预测的不对称性处于百分比量级或更低；在 $\\Lambda$ 道中，其幅度强烈依赖于跃迁形状因子。",
+      "translated_at": "2026-11-15T22:34:51.013488+00:00",
+      "source_hash": "7bdef4b7aaf1a78d5d5d4bdf47ae96c0e561c9d93b3e4b74818d8ee252f187b3",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "f0411a59974e5b0b": {
+      "title_zh": "CONUS+ 的 CEvNS 数据对非标准相互作用和轻 Z' 玻色子的约束",
+      "abstract_zh": "我们分析首个 Conus+ 反应堆反中微子能谱，以约束夸克的非标准中微子相互作用 (NSI)，以及 $E_6$ 和亲轻子 $U(1)_{L_a-L_b}$ 模型中的轻矢量 $Z'$ 媒介子。预测包括相干弹性反中微子--原子核散射 (CEvNS) 和弹性反中微子--电子散射 (EvES)，每个道中均包含标准模型 (SM)--媒介子干涉以及经解析剖面化处理的归一化不确定度。我们采用统一的电荷约定表述 $L_e-L_\\mu$ 和 $L_e-L_\\tau$，将直接电子散射与由光子--$Z'$ 混合诱导的核相互作用相结合。数据仍与 SM 相容。电子散射对夸克-NSI 和固定耦合 $E_6$ 的角度区域影响很小，但显著加强了 $E_6$ 基准模型的低质量耦合限制。亲轻子模型具有一个由电子散射主导的共同低质量平台，而在较大的媒介子质量下，由于不同的核圈贡献，它们的限制彼此分离。",
+      "translated_at": "2026-11-15T22:34:51.013658+00:00",
+      "source_hash": "a9576d2a3c5520f5e0b38ded1384c14507687cb2f289bfc76929ad0bc241a56b",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "28c3380a82153433": {
+      "title_zh": "对行星宿主 PDS 70 盘中 CO 封存和盘质量的观测约束",
+      "abstract_zh": "系外行星从其诞生环境中吸积气体、尘埃和冰，从而确定其大气和内部的化学组成。盘中主要挥发物的丰度可用于尝试将系外行星大气与其在盘中的形成位置联系起来。在本工作中，我们旨在量化 PDS 70 盘的 CO 峰值丰度和盘质量，这是首个在其尘埃空腔内直接确认存在两颗正在吸积的行星的盘。我们报告了在该盘中首次探测到 N$_2$H$^+$ 和 C$^{17}$O。C$^{17}$O 发射显示出边缘显著的统计证据，表明存在一个沿方位角方向尾随此前在连续谱发射中所见不对称性的结构。随后，我们将 N$_2$H$^+$、CO 同位素体和连续谱的盘积分通量与现有的热化学模型网格进行比较。我们发现，如果在拟合过程中纳入 C$^{17}$O 线通量，推导出的盘质量会降至原来的约 $1/3.4$，从 $0.039^{+0.067}_{-0.018}$ M$_{\\odot}$ 降至 $0.011^{+0.011}_{-0.006}$ M$_{\\odot}$；所引区间不包括系统不确定度。另一方面，在针对所采用的化学网络和电离方案计入 CO 冻结析出及同位素选择性 CO 光解离后，CO 在所探测的盘层中被封存，其相对于 H$_2$ 的有效丰度为 $(4.8^{+4.3}_{-2.7} - 17^{+8}_{-8}) \\times 10^{-6}$。CO 峰值丰度的范围反映了 N$_2$H$^+$ 发射的不确定性，其中假定发射为 21 K 下的光学薄发射或光学厚发射。因此，PDS 70 行星可能正在从 CO 被封存的外盘分子层吸积其大气的最后部分。因此，在解释行星大气的化学组成时，可能需要考虑 CO 封存。",
+      "translated_at": "2026-11-15T22:34:51.013909+00:00",
+      "source_hash": "12d02229fd00da318f96ea791787ca9eb8ebc5477d41f185d0759228f18ab016",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "f529ee1b4acfd60f": {
+      "title_zh": "磁致形变的中子星与引力波",
+      "abstract_zh": "我们研究了自旋周期从毫秒到秒、磁场从 $10^{12}$-$10^{15}$ G 到接近钱德拉塞卡-费米维里标度的假想值 $10^{18}$ G 的中子星和磁星的几何形状。在牛顿理论中，我们求得了旋转不可压缩流体的平衡形状，其中无电流的均匀内部磁场通过表面电流与外部偶极磁场相匹配。对于轴线对齐的情形，通过在质量、体积、角动量和冻结磁通量固定的条件下使总引力能、转动能和磁能最小，得到一个扁球体。其椭率是转动贡献与磁贡献之和，在弱磁场下恢复费拉罗极限，并且在大形变时具有依赖于偏心率的磁权重。对于磁轴与自旋轴未对齐的情形，我们引入四极形状张量并将其对角化，从而得到一个主轴因磁压力而倾斜的三轴椭球体。倾斜角和偏心率被解析地计算为转动偏心率、磁偏心率和失准角的函数。对于任意偏心率和倾角，未对齐构型的磁能以扁球谐函数的闭合形式给出。其最高至 $10^{15}$ G 的弱场形变正比于 $P_2(\\cos\\alpha)$，这确定了磁驱动张量，而其有限偏心率形式给出了转动主导的未对齐恒星的广义费拉罗-麦克劳林关系。在弱场区域，三轴偏心率由费拉罗偏心率以及转动偏心率与磁偏心率的二阶调和平均确定。形变参数给出四极矩，进而给出三轴构型的连续引力波振幅、光度和自旋减慢力矩。",
+      "translated_at": "2026-11-15T22:35:26.059138+00:00",
+      "source_hash": "034212d0d4357b3702f47f37cf0d682a05743077b53a54ca70d23e115d3ca42e",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "1d6d7b489632293a": {
+      "title_zh": "磁星磁场随双极扩散的演化",
+      "abstract_zh": "通常认为，与中子星相关的磁场贯穿恒星内部。在存在磁场时，恒星内部的等离子体会经历一系列导致磁场演化的过程。人们认为，磁星活动，如 X 射线、伽马射线暴和巨型耀斑（其在几秒内释放的能量比太阳在 10 年内释放的还多），主要由磁场衰减引起。恒星核心内部最重要的磁场衰减过程，是内部等离子体中带电粒子的双极扩散。双极扩散导致的衰减率与带电粒子在现有磁场影响下的双极速度直接相关。带电粒子的双极速度取决于粒子的内部动力学。我们概述了一种通用方法，用于求解存在磁场时的粒子动力学，以从双极速度得到磁流体动力学方程。该方程具有普适性，适用于所有可能的周围条件，如温度、正常态或超流态等物质状态。",
+      "translated_at": "2026-11-15T22:35:26.059346+00:00",
+      "source_hash": "890c6280f742ddacedd5f987a75995b957abd7babe58d4b9327860a581f01fd3",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "641f27c6563feb3b": {
+      "title_zh": "Sgr A* 引力透镜效应对连续引力波半相干搜索的影响。I. 信号模型与失配研究",
+      "abstract_zh": "来自银河系中心以远中子星的连续引力波（CW）可能受到 Sgr A$^*$ 中超大质量黑洞的引力透镜作用。由于信号的持续时间远长于透镜时间延迟，两个几何光学像会重叠并发生干涉。观测期间源的横向运动使它们的放大率和相对时间延迟发生演化，从而产生标准 CW 模板中不存在的演化振幅调制和相位调制。通过在高斯噪声中注入受透镜作用和不受透镜作用的信号，我们利用半相干失配量化了它们对基于霍夫变换的半相干搜索的影响。信号恢复取决于透镜放大与波形调制之间的竞争。较小的冲击参数通常通过更强的放大改善恢复，而较高的横向速度则通过更快的调制部分抵消这一增益，特别是在冲击参数较小且源-透镜距离较短、像间干涉不可忽略时。响应还取决于信号的内禀强度。强信号表现出较小的相对变化，在某些构型中存在净损失；而较弱的信号产生更宽、延伸至更负数值的失配分布，表明增强更大。一项从具有天体物理动机的速度分布和源-透镜距离分布中抽样透镜参数的总体研究，再现了对信号强度的强烈依赖。不同总体之间的差异不大，但高速度、短源-透镜距离的总体往往具有更大的失配。因此，不能仅通过用放大率重新缩放搜索灵敏度来计入透镜效应；在透镜假设下重新解释银河系中心定向搜索的灵敏度和上限，需要使用覆盖透镜参数空间的完整透镜化波形进行注入研究。",
+      "translated_at": "2026-11-15T22:35:26.059623+00:00",
+      "source_hash": "9a217839ca74ab5509376e3764c24ee0c7a500681ecf29d8b6f522609dab10c5",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "2df913993c9b59b8": {
+      "title_zh": "碳化硅探测器在 1010 W/cm2 强度下激光离子源（LIS）烧蚀不同金属的软光子诊断中的应用",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:36:38.498088+00:00",
+      "source_hash": "2d3fd068c91a40d9a5638ca9f0c385d3cfe51d758e4f1ec357c89cf2c8bb046a",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "091099d6f68e6c9f": {
+      "title_zh": "利用 NaI 中的 SiPM 读出推进基于闪烁的暗物质探测",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:36:38.498121+00:00",
+      "source_hash": "4aa5cf575a41b196569ff2b021b63916789d402d6a4f717ba050c8fec3f68d7a",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "858919dfa85e065f": {
+      "title_zh": "配置为2×2子阵列模块、用于编码孔径成像仪的位置灵敏虚拟Frisch栅探测器",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:36:59.917721+00:00",
+      "source_hash": "85ad127e4be0c9b4edddd9b9d5b50511656dc56b0d6a9b045efd2e79dce3626b",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "0a3560317f3881aa": {
+      "title_zh": "用于稀有同位素β衰变研究的离子注入探测器CeBr3闪烁体的特性",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:36:59.917788+00:00",
+      "source_hash": "ada2496516f6b39e9dfcfa36351b3d6bcbadb468ffcfaad70a72bb5c58960362",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "04dee9b3c0e700b2": {
+      "title_zh": "前言：第27届国际离子束分析会议与第19届国际粒子诱发X射线发射会议联合会议论文集（IBA⋅PIXE 2025）",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:36:59.918006+00:00",
+      "source_hash": "bdbf9baf29ba1fc4b07fb5053699ad65bf0ba436ccb59868780deed8579d79a7",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "15431e4d11210dcf": {
+      "title_zh": "从聚变激发函数中提取势垒分布的贝叶斯推断",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:37:27.847121+00:00",
+      "source_hash": "46ecfef6af575c2f58ed44e3da8f9a05c570e43689783c568196f5eb5110372b",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "f6a6e72ab40d9cd1": {
+      "title_zh": "用于SPARC托卡马克中子测量规划的BF3正比计数器表征",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:37:59.539775+00:00",
+      "source_hash": "cf6f1f3d642b33c55a0aa3e3fa92a1d5b211a08e9a60384ef8be77734af0e02b",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "b18caf8db88531bb": {
+      "title_zh": "对流流体动力学和磁流体动力学不稳定性的可用能量与基态",
+      "abstract_zh": "我们提出了一种预测中性流体和磁化流体中对流不稳定性非线性饱和水平的方法。该方法结合了Gardner重堆叠算法与拉格朗日弛豫：前者计算相空间中无碰撞等离子体的可用能量和基态，后者使流体元在保持局域不变量的同时找到能量更低的平衡态。对于不可压缩瑞利-泰勒不稳定性，该问题在形式上等价于Gardner问题，重堆叠算法可直接应用于位形空间。为处理可压缩性，我们在重堆叠之后进行拉格朗日弛豫以获得基态，结果与直接数值模拟高度吻合。该方法成功扩展到Z箍缩中的$m=0$交换不稳定性，表明其有潜力成为估算对流不稳定性非线性发展程度的通用框架，从而有助于聚变反应堆的设计与运行。",
+      "translated_at": "2026-11-15T22:37:59.539940+00:00",
+      "source_hash": "0e64cd9f691c5d8760eda9a46dbc8280b67263ad25dbe4c3fe54c54a5e96db8e",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "e852abc3bb16a895": {
+      "title_zh": "用于激光驱动离子束能量和角度表征的自动化CR-39蚀坑检测",
+      "abstract_zh": "对能量从亚MeV到多MeV的离子束进行准确表征，对于激光驱动离子加速和聚变研究中的诊断至关重要。CR-39探测器被广泛用于测量绝对离子产额，而离子能量和入射角可由蚀刻坑的几何形状推断。在本研究中，我们提出了一种自动化CR-39蚀坑检测方法，能够从二维光学显微图像中可靠提取蚀坑几何形状，并提高了高通量条件下对重叠蚀坑的辨别能力。该能力可在传统方法因显著的径迹重叠而受限的高密度区域实现可靠分析。通过将检测到的蚀坑形状与基于受限能量损失蒙特卡罗模拟的蚀坑形成模型相结合，实现了对激光驱动质子束能量和角度的表征，并提高了精度和计算效率。所提出的框架为自动化CR-39分析提供了一种稳健且可扩展的方法，并适用于广泛的离子束诊断和能谱学。",
+      "translated_at": "2026-11-15T22:37:59.540120+00:00",
+      "source_hash": "6479b18044c2680405f59b8fc17d20b231a65eaada5df4a2b444d0a201d0fb8d",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "7676fb03f615f4d4": {
+      "title_zh": "为应对helium-3短缺而开展的替代中子探测研究进展",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:38:24.113021+00:00",
+      "source_hash": "57a74fcd56a2da6b367f565a0bb15926d8dc60462d9cb9dfa034de1de61a7d87",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "2368e8328e112fdd": {
+      "title_zh": "利用正电子素负离子光脱附产生的正电子素束流剖面",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:38:24.113057+00:00",
+      "source_hash": "acbc3537e56b8be31a49a2044b5289770327cb9f9261f6ec4af8b2bedd6a2af1",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "20c389f69be8db62": {
+      "title_zh": "采用平板探测器的低剂量 C 臂 CT 系统的初步图像质量性能",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:38:34.511178+00:00",
+      "source_hash": "12d94b49d918dd9d9f2bfce1c8ca4a27e5c45a1da1fbaf4b7c1e62bbf487c734",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "dfccfc4eecea2945": {
+      "title_zh": "用于室温核辐射探测器的 Bridgman 法生长 CdZnTe 和 CdMnTe 晶体的生长后退火",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:38:34.511242+00:00",
+      "source_hash": "3845b31996151584aec807ddf9724138b4d0ba14b683e22d9814104300705ab3",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "60e30f86028de808": {
+      "title_zh": "满足 DARPA 的 SN-13-47 和 SIGMA 项目要求、处于高技术成熟度水平的个人辐射探测器",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:38:34.511289+00:00",
+      "source_hash": "f3eb5322499d0d36ae31f66be085c879598861fad00424e58a9ce7a3635e6976",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "b9032c3a5d066d26": {
+      "title_zh": "用于 KOTO 实验的纯 CsI 量能器原型的性能研究",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:38:34.511321+00:00",
+      "source_hash": "9d9b38bb20643231321cf4451ebde7359ea20cb35cbcbdd394a17cd5b5a5cd82",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "f90b90e0899404c7": {
+      "title_zh": "小阳极锗井型探测器的性能",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:38:52.512176+00:00",
+      "source_hash": "ce2aaf3eee6b4e0a10830e0f115b28532ad3478defb0b2cdf9bdffed30ae6954",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "9a10623586d78bf0": {
+      "title_zh": "用于小动物成像应用的紧凑型 PET/SPECT/CT 三模态系统的性能评估",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:38:52.512244+00:00",
+      "source_hash": "b611106e5ee167653d07bdb733c6f332947fc0a43a63142f7bd1743ced57ff3b",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "44a944f3226c2079": {
+      "title_zh": "通过标记中子法探测爆炸物的参数",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:38:52.512276+00:00",
+      "source_hash": "84faa84b482bb0ba43b0a83a08ff35e7d2ed5e74b1376a0efbbaacaabf33cd04",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "d196158f893d2a9c": {
+      "title_zh": "x 射线辐照的 xSnO–(25−x)SrO–75B2O3 玻璃中的光激励发光",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:38:52.512310+00:00",
+      "source_hash": "4b3cff37cd55ba9f106bcebac3ae0e53b11e6c518f5610041b2ea6c5349d3783",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "d1dc85692805aa3f": {
+      "title_zh": "CsI薄膜光阴极的光学和结构性质",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:01.996772+00:00",
+      "source_hash": "56d72452624e8ce4cb39e3b6ba823f9a8665d5f246121de31e419916ea95c5a3",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "621e713eebc7a22e": {
+      "title_zh": "质子治疗在线监测：使用平面PET系统的实时程序",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:01.996827+00:00",
+      "source_hash": "e7877e971d747890121d83a914dbf685e914120ea6dd4b4769b70e752232cddc",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "081892e6b3da3b5d": {
+      "title_zh": "在γ射线和x射线LIDAR实验中观察中等和高Z靶材中依赖于材料、厚度和轫致辐射x射线强度的效应",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:01.996877+00:00",
+      "source_hash": "9f460d67508824a9f8c98def4ccb388b88ff4dbf94c6b1e8106ba38b90bb3d45",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "a017c124f25fccd0": {
+      "title_zh": "OSIRIS——《全面禁止核试验条约》现场视察用γ射线能谱软件",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:01.996921+00:00",
+      "source_hash": "5a8f7a6a1c1f9a2618a1eb3c6ba06572147b885a7bdb36cd284e9ed4a93c3f1c",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "d769b94e8a83e4cb": {
+      "title_zh": "高精度折射率测量的新技术及其在评估晶体中的中子损伤和剂量方面的应用",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:12.031586+00:00",
+      "source_hash": "652eb0d4d3b33324908dfc6fb9c4fe4976e97cc760936c1bd089b0fa14182c95",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "db7381ac89b4fcc3": {
+      "title_zh": "锗酸铋闪烁光产额的非正比性",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:12.031641+00:00",
+      "source_hash": "5a77faa118e9b4cb21e417f61a5651dd828bb58612441c138a75ed4a96793ca6",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "49c9aa660dbabf98": {
+      "title_zh": "用于放射性离子束瞬态场 g 因子测量的新型反应室",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:12.031682+00:00",
+      "source_hash": "4179676d1ef24405c645219a7c074cbc56fea0c539fc7503fb8d9b57970fa365",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "a6fa85e9e7eadb93": {
+      "title_zh": "铀的中子三重计数数据",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:12.031709+00:00",
+      "source_hash": "2da79f3e89503d36ee660b333081f257df1012bec8a6b7011182e3969341c389",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "af9b59544f03f471": {
+      "title_zh": "用于多重性计数器的中子堆积算法",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:22.981453+00:00",
+      "source_hash": "dc184327f827d13f7898954e3ab1ee23b83837931ba0d2f7052c0bc5a8849afb",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "d4e924c70900dfe6": {
+      "title_zh": "基于分散于有机光导基质中的6Li玻璃闪烁体颗粒的中子探测器",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:22.981514+00:00",
+      "source_hash": "3066248bbd01d7c7ff5715e7c924d9e869ea8b7d6af64e17526de179cedb9a5d",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "919d07fc021baea9": {
+      "title_zh": "用于探测辐射源的网络算法",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:22.981544+00:00",
+      "source_hash": "ba3b2470a75047aa191886c8cf56aa981a22ab8ec930aa8beb07790fbea53fa6",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "5ebf7aeea81f9b1b": {
+      "title_zh": "用于材料检测的具有中子活化功能的多重散射康普顿相机",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:22.981576+00:00",
+      "source_hash": "02a551f1705ce37834d47f55126d5e41eab1b5c3b2dca4c45226aa2166ba7226",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "4b80f77c745e352c": {
+      "title_zh": "使用 MASH 和 FASH 成人体模对两种 PET/CT 扫描仪模型进行多探测器 CT（MDCT）Monte Carlo 模拟",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:33.231243+00:00",
+      "source_hash": "d94a96bb138977d789f9dda1bddf77466c8faa276b2976148ee59081ae1d803a",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "1d791dfdb88787ed": {
+      "title_zh": "光子束、电子束和中子束中 TE(TE) 和 Mg(Ar) 电离室响应的 Monte Carlo 模拟与基准测量",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:33.231309+00:00",
+      "source_hash": "bb5d0d365054bc00a5ea4d2653a2e30c5198daf7450f0e5a2ef5f0c4ea449cc2",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "bf5136b7bf53d0fb": {
+      "title_zh": "卤化物闪烁体中缺陷、不均匀性和次生相的微尺度发光成像",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:33.231395+00:00",
+      "source_hash": "b84e143027faa06d7e5f27fe75e114bf1d65512fc2de3682f80ebbe56382e8ed",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "065eca4ed6f52dc1": {
+      "title_zh": "用于痕量锕系元素样品快速同位素分析的微量热计 Q 谱学",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:33.231426+00:00",
+      "source_hash": "9edabcae3b790d3e0b83c1edd3d09f6565982a24163436dedd46276a88f22f28",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "94a19c47592c7c1d": {
+      "title_zh": "XMASS 实验用微型源的研制",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:45.489511+00:00",
+      "source_hash": "82fc4ac2bab84d734842bf92d4c1f669678d6380e345869521e20bb3d89d4bbb",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "6ccda858db1baf81": {
+      "title_zh": "利用宇宙射线缪子和电子的散射与阻止进行材料鉴别：区分较重金属与较轻金属以及低原子量材料",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:45.489586+00:00",
+      "source_hash": "5fed2e43f0aed14ce2a5383afd3c8fe76deeb6e4faa68081286e2298b164dc4d",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "b186c760e7140410": {
+      "title_zh": "采用改进浮区法生长的碲化镉锰（Cd1−Mn Te）晶体的材料与探测器特性",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:45.489633+00:00",
+      "source_hash": "3a48fdd0b36831e9344fde459521cd09d547b044338109e3d826304bce27c09a",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "b9bd2d2c6295d16d": {
+      "title_zh": "用于径迹探测器系统单片有源像素传感器的低功耗优先级地址编码器和复位解码器数据驱动读出",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:45.489679+00:00",
+      "source_hash": "3c32a048b474e754c84aa2a5080ddae362b921d98ff5e869053fe5663d0085ed",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "714380060366a6cb": {
+      "title_zh": "具有极高可靠性和低束流损失的超导直线加速器中主要元件故障的局部补偿–再匹配",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:57.750976+00:00",
+      "source_hash": "fc14f75b085ef9971f0f9ff20fb60d4daadca33077cf31cd03b0a40938ac504a",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "09876ac69dbe00ff": {
+      "title_zh": "LiF/ZnS 中子多重性计数器",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:57.751027+00:00",
+      "source_hash": "1d0972904095a45c91c7bc50b253d0eb8821e5408f23faca334dee9ce024f534",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "93d5064c229e4381": {
+      "title_zh": "激光诱导表面声波及其通过诊断系统对核装置钢材料辐射损伤的检测",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:57.751073+00:00",
+      "source_hash": "3e2c592e2ad31f9b6ece413a79bc1be6cb3c68deca221d1fe5286b3e09476722",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "a592de8c5b434646": {
+      "title_zh": "过热乳液探测器中气泡蒸发脉冲的 LET 依赖性",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:39:57.751104+00:00",
+      "source_hash": "5695d665ca1fc45dd592adf3be7178f1214d0625c3d853dd16c1a11e279149f7",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "19ec4989a3392b8f": {
+      "title_zh": "用于寻找点源的移动式 NaI(Tl) 和基于 3He 的中子探测器的研究与优化",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:40:06.406916+00:00",
+      "source_hash": "23e301db6988d040eb3bde6a49c7aa2ef241e4fbf87fcef54d02624c5a0646d2",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "e24d954d5eacc20e": {
+      "title_zh": "封二（编辑委员会）",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:40:06.406964+00:00",
+      "source_hash": "43b8fd197f79e468de73293e4a0fcaa66fa6662a28320c46992b26011ef626fa",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "2650bd5d08d3835c": {
+      "title_zh": "封二（编辑委员会）",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:40:06.406989+00:00",
+      "source_hash": "43b8fd197f79e468de73293e4a0fcaa66fa6662a28320c46992b26011ef626fa",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "654f73dc058a0979": {
+      "title_zh": "β 延迟裂变分支半衰期的经验描述",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:40:06.407024+00:00",
+      "source_hash": "a27f4ef85e468e2aff453beef4a8c6b75f127c8b506b7f5340e71e4b26b0d8fe",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "0a92e2c2fa093ac9": {
+      "title_zh": "Cr 48 的 1 f 7 / 2 壳模型中的守恒律",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:40:20.371601+00:00",
+      "source_hash": "925da366d1abc268025b1897126fcee1e220ede97090298a637526b94a066aec",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "f47bb38155fdaff4": {
+      "title_zh": "对 O 17 中 6.356 MeV 处主导与 s 过程相关温度下 C 13 ( α , n ) O 16 反应率的 1 / 2 + 态的 α 渐近归一化系数的新测量",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:40:20.371693+00:00",
+      "source_hash": "54b642b6a18d57bf329ab98626ca8a4a3b13ddcba28f28deeb87925a99976d7d",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "2d40864b5bb1c258": {
+      "title_zh": "“Li 8 ( α , n ) 11 B 反应的测量及其天体物理学意义”的补遗",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:40:20.371729+00:00",
+      "source_hash": "1f517f13b75918a46ab4f011787a2cd43e9263acca8116bd3fc3513a21693668",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "fffaf41a5fc6a443": {
+      "title_zh": "温度对核子结构函数的影响",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:40:20.371759+00:00",
+      "source_hash": "2eb05d895d14ca4feb8b613150f02016c3dc90ada062288c4c1a9c01496431b7",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "e21c8dd4b9d6fe4c": {
+      "title_zh": "编辑委员会",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:40:40.701361+00:00",
+      "source_hash": "6128de99dc6b06a0bdf1345cd99727cdc0e2b665492552e6c2b17d9079b3e110",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "49e870a32efbf4c3": {
+      "title_zh": "采用复程高斯基的耦合道复标度方法研究 Λ ( 1405 ) 的双极点性质",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:40:40.701427+00:00",
+      "source_hash": "3a97bf6286f0a6be4eb4e0494163fb0d0a5f5d28bf4c986ef69f2a2c1ab22db8",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "fad9c2ed80077235": {
+      "title_zh": "无 NOA 的微观 IBM 中的单核子转移算符",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:40:40.701457+00:00",
+      "source_hash": "e78d07b24faa0a173299b925f98d979787d360fe835860033f74a2376f351a14",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "69c2020ba02d6d13": {
+      "title_zh": "由 chaoton、BICEP2 数据和超普朗克衰变常数辅助的 U(1) de 山顶势中的暴胀点",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:40:40.701495+00:00",
+      "source_hash": "1a2d7fcf13bdcc7871bd62cc53e75daf09e186062f43f69a59660d092954b8a7",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "42f961a390c0c5be": {
+      "title_zh": "自旋–同位旋饱和原子核上 ( p , p ′ ) 反应中相干 η 介子产生的共振动力学",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:40:49.943767+00:00",
+      "source_hash": "b6856f1e2130b90d19fe3ed63a8b46902ed164d53c020f9e4991821bcfc9d7d8",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "1066b866da22e949": {
+      "title_zh": "重构实现与 Planck 和 BICEP2 结果一致的暴胀的标量场理论",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:40:49.943828+00:00",
+      "source_hash": "977836618abc8e717316f1ece2035449ba4c43d348e9cbb3f6d3cc167a6e3b05",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "8d093a1b3e51beec": {
+      "title_zh": "多奇异超核的产生与 YN-相互作用",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:40:49.943859+00:00",
+      "source_hash": "179e9a788fe1326a40c83b6ea49102b2bf1dbe0593ef2a0d39e30ffdbb78fc2f",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "71202089c5e87655": {
+      "title_zh": "重新审视超引力中的多项式混沌暴胀",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:40:49.943886+00:00",
+      "source_hash": "aed0d9c37f835b3b3dcc2db817423ab87e30a3117436d72f3b5e5aab7fb912f8",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "9eb2844ac326e646": {
+      "title_zh": "与物质耦合的暴胀最简 R + R 2 超引力模型",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:41:00.497656+00:00",
+      "source_hash": "e734559e4e636c401cb5f8a118a51154a7d0af468767b14ada7492c850e5091a",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "fc7a01648ba60616": {
+      "title_zh": "远平行引力的 Kaluza–Klein 理论",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:41:00.497716+00:00",
+      "source_hash": "11e858814fa2a72d394f7ccecd4e65af990b85e530201b68297ead7e2f4acb17",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "e405d195246d552a": {
+      "title_zh": "作为新星前太阳颗粒诊断指标的同位素 32 S/ 33 S 比值",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:41:00.497746+00:00",
+      "source_hash": "906b57d7e2586019eabe7b8a9872a37171edb2ef50f530aa6554fb125c004ef9",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "0f58b3767b8485f8": {
+      "title_zh": "从热力学到引力理论中的解",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:41:00.497773+00:00",
+      "source_hash": "498157c215ad5ea53c95f2cf8f9073660a3683ced90fa286766f62c6f024b055",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "c59611630b84d858": {
+      "title_zh": "在精质暴胀模型中规避 Lyth 界限",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:41:21.922500+00:00",
+      "source_hash": "398a0ab7b45711f5af2548e9175f6c14bf22208099fd3d5d95512922649e01cd",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "cc4223904209a47b": {
+      "title_zh": "重离子碰撞中夸克–胶子等离子体的电磁响应",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:41:21.922558+00:00",
+      "source_hash": "e088839d5239b6e266b01862af5041bf20df9c6ffd26a2cb9e0b66dde2980249",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "f22c3ba5f28be146": {
+      "title_zh": "在 CMB 中探测遗迹引力波：宇宙学双折射造成的污染",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:41:21.922596+00:00",
+      "source_hash": "435860b4d7b8cdc7d1c83361fb1241668babfcb3f2ef2e78177e4f962cb0ce5d",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+    },
+    "4e4ee079b41fadf2": {
+      "title_zh": "源自 2 + 1 维引力的形变的 Carroll 粒子",
+      "abstract_zh": "",
+      "translated_at": "2026-11-15T22:41:21.922621+00:00",
+      "source_hash": "0ac44466740254b8e9b161f7f2f1430f03e5cdefe5d6765f1a13503c18b6f903",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
     }
   },
   "provider_note": "来源以条目 provider/model/note 为准。",
@@ -440127,6 +441173,18 @@
         "preserved_previous_title": false,
         "content_validation": "disabled",
         "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      },
+      "8f870a151c86758450e9af46be0a931e4bc2668d305015dc3d883be66ab8b5a1": {
+        "title_zh": "N = 40附近集体性的演化：通过γ − γ快速定时测量得到的Ga 69第一激发1 / 2 −态的寿命和电磁跃迁强度",
+        "abstract_zh": "",
+        "translated_at": "2026-11-10T04:41:14.758276+00:00",
+        "source_hash": "8f870a151c86758450e9af46be0a931e4bc2668d305015dc3d883be66ab8b5a1",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
       }
     },
     "76a0df56d97f2bc4": {
@@ -441304,6 +442362,174 @@
         "abstract_zh": "我们采用轴向规范下避免高斯定律约束的晶格哈密顿量，研究了在 $3+1$ 维中与基本费米子动态耦合的 SU(3) 非阿贝尔规范理论的量子模拟。规范场的时间分量用独立场自由度和晶格正则化格林函数解析求解。即使在 Trotter 化条件下，轴向规范条件在时间演化中也能自然保持。规范场自由度用局域场基表示，并且可以通过局域量子傅里叶变换高效地转换到正则共轭动量基。我们证明，在体积为 $V$、裸耦合为 $g$ 的晶格上，以精度 $\\epsilon$ 描述能量不超过 $E$ 的所有态所需的量子比特数以 $16n_A V + 12n_f V$ 为上界，其中，$n_A \\approx \\log_2 (\\frac{64 E' V^{4/3}}{\\pi^2\\epsilon} + \\frac{32\\sqrt{2}g n_f E'^{1/2} V^{7/6}}{\\sqrt{3}\\pi^3\\epsilon^{1/2}} ) $ 是在移位能量 $E'$ 下描述每个格点上的每个独立规范场所需的量子比特数，$n_f$ 表示费米子味数。随后，我们分析了一种基于 Trotter 化、量子傅里叶变换和 Jordan-Wigner 变换的时间演化量子算法；在任意规范场截断和数字化条件下，可以显式构造该算法的量子电路。我们发现，对于固定的 $n_f\\leq 6$，每个 Trotter 步的 CNOT 门数和单量子比特旋转门数均按 $O(n_A^4 V^{4/3}) + O(V^{5/3})$ 标度变化。我们得出结论，模拟晶格 QCD 实时动力学所需的量子资源随体积、能量、时间、精度和裸哈密顿量参数呈多项式标度变化。",
         "translated_at": "2026-11-09T09:01:32.021971+00:00",
         "source_hash": "0e8fbf63ccf95e800a9c3c0a4d9c0e97471f59493634440edf29fc7934924130",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+      }
+    },
+    "9f18805332a11c11": {
+      "75d77fb9eac320ce3fcc50d85fa82cef0ebb25c3581dc598eb602503774e8f82": {
+        "title_zh": "能量–动量平方引力：统一相互作用物质下的带电夸克星解",
+        "abstract_zh": "摘要 我们在能量—动量平方引力（EMSG）框架内研究带电夸克星的平衡结构，采用纳入微扰 QCD 修正、色超导和有限奇异夸克质量效应的统一相互作用夸克物质状态方程。通过在广泛 EMSG 耦合强度和相互作用参数范围求解修正 Tolman-Oppenheimer-Volkoff 方程，我们表明，与中性构型相比，纳入电荷会显著增加最大质量和半径。对于强负耦合和显著相互作用强度，所得恒星模型质量接近 $3\\,M_{\\odot}$，致密度比约为 $0.34$，与 GW190814 推断的高质量致密天体一致。电荷存在使最大质量处中心密度降低约 $10$--$15\\%$，同时完全满足因果性要求。此外，与 PSR J1614$-$2230、J0348$+$0432、J0740$+$6620、J0952$-$0607 及近期 NICER 半径测量的观测约束比较表明，带电 EMSG 构型在广泛参数空间内与当前天体物理界限一致。这些结果证明，适中电荷与非线性物质—几何耦合结合，可支持明显比广义相对论预言更大质量的夸克星，凸显修正引力和多信使天体物理中带电致密天体的潜在观测相关性。",
+        "translated_at": "2026-08-12T16:07:37.052Z",
+        "note": "完整翻译 title 与 abstract/summary；保留原始公式、LaTeX、核素、反应道、变量、单位、数值、误差、专名、DOI 和引用标记。"
+      }
+    },
+    "b6b30d4b7a2af4ba": {
+      "d01ed125ae1ac059aaea6e080d6fbf04dc30ec3a7a1f1792ec46fa7c88b0c87d": {
+        "title_zh": "多任务高斯过程对低激发态可观测量及N、Z=20和28附近壳演化进行预测",
+        "abstract_zh": "",
+        "translated_at": "2026-10-14T01:05:20.289868+00:00",
+        "provider": "open-source-local",
+        "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+        "source_hash": "d01ed125ae1ac059aaea6e080d6fbf04dc30ec3a7a1f1792ec46fa7c88b0c87d",
+        "quality": "machine_draft",
+        "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      }
+    },
+    "e10e2e0acc407cfd": {
+      "d0f569cb1a10d175ee0cc7771a3de672b50a318c22736d7d9fdf87d5a984ddab": {
+        "title_zh": "CSNS中子散射用低温自动样品更换机的开发与优化分析",
+        "abstract_zh": "",
+        "translated_at": "2026-10-14T01:21:52.111102+00:00",
+        "provider": "open-source-local",
+        "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+        "source_hash": "d0f569cb1a10d175ee0cc7771a3de672b50a318c22736d7d9fdf87d5a984ddab",
+        "quality": "machine_draft",
+        "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      }
+    },
+    "1e26c08fb7f6fafb": {
+      "af9615b5e9bafb3929c4725e9eba073dea6e905d37b8c4c88463510e8775094e": {
+        "title_zh": "在强激光场中α衰变过程的时间演化",
+        "abstract_zh": "",
+        "translated_at": "2026-11-03T04:02:19.740116+00:00",
+        "provider": "open-source-local",
+        "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+        "source_hash": "af9615b5e9bafb3929c4725e9eba073dea6e905d37b8c4c88463510e8775094e",
+        "quality": "machine_draft",
+        "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      }
+    },
+    "0707e19fca16040d": {
+      "0fa20ea01e6ff8d35d4ba9afb45e4a115e629feea29b519016b5f92513ed37a0": {
+        "title_zh": "使用N 3 LO旋量有效场论的核子-核子势",
+        "abstract_zh": "",
+        "translated_at": "2026-11-05T02:20:21.130734+00:00",
+        "provider": "open-source-local",
+        "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+        "source_hash": "0fa20ea01e6ff8d35d4ba9afb45e4a115e629feea29b519016b5f92513ed37a0",
+        "quality": "machine_draft",
+        "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      }
+    },
+    "55def3178ddf5891": {
+      "6efcef3008af00940927c90c1df991b6d887ee1fda6c9d320bdd26b4bfaf70cf": {
+        "title_zh": "局域尺度对称性与黑洞",
+        "abstract_zh": "",
+        "translated_at": "2026-11-08T10:04:46.766294+00:00",
+        "source_hash": "6efcef3008af00940927c90c1df991b6d887ee1fda6c9d320bdd26b4bfaf70cf",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      }
+    },
+    "411774e75b5bb87c": {
+      "9927e451be26bb35c1e4467b74602909fbad24f63fa8959c9127b0761d28b92c": {
+        "title_zh": "朗道尔原理作为广义黑洞熵热力学一致性的判据",
+        "abstract_zh": "",
+        "translated_at": "2026-11-08T10:08:48.301420+00:00",
+        "source_hash": "9927e451be26bb35c1e4467b74602909fbad24f63fa8959c9127b0761d28b92c",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      }
+    },
+    "5cc2937227fcd50e": {
+      "786bc291ec5a4c15c9ff04258d526d5e662ad8600575d4325b1d22e999b69d15": {
+        "title_zh": "Rarita-Schwinger 场的协变 Wigner 函数和自旋极化",
+        "abstract_zh": "我们研究自旋-$3/2$ Rarita-Schwinger 场的协变 Wigner 函数及其与自旋密度矩阵和平均自旋极化矢量的关系。我们获得了一个将协变 Wigner 函数与弱相互作用场的平均自旋矢量联系起来的公式。随后，我们计算了在 Belinfante、正则和 GLW 赝规范下，局域热平衡时由热涡旋、热剪切和自旋势诱导的平均自旋矢量。所得公式可用于预测重离子碰撞中自旋-$3/2$ 强子（如 $\\Omega^-$）的自旋极化。正则赝规范与 Belinfante 赝规范下热剪切诱导极化的差异，使得可以利用 $\\Omega^-$ 的局域自旋极化测量来区分这两种赝规范。",
+        "translated_at": "2026-11-08T11:48:04.836835+00:00",
+        "source_hash": "786bc291ec5a4c15c9ff04258d526d5e662ad8600575d4325b1d22e999b69d15",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+      }
+    },
+    "d95890ffb14fc95b": {
+      "41348e372158773e8753f7ea91e3f23210fa472c92de52463db97d8d802ebba7": {
+        "title_zh": "用于 CERN 北部实验区横向剖面测量的直径 5 mm 薄壁吸管探测器的研制",
+        "abstract_zh": "",
+        "translated_at": "2026-11-08T17:36:13.622164+00:00",
+        "source_hash": "41348e372158773e8753f7ea91e3f23210fa472c92de52463db97d8d802ebba7",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      }
+    },
+    "bd746bf5de6f766a": {
+      "8f0d9dcd876df75f1d9e1c0bbc6c53e71ef3ad9d2d9a22512671e5709af18189": {
+        "title_zh": "利用相关重离子数据集进行序贯贝叶斯推断",
+        "abstract_zh": "",
+        "translated_at": "2026-11-12T22:44:35.936590+00:00",
+        "source_hash": "8f0d9dcd876df75f1d9e1c0bbc6c53e71ef3ad9d2d9a22512671e5709af18189",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      }
+    },
+    "83561015423a5871": {
+      "5adb32a1d4942bda757d9c51a652878ea679a1fb9b00d35f015a783231002331": {
+        "title_zh": "LHC 离子注入器链中空间电荷与束内散射的相互作用",
+        "abstract_zh": "",
+        "translated_at": "2026-11-13T22:36:03.179842+00:00",
+        "source_hash": "5adb32a1d4942bda757d9c51a652878ea679a1fb9b00d35f015a783231002331",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      }
+    },
+    "1fc4b7be1b6169d6": {
+      "746326aed52f447458b5cde1c5d13a9b80f4249f8a4c9a196bd421ee9daf1afb": {
+        "title_zh": "环形时空中的 Unruh–DeWitt 探测器响应",
+        "abstract_zh": "",
+        "translated_at": "2026-11-13T22:37:49.702059+00:00",
+        "source_hash": "746326aed52f447458b5cde1c5d13a9b80f4249f8a4c9a196bd421ee9daf1afb",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      }
+    },
+    "3db4f00ca505228f": {
+      "d0b17b47f3c91cf50a221622ddd90527ce5420bb8fbd38fe494598f30ceb4367": {
+        "title_zh": "关于中子星冷却中的核子有效质量",
+        "abstract_zh": "由超高密度核物质构成的中子星的冷却强烈依赖于状态方程，因为主要冷却源是在其内部产生的中微子。在此，我们研究中子星的冷却性质，重点关注核子有效质量；其影响最近已在超新星爆炸和原中子星冷却中得到考察。有效质量的不确定性源于标量介子吸引相互作用的差异以及Dirac质量和Landau质量定义的差异。首先，我们采用所谓的Walecka模型，该模型允许在统一框架内引入这两种质量，并评估由此得到的冷却曲线。基于Walecka模型，我们计算中子的发射率、直接Urca过程及其冷却曲线。我们证明，Dirac质量和Landau质量会影响大质量中子星的冷却，尽管先前大多数冷却模拟并不区分二者。我们还使用基于相对论平均场（RMF）理论的两个现实状态方程进行冷却模拟，这两个状态方程在特征参数中的差异仅源于有效质量的性质。这些结果与通过Walecka模型获得的结果大体一致，表明核子有效质量的处理可能是中子星冷却中一个重要的不确定性来源。",
+        "translated_at": "2026-11-14T22:41:43.519734+00:00",
+        "source_hash": "d0b17b47f3c91cf50a221622ddd90527ce5420bb8fbd38fe494598f30ceb4367",
         "provider": "codex-cli",
         "model": "gpt-5.6-sol",
         "quality": "machine_draft",
