@@ -3091,8 +3091,10 @@ function homeJournalLabel(item) {
 
 function homeFeedCard(item, type) {
   const isNews = type === 'news';
+  const showFullSummary = isNews && item.source === 'APS Physics';
   const card = document.createElement(isNews ? 'article' : 'a');
   card.className = `home-feed-card ${type}`;
+  if (showFullSummary) card.classList.add('summary-expanded');
   if (!isNews) {
     card.href = item.url || '#';
     card.target = '_blank';
@@ -3107,7 +3109,7 @@ function homeFeedCard(item, type) {
     <small><span>${text(timing || '日期待确认')}</span><b>${text(item.source || '官方来源')}</b></small>
     <h3>${isNews ? `<a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">${title}</a>` : title}</h3>
     ${summary ? `<p class="home-feed-summary">${text(summary)}</p>` : isNews ? '<p class="home-news-missing">暂未取得来源简介，可点击标题查看官方原文。</p>' : ''}
-    ${isNews && summary ? '<button type="button" class="news-summary-toggle" aria-expanded="false">展开简介</button>' : ''}`;
+    ${isNews && summary && !showFullSummary ? '<button type="button" class="news-summary-toggle" aria-expanded="false">展开简介</button>' : ''}`;
   const toggle = $('.news-summary-toggle', card);
   toggle?.addEventListener('click', () => {
     const expanded = toggle.getAttribute('aria-expanded') !== 'true';
