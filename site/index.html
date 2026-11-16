@@ -27,7 +27,8 @@
   </script>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20261110-paper-links">
+  <link rel="stylesheet" href="./vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="./styles.css?v=20261116-math-featured">
 </head>
 <body>
   <div class="shell">
@@ -115,17 +116,12 @@
 
         <section class="home-featured-panel" aria-labelledby="homeFeaturedTitle">
           <header class="home-featured-head">
-            <div><span class="section-kicker">SELECTED PAPERS</span><h2 id="homeFeaturedTitle">重点文章</h2></div>
+            <div><span class="section-kicker">SELECTED PAPERS</span><h2 id="homeFeaturedTitle">重点期刊文章</h2></div>
             <div class="featured-journal-list" aria-label="重点文章期刊范围">
-              <span class="nima-journal-chip">NIMA</span><span>PRL</span><span title="Nature、Nature Physics、Nature Astronomy、Nature Communications 等">Nature 系列</span><span title="Science、Science Advances、Science Robotics 等物理相关内容">Science 系列</span><span>SB / 科学通报</span>
+              <span>NIMA</span><span>PRL</span><span title="Nature、Nature Physics、Nature Astronomy、Nature Communications 等">Nature 系列</span><span title="Science、Science Advances、Science Robotics 等物理相关内容">Science 系列</span><span>SB / 科学通报</span>
             </div>
           </header>
-          <section class="nima-spotlight" aria-labelledby="nimaSpotlightTitle">
-            <div class="nima-emblem" aria-hidden="true">NIM<span>A</span></div>
-            <div class="nima-spotlight-copy"><span class="section-kicker">JOURNAL FOCUS · 实验探测</span><h3 id="nimaSpotlightTitle">NIMA · 重点关注</h3><p>探测器 · 核电子学 · 加速器 · 实验仪器</p><small id="nimaSummary">正在统计 NIMA 收录情况…</small></div>
-            <button type="button" data-nima-open>查看 NIMA 全部论文 <span aria-hidden="true">→</span></button>
-          </section>
-          <p class="home-scroll-hint">前排优先呈现最多 4 篇近期 NIMA 文章；其余重点期刊按日期展示。使用鼠标滚轮向下浏览</p>
+          <p class="home-scroll-hint">各重点期刊组交替展示近期文章，组内按发布日期排序。向下滚动浏览，或<button type="button" class="featured-all-link" data-view-jump="featured">查看全部重点期刊论文 →</button></p>
           <div class="home-featured-list" id="homeFeaturedList" tabindex="0" aria-label="向下滚动浏览重点文章">
             <div class="skeleton tall"></div>
           </div>
@@ -469,6 +465,6 @@
     </article>
   </template>
 
-  <script type="module" src="./app.js?v=20261111-full-library"></script>
+  <script type="module" src="./app.js?v=20261116-math-featured"></script>
 </body>
 </html>

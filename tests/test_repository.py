@@ -256,7 +256,9 @@ class RepositoryTests(unittest.TestCase):
             self.assertEqual(matches[0]["mode"], "all")
             self.assertIn("detectors-daq", matches[0]["default_categories"])
         index = (ROOT / "site" / "index.html").read_text()
-        self.assertIn('id="nimaSpotlightTitle"', index)
+        self.assertIn('重点期刊文章', index)
+        self.assertIn('查看全部重点期刊论文', index)
+        self.assertNotIn('id="nimaSpotlightTitle"', index)
         self.assertIn('id="journalFocusPanel"', index)
         self.assertIn('data-nima-toggle aria-pressed="false"', index)
 

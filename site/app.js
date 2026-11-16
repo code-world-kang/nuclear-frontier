@@ -1,3 +1,4 @@
+import { renderScientificText, renderScientificMath } from './scientific-math.js?v=20261116';
 import { createPaperLibraryLoader } from './paper-library.js?v=20261111-full';
 import { loadTranslationFeed } from './translation-feed.js?v=20261110-incremental';
 import { scientificText, nuclidesIn, searchText, isNimaPaper, translationForRecord } from './research-utils.js?v=20261106-versions';
@@ -71,12 +72,32 @@ function featuredWithNima() {
     .sort((a, b) => (b.published || '').localeCompare(a.published || '') || (b.importance || 0) - (a.importance || 0));
 }
 
-function prioritizeNima(items, limit = 24) {
-  // 最多四个近期 NIMA 首屏席位，其余期刊继续按日期展示，不改变质量评分。
-  const first = items.filter(isNimaPaper).slice(0, Math.min(4, limit));
-  const other = items.filter(item => !isNimaPaper(item));
-  const extra = items.filter(isNimaPaper).slice(first.length);
-  return [...first, ...other, ...extra].slice(0, limit);
+function selectFeaturedJournals(items, limit = 24) {
+  // One recent article per configured journal group per round; no fixed NIMA slots.
+  const groups = new Map();
+  for (const item of items) {
+    const label = homeJournalLabel(item);
+    if (!label) continue;
+    if (!groups.has(label)) groups.set(label, []);
+    groups.get(label).push(item);
+  }
+  const newest = (a, b) => (b.published || '').localeCompare(a.published || '')
+    || (b.importance || 0) - (a.importance || 0);
+  for (const group of groups.values()) group.sort(newest);
+  const selected = [];
+  const seen = new Set();
+  for (let round = 0; selected.length < limit; round += 1) {
+    const candidates = [...groups.values()].map(group => group[round]).filter(Boolean).sort(newest);
+    if (!candidates.length) break;
+    for (const item of candidates) {
+      const key = item.doi || item.id || `${item.source}:${item.title}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      selected.push(item);
+      if (selected.length >= limit) break;
+    }
+  }
+  return selected;
 }
 
 const NUCLEAR_PRIORITY = new Map([
@@ -1133,7 +1154,7 @@ function usingTranslation(item) {
 
 function localizedTitle(item) {
   const translation = translationFor(item);
-  return scientificText(usingTranslation(item) && translation.title_zh ? applyTranslationGlossary(translation.title_zh) : item.title);
+  return usingTranslation(item) && translation.title_zh ? applyTranslationGlossary(translation.title_zh) : item.title;
 }
 
 function localizedAbstract(item) {
@@ -1539,7 +1560,7 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
   titleLink.rel = 'noreferrer';
   const translation = translationFor(item);
   const translated = usingTranslation(item);
-  titleLink.textContent = localizedTitle(item);
+  renderScientificText(titleLink, localizedTitle(item));
   heading.append(titleLink);
 
   const authors = $('.authors', card);
@@ -1549,7 +1570,7 @@ function cardFor(item, { onSelect = selectPaperForAssistant } = {}) {
   const abstractValue = item.abstract || item.summary || '';
   const hasTranslatedAbstract = Boolean(translated && translation?.abstract_zh);
   const abstract = $('.abstract', card);
-  abstract.textContent = scientificText(hasTranslatedAbstract
+  renderScientificText(abstract, hasTranslatedAbstract
     ? applyTranslationGlossary(translation.abstract_zh)
     : (localizedDescription(item) || missingAbstractMessage(item)));
   $('.abstract-label', card).textContent = (abstractValue || item.type === 'news')
@@ -2055,9 +2076,6 @@ function openNimaPapers() {
 
 function renderNimaFocus() {
   const papers = nimaPapers();
-  $('#nimaSummary').textContent = papers.length
-    ? `日常库已收录 ${papers.length.toLocaleString('zh-CN')} 篇 · 最新论文日期 ${prettyDate(papers[0].published)}。历史月库仍可通过关键词检索。`
-    : '暂未取得 NIMA 文章，保留自动采集配置，等待下一次更新。';
   $('#nimaQuickCount').textContent = papers.length.toLocaleString('zh-CN');
   $('[data-nima-toggle]').setAttribute('aria-pressed', String(state.source === NIMA_SOURCE));
 }
@@ -2499,6 +2517,7 @@ function openDetails(item) {
     <h4>关联文献</h4>
     <div class="related-list">${related.length ? related.map(({ candidate, score }) => `<a class="related-item" href="${text(candidate.url)}" target="_blank" rel="noreferrer">${text(candidate.title)}<small>${text(candidate.source)} · 关联度 ${score}</small></a>`).join('') : '<p>当前历史库中尚无明显关联文献。</p>'}</div>
   `;
+  renderScientificMath(host);
   $('.dialog-head button', host).addEventListener('click', () => $('#detailDialog').close());
   $('#copyDoi', host)?.addEventListener('click', () => copyText(item.doi, 'DOI 已复制'));
   $('#toggleDetailTranslation', host)?.addEventListener('click', () => {
@@ -2830,6 +2849,7 @@ function renderAssistantNewsDetail(item) {
       <div class="assistant-section-head"><span>相关新闻</span><small>按领域与标签匹配</small></div>
       <div class="assistant-related-list">${related.length ? related.map(({ candidate, score }) => `<button type="button" data-related-news="${text(candidate.id)}"><span>${text(localizedTitle(candidate))}</span><small>${text(candidate.source)} · 关联度 ${score}</small></button>`).join('') : '<p>暂无明显相关新闻。</p>'}</div>
     </section>`;
+  renderScientificMath(host);
   $('[data-news-favorite]', host).addEventListener('click', event => void toggleFavorite(item, event.currentTarget));
   $$('[data-related-news]', host).forEach(button => button.addEventListener('click', () => {
     const candidate = state.news.find(value => value.id === button.dataset.relatedNews);
@@ -2920,6 +2940,7 @@ function renderAssistantPaperDetail(item) {
       <div class="assistant-section-head"><span>关联论文</span><small>按分类、标签、作者匹配</small></div>
       <div class="assistant-related-list">${related.length ? related.map(({ candidate, score }) => `<button type="button" data-related-paper="${text(candidate.id)}"><span>${text(candidate.title)}</span><small>${text(candidate.source_short || candidate.source)} · 关联度 ${score}</small></button>`).join('') : '<p>历史库中暂无明显关联论文。</p>'}</div>
     </section>`;
+  renderScientificMath(host);
   $('[data-assistant-cite]', host).addEventListener('click', event => toggleCitationPanelInHost(item, $('[data-assistant-citation]', host), event.currentTarget));
   $('[data-zotero-save]', host).addEventListener('click', () => void openZoteroClassification(item));
   const assistantZoteroPanel = zoteroClassificationPanelFor(item);
@@ -3050,6 +3071,7 @@ function homeFeedCard(item, type) {
     <small><span>${text(timing || '日期待确认')}</span><b>${text(item.source || '官方来源')}</b></small>
     <h3>${text(localizedTitle(item))}</h3>
     ${(item.summary || item.abstract) ? `<p>${text(localizedAbstract(item))}</p>` : ''}`;
+  renderScientificMath(link);
   return link;
 }
 
@@ -3089,7 +3111,7 @@ function renderHomeDashboard() {
   $('#homeNoticeCount').textContent = `${state.notices.length.toLocaleString('zh-CN')} 条`;
   $('#homeNewsList').replaceChildren(...news.map(item => homeFeedCard(item, 'news')));
   $('#homeNoticeList').replaceChildren(...notices.map(item => homeFeedCard(item, 'notice')));
-  $('#homeFeaturedList').replaceChildren(...prioritizeNima(featured).map(homeFeaturedCard));
+  $('#homeFeaturedList').replaceChildren(...selectFeaturedJournals(featured).map(homeFeaturedCard));
 
   if (!news.length) $('#homeNewsList').innerHTML = '<p class="home-feed-empty">等待下一次自动更新。</p>';
   if (!notices.length) $('#homeNoticeList').innerHTML = '<p class="home-feed-empty">等待下一次自动更新。</p>';
@@ -3730,6 +3752,18 @@ function bindEvents() {
   });
   $$('[data-view-jump]').forEach(button => button.addEventListener('click', () => {
     closePaperAssistant();
+    if (button.dataset.viewJump === 'featured') {
+      clearGlobalKeywordSearch({ render: false });
+      state.paperMetric = '';
+      state.category = 'all';
+      state.categorySelections.papers = 'all';
+      state.source = 'all';
+      state.query = '';
+      state.scope = 'all';
+      $('#searchInput').value = '';
+      $('#scopeSelect').value = 'all';
+      $('#sourceSelect').value = 'all';
+    }
     setView(button.dataset.viewJump);
     const target = button.dataset.viewJump === 'notices' ? $('#dailyNoticeDashboard') : $('#stream');
     target?.scrollIntoView({ behavior: 'smooth' });

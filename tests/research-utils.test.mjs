@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
+import { renderScientificText, renderScientificMath } from '../site/scientific-math.js';
 import { createPaperLibraryLoader } from '../site/paper-library.js';
 import { scientificText, nuclidesIn, searchText, translationCoverage, isChinese, isNimaPaper, translationForRecord } from '../site/research-utils.js';
 
@@ -47,7 +48,7 @@ function appHarness() {
   const storage = new Map();
   const context = vm.createContext({
     createPaperLibraryLoader: options => createPaperLibraryLoader({ ...options, fetchImpl: (...args) => context.fetch(...args) }),
-    URL, scientificText, nuclidesIn, searchText, translationCoverage, isNimaPaper, translationForRecord, AbortController, console,
+    URL, renderScientificText, renderScientificMath, scientificText, nuclidesIn, searchText, translationCoverage, isNimaPaper, translationForRecord, AbortController, console,
     window: { location: { href: 'https://example.org/' } },
     document: { querySelector: () => null },
     setTimeout: () => 1, clearTimeout: () => {},
@@ -167,20 +168,36 @@ test('NIMA 兼容期刊全称、缩写与新旧 DOI，但不误收 NIM B', () =>
   ]) assert.equal(isNimaPaper(item), false);
 });
 
-test('首页给 NIMA 四个优先位置，仍保留其他重点期刊且不会重复条目', () => {
+test('首页各重点期刊组交替展示近期文章，不固定 NIMA 首屏位置', () => {
   const h = appHarness();
-  const values = [...Array.from({ length: 30 }, (_, i) => ({ id: `p${i}`, source_short: 'PRL' })),
-    ...Array.from({ length: 10 }, (_, i) => ({ id: `n${i}`, source_short: 'NIMA' }))];
+  const values = ['NIMA', 'PRL', 'Nature', 'Science', 'SB'].flatMap((source, group) =>
+    Array.from({length: 30}, (_, i) => ({id: `${source}-${i}`, source, published: `2026-11-${String(28 - i % 28).padStart(2, '0')}`, importance: group})));
   h.context.fixtures = values;
-  const result = h.run('prioritizeNima(fixtures)');
+  const result = h.run('selectFeaturedJournals(fixtures)');
   assert.equal(result.length, 24);
-  assert.equal(result.slice(0, 4).every(isNimaPaper), true);
-  assert.equal(result.filter(isNimaPaper).length, 4);
-  assert.equal(new Set(result.map(x => x.id)).size, 24);
-  assert.equal(h.run('homeJournalLabel({source_short: "NIMA"})'), 'NIMA');
-  assert.equal(h.run('homeJournalLabel({source_short: "NIMB"})'), '');
-  assert.equal(h.run('prioritizeNima([], 24).length'), 0);
-  assert.equal(h.run('prioritizeNima(fixtures, 2).length'), 2);
+  assert.equal(new Set(result.slice(0, 5).map(item => item.source)).size, 5);
+  assert.notEqual(result[0].source, 'NIMA');
+  assert.equal(new Set(result.map(item => item.id)).size, 24);
+  for (const source of ['NIMA', 'PRL', 'Nature', 'Science', 'SB']) {
+    const dates = result.filter(item => item.source === source).map(item => item.published);
+    assert.deepEqual(Array.from(dates), [...dates].sort().reverse());
+  }
+  assert.equal(h.run('selectFeaturedJournals([], 24).length'), 0);
+  assert.equal(h.run('selectFeaturedJournals(fixtures, 2).length'), 2);
+  assert.equal(h.run('selectFeaturedJournals(fixtures, 0).length'), 0);
+  h.context.fixtures = [values[0], values[0], {id:'pre',source:'PRL',source_type:'preprint'}, {id:'other',source:'PRC'}];
+  assert.equal(h.run('selectFeaturedJournals(fixtures).length'), 1);
+});
+
+test('中英文标题切换保留 LaTeX 和 Unicode 上下标，搜索仍使用纯文本', () => {
+  const h = appHarness();
+  h.context.original = String.raw`Structure of $^{14}\mathrm{C}$ and ⁸He`;
+  h.context.translated = String.raw`$^{14}\mathrm{C}$ 与 ⁸He 的结构`;
+  h.run(`var paper = {id:'math',title:original}; state.translations.math = {title_zh:translated}`);
+  assert.equal(h.run('localizedTitle(paper)'), h.context.original);
+  h.run("state.translatedIds.add('math')");
+  assert.equal(h.run('localizedTitle(paper)'), h.context.translated);
+  assert.match(searchText(h.context.translated), /14c/);
 });
 
 test('NIMA 筛选聚合同刊别名，尊重忽略，不混入其他期刊', () => {

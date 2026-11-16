@@ -1824,3 +1824,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .paper-versions details { margin-top: .65rem; font-size: .83rem; overflow-wrap: anywhere; }
 .paper-versions summary { cursor: pointer; color: #426b4b; line-height: 1.6; }
 .paper-versions details p { line-height: 1.7; white-space: pre-wrap; }
+
+/* Equations keep their layout without widening paper cards on narrow screens. */
+.katex-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: .25em 0; }
+.paper-card h3 .katex { font-size: 1em; }
+.featured-all-link { border: 0; background: none; color: var(--accent, #315d43); font: inherit; text-decoration: underline; cursor: pointer; }
