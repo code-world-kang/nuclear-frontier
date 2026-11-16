@@ -948,7 +948,7 @@ async function searchAllHistory(keyword, { browseAll = false } = {}) {
     try {
       const result = await loadFullLibrary({ daily: state.papers, years: state.historyManifest?.years || [], onProgress: update });
       if (token !== state.historyRequestToken) return;
-      state.historyTotalMatches = result.items.length;
+      state.historyTotalMatches = state.meta?.paper_library?.total ?? result.items.length;
       state.historyProgress = '全库已全部加载；分类、搜索与日期筛选覆盖全部论文。';
     } catch (error) {
       if (token !== state.historyRequestToken) return;
@@ -1834,6 +1834,28 @@ function renderMyCollection() {
   closePaperAssistant();
 }
 
+function fullLibraryInventory() {
+  if (state.view !== 'papers' || !state.historyBrowseAll) return null;
+  return {
+    total: state.meta?.paper_library?.total ?? state.historyTotalMatches,
+    categories: state.meta?.paper_library?.category_counts,
+    incomplete: state.historySearching || state.historyLoadError,
+  };
+}
+
+function paperResultLabel(count) {
+  const library = fullLibraryInventory();
+  if (library) {
+    const total = library.total.toLocaleString('zh-CN');
+    const filtered = state.category !== 'all' || state.source !== 'all' || Boolean(state.query.trim()) || state.scope !== 'all' || Boolean(state.paperMetric);
+    if (library.incomplete) return `全库共 ${total} 篇 · ${state.historyLoadError ? '详情加载未完成，请重试' : '正在加载论文详情'}${filtered ? ' · 筛选结果统计中' : ''}`;
+    return `全库共 ${total} 篇 · ${filtered ? '筛选结果' : '可浏览'} ${count.toLocaleString('zh-CN')} 篇`;
+  }
+  return state.view === 'papers' && state.globalKeyword
+    ? `全库命中 ${state.historyTotalMatches.toLocaleString('zh-CN')} 篇 · 已载入 ${state.historyResults.length.toLocaleString('zh-CN')} 篇 · 当前筛选 ${count.toLocaleString('zh-CN')} 篇${state.historySearching ? '（统计中）' : ''}`
+    : `共 ${count.toLocaleString('zh-CN')} 条结果`;
+}
+
 function renderCards() {
   renderNimaFocus();
   if (state.view === 'favorites' && ['code', 'references'].includes(state.mySection)) {
@@ -1843,10 +1865,8 @@ function renderCards() {
   const items = filteredItems();
   const list = $('#cardList');
   list.replaceChildren(...items.slice(0, state.visible).map(cardFor));
-  $('#resultCount').textContent = state.view === 'papers' && state.globalKeyword
-    ? `全库 ${state.historyTotalMatches.toLocaleString('zh-CN')} 篇 · 已载入 ${state.historyResults.length.toLocaleString('zh-CN')} 篇 · 当前筛选 ${items.length.toLocaleString('zh-CN')} 篇${state.historySearching ? '（加载中）' : ''}`
-    : `共 ${items.length.toLocaleString('zh-CN')} 条结果`;
-  $('#emptyState').hidden = items.length !== 0;
+  $('#resultCount').textContent = paperResultLabel(items.length);
+  $('#emptyState').hidden = items.length !== 0 || Boolean(fullLibraryInventory()?.incomplete);
   const hasQueuedHistory = state.view === 'papers' && state.globalKeyword && state.historyMonthQueue.length;
   const retryFullLibrary = state.view === 'papers' && state.historyBrowseAll && state.historyLoadError;
   $('#loadMore').hidden = items.length <= state.visible && !hasQueuedHistory && !retryFullLibrary;
@@ -2018,6 +2038,11 @@ function setView(view, { fullLibrary = true } = {}) {
     history.replaceState(null, '', `${PATH}#notices`);
     return;
   }
+  if (view === 'papers' && fullLibrary && !state.historyBrowseAll) {
+    history.replaceState(null, '', `${PATH}#${view}`);
+    void searchAllHistory('', { browseAll: true });
+    return;
+  }
   renderCategories();
   if (view === 'favorites') {
     setMySection(state.mySection);
@@ -2026,7 +2051,6 @@ function setView(view, { fullLibrary = true } = {}) {
   renderGlobalKeywordPanel();
   renderCards();
   history.replaceState(null, '', `${PATH}#${view}`);
-  if (view === 'papers' && fullLibrary && !state.historyBrowseAll) void searchAllHistory('', { browseAll: true });
 }
 
 function setCategory(id) {
@@ -2545,13 +2569,20 @@ function renderCategories() {
   const categoryItems = state.view === 'news' ? state.news
     : (state.view === 'papers' && state.globalKeyword ? state.historyResults : state.papers);
   categoryItems.forEach(item => (item.categories || []).forEach(id => counts.set(id, (counts.get(id) || 0) + 1)));
+  const inventory = fullLibraryInventory();
+  if (inventory?.categories) {
+    counts.clear();
+    Object.entries(inventory.categories).forEach(([id, count]) => counts.set(id, count));
+  }
+  const total = inventory?.total ?? categoryItems.length;
+  const categoryCount = id => inventory?.incomplete && !inventory.categories ? '统计中' : (counts.get(id) || 0);
   $('#researchFieldTitle').textContent = state.view === 'news' ? '新闻领域' : '研究领域';
   const host = $('#categoryList');
   host.replaceChildren();
   const all = document.createElement('button');
   all.className = 'category-button';
   all.dataset.category = 'all';
-  all.innerHTML = `<span class="cat-icon">◎</span><span>${state.view === 'news' ? '全部新闻' : '全部领域'}</span><span class="cat-count">${categoryItems.length}</span>`;
+  all.innerHTML = `<span class="cat-icon">◎</span><span>${state.view === 'news' ? '全部新闻' : '全部领域'}</span><span class="cat-count">${total.toLocaleString('zh-CN')}</span>`;
   all.classList.toggle('active', state.category === 'all');
   host.append(all);
 
@@ -2576,7 +2607,7 @@ function renderCategories() {
     const button = document.createElement('button');
     button.className = 'category-button';
     button.dataset.category = category.id;
-    button.innerHTML = `<span class="cat-icon">${text(category.icon)}</span><span>${text(category.name)}</span><span class="cat-count">${counts.get(category.id) || 0}</span>`;
+    button.innerHTML = `<span class="cat-icon">${text(category.icon)}</span><span>${text(category.name)}</span><span class="cat-count">${categoryCount(category.id)}</span>`;
     button.classList.toggle('active', state.category === category.id);
     button.addEventListener('click', () => setCategory(category.id));
     const actions = document.createElement('span');
@@ -2965,7 +2996,7 @@ function renderPaperAssistant(items = filteredItems()) {
   const matched = items.filter(personalMatch).length;
   const notes = items.filter(item => Boolean(noteText(item.id).trim())).length;
   $('#assistantMetrics').innerHTML = [
-    ['当前结果', items.length], ['已收藏', favorites], ['关注词命中', matched], ['有笔记', notes],
+    [fullLibraryInventory()?.incomplete ? '已载入匹配' : '当前结果', items.length], ['已收藏', favorites], ['关注词命中', matched], ['有笔记', notes],
   ].map(([label, value]) => `<div class="assistant-metric"><span>${label}</span><b>${Number(value).toLocaleString('zh-CN')}</b></div>`).join('');
 
   const labels = assistantFilterLabels();

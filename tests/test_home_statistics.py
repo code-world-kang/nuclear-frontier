@@ -12,7 +12,7 @@ from translate_content import source_hash
 class HomeStatisticsTests(unittest.TestCase):
     def test_full_library_deduplicates_and_uses_worker_completion_rules(self):
         daily = {"id": "daily", "type": "paper", "title": "Nuclear structure",
-                 "source": "Physical Review C", "source_type": "journal",
+                 "source": "Physical Review C", "source_type": "journal", "categories": ["nuclear-structure", "nuclear-structure"],
                  "published": "2026-11-10", "doi": "10.1103/example", "abstract": ""}
         historical_duplicate = {**daily, "id": "old"}
         untranslated = {**daily, "id": "pending", "doi": "10.1103/pending",
@@ -41,6 +41,7 @@ class HomeStatisticsTests(unittest.TestCase):
                 path.write_text(json.dumps(value))
             stats = paper_library_stats(data)
         self.assertEqual(stats["total"], 4)
+        self.assertEqual(stats["category_counts"], {"nuclear-structure": 4})
         self.assertEqual(stats["translated"], 1)
         self.assertEqual(stats["native"], 1)
         self.assertEqual(stats["complete"], 2)
@@ -53,6 +54,7 @@ class HomeStatisticsTests(unittest.TestCase):
             (data / "translations.zh-CN.json").write_text('{"items": {}}')
             stats = paper_library_stats(data)
         self.assertEqual(stats["total"], 0)
+        self.assertEqual(stats["category_counts"], {})
         self.assertEqual(stats["complete"], 0)
         self.assertEqual(stats["pending"], 0)
 

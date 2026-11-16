@@ -42,6 +42,7 @@ def paper_library_stats(data: Path) -> dict:
         "total": len(papers), "complete": len(papers) - pending,
         "translated": len(papers) - pending - native, "native": native, "pending": pending,
         "published_counts": dict(sorted(published.items(), reverse=True)),
+        "category_counts": dict(Counter(category for item in papers for category in set(item.get("categories", [])))),
     }
 
 

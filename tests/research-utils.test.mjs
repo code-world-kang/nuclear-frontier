@@ -291,3 +291,23 @@ test('重点期刊包含五组及系列刊，首页和重点选项排除其他�
   h.run('state.papers = samples; state.view = "featured"');
   assert.deepEqual([...h.run('currentItems().map(x => x.id)')].sort(), ['nature', 'sb', 'science']);
 });
+
+
+test('全库总数不随分批载入变化，未完成的筛选不显示最终数量', () => {
+  const h = appHarness();
+  h.run(`state.view = 'papers'; state.historyBrowseAll = true; state.globalKeyword = '全部论文';
+    state.scope = 'all'; state.meta.paper_library = {total:90846,category_counts:{'nuclear-structure':2000}};
+    state.historyTotalMatches = 90846; state.historySearching = true;`);
+  assert.equal(h.run('paperResultLabel(6422)'), '全库共 90,846 篇 · 正在加载论文详情');
+  assert.equal(h.run('paperResultLabel(12000)'), '全库共 90,846 篇 · 正在加载论文详情');
+  assert.equal(h.run('fullLibraryInventory().categories["nuclear-structure"]'), 2000);
+  h.run(`state.category = 'nuclear-structure'`);
+  assert.match(h.run('paperResultLabel(420)'), /筛选结果统计中/);
+  assert.doesNotMatch(h.run('paperResultLabel(420)'), /420/);
+  h.run(`state.historySearching = false; state.historyLoadError = true`);
+  assert.match(h.run('paperResultLabel(420)'), /加载未完成/);
+  h.run(`state.historyLoadError = false`);
+  assert.equal(h.run('paperResultLabel(2000)'), '全库共 90,846 篇 · 筛选结果 2,000 篇');
+  h.run(`state.view = 'news'`);
+  assert.equal(h.run('paperResultLabel(423)'), '共 423 条结果');
+});
