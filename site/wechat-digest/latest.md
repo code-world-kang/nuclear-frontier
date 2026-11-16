@@ -33,16 +33,16 @@
 
 - **[Just publish it](https://www.nature.com/articles/s41567-026-03524-9)**  
    Nature Physics · 2026-11-13  
-   数据源暂未提供详细介绍。
+   In Referees We Trust? How Peer Review Became a Mark of Scientific Legitimacy Edited by: Melinda Baldwin MIT Press: 2026. 256pp. When Physics Letters B published the Higgs boson discovery papers in September 2012, one outlet announced that CERN’s result had "passed peer review" and thereby become "actual science". Melinda Baldwin’s book In Referees We Trust?…
 - **[Optimal learning of quantum channels in diamond distance](https://www.nature.com/articles/s41567-026-03499-7)**  
    Nature Physics · 2026-11-12  
-   数据源暂未提供详细介绍。
+   The evolution of quantum states can be described by quantum channels. The task of estimating an unknown quantum channel, known as process tomography, is a central problem in quantum information theory. A long-standing open question is how many uses of an unknown channel are required to learn it to a precision quantified by the standard metric for distinguis…
 - **[The Surprising Origin of Uranus’ Moons and Rings](http://link.aps.org/doi/10.1103/Physics.19.152)**  
    APS Physics · 2026-11-12  
    Author(s): Charles Day New infrared observations tie the ice giant’s small moons and narrow rings to a past encounter with a visiting object from the Kuiper belt. [Physics 19, 152] Published Thu Nov 12, 2026
 - **[Altermagnetism in a new light](https://www.nature.com/articles/s41567-026-03532-9)**  
    Nature Physics · 2026-11-11  
-   数据源暂未提供详细介绍。
+   Altermagnets host spin-split bands despite zero net magnetization. A photonic crystal now reproduces this symmetry-driven phenomenon using circular polarization as a spin analogue.
 
 ## 科研通知
 

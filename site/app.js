@@ -3090,20 +3090,33 @@ function homeJournalLabel(item) {
 }
 
 function homeFeedCard(item, type) {
-  const link = document.createElement('a');
-  link.className = `home-feed-card ${type}`;
-  link.href = item.url || '#';
-  link.target = '_blank';
-  link.rel = 'noreferrer';
+  const isNews = type === 'news';
+  const card = document.createElement(isNews ? 'article' : 'a');
+  card.className = `home-feed-card ${type}`;
+  if (!isNews) {
+    card.href = item.url || '#';
+    card.target = '_blank';
+    card.rel = 'noreferrer';
+  }
   const timing = type === 'notice' && item.deadline
     ? `截止 ${prettyDate(item.deadline)}`
     : prettyDate(item.published);
-  link.innerHTML = `
+  const summary = localizedAbstract(item);
+  const title = text(localizedTitle(item));
+  card.innerHTML = `
     <small><span>${text(timing || '日期待确认')}</span><b>${text(item.source || '官方来源')}</b></small>
-    <h3>${text(localizedTitle(item))}</h3>
-    ${(item.summary || item.abstract) ? `<p>${text(localizedAbstract(item))}</p>` : ''}`;
-  renderScientificMath(link);
-  return link;
+    <h3>${isNews ? `<a href="${text(item.url || '#')}" target="_blank" rel="noreferrer">${title}</a>` : title}</h3>
+    ${summary ? `<p class="home-feed-summary">${text(summary)}</p>` : isNews ? '<p class="home-news-missing">暂未取得来源简介，可点击标题查看官方原文。</p>' : ''}
+    ${isNews && summary ? '<button type="button" class="news-summary-toggle" aria-expanded="false">展开简介</button>' : ''}`;
+  const toggle = $('.news-summary-toggle', card);
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(expanded));
+    card.classList.toggle('summary-expanded', expanded);
+    toggle.textContent = expanded ? '收起简介' : '展开简介';
+  });
+  renderScientificMath(card);
+  return card;
 }
 
 function homeFeaturedCard(item) {

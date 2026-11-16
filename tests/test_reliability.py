@@ -53,6 +53,46 @@ class ReliabilityTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 pipeline.news_detail_metadata('https://example.org/news')
 
+    def test_news_retry_budget_moves_past_failed_recent_pages(self):
+        items = [
+            {'id': 'recent', 'url': 'recent', 'summary': '', 'news_detail_checked_at': '2026-11-15'},
+            {'id': 'new', 'url': 'new', 'summary': ''},
+            {'id': 'old', 'url': 'old', 'summary': '', 'news_detail_checked_at': '2026-11-01'},
+            {'id': 'ready', 'summary': 'An existing source description that must remain intact for readers.'},
+        ]
+        with patch.object(pipeline, 'news_detail_metadata', side_effect=TimeoutError('private details')) as fetch:
+            self.assertEqual(pipeline.enrich_missing_news_details(items, limit=2), {'attempted': 2, 'updated': 0})
+        self.assertEqual({call.args[0] for call in fetch.call_args_list}, {'new', 'old'})
+        self.assertEqual(items[1]['news_detail_error'], 'TimeoutError')
+        self.assertEqual(items[1]['summary'], '')
+        self.assertEqual(items[0]['news_detail_checked_at'], '2026-11-15')
+        self.assertEqual(items[3]['content_status'], 'available')
+
+    def test_image_only_news_does_not_use_footer_as_summary(self):
+        raw = '<h1>Seminar</h1><img src="poster.jpg"><div>----友情链接---- ----北京大学---- 地址：北京市海淀区 邮编：100871 联系电话：010-12345678 邮箱：test@example.org</div>'
+        with patch.object(pipeline, 'fetch', return_value=raw.encode()):
+            self.assertEqual(pipeline.news_detail_metadata('https://example.org/seminar', 'Seminar')['summary'], '')
+        self.assertEqual(pipeline.news_summary_text('Seminar - Laboratory English 首页 实验室概况 简介 学术委员会'), '')
+
+    def test_news_network_error_retains_safe_http_status(self):
+        cause = pipeline.urllib.error.HTTPError('https://example.org', 403, 'private message', {}, None)
+        wrapped = RuntimeError('private details')
+        wrapped.__cause__ = cause
+        items = [{'url': 'https://example.org', 'summary': ''}]
+        with patch.object(pipeline, 'news_detail_metadata', side_effect=wrapped):
+            pipeline.enrich_missing_news_details(items)
+        self.assertEqual(items[0]['news_detail_error'], 'HTTPError HTTP 403')
+
+    def test_news_retry_recovers_summary_and_keeps_empty_pages_unavailable(self):
+        items = [{'url': 'ok', 'summary': '', 'news_detail_error': 'TimeoutError'}, {'url': 'empty', 'summary': ''}]
+        summary = 'The official source describes the newly commissioned nuclear detector.'
+        with patch.object(pipeline, 'news_detail_metadata', side_effect=lambda url, title: {'summary': summary if url == 'ok' else ''}):
+            self.assertEqual(pipeline.enrich_missing_news_details(items), {'attempted': 2, 'updated': 1})
+        self.assertEqual(items[0]['summary'], summary)
+        self.assertNotIn('news_detail_error', items[0])
+        self.assertEqual(items[1]['content_status'], 'source_unavailable')
+        self.assertEqual(items[1]['news_detail_error'], 'empty_description')
+
     def test_indico_actual_title_and_fixture_filter(self):
         source = {'name': 'test', 'url': 'https://example.org/export/categ/0.json', 'include': ['IWND'], 'notice_category': 'meetings-nuclear'}
         events = [{'id': '492', 'title': 'International Nuclear Dynamics (IWND2026)', 'url': 'https://example.org/event/492/'}, {'id': '491', 'title': 'IWND2026-test1'}]

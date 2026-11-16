@@ -221,7 +221,7 @@ def fetch(url: str, *, accept: str = "*/*", attempts: int = 3, timeout: float = 
             last_error = exc
             if attempt + 1 < attempts:
                 time.sleep(1.5 * (attempt + 1))
-    raise RuntimeError(str(last_error) if last_error else "unknown network error")
+    raise RuntimeError(str(last_error) if last_error else "unknown network error") from last_error
 
 
 def fetch_document(
@@ -776,6 +776,14 @@ def notice_detail_metadata(url: str, title: str = "") -> dict[str, Any]:
     }
 
 
+def news_summary_text(value: str) -> str:
+    """Remove the legacy links/contact footer from a source introduction."""
+    value = clean_text(value)
+    if "English 首页 实验室概况" in value:
+        return ""
+    return re.split(r"-{2,}\s*友情链接", value, maxsplit=1)[0].strip()
+
+
 def news_detail_metadata(url: str, title: str = "") -> dict[str, str]:
     raw = fetch(url, accept="text/html", attempts=1).decode("utf-8", errors="replace")
     parser = PageMetadataParser()
@@ -795,7 +803,10 @@ def news_detail_metadata(url: str, title: str = "") -> dict[str, str]:
                 summary = clean_text(visible[match.end():match.end() + 1800])
         if len(summary) < 45:
             summary = next((part for part in re.split(r"[。！？!?]", visible) if 60 <= len(clean_text(part)) <= 1400), "")
-    return {"summary": summary[:1800]}
+    # Some image-only seminar pages expose only a legacy footer as visible text.
+    # Do not present links, addresses and telephone numbers as a news summary.
+    summary = news_summary_text(summary)
+    return {"summary": summary[:1800] if len(summary) >= 45 else ""}
 
 
 def notice_summary_is_low_quality(value: str) -> bool:
@@ -807,22 +818,42 @@ def notice_summary_is_low_quality(value: str) -> bool:
 
 def enrich_missing_news_details(items: list[dict[str, Any]], limit: int = 30) -> dict[str, int]:
     for item in items:
+        previous = item.get("summary", "")
+        cleaned = news_summary_text(previous)
+        if cleaned != previous:
+            item["summary"] = cleaned
+            if not item["summary"]:
+                item["content_status"] = "missing"
         clean_record_content(item)
-    candidates = [item for item in items if len(clean_text(item.get("summary", ""))) < 45][:max(0, limit)]
+    # Retry older/unattempted items first so inaccessible recent pages cannot
+    # permanently occupy every slot in the daily detail-fetch budget.
+    candidates = sorted(
+        (item for item in items if len(clean_text(item.get("summary", ""))) < 45),
+        key=lambda item: item.get("news_detail_checked_at", ""),
+    )[:max(0, limit)]
+    checked_at = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
     success = 0
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
         futures = {pool.submit(news_detail_metadata, item.get("url", ""), item.get("title", "")): item for item in candidates}
         for future in concurrent.futures.as_completed(futures):
+            item = futures[future]
+            item["news_detail_checked_at"] = checked_at
             try:
                 details = future.result()
-            except Exception:  # noqa: BLE001 - 单个新闻详情失败不影响日更
-                futures[future]["content_status"] = "source_unavailable"
+            except Exception as exc:  # noqa: BLE001 - 单个新闻详情失败不影响日更
+                item["content_status"] = "source_unavailable"
+                cause = exc.__cause__ or exc
+                item["news_detail_error"] = type(cause).__name__ + (f" HTTP {cause.code}" if isinstance(cause, urllib.error.HTTPError) else "")
                 continue
             summary = clean_text(details.get("summary", ""))
             if summary and not content_is_blocked(summary):
-                futures[future]["summary"] = summary
-                futures[future]["content_status"] = "available"
+                item["summary"] = summary
+                item["content_status"] = "available"
+                item.pop("news_detail_error", None)
                 success += 1
+            else:
+                item["content_status"] = "source_unavailable"
+                item["news_detail_error"] = "blocked_content" if content_is_blocked(summary) else "empty_description"
     return {"attempted": len(candidates), "updated": success}
 
 

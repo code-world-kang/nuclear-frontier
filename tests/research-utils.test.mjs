@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
+import { parseHTML } from 'linkedom';
 import { renderScientificText, renderScientificMath } from '../site/scientific-math.js';
 import { createPaperLibraryLoader } from '../site/paper-library.js';
 import { scientificText, nuclidesIn, searchText, translationCoverage, isChinese, isNimaPaper, translationForRecord } from '../site/research-utils.js';
@@ -59,6 +60,31 @@ function appHarness() {
   vm.runInContext('state.meta = {featured_journals: featuredConfig}', context);
   return { context, storage, run: code => vm.runInContext(code, context) };
 }
+
+test('新闻简介可展开收起，标题保留原文链接，缺失简介明确提示', t => {
+  const h = appHarness();
+  const {document, Node} = parseHTML('<html><body></body></html>');
+  const previousNode = globalThis.Node;
+  globalThis.Node = Node;
+  t.after(() => { if (previousNode === undefined) delete globalThis.Node; else globalThis.Node = previousNode; });
+  h.context.document = document;
+  const card = h.run(`homeFeedCard({id:'news-test', title:'Detector news', summary:'Full official introduction to a new detector experiment.', url:'https://example.org/news'}, 'news')`);
+  const toggle = card.querySelector('button');
+  assert.equal(card.tagName, 'ARTICLE');
+  assert.equal(card.querySelector('h3 a').getAttribute('href'), 'https://example.org/news');
+  assert.equal(toggle.getAttribute('aria-expanded'), 'false');
+  toggle.click();
+  assert.equal(toggle.getAttribute('aria-expanded'), 'true');
+  assert.equal(card.classList.contains('summary-expanded'), true);
+  assert.equal(toggle.textContent, '收起简介');
+  toggle.click();
+  assert.equal(card.classList.contains('summary-expanded'), false);
+  const missing = h.run(`homeFeedCard({id:'missing', title:'News', url:'https://example.org/missing'}, 'news')`);
+  assert.match(missing.textContent, /暂未取得来源简介/);
+  assert.equal(missing.querySelector('button'), null);
+  const notice = h.run(`homeFeedCard({id:'notice', title:'Meeting', url:'https://example.org/meeting'}, 'notice')`);
+  assert.equal(notice.tagName, 'A');
+});
 
 test('首页论文卡片按日期跳转并清除旧筛选，期刊和预印本数量口径一致', async () => {
   const h = appHarness();

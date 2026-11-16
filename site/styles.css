@@ -1829,3 +1829,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .katex-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: .25em 0; }
 .paper-card h3 .katex { font-size: 1em; }
 .featured-all-link { border: 0; background: none; color: var(--accent, #315d43); font: inherit; text-decoration: underline; cursor: pointer; }
+
+.home-feed-card h3 a { color: inherit; text-decoration: none; }
+.home-feed-card.summary-expanded .home-feed-summary { display: block; overflow: visible; -webkit-line-clamp: unset; }
+.news-summary-toggle { border: 0; background: none; padding: 6px 0 0; color: #315d43; font: inherit; font-size: 11px; cursor: pointer; }
+.news-summary-toggle:focus-visible { outline: 2px solid #315d43; outline-offset: 3px; }
