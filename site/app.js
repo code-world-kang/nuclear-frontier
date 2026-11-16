@@ -1,5 +1,5 @@
 import { renderScientificText, renderScientificMath } from './scientific-math.js?v=20261116';
-import { createPaperLibraryLoader } from './paper-library.js?v=20261111-full';
+import { createPaperLibraryLoader } from './paper-library.js?v=20261116-preload';
 import { loadTranslationFeed } from './translation-feed.js?v=20261110-incremental';
 import { scientificText, nuclidesIn, searchText, isNimaPaper, translationForRecord } from './research-utils.js?v=20261106-versions';
 
@@ -3969,6 +3969,13 @@ async function refreshTranslationFeed() {
   }
 }
 
+function preloadPaperLibrary() {
+  if (!state.historyManifest?.years?.length) return;
+  // Warm the same loader used by the paper page, without changing view or filters.
+  return loadFullLibrary({ daily: state.papers, years: state.historyManifest.years })
+    .catch(error => { console.warn('论文预载未全部完成，进入论文页时继续加载：', error.message); });
+}
+
 async function loadData() {
   const files = ['meta', 'papers', 'featured', 'news', 'notices', 'public-favorites', 'notice-portals', 'reference-resources', 'personal-state', 'translations.zh-CN'];
   const [responses, historyManifest] = await Promise.all([Promise.all(files.map(async name => {
@@ -3985,6 +3992,7 @@ async function loadData() {
   [state.meta, state.papers, state.featured, state.news, state.notices, state.publicFavorites, state.noticePortals] = responses;
   state.referenceResources = Array.isArray(referencePayload?.items) ? referencePayload.items : [];
   state.historyManifest = historyManifest;
+  void preloadPaperLibrary();
   applyPublicPersonalState(personalPayload);
   state.translations = translationPayload.items || {};
   state.translationVersions = translationPayload.versions || {};

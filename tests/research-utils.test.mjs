@@ -61,6 +61,23 @@ function appHarness() {
   return { context, storage, run: code => vm.runInContext(code, context) };
 }
 
+test('首页预载全库不改变筛选，进入论文页复用预载数据', async () => {
+  const h = appHarness();
+  const requests = [];
+  h.context.fetch = async url => {
+    requests.push(url);
+    return {ok:true, json:async () => url.includes('/stats/') ? {months:[{month:'2001-01'}]} : [{id:'historical'}]};
+  };
+  h.run(`state.view='home'; state.query='keep my search'; state.papers=[{id:'daily'}]; state.historyManifest={years:[{year:2001}]}`);
+  await h.run('preloadPaperLibrary()');
+  assert.equal(h.run('state.view'), 'home');
+  assert.equal(h.run('state.query'), 'keep my search');
+  assert.equal(h.run('state.historyBrowseAll'), false);
+  const result = await h.run('loadFullLibrary({daily:state.papers, years:state.historyManifest.years})');
+  assert.equal(result.items.length, 2);
+  assert.equal(requests.length, 2, 'opening the library reuses preloaded monthly records');
+});
+
 test('新闻简介可展开收起，标题保留原文链接，缺失简介明确提示', t => {
   const h = appHarness();
   const {document, Node} = parseHTML('<html><body></body></html>');

@@ -44,3 +44,22 @@ test('failed month keeps successful data and retry fetches only the missing mont
   assert.equal(f.calls.filter(x => x === 'papers/2001/02.json').length, 1);
   assert.equal(f.calls.filter(x => x === 'papers/2001/01.json').length, 2);
 });
+
+test('a slow month does not leave other request slots idle', async () => {
+  let releaseSlow;
+  const slow = new Promise(resolve => { releaseSlow = resolve; });
+  let thirdStarted;
+  const third = new Promise(resolve => { thirdStarted = resolve; });
+  const load = createPaperLibraryLoader({ root: '', concurrency: 2, fetchImpl: async url => {
+    if (url.startsWith('stats/')) return {ok: true, json: async () => ({months: ['01', '02', '03'].map(month => ({month: `2001-${month}`}))})};
+    if (url.endsWith('/03.json')) await slow;
+    if (url.endsWith('/01.json')) thirdStarted();
+    return {ok: true, json: async () => [{id: url}]};
+  }});
+  const running = load({daily: [], years: [{year: 2001}]});
+  try {
+    const started = await Promise.race([third.then(() => true), new Promise(resolve => setTimeout(() => resolve(false), 100))]);
+    assert.equal(started, true, 'the third month starts while the first is still pending');
+  } finally { releaseSlow(); }
+  assert.equal((await running).loaded, 3);
+});

@@ -1,12 +1,29 @@
 // Cache complete monthly records for this page session; retry only missing files.
-export function createPaperLibraryLoader({ root, fetchImpl = fetch, concurrency = 4 }) {
+export function createPaperLibraryLoader({ root, fetchImpl = fetch, concurrency = 8 }) {
   const records = new Map();
   const loadedMonths = new Set();
   let months;
   let running;
+  let lastProgress = 0;
   const listeners = new Set();
   const snapshot = () => ({ items: [...records.values()], loaded: loadedMonths.size, total: months?.length || 0 });
-  const publish = () => listeners.forEach(listener => listener(snapshot()));
+  const publish = (force = false) => {
+    if (!listeners.size || (!force && Date.now() - lastProgress < 300)) return;
+    lastProgress = Date.now();
+    const value = snapshot();
+    listeners.forEach(listener => listener(value));
+  };
+  async function eachConcurrent(values, task) {
+    let next = 0;
+    const failures = [];
+    await Promise.all(Array.from({ length: Math.min(concurrency, values.length) }, async () => {
+      while (next < values.length) {
+        const value = values[next++];
+        try { await task(value); } catch (error) { failures.push(error); }
+      }
+    }));
+    if (failures.length) throw failures[0];
+  }
   async function read(path) {
     const response = await fetchImpl(`${root}${path}`, { signal: AbortSignal.timeout(45000) });
     if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
@@ -15,25 +32,20 @@ export function createPaperLibraryLoader({ root, fetchImpl = fetch, concurrency 
   async function run(years) {
     if (!months) {
       const summaries = [];
-      for (let i = 0; i < years.length; i += concurrency) {
-        summaries.push(...await Promise.all(years.slice(i, i + concurrency).map(({ year }) => read(`stats/${year}.json`))));
-      }
+      await eachConcurrent(years, async ({ year }) => summaries.push(await read(`stats/${year}.json`)));
       months = [...new Set(summaries.flatMap(summary => summary.months.map(entry => entry.month)))].sort().reverse();
     }
     const missing = months.filter(month => !loadedMonths.has(month));
-    for (let i = 0; i < missing.length; i += concurrency) {
-      const batch = missing.slice(i, i + concurrency);
-      const results = await Promise.allSettled(batch.map(async month => {
+    try {
+      await eachConcurrent(missing, async month => {
         const [year, number] = month.split('-');
         const items = await read(`papers/${year}/${number}.json`);
         if (!Array.isArray(items)) throw new Error(`${month}: 无效论文数据`);
         items.forEach(item => records.set(item.id, item));
         loadedMonths.add(month);
-      }));
-      publish();
-      const failure = results.find(result => result.status === 'rejected');
-      if (failure) throw failure.reason;
-    }
+        publish();
+      });
+    } finally { publish(true); }
     return snapshot();
   }
   return async ({ daily, years, onProgress }) => {
