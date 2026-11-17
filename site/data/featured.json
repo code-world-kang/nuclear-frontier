@@ -1,5 +1,88 @@
 [
   {
+    "id": "31fa3f5414827101",
+    "type": "paper",
+    "title": "Knowledge-guided machine learning deciphers spatiotemporal dynamics in chemical reactor systems",
+    "abstract": "Characterizing the spatiotemporal dynamics of complex chemical reactors, especially localized engineering-critical points or regions, remains challenging in process engineering. Although data-driven methods offer computational advantages, the incorporation of domain-specific physical knowledge can further enhance their predictive performance. Here, we present a physics-informed machine learning framework that systematically embeds coking mechanisms and heat transfer principles into neural network architecture and training constraints. Using a coke-accumulating cracking reactor as a prototypical case, the proposed approach reproduces the spatiotemporal distributions of key operational parameters obtained from conventional simulations with high fidelity and achieves a 105-fold computational acceleration. Crucially, the incorporation of mechanistic knowledge enhances prediction fidelity for critical safety indicators, particularly the maximum external wall temperature (error < 0.5%), enabling precise identification of optimal decoking intervals. This paradigm bridges data efficiency with domain-informed modeling, providing a useful reference for developing real-time monitoring and optimization models for complex industrial systems. A physics-informed neural network embeds coking and heat transfer knowledge via an output integration layer and region-weighted loss to predict reactor spatiotemporal fields; it matches conventional simulation results, improves peak wall temperature accuracy, and runs about five orders of magnitude faster than conventional simulations.",
+    "abstract_status": "full",
+    "abstract_source": "Publisher metadata (Nature)",
+    "authors": [
+      "Shiyi Tang",
+      "Zhaoyang Duan",
+      "Zhou Tian",
+      "Wenli Du",
+      "Feng Qian"
+    ],
+    "published": "2026-11-16",
+    "updated": "2026-11-16",
+    "source": "Nature Communications",
+    "source_short": "Nat. Commun.",
+    "source_type": "journal",
+    "doi": "10.1038/s41467-026-79078-4",
+    "arxiv_id": "",
+    "publication_links": [],
+    "url": "https://doi.org/10.1038/s41467-026-79078-4",
+    "pdf_url": "",
+    "categories": [
+      "ai-science"
+    ],
+    "tags": [
+      "machine learning",
+      "neural network"
+    ],
+    "primary_topic": "ai-science",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "machine learning",
+      "neural network"
+    ],
+    "importance": 54,
+    "score_reasons": [
+      "来源权重 +48",
+      "核物理研究侧重 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://creativecommons.org/licenses/by-nc-nd/4.0",
+      "https://creativecommons.org/licenses/by-nc-nd/4.0"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Tang, Shiyi",
+      "Duan, Zhaoyang",
+      "Tian, Zhou",
+      "Du, Wenli",
+      "Qian, Feng"
+    ],
+    "journal_abbrev": "Nat Commun",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "numpages": "",
+    "publisher": "Springer Science and Business Media LLC",
+    "publisher_url": "https://www.nature.com/articles/s41467-026-79078-4",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-17T04:17:49+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
+    "publisher_abstract_enrichment": {
+      "status": "ready",
+      "checked_at": "2026-11-17T04:17:49+00:00",
+      "source": "Publisher metadata (Nature)",
+      "url": "https://www.nature.com/articles/s41467-026-79078-4?error=cookies_not_supported&code=6b2039d9-b9e3-4e36-91a2-531e47d2054c"
+    },
+    "abstract_checked_sources": [
+      "期刊官网/Cite"
+    ],
+    "translation_source_hash": "1e007be18599dcb4c699bd8df98b7656fa5edfb9e981cccd636c5faed4584399"
+  },
+  {
     "id": "2178105a24feab1e",
     "type": "paper",
     "title": "Discovery of a likely supermassive neutron star in a remarkably wide binary",
@@ -72,7 +155,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-11-13T02:20:15+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "publication_links": [],
     "citation_authors": [
       "Zhao, Xinlin",
@@ -302,7 +385,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/sciadv.aed9451",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-14T01:56:34+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "6679b98f425f8aa9d8db22d3306f1ff456cc24e33ca20e7bb46e812e2030e9d8",
     "record_aliases": [],
@@ -388,7 +471,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/sciadv.aei1433",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-14T01:56:34+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "ef58d143e23ac35937af3a15f218fdc4cb34dd3c76bcd8bf36603852b719db79",
     "record_aliases": [],
@@ -457,7 +540,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/sciadv.aej3501",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-13T02:20:15+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "6fd5633077f8dffe41955d412e01caa7db52ad8755344d517fa8d48b671ff075",
     "record_aliases": [],
@@ -536,7 +619,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/sciadv.aef6864",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-14T01:56:34+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "d9ffc11cb97c7109ddf92b885bb86f94686ce3935a0eeba58cc0774c42fbb622",
     "record_aliases": [],
@@ -619,7 +702,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/l5j1-7b4d",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-30T00:57:41+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "history_month": "2026-09",
     "abstract_checked_sources": [
       "期刊官网/Cite",
@@ -764,7 +847,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/science.aef9342",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-13T02:20:15+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "e0b6ea6513326dd377e1812a1aa8a9b2bb1aed91ef26981435b811a2f8c8c936",
     "record_aliases": [],
@@ -847,7 +930,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/science.adz0597",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-13T02:20:15+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "82659fe5a506a533783c22f1c985333fcf998d044bdca30bf1eb92a64055279d",
     "record_aliases": [],
@@ -933,7 +1016,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/dgdr-mx1d",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-20T00:52:38+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "history_month": "2026-10",
     "abstract_checked_sources": [
       "期刊官网/Cite",
@@ -1121,7 +1204,7 @@
     "publisher_url": "https://www.nature.com/articles/s41534-026-01393-x",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-12T02:39:57+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "1a9a1fe7387958a6ff67ff400543056d5c2b8ec2debd3ab877621db598a13c10",
     "record_aliases": [],
@@ -1200,10 +1283,10 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/j57s-pp4y",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-10T03:56:23+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
-      "checked_at": "2026-11-10T03:56:23+00:00",
+      "checked_at": "2026-11-17T04:17:49+00:00",
       "source": "Publisher",
       "error": "HTTP Error 403: Forbidden"
     },
@@ -1321,7 +1404,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-79065-9",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-09T01:22:03+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-09T01:22:03+00:00",
@@ -1414,7 +1497,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-79077-5",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-09T01:22:03+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "b12542b14acde288d9ad815d430be6fe84c6c1f712ce8af77d074434d86af320",
     "record_aliases": [],
@@ -1564,7 +1647,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/nntw-51l1",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-09T01:22:03+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-11-16T01:32:07+00:00",
@@ -1695,7 +1778,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/sciadv.aef2882",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-09T01:22:03+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "75e7a04483f1676fc56052ffb8f2c6aaff52f356bf4b0023de8f597be8f0acb3",
     "record_aliases": [],
@@ -1796,7 +1879,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/sciadv.aei7948",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-09T01:22:03+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "ae6b137dd140d2cd9f541105911ee64bd4fca000d859f3a692f00f26c33b67ac",
     "record_aliases": [],
@@ -1884,7 +1967,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/2vg9-34y9",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-06T01:57:29+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "7e22e03d491a0bc4c8dd10c5eac2a06654a6d3b6a24846de33eecb7dcad26796",
     "publication_links": [
@@ -2020,7 +2103,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-78880-4",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-06T01:57:29+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "a2ae6309cff7c5bf6c3c84cb481503266f6e913919249635a6266542912ca289",
     "publication_links": [],
@@ -2100,7 +2183,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/7fd5-1kq5",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-22T23:57:40+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "history_month": "2026-09",
     "abstract_checked_sources": [
       "期刊官网/Cite",
@@ -2309,7 +2392,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/science.aed4270",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-06T01:57:29+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "e2489657e7fdc001bed9a4acaad911fc76215d6ec81bf90cff08dfb7f6eac51c",
     "publication_links": [],
@@ -2408,7 +2491,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-10-31T01:22:08+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "citation_authors": [
       "Abumusabh, M.",
       "Adachi, I.",
@@ -2797,7 +2880,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/dv54-jq8p",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-04T01:50:20+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "abstract_checked_sources": [],
     "summary": "",
     "content": "",
@@ -3001,7 +3084,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-78930-x",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-04T01:50:20+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-04T01:50:20+00:00",
@@ -9921,113 +10004,6 @@
     "arxiv_publication_checked": "",
     "translation_legacy_hashes": {
       "c807053ad20c3fbb": "7ef9908d12cf373c18aa802fae055dd78506e161284ad859942bd8849801fb18"
-    },
-    "merge_evidence": [
-      "record-id"
-    ]
-  },
-  {
-    "id": "2657e2bd7b0ce59c",
-    "type": "paper",
-    "title": "Optimization pathways for a four-tube digital positron lifetime spectrometer",
-    "abstract": "The count rate and timing resolution are paramount in positron annihilation lifetime spectrometer (PALS), dictating their ability to discern fine-scale material properties. We introduce a compact 4-tube digital PALS (dPALS) configuration that enhances the standard measurement process by capturing 12 spectra simultaneously, reducing measurement times and enabling the observation of rapid material dynamics such as fast kinetics of precipitations in Al-alloys. Our approach allows effective decomposition of 12 spectra, each collected within 2 min with a time resolution of 141 ps and a count rate of 2000 cps. This improved counting rate of the 4-tube PALS system is further complemented by comprehensive tests, aiming at optimizing both digitizer-related and scintillator/photomultiplier tube (PMT) parameters, offering a strategic contribution to improving PALS capabilities for the positron community. Within these tests, we employed, in addition to the 4-tube setup, a 2-tube dPALS, which is still useable by positron researchers. The study's exploration into digitizer parameters such as bandwidth filter, vertical resolution, sampling rate, and constant fraction discriminator (CFD) level indicates that bandwidth alterations do not influence temporal resolution. Utilizing a 10-bit digitizer, we achieved a remarkable enhancement in full width at half maximum (FWHM) by approximately 30 ps compared to an 8-bit system. By setting the sampling rate at 2 GS/s, we attained a minimal FWHM of 124 ps with a 25% CFD level, highlighting a new benchmark for the field. Our comparative assessments have revealed that a fast EJ232Q truncated conical scintillator of 20 cm 3 volume surpasses a cylindrically shaped scintillator of the same material in timing resolution, demonstrating a significant advance in spectrometer design.",
-    "abstract_status": "full",
-    "abstract_source": "INSPIRE",
-    "authors": [
-      "Ahmed G. Attallah",
-      "Reinhard Krause-Rehberg",
-      "Mohamed Elsayed"
-    ],
-    "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "source": "Nuclear Instruments and Methods in Physics Research A",
-    "source_short": "NIMA",
-    "source_type": "journal",
-    "doi": "10.1016/j.nima.2026.171745",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1016/j.nima.2026.171745",
-    "pdf_url": "",
-    "categories": [
-      "detectors-daq"
-    ],
-    "tags": [
-      "scintillator",
-      "photomultiplier"
-    ],
-    "primary_topic": "detectors-daq",
-    "methods": [
-      "experimental"
-    ],
-    "classification_confidence": 0.64,
-    "classification_evidence": [
-      "scintillator",
-      "photomultiplier"
-    ],
-    "importance": 59,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +17",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "https://doi.org/10.15223/policy-017",
-      "https://doi.org/10.15223/policy-037",
-      "https://doi.org/10.15223/policy-012",
-      "https://doi.org/10.15223/policy-029",
-      "https://doi.org/10.15223/policy-004"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Attallah, Ahmed G.",
-      "Krause-Rehberg, Reinhard",
-      "Elsayed, Mohamed"
-    ],
-    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
-    "volume": "1091",
-    "issue": "",
-    "pages": "171745",
-    "numpages": "",
-    "publisher": "Elsevier BV",
-    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004717",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-15T01:29:15+00:00",
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-11-01T00:37:12+00:00",
-      "source": "OpenAlex"
-    },
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-11-01T00:37:12+00:00",
-      "source": "Semantic Scholar"
-    },
-    "abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-11-01T00:37:12+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ],
-    "summary": "",
-    "content": "",
-    "translation_source_hash": "b3202cf6497ce2e664f2acbd69976a2d2aafe32df57aa773165a49d27b65de57",
-    "publication_links": [],
-    "record_aliases": [],
-    "abstract_source_type": "journal",
-    "figure_enrichment": "",
-    "arxiv_publication_checked": "",
-    "translation_legacy_hashes": {
-      "2657e2bd7b0ce59c": "b3202cf6497ce2e664f2acbd69976a2d2aafe32df57aa773165a49d27b65de57"
     },
     "merge_evidence": [
       "record-id"

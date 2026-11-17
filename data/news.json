@@ -1,5 +1,98 @@
 [
   {
+    "id": "ccd7de95f328b71a",
+    "type": "news",
+    "title": "Extension of coherence time beyond breakeven point using only drives and dissipation",
+    "summary": "Quantum error correction aims to mitigate the loss of quantum information to the environment and is a central requirement for scalable quantum computing. Existing implementations are mainly based on measurement-based feedback, but constraints on read-out fidelity, hardware latency and system complexity can limit performance and scalability. Autonomous quantum error correction offers a complementary route based on engineered drives and dissipation, without repeated measurements or classical feedback. Here we implement an autonomous quantum error correction protocol, derived from quantum channel simulation, that repeatedly restores a photon-loss-corrupted logical qubit by transferring error information to ancilla qubits and resetting them. Unlike earlier demonstrations based on manifold stabilization through code-specific Hamiltonian and dissipation engineering, our approach is, in principle, applicable to arbitrary recovery maps. Using a binomial code encoded in a long-lived bosonic mode, we extend the logical qubit coherence time to 1.04 times that of the best physical qubit in the system. This result shows that drives and dissipation can extend the coherence time of an error-corrected bosonic logical qubit beyond the breakeven point. An autonomous quantum error correction protocol based on engineered drives and dissipation extends the coherence time of a bosonic logical qubit beyond that of the best physical qubit in the same system.",
+    "published": "2026-11-16",
+    "source": "Nature Physics",
+    "url": "https://www.nature.com/articles/s41567-026-03528-5",
+    "categories": [
+      "frontiers"
+    ],
+    "tags": [
+      "quantum",
+      "quantum information"
+    ],
+    "importance": 42,
+    "score_reasons": [
+      "来源权重 +40",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-11-17T04:17:49+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
+    "content_status": "available",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
+    "primary_topic": "frontiers",
+    "methods": [
+      "experimental",
+      "theoretical"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "quantum",
+      "quantum information"
+    ]
+  },
+  {
+    "id": "a67e450da250571f",
+    "type": "news",
+    "title": "Extending qubit lifetime beyond break-even and enhancing quantum sensing by autonomous quantum error correction",
+    "summary": "Extending the lifetime of a logical quantum bit (qubit) beyond that of the best physical qubit available within the same system—the break-even point—is a prerequisite for building practical quantum computers. Previous demonstrations have crossed this threshold using active quantum error correction (QEC), which measures an error syndrome and then applies an adaptive correction. Reaching the break-even point with autonomous QEC, which removes the need for resource-intensive measurement and feedback, remains challenging. Here we demonstrate beyond-break-even autonomous error correction in a circuit quantum electrodynamics system. We encode a photonic logical qubit in a superconducting microwave cavity and protect it against photon loss using engineered dissipation. The protected logical qubit achieves a lifetime of about 2.0 ms, 18% longer than that of the best physical qubit available in the system. We then use the protocol to measure a small frequency shift, obtaining a metrological gain of 6.3 dB relative to the most robust Fock-state superposition. These results show that autonomous QEC not only represents a necessary step towards fault-tolerant quantum computation but also offers advantages for robust quantum sensing. A measurement-free quantum error-correction protocol is shown to extend the lifetime of a bosonic logical qubit beyond the best physical qubit in the same system. This also offers prospects for enhanced quantum sensing.",
+    "published": "2026-11-16",
+    "source": "Nature Physics",
+    "url": "https://www.nature.com/articles/s41567-026-03493-z",
+    "categories": [
+      "frontiers"
+    ],
+    "tags": [
+      "quantum"
+    ],
+    "importance": 42,
+    "score_reasons": [
+      "来源权重 +40",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-11-17T04:17:49+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
+    "content_status": "available",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
+    "primary_topic": "frontiers",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ]
+  },
+  {
+    "id": "56c447de756dbf2b",
+    "type": "news",
+    "title": "150 years proving fundamental science is worth the wait",
+    "summary": "Founded in 1876, the Indian Association for the Cultivation of Science created an early space for Indians to pursue science. Its achievements offer valuable lessons for strengthening today’s research landscape in India.",
+    "published": "2026-11-16",
+    "source": "Nature Physics",
+    "url": "https://www.nature.com/articles/s41567-026-03538-3",
+    "categories": [
+      "frontiers"
+    ],
+    "tags": [],
+    "importance": 42,
+    "score_reasons": [
+      "来源权重 +40",
+      "完整摘要 +2"
+    ],
+    "first_seen": "2026-11-17T04:17:49+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
+    "content_status": "available",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": []
+  },
+  {
     "id": "c0b30dbf979b3eca",
     "type": "news",
     "title": "Just publish it",
@@ -11,15 +104,19 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 50,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "突破性表述 +8",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-11-14T01:56:34+00:00",
-    "last_seen": "2026-11-15T01:29:15+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
+    "methods": [
+      "review"
+    ],
     "classification_confidence": 0.38,
     "classification_evidence": [],
     "arxiv_id": "",
@@ -57,20 +154,26 @@
       "frontiers"
     ],
     "tags": [
-      "quantum"
+      "quantum",
+      "quantum information"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-11-13T02:20:15+00:00",
-    "last_seen": "2026-11-15T01:29:15+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.56,
+    "methods": [
+      "experimental",
+      "theoretical"
+    ],
+    "classification_confidence": 0.64,
     "classification_evidence": [
-      "quantum"
+      "quantum",
+      "quantum information"
     ],
     "arxiv_id": "",
     "pdf_url": "",
@@ -113,7 +216,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-11-14T01:56:34+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -153,12 +256,13 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-11-12T02:39:57+00:00",
-    "last_seen": "2026-11-15T01:29:15+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -205,7 +309,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-11-12T02:39:57+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -251,7 +355,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-11-12T02:39:57+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -291,9 +395,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-11-12T02:39:57+00:00",
     "last_seen": "2026-11-15T01:29:15+00:00",
@@ -337,12 +442,13 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-11-12T02:39:57+00:00",
-    "last_seen": "2026-11-15T01:29:15+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -380,20 +486,27 @@
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03543-6",
     "categories": [
-      "frontiers"
+      "particle-cross"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "neutrino"
+    ],
+    "importance": 53,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "核物理研究侧重 +3",
+      "突破性表述 +8",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-11-12T02:39:57+00:00",
-    "last_seen": "2026-11-15T01:29:15+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
-    "primary_topic": "frontiers",
+    "primary_topic": "particle-cross",
     "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "neutrino"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -426,22 +539,30 @@
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03519-6",
     "categories": [
+      "nuclear-reactions",
       "frontiers"
     ],
     "tags": [
+      "inelastic scattering",
       "quantum"
     ],
-    "importance": 40,
+    "importance": 62,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "核物理研究侧重 +18",
+      "跨领域关联 +2",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-11-12T02:39:57+00:00",
     "last_seen": "2026-11-15T01:29:15+00:00",
     "content_status": "available",
-    "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.56,
+    "primary_topic": "nuclear-reactions",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.64,
     "classification_evidence": [
+      "inelastic scattering",
       "quantum"
     ],
     "arxiv_id": "",
@@ -479,15 +600,18 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-11-12T02:39:57+00:00",
     "last_seen": "2026-11-15T01:29:15+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
+    "methods": [
+      "theoretical"
+    ],
     "classification_confidence": 0.38,
     "classification_evidence": [],
     "arxiv_id": "",
@@ -531,7 +655,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-11-11T01:40:22+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -577,7 +701,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-11-11T01:40:22+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -616,18 +740,23 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "quantum"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-11-09T01:22:03+00:00",
     "last_seen": "2026-11-13T02:20:15+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -669,7 +798,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-11-09T01:22:03+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [
@@ -719,7 +848,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-11-09T01:22:03+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -769,7 +898,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-11-09T01:22:03+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -819,7 +948,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-11-06T01:57:29+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -867,7 +996,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-11-06T01:57:29+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -913,7 +1042,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-11-05T01:57:11+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -950,22 +1079,29 @@
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03479-x",
     "categories": [
-      "frontiers"
+      "ai-science"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "machine learning"
+    ],
+    "importance": 46,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "核物理研究侧重 +4",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-11-03T03:15:49+00:00",
     "last_seen": "2026-11-12T02:39:57+00:00",
     "content_status": "available",
-    "primary_topic": "frontiers",
+    "primary_topic": "ai-science",
     "methods": [
+      "theoretical",
       "review"
     ],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "machine learning"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1009,7 +1145,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-11-04T01:50:20+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -1050,18 +1186,25 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "topological"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-31T01:22:08+00:00",
     "last_seen": "2026-11-09T01:22:03+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "topological"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1097,9 +1240,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-31T01:22:08+00:00",
     "last_seen": "2026-11-09T01:22:03+00:00",
@@ -1145,15 +1289,18 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-31T01:22:08+00:00",
     "last_seen": "2026-11-09T01:22:03+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
+    "methods": [
+      "experimental"
+    ],
     "classification_confidence": 0.56,
     "classification_evidence": [
       "quantum"
@@ -1193,9 +1340,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-31T01:22:08+00:00",
     "last_seen": "2026-11-09T01:22:03+00:00",
@@ -1239,9 +1387,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-31T01:22:08+00:00",
     "last_seen": "2026-11-09T01:22:03+00:00",
@@ -1291,7 +1440,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-31T01:22:08+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -1337,7 +1486,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -1376,18 +1525,23 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "quantum"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-30T01:30:20+00:00",
     "last_seen": "2026-11-09T01:22:03+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -1429,7 +1583,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-31T01:22:08+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -1475,7 +1629,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-31T01:22:08+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -1521,7 +1675,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-30T01:30:20+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [
@@ -1569,7 +1723,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-30T01:30:20+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -1611,9 +1765,10 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-28T00:54:05+00:00",
     "last_seen": "2026-11-06T01:57:29+00:00",
@@ -1665,7 +1820,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-28T00:54:05+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -1705,9 +1860,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-27T01:03:10+00:00",
     "last_seen": "2026-10-30T01:30:20+00:00",
@@ -1751,9 +1907,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-27T01:03:10+00:00",
     "last_seen": "2026-10-30T01:30:20+00:00",
@@ -1797,9 +1954,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-27T01:03:10+00:00",
     "last_seen": "2026-11-02T01:11:09+00:00",
@@ -1849,7 +2007,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-28T00:54:05+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -1895,7 +2053,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-27T01:03:10+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -1997,22 +2155,29 @@
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03490-2",
     "categories": [
+      "particle-cross",
       "frontiers"
     ],
     "tags": [
+      "particle physics",
       "quantum"
     ],
-    "importance": 40,
+    "importance": 55,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "核物理研究侧重 +3",
+      "突破性表述 +8",
+      "跨领域关联 +2",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-24T00:11:45+00:00",
     "last_seen": "2026-10-30T01:30:20+00:00",
     "content_status": "available",
-    "primary_topic": "frontiers",
+    "primary_topic": "particle-cross",
     "methods": [],
-    "classification_confidence": 0.56,
+    "classification_confidence": 0.64,
     "classification_evidence": [
+      "particle physics",
       "quantum"
     ],
     "arxiv_id": "",
@@ -2050,9 +2215,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-24T00:11:45+00:00",
     "last_seen": "2026-10-30T01:30:20+00:00",
@@ -2096,20 +2262,25 @@
       "frontiers"
     ],
     "tags": [
-      "quantum"
+      "quantum",
+      "quantum information"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-24T00:11:45+00:00",
     "last_seen": "2026-10-30T01:30:20+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.56,
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.64,
     "classification_evidence": [
-      "quantum"
+      "quantum",
+      "quantum information"
     ],
     "arxiv_id": "",
     "pdf_url": "",
@@ -2152,7 +2323,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-24T23:56:50+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -2251,9 +2422,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-23T00:21:25+00:00",
     "last_seen": "2026-10-29T01:29:13+00:00",
@@ -2297,20 +2469,25 @@
       "frontiers"
     ],
     "tags": [
-      "quantum"
+      "quantum",
+      "topological",
+      "quantum information"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-23T00:21:25+00:00",
     "last_seen": "2026-10-27T01:03:10+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
-    "classification_confidence": 0.56,
+    "classification_confidence": 0.72,
     "classification_evidence": [
-      "quantum"
+      "quantum",
+      "topological",
+      "quantum information"
     ],
     "arxiv_id": "",
     "pdf_url": "",
@@ -2355,7 +2532,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-23T00:21:25+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -2410,7 +2587,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-22T00:22:02+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "accelerators",
     "methods": [
@@ -2454,18 +2631,25 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "quantum",
+      "topological"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-22T00:22:02+00:00",
     "last_seen": "2026-10-25T23:43:12+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "quantum",
+      "topological"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2500,18 +2684,23 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "quantum"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-22T00:22:02+00:00",
     "last_seen": "2026-10-25T23:43:12+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2555,7 +2744,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-22T00:22:02+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -2596,18 +2785,23 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "quantum"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-21T00:20:16+00:00",
     "last_seen": "2026-10-23T00:21:25+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2643,9 +2837,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-21T00:20:16+00:00",
     "last_seen": "2026-10-25T23:43:12+00:00",
@@ -2695,7 +2890,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-22T00:22:02+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -2755,7 +2950,7 @@
     "event_start": "",
     "event_end": "",
     "first_seen": "2026-10-20T00:52:38+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "accelerators",
     "methods": [],
@@ -2796,15 +2991,18 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-20T00:52:38+00:00",
     "last_seen": "2026-10-23T00:21:25+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
+    "methods": [
+      "theoretical"
+    ],
     "classification_confidence": 0.38,
     "classification_evidence": [],
     "arxiv_id": "",
@@ -2839,20 +3037,34 @@
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03379-0",
     "categories": [
+      "particle-cross",
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "particle physics",
+      "condensed matter",
+      "topological"
+    ],
+    "importance": 47,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "核物理研究侧重 +3",
+      "跨领域关联 +2",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-20T00:52:38+00:00",
     "last_seen": "2026-10-23T00:21:25+00:00",
     "content_status": "available",
-    "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "primary_topic": "particle-cross",
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.72,
+    "classification_evidence": [
+      "particle physics",
+      "condensed matter",
+      "topological"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -2894,7 +3106,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-20T00:52:38+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [
@@ -2936,15 +3148,18 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-17T00:06:33+00:00",
     "last_seen": "2026-10-21T00:20:16+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
+    "methods": [
+      "experimental"
+    ],
     "classification_confidence": 0.38,
     "classification_evidence": [],
     "arxiv_id": "",
@@ -2982,9 +3197,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-17T00:06:33+00:00",
     "last_seen": "2026-10-22T00:22:02+00:00",
@@ -3027,18 +3243,23 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "quantum"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-17T00:06:33+00:00",
     "last_seen": "2026-10-22T00:22:02+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3073,18 +3294,23 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "quantum"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-17T00:06:33+00:00",
     "last_seen": "2026-10-20T00:52:38+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3120,9 +3346,11 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 50,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "突破性表述 +8",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-17T00:06:33+00:00",
     "last_seen": "2026-10-21T00:20:16+00:00",
@@ -3165,18 +3393,25 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "quantum"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-17T00:06:33+00:00",
     "last_seen": "2026-10-20T00:52:38+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3218,7 +3453,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-16T00:00:46+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -3258,9 +3493,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-15T00:15:33+00:00",
     "last_seen": "2026-10-18T23:52:11+00:00",
@@ -3304,9 +3540,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-15T00:15:33+00:00",
     "last_seen": "2026-10-18T23:52:11+00:00",
@@ -3358,7 +3595,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-15T00:15:33+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -3397,20 +3634,30 @@
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03483-1",
     "categories": [
-      "frontiers"
+      "accelerators",
+      "fusion"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "synchrotron",
+      "EAST"
+    ],
+    "importance": 54,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "核物理研究侧重 +10",
+      "跨领域关联 +2",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-14T00:49:00+00:00",
     "last_seen": "2026-10-15T00:15:33+00:00",
     "content_status": "available",
-    "primary_topic": "frontiers",
+    "primary_topic": "accelerators",
     "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "synchrotron",
+      "EAST"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3454,7 +3701,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-14T00:49:00+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -3504,7 +3751,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-14T00:49:00+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -3604,18 +3851,23 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "topological"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-13T02:48:31+00:00",
     "last_seen": "2026-10-15T00:15:33+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "topological"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3651,20 +3903,25 @@
       "frontiers"
     ],
     "tags": [
-      "quantum"
+      "quantum",
+      "topological",
+      "quantum information"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-13T02:48:31+00:00",
     "last_seen": "2026-10-15T00:15:33+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
-    "classification_confidence": 0.56,
+    "classification_confidence": 0.72,
     "classification_evidence": [
-      "quantum"
+      "quantum",
+      "topological",
+      "quantum information"
     ],
     "arxiv_id": "",
     "pdf_url": "",
@@ -3701,9 +3958,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-11T00:37:58+00:00",
     "last_seen": "2026-10-14T00:49:00+00:00",
@@ -3747,9 +4005,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-11T00:37:58+00:00",
     "last_seen": "2026-10-13T02:48:31+00:00",
@@ -3790,20 +4049,28 @@
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03502-1",
     "categories": [
-      "frontiers"
+      "accelerators"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "synchrotron"
+    ],
+    "importance": 52,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "核物理研究侧重 +10",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-11T00:37:58+00:00",
     "last_seen": "2026-10-15T00:15:33+00:00",
     "content_status": "available",
-    "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "primary_topic": "accelerators",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "synchrotron"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -3839,20 +4106,25 @@
       "frontiers"
     ],
     "tags": [
-      "quantum"
+      "quantum",
+      "quantum information"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-11T00:37:58+00:00",
     "last_seen": "2026-10-12T00:54:46+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.56,
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.64,
     "classification_evidence": [
-      "quantum"
+      "quantum",
+      "quantum information"
     ],
     "arxiv_id": "",
     "pdf_url": "",
@@ -3889,9 +4161,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-11T00:37:58+00:00",
     "last_seen": "2026-10-15T00:15:33+00:00",
@@ -3935,15 +4208,18 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-11T00:37:58+00:00",
     "last_seen": "2026-10-14T00:49:00+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
+    "methods": [
+      "experimental"
+    ],
     "classification_confidence": 0.38,
     "classification_evidence": [],
     "arxiv_id": "",
@@ -3981,15 +4257,18 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-11T00:37:58+00:00",
     "last_seen": "2026-10-15T00:15:33+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
+    "methods": [
+      "theoretical"
+    ],
     "classification_confidence": 0.38,
     "classification_evidence": [],
     "arxiv_id": "",
@@ -4026,18 +4305,25 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "quantum"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-09T01:39:44+00:00",
     "last_seen": "2026-10-09T01:39:44+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ],
     "news_detail_checked_at": "2026-11-16T13:45:46+00:00"
   },
   {
@@ -4052,9 +4338,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-09T01:39:44+00:00",
     "last_seen": "2026-10-12T00:54:46+00:00",
@@ -4106,7 +4393,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-10T01:26:47+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -4154,7 +4441,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-10T01:26:47+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -4194,20 +4481,25 @@
       "frontiers"
     ],
     "tags": [
-      "quantum"
+      "quantum",
+      "quantum information"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-08T01:30:34+00:00",
     "last_seen": "2026-10-09T01:39:44+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.56,
+    "methods": [
+      "review"
+    ],
+    "classification_confidence": 0.64,
     "classification_evidence": [
-      "quantum"
+      "quantum",
+      "quantum information"
     ],
     "arxiv_id": "",
     "pdf_url": "",
@@ -4244,15 +4536,18 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-08T01:30:34+00:00",
     "last_seen": "2026-10-09T01:39:44+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
+    "methods": [
+      "theoretical"
+    ],
     "classification_confidence": 0.38,
     "classification_evidence": [],
     "arxiv_id": "",
@@ -4289,18 +4584,25 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "quantum"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-08T01:30:34+00:00",
     "last_seen": "2026-10-09T01:39:44+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -4344,7 +4646,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-08T01:30:34+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -4394,7 +4696,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-08T01:30:34+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -4442,7 +4744,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-09T01:39:44+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -4484,15 +4786,18 @@
     "tags": [
       "topological"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-07T01:10:59+00:00",
     "last_seen": "2026-10-09T01:39:44+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
+    "methods": [
+      "theoretical"
+    ],
     "classification_confidence": 0.56,
     "classification_evidence": [
       "topological"
@@ -4534,9 +4839,10 @@
     "tags": [
       "topological"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-07T01:10:59+00:00",
     "last_seen": "2026-10-09T01:39:44+00:00",
@@ -4591,7 +4897,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-08T01:30:34+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "particle-cross",
     "methods": [
@@ -4641,7 +4947,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-07T01:10:59+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [
@@ -4689,7 +4995,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-07T01:10:59+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -4735,7 +5041,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-06T02:01:34+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -4781,7 +5087,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-04T00:18:33+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -4827,7 +5133,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-03T00:53:03+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -4873,7 +5179,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-03T00:53:03+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -4919,7 +5225,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-03T00:53:03+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -4961,14 +5267,15 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-structure",
+      "theoretical-nuclear",
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
+      "量子多体",
       "滴线",
       "核物理",
-      "加速器",
+      "原子核",
       "核技术"
     ],
     "importance": 100,
@@ -4987,15 +5294,16 @@
     "event_start": "",
     "event_end": "",
     "first_seen": "2026-10-20T00:52:38+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "nuclear-structure",
     "methods": [],
-    "classification_confidence": 0.8,
+    "classification_confidence": 0.88,
     "classification_evidence": [
+      "量子多体",
       "滴线",
       "核物理",
-      "加速器",
+      "原子核",
       "核技术"
     ],
     "arxiv_id": "",
@@ -5018,7 +5326,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00"
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00"
   },
   {
     "id": "a8b6bee4e510786f",
@@ -5034,14 +5342,15 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-structure",
+      "theoretical-nuclear",
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
+      "量子多体",
       "滴线",
       "核物理",
-      "加速器",
+      "原子核",
       "核技术"
     ],
     "importance": 100,
@@ -5060,15 +5369,16 @@
     "event_start": "",
     "event_end": "",
     "first_seen": "2026-10-20T00:52:38+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "nuclear-structure",
     "methods": [],
-    "classification_confidence": 0.8,
+    "classification_confidence": 0.88,
     "classification_evidence": [
+      "量子多体",
       "滴线",
       "核物理",
-      "加速器",
+      "原子核",
       "核技术"
     ],
     "arxiv_id": "",
@@ -5091,7 +5401,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00"
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00"
   },
   {
     "id": "52ca6189c87576f2",
@@ -5128,7 +5438,7 @@
     "event_start": "",
     "event_end": "",
     "first_seen": "2026-10-01T01:01:12+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "accelerators",
     "methods": [],
@@ -5177,7 +5487,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-02T01:15:29+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -5217,9 +5527,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-01T01:01:12+00:00",
     "last_seen": "2026-10-08T01:30:34+00:00",
@@ -5262,18 +5573,25 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "quantum"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-01T01:01:12+00:00",
     "last_seen": "2026-10-09T01:39:44+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -5306,23 +5624,37 @@
     "source": "Nature Machine Intelligence",
     "url": "https://www.nature.com/articles/s42256-026-01309-6",
     "categories": [
+      "detectors-daq",
+      "accelerators",
       "particle-cross"
     ],
     "tags": [
+      "scintillator",
+      "calorimeter",
+      "particle identification",
+      "accelerator",
       "neutrino"
     ],
-    "importance": 35,
+    "importance": 55,
     "score_reasons": [
       "来源权重 +32",
-      "核物理研究侧重 +3"
+      "核物理研究侧重 +17",
+      "跨领域关联 +4",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-02T01:15:29+00:00",
     "last_seen": "2026-10-18T23:52:11+00:00",
     "content_status": "available",
-    "primary_topic": "particle-cross",
-    "methods": [],
-    "classification_confidence": 0.56,
+    "primary_topic": "detectors-daq",
+    "methods": [
+      "experimental"
+    ],
+    "classification_confidence": 0.88,
     "classification_evidence": [
+      "scintillator",
+      "calorimeter",
+      "particle identification",
+      "accelerator",
       "neutrino"
     ],
     "arxiv_id": "",
@@ -5368,7 +5700,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-10-02T01:15:29+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -5410,9 +5742,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-01T01:01:12+00:00",
     "last_seen": "2026-10-07T01:10:59+00:00",
@@ -5456,9 +5789,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-10-01T01:01:12+00:00",
     "last_seen": "2026-10-08T01:30:34+00:00",
@@ -5510,7 +5844,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-30T00:57:41+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -5551,18 +5885,25 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "quantum",
+      "topological"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-29T01:24:38+00:00",
     "last_seen": "2026-10-07T01:10:59+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "quantum",
+      "topological"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -5598,9 +5939,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-29T01:24:38+00:00",
     "last_seen": "2026-10-07T01:10:59+00:00",
@@ -5650,7 +5992,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-30T00:57:41+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -5692,9 +6034,10 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-27T00:06:43+00:00",
     "last_seen": "2026-09-29T01:24:38+00:00",
@@ -5742,9 +6085,10 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-27T00:06:43+00:00",
     "last_seen": "2026-09-29T01:24:38+00:00",
@@ -5794,9 +6138,10 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-27T00:06:43+00:00",
     "last_seen": "2026-10-06T02:01:34+00:00",
@@ -5846,9 +6191,10 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-27T00:06:43+00:00",
     "last_seen": "2026-09-29T01:24:38+00:00",
@@ -5898,9 +6244,10 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-27T00:06:43+00:00",
     "last_seen": "2026-10-06T02:01:34+00:00",
@@ -5945,18 +6292,25 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "quantum"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-25T00:12:37+00:00",
     "last_seen": "2026-09-28T00:15:21+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -5992,15 +6346,19 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-25T00:12:37+00:00",
     "last_seen": "2026-09-29T01:24:38+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
+    "methods": [
+      "experimental",
+      "theoretical"
+    ],
     "classification_confidence": 0.38,
     "classification_evidence": [],
     "arxiv_id": "",
@@ -6037,18 +6395,27 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "quantum",
+      "quantum information"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-25T00:12:37+00:00",
     "last_seen": "2026-09-28T00:15:21+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "quantum",
+      "quantum information"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -6093,7 +6460,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-26T00:19:26+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "particle-cross",
     "methods": [],
@@ -6191,15 +6558,18 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-24T00:11:08+00:00",
     "last_seen": "2026-09-25T00:12:37+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
+    "methods": [
+      "theoretical"
+    ],
     "classification_confidence": 0.56,
     "classification_evidence": [
       "quantum"
@@ -6241,9 +6611,10 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-24T00:11:08+00:00",
     "last_seen": "2026-09-25T00:12:37+00:00",
@@ -6289,19 +6660,22 @@
       "frontiers"
     ],
     "tags": [
+      "quantum",
       "topological"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-24T00:11:08+00:00",
     "last_seen": "2026-09-25T00:12:37+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
-    "classification_confidence": 0.56,
+    "classification_confidence": 0.64,
     "classification_evidence": [
+      "quantum",
       "topological"
     ],
     "arxiv_id": "",
@@ -6345,7 +6719,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-25T00:12:37+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -6391,7 +6765,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-24T00:11:08+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -6437,7 +6811,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-24T00:11:08+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -6485,7 +6859,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-22T23:57:40+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [
@@ -6560,7 +6934,7 @@
     "event_start": "",
     "event_end": "",
     "first_seen": "2026-09-18T23:48:40+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "experimental-nuclear",
     "methods": [],
@@ -6612,7 +6986,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-18T23:48:40+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -6658,7 +7032,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-18T23:48:40+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [
@@ -6700,9 +7074,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-17T23:51:07+00:00",
     "last_seen": "2026-09-25T00:12:37+00:00",
@@ -6754,7 +7129,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-17T23:51:07+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -6798,15 +7173,18 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-17T00:01:04+00:00",
     "last_seen": "2026-09-25T00:12:37+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
+    "methods": [
+      "experimental"
+    ],
     "classification_confidence": 0.56,
     "classification_evidence": [
       "quantum"
@@ -6854,7 +7232,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-17T00:01:04+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -6902,7 +7280,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-17T00:01:04+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -6943,21 +7321,23 @@
     "notice_category": "meetings-nuclear",
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
+      "nuclear-reactions",
+      "theoretical-nuclear",
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
+      "量子多体",
+      "fission",
       "核物理",
-      "加速器",
       "核裂变",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 98,
     "score_reasons": [
       "来源权重 +72",
-      "核物理研究侧重 +12",
-      "跨领域关联 +4",
+      "核物理研究侧重 +18",
+      "跨领域关联 +6",
       "完整摘要 +2"
     ],
     "organizations": [],
@@ -6969,14 +7349,15 @@
     "event_start": "",
     "event_end": "",
     "first_seen": "2026-09-17T00:01:04+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
-    "primary_topic": "nuclear-data-applications",
+    "primary_topic": "nuclear-reactions",
     "methods": [],
-    "classification_confidence": 0.8,
+    "classification_confidence": 0.88,
     "classification_evidence": [
+      "量子多体",
+      "fission",
       "核物理",
-      "加速器",
       "核裂变",
       "核技术"
     ],
@@ -7000,7 +7381,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00"
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00"
   },
   {
     "id": "7419d5feb125b13b",
@@ -7014,15 +7395,18 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-15T23:53:58+00:00",
     "last_seen": "2026-09-24T00:11:08+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
+    "methods": [
+      "theoretical"
+    ],
     "classification_confidence": 0.38,
     "classification_evidence": [],
     "arxiv_id": "",
@@ -7068,7 +7452,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-15T23:53:58+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -7110,9 +7494,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-15T00:10:12+00:00",
     "last_seen": "2026-09-24T00:11:08+00:00",
@@ -7153,22 +7538,33 @@
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03433-x",
     "categories": [
+      "particle-cross",
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "standard model",
+      "quantum"
+    ],
+    "importance": 47,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "核物理研究侧重 +3",
+      "跨领域关联 +2",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-15T00:10:12+00:00",
     "last_seen": "2026-09-22T23:57:40+00:00",
     "content_status": "available",
-    "primary_topic": "frontiers",
+    "primary_topic": "particle-cross",
     "methods": [
-      "experimental"
+      "experimental",
+      "theoretical"
     ],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "standard model",
+      "quantum"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -7204,9 +7600,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-15T00:10:12+00:00",
     "last_seen": "2026-09-22T23:57:40+00:00",
@@ -7249,18 +7646,25 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "quantum",
+      "topological"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-15T00:10:12+00:00",
     "last_seen": "2026-09-24T00:11:08+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.64,
+    "classification_evidence": [
+      "quantum",
+      "topological"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -7296,9 +7700,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-15T00:10:12+00:00",
     "last_seen": "2026-09-22T23:57:40+00:00",
@@ -7341,18 +7746,25 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "topological"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-15T00:10:12+00:00",
     "last_seen": "2026-09-17T00:01:04+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "methods": [
+      "theoretical"
+    ],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "topological"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -7394,7 +7806,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-15T00:10:12+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -7436,15 +7848,19 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-11T23:48:19+00:00",
     "last_seen": "2026-09-15T00:10:12+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
+    "methods": [
+      "experimental",
+      "theoretical"
+    ],
     "classification_confidence": 0.56,
     "classification_evidence": [
       "quantum"
@@ -7484,9 +7900,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-11T23:48:19+00:00",
     "last_seen": "2026-09-15T23:53:58+00:00",
@@ -7536,7 +7953,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-11T23:48:19+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -7575,18 +7992,23 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "quantum"
+    ],
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-11T23:48:19+00:00",
     "last_seen": "2026-09-13T23:50:52+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "quantum"
+    ],
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
@@ -7622,9 +8044,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-11T23:48:19+00:00",
     "last_seen": "2026-09-13T23:50:52+00:00",
@@ -7676,7 +8099,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-10T23:37:56+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -7726,7 +8149,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-10T23:37:56+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -7788,7 +8211,7 @@
     "event_start": "",
     "event_end": "",
     "first_seen": "2026-09-09T23:46:01+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "accelerators",
     "methods": [],
@@ -7829,9 +8252,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-09T23:46:01+00:00",
     "last_seen": "2026-09-13T23:50:52+00:00",
@@ -7875,15 +8299,18 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-09T23:46:01+00:00",
     "last_seen": "2026-09-13T23:50:52+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
-    "methods": [],
+    "methods": [
+      "experimental"
+    ],
     "classification_confidence": 0.38,
     "classification_evidence": [],
     "arxiv_id": "",
@@ -7921,9 +8348,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-09T23:46:01+00:00",
     "last_seen": "2026-09-09T23:46:01+00:00",
@@ -7946,9 +8374,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-09T23:46:01+00:00",
     "last_seen": "2026-09-13T23:50:52+00:00",
@@ -7989,20 +8418,26 @@
     "source": "Nature Physics",
     "url": "https://www.nature.com/articles/s41567-026-03437-7",
     "categories": [
-      "frontiers"
+      "ai-science"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "artificial intelligence"
+    ],
+    "importance": 46,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "核物理研究侧重 +4",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-09T23:46:01+00:00",
     "last_seen": "2026-09-09T23:46:01+00:00",
     "content_status": "available",
-    "primary_topic": "frontiers",
+    "primary_topic": "ai-science",
     "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "artificial intelligence"
+    ],
     "news_detail_checked_at": "2026-11-16T13:45:46+00:00"
   },
   {
@@ -8017,9 +8452,10 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-09T23:46:01+00:00",
     "last_seen": "2026-09-13T23:50:52+00:00",
@@ -8069,7 +8505,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-10T23:37:56+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -8206,9 +8642,10 @@
     "tags": [
       "quantum"
     ],
-    "importance": 40,
+    "importance": 42,
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-09-08T23:47:28+00:00",
     "last_seen": "2026-09-09T23:46:01+00:00",
@@ -8260,7 +8697,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-09T23:46:01+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -8306,7 +8743,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-05T14:57:42+08:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "frontiers",
     "methods": [],
@@ -8406,7 +8843,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-04T23:38:31+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "frontiers",
     "methods": [],
     "classification_confidence": 0.56,
@@ -8566,7 +9003,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-03T23:44:29+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "particle-cross",
     "methods": [],
     "classification_confidence": 0.64,
@@ -8615,7 +9052,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-03T23:44:29+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "frontiers",
     "methods": [],
     "classification_confidence": 0.38,
@@ -8711,7 +9148,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-02T23:46:47+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "frontiers",
     "methods": [],
     "classification_confidence": 0.38,
@@ -8869,7 +9306,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-09-01T00:56:38+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "particle-cross",
     "methods": [],
     "classification_confidence": 0.56,
@@ -9385,7 +9822,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "frontiers",
     "methods": [],
     "classification_confidence": 0.56,
@@ -9556,7 +9993,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-21T22:17:52+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "frontiers",
     "methods": [],
     "classification_confidence": 0.56,
@@ -9604,7 +10041,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "frontiers",
     "methods": [],
     "classification_confidence": 0.38,
@@ -9701,7 +10138,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "frontiers",
     "methods": [
       "theoretical"
@@ -9749,7 +10186,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-20T22:21:07+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "frontiers",
     "methods": [],
     "classification_confidence": 0.38,
@@ -9851,7 +10288,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-19T03:11:00+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "frontiers",
     "methods": [],
     "classification_confidence": 0.38,
@@ -9951,7 +10388,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-16T03:13:18+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "frontiers",
     "methods": [],
     "classification_confidence": 0.38,
@@ -10059,7 +10496,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-15T03:05:06+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "frontiers",
     "methods": [],
     "classification_confidence": 0.56,
@@ -10107,7 +10544,7 @@
       "完整摘要 +2"
     ],
     "first_seen": "2026-08-15T03:05:06+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "frontiers",
     "methods": [],
     "classification_confidence": 0.38,
@@ -10398,7 +10835,7 @@
     "event_start": "",
     "event_end": "",
     "first_seen": "2026-08-26T17:09:39+08:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "nuclear-structure",
     "methods": [],
     "classification_confidence": 0.98,
@@ -11577,13 +12014,16 @@
     "categories": [
       "frontiers"
     ],
-    "tags": [],
-    "importance": 40,
+    "tags": [
+      "topological"
+    ],
+    "importance": 42,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
     "last_seen": "2026-08-10T15:59:48+00:00",
@@ -11606,8 +12046,10 @@
     "citation_metadata_checked": false,
     "primary_topic": "frontiers",
     "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "topological"
+    ],
     "content_status": "available",
     "news_detail_checked_at": "2026-11-16T13:45:46+00:00"
   },
@@ -11623,12 +12065,13 @@
       "frontiers"
     ],
     "tags": [],
-    "importance": 40,
+    "importance": 42,
     "arxiv_id": "",
     "pdf_url": "",
     "doi": "",
     "score_reasons": [
-      "来源权重 +40"
+      "来源权重 +40",
+      "完整摘要 +2"
     ],
     "first_seen": "2026-08-08T00:07:32+08:00",
     "last_seen": "2026-08-10T15:59:48+00:00",
@@ -14511,7 +14954,7 @@
     "event_start": "",
     "event_end": "",
     "first_seen": "2026-08-26T17:09:39+08:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
     "classification_confidence": 0.56,
@@ -17183,7 +17626,7 @@
     "event_start": "",
     "event_end": "",
     "first_seen": "2026-08-26T17:09:39+08:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "nuclear-structure",
     "methods": [],
     "classification_confidence": 0.88,
@@ -17246,7 +17689,7 @@
     "event_start": "",
     "event_end": "",
     "first_seen": "2026-08-26T17:09:39+08:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
     "classification_confidence": 0.56,
@@ -18522,8 +18965,8 @@
     ],
     "tags": [
       "核物理",
-      "加速器",
       "束流",
+      "离子源",
       "核技术"
     ],
     "importance": 90,
@@ -18539,14 +18982,14 @@
       "全国重点实验室"
     ],
     "first_seen": "2026-08-26T17:09:39+08:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
     "classification_confidence": 0.8,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "束流",
+      "离子源",
       "核技术"
     ],
     "content": "----友情链接---- ---- 北京大学 ---- ---- 北京大学物理学院 ---- ---- HIAF强流重离子加速器装置 ---- 地址：北京市海淀区成府路201号核物理与核技术全国重点实验室 邮编：100871 联系电话：010-62751870；010-62755215 邮箱：jingwu@pku.edu.cn",
@@ -18573,7 +19016,7 @@
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
     "content_status": "available",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00"
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00"
   },
   {
     "id": "bdc6e5e3381be608",
@@ -18610,7 +19053,7 @@
     "organizations": [],
     "meeting_series": [],
     "first_seen": "2026-09-17T00:01:04+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "nuclear-reactions",
     "methods": [],
@@ -18791,19 +19234,21 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
+      "high-energy-nuclear",
+      "nuclear-astrophysics",
       "nuclear-general"
     ],
     "tags": [
+      "强相互作用",
+      "中子星",
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 92,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
+      "跨领域关联 +6",
       "完整摘要 +2"
     ],
     "organizations": [],
@@ -18815,10 +19260,11 @@
     "last_seen": "2026-09-08T23:47:28+00:00",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.8,
     "classification_evidence": [
+      "强相互作用",
+      "中子星",
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -18858,19 +19304,17 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 88,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
+      "跨领域关联 +2",
       "完整摘要 +2"
     ],
     "organizations": [],
@@ -18882,10 +19326,9 @@
     "last_seen": "2026-09-15T23:53:58+00:00",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -18925,20 +19368,17 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [
@@ -18949,10 +19389,9 @@
     "content_status": "source_unavailable",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -18976,7 +19415,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -18993,20 +19432,17 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [
@@ -19019,10 +19455,9 @@
     "last_seen": "2026-09-17T23:51:07+00:00",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -19046,7 +19481,7 @@
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
     "content_status": "source_unavailable",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -19063,20 +19498,17 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [
@@ -19086,10 +19518,9 @@
     "last_seen": "2026-09-07T23:54:00+00:00",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -19114,7 +19545,7 @@
     "rights_status": "unknown",
     "content_status": "source_unavailable",
     "content": "",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -19131,20 +19562,17 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [
@@ -19155,10 +19583,9 @@
     "content_status": "source_unavailable",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -19182,7 +19609,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -19199,20 +19626,17 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [
@@ -19223,10 +19647,9 @@
     "content_status": "source_unavailable",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -19250,7 +19673,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -19267,20 +19690,17 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [
@@ -19291,10 +19711,9 @@
     "content_status": "source_unavailable",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -19318,7 +19737,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -19335,20 +19754,17 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [
@@ -19359,10 +19775,9 @@
     "content_status": "source_unavailable",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -19386,7 +19801,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -19403,20 +19818,17 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [
@@ -19427,10 +19839,9 @@
     "content_status": "source_unavailable",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -19454,7 +19865,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -19471,20 +19882,17 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [
@@ -19495,10 +19903,9 @@
     "content_status": "source_unavailable",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -19522,7 +19929,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -19539,20 +19946,17 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [
@@ -19565,10 +19969,9 @@
     "last_seen": "2026-09-10T23:37:56+00:00",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -19592,7 +19995,7 @@
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
     "content_status": "source_unavailable",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -19608,20 +20011,20 @@
     "notice_category": "meetings-nuclear",
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
+      "nuclear-structure",
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
+      "核结构",
       "核物理",
       "原子核",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 98,
     "score_reasons": [
       "来源权重 +72",
-      "核物理研究侧重 +12",
+      "核物理研究侧重 +20",
       "跨领域关联 +4",
       "完整摘要 +2"
     ],
@@ -19633,13 +20036,13 @@
     "first_seen": "2026-09-05T14:57:42+08:00",
     "last_seen": "2026-10-14T00:49:00+00:00",
     "content_status": "available",
-    "primary_topic": "nuclear-data-applications",
+    "primary_topic": "nuclear-structure",
     "methods": [],
     "classification_confidence": 0.8,
     "classification_evidence": [
+      "核结构",
       "核物理",
       "原子核",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -19678,31 +20081,27 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [],
     "first_seen": "2026-08-26T17:09:39+08:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -19727,7 +20126,7 @@
     "rights_status": "unknown",
     "content_status": "source_unavailable",
     "content": "",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -19744,19 +20143,17 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 88,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
+      "跨领域关联 +2",
       "完整摘要 +2"
     ],
     "organizations": [],
@@ -19765,14 +20162,13 @@
     "event_start": "",
     "event_end": "",
     "first_seen": "2026-09-09T23:46:01+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "available",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -19811,31 +20207,27 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [],
     "first_seen": "2026-08-26T17:09:39+08:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -19860,7 +20252,7 @@
     "rights_status": "unknown",
     "content_status": "source_unavailable",
     "content": "",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -19877,31 +20269,27 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [],
     "first_seen": "2026-08-26T17:09:39+08:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -19926,7 +20314,7 @@
     "rights_status": "unknown",
     "content_status": "source_unavailable",
     "content": "",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -19943,31 +20331,27 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [],
     "first_seen": "2026-08-26T17:09:39+08:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -19992,7 +20376,7 @@
     "rights_status": "unknown",
     "content_status": "source_unavailable",
     "content": "",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -20009,31 +20393,27 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [],
     "first_seen": "2026-08-26T17:09:39+08:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -20058,7 +20438,7 @@
     "rights_status": "unknown",
     "content_status": "source_unavailable",
     "content": "",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -20075,31 +20455,27 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [],
     "first_seen": "2026-08-26T17:09:39+08:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
     "arxiv_id": "",
@@ -20124,7 +20500,7 @@
     "rights_status": "unknown",
     "content_status": "source_unavailable",
     "content": "",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -20141,20 +20517,17 @@
     "scope": "核结构·核反应·核技术·北京ISOL",
     "categories": [
       "nuclear-data-applications",
-      "accelerators",
       "nuclear-general"
     ],
     "tags": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "importance": 90,
+    "importance": 86,
     "score_reasons": [
       "来源权重 +72",
       "核物理研究侧重 +12",
-      "跨领域关联 +4",
-      "完整摘要 +2"
+      "跨领域关联 +2"
     ],
     "organizations": [],
     "meeting_series": [
@@ -20164,13 +20537,14 @@
     "last_seen": "2026-08-26T17:09:39+08:00",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
-    "classification_confidence": 0.72,
+    "classification_confidence": 0.64,
     "classification_evidence": [
       "核物理",
-      "加速器",
       "核技术"
     ],
-    "content_status": "missing"
+    "content_status": "source_unavailable",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
+    "news_detail_error": "empty_description"
   },
   {
     "id": "355034b7d553179a",
@@ -20322,7 +20696,7 @@
       "核技术"
     ],
     "content_status": "source_unavailable",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "URLError"
   },
   {
@@ -20356,7 +20730,7 @@
       "全国重点实验室"
     ],
     "first_seen": "2026-10-20T00:52:38+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "source_unavailable",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
@@ -20386,7 +20760,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -20450,7 +20824,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -20514,7 +20888,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -20548,7 +20922,7 @@
       "全国重点实验室"
     ],
     "first_seen": "2026-10-20T00:52:38+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "source_unavailable",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
@@ -20578,7 +20952,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -20612,7 +20986,7 @@
       "全国重点实验室"
     ],
     "first_seen": "2026-10-20T00:52:38+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "source_unavailable",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
@@ -20642,7 +21016,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "rights_status": "unknown",
-    "news_detail_checked_at": "2026-11-16T13:48:49+00:00",
+    "news_detail_checked_at": "2026-11-17T04:22:06+00:00",
     "news_detail_error": "empty_description"
   },
   {
@@ -20676,7 +21050,7 @@
       "全国重点实验室"
     ],
     "first_seen": "2026-11-10T03:56:23+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "source_unavailable",
     "primary_topic": "nuclear-data-applications",
     "methods": [],
@@ -21077,7 +21451,7 @@
       "来源权重 +40"
     ],
     "first_seen": "2026-11-13T02:20:15+00:00",
-    "last_seen": "2026-11-16T01:32:07+00:00",
+    "last_seen": "2026-11-17T04:17:49+00:00",
     "content_status": "source_unavailable",
     "primary_topic": "frontiers",
     "methods": [],

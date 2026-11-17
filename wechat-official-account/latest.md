@@ -31,38 +31,38 @@
 
 ## 物理新闻
 
+- **[Extension of coherence time beyond breakeven point using only drives and dissipation](https://www.nature.com/articles/s41567-026-03528-5)**  
+   Nature Physics · 2026-11-16  
+   Quantum error correction aims to mitigate the loss of quantum information to the environment and is a central requirement for scalable quantum computing. Existing implementations are mainly based on measurement-based feedback, but constraints on read-out fidelity, hardware latency and system complexity can limit performance and scalability. Autonomous quant…
+- **[Extending qubit lifetime beyond break-even and enhancing quantum sensing by autonomous quantum error correction](https://www.nature.com/articles/s41567-026-03493-z)**  
+   Nature Physics · 2026-11-16  
+   Extending the lifetime of a logical quantum bit (qubit) beyond that of the best physical qubit available within the same system—the break-even point—is a prerequisite for building practical quantum computers. Previous demonstrations have crossed this threshold using active quantum error correction (QEC), which measures an error syndrome and then applies an…
+- **[150 years proving fundamental science is worth the wait](https://www.nature.com/articles/s41567-026-03538-3)**  
+   Nature Physics · 2026-11-16  
+   Founded in 1876, the Indian Association for the Cultivation of Science created an early space for Indians to pursue science. Its achievements offer valuable lessons for strengthening today’s research landscape in India.
 - **[Just publish it](https://www.nature.com/articles/s41567-026-03524-9)**  
    Nature Physics · 2026-11-13  
    In Referees We Trust? How Peer Review Became a Mark of Scientific Legitimacy Edited by: Melinda Baldwin MIT Press: 2026. 256pp. When Physics Letters B published the Higgs boson discovery papers in September 2012, one outlet announced that CERN’s result had "passed peer review" and thereby become "actual science". Melinda Baldwin’s book In Referees We Trust?…
-- **[Optimal learning of quantum channels in diamond distance](https://www.nature.com/articles/s41567-026-03499-7)**  
-   Nature Physics · 2026-11-12  
-   The evolution of quantum states can be described by quantum channels. The task of estimating an unknown quantum channel, known as process tomography, is a central problem in quantum information theory. A long-standing open question is how many uses of an unknown channel are required to learn it to a precision quantified by the standard metric for distinguis…
-- **[The Surprising Origin of Uranus’ Moons and Rings](http://link.aps.org/doi/10.1103/Physics.19.152)**  
-   APS Physics · 2026-11-12  
-   Author(s): Charles Day New infrared observations tie the ice giant’s small moons and narrow rings to a past encounter with a visiting object from the Kuiper belt. [Physics 19, 152] Published Thu Nov 12, 2026
-- **[Altermagnetism in a new light](https://www.nature.com/articles/s41567-026-03532-9)**  
-   Nature Physics · 2026-11-11  
-   Altermagnets host spin-split bands despite zero net magnetization. A photonic crystal now reproduces this symmetry-driven phenomenon using circular polarization as a spin analogue.
 
 ## 科研通知
 
-- **[SCD_WeeklyMeeting](https://indico.ihep.ac.cn/event/31490/)**  
-   高能所 Indico · 2026-11-15  
-   2026-11-16 — 2026-11-16
-- **[CEPC Vertex detector TDR weekly meeting](https://indico.ihep.ac.cn/event/31465/)**  
-   高能所 Indico · 2026-11-12  
-   2026-11-12 — 2026-11-12
+- **[Cherenkov Detector Biweekly Meeting](https://indico.ihep.ac.cn/event/31523/)**  
+   高能所 Indico · 2026-11-16  
+   2026-11-17 — 2026-11-17
+- **[AGORA/CEPC Detector and Physics Plenary Meeting](https://indico.ihep.ac.cn/event/31521/)**  
+   高能所 Indico · 2026-11-16  
+   2026-11-18 — 2026-11-18 Meeting URL: https://zoom.us/j/99845275219?pwd=JOSplxGdFI1DI5KCKaCbvfwNZ205N3.1 ID: 998 4527 5219 Password: 773321
 - **[关于发布原子级制造基础研究重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100397.html)**  
    国家自然科学基金委项目指南 · 2030-12-31  
    国科金发计〔2026〕12号 国家自然科学基金委员会现发布原子级制造基础研究重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请。 国家自然科学基金委员会 2026年1月26日 原子级制造基础研究重大研究计划 2026年度项目指南 原子级制造是指在原子尺度控制材料的结构与成分，其核心是通过原子的精确操控来获得特定功能，突破传统制造技术的精度极限，实现物质的原子级转化与高效利用。原子级制造的科学基础是在原子尺度下优化物质转化与能量利用，实现物质结构和材料性能的按需订制，为实现颠覆性技术、升级战略性产业和提升国家安全竞争力奠定科学与技术基础。 一、科学目标 本重大研究计划围绕批量原子操控这一核心目标，聚焦原子尺度下物质与能量的相互作用原理，实现材料成分和结构的原子级构筑和测量表征，…
 - **[关于发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100371.html)**  
    国家自然科学基金委项目指南 · 2029-12-31  
    国科金发计〔2026〕6号 国家自然科学基金委员会现发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请
-- **[关于组织申报国家重点研发计划“重大需求导向的数学理论及应用”等重点专项2026年度项目的通知](https://stcsm.sh.gov.cn/zwgk/kyjhxm/xmsb/20261113/5ded8c745d1e4d64a473cf186293d8b4.html)**  
-   上海市科委 · 2026-11-13  
-   _项目申报_上海市科学技术委员会 当前位置： 首页 > 政务公开> 科技计划项目> 项目申报> 正文 关于组织申报国家重点研发计划“重大需求导向的数学理论及应用”等重点专项2026年度项目的通知 发布日期：2026-11-13 各有关单位： 根据《国家自然科学基金委员会关于发布国家重点研发计划“重大需求导向的数学理论及应用”等重点专项2026年度项目申报指南的通知》有关要求，为做好本批次项目的申报及推荐工作，特通知如下。 请各申报单位按国家自然科学基金委员会申报通知要求，通过国家科技管理信息系统公共服务平台（https://service.most.gov.cn）进行网上填报，申报书中所需的附件材料全部以电子扫描件上传。网上填报的申报书将作为后续形式审查和项目评审工作的依据。 市科委联系人及网上申报时间如下：…
-- **[关于启动北京市自然科学基金资助项目验收工作的通知](https://kw.beijing.gov.cn/zwgk/zcwj/202611/t20261113_4945120.html)**  
-   北京市科委 · 2026-11-13  
-   _政策文件_北京市科学技术委员会、中关村科技园区管理委员会 首页 > 政务公开 > 政策文件 [主题分类] 科技、教育/科技 [制发单位] 北京市科学技术委员会、中关村科技园区管理委员会 [实施日期] 2026-11-13 [成文日期] 2026-11-13 [发文字号] 〔〕 号 [失效日期] [发布日期] 2026-11-13 [有效性] 现行有效 关于启动北京市自然科学基金资助项目验收工作的通知 日期：2026-11-13 16:18 来源： 分享： X 京科基金字〔2026〕49号 各依托单位及项目负责人： 依据《北京市自然科学基金项目管理办法》（2025年修订）相关规定，北京市自然科学基金委员会办公室（以下简称基金办）现启动任务完成时间为2026年12月的北京市自然科学基金面上项目、青年科学基金项目…
+- **[北京市科学技术委员会、中关村科技园区管理委员会关于转发推荐国家重点研发计划“重大需求导向的数学理论及应用”等重点专项2026年度项目申报指南的通知](https://kw.beijing.gov.cn/zwgk/zcwj/202611/t20261116_4947713.html)**  
+   北京市科委 · 2026-11-16  
+   _政策文件_北京市科学技术委员会、中关村科技园区管理委员会 首页 > 政务公开 > 政策文件 [主题分类] 科技、教育/科技 [制发单位] 北京市科学技术委员会、中关村科技园区管理委员会 [实施日期] 2026-11-13 [成文日期] 2026-11-16 [发文字号] 京科资发 〔2026〕 166号 [失效日期] 2026-12-08 [发布日期] 2026-11-16 [有效性] 现行有效 北京市科学技术委员会、中关村科技园区管理委员会关于转发推荐国家重点研发计划“重大需求导向的数学理论及应用”等重点专项2026年度项目申报指南的通知 日期：2026-11-16 15:42 来源： 分享： X 各有关单位： 根据国家自然科学基金委员会《关于发布国家重点研发计划“重大需求导向的数学理论及应用”等重点专项…
+- **[北京市科学技术委员会、中关村科技园区管理委员会关于转发推荐国家重点研发计划“重大需求导向的数学理论及应用”等重点专项2026年度项目申报指南的通知](https://kw.beijing.gov.cn/zwgk/zwgksbrl/202611/t20261116_4948202.html)**  
+   北京市科委 · 2026-11-16  
+   _申报日历_北京市科学技术委员会、中关村科技园区管理委员会 首页 > 政务公开 > 申报日历 北京市科学技术委员会、中关村科技园区管理委员会关于转发推荐国家重点研发计划“重大需求导向的数学理论及应用”等重点专项2026年度项目申报指南的通知 日期：2026-11-16 18:03 来源：北京市科学技术委员会、中关村科技园区管理委员会 分享： X 各有关单位： 根据国家自然科学基金委员会《关于发布国家重点研发计划“重大需求导向的数学理论及应用”等重点专项2026年度项目申报指南的通知》要求，为做好专项的组织推荐工作，现提出如下要求： 一、申报要求 请有关单位严格按照国家自然科学基金委员会《关于发布国家重点研发计划“重大需求导向的数学理论及应用”等重点专项2026年度项目申报指南的通知》要求进行项目申报。 二、填…
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)
