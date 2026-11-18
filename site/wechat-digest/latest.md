@@ -40,9 +40,9 @@
 - **[150 years proving fundamental science is worth the wait](https://www.nature.com/articles/s41567-026-03538-3)**  
    Nature Physics · 2026-11-16  
    Founded in 1876, the Indian Association for the Cultivation of Science created an early space for Indians to pursue science. Its achievements offer valuable lessons for strengthening today’s research landscape in India.
-- **[Just publish it](https://www.nature.com/articles/s41567-026-03524-9)**  
-   Nature Physics · 2026-11-13  
-   In Referees We Trust? How Peer Review Became a Mark of Scientific Legitimacy Edited by: Melinda Baldwin MIT Press: 2026. 256pp. When Physics Letters B published the Higgs boson discovery papers in September 2012, one outlet announced that CERN’s result had "passed peer review" and thereby become "actual science". Melinda Baldwin’s book In Referees We Trust?…
+- **[Winding Spins Toward Better Quantum Sensing](http://link.aps.org/doi/10.1103/Physics.19.153)**  
+   APS Physics · 2026-11-16  
+   Author(s): Ren-Bao Liu Robust collective spin dynamics have been achieved in diamond by winding the spins into a nanoscale spiral and making their interactions symmetric. [Physics 19, 153] Published Mon Nov 16, 2026
 
 ## 科研通知
 
@@ -58,11 +58,11 @@
 - **[关于发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100371.html)**  
    国家自然科学基金委项目指南 · 2029-12-31  
    国科金发计〔2026〕6号 国家自然科学基金委员会现发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请
-- **[北京市科学技术委员会、中关村科技园区管理委员会关于转发推荐国家重点研发计划“重大需求导向的数学理论及应用”等重点专项2026年度项目申报指南的通知](https://kw.beijing.gov.cn/zwgk/zcwj/202611/t20261116_4947713.html)**  
-   北京市科委 · 2026-11-16  
-   _政策文件_北京市科学技术委员会、中关村科技园区管理委员会 首页 > 政务公开 > 政策文件 [主题分类] 科技、教育/科技 [制发单位] 北京市科学技术委员会、中关村科技园区管理委员会 [实施日期] 2026-11-13 [成文日期] 2026-11-16 [发文字号] 京科资发 〔2026〕 166号 [失效日期] 2026-12-08 [发布日期] 2026-11-16 [有效性] 现行有效 北京市科学技术委员会、中关村科技园区管理委员会关于转发推荐国家重点研发计划“重大需求导向的数学理论及应用”等重点专项2026年度项目申报指南的通知 日期：2026-11-16 15:42 来源： 分享： X 各有关单位： 根据国家自然科学基金委员会《关于发布国家重点研发计划“重大需求导向的数学理论及应用”等重点专项…
-- **[北京市科学技术委员会、中关村科技园区管理委员会关于转发推荐国家重点研发计划“重大需求导向的数学理论及应用”等重点专项2026年度项目申报指南的通知](https://kw.beijing.gov.cn/zwgk/zwgksbrl/202611/t20261116_4948202.html)**  
-   北京市科委 · 2026-11-16  
-   _申报日历_北京市科学技术委员会、中关村科技园区管理委员会 首页 > 政务公开 > 申报日历 北京市科学技术委员会、中关村科技园区管理委员会关于转发推荐国家重点研发计划“重大需求导向的数学理论及应用”等重点专项2026年度项目申报指南的通知 日期：2026-11-16 18:03 来源：北京市科学技术委员会、中关村科技园区管理委员会 分享： X 各有关单位： 根据国家自然科学基金委员会《关于发布国家重点研发计划“重大需求导向的数学理论及应用”等重点专项2026年度项目申报指南的通知》要求，为做好专项的组织推荐工作，现提出如下要求： 一、申报要求 请有关单位严格按照国家自然科学基金委员会《关于发布国家重点研发计划“重大需求导向的数学理论及应用”等重点专项2026年度项目申报指南的通知》要求进行项目申报。 二、填…
+- **[中国物理学会同步辐射专业委员会第六届“青年之光”优秀青年论文奖评选通知](https://ihep.cas.cn/dkxzz/bsrf/tongzhigonggao/202611/t20261117_8310126.html)**  
+   北京同步辐射装置通知公告 · 2026-11-17  
+   中国物理学会同步辐射专业委员会第六届“青年之光”优秀青年论文奖评选活动将于2027年1月进行，分别评选“青年之光”研究奖和“青年之光”实验技术奖若干名。（论文奖励条例见附件） 评选方式 ：由 同步辐射专业委员会聘请专家组成评选小组，采用通讯方式分别对 “ 青年之光 ” 研究奖和 “ 青年之光 ” 实验技术奖的申请材料进行初评；在 2027 年 1 月举行的中国物理学会同步辐射专业委员会第六届全国学术年会上对初评入选的论文进行评议。 奖励设置 ：评审出“青年之光”研究奖和“青年之光”实验技术奖的一、二等奖，颁发荣誉证书和奖金。 申报条件：凡 45 周岁以下（ 1982 年 1 月 13 日之后出生）的青年科技人员，在国内的同步辐射、自由电子激光装置上开展研究和技术工作，并作为第一作者在 2021 年以后的国内外…
+- **[中国物理学会同步辐射专业委员会第七届全国同步辐射学术年会第一轮通知](https://ihep.cas.cn/dkxzz/bsrf/tongzhigonggao/202611/t20261117_8310222.html)**  
+   北京同步辐射装置通知公告 · 2026-11-17  
+   为了推动国内同步辐射的学科交流和发展，中国物理学会同步辐射专业委员会将于 2027 年 1 月 13—16 日在湖北省武汉市召开 第七届全国同步辐射学术年会 。现将会议有关事项通知如下： 一、会议主题 1． 国内同步辐射装置进展及未来发展设想 2． 同步辐射实验方法与应用（包括自由电子激光等） 3． 同步辐射技术（包括同步辐射、自由电子激光和光束线技术等） 4． “青年之光”优秀青年论文评选 二、会议时间、地点 时间： 2027 年 1 月 13 日～ 16 日（ 1 月 13 日报到） 会议及住宿地点：武汉东湖宾馆（湖北武汉市武昌区东湖路 142 号） 三、会议组织 主办单位： 中国物理学会同步辐射专业委员会 承办单位： 中国科学院高能物理研究所 协办单位： 中国科学技术大学国家同步辐射实验室 中国科学院上…
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)
