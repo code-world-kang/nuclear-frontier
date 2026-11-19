@@ -31,27 +31,27 @@
 
 ## 物理新闻
 
-- **[Extension of coherence time beyond breakeven point using only drives and dissipation](https://www.nature.com/articles/s41567-026-03528-5)**  
-   Nature Physics · 2026-11-16  
-   Quantum error correction aims to mitigate the loss of quantum information to the environment and is a central requirement for scalable quantum computing. Existing implementations are mainly based on measurement-based feedback, but constraints on read-out fidelity, hardware latency and system complexity can limit performance and scalability. Autonomous quant…
-- **[Extending qubit lifetime beyond break-even and enhancing quantum sensing by autonomous quantum error correction](https://www.nature.com/articles/s41567-026-03493-z)**  
-   Nature Physics · 2026-11-16  
-   Extending the lifetime of a logical quantum bit (qubit) beyond that of the best physical qubit available within the same system—the break-even point—is a prerequisite for building practical quantum computers. Previous demonstrations have crossed this threshold using active quantum error correction (QEC), which measures an error syndrome and then applies an…
-- **[150 years proving fundamental science is worth the wait](https://www.nature.com/articles/s41567-026-03538-3)**  
-   Nature Physics · 2026-11-16  
-   Founded in 1876, the Indian Association for the Cultivation of Science created an early space for Indians to pursue science. Its achievements offer valuable lessons for strengthening today’s research landscape in India.
-- **[Winding Spins Toward Better Quantum Sensing](http://link.aps.org/doi/10.1103/Physics.19.153)**  
-   APS Physics · 2026-11-16  
-   Author(s): Ren-Bao Liu Robust collective spin dynamics have been achieved in diamond by winding the spins into a nanoscale spiral and making their interactions symmetric. [Physics 19, 153] Published Mon Nov 16, 2026
+- **[The Art of Asking Questions: From Stephen Hawking to AI](http://link.aps.org/doi/10.1103/Physics.19.154)**  
+   APS Physics · 2026-11-18  
+   Author(s): Marika Taylor A former collaborator of Stephen Hawking reflects on what his approach to research can teach us about doing science with AI. [Physics 19, 154] Published Wed Nov 18, 2026
+- **[Controlling Single-Molecule Toroics](http://link.aps.org/doi/10.1103/Physics.19.s146)**  
+   APS Physics · 2026-11-18  
+   Author(s): Marric Stephens Researchers have proposed a feasible way to manipulate the ring-like magnetic configurations of certain molecules. [Physics 19, s146] Published Wed Nov 18, 2026
+- **[Hawking’s Black Hole Paradox Exposed Clash Between Physics Theories](http://link.aps.org/doi/10.1103/Physics.19.156)**  
+   APS Physics · 2026-11-17  
+   Author(s): Philip Ball Published 50 years ago, the information paradox dramatically illustrated the conflicts between general relativity and quantum mechanics. [Physics 19, 156] Published Tue Nov 17, 2026
+- **[Exposing Majorana Impostors](http://link.aps.org/doi/10.1103/Physics.19.s142)**  
+   APS Physics · 2026-11-17  
+   Author(s): Ryan Wilkinson Measurements of quantum inductance could distinguish useful quasiparticles called Majorana zero modes from look-alike signals. [Physics 19, s142] Published Tue Nov 17, 2026
 
 ## 科研通知
 
+- **[CEPC Vertex detector TDR weekly meeting](https://indico.ihep.ac.cn/event/31534/)**  
+   高能所 Indico · 2026-11-19  
+   2026-11-19 — 2026-11-19
 - **[Cherenkov Detector Biweekly Meeting](https://indico.ihep.ac.cn/event/31523/)**  
    高能所 Indico · 2026-11-16  
    2026-11-17 — 2026-11-17
-- **[AGORA/CEPC Detector and Physics Plenary Meeting](https://indico.ihep.ac.cn/event/31521/)**  
-   高能所 Indico · 2026-11-16  
-   2026-11-18 — 2026-11-18 Meeting URL: https://zoom.us/j/99845275219?pwd=JOSplxGdFI1DI5KCKaCbvfwNZ205N3.1 ID: 998 4527 5219 Password: 773321
 - **[关于发布原子级制造基础研究重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100397.html)**  
    国家自然科学基金委项目指南 · 2030-12-31  
    国科金发计〔2026〕12号 国家自然科学基金委员会现发布原子级制造基础研究重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请。 国家自然科学基金委员会 2026年1月26日 原子级制造基础研究重大研究计划 2026年度项目指南 原子级制造是指在原子尺度控制材料的结构与成分，其核心是通过原子的精确操控来获得特定功能，突破传统制造技术的精度极限，实现物质的原子级转化与高效利用。原子级制造的科学基础是在原子尺度下优化物质转化与能量利用，实现物质结构和材料性能的按需订制，为实现颠覆性技术、升级战略性产业和提升国家安全竞争力奠定科学与技术基础。 一、科学目标 本重大研究计划围绕批量原子操控这一核心目标，聚焦原子尺度下物质与能量的相互作用原理，实现材料成分和结构的原子级构筑和测量表征，…
