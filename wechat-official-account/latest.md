@@ -1,6 +1,6 @@
 # 小康康的物理世界 · 2026-11-03 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 8/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 13/18 条已有中文内容。
 
 ## 今日重点论文
 
@@ -31,22 +31,22 @@
 
 ## 物理新闻
 
-- **[The Art of Asking Questions: From Stephen Hawking to AI](http://link.aps.org/doi/10.1103/Physics.19.154)**  
+- **[提问的艺术：从Stephen Hawking到AI](http://link.aps.org/doi/10.1103/Physics.19.154)**  
    APS Physics · 2026-11-18  
-   Author(s): Marika Taylor A former collaborator of Stephen Hawking reflects on what his approach to research can teach us about doing science with AI. [Physics 19, 154] Published Wed Nov 18, 2026
-- **[Controlling Single-Molecule Toroics](http://link.aps.org/doi/10.1103/Physics.19.s146)**  
+   作者：Marika Taylor Stephen Hawking的一位前合作者回顾了他的研究方法能为我们借助AI开展科学研究带来哪些启示。[Physics 19, 154] 发表于2026年11月18日星期三
+- **[控制单分子环形磁构型](http://link.aps.org/doi/10.1103/Physics.19.s146)**  
    APS Physics · 2026-11-18  
-   Author(s): Marric Stephens Researchers have proposed a feasible way to manipulate the ring-like magnetic configurations of certain molecules. [Physics 19, s146] Published Wed Nov 18, 2026
-- **[Hawking’s Black Hole Paradox Exposed Clash Between Physics Theories](http://link.aps.org/doi/10.1103/Physics.19.156)**  
+   作者：Marric Stephens 研究人员提出了一种操控某些分子的环状磁构型的可行方法。[Physics 19, s146] 发布于2026年十一月18日，周三
+- **[霍金的黑洞悖论揭示了物理理论之间的冲突](http://link.aps.org/doi/10.1103/Physics.19.156)**  
    APS Physics · 2026-11-17  
-   Author(s): Philip Ball Published 50 years ago, the information paradox dramatically illustrated the conflicts between general relativity and quantum mechanics. [Physics 19, 156] Published Tue Nov 17, 2026
-- **[Exposing Majorana Impostors](http://link.aps.org/doi/10.1103/Physics.19.s142)**  
+   作者：Philip Ball 信息悖论发表于50年前，生动揭示了广义相对论与量子力学之间的冲突。[Physics 19, 156] 发表于Tue Nov 17, 2026
+- **[揭露马约拉纳冒牌者](http://link.aps.org/doi/10.1103/Physics.19.s142)**  
    APS Physics · 2026-11-17  
-   Author(s): Ryan Wilkinson Measurements of quantum inductance could distinguish useful quasiparticles called Majorana zero modes from look-alike signals. [Physics 19, s142] Published Tue Nov 17, 2026
+   作者：Ryan Wilkinson 量子电感测量可以将称为马约拉纳零模的有用准粒子与相似信号区分开来。[Physics 19, s142] 发表于 2026 年 11 月 17 日，星期二
 
 ## 科研通知
 
-- **[CEPC Vertex detector TDR weekly meeting](https://indico.ihep.ac.cn/event/31534/)**  
+- **[CEPC顶点探测器TDR周会](https://indico.ihep.ac.cn/event/31534/)**  
    高能所 Indico · 2026-11-19  
    2026-11-19 — 2026-11-19
 - **[Cherenkov Detector Biweekly Meeting](https://indico.ihep.ac.cn/event/31523/)**  
