@@ -83,8 +83,19 @@
     "publisher_url": "https://www.science.org/doi/10.1126/science.aej5001",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-20T02:48:32+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
-    "abstract_checked_sources": []
+    "last_seen": "2026-11-21T02:57:39+00:00",
+    "abstract_checked_sources": [],
+    "translation_source_hash": "a17fc2f0aa2e27e16fbea4aab79368c5333106647f4b785fcc924c6b086e8527",
+    "record_aliases": [],
+    "abstract_source_type": "journal",
+    "figure_enrichment": "",
+    "arxiv_publication_checked": "",
+    "translation_legacy_hashes": {
+      "80167fbd80fcd2ec": "a17fc2f0aa2e27e16fbea4aab79368c5333106647f4b785fcc924c6b086e8527"
+    },
+    "merge_evidence": [
+      "record-id"
+    ]
   },
   {
     "id": "2178105a24feab1e",
@@ -159,7 +170,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-11-13T02:20:15+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "publication_links": [],
     "citation_authors": [
       "Zhao, Xinlin",
@@ -320,6 +331,105 @@
     "publication_status": "published"
   },
   {
+    "id": "bff8b512d26dac44",
+    "type": "paper",
+    "title": "System of agentic AI for the discovery of metal–organic frameworks",
+    "abstract": "Abstract Generative models and machine learning promise accelerated material discovery in metal–organic frameworks (MOFs) for CO 2 capture and water harvesting, but face substantial challenges in navigating vast chemical spaces while ensuring synthesizability. Here we present MOFGen, a system of agentic artificial intelligence (AI) comprising interconnected agents: a large language model that proposes MOF compositions, a diffusion model that generates crystal structures, quantum mechanical agents that optimize and filter candidates, and synthetic-feasibility agents guided by expert rules and machine learning. Trained on a broad set of experimentally reported MOFs and computational databases, MOFGen generated hundreds of thousands of MOF structures and synthesizable organic linkers. The uniqueness of our approach lies in its ability to generate large MOF structures with atomic precision, beyond the scale of conventional generative models limited to tens of atoms. This approach was validated through high-throughput experiments and the successful synthesis of four ‘AI-dreamt’ MOFs.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Théo Jaffrelot Inizan",
+      "Sherry Yang",
+      "Aaron Kaplan",
+      "Yen-hsu Lin",
+      "Jian Yin",
+      "Saber Mirzaei",
+      "Mona Abdelgaid",
+      "Ali H. Alawadhi",
+      "KwangHwan Cho",
+      "Zhiling Zheng",
+      "Ekin Dogus Cubuk",
+      "Christian Borgs",
+      "Jennifer T. Chayes",
+      "Kristin A. Persson",
+      "Omar M. Yaghi"
+    ],
+    "published": "2026-11-20",
+    "updated": "2026-11-20",
+    "source": "Nature Computational Science",
+    "source_short": "Nature Computational Science",
+    "source_type": "journal",
+    "doi": "10.1038/s43588-026-01058-x",
+    "arxiv_id": "",
+    "publication_links": [],
+    "url": "https://doi.org/10.1038/s43588-026-01058-x",
+    "pdf_url": "",
+    "categories": [
+      "ai-science",
+      "frontiers"
+    ],
+    "tags": [
+      "artificial intelligence",
+      "machine learning",
+      "large language model",
+      "quantum"
+    ],
+    "primary_topic": "ai-science",
+    "methods": [],
+    "classification_confidence": 0.8,
+    "classification_evidence": [
+      "artificial intelligence",
+      "machine learning",
+      "large language model",
+      "quantum"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +48",
+      "核物理研究侧重 +4",
+      "突破性表述 +8",
+      "跨领域关联 +2",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://creativecommons.org/licenses/by/4.0",
+      "https://creativecommons.org/licenses/by/4.0"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Inizan, Théo Jaffrelot",
+      "Yang, Sherry",
+      "Kaplan, Aaron",
+      "Lin, Yen-hsu",
+      "Yin, Jian",
+      "Mirzaei, Saber",
+      "Abdelgaid, Mona",
+      "Alawadhi, Ali H.",
+      "Cho, KwangHwan",
+      "Zheng, Zhiling",
+      "Cubuk, Ekin Dogus",
+      "Borgs, Christian",
+      "Chayes, Jennifer T.",
+      "Persson, Kristin A.",
+      "Yaghi, Omar M."
+    ],
+    "journal_abbrev": "Nat Comput Sci",
+    "volume": "6",
+    "issue": "11",
+    "pages": "1223-1234",
+    "numpages": "12",
+    "publisher": "Springer Science and Business Media LLC",
+    "publisher_url": "https://www.nature.com/articles/s43588-026-01058-x",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-21T02:57:39+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
+    "abstract_checked_sources": []
+  },
+  {
     "id": "6e287b86f4f4746a",
     "type": "paper",
     "title": "Long-Range and Short-Range Longitudinal Flow Decorrelations in the Quark-Gluon Plasma",
@@ -373,8 +483,29 @@
     "rights_status": "reusable",
     "figures": [],
     "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Jia, Jiangyong",
+      "Huang, Shengli",
+      "Zhang, Chunjian",
+      "Bhatta, Somadutta"
+    ],
+    "journal_abbrev": "Phys. Rev. Lett.",
+    "volume": "137",
+    "issue": "20",
+    "pages": "202301",
+    "numpages": "",
+    "publisher": "American Physical Society (APS)",
+    "publisher_url": "https://link.aps.org/doi/10.1103/l5j1-7b4d",
+    "citation_metadata_checked": true,
     "first_seen": "2026-09-30T00:57:41+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
+    "history_month": "2026-09",
+    "abstract_checked_sources": [
+      "期刊官网/Cite",
+      "OpenAlex",
+      "Semantic Scholar",
+      "INSPIRE"
+    ],
     "record_aliases": [
       "1d6e379b0410c895"
     ],
@@ -458,29 +589,8 @@
       "doi-or-publisher-relation"
     ],
     "translation_source_hash": "271f2f90c7b03a2750c3ad235cecd7dc04d7a191bee05ab1ec1688cefd82f8cc",
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ],
     "journal_ref": "Phys. Rev. Lett. 137, 202301 (2026)",
     "publication_link_source": "arXiv API",
-    "citation_authors": [
-      "Jia, Jiangyong",
-      "Huang, Shengli",
-      "Zhang, Chunjian",
-      "Bhatta, Somadutta"
-    ],
-    "journal_abbrev": "Phys. Rev. Lett.",
-    "volume": "137",
-    "issue": "20",
-    "pages": "202301",
-    "numpages": "",
-    "publisher": "American Physical Society (APS)",
-    "publisher_url": "https://link.aps.org/doi/10.1103/l5j1-7b4d",
-    "citation_metadata_checked": true,
-    "history_month": "2026-09",
     "publisher_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-11-13T02:20:15+00:00",
@@ -506,6 +616,84 @@
     },
     "journal_published": "2026-11-12",
     "publication_status": "published"
+  },
+  {
+    "id": "b0068791fa081cbb",
+    "type": "paper",
+    "title": "Double-membrane-spanning RNA export pores are a conserved feature in nidovirus replication organelles",
+    "abstract": "Abstract Upon infection, arteriviruses, coronaviruses, and other nidoviruses transform endoplasmic reticulum membranes into viral replication organelles. These include large numbers of double-membrane vesicles (DMVs) whose interior is considered the primary site of viral RNA synthesis. Early studies characterized nidovirus DMVs as sealed compartments, leaving it unclear how newly synthesized viral RNA could be exported to the cytosol. The discovery of DMV-spanning pore complexes in coronavirus-infected cells provided a plausible solution for this topological challenge. However, their structural organization, functional features, and evolutionary conservation across the nidovirus order, have remained unclear. Here, we investigate the macromolecular architecture of DMVs induced by two prototypic arteriviruses using cellular cryo-electron tomography. Despite the substantial evolutionary distance separating arteriviruses and coronaviruses, we observe DMV-spanning pore complexes with striking structural similarities to those previously described in coronaviruses. These pores may facilitate both export and encapsidation of viral RNA. In the absence of viral RNA synthesis, ectopic expression of the arterivirus transmembrane nonstructural proteins nsp2 and nsp3 suffices to induce the formation of pore-containing DMVs. Together, our findings reveal the conservation of key structural features of DMV pores across two distantly related nidovirus families and support a central role for these pores in nidovirus replication.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Stanley Fronik",
+      "Georg Wolff",
+      "Ronald W.A.L. Limpens",
+      "Anja W. M. de Jong",
+      "Shawn Zheng",
+      "David A. Agard",
+      "Abraham J. Koster",
+      "Eric J. Snijder",
+      "Montserrat Bárcena"
+    ],
+    "published": "2026-11-20",
+    "updated": "2026-11-20",
+    "source": "Nature Communications",
+    "source_short": "Nat. Commun.",
+    "source_type": "journal",
+    "doi": "10.1038/s41467-026-78986-9",
+    "arxiv_id": "",
+    "publication_links": [],
+    "url": "https://doi.org/10.1038/s41467-026-78986-9",
+    "pdf_url": "",
+    "categories": [
+      "frontiers"
+    ],
+    "tags": [
+      "topological"
+    ],
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "topological"
+    ],
+    "importance": 58,
+    "score_reasons": [
+      "来源权重 +48",
+      "突破性表述 +8",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://creativecommons.org/licenses/by/4.0",
+      "https://creativecommons.org/licenses/by/4.0"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Fronik, Stanley",
+      "Wolff, Georg",
+      "Limpens, Ronald W.A.L.",
+      "de Jong, Anja W. M.",
+      "Zheng, Shawn",
+      "Agard, David A.",
+      "Koster, Abraham J.",
+      "Snijder, Eric J.",
+      "Bárcena, Montserrat"
+    ],
+    "journal_abbrev": "Nat Commun",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "numpages": "",
+    "publisher": "Springer Science and Business Media LLC",
+    "publisher_url": "https://www.nature.com/articles/s41467-026-78986-9",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-21T02:57:39+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
+    "abstract_checked_sources": []
   },
   {
     "id": "7dee982f528c056e",
@@ -562,8 +750,19 @@
     "publisher_url": "https://www.science.org/doi/10.1126/science.aeo2674",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-20T02:48:32+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
-    "abstract_checked_sources": []
+    "last_seen": "2026-11-21T02:57:39+00:00",
+    "abstract_checked_sources": [],
+    "translation_source_hash": "eb4a2d3a1b7203e35f8aa2177be748aae7aaabbcaa50bea0625750b587215b70",
+    "record_aliases": [],
+    "abstract_source_type": "journal",
+    "figure_enrichment": "",
+    "arxiv_publication_checked": "",
+    "translation_legacy_hashes": {
+      "7dee982f528c056e": "eb4a2d3a1b7203e35f8aa2177be748aae7aaabbcaa50bea0625750b587215b70"
+    },
+    "merge_evidence": [
+      "record-id"
+    ]
   },
   {
     "id": "211fc46775c333f1",
@@ -701,7 +900,7 @@
     "publisher_url": "https://www.nature.com/articles/s41586-026-11295-9",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-19T02:55:06+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "6ba3c606010ab1d5dae2d035eb026c6bdadbbf43170379b3cfa8ed569dd11e60",
     "record_aliases": [],
@@ -785,7 +984,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/sciadv.aed9451",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-14T01:56:34+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "6679b98f425f8aa9d8db22d3306f1ff456cc24e33ca20e7bb46e812e2030e9d8",
     "record_aliases": [],
@@ -794,204 +993,6 @@
     "arxiv_publication_checked": "",
     "translation_legacy_hashes": {
       "f7c45bf3fda54d99": "6679b98f425f8aa9d8db22d3306f1ff456cc24e33ca20e7bb46e812e2030e9d8"
-    },
-    "merge_evidence": [
-      "record-id"
-    ]
-  },
-  {
-    "id": "f7a9dbcbdbd27f3f",
-    "type": "paper",
-    "title": "Poisoned hunting weapons, megafauna, and plant use at a 125,000-year-old Arabian paleolakeshore",
-    "abstract": "After the African origin of Homo sapiens , multiple dispersals radiated into Asia, yet the Saharo-Arabian archaeological record remains sparse. In this study, we report on ‘Uruq Aljelibah, a Middle Paleolithic site dated to ~125,000 years ago (marine isotope stage 5e) and located on the shore of Mundafan paleolake, Saudi Arabia. Levallois assemblages, refits, and megafaunal associations indicate in situ tool production and carcass processing. Stone tool residues, use-wear, and biomarkers reveal animal and plant processing, including palms, tubers, trees, and shrubs. Several points exhibit impact damage and poison residues (from Acokanthera schimperi ), indicating use as hafted weapon tips within composite hunting systems. Megafaunal remains include hippopotamus, buffalo, gazelle, ostrich, and camel, illuminating hominin use of freshwater and grassland ecosystems.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Chris Clarkson",
-      "Gilbert J. Price",
-      "Amir Kalifi",
-      "Giacomo Losi",
-      "Carney Matheson",
-      "Faisal Al-Jibreen",
-      "Abdullah M. Alsharekh",
-      "Simon J. Armitage",
-      "Ikram Blilou",
-      "Nicole Boivin",
-      "Paul S. Breeze",
-      "Nick Drake",
-      "Mathieu Duval",
-      "Sophia Gradwell",
-      "Huw S. Groucutt",
-      "Maria Guagnin",
-      "Juliana Guzmán",
-      "Laurence Hapiot",
-      "Virginia Martínez-Pillado",
-      "Jihede Haj Messaoud",
-      "Kasih Norman",
-      "Veerle Rots",
-      "Ian H. Sobbe",
-      "Mathew Stewart",
-      "Michael D. Petraglia",
-      "Frans van Buchem"
-    ],
-    "published": "2026-11-12",
-    "updated": "2026-11-12",
-    "source": "Science",
-    "source_short": "Science",
-    "source_type": "journal",
-    "doi": "10.1126/science.aef9342",
-    "arxiv_id": "",
-    "publication_links": [],
-    "url": "https://doi.org/10.1126/science.aef9342",
-    "pdf_url": "",
-    "categories": [
-      "frontiers"
-    ],
-    "tags": [],
-    "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
-    "importance": 58,
-    "score_reasons": [
-      "来源权重 +56",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Clarkson, Chris",
-      "Price, Gilbert J.",
-      "Kalifi, Amir",
-      "Losi, Giacomo",
-      "Matheson, Carney",
-      "Al-Jibreen, Faisal",
-      "Alsharekh, Abdullah M.",
-      "Armitage, Simon J.",
-      "Blilou, Ikram",
-      "Boivin, Nicole",
-      "Breeze, Paul S.",
-      "Drake, Nick",
-      "Duval, Mathieu",
-      "Gradwell, Sophia",
-      "Groucutt, Huw S.",
-      "Guagnin, Maria",
-      "Guzmán, Juliana",
-      "Hapiot, Laurence",
-      "Martínez-Pillado, Virginia",
-      "Messaoud, Jihede Haj",
-      "Norman, Kasih",
-      "Rots, Veerle",
-      "Sobbe, Ian H.",
-      "Stewart, Mathew",
-      "Petraglia, Michael D.",
-      "van Buchem, Frans"
-    ],
-    "journal_abbrev": "Science",
-    "volume": "394",
-    "issue": "6825",
-    "pages": "746-751",
-    "numpages": "6",
-    "publisher": "American Association for the Advancement of Science (AAAS)",
-    "publisher_url": "https://www.science.org/doi/10.1126/science.aef9342",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-11-13T02:20:15+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
-    "abstract_checked_sources": [],
-    "translation_source_hash": "e0b6ea6513326dd377e1812a1aa8a9b2bb1aed91ef26981435b811a2f8c8c936",
-    "record_aliases": [],
-    "abstract_source_type": "journal",
-    "figure_enrichment": "",
-    "arxiv_publication_checked": "",
-    "translation_legacy_hashes": {
-      "f7a9dbcbdbd27f3f": "e0b6ea6513326dd377e1812a1aa8a9b2bb1aed91ef26981435b811a2f8c8c936"
-    },
-    "merge_evidence": [
-      "record-id"
-    ]
-  },
-  {
-    "id": "2b383447757de5c8",
-    "type": "paper",
-    "title": "Giant elastoresistance in magic-angle twisted bilayer graphene",
-    "abstract": "Strongly correlated and topological phases in moiré materials are exquisitely sensitive to lattice geometry at both atomic and superlattice length scales. Twist angle, pressure, and strain directly modify the lattice and thus act as highly effective tuning parameters. Here, we examined electrical transport in twisted bilayer graphene subjected to continuous uniaxial strain. Near the magic angle (≈1.1°), devices exhibited a pronounced elastoresistance that depended on band filling and temperature, with a gauge factor more than two orders of magnitude larger than that of conventional metals. In selected doping regimes, the elastoresistance exhibited a Curie-Weiss–like temperature divergence. We discuss possible microscopic origins, including nematic fluctuations and enhanced electronic entropy from fluctuating isospin moments. Our work establishes uniaxial strain as a versatile probe of correlated physics in a moiré material.",
-    "abstract_status": "full",
-    "abstract_source": "Crossref",
-    "authors": [
-      "Xuetao Ma",
-      "Zhaoyu Liu",
-      "Jiaqi Cai",
-      "Kenji Watanabe",
-      "Takashi Taniguchi",
-      "Xiaodong Xu",
-      "Jiun-Haw Chu",
-      "Matthew Yankowitz"
-    ],
-    "published": "2026-11-12",
-    "updated": "2026-11-12",
-    "source": "Science",
-    "source_short": "Science",
-    "source_type": "journal",
-    "doi": "10.1126/science.adz0597",
-    "arxiv_id": "",
-    "publication_links": [],
-    "url": "https://doi.org/10.1126/science.adz0597",
-    "pdf_url": "",
-    "categories": [
-      "frontiers"
-    ],
-    "tags": [
-      "topological"
-    ],
-    "primary_topic": "frontiers",
-    "methods": [],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "topological"
-    ],
-    "importance": 58,
-    "score_reasons": [
-      "来源权重 +56",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Ma, Xuetao",
-      "Liu, Zhaoyu",
-      "Cai, Jiaqi",
-      "Watanabe, Kenji",
-      "Taniguchi, Takashi",
-      "Xu, Xiaodong",
-      "Chu, Jiun-Haw",
-      "Yankowitz, Matthew"
-    ],
-    "journal_abbrev": "Science",
-    "volume": "394",
-    "issue": "6825",
-    "pages": "768-772",
-    "numpages": "5",
-    "publisher": "American Association for the Advancement of Science (AAAS)",
-    "publisher_url": "https://www.science.org/doi/10.1126/science.adz0597",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-11-13T02:20:15+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
-    "abstract_checked_sources": [],
-    "translation_source_hash": "82659fe5a506a533783c22f1c985333fcf998d044bdca30bf1eb92a64055279d",
-    "record_aliases": [],
-    "abstract_source_type": "journal",
-    "figure_enrichment": "",
-    "arxiv_publication_checked": "",
-    "translation_legacy_hashes": {
-      "2b383447757de5c8": "82659fe5a506a533783c22f1c985333fcf998d044bdca30bf1eb92a64055279d"
     },
     "merge_evidence": [
       "record-id"

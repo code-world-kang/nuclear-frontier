@@ -1,5 +1,270 @@
 [
   {
+    "id": "bff8b512d26dac44",
+    "type": "paper",
+    "title": "System of agentic AI for the discovery of metal–organic frameworks",
+    "abstract": "Abstract Generative models and machine learning promise accelerated material discovery in metal–organic frameworks (MOFs) for CO 2 capture and water harvesting, but face substantial challenges in navigating vast chemical spaces while ensuring synthesizability. Here we present MOFGen, a system of agentic artificial intelligence (AI) comprising interconnected agents: a large language model that proposes MOF compositions, a diffusion model that generates crystal structures, quantum mechanical agents that optimize and filter candidates, and synthetic-feasibility agents guided by expert rules and machine learning. Trained on a broad set of experimentally reported MOFs and computational databases, MOFGen generated hundreds of thousands of MOF structures and synthesizable organic linkers. The uniqueness of our approach lies in its ability to generate large MOF structures with atomic precision, beyond the scale of conventional generative models limited to tens of atoms. This approach was validated through high-throughput experiments and the successful synthesis of four ‘AI-dreamt’ MOFs.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Théo Jaffrelot Inizan",
+      "Sherry Yang",
+      "Aaron Kaplan",
+      "Yen-hsu Lin",
+      "Jian Yin",
+      "Saber Mirzaei",
+      "Mona Abdelgaid",
+      "Ali H. Alawadhi",
+      "KwangHwan Cho",
+      "Zhiling Zheng",
+      "Ekin Dogus Cubuk",
+      "Christian Borgs",
+      "Jennifer T. Chayes",
+      "Kristin A. Persson",
+      "Omar M. Yaghi"
+    ],
+    "published": "2026-11-20",
+    "updated": "2026-11-20",
+    "source": "Nature Computational Science",
+    "source_short": "Nature Computational Science",
+    "source_type": "journal",
+    "doi": "10.1038/s43588-026-01058-x",
+    "arxiv_id": "",
+    "publication_links": [],
+    "url": "https://doi.org/10.1038/s43588-026-01058-x",
+    "pdf_url": "",
+    "categories": [
+      "ai-science",
+      "frontiers"
+    ],
+    "tags": [
+      "artificial intelligence",
+      "machine learning",
+      "large language model",
+      "quantum"
+    ],
+    "primary_topic": "ai-science",
+    "methods": [],
+    "classification_confidence": 0.8,
+    "classification_evidence": [
+      "artificial intelligence",
+      "machine learning",
+      "large language model",
+      "quantum"
+    ],
+    "importance": 64,
+    "score_reasons": [
+      "来源权重 +48",
+      "核物理研究侧重 +4",
+      "突破性表述 +8",
+      "跨领域关联 +2",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://creativecommons.org/licenses/by/4.0",
+      "https://creativecommons.org/licenses/by/4.0"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Inizan, Théo Jaffrelot",
+      "Yang, Sherry",
+      "Kaplan, Aaron",
+      "Lin, Yen-hsu",
+      "Yin, Jian",
+      "Mirzaei, Saber",
+      "Abdelgaid, Mona",
+      "Alawadhi, Ali H.",
+      "Cho, KwangHwan",
+      "Zheng, Zhiling",
+      "Cubuk, Ekin Dogus",
+      "Borgs, Christian",
+      "Chayes, Jennifer T.",
+      "Persson, Kristin A.",
+      "Yaghi, Omar M."
+    ],
+    "journal_abbrev": "Nat Comput Sci",
+    "volume": "6",
+    "issue": "11",
+    "pages": "1223-1234",
+    "numpages": "12",
+    "publisher": "Springer Science and Business Media LLC",
+    "publisher_url": "https://www.nature.com/articles/s43588-026-01058-x",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-21T02:57:39+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
+    "abstract_checked_sources": [],
+    "translation_source_hash": "394f46e283e8d359990e0e4dc9bf87f42ccc6917ab650c65397ba6068a78ecfe"
+  },
+  {
+    "id": "b0068791fa081cbb",
+    "type": "paper",
+    "title": "Double-membrane-spanning RNA export pores are a conserved feature in nidovirus replication organelles",
+    "abstract": "Abstract Upon infection, arteriviruses, coronaviruses, and other nidoviruses transform endoplasmic reticulum membranes into viral replication organelles. These include large numbers of double-membrane vesicles (DMVs) whose interior is considered the primary site of viral RNA synthesis. Early studies characterized nidovirus DMVs as sealed compartments, leaving it unclear how newly synthesized viral RNA could be exported to the cytosol. The discovery of DMV-spanning pore complexes in coronavirus-infected cells provided a plausible solution for this topological challenge. However, their structural organization, functional features, and evolutionary conservation across the nidovirus order, have remained unclear. Here, we investigate the macromolecular architecture of DMVs induced by two prototypic arteriviruses using cellular cryo-electron tomography. Despite the substantial evolutionary distance separating arteriviruses and coronaviruses, we observe DMV-spanning pore complexes with striking structural similarities to those previously described in coronaviruses. These pores may facilitate both export and encapsidation of viral RNA. In the absence of viral RNA synthesis, ectopic expression of the arterivirus transmembrane nonstructural proteins nsp2 and nsp3 suffices to induce the formation of pore-containing DMVs. Together, our findings reveal the conservation of key structural features of DMV pores across two distantly related nidovirus families and support a central role for these pores in nidovirus replication.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Stanley Fronik",
+      "Georg Wolff",
+      "Ronald W.A.L. Limpens",
+      "Anja W. M. de Jong",
+      "Shawn Zheng",
+      "David A. Agard",
+      "Abraham J. Koster",
+      "Eric J. Snijder",
+      "Montserrat Bárcena"
+    ],
+    "published": "2026-11-20",
+    "updated": "2026-11-20",
+    "source": "Nature Communications",
+    "source_short": "Nat. Commun.",
+    "source_type": "journal",
+    "doi": "10.1038/s41467-026-78986-9",
+    "arxiv_id": "",
+    "publication_links": [],
+    "url": "https://doi.org/10.1038/s41467-026-78986-9",
+    "pdf_url": "",
+    "categories": [
+      "frontiers"
+    ],
+    "tags": [
+      "topological"
+    ],
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "topological"
+    ],
+    "importance": 58,
+    "score_reasons": [
+      "来源权重 +48",
+      "突破性表述 +8",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://creativecommons.org/licenses/by/4.0",
+      "https://creativecommons.org/licenses/by/4.0"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Fronik, Stanley",
+      "Wolff, Georg",
+      "Limpens, Ronald W.A.L.",
+      "de Jong, Anja W. M.",
+      "Zheng, Shawn",
+      "Agard, David A.",
+      "Koster, Abraham J.",
+      "Snijder, Eric J.",
+      "Bárcena, Montserrat"
+    ],
+    "journal_abbrev": "Nat Commun",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "numpages": "",
+    "publisher": "Springer Science and Business Media LLC",
+    "publisher_url": "https://www.nature.com/articles/s41467-026-78986-9",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-21T02:57:39+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
+    "abstract_checked_sources": [],
+    "translation_source_hash": "c30c5a80d6a66294eeff8cc57caf1cb686b166c8d116c2dee5a1705bfc093c09"
+  },
+  {
+    "id": "000629e8d0d24e83",
+    "type": "paper",
+    "title": "Disaccharide production in marine cold seeps links dissolved organic carbon to anaerobic oxidation of methane",
+    "abstract": "Abstract Anaerobic oxidation of methane (AOM) has been proposed as a source of dissolved organic carbon (DOC) at marine cold seeps, but the underlying molecular mechanism for its production remains unknown. Here we demonstrate a previously unrecognized link between AOM and porewater DOC by analyzing disaccharides in sediment and porewaters from a methane-charged cold seep in Astoria Canyon (Oregon, USA). In the AOM zone, sediments contain up to 17.7 mg L −1 trehalose with δ 13 C values as low as −78‰, and porewaters contain up to 1 mg L −1 sucrose with δ 13 C values as low as −66‰, representing 4.6% of DOC. Stable isotope probing experiments reveal AOM-dependent biosynthesis of trehalose and sucrose, and both disaccharides turn over faster than diagnostic lipids, suggesting that these compounds serve as biomarkers for active AOM. Accordingly, disaccharides mediate a relationship that may sustain microbial food webs and influence carbon cycling in methane-rich marine sediments.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Lennart Stock",
+      "Gunter Wegener",
+      "John W. Pohlman",
+      "Laura L. Lapham",
+      "Karen G. Lloyd",
+      "Leketha Williams",
+      "Stian Torset",
+      "Ellen Lalk",
+      "Anna Hildebrand",
+      "Lukas Dirksen",
+      "Aman Akeerath Mundanatt",
+      "Rachel Wilson",
+      "Jeffrey S. Seewald",
+      "Manuel Liebeke",
+      "Marcus Elvert"
+    ],
+    "published": "2026-11-20",
+    "updated": "2026-11-20",
+    "source": "Nature Communications",
+    "source_short": "Nat. Commun.",
+    "source_type": "journal",
+    "doi": "10.1038/s41467-026-79632-0",
+    "arxiv_id": "",
+    "publication_links": [],
+    "url": "https://doi.org/10.1038/s41467-026-79632-0",
+    "pdf_url": "",
+    "categories": [
+      "frontiers"
+    ],
+    "tags": [],
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": [],
+    "importance": 50,
+    "score_reasons": [
+      "来源权重 +48",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [
+      "https://creativecommons.org/licenses/by/4.0",
+      "https://creativecommons.org/licenses/by/4.0"
+    ],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Stock, Lennart",
+      "Wegener, Gunter",
+      "Pohlman, John W.",
+      "Lapham, Laura L.",
+      "Lloyd, Karen G.",
+      "Williams, Leketha",
+      "Torset, Stian",
+      "Lalk, Ellen",
+      "Hildebrand, Anna",
+      "Dirksen, Lukas",
+      "Akeerath Mundanatt, Aman",
+      "Wilson, Rachel",
+      "Seewald, Jeffrey S.",
+      "Liebeke, Manuel",
+      "Elvert, Marcus"
+    ],
+    "journal_abbrev": "Nat Commun",
+    "volume": "17",
+    "issue": "1",
+    "pages": "11875",
+    "numpages": "",
+    "publisher": "Springer Science and Business Media LLC",
+    "publisher_url": "https://www.nature.com/articles/s41467-026-79632-0",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-21T02:57:39+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
+    "abstract_checked_sources": [],
+    "translation_source_hash": "9d7b27f1b3d124f12f587cf3943c761a40ea16056b27504bcb23e8efdd4822f3"
+  },
+  {
     "id": "80167fbd80fcd2ec",
     "type": "paper",
     "title": "Molecular adhesion for durable metal halide perovskite modules",
@@ -83,9 +348,19 @@
     "publisher_url": "https://www.science.org/doi/10.1126/science.aej5001",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-20T02:48:32+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "abstract_checked_sources": [],
-    "translation_source_hash": "a17fc2f0aa2e27e16fbea4aab79368c5333106647f4b785fcc924c6b086e8527"
+    "translation_source_hash": "a17fc2f0aa2e27e16fbea4aab79368c5333106647f4b785fcc924c6b086e8527",
+    "record_aliases": [],
+    "abstract_source_type": "journal",
+    "figure_enrichment": "",
+    "arxiv_publication_checked": "",
+    "translation_legacy_hashes": {
+      "80167fbd80fcd2ec": "a17fc2f0aa2e27e16fbea4aab79368c5333106647f4b785fcc924c6b086e8527"
+    },
+    "merge_evidence": [
+      "record-id"
+    ]
   },
   {
     "id": "7dee982f528c056e",
@@ -142,9 +417,19 @@
     "publisher_url": "https://www.science.org/doi/10.1126/science.aeo2674",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-20T02:48:32+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "abstract_checked_sources": [],
-    "translation_source_hash": "eb4a2d3a1b7203e35f8aa2177be748aae7aaabbcaa50bea0625750b587215b70"
+    "translation_source_hash": "eb4a2d3a1b7203e35f8aa2177be748aae7aaabbcaa50bea0625750b587215b70",
+    "record_aliases": [],
+    "abstract_source_type": "journal",
+    "figure_enrichment": "",
+    "arxiv_publication_checked": "",
+    "translation_legacy_hashes": {
+      "7dee982f528c056e": "eb4a2d3a1b7203e35f8aa2177be748aae7aaabbcaa50bea0625750b587215b70"
+    },
+    "merge_evidence": [
+      "record-id"
+    ]
   },
   {
     "id": "ed7af7e86c397dec",
@@ -215,7 +500,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/b11r-j369",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-20T02:48:32+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-11-20T02:48:32+00:00",
@@ -237,7 +522,17 @@
       "OpenAlex",
       "INSPIRE"
     ],
-    "translation_source_hash": "b7011c6f5c9d9597fb7fd4fcdde4689f46d0f24af4837fa6af59704804cf5524"
+    "translation_source_hash": "b7011c6f5c9d9597fb7fd4fcdde4689f46d0f24af4837fa6af59704804cf5524",
+    "record_aliases": [],
+    "abstract_source_type": "journal",
+    "figure_enrichment": "",
+    "arxiv_publication_checked": "",
+    "translation_legacy_hashes": {
+      "ed7af7e86c397dec": "b7011c6f5c9d9597fb7fd4fcdde4689f46d0f24af4837fa6af59704804cf5524"
+    },
+    "merge_evidence": [
+      "record-id"
+    ]
   },
   {
     "id": "7992eef2f345de14",
@@ -290,7 +585,6 @@
     "open_access": null,
     "license": "",
     "publisher_licenses": [
-      "https://creativecommons.org/licenses/by/4.0",
       "https://creativecommons.org/licenses/by/4.0"
     ],
     "rights_status": "unknown",
@@ -317,9 +611,19 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-79368-x",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-20T02:48:32+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "abstract_checked_sources": [],
-    "translation_source_hash": "18f77e8701493509b54474c5b6a8cda491e5aa4f9113b41fed62be7ab004b2e8"
+    "translation_source_hash": "18f77e8701493509b54474c5b6a8cda491e5aa4f9113b41fed62be7ab004b2e8",
+    "record_aliases": [],
+    "abstract_source_type": "journal",
+    "figure_enrichment": "",
+    "arxiv_publication_checked": "",
+    "translation_legacy_hashes": {
+      "7992eef2f345de14": "18f77e8701493509b54474c5b6a8cda491e5aa4f9113b41fed62be7ab004b2e8"
+    },
+    "merge_evidence": [
+      "record-id"
+    ]
   },
   {
     "id": "211fc46775c333f1",
@@ -457,7 +761,7 @@
     "publisher_url": "https://www.nature.com/articles/s41586-026-11295-9",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-19T02:55:06+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "6ba3c606010ab1d5dae2d035eb026c6bdadbbf43170379b3cfa8ed569dd11e60",
     "record_aliases": [],
@@ -608,7 +912,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/smcg-h16w",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-19T02:55:06+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-11-19T02:55:06+00:00",
@@ -709,7 +1013,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/sgtd-c4zg",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-19T02:55:06+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "18896d1af9c54fcb2b28a35e17d8afc2bc0567128ff12fb60776e06eabba768a",
     "record_aliases": [],
@@ -754,7 +1058,8 @@
         "publisher": "American Physical Society (APS)",
         "publisher_url": "https://link.aps.org/doi/10.1103/sgtd-c4zg",
         "citation_metadata_checked": true,
-        "translation_source_hash": "18896d1af9c54fcb2b28a35e17d8afc2bc0567128ff12fb60776e06eabba768a"
+        "translation_source_hash": "18896d1af9c54fcb2b28a35e17d8afc2bc0567128ff12fb60776e06eabba768a",
+        "pdf_url": "https://arxiv.org/pdf/2604.09534"
       }
     ],
     "journal_published": "2026-11-18",
@@ -827,7 +1132,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-79566-7",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-18T03:16:34+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "c44b9be07c771ebbe5b07b36cb8d16da3b5f03157759649ed8bcdb2a745c5651",
     "record_aliases": [],
@@ -911,7 +1216,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-79078-4",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-17T04:17:49+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "publisher_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-11-17T04:17:49+00:00",
@@ -1006,7 +1311,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-11-13T02:20:15+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "publication_links": [],
     "citation_authors": [
       "Zhao, Xinlin",
@@ -1236,7 +1541,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/sciadv.aed9451",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-14T01:56:34+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "6679b98f425f8aa9d8db22d3306f1ff456cc24e33ca20e7bb46e812e2030e9d8",
     "record_aliases": [],
@@ -1322,7 +1627,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/sciadv.aei1433",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-14T01:56:34+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "ef58d143e23ac35937af3a15f218fdc4cb34dd3c76bcd8bf36603852b719db79",
     "record_aliases": [],
@@ -1391,7 +1696,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/sciadv.aej3501",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-13T02:20:15+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "6fd5633077f8dffe41955d412e01caa7db52ad8755344d517fa8d48b671ff075",
     "record_aliases": [],
@@ -1470,7 +1775,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/sciadv.aef6864",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-14T01:56:34+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "d9ffc11cb97c7109ddf92b885bb86f94686ce3935a0eeba58cc0774c42fbb622",
     "record_aliases": [],
@@ -1553,7 +1858,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/l5j1-7b4d",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-30T00:57:41+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "history_month": "2026-09",
     "abstract_checked_sources": [
       "期刊官网/Cite",
@@ -1773,7 +2078,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/science.aef9342",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-13T02:20:15+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "e0b6ea6513326dd377e1812a1aa8a9b2bb1aed91ef26981435b811a2f8c8c936",
     "record_aliases": [],
@@ -1856,7 +2161,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/science.adz0597",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-13T02:20:15+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "82659fe5a506a533783c22f1c985333fcf998d044bdca30bf1eb92a64055279d",
     "record_aliases": [],
@@ -1942,7 +2247,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/dgdr-mx1d",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-20T00:52:38+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "history_month": "2026-10",
     "abstract_checked_sources": [
       "期刊官网/Cite",
@@ -2130,7 +2435,7 @@
     "publisher_url": "https://www.nature.com/articles/s41534-026-01393-x",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-12T02:39:57+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "1a9a1fe7387958a6ff67ff400543056d5c2b8ec2debd3ab877621db598a13c10",
     "record_aliases": [],
@@ -2209,7 +2514,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/j57s-pp4y",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-10T03:56:23+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-11-17T04:17:49+00:00",
@@ -2330,7 +2635,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-79065-9",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-09T01:22:03+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "publisher_abstract_enrichment": {
       "status": "not_found",
       "checked_at": "2026-11-09T01:22:03+00:00",
@@ -2423,7 +2728,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-79077-5",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-09T01:22:03+00:00",
-    "last_seen": "2026-11-20T02:48:32+00:00",
+    "last_seen": "2026-11-21T02:57:39+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "b12542b14acde288d9ad815d430be6fe84c6c1f712ce8af77d074434d86af320",
     "record_aliases": [],
@@ -9788,419 +10093,6 @@
     "journal_published": "2026-11-01",
     "merge_evidence": [
       "doi-or-publisher-relation",
-      "record-id"
-    ]
-  },
-  {
-    "id": "01683a3e52cb6cfb",
-    "type": "paper",
-    "title": "The SiPM readout plane for the ePIC-dRICH detector at the EIC: Overview and beam test results",
-    "abstract": "The dual-radiator Ring Imaging Cherenkov (dRICH) detector of the ePIC experiment, in preparation for the future Electron-Ion Collider (EIC), will rely on Silicon Photomultipliers (SiPMs) to detect single Cherenkov photons over a curved surface of about 3m 2 , segmented into 3 × 3mm 2 pixels for a total exceeding 300k readout channels. This is the first deployment of SiPMs as single-photon detectors in a collider experiment, a choice motivated by their low cost, high photon-detection efficiency and complete immunity to the magnetic field ( ≈ 1T) at the dRICH location. The principal drawback of SiPMs is their sensitivity to radiation, which progressively increases the dark count rate (DCR): preserving single-photon counting therefore requires sub-zero operation, fast time-tagging to gate out uncorrelated hits, and periodic high-temperature annealing to recover the accumulated damage. This contribution reviews the ePIC-dRICH photodetector and the associated R&D, with particular emphasis on the radiation-tolerance strategy and on the performance of a large-area prototype readout plane instrumenting up to 2048 SiPMs. The prototype is built from photodetection units (PDUs), a modular block developed by INFN that integrates 256 SiPM pixels together with cooling and Time-to-Digital-Converter electronics within a volume of ≈ 5 × 5 × 14cm 3 . Several PDUs were operated with charged-particle beams at the CERN-PS in 2022, 2023 and 2024, using a complete front-end and readout chain based on the ALCOR ASIC developed by INFN Torino. Dedicated irradiation and annealing campaigns indicate that an in-situ annealing programme can preserve the SiPM single-photon performance throughout the full ePIC physics programme.",
-    "abstract_status": "full",
-    "abstract_source": "INSPIRE",
-    "authors": [
-      "N. Rubini",
-      "B.R. Achari",
-      "N. Agrawal",
-      "M. Alexeev",
-      "C. Alice",
-      "R. Ammendola",
-      "P. Antonioli",
-      "C. Baldanza",
-      "L. Barion",
-      "A. Biagioni",
-      "A. Calivà",
-      "M. Capua",
-      "F. Capuani",
-      "A. Ciardiello",
-      "E. Cisbani",
-      "M. Chiosso",
-      "M. Contalbrigo",
-      "F. Cossio",
-      "M. Da Rocha Rolo",
-      "A. De Caro",
-      "D. De Gruttola",
-      "G. Dellacasa",
-      "D. Falchieri",
-      "S. Fazio",
-      "O. Frezza",
-      "N. Funicello",
-      "M. Garbini",
-      "S. Geminiani",
-      "N. Jacazio",
-      "F. Lo Cicero",
-      "A. Lonardo",
-      "R. Malaguti",
-      "F. Mammoliti",
-      "M. Martinelli",
-      "M. Mignone",
-      "C. Mingioni",
-      "M. Nenni",
-      "F. Noto",
-      "L. Occhiuto",
-      "A. Paladino"
-    ],
-    "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "source": "Nuclear Instruments and Methods in Physics Research A",
-    "source_short": "NIMA",
-    "source_type": "journal",
-    "doi": "10.1016/j.nima.2026.171751",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1016/j.nima.2026.171751",
-    "pdf_url": "",
-    "categories": [
-      "detectors-daq"
-    ],
-    "tags": [
-      "SiPM"
-    ],
-    "primary_topic": "detectors-daq",
-    "methods": [
-      "experimental",
-      "review"
-    ],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "SiPM"
-    ],
-    "importance": 59,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +17",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "https://doi.org/10.15223/policy-017",
-      "https://doi.org/10.15223/policy-037",
-      "https://doi.org/10.15223/policy-012",
-      "https://doi.org/10.15223/policy-029",
-      "https://doi.org/10.15223/policy-004"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Rubini, N.",
-      "Achari, B.R.",
-      "Agrawal, N.",
-      "Alexeev, M.",
-      "Alice, C.",
-      "Ammendola, R.",
-      "Antonioli, P.",
-      "Baldanza, C.",
-      "Barion, L.",
-      "Biagioni, A.",
-      "Calivà, A.",
-      "Capua, M.",
-      "Capuani, F.",
-      "Ciardiello, A.",
-      "Cisbani, E.",
-      "Chiosso, M.",
-      "Contalbrigo, M.",
-      "Cossio, F.",
-      "Da Rocha Rolo, M.",
-      "De Caro, A.",
-      "De Gruttola, D.",
-      "Dellacasa, G.",
-      "Falchieri, D.",
-      "Fazio, S.",
-      "Frezza, O.",
-      "Funicello, N.",
-      "Garbini, M.",
-      "Geminiani, S.",
-      "Jacazio, N.",
-      "Cicero, F. Lo",
-      "Lonardo, A.",
-      "Malaguti, R.",
-      "Mammoliti, F.",
-      "Martinelli, M.",
-      "Mignone, M.",
-      "Mingioni, C.",
-      "Nenni, M.",
-      "Noto, F.",
-      "Occhiuto, L.",
-      "Paladino, A."
-    ],
-    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
-    "volume": "1091",
-    "issue": "",
-    "pages": "171751",
-    "numpages": "",
-    "publisher": "Elsevier BV",
-    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004778",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-15T01:29:15+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-11-01T00:37:12+00:00",
-      "source": "Publisher",
-      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004778"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-11-01T00:37:12+00:00",
-      "source": "OpenAlex"
-    },
-    "semantic_scholar_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-11-01T00:37:12+00:00",
-      "source": "Semantic Scholar"
-    },
-    "abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-11-01T00:37:12+00:00",
-      "source": "INSPIRE"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex",
-      "Semantic Scholar",
-      "INSPIRE"
-    ],
-    "summary": "",
-    "content": "",
-    "translation_source_hash": "f8bcea35b7b2d1e44569f1fac4b37c45e00a34ea2d3cf575ba548d7e77b5e56c",
-    "publication_links": [],
-    "record_aliases": [],
-    "abstract_source_type": "journal",
-    "figure_enrichment": "",
-    "arxiv_publication_checked": "",
-    "translation_legacy_hashes": {
-      "01683a3e52cb6cfb": "f8bcea35b7b2d1e44569f1fac4b37c45e00a34ea2d3cf575ba548d7e77b5e56c"
-    },
-    "merge_evidence": [
-      "record-id"
-    ]
-  },
-  {
-    "id": "409b63f3921121db",
-    "type": "paper",
-    "title": "TOSCA: A large-area position sensitive detector for sub-nanosecond time-of-flight applications involving charged radiation",
-    "abstract": "A large-area, position-sensitive, passing-through detector unit, named TOSCA ( T ime- O f-flight-sub-nano-second S pectrometer for C harged radiation A pplications), has been developed for use in Time-Of-Flight (TOF) spectrometers. The detector provides simultaneous measurements of timing and two-dimensional impact position of traversing ions by detecting secondary electrons emitted from a thin conversion foil. The electrons are guided by electrostatic optics toward a microchannel plate amplification stage and collected on a pads-and-strips anode integrated into a printed circuit board, replacing conventional wire-based delay-line readout systems. Position resolutions of the order of 1 mm and intrinsic time resolutions better than 100 ps have been achieved when coupled to fast sampling electronics. The passing-through architecture ensures that only electrons reach the microchannel plates, resulting in improved radiation hardness and extended detector lifetime. The use of identical, fully position-sensitive TOSCA units as both Start and Stop detectors removes the functional asymmetry typical of conventional TOF spectrometers and enables multi-point trajectory measurements within a single TOF arm. This approach allows the realization of compact and flexible two-arm TOF spectrometers based on four identical detector modules. In-beam tests with heavy ions demonstrate the performance and potential of the TOSCA concept for high-resolution mass and energy measurements in heavy-ion reaction studies.",
-    "abstract_status": "full",
-    "abstract_source": "OpenAlex",
-    "authors": [
-      "Emanuele Vardaci",
-      "Antonio Vanzanella",
-      "Tathagata Banerjee",
-      "Antonio Di Nitto",
-      "Alfonso Boiano",
-      "Francesco Cassese",
-      "Giuseppe Passeggio",
-      "Gennaro Tortone",
-      "Pia A. Setaro",
-      "Daniela Mercogliano",
-      "Wladyslaw H. Trzaska",
-      "Saket Suman",
-      "Malika Kaushik",
-      "Davide Panico",
-      "Simona Di Costanzo",
-      "Giuseppe Alifano",
-      "Antonio Cicchella",
-      "Corrado Della Noce"
-    ],
-    "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "source": "Nuclear Instruments and Methods in Physics Research A",
-    "source_short": "NIMA",
-    "source_type": "journal",
-    "doi": "10.1016/j.nima.2026.171746",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1016/j.nima.2026.171746",
-    "pdf_url": "",
-    "categories": [
-      "detectors-daq"
-    ],
-    "tags": [
-      "TOF"
-    ],
-    "primary_topic": "detectors-daq",
-    "methods": [
-      "experimental"
-    ],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "TOF"
-    ],
-    "importance": 59,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +17",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Vardaci, Emanuele",
-      "Vanzanella, Antonio",
-      "Banerjee, Tathagata",
-      "Nitto, Antonio Di",
-      "Boiano, Alfonso",
-      "Cassese, Francesco",
-      "Passeggio, Giuseppe",
-      "Tortone, Gennaro",
-      "Setaro, Pia A.",
-      "Mercogliano, Daniela",
-      "Trzaska, Wladyslaw H.",
-      "Suman, Saket",
-      "Kaushik, Malika",
-      "Panico, Davide",
-      "Costanzo, Simona Di",
-      "Alifano, Giuseppe",
-      "Cicchella, Antonio",
-      "Noce, Corrado Della"
-    ],
-    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
-    "volume": "1091",
-    "issue": "",
-    "pages": "171746",
-    "numpages": "",
-    "publisher": "Elsevier BV",
-    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004729",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-15T01:29:15+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-11-01T00:37:12+00:00",
-      "source": "Publisher",
-      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004729"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-11-01T00:37:12+00:00",
-      "source": "OpenAlex"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex"
-    ],
-    "summary": "",
-    "content": "",
-    "translation_source_hash": "55e1cce670792b3668053b70832f0fa981e4a05327de496a6b7b2c99b46994bb",
-    "publication_links": [],
-    "record_aliases": [],
-    "abstract_source_type": "journal",
-    "figure_enrichment": "",
-    "arxiv_publication_checked": "",
-    "translation_legacy_hashes": {
-      "409b63f3921121db": "55e1cce670792b3668053b70832f0fa981e4a05327de496a6b7b2c99b46994bb"
-    },
-    "merge_evidence": [
-      "record-id"
-    ]
-  },
-  {
-    "id": "25d5189b88e23cc4",
-    "type": "paper",
-    "title": "Simulation of the electrical performance of the ITk ATLAS18 test diode and strip main sensors before irradiation",
-    "abstract": "This paper presents a two-dimensional (2D) Sentaurus TCAD model tuned using optical and electrical characterization data from test diodes fabricated on the same wafer as the strip sensors. The simulation incorporates bulk defect models extracted from deep-level transient spectroscopy (DLTS) measurements, together with a dedicated oxide–silicon interface model in the peripheral region to improve agreement with laboratory measurements. The tuned model is then applied to the ITk main strip sensors, where the simulations show good agreement with the extensive Quality Control data collected during sensor reception and acceptance measurements.",
-    "abstract_status": "full",
-    "abstract_source": "OpenAlex",
-    "authors": [
-      "Y. Zhao",
-      "C.T. Klein",
-      "J. Dandoy",
-      "J. Keller",
-      "E. Staats",
-      "C. Jessiman",
-      "T. Koffas",
-      "V. Fadeyev",
-      "M. Ullan",
-      "Y. Unno"
-    ],
-    "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "source": "Nuclear Instruments and Methods in Physics Research A",
-    "source_short": "NIMA",
-    "source_type": "journal",
-    "doi": "10.1016/j.nima.2026.171692",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1016/j.nima.2026.171692",
-    "pdf_url": "",
-    "categories": [
-      "detectors-daq"
-    ],
-    "tags": [],
-    "primary_topic": "detectors-daq",
-    "methods": [
-      "experimental",
-      "theoretical"
-    ],
-    "classification_confidence": 0.38,
-    "classification_evidence": [],
-    "importance": 59,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +17",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Zhao, Y.",
-      "Klein, C.T.",
-      "Dandoy, J.",
-      "Keller, J.",
-      "Staats, E.",
-      "Jessiman, C.",
-      "Koffas, T.",
-      "Fadeyev, V.",
-      "Ullan, M.",
-      "Unno, Y."
-    ],
-    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
-    "volume": "1091",
-    "issue": "",
-    "pages": "171692",
-    "numpages": "",
-    "publisher": "Elsevier BV",
-    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004183",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-15T01:29:15+00:00",
-    "openalex_abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-11-01T00:37:12+00:00",
-      "source": "OpenAlex"
-    },
-    "abstract_checked_sources": [
-      "OpenAlex"
-    ],
-    "summary": "",
-    "content": "",
-    "translation_source_hash": "5123c42d20628a3d04399f42c21574eec1c1a1fc8401f1be7eb37fa086dfd119",
-    "publication_links": [],
-    "record_aliases": [],
-    "abstract_source_type": "journal",
-    "figure_enrichment": "",
-    "arxiv_publication_checked": "",
-    "translation_legacy_hashes": {
-      "25d5189b88e23cc4": "5123c42d20628a3d04399f42c21574eec1c1a1fc8401f1be7eb37fa086dfd119"
-    },
-    "merge_evidence": [
       "record-id"
     ]
   }
