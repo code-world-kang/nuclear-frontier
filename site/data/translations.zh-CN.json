@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T14:37:05.289091+00:00",
+  "generated_at": "2026-11-22T14:35:06.310919+00:00",
   "provider": "mixed",
   "items": {
     "03fb0be72e560764": {
@@ -25707,14 +25707,16 @@
       "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
     },
     "6356539ea006bc1d": {
-      "title_zh": "质子和中子在氦靶上的弹性散射，基于从头计算的对称适应无芯壳模型光学势",
-      "abstract_zh": "",
-      "translated_at": "2026-10-23T00:36:14.040003+00:00",
-      "provider": "open-source-local",
-      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "source_hash": "6d55477ec13375f089950e3ebf5043fb69b5d64457a901445baf8ee191f27a38",
+      "title_zh": "基于从头算对称性适配无芯壳模型光学势的质子和中子在 He 靶上的弹性散射",
+      "abstract_zh": "我们构建并讨论了低能下针对 3 , 4 , 6 He 靶的核子–原子核光学势。在本工作中，我们使用 SA-NCSM/GF 方法，该方法将对称性适配无芯壳模型与格林函数技术相结合来构建光学势，并将这一形式体系扩展至质子散射和具有非零自旋的靶。我们表明，这些光学势能够非常好地再现实验微分截面以及质子和中子弹性散射的相移。SA-NCSM/GF 方法提供了非局域、能量依赖且具有色散性的光学势，适用于与天体物理相关的低能区以及奇异核；对于后者，实验很困难，而且数据通常无法获得。",
+      "translated_at": "2026-11-22T14:34:28.209748+00:00",
+      "source_hash": "a23d03f02d5b6030ac93b8c47342e077d1504c886d43d09b2a5f95334c718763",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
       "quality": "machine_draft",
-      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "173f51e1958ecc4d": {
       "title_zh": "轻原子核的新前景，裂变聚变能循环",
@@ -41363,16 +41365,16 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "490baec52208b430": {
-      "title_zh": "包含介子交换贡献的 129 Xe 和 131 Xe 上带电流中微子-原子核散射",
-      "abstract_zh": "",
-      "translated_at": "2026-11-08T12:49:20.925101+00:00",
-      "source_hash": "3badec782e4db81232e9de01005647f14bfee8cadde5701268587d9d161dcfe0",
+      "title_zh": "包含介子交换贡献的 129 Xe 和 131 Xe 上带电流中微子–原子核散射",
+      "abstract_zh": "液氙探测器中（反）中微子在探测器材料上的散射截面对于暗物质搜寻和中微子物理都具有重要意义。由于不存在直接观测到的实验截面，因此有必要在此使用计算得到的截面。在本工作中，我们给出了带电流（反）中微子在偶–奇氙原子核 129 , 131 Xe 上的散射截面。为此，我们在大单粒子价空间中使用基于 G-矩阵的双核子相互作用。我们使用微观准粒子–声子模型对所涉及的原子核进行建模，由 BCS（Bardeen–Cooper–Schrieffer）准粒子和相邻偶–偶原子核的 QRPA（Quasiparticle Random Phase Approximation）声子构建偶–奇和奇–偶原子核的态。此前已经对 129 , 131 Xe 进行过此类计算，但在这里，我们通过纳入介子交换二体流（2BC）的效应而超越了早期工作；该效应能够自然解释弱轴矢量耦合 g A 猝灭的一部分。与仅含唯象猝灭一体流（1BC-only）的模型进行比较表明，纳入 2BC 可以解释 g A 猝灭的大部分。",
+      "translated_at": "2026-11-22T14:34:28.210504+00:00",
+      "source_hash": "02c4e09603867a47adb5490e1b5eea6081ab46997bcbac423e831fcf8cff4e1f",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "0892e36a4e5afeab": {
       "title_zh": "由衬底弯曲驱动的腔光力学磁强计",
@@ -58379,16 +58381,16 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "63c18b3953c6a119": {
-      "title_zh": "Rh 95和Ru 95中的寿命测量：对N = 50同中子素中资历守恒的研究",
-      "abstract_zh": "",
-      "translated_at": "2026-11-10T04:41:14.758224+00:00",
-      "source_hash": "bd0fdc38bd79d72f7f112d4951427ad3597275b32bf0566ce4c813b07e120bbe",
+      "title_zh": "Rh 95和Ru 95中的寿命测量：对N = 50同中子异位素中资历数守恒的研究",
+      "abstract_zh": "通过熔合-蒸发反应布居了$^{95}\\mathrm{Rh}$和$^{95}\\mathrm{Ru}$中的激发态，并使用由LaBr闪烁体和高纯锗探测器组成的装置，通过快定时技术测量了它们的寿命。所得寿命用于计算约化四极跃迁概率，并在$1\\ensuremath{\\pi}{g}_{9/2}$轨道中资历数守恒的背景下进行了讨论。与最新的实验发现相反，新的实验数据表明，资历数对称性在半满壳原子核$^{95}\\mathrm{Rh}$中部分守恒。",
+      "translated_at": "2026-11-22T14:34:40.488471+00:00",
+      "source_hash": "7fbf16ae6322d1e3fde04b864b6635d716ea2b31d336b3933739b1834e53560f",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "ae86d6dd6c5571a3": {
       "title_zh": "用于预测超重元素合成最佳入射能量的贝叶斯岭回归校准核质量过剩",
@@ -439559,16 +439561,16 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "209a17d9d0bba362": {
-      "title_zh": "利用能量-能量关联器探测重离子碰撞中的喷注-介质相互作用",
-      "abstract_zh": "",
-      "translated_at": "2026-11-19T05:52:43.690146+00:00",
-      "source_hash": "f311079a9277a443104da4294987d24d7a3e4139b33e58d50975ffb81bfdaeae",
+      "title_zh": "利用能量-能量关联量探测重离子碰撞中的喷注-介质相互作用",
+      "abstract_zh": "能量-能量关联量（EECs）为探测相对论重离子碰撞中的微扰和非微扰动力学提供了灵敏的手段。喷注-介质相互作用会增强喷注锥内的粒子多重数，在实验中提取喷注簇射强子的EEC时必须恰当地计及这一点。为解决这一问题，我们开发了一种利用近侧区域与远侧区域之间动量守恒的增广方法，采用由CoLBT-hydro模型模拟的Pb+Pb碰撞中中心度为0-10\\%的$\\gamma$-喷注事例，碰撞能量为$\\sqrt{s_{NN}} = 5.02$ TeV。该方法得到的实验重建EEC与主要源自喷注部分子劈裂的强子的EEC符合得更好。比较具有不同匹配条件的Pb+Pb和p+p碰撞喷注的EECs，可以对喷注-介质相互作用动力学敏感，并为检验喷注在QGP中损失能量、随后在QGP外发生碎裂的情景提供一种新手段。",
+      "translated_at": "2026-11-22T14:34:40.488346+00:00",
+      "source_hash": "f2200ab736a647d2514a88c3d99f357aeef5fe6f41f06094ec0e7576f15d9508",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "27f79c02b681f088": {
       "title_zh": "关于在类 ARC 情景中使用真空室外线圈对垂直不稳定性增长率进行基于模型调节的可行性",
@@ -440124,15 +440126,15 @@
     },
     "f90406a6657ae71f": {
       "title_zh": "因果簇中夸克层次的精确味守恒：小碰撞系统中的奇异粒子、质子和轻原子核",
-      "abstract_zh": "",
-      "translated_at": "2026-11-19T05:53:20.142163+00:00",
-      "source_hash": "346fe222c7d8298633aa9917075191a5259b85e88937501deca573a6f38845ca",
+      "abstract_zh": "最近，通过在强子化之前对因果关联簇中的夸克施加精确的奇异数守恒，已经描述了LHC上pp和p--Pb碰撞中包括$\\phi$介子在内的奇异强子的压低。在此，我们将这一方法扩展到轻味。上夸克和下夸克以及反夸克的数目在同一簇中守恒，而重子或原子核的压低仅取决于其包含的每种味的轻夸克数目。奇异味扇区由先前的分析固定后，单个常数，即轻夸克与奇异夸克丰度之比$r$，决定了pp和p--Pb碰撞中质子、氘核、He和超氚核的多重数依赖性。计及原子核的有限尺寸后，得到对数据非常好的拟合，$r=3.76\\pm0.38$，即奇异夸克的丰度约为每种味轻夸克丰度的0.27倍，接近弦碎裂中已知的数值",
+      "translated_at": "2026-11-22T14:34:40.488172+00:00",
+      "source_hash": "7f3183633463645bc4ca9913e7e08128416f0576c2c48cfa136d4769ef705da0",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "881c60450d8da06a": {
       "title_zh": "ATLAS 高粒度定时探测器 LGAD 传感器的质量控制",
@@ -441419,16 +441421,16 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
     },
     "ebfb37feed71578c": {
-      "title_zh": "核基态的高阶微扰计算：多体图的自动化求值",
-      "abstract_zh": "",
-      "translated_at": "2026-11-20T14:39:52.071412+00:00",
-      "source_hash": "304127b3d48254fc698e233c2c3541e4d203946486d1fde32c3205680900c3b4",
+      "title_zh": "原子核基态的高阶微扰计算：多体图的自动化求值",
+      "abstract_zh": "我们将闭壳层原子核基态能量和半径的多体微扰理论（MBPT）计算推进至三阶以上。通过自动生成图并求值至五阶，我们给出了直至$^{78}$Ni的若干闭壳层原子核的基态性质，其中采用了由手征有效场论导出的二核子和三核子相互作用。基态能量呈现出清晰的收敛趋势，从而能够以更高的精度进行计算。我们还详细研究了四阶贡献的分解。对于基态能量，四阶贡献的大小通常不到三阶贡献的一半，并且观察到不同类别的图之间存在典型的抵消。最后，我们对MBPT与非微扰介质内相似重整化群（IMSRG）计算进行了全面比较，旨在深入了解与IMSRG(2)截断相关的多体不确定性。",
+      "translated_at": "2026-11-22T14:34:40.487953+00:00",
+      "source_hash": "bf28aea32ec2a197f9933f2393abaaa7518a72298264112d12d964ffdd1e318d",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "4eaaeaf5d83b9b89": {
       "title_zh": "核物质中的重整化群密度泛函理论",
@@ -442947,6 +442949,18 @@
       "abstract_zh": "摘要 实验聚变反应堆 ITER 依靠中性束注入器作为辅助加热系统，为聚变等离子体提供 33 MW 的加热功率。ITER 中性束通过对加速至 1 MeV 的氢/氘负离子束进行中性化获得。离子源由射频（RF）发生器供能的感应耦合等离子体构成，其中需要磁过滤场来降低引出区中的电子温度和密度，最大限度地减少负离子的破坏。然而，研究发现，驱动器区域中过强的过滤场会限制 RF 耦合，因此促使人们研究在 RF 驱动器周围设置静磁屏蔽，以屏蔽杂散磁场并减弱过滤场对驱动器等离子体的影响，同时不损害引出区中的电子过滤。本工作介绍了静磁屏蔽效应的等离子体表征研究，该屏蔽在 SPIDER 和 MINION 上进行了测试；这两个测试设施位于意大利 Padova 的 Consorzio RFX，并隶属于中性束测试设施（NBTF）。文中讨论了 SPIDER 的结果，重点关注利用 Langmuir 探针和光发射光谱测得的等离子体性质，并由碰撞辐射（CR）模型提供支持。结果表明，即使在过滤场值较高时，引出的负离子电流密度也几乎不受屏蔽影响，同时可实现更宽范围的等离子体栅极电流，且 RF 驱动器对中不存在左右不对称性。",
       "translated_at": "2026-11-21T14:36:18.399706+00:00",
       "source_hash": "e4de9b1232580a7a5d040612076e66cb053a9cc557045b07386938c5805f11a3",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "adbe5418e11ed5a0": {
+      "title_zh": "信息悖论可能解决方案的半个世纪",
+      "abstract_zh": "作者：Philip Ball 落入黑洞的信息命运仍是一个谜，尽管人们已提出许多关于如何解决这一问题的设想。[Physics 19, 159] 发表于 2026 年 11 月 20 日星期五",
+      "translated_at": "2026-11-22T14:34:28.209295+00:00",
+      "source_hash": "2924f7705d96203a12518232f6787fc89026fa4264af43bb9e138e9626ed7ffb",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
@@ -445687,6 +445701,18 @@
         "preserved_previous_title": false,
         "content_validation": "disabled",
         "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      },
+      "bd0fdc38bd79d72f7f112d4951427ad3597275b32bf0566ce4c813b07e120bbe": {
+        "title_zh": "Rh 95和Ru 95中的寿命测量：对N = 50同中子素中资历守恒的研究",
+        "abstract_zh": "",
+        "translated_at": "2026-11-10T04:41:14.758224+00:00",
+        "source_hash": "bd0fdc38bd79d72f7f112d4951427ad3597275b32bf0566ce4c813b07e120bbe",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
       }
     },
     "6191d89bc9d14e58": {
@@ -448004,6 +448030,74 @@
         "preserved_previous_title": false,
         "content_validation": "disabled",
         "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+      }
+    },
+    "6356539ea006bc1d": {
+      "6d55477ec13375f089950e3ebf5043fb69b5d64457a901445baf8ee191f27a38": {
+        "title_zh": "质子和中子在氦靶上的弹性散射，基于从头计算的对称适应无芯壳模型光学势",
+        "abstract_zh": "",
+        "translated_at": "2026-10-23T00:36:14.040003+00:00",
+        "provider": "open-source-local",
+        "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+        "source_hash": "6d55477ec13375f089950e3ebf5043fb69b5d64457a901445baf8ee191f27a38",
+        "quality": "machine_draft",
+        "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      }
+    },
+    "490baec52208b430": {
+      "3badec782e4db81232e9de01005647f14bfee8cadde5701268587d9d161dcfe0": {
+        "title_zh": "包含介子交换贡献的 129 Xe 和 131 Xe 上带电流中微子-原子核散射",
+        "abstract_zh": "",
+        "translated_at": "2026-11-08T12:49:20.925101+00:00",
+        "source_hash": "3badec782e4db81232e9de01005647f14bfee8cadde5701268587d9d161dcfe0",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      }
+    },
+    "209a17d9d0bba362": {
+      "f311079a9277a443104da4294987d24d7a3e4139b33e58d50975ffb81bfdaeae": {
+        "title_zh": "利用能量-能量关联器探测重离子碰撞中的喷注-介质相互作用",
+        "abstract_zh": "",
+        "translated_at": "2026-11-19T05:52:43.690146+00:00",
+        "source_hash": "f311079a9277a443104da4294987d24d7a3e4139b33e58d50975ffb81bfdaeae",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      }
+    },
+    "f90406a6657ae71f": {
+      "346fe222c7d8298633aa9917075191a5259b85e88937501deca573a6f38845ca": {
+        "title_zh": "因果簇中夸克层次的精确味守恒：小碰撞系统中的奇异粒子、质子和轻原子核",
+        "abstract_zh": "",
+        "translated_at": "2026-11-19T05:53:20.142163+00:00",
+        "source_hash": "346fe222c7d8298633aa9917075191a5259b85e88937501deca573a6f38845ca",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      }
+    },
+    "ebfb37feed71578c": {
+      "304127b3d48254fc698e233c2c3541e4d203946486d1fde32c3205680900c3b4": {
+        "title_zh": "核基态的高阶微扰计算：多体图的自动化求值",
+        "abstract_zh": "",
+        "translated_at": "2026-11-20T14:39:52.071412+00:00",
+        "source_hash": "304127b3d48254fc698e233c2c3541e4d203946486d1fde32c3205680900c3b4",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
       }
     }
   }

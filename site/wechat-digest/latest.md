@@ -1,6 +1,6 @@
 # 小康康的物理世界 · 2026-11-03 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 12/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 13/18 条已有中文内容。
 
 ## 今日重点论文
 
@@ -31,9 +31,9 @@
 
 ## 物理新闻
 
-- **[A Half Century of Possible Solutions to the Information Paradox](http://link.aps.org/doi/10.1103/Physics.19.159)**  
+- **[信息悖论可能解决方案的半个世纪](http://link.aps.org/doi/10.1103/Physics.19.159)**  
    APS Physics · 2026-11-20  
-   Author(s): Philip Ball The fate of information falling into a black hole remains a mystery, albeit with many ideas for how to solve it. [Physics 19, 159] Published Fri Nov 20, 2026
+   作者：Philip Ball 落入黑洞的信息命运仍是一个谜，尽管人们已提出许多关于如何解决这一问题的设想。[Physics 19, 159] 发表于 2026 年 11 月 20 日星期五
 - **[高效算法大幅缩短脉冲星发现时间](http://link.aps.org/doi/10.1103/Physics.19.s144)**  
    APS Physics · 2026-11-19  
    作者：Rachel Berkowitz 使用一种基于密码学的方法，研究人员从稀疏数据中识别出一颗此前未知的脉冲星。[Physics 19, s144] 发表于 Thu Nov 19, 2026
