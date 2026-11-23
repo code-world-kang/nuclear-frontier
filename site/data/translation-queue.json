@@ -1,16 +1,23 @@
 {
-  "generated_at": "2026-11-22T14:37:19.061476+00:00",
+  "generated_at": "2026-11-23T02:15:29.869638+00:00",
   "model": "gpt-5.6-sol",
   "service_status": "local_scheduled",
-  "pending": 54624,
+  "pending": 54636,
   "counts": {
-    "paper": 54496,
+    "paper": 54507,
     "news": 110,
-    "notice": 18
+    "notice": 19
   },
   "listed": 1000,
   "items_truncated": true,
   "items": [
+    {
+      "id": "0c9b6bc1b1b04870",
+      "type": "notice",
+      "published": "2026-11-22",
+      "title": "SCD_WeeklyMeeting",
+      "source": "高能所 Indico"
+    },
     {
       "id": "994ee8a756d8699e",
       "type": "notice",
@@ -908,11 +915,39 @@
       "source": "IAEA"
     },
     {
+      "id": "9bc6682c1c6dd96b",
+      "type": "paper",
+      "published": "2026-11-23",
+      "title": "Milliarcsecond-scale jet reorientations in GRS 1915+105 pointing towards a warped accretion disc",
+      "source": "A&A"
+    },
+    {
+      "id": "fd444f5bb4c8efd0",
+      "type": "paper",
+      "published": "2026-11-20",
+      "title": "Elastic scattering cross-section of 10B projectile on light, medium and heavy targets using different effective interactions",
+      "source": "IJMPE"
+    },
+    {
       "id": "56060a44fc0be123",
       "type": "paper",
       "published": "2026-11-20",
       "title": "Mass and decay angles in the $\\Xi_c$--$\\Xi_c'$ mixing tension: Virtual hybrids and a single-direction criterion",
       "source": "nucl-th"
+    },
+    {
+      "id": "0a2187686f8f2f65",
+      "type": "paper",
+      "published": "2026-11-20",
+      "title": "Dependencies of characteristics of negatively charged pions on transverse momentum of the leading protons in p+12C collisions at 9.9 GeV/ c",
+      "source": "IJMPE"
+    },
+    {
+      "id": "16f5f3fa7c4cdd6e",
+      "type": "paper",
+      "published": "2026-11-17",
+      "title": "Measurement of Sn 119 ( p , γ ) Sb 120 and Sn 116 ( p , γ ) Sb 117 reaction cross sections at energies of astrophysical relevance",
+      "source": "PRC"
     },
     {
       "id": "a8c2af733e3830cd",
@@ -1039,6 +1074,55 @@
       "published": "2026-11-13",
       "title": "CORRIGENDUM: Radiated energy fraction of SPI-induced disruptions at ASDEX Upgrade (2025 Nucl. Fusion 65 056036)",
       "source": "NF"
+    },
+    {
+      "id": "55d35cd79553fbab",
+      "type": "paper",
+      "published": "2026-11-12",
+      "title": "Erratum: New high-spin level scheme of neutron-rich Rh 112 [Phys. Rev. C 87, 057302 (2013)]",
+      "source": "PRC"
+    },
+    {
+      "id": "bd0681e3e5269bf2",
+      "type": "paper",
+      "published": "2026-10-23",
+      "title": "Direct measurement of the 59 Cu( p , α ) 56 Ni excitation function to constrain the NiCu cycle strength and its impact on explosive nucleosynthesis",
+      "source": "PRL"
+    },
+    {
+      "id": "da70a3d4a78dde0a",
+      "type": "paper",
+      "published": "2026-10-23",
+      "title": "First measurement of energy-energy correlators in D 0 -tagged jets from proton-proton collisions at s = 13 TeV",
+      "source": "PRL"
+    },
+    {
+      "id": "f2811acb22572fb6",
+      "type": "paper",
+      "published": "2026-10-23",
+      "title": "Evolution of collectivity and emergence of octupole correlations in 77 Br",
+      "source": "PRC"
+    },
+    {
+      "id": "69ceb3358f24a372",
+      "type": "paper",
+      "published": "2026-10-23",
+      "title": "E 0 transition strengths as a tool to constrain model parameters: Application to the interacting boson model and even-even Xe isotopes",
+      "source": "PRC"
+    },
+    {
+      "id": "0b7f9e53333ff4da",
+      "type": "paper",
+      "published": "2026-10-23",
+      "title": "Intermediate zone effects on the orbital angular momentum of transition radiation",
+      "source": "PRAB"
+    },
+    {
+      "id": "8b0ae8c4ad86f43d",
+      "type": "paper",
+      "published": "2026-10-23",
+      "title": "Dynamic model of the beam-cavity interaction in a high-power rf system with a vacuum tube",
+      "source": "PRAB"
     },
     {
       "id": "39542bd664de1801",
@@ -6925,90 +7009,6 @@
       "type": "paper",
       "published": "2014-06-01",
       "title": "Open-beauty production in pPb collisions at s NN = 5 TeV : Effect of the gluon nuclear densities",
-      "source": "NPA"
-    },
-    {
-      "id": "8ee634dcc0114022",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Nuclear PDFs in the beginning of the LHC era",
-      "source": "NPA"
-    },
-    {
-      "id": "7f402be00a8666fd",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Mode-by-mode hydrodynamics: Ideas and concepts",
-      "source": "NPA"
-    },
-    {
-      "id": "7553ee60eeddcfc3",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "JIMWLK evolution for multi-particle production with rapidity correlations",
-      "source": "NPA"
-    },
-    {
-      "id": "b33b35b9dc7e1557",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Initial state, parton saturation and thermalization",
-      "source": "NPA"
-    },
-    {
-      "id": "812e17dbae368a3e",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "IS2013 — Foreword",
-      "source": "NPA"
-    },
-    {
-      "id": "514782ad53c5946d",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Hydrodynamic approach to p–Pb",
-      "source": "NPA"
-    },
-    {
-      "id": "39a2db346ca70186",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Gluon field fluctuations in nuclear collisions: Multiplicity and eccentricity distributions",
-      "source": "NPA"
-    },
-    {
-      "id": "afe1c6d77f69630e",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Fluid dynamical response to initial state fluctuations",
-      "source": "NPA"
-    },
-    {
-      "id": "994c02ffb98142a2",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Editorial Board",
-      "source": "NPA"
-    },
-    {
-      "id": "8666aa122832859f",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Dijet measurements in pPb collisions",
-      "source": "NPA"
-    },
-    {
-      "id": "efccdf623e745e59",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Dihadron correlations in d + Au collisions from STAR",
-      "source": "NPA"
-    },
-    {
-      "id": "43e082c085bd7682",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Contents",
       "source": "NPA"
     }
   ]
