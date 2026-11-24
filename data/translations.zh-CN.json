@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T14:35:06.310919+00:00",
+  "generated_at": "2026-11-24T14:31:22.786551+00:00",
   "provider": "mixed",
   "items": {
     "03fb0be72e560764": {
@@ -25851,14 +25851,16 @@
       "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
     },
     "bd0681e3e5269bf2": {
-      "title_zh": "直接测量 59 Cu( p , α ) 56 Ni 的激发函数，以约束 NiCu 循环的强度及其对爆炸性核合成的影响",
-      "abstract_zh": "",
-      "translated_at": "2026-10-24T00:18:05.525594+00:00",
-      "provider": "open-source-local",
-      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "source_hash": "177f5faef94ab2bddc320d028e083703004f33bf6362fecda3cf51c550dea8ac",
+      "title_zh": "直接测量 59 Cu( p , α ) 56 Ni 激发函数以约束 NiCu 循环强度及其对爆炸性核合成的影响",
+      "abstract_zh": "在 FRIB，使用高效率 MUSIC 有源靶探测器，采用逆运动学对质心系中 2.43–5.88 MeV 范围内的 59 C u ( p , α ) 56 N i 激发函数进行了新的直接测量。该反应对于约束不同爆炸性天体物理情景中 NiCu 循环的强度起着关键作用，这些情景包括 I 型 X 射线暴以及核心坍缩超新星后中微子驱动风中的 ν p-过程。新推导的恒星反应率系统性地低于先前估计值，使 X 射线暴中的 NiCu 循环再循环降低至 0.74 % 以下，并在相关温度范围内提高了 ν p -过程的效率，使其运行范围扩展至 T 9 = 3.94 − 0.85 + 0.99，同时约束了预测的终点。",
+      "translated_at": "2026-11-23T14:32:52.370801+00:00",
+      "source_hash": "f0a7f6386676f86fcce520cb5933b3744844b8c76adbdec71c6664e1b32b4ef2",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
       "quality": "machine_draft",
-      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "a024643179a1bbf0": {
       "title_zh": "天然氯增强深海反中微子探测",
@@ -25921,26 +25923,28 @@
       "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
     },
     "55d35cd79553fbab": {
-      "title_zh": "勘误：富中子 $^{112}\\mathrm{Rh}$ 的新高自旋能级纲图 [Phys. Rev. C 87, 057302 (2013)]",
-      "abstract_zh": "",
-      "translated_at": "2026-11-13T22:33:50.861798+00:00",
-      "source_hash": "4491e185eecb49f3e30eecdab4e0a861dcd6ea8c1e7f0b49a637231c9c51b912",
+      "title_zh": "勘误：富中子 Rh 112 的新高自旋能级纲图 [Phys. Rev. C 87, 057302 (2013)]",
+      "abstract_zh": "通过研究使用 Gammasphere 探测器阵列测得的 252Cf 自发裂变中发射的瞬发 γ 射线，对富中子原子核 112Rh 进行了重新研究。在 112Rh 中构建了一条新的旁带。进行了总 Routhian 面计算，并证实了三轴性在 112Rh 负宇称结构中的作用。",
+      "translated_at": "2026-11-23T14:32:52.370352+00:00",
+      "source_hash": "2314670a34481aaacabae3d27d517d84c8f87449f43ee38846baba1decfac4fa",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "da70a3d4a78dde0a": {
-      "title_zh": "首次测量质子-质子碰撞中s = 13 TeV 事件中带0 标记的喷注的能量-能量相关函数",
-      "abstract_zh": "",
-      "translated_at": "2026-10-24T00:27:46.027429+00:00",
-      "provider": "open-source-local",
-      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "source_hash": "a3bc7743094c5462558facdec47fbb45ed6b35139f260189320c6958e608374b",
+      "title_zh": "首次测量 s = 13 TeV 质子-质子碰撞中 D 0 -标记喷注的能量-能量关联函数",
+      "abstract_zh": "本文，我们给出了 s = 13 ~TeV 质子–质子碰撞中 -标记喷注的能量–能量关联函数（EEC）的首次测量。EEC 探测 QCD 辐射的结构，为涉及粲夸克的部分子簇射中的质量依赖效应提供独特检验，并为包括强子化过程在内的非微扰现象提供一种不同的观察视角。对横动量为 {} 的 -标记喷注和未作味标记的（包容）喷注测量了 EEC，在此横动量下粲夸克质量效应十分显著。我们观察到，与包容喷注相比，粲喷注中的 EEC 振幅受到显著压低，这与预期的大质量夸克辐射压低相一致——这是 QCD 的一项基本预言。尽管振幅存在显著差异，观测到的粲喷注与包容喷注 EEC 峰位相近，表明 QCD 部分子簇射中的 Casimir 因子（区分夸克喷注和胶子喷注）与夸克质量（死锥）效应以及随后的强子化效应之间存在复杂的相互作用。与次领头阶计算和多种 Monte Carlo 事例生成器的比较揭示了该观测量对部分子簇射中的质量效应和强子化过程的敏感性。这些结果为重夸克喷注的理论模型提供了新的约束，并增进了对 QCD 中部分子到强子跃迁的认识。",
+      "translated_at": "2026-11-23T14:32:52.371580+00:00",
+      "source_hash": "ad96785bd268d8bafa253a50b50d2722e0781f5c2322e11b4cd86c29ad2d6205",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
       "quality": "machine_draft",
-      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "dbbfc61a85586cb5": {
       "title_zh": "具有记忆的麦克斯韦妖",
@@ -26209,16 +26213,16 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "16f5f3fa7c4cdd6e": {
-      "title_zh": "天体物理相关能区 Sn 119 ( p , γ ) Sb 120 和 Sn 116 ( p , γ ) Sb 117 反应截面的测量",
-      "abstract_zh": "",
-      "translated_at": "2026-11-19T14:40:42.097188+00:00",
-      "source_hash": "8a5320b855552a8679966919cb13a0a2a82fe77f1d06edb3846b258ed8d21b11",
+      "title_zh": "天体物理相关能量下Sn 119 ( p , γ ) Sb 120和Sn 116 ( p , γ ) Sb 117反应截面的测量",
+      "abstract_zh": "采用活化技术，分别在2.43--7.06和2.43--4.92 MeV的质心能量范围内测量了$^{119}\\mathrm{Sn}{(p,\\ensuremath{\\gamma})}^{120}\\text{Sb}$和$^{116}\\mathrm{Sn}{(p,\\ensuremath{\\gamma})}^{117}\\text{Sb}$反应的截面。所测能量范围基本覆盖了恒星温度为2--3 GK时对应的1.85--4.53 MeV Gamow窗口。本次测量扩展了$^{119}\\mathrm{Sn}(p\\text{,}\\ensuremath{\\gamma})^{120}\\mathrm{Sb}$反应截面的已测能量范围，并有助于澄清与先前测量相比，$^{116}\\mathrm{Sn}(p,\\ensuremath{\\gamma})^{117}\\mathrm{Sb}$反应现有的实验分歧。将提取的截面以及由此得到并经过电子屏蔽效应修正的天体物理S因子，与talys和non-smoker统计模型的预测进行了比较。$^{116}\\mathrm{Sn}(p,\\ensuremath{\\gamma})^{117}\\mathrm{Sb}$截面与talys预测符合良好。然而，对于$^{119}\\mathrm{Sn}(p,\\ensuremath{\\gamma})^{120}\\mathrm{Sb}$，标准模型组合被证明并不适用，因此需要定制参数集才能较好地再现数据。利用这些经过验证的模型，使用talys计算了两个质子俘获反应的恒星反应率，并与JINA REACLIB数据库中的反应率进行了比较。",
+      "translated_at": "2026-11-23T14:33:05.512898+00:00",
+      "source_hash": "e9b41eaa5b7d9ee264904fd3a655abd59da057de988798d76fa3f29e91b0f7fd",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "cea9799c064b5155": {
       "title_zh": "Ag 107 中高度阻碍的 B ( E 1 ) 跃迁强度",
@@ -26233,14 +26237,16 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "69ceb3358f24a372": {
-      "title_zh": "E 0 跃迁强度作为约束模型参数的工具：应用于相互作用玻色子模型和偶偶氙同位素",
-      "abstract_zh": "",
-      "translated_at": "2026-10-25T00:10:30.910620+00:00",
-      "provider": "open-source-local",
-      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "source_hash": "aa0a7e8f6f6b7a45ae8fa11569755992d5fa22a3987b26961c06cb77f723a07c",
+      "title_zh": "以 E 0 跃迁强度作为约束模型参数的工具：在相互作用玻色子模型和偶偶 Xe 同位素中的应用",
+      "abstract_zh": "背景：在任何核结构理论框架中，对 $E0$ 跃迁率的定量描述仍是一项非平凡且持续存在的挑战。此外，这些观测量对这类模型的可行参数空间施加了严格约束。目的：本工作旨在系统研究所选 ${\\ensuremath{\\rho}}^{2}(E0)$ 值及其比值在具有单一组态的相互作用玻色子模型整个参数空间内的行为。作为一项具体应用，对偶偶 Xe 同位素链进行了详细分析。方法：将采用相互作用玻色子模型计算所选关键跃迁的 ${\\ensuremath{\\rho}}^{2}(E0)$ 值，并研究这些观测量在模型参数空间内的演化。结果：分析了若干关键的 ${\\ensuremath{\\rho}}^{2}(E0)$ 量，包括绝对值或比值，并在以 Casten 三角形表示的相互作用玻色子模型参数空间内生成了等高线图。随后，将偶偶 Xe 同位素的计算结果映射到这些等高线图上并与之比较。结论：本分析表明，${\\ensuremath{\\rho}}^{2}(E0)$ 值，尤其是特定比值，对相互作用玻色子模型的参数空间提供了严格约束。此外，该参数空间中存在一些区域，在这些区域内，${\\ensuremath{\\rho}}^{2}(E0)$ 值在对哈密顿量参数进行微调时实际上保持不变，因此 ${\\ensuremath{\\rho}}^{2}(E0)$ 不能用于约束这些参数。",
+      "translated_at": "2026-11-23T14:32:54.154743+00:00",
+      "source_hash": "a32b8394b4e27dbf1b36ff243e21fd0597f9ae825dc87efec0b6264bb46d194b",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
       "quality": "machine_draft",
-      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "86b43d1ea0b401ba": {
       "title_zh": "利用对 π、K 和 p 能谱的爆炸波拟合约束直接光子分析中的低- p T η / π 0 比值",
@@ -26431,14 +26437,16 @@
       "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
     },
     "0b7f9e53333ff4da": {
-      "title_zh": "中间区效应对跃迁辐射的轨道角动量的影响",
-      "abstract_zh": "",
-      "translated_at": "2026-10-25T00:34:55.081112+00:00",
-      "provider": "open-source-local",
-      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "source_hash": "67eecd02d76d6103ad75789250922fab004775ed39da931b8a610984146f0756",
+      "title_zh": "中间区效应对跃迁辐射轨道角动量的影响",
+      "abstract_zh": "电子穿过真空介质界面时会产生跃迁辐射。该辐射体的形状能够影响发射的角分布，并赋予某种偏振。在本工作中，我们研究了在介电螺旋相位板 (SPP) 内部诱发并由以电子传播方向为中心的探测器记录的跃迁辐射能否携带轨道角动量 (OAM)。对超相对论电子在波区和中间区产生的 UV 跃迁辐射的估算表明，总角动量 (TAM) 在两个区域中均为零，因而可以利用自旋角动量 (SAM) 的估算值获得 OAM。进一步表明，尽管整个辐射的 OAM 在区域之间并未发生显著变化，但其密度分布在中间区可能会从较低极角向较高极角偏移。因此，相对于辐射体，当一个物体置于波区而另一个物体置于中间区时，两个具有相似有限角尺寸的物体所见的表观 OAM 可能不同。",
+      "translated_at": "2026-11-23T14:32:54.154936+00:00",
+      "source_hash": "530db87c1a24d8ede90b9d19a2b58abd4d134613301e9269282dfc7f7663955f",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
       "quality": "machine_draft",
-      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "89fb9d93c94c5464": {
       "title_zh": "形状因子约束的非因子化 N → Δ ( 1232 ) 跃迁-GPD 多极结构层析成像",
@@ -26465,14 +26473,16 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "8b0ae8c4ad86f43d": {
-      "title_zh": "高功率射频系统中真空管的束-腔相互作用的动态模型",
-      "abstract_zh": "",
-      "translated_at": "2026-10-25T00:35:49.605873+00:00",
-      "provider": "open-source-local",
-      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "source_hash": "6e644221438f236e60094e3e595fc8642ace064e862fc5e4781761ee0593e3e7",
+      "title_zh": "采用真空管的高功率 rf 系统中束流-腔相互作用的动态模型",
+      "abstract_zh": "为确保带电粒子加速器中的 rf 系统可靠运行，理解其与束流的相互作用至关重要。随着束流强度增加，束流负载变得更加重要，并可能导致束流质量下降。此外，高强度可能使基于真空管的 rf 放大器在高阳极电流的非线性状态下运行，从而影响束流负载补偿。本文提出了一种对 rf 系统中四极真空管放大器的响应进行数学建模的方法，该模型可以与粒子跟踪代码耦合，以考虑束流的动态行为。文中展示了针对 CERN 质子同步加速器中 80 MHz rf 系统情形的数值实现示例。该实现通过低功率和高功率测量得到了验证。为核实真空管运行状态随束流强度和腔电压的变化是否得到正确复现，开展了详细研究。最后，在实验中观测到一种由高电平 rf 系统阻抗驱动的束流不稳定性，并在模拟中将其复现，这表明该模型捕捉到了束流和 rf 系统二者的动态行为。",
+      "translated_at": "2026-11-23T14:32:54.155134+00:00",
+      "source_hash": "ceab316d9aa4c2d479a838e13df947d3d817b53094605201a8f0304ac322f396",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
       "quality": "machine_draft",
-      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "cb46ff149b0197e2": {
       "title_zh": "用于储存环的基于低电平射频的自适应模态-0反馈系统设计",
@@ -37513,10 +37523,10 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "fd444f5bb4c8efd0": {
-      "title_zh": "使用不同有效相互作用研究 10 B 投射粒子在轻、中、重靶上的弹性散射截面",
-      "abstract_zh": "本工作在双折叠框架下，对弱束缚投射粒子 10 B 在多个入射能量下从广泛的轻、中、重靶原子核上的弹性散射进行了全面而系统的研究。核光学势的实部和虚部采用 M3Y、R3Y 和 B3Y-Fetal 有效核子-核子相互作用，并结合由双参数 Fermi（2pF）模型和相对论平均场（RMF）模型获得的核密度分布构建。将计算得到的弹性散射角分布与现有实验数据进行比较，以评估不同相互作用和密度参数化的预测能力。计算得到的角分布总体上再现了测得的弹性散射截面的主要特征，尽管符合程度随所研究的体系和入射能量而异。在所考虑的相互作用中，采用 NL2 参数集的 RMF 密度进行计算时，B3Y-Fetal 相互作用总体上与实验数据符合得最好，而唯象的 2pF 密度在若干情形下表现相对较弱。基于这些发现，提出了经验关系，用于预测涉及 10 B 投射粒子的弹性散射分析所需的合适 N R 和 N I 值。除描述各个体系外，本研究还确立了光学模型参数及其对靶质量和入射能量依赖性的全局趋势，从而为理解弱束缚原子核 10 B 的反应动力学提供了统一框架。",
-      "translated_at": "2026-11-08T10:34:08.739114+00:00",
-      "source_hash": "e0b4a9c30a3bc0cb0c199dd62a7c707f619ba09e260a74654424eb70f917853e",
+      "title_zh": "采用不同有效相互作用研究10B投射粒子在轻、中、重靶上的弹性散射截面",
+      "abstract_zh": "本工作在双折叠框架内，对弱束缚投射粒子[Formula: see text]在若干入射能量下与广泛的轻、中、重靶原子核发生的弹性散射进行了全面而系统的研究。核光学势的实部和虚部采用M3Y、R3Y和B3Y-Fetal有效核子–核子（NN）相互作用构建，并结合由双参数Fermi（2pF）和相对论平均场（RMF）模型获得的核密度分布。将计算得到的弹性散射角分布与可用实验数据进行比较，以评估不同相互作用和密度参数化的预测能力。计算得到的角分布总体上再现了实测弹性散射截面的主要特征，但符合程度随所研究的体系和入射能量而异。在所考虑的相互作用中，采用NL2参数集的RMF密度进行计算时，B3Y-Fetal相互作用总体上与实验数据符合得最好，而唯象的2pF密度在若干情况下表现相对较弱。基于这些发现，提出了经验关系，用于预测涉及[Formula: see text]B投射粒子的弹性散射分析所需的合适[Formula: see text]和[Formula: see text]值。除描述单个体系外，本研究还确立了光学模型参数的整体趋势及其对靶质量和入射能量的依赖性，从而为理解弱束缚原子核[Formula: see text]的反应动力学提供了统一框架。",
+      "translated_at": "2026-11-23T14:33:05.512321+00:00",
+      "source_hash": "907cce929bc4ffc17aa16545ea9e23b6f00453efaf0ad8ccb4e3f42e5a35b30f",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
@@ -40909,10 +40919,10 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "0a2187686f8f2f65": {
-      "title_zh": "9.9 GeV/ c 下 p+ 12 C 碰撞中负电荷π介子特性对领头质子横动量的依赖关系",
-      "abstract_zh": "研究了入射动量为 9.9 GeV/c 的 p+ 12 C 碰撞中，负π介子的多重数、横动量和总动量、纵向快度以及发射角余弦的平均值对领头质子平均横动量的实验依赖关系。对于 9.9 GeV/c 下 p+ 12 C 碰撞中包含领头质子的事例，研究了转移给靶 12 C 原子核的入射质子能量平均份额 (⟨ΔT/T 0 ⟩) 随领头质子横动量的变化。将实验数据与采用修正 FRITIOF 模型进行的数值计算作了系统比较。FRITIOF 模型令人满意地再现了负π介子的横动量和总动量以及纵向快度对领头质子平均横动量的实验依赖关系。该模型显著低估了含领头质子的 p+ 12 C 碰撞事例中负π介子的平均多重数和 ⟨ΔT/T 0 ⟩。与模型中该参数表现出的非常弱的依赖关系相反，⟨ΔT/T 0 ⟩ 的实验值表现出对领头质子平均横动量的显著依赖关系。",
-      "translated_at": "2026-11-08T12:42:56.473829+00:00",
-      "source_hash": "44c38cf4f12582a5eabd8e66003ade5eea96442bd35a38e926f5adae65c346a5",
+      "title_zh": "9.9 GeV/ c下p+12C碰撞中负电荷π介子特征对领头质子横动量的依赖性",
+      "abstract_zh": "研究了入射动量为9.9[Formula: see text]GeV/c的[Formula: see text]C碰撞中，负π介子的多重数、横动量和总动量、纵向快度以及发射角余弦的平均值对领头质子平均横动量的实验依赖性。对于9.9[Formula: see text]GeV/c下[Formula: see text]C碰撞中包含领头质子的事例，研究了转移给靶[Formula: see text]C原子核的入射质子能量平均份额（[Formula: see text]）随领头质子横动量的变化。将实验数据与采用修正FRITIOF模型进行的数值计算作了系统比较。FRITIOF模型令人满意地再现了负π介子的横动量、总动量和纵向快度对领头质子平均横动量的实验依赖性。该模型显著低估了含领头质子的[Formula: see text]C碰撞事例中负π介子的平均多重数和（[Formula: see text]）。与模型中该参数表现出的极弱依赖性相反，（[Formula: see text]）的实验值表现出对领头质子平均横动量的显著依赖性。",
+      "translated_at": "2026-11-23T14:33:05.512663+00:00",
+      "source_hash": "709530766a26ebe9a8dc24435f41a73cbca97346ab906a1e28563eb35ecce81c",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
@@ -442967,6 +442977,30 @@
       "preserved_previous_title": false,
       "content_validation": "disabled",
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "0c9b6bc1b1b04870": {
+      "title_zh": "SCD_周会",
+      "abstract_zh": "2026-11-23 — 2026-11-23",
+      "translated_at": "2026-11-23T14:32:52.370130+00:00",
+      "source_hash": "fad7bc99a8c8961038aef9aac11ab45f29cc1835fe164f22871a42257c653ccc",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "9bc6682c1c6dd96b": {
+      "title_zh": "GRS 1915+105中指向翘曲吸积盘的毫角秒尺度喷流重新定向",
+      "abstract_zh": "黑洞X射线双星GRS 1915+105在被发现后表现出持续超过26年的X射线活动，随后于2018年进入长期的低X射线流量状态，同时在射电波段仍然明亮。多波段观测表明，这种低X射线状态源于一层复杂吸收物质的出现，其确切性质仍然未知。由于X射线发射被遮蔽，射电喷流观测为观察与这一阶段相关的物理变化提供了无遮挡的视野。最近发表的甚大阵列（VLA）和东亚VLBI网（EAVN）观测揭示了喷流位置角（PA）的显著变化。在此，我们给出更高分辨率的VLBI观测，以研究遮蔽事件与靠近发射区的喷流行为之间的联系。我们在跨越2019--2021年的四个历元中，使用甚长基线阵列（VLBA）和欧洲VLBI网（EVN）观测了处于早期X射线遮蔽阶段的GRS 1915+105，对多种喷流和吸积行为进行了采样。本文重点研究四个历元中的毫角秒尺度喷流形态和PA变化，并结合已报道的X射线行为加以讨论。2018年之后测得的许多PA均显著偏离GRS 1915+105遮蔽前的喷流轴，该喷流轴在毫角秒尺度上的加权平均值为142^ ̧irc ± 7^ ̧irc。我们发现相对于该轴的最大偏移为57^ ̧irc ± 8^ ̧irc，这是迄今为止针对GRS 1915+105报道的最大此类偏移。我们的四个历元揭示了多种多样的喷流行为，包括具有较大PA偏移的稳定致密源、具有相似较大偏移的明亮耀发源、PA更接近遮蔽前喷流轴的延展喷流，最后则是未探测到。各个八小时历元内均无可测量的PA变化，这排除了内盘快速Lense-Thirring进动是喷流重新定向直接驱动机制的可能性。相反，考虑到所涉及的时间尺度、系统的几何构型以及与X射线遮蔽事件的明显联系，这些因素支持辐射驱动的翘曲吸积盘；这种构型可以自然地解释持续遮蔽。",
+      "translated_at": "2026-11-23T14:33:05.511748+00:00",
+      "source_hash": "a4068c5fd49528b77fc722f31dc88211d668d49239f08ca623545275812d7d1d",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     }
   },
   "provider_note": "来源以条目 provider/model/note 为准。",
@@ -446297,6 +446331,18 @@
         "source_hash": "048010bd57200f52b35bad0afd9c97c70250b84ebcec5613ea24920d3aad4ddb",
         "quality": "machine_draft",
         "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      },
+      "4491e185eecb49f3e30eecdab4e0a861dcd6ea8c1e7f0b49a637231c9c51b912": {
+        "title_zh": "勘误：富中子 $^{112}\\mathrm{Rh}$ 的新高自旋能级纲图 [Phys. Rev. C 87, 057302 (2013)]",
+        "abstract_zh": "",
+        "translated_at": "2026-11-13T22:33:50.861798+00:00",
+        "source_hash": "4491e185eecb49f3e30eecdab4e0a861dcd6ea8c1e7f0b49a637231c9c51b912",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
       }
     },
     "9e5b7ac812a07af8": {
@@ -447326,6 +447372,18 @@
         "source_hash": "2fe56e279f853e718cd87baa166f5877887ebd5fce3ff70237fc2592f7d0442b",
         "quality": "machine_draft",
         "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      },
+      "8a5320b855552a8679966919cb13a0a2a82fe77f1d06edb3846b258ed8d21b11": {
+        "title_zh": "天体物理相关能区 Sn 119 ( p , γ ) Sb 120 和 Sn 116 ( p , γ ) Sb 117 反应截面的测量",
+        "abstract_zh": "",
+        "translated_at": "2026-11-19T14:40:42.097188+00:00",
+        "source_hash": "8a5320b855552a8679966919cb13a0a2a82fe77f1d06edb3846b258ed8d21b11",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
       }
     },
     "ce59ff1dcd9d07d4": {
@@ -448098,6 +448156,94 @@
         "preserved_previous_title": false,
         "content_validation": "disabled",
         "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      }
+    },
+    "bd0681e3e5269bf2": {
+      "177f5faef94ab2bddc320d028e083703004f33bf6362fecda3cf51c550dea8ac": {
+        "title_zh": "直接测量 59 Cu( p , α ) 56 Ni 的激发函数，以约束 NiCu 循环的强度及其对爆炸性核合成的影响",
+        "abstract_zh": "",
+        "translated_at": "2026-10-24T00:18:05.525594+00:00",
+        "provider": "open-source-local",
+        "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+        "source_hash": "177f5faef94ab2bddc320d028e083703004f33bf6362fecda3cf51c550dea8ac",
+        "quality": "machine_draft",
+        "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      }
+    },
+    "da70a3d4a78dde0a": {
+      "a3bc7743094c5462558facdec47fbb45ed6b35139f260189320c6958e608374b": {
+        "title_zh": "首次测量质子-质子碰撞中s = 13 TeV 事件中带0 标记的喷注的能量-能量相关函数",
+        "abstract_zh": "",
+        "translated_at": "2026-10-24T00:27:46.027429+00:00",
+        "provider": "open-source-local",
+        "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+        "source_hash": "a3bc7743094c5462558facdec47fbb45ed6b35139f260189320c6958e608374b",
+        "quality": "machine_draft",
+        "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      }
+    },
+    "69ceb3358f24a372": {
+      "aa0a7e8f6f6b7a45ae8fa11569755992d5fa22a3987b26961c06cb77f723a07c": {
+        "title_zh": "E 0 跃迁强度作为约束模型参数的工具：应用于相互作用玻色子模型和偶偶氙同位素",
+        "abstract_zh": "",
+        "translated_at": "2026-10-25T00:10:30.910620+00:00",
+        "provider": "open-source-local",
+        "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+        "source_hash": "aa0a7e8f6f6b7a45ae8fa11569755992d5fa22a3987b26961c06cb77f723a07c",
+        "quality": "machine_draft",
+        "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      }
+    },
+    "0b7f9e53333ff4da": {
+      "67eecd02d76d6103ad75789250922fab004775ed39da931b8a610984146f0756": {
+        "title_zh": "中间区效应对跃迁辐射的轨道角动量的影响",
+        "abstract_zh": "",
+        "translated_at": "2026-10-25T00:34:55.081112+00:00",
+        "provider": "open-source-local",
+        "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+        "source_hash": "67eecd02d76d6103ad75789250922fab004775ed39da931b8a610984146f0756",
+        "quality": "machine_draft",
+        "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      }
+    },
+    "8b0ae8c4ad86f43d": {
+      "6e644221438f236e60094e3e595fc8642ace064e862fc5e4781761ee0593e3e7": {
+        "title_zh": "高功率射频系统中真空管的束-腔相互作用的动态模型",
+        "abstract_zh": "",
+        "translated_at": "2026-10-25T00:35:49.605873+00:00",
+        "provider": "open-source-local",
+        "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+        "source_hash": "6e644221438f236e60094e3e595fc8642ace064e862fc5e4781761ee0593e3e7",
+        "quality": "machine_draft",
+        "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      }
+    },
+    "fd444f5bb4c8efd0": {
+      "e0b4a9c30a3bc0cb0c199dd62a7c707f619ba09e260a74654424eb70f917853e": {
+        "title_zh": "使用不同有效相互作用研究 10 B 投射粒子在轻、中、重靶上的弹性散射截面",
+        "abstract_zh": "本工作在双折叠框架下，对弱束缚投射粒子 10 B 在多个入射能量下从广泛的轻、中、重靶原子核上的弹性散射进行了全面而系统的研究。核光学势的实部和虚部采用 M3Y、R3Y 和 B3Y-Fetal 有效核子-核子相互作用，并结合由双参数 Fermi（2pF）模型和相对论平均场（RMF）模型获得的核密度分布构建。将计算得到的弹性散射角分布与现有实验数据进行比较，以评估不同相互作用和密度参数化的预测能力。计算得到的角分布总体上再现了测得的弹性散射截面的主要特征，尽管符合程度随所研究的体系和入射能量而异。在所考虑的相互作用中，采用 NL2 参数集的 RMF 密度进行计算时，B3Y-Fetal 相互作用总体上与实验数据符合得最好，而唯象的 2pF 密度在若干情形下表现相对较弱。基于这些发现，提出了经验关系，用于预测涉及 10 B 投射粒子的弹性散射分析所需的合适 N R 和 N I 值。除描述各个体系外，本研究还确立了光学模型参数及其对靶质量和入射能量依赖性的全局趋势，从而为理解弱束缚原子核 10 B 的反应动力学提供了统一框架。",
+        "translated_at": "2026-11-08T10:34:08.739114+00:00",
+        "source_hash": "e0b4a9c30a3bc0cb0c199dd62a7c707f619ba09e260a74654424eb70f917853e",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+      }
+    },
+    "0a2187686f8f2f65": {
+      "44c38cf4f12582a5eabd8e66003ade5eea96442bd35a38e926f5adae65c346a5": {
+        "title_zh": "9.9 GeV/ c 下 p+ 12 C 碰撞中负电荷π介子特性对领头质子横动量的依赖关系",
+        "abstract_zh": "研究了入射动量为 9.9 GeV/c 的 p+ 12 C 碰撞中，负π介子的多重数、横动量和总动量、纵向快度以及发射角余弦的平均值对领头质子平均横动量的实验依赖关系。对于 9.9 GeV/c 下 p+ 12 C 碰撞中包含领头质子的事例，研究了转移给靶 12 C 原子核的入射质子能量平均份额 (⟨ΔT/T 0 ⟩) 随领头质子横动量的变化。将实验数据与采用修正 FRITIOF 模型进行的数值计算作了系统比较。FRITIOF 模型令人满意地再现了负π介子的横动量和总动量以及纵向快度对领头质子平均横动量的实验依赖关系。该模型显著低估了含领头质子的 p+ 12 C 碰撞事例中负π介子的平均多重数和 ⟨ΔT/T 0 ⟩。与模型中该参数表现出的非常弱的依赖关系相反，⟨ΔT/T 0 ⟩ 的实验值表现出对领头质子平均横动量的显著依赖关系。",
+        "translated_at": "2026-11-08T12:42:56.473829+00:00",
+        "source_hash": "44c38cf4f12582a5eabd8e66003ade5eea96442bd35a38e926f5adae65c346a5",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
       }
     }
   }
