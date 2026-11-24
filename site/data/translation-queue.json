@@ -1,16 +1,23 @@
 {
-  "generated_at": "2026-11-23T02:15:29.869638+00:00",
+  "generated_at": "2026-11-24T05:49:17.393189+00:00",
   "model": "gpt-5.6-sol",
   "service_status": "local_scheduled",
-  "pending": 54636,
+  "pending": 54658,
   "counts": {
-    "paper": 54507,
-    "news": 110,
-    "notice": 19
+    "paper": 54526,
+    "news": 112,
+    "notice": 20
   },
   "listed": 1000,
   "items_truncated": true,
   "items": [
+    {
+      "id": "69958ae6da377fea",
+      "type": "notice",
+      "published": "2026-11-23",
+      "title": "CEPC / AGORA Inner Tracker meeting",
+      "source": "高能所 Indico"
+    },
     {
       "id": "0c9b6bc1b1b04870",
       "type": "notice",
@@ -143,6 +150,20 @@
       "published": "2024-11-22",
       "title": "The 11th International Conference on Nuclear Physics at Storage Rings",
       "source": "近代物理所学术活动"
+    },
+    {
+      "id": "5f1f9e0dfdd87530",
+      "type": "news",
+      "published": "2026-11-23",
+      "title": "Symmetry Guides the Search for Magnetic Order",
+      "source": "APS Physics"
+    },
+    {
+      "id": "15ca5bbdd276d642",
+      "type": "news",
+      "published": "2026-11-23",
+      "title": "A Paradox That Still Puzzles Physicists",
+      "source": "APS Physics"
     },
     {
       "id": "ccd7de95f328b71a",
@@ -915,11 +936,144 @@
       "source": "IAEA"
     },
     {
+      "id": "20b50275e6e7918a",
+      "type": "paper",
+      "published": "2026-11-24",
+      "title": "Formation of binary asteroids through sudden spin-up events",
+      "source": "A&A"
+    },
+    {
+      "id": "580e7f6ab4ccca58",
+      "type": "paper",
+      "published": "2026-11-24",
+      "title": "Euclid. XI. A two-point correlation approach to diagnosing star-related systematics in the spectroscopic survey",
+      "source": "A&A"
+    },
+    {
+      "id": "a290d457281f2ab9",
+      "type": "paper",
+      "published": "2026-11-23",
+      "title": "Bayesian Inference of the Landau Parameter G 0 ′ from Joint Gamow-Teller Measurements",
+      "source": "PRL"
+    },
+    {
+      "id": "f2811acb22572fb6",
+      "type": "paper",
+      "published": "2026-11-23",
+      "title": "Evolution of collectivity and emergence of octupole correlations in Br 77",
+      "source": "PRC"
+    },
+    {
+      "id": "ad6d99eb9ea9c448",
+      "type": "paper",
+      "published": "2026-11-23",
+      "title": "Plasma fueling due to thermal charge exchange neutrals on DIII-D and future reactors",
+      "source": "NF"
+    },
+    {
+      "id": "152b2b64d16741bb",
+      "type": "paper",
+      "published": "2026-11-23",
+      "title": "Probing core excitation in the breakup of B 8 with state-of-the-art nuclear structure inputs",
+      "source": "PRC"
+    },
+    {
+      "id": "3743f008442d4e80",
+      "type": "paper",
+      "published": "2026-11-23",
+      "title": "Partial-wave decomposition of isospin-projected subleading three-nucleon contact interactions",
+      "source": "PRC"
+    },
+    {
+      "id": "5b1b52859512797c",
+      "type": "paper",
+      "published": "2026-11-23",
+      "title": "Experimental investigation of ion temperature clamping effect in electron-heated plasmas on EAST",
+      "source": "NF"
+    },
+    {
+      "id": "df0e97802befe952",
+      "type": "paper",
+      "published": "2026-11-23",
+      "title": "Coexistence of strange quark stars and neutron stars: Metastability and nucleation in protoneutron stars",
+      "source": "PRD"
+    },
+    {
+      "id": "c2bb64341bc6e169",
+      "type": "paper",
+      "published": "2026-11-23",
+      "title": "Mountain muography for the China Jinping Underground Laboratory",
+      "source": "PRD"
+    },
+    {
+      "id": "275713b78455789d",
+      "type": "paper",
+      "published": "2026-11-23",
+      "title": "D 0 − D s + elliptic-flow splitting under event-shape engineering: A probe of sequential charm hadronization",
+      "source": "PRD"
+    },
+    {
       "id": "9bc6682c1c6dd96b",
       "type": "paper",
       "published": "2026-11-23",
       "title": "Milliarcsecond-scale jet reorientations in GRS 1915+105 pointing towards a warped accretion disc",
       "source": "A&A"
+    },
+    {
+      "id": "f99dc6391bcce73d",
+      "type": "paper",
+      "published": "2026-11-23",
+      "title": "Information content of the Gamow Teller resonance: Bayesian inference with self-consistent Skyrme models",
+      "source": "PRC"
+    },
+    {
+      "id": "4bda971ffcf66f39",
+      "type": "paper",
+      "published": "2026-11-23",
+      "title": "Fingerprint of chiral vibration: Δ I = 0 electromagnetic transition probabilities",
+      "source": "PRC"
+    },
+    {
+      "id": "275829e06950d1c3",
+      "type": "paper",
+      "published": "2026-11-23",
+      "title": "Parameter scan of multi-fluid equilibria in rotating p-11B plasmas: Effects on fusion power and Bremsstrahlung losses",
+      "source": "NF"
+    },
+    {
+      "id": "25d3d3a967103dbe",
+      "type": "paper",
+      "published": "2026-11-23",
+      "title": "Hierarchical multi-to-single-modal knowledge distillation for disruption prediction in EAST",
+      "source": "NF"
+    },
+    {
+      "id": "f61bbca106964184",
+      "type": "paper",
+      "published": "2026-11-23",
+      "title": "Erosion profiles in strongly magnetised plasmas",
+      "source": "NF"
+    },
+    {
+      "id": "ed2e40377efd1c3b",
+      "type": "paper",
+      "published": "2026-11-23",
+      "title": "Bayesian optimization of stellarator alpha-particle confinement using data-informed parameter spaces and dimensionality reduction",
+      "source": "NF"
+    },
+    {
+      "id": "70078420f0282bec",
+      "type": "paper",
+      "published": "2026-11-21",
+      "title": "Asymptotic normalization coefficient of the 14O→13O+n configuration from the peripheral 14O(d,t)13O reaction",
+      "source": "IJMPE"
+    },
+    {
+      "id": "e1e58907c6ae09de",
+      "type": "paper",
+      "published": "2026-11-21",
+      "title": "Theoretical investigation of neutron shell gap at N=100",
+      "source": "IJMPE"
     },
     {
       "id": "fd444f5bb4c8efd0",
@@ -1083,6 +1237,13 @@
       "source": "PRC"
     },
     {
+      "id": "a8ed84bffbf2796c",
+      "type": "paper",
+      "published": "2026-10-24",
+      "title": "FLASH radiotherapy using high-energy X-rays: critical dosimetry design and characteristics of FLASH radiation platform based on compact LINAC",
+      "source": "NST"
+    },
+    {
       "id": "bd0681e3e5269bf2",
       "type": "paper",
       "published": "2026-10-23",
@@ -1095,13 +1256,6 @@
       "published": "2026-10-23",
       "title": "First measurement of energy-energy correlators in D 0 -tagged jets from proton-proton collisions at s = 13 TeV",
       "source": "PRL"
-    },
-    {
-      "id": "f2811acb22572fb6",
-      "type": "paper",
-      "published": "2026-10-23",
-      "title": "Evolution of collectivity and emergence of octupole correlations in 77 Br",
-      "source": "PRC"
     },
     {
       "id": "69ceb3358f24a372",
@@ -6856,160 +7010,6 @@
       "published": "2014-06-01",
       "title": "A novel method for NDT applications using NXCT system at the Missouri University of Science & Technology",
       "source": "NIMA"
-    },
-    {
-      "id": "ddf5070d2aeb26de",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "A likelihood-based reconstruction algorithm for top-quark pairs and the KLFitter framework",
-      "source": "NIMA"
-    },
-    {
-      "id": "4e6a6d50ca6e486d",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "A LaBr3: Ce fast-timing array for DESPEC at FAIR",
-      "source": "NIMA"
-    },
-    {
-      "id": "0a3d98c4bd23b19c",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Particle production in the Color Glass Condensate: from electron–proton DIS to proton–nucleus collisions",
-      "source": "NPA"
-    },
-    {
-      "id": "845573029bf5c4cb",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Light-flavour hadron production in p–Pb collisions measured with the ALICE detector at the LHC",
-      "source": "NPA"
-    },
-    {
-      "id": "8eea6937f91cc3b0",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "J / ψ photoproduction in Pb–Pb and p–Pb ultra-peripheral collisions with ALICE at LHC",
-      "source": "NPA"
-    },
-    {
-      "id": "29e5a1314a0d784e",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Isotropization of the quark gluon plasma",
-      "source": "NPA"
-    },
-    {
-      "id": "28c3116d82ec42d1",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Is there jet quenching in pPb?",
-      "source": "NPA"
-    },
-    {
-      "id": "8bf724ba2b5bba9c",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Identified particle production in p–Pb collisions measured with the ALICE detector",
-      "source": "NPA"
-    },
-    {
-      "id": "a2f48557f632228e",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Heavy-flavour production in ALICE",
-      "source": "NPA"
-    },
-    {
-      "id": "0881a3c138c59877",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Heavy-flavour decay lepton measurements in pp, p–Pb, and Pb–Pb collisions with ALICE at the LHC",
-      "source": "NPA"
-    },
-    {
-      "id": "faffd8e4620f1ab4",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Discovery of large scale tensor mode and chaotic inflation in supergravity",
-      "source": "PLB"
-    },
-    {
-      "id": "c8bf1cec2a3623bb",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Constraining models of initial state with v 2 and v 3 data from LHC and RHIC",
-      "source": "NPA"
-    },
-    {
-      "id": "c6fee9df4d7700db",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Angular correlations of identified charged particles measured in pp collisions by ALICE at the LHC",
-      "source": "NPA"
-    },
-    {
-      "id": "85a8898cca3b86ac",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "ALICE measurements in p–Pb collisions: Charged particle multiplicity, centrality determination and implications for binary scaling",
-      "source": "NPA"
-    },
-    {
-      "id": "607250f05eeda4b8",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Identified particles in pPb collisions at s NN = 5.02 TeV measured with the CMS detector",
-      "source": "NPA"
-    },
-    {
-      "id": "6f602312eef9159c",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Electroweak bosons in heavy ion collisions in CMS",
-      "source": "NPA"
-    },
-    {
-      "id": "a247d2687287c35a",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Nuclear modification factor in intermediate-energy heavy-ion collisions",
-      "source": "PLB"
-    },
-    {
-      "id": "8fc9edefe75e76b6",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Charmonium spectral functions and transport properties of quark-gluon plasma",
-      "source": "PLB"
-    },
-    {
-      "id": "fe918609114fae40",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Theory summary",
-      "source": "NPA"
-    },
-    {
-      "id": "decd32ac56604a49",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Percolation approach to initial stage effects in high energy collisions",
-      "source": "NPA"
-    },
-    {
-      "id": "944755c5209b3169",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "PHENIX recent heavy flavor results",
-      "source": "NPA"
-    },
-    {
-      "id": "31a9dc8186b1a0d9",
-      "type": "paper",
-      "published": "2014-06-01",
-      "title": "Open-beauty production in pPb collisions at s NN = 5 TeV : Effect of the gluon nuclear densities",
-      "source": "NPA"
     }
   ]
 }
