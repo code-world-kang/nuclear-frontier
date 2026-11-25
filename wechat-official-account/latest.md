@@ -1,6 +1,6 @@
 # 小康康的物理世界 · 2026-11-23 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 9/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 8/18 条已有中文内容。
 
 ## 今日重点论文
 
@@ -31,6 +31,9 @@
 
 ## 物理新闻
 
+- **[Rich quantum phase diagram revealed in semimetallic rhombohedral graphene](https://www.nature.com/articles/s41567-026-03456-4)**  
+   Nature Physics · 2026-11-24  
+   Previous studies of rhombohedral graphene have focused on a single topological and flat conduction or valence band isolated by strong electric fields. Rhombohedral hexalayer graphene is now found to host various quantum phenomena in the correlated semimetallic regime, featuring symmetry breaking, electric-field-driven band inversion, dual-carrier supercondu…
 - **[江门中微子实验中心探测器结构荣获2026世界结构大奖卓越最高奖](https://www.ihep.cas.cn/xwdt2022/rd/202611/t20261123_8312963.html)**  
    高能物理所科研新闻 · 2026-11-23  
    当地时间2026年11月6日晚，英国皇家结构工程师协会（The institution of structural engineers简称IStrucE）在伦敦举办了2026年IStructE世界结构大奖Structural Awards 2026的颁奖典礼。 由中国科学院高能物理研究所提出原创思想、牵头总体方案与工程实施、北京市建筑设计研究院股份有限公司承担详细工程设计，并作为申报代表所申报的江门中微子实验中心探测器结构，凭借卓越的结构工程创新、支撑前沿顶尖科学研究，荣获2026年世界结构大奖的结构工程创新奖和卓越最高奖（Supreme Winner），该项目是中国大跨度结构领域首个获得卓越最高奖的项目。 英国皇家结构工程师协会（IStructE）是当今世界规模与影响力最大的结构工程师协会之一。1968年该…
@@ -40,9 +43,6 @@
 - **[Symmetry Guides the Search for Magnetic Order](http://link.aps.org/doi/10.1103/Physics.19.157)**  
    APS Physics · 2026-11-23  
    Author(s): Zhi-Da Song New symmetry-based computational approaches could make it easier to identify magnetic materials for spintronic devices and other technologies. [Physics 19, 157] Published Mon Nov 23, 2026
-- **[A Paradox That Still Puzzles Physicists](http://link.aps.org/doi/10.1103/Physics.19.162)**  
-   APS Physics · 2026-11-23  
-   Author(s): Michael Schirber A survey of leading researchers finds broad agreement that information escapes from black holes—but little consensus on how, or whether the paradox is solved. [Physics 19, 162] Published Mon Nov 23, 2026
 
 ## 科研通知
 
@@ -58,11 +58,11 @@
 - **[关于发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100371.html)**  
    国家自然科学基金委项目指南 · 2029-12-31  
    国科金发计〔2026〕6号 国家自然科学基金委员会现发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请
-- **[SCD_周会](https://indico.ihep.ac.cn/event/31561/)**  
-   高能所 Indico · 2026-11-22  
-   2026-11-23 — 2026-11-23
-- **[省科技厅关于推荐申报国家重点研发计划 “主要粮食与经济作物大面积单产提升技术”等5个重点专项2026年度项目的通知](https://kjt.hubei.gov.cn/kjdt/tzgg/202611/t20261120_6128909.shtml)**  
-   湖北省科技厅 · 2026-11-20  
-   --湖北省科学技术厅 6128909 省科技厅关于推荐申报国家重点研发计划 “主要粮食与经济作物大面积单产提升技术”等5个重点专项2026年度项目的通知 20 湖北省科学技术厅 2026-11-20 3824 通知公告 湖北政府网 | 科技部网 | 邮箱 | 计划管理 | 奖励评审 | 登录 | 注册 湖北省科学技术厅 搜 索 首页 政府信息公开 互动交流 办事服务 科技动态 科技一网通 当前位置： 首页 > 科技动态 > 通知公告 省科技厅关于推荐申报国家重点研发计划 “主要粮食与经济作物大面积单产提升技术”等5个重点专项2026年度项目的通知 2026-11-20 11:03 | 湖北省科学技术厅 各有关单位： 按照《农业农村部关于发布国家重点研发计划 “主要粮食与经济作物大面积单产提升技术”等5个重点专…
+- **[广东省科学技术厅关于转发国家重点研发计划“关键基础件及制造工艺”重点专项2026年度申报指南的通知](https://gdstc.gd.gov.cn/zwgk_n/tzgg/content/post_4984897.html)**  
+   广东省科技厅 · 2026-11-24  
+   广东省科学技术厅 简体 繁体 无障碍 长者助手 首页 政务公开 科技资讯 党风廉政 办事服务 互动平台 搜 索 当前位置： 首页 > 政务公开 > 通知公告 广东省科学技术厅关于转发国家重点研发计划“关键基础件及制造工艺”重点专项2026年度申报指南的通知 时间 : 2026-11-25 10:51:38 来源 : 广东省科学技术厅 【字体: 大 中 小 】 【打印】 分享到： 粤科函产字〔2026〕1932号 各有关单位： 近日，中国机械工业集团有限公司发布了国家重点研发计划“关键基础件及制造工艺”重点专项申报指南。现转发给你们，请对照指南要求做好项目申报工作。 特此通知。 附件： 中国机械工业集团有限公司关于发布国家重点研发计划“关键基础件及制造工艺”重点专项 2026年度公开竞争项目申报指南的通知 广东…
+- **[北京市科学技术委员会、中关村科技园区管理委员会关于转发推荐国家重点研发计划“关键基础件及制造工艺”重点专项2026年度公开竞争项目申报指南的通知](https://kw.beijing.gov.cn/zwgk/zcwj/202611/t20261124_4956847.html)**  
+   北京市科委 · 2026-11-24  
+   各有关单位： 根据中国机械工业集团有限公司《关于发布国家重点研发计划“关键基础件及制造工艺”重点专项2026年度公开竞争项目申报指南的通知》要求，为做好专项的组织推荐工作，现提出如下要求： 一、申报要求 请有关单位严格按照中国机械工业集团有限公司《关于发布国家重点研发计划“关键基础件及制造工艺”重点专项2026年度公开竞争项目申报指南的通知》要求进行项目申报。 二、填报要求 请各申报单位通过国家科技管理信息系统公共服务平台进行网上填报。申报材料中所需的附件材料，全部要以电子扫描件形式上传。 网上填报申报书的受理时间为：2026年11月13日8:00至12月15日16:00。国科管系统网上开放填报时间为11月27日8:00至12月15日16:00，各申报团队可参照往年模板提前准备申报材料，最终申报材料模板以国科…
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)
