@@ -31,38 +31,38 @@
 
 ## 物理新闻
 
-- **[Rich quantum phase diagram revealed in semimetallic rhombohedral graphene](https://www.nature.com/articles/s41567-026-03456-4)**  
-   Nature Physics · 2026-11-24  
-   Previous studies of rhombohedral graphene have focused on a single topological and flat conduction or valence band isolated by strong electric fields. Rhombohedral hexalayer graphene is now found to host various quantum phenomena in the correlated semimetallic regime, featuring symmetry breaking, electric-field-driven band inversion, dual-carrier supercondu…
-- **[江门中微子实验中心探测器结构荣获2026世界结构大奖卓越最高奖](https://www.ihep.cas.cn/xwdt2022/rd/202611/t20261123_8312963.html)**  
-   高能物理所科研新闻 · 2026-11-23  
-   当地时间2026年11月6日晚，英国皇家结构工程师协会（The institution of structural engineers简称IStrucE）在伦敦举办了2026年IStructE世界结构大奖Structural Awards 2026的颁奖典礼。 由中国科学院高能物理研究所提出原创思想、牵头总体方案与工程实施、北京市建筑设计研究院股份有限公司承担详细工程设计，并作为申报代表所申报的江门中微子实验中心探测器结构，凭借卓越的结构工程创新、支撑前沿顶尖科学研究，荣获2026年世界结构大奖的结构工程创新奖和卓越最高奖（Supreme Winner），该项目是中国大跨度结构领域首个获得卓越最高奖的项目。 英国皇家结构工程师协会（IStructE）是当今世界规模与影响力最大的结构工程师协会之一。1968年该…
-- **[“构建标准化知识产权体系，多元转化赋能重离子医疗装备国产化”入选知识产权强国建设第五批典型案例](https://www.imp.cas.cn/sndt2017/202611/t20261123_8313107.html)**  
-   近代物理所核物理动态 · 2026-11-23  
-   近日，由中国科学院推荐、中国科学院近代物理研究所申报的“构建标准化知识产权体系，多元转化赋能重离子医疗装备国产化”入选知识产权强国建设第五批典型案例。 知识产权强国建设典型案例是贯彻落实《知识产权强国建设纲要（ 2021—2035 年）》的重要举措，从全国范围内遴选 30 个创新性强、成效较为突出、具备复制推广价值的案例，发挥典型示范引领作用。 近代物理所依托兰州重离子加速器、强流重离子加速器等大科学装置，围绕高端肿瘤放疗装备持续开展自主攻关，探索重大项目知识产权创造、保护、运用和管理机制。近代物理所贯标《科研组织知识产权管理规范》，建立与质量管理体系相衔接的知识产权管理制度，组建知识产权专员队伍，对研发项目开展专利前置评估和分级审核；围绕两代重离子治疗装置开展专利布局，同步推进海外专利保护；在成果转化环节，…
-- **[Symmetry Guides the Search for Magnetic Order](http://link.aps.org/doi/10.1103/Physics.19.157)**  
-   APS Physics · 2026-11-23  
-   Author(s): Zhi-Da Song New symmetry-based computational approaches could make it easier to identify magnetic materials for spintronic devices and other technologies. [Physics 19, 157] Published Mon Nov 23, 2026
+- **[Supersolid crystals of dipolar excitons in a lattice](https://www.nature.com/articles/s41567-026-03522-x)**  
+   Nature Physics · 2026-11-25  
+   In condensed-matter physics, long-range correlations introduce quantum states of matter that challenge intuition. For example, supersolids combine density order that manifests as symmetry-breaking spatial arrangement, and frictionless superfluid flow. However, supersolids have proven to exist only under very stringent conditions, with evidence limited to a…
+- **[Coherent manipulation of interacting electron qubits on solid neon](https://www.nature.com/articles/s41567-026-03529-4)**  
+   Nature Physics · 2026-11-25  
+   Electrons trapped on solid neon surfaces can serve as low-noise charge qubits with full electrical control and a compact device footprint. However, quantum information processing requires the implementation of two-qubit gates, which has been difficult to achieve in this system. Here we report the coherent manipulation of multiple interacting electron-on-sol…
+- **[Protein Droplets Power Motorless Propulsion](http://link.aps.org/doi/10.1103/Physics.19.s157)**  
+   APS Physics · 2026-11-25  
+   Author(s): Ryan Wilkinson A new mechanism lets microscopic objects propel themselves using protein droplets without requiring molecular motors. [Physics 19, s157] Published Wed Nov 25, 2026
+- **[Getting More Photons Out of Quantum Memory](http://link.aps.org/doi/10.1103/Physics.19.s147)**  
+   APS Physics · 2026-11-25  
+   Author(s): Sophia Chen A new solid-state quantum memory combines multiple innovations to more efficiently store and retrieve photons. [Physics 19, s147] Published Wed Nov 25, 2026
 
 ## 科研通知
 
-- **[核物理与核技术全国重点实验室学术报告— 核物理前沿与交叉专题（第六十八讲）](https://sklnpt.pku.edu.cn/info/1121/4941.htm)**  
-   核物理与核技术全国重点实验室会议 · 2026-11-24  
-   ----友情链接---- ---- 北京大学 ---- ---- 北京大学物理学院 ---- ---- HIAF强流重离子加速器装置 ---- 地址：北京市海淀区成府路201号核物理与核技术全国重点实验室 邮编：100871 联系电话：010-62751870；010-62755215 邮箱：jingwu@pku.edu.cn
-- **[CEPC / AGORA Inner Tracker meeting](https://indico.ihep.ac.cn/event/31583/)**  
-   高能所 Indico · 2026-11-23  
-   2026-11-24 — 2026-11-24 Join Zoom Meeting https://cern.zoom.us/j/68290004702?pwd=VMqZr0ZhnzZJDIrC3GGs1VuIPUxz7W.1 Meeting ID: 682 9000 4702 Passcode: 485742 ---
+- **[第一届光子核物理研讨会](https://napp.fudan.edu.cn/event/617/)**  
+   复旦大学核物理 Indico · 2026-11-25  
+   会议摘要： 近年来，国际上短程关联（SRC）研究持续保持活跃。与此同时，国内位于中国科学院近代物理研究所的CEE实验装置已进入安装调试阶段，位于惠州的强流重离子加速器（HIAF）装置也顺利通过验收，为国内SRC实验研究奠定了坚实的坚实基础。在理论方面，国内专家同样取得了丰硕成果，特别是在利用重离子碰撞探究核子间相互作用及SRC现象上作出了开创性工作，为依托国内大科学装置开辟全新的SRC研究方向指明了路径。 在这一关键发展节点上，为进一步推动短程关联及相关领域的持续深入发展，拟召开第二届核物理短程关联研讨会。此次会议由湖州师范大学理学院承办。具体时间：2026年11月20日（周五）报到，21-22日开会，23日离会。具体的会场地址和会务费等事项见第二轮通知。 主办单位： 湖州师范大学、复旦大学、近代物理研究所、…
+- **[第一届光子核物理研讨会](https://napp.fudan.edu.cn/event/616/)**  
+   复旦大学核物理 Indico · 2026-11-25  
+   Choose timezone Your profile timezone: Use timezone based on: Event/category Custom Select a custom timezone Save
 - **[关于发布原子级制造基础研究重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100397.html)**  
    国家自然科学基金委项目指南 · 2030-12-31  
    国科金发计〔2026〕12号 国家自然科学基金委员会现发布原子级制造基础研究重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请。 国家自然科学基金委员会 2026年1月26日 原子级制造基础研究重大研究计划 2026年度项目指南 原子级制造是指在原子尺度控制材料的结构与成分，其核心是通过原子的精确操控来获得特定功能，突破传统制造技术的精度极限，实现物质的原子级转化与高效利用。原子级制造的科学基础是在原子尺度下优化物质转化与能量利用，实现物质结构和材料性能的按需订制，为实现颠覆性技术、升级战略性产业和提升国家安全竞争力奠定科学与技术基础。 一、科学目标 本重大研究计划围绕批量原子操控这一核心目标，聚焦原子尺度下物质与能量的相互作用原理，实现材料成分和结构的原子级构筑和测量表征，…
 - **[关于发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100371.html)**  
    国家自然科学基金委项目指南 · 2029-12-31  
    国科金发计〔2026〕6号 国家自然科学基金委员会现发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请
-- **[广东省科学技术厅关于转发国家重点研发计划“关键基础件及制造工艺”重点专项2026年度申报指南的通知](https://gdstc.gd.gov.cn/zwgk_n/tzgg/content/post_4984897.html)**  
-   广东省科技厅 · 2026-11-24  
-   广东省科学技术厅 简体 繁体 无障碍 长者助手 首页 政务公开 科技资讯 党风廉政 办事服务 互动平台 搜 索 当前位置： 首页 > 政务公开 > 通知公告 广东省科学技术厅关于转发国家重点研发计划“关键基础件及制造工艺”重点专项2026年度申报指南的通知 时间 : 2026-11-25 10:51:38 来源 : 广东省科学技术厅 【字体: 大 中 小 】 【打印】 分享到： 粤科函产字〔2026〕1932号 各有关单位： 近日，中国机械工业集团有限公司发布了国家重点研发计划“关键基础件及制造工艺”重点专项申报指南。现转发给你们，请对照指南要求做好项目申报工作。 特此通知。 附件： 中国机械工业集团有限公司关于发布国家重点研发计划“关键基础件及制造工艺”重点专项 2026年度公开竞争项目申报指南的通知 广东…
-- **[北京市科学技术委员会、中关村科技园区管理委员会关于转发推荐国家重点研发计划“关键基础件及制造工艺”重点专项2026年度公开竞争项目申报指南的通知](https://kw.beijing.gov.cn/zwgk/zcwj/202611/t20261124_4956847.html)**  
-   北京市科委 · 2026-11-24  
-   各有关单位： 根据中国机械工业集团有限公司《关于发布国家重点研发计划“关键基础件及制造工艺”重点专项2026年度公开竞争项目申报指南的通知》要求，为做好专项的组织推荐工作，现提出如下要求： 一、申报要求 请有关单位严格按照中国机械工业集团有限公司《关于发布国家重点研发计划“关键基础件及制造工艺”重点专项2026年度公开竞争项目申报指南的通知》要求进行项目申报。 二、填报要求 请各申报单位通过国家科技管理信息系统公共服务平台进行网上填报。申报材料中所需的附件材料，全部要以电子扫描件形式上传。 网上填报申报书的受理时间为：2026年11月13日8:00至12月15日16:00。国科管系统网上开放填报时间为11月27日8:00至12月15日16:00，各申报团队可参照往年模板提前准备申报材料，最终申报材料模板以国科…
+- **[广东省基础与应用基础研究基金委员会关于2027年度广东省基础与应用基础研究基金自然科学基金拟立项项目的公示](https://gdstc.gd.gov.cn/zwgk_n/tzgg/content/post_4985297.html)**  
+   广东省科技厅 · 2026-11-25  
+   广东省科学技术厅 简体 繁体 无障碍 长者助手 首页 政务公开 科技资讯 党风廉政 办事服务 互动平台 搜 索 当前位置： 首页 > 政务公开 > 通知公告 广东省基础与应用基础研究基金委员会关于2027年度广东省基础与应用基础研究基金自然科学基金拟立项项目的公示 时间 : 2026-11-26 09:29:42 来源 : 广东省科学技术厅 【字体: 大 中 小 】 【打印】 分享到： 粤基金公示〔2026〕6号 根据《广东省省级财政专项资金管理办法（2025年修订）》等有关规定，经形式审查、通讯评审、答辩评审（杰出青年项目）等程序，2027年度广东省基础与应用基础研究基金自然科学基金拟资助项目3643项（面上项目3501项，优秀青年项目42项，杰出青年项目100项），现予以公示。公示期为2026年11月26…
+- **[核物理与核技术全国重点实验室学术报告— 核物理前沿与交叉专题（第六十八讲）](https://sklnpt.pku.edu.cn/info/1121/4941.htm)**  
+   核物理与核技术全国重点实验室会议 · 2026-11-24  
+   ----友情链接---- ---- 北京大学 ---- ---- 北京大学物理学院 ---- ---- HIAF强流重离子加速器装置 ---- 地址：北京市海淀区成府路201号核物理与核技术全国重点实验室 邮编：100871 联系电话：010-62751870；010-62755215 邮箱：jingwu@pku.edu.cn
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)
