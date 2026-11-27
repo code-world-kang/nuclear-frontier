@@ -1,6 +1,6 @@
 # 小康康的物理世界 · 2026-11-23 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 8/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 13/18 条已有中文内容。
 
 ## 今日重点论文
 
@@ -31,18 +31,18 @@
 
 ## 物理新闻
 
-- **[Supersolid crystals of dipolar excitons in a lattice](https://www.nature.com/articles/s41567-026-03522-x)**  
+- **[晶格中偶极激子的超固体晶体](https://www.nature.com/articles/s41567-026-03522-x)**  
    Nature Physics · 2026-11-25  
-   In condensed-matter physics, long-range correlations introduce quantum states of matter that challenge intuition. For example, supersolids combine density order that manifests as symmetry-breaking spatial arrangement, and frictionless superfluid flow. However, supersolids have proven to exist only under very stringent conditions, with evidence limited to a…
-- **[Coherent manipulation of interacting electron qubits on solid neon](https://www.nature.com/articles/s41567-026-03529-4)**  
+   在凝聚态物理学中，长程关联会引入挑战直觉的物质量子态。例如，超固体结合了表现为对称性破缺空间排列的密度有序与无摩擦的超流流动。然而，事实证明，超固体仅在非常严格的条件下存在，相关证据仅限于在弱相互作用区观察到的少数自发碎裂超流体。在此，我们通过将偶极玻色子限制在具有长程跃迁的晶格中，展示了一种在强相互作用区实现晶态超固体的框架。我们表明，偶极激子可实现这一晶格模型。在四分之一、三分之一和二分之一的分数晶格填充下，我们在约 100 个格点上观察到自发破坏晶格平移对称性的介观量子晶体。同时，相干长程跃迁诱导非对角长程序，从而使激子固体成为超流体。我们的数值方法定量证实，超固态在晶格哈密顿量的基态中逐渐形成。此前已在弱相互作用情形中观察到超固体。现在，在受限于具有长程跃迁的晶格中的偶极激子强关联系统里，已展示出若干…
+- **[固态氖上相互作用电子量子比特的相干操控](https://www.nature.com/articles/s41567-026-03529-4)**  
    Nature Physics · 2026-11-25  
-   Electrons trapped on solid neon surfaces can serve as low-noise charge qubits with full electrical control and a compact device footprint. However, quantum information processing requires the implementation of two-qubit gates, which has been difficult to achieve in this system. Here we report the coherent manipulation of multiple interacting electron-on-sol…
-- **[Protein Droplets Power Motorless Propulsion](http://link.aps.org/doi/10.1103/Physics.19.s157)**  
+   俘获在固态氖表面的电子可以用作低噪声电荷量子比特，具备全电学控制能力和紧凑的器件占用空间。然而，量子信息处理需要实现双量子比特门，而这在该系统中一直难以实现。在此，我们报道了对多个相互作用的固态氖上电子电荷量子比特的相干操控。利用在氖表面上天然限制于彼此邻近位置的电子，我们展示了强量子比特–量子比特耦合，并使用全局微波驱动实现了交叉共振和 bSWAP 类型的双量子比特操作。我们的结果表明，设计固态氖上的电子限域可以增强对量子比特–量子比特相互作用的控制，并产生一种紧凑且可扩展的量子计算架构。固态氖表面上的电子已被确立为高质量的单个量子比特。现在，利用被限制在彼此邻近位置的电子之间的强耦合，已经展示了双量子比特门。
+- **[蛋白质液滴为无马达推进提供动力](http://link.aps.org/doi/10.1103/Physics.19.s157)**  
    APS Physics · 2026-11-25  
-   Author(s): Ryan Wilkinson A new mechanism lets microscopic objects propel themselves using protein droplets without requiring molecular motors. [Physics 19, s157] Published Wed Nov 25, 2026
-- **[Getting More Photons Out of Quantum Memory](http://link.aps.org/doi/10.1103/Physics.19.s147)**  
+   作者：Ryan Wilkinson 一种新机制使微观物体能够利用蛋白质液滴实现自我推进，而无须分子马达。[Physics 19, s157] 发表于 2026 年 11 月 25 日，星期三
+- **[从量子存储器中获取更多光子](http://link.aps.org/doi/10.1103/Physics.19.s147)**  
    APS Physics · 2026-11-25  
-   Author(s): Sophia Chen A new solid-state quantum memory combines multiple innovations to more efficiently store and retrieve photons. [Physics 19, s147] Published Wed Nov 25, 2026
+   作者：Sophia Chen 一种新的固态量子存储器结合了多项创新，能够更高效地存储和读取光子。[Physics 19, s147] 发表于 2026 年 11 月 25 日星期三
 
 ## 科研通知
 
@@ -51,7 +51,7 @@
    会议摘要： 近年来，国际上短程关联（SRC）研究持续保持活跃。与此同时，国内位于中国科学院近代物理研究所的CEE实验装置已进入安装调试阶段，位于惠州的强流重离子加速器（HIAF）装置也顺利通过验收，为国内SRC实验研究奠定了坚实的坚实基础。在理论方面，国内专家同样取得了丰硕成果，特别是在利用重离子碰撞探究核子间相互作用及SRC现象上作出了开创性工作，为依托国内大科学装置开辟全新的SRC研究方向指明了路径。 在这一关键发展节点上，为进一步推动短程关联及相关领域的持续深入发展，拟召开第二届核物理短程关联研讨会。此次会议由湖州师范大学理学院承办。具体时间：2026年11月20日（周五）报到，21-22日开会，23日离会。具体的会场地址和会务费等事项见第二轮通知。 主办单位： 湖州师范大学、复旦大学、近代物理研究所、…
 - **[第一届光子核物理研讨会](https://napp.fudan.edu.cn/event/616/)**  
    复旦大学核物理 Indico · 2026-11-25  
-   Choose timezone Your profile timezone: Use timezone based on: Event/category Custom Select a custom timezone Save
+   选择时区 您的个人资料时区：使用基于以下内容的时区：活动/类别 自定义 选择自定义时区 保存
 - **[关于发布原子级制造基础研究重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100397.html)**  
    国家自然科学基金委项目指南 · 2030-12-31  
    国科金发计〔2026〕12号 国家自然科学基金委员会现发布原子级制造基础研究重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请。 国家自然科学基金委员会 2026年1月26日 原子级制造基础研究重大研究计划 2026年度项目指南 原子级制造是指在原子尺度控制材料的结构与成分，其核心是通过原子的精确操控来获得特定功能，突破传统制造技术的精度极限，实现物质的原子级转化与高效利用。原子级制造的科学基础是在原子尺度下优化物质转化与能量利用，实现物质结构和材料性能的按需订制，为实现颠覆性技术、升级战略性产业和提升国家安全竞争力奠定科学与技术基础。 一、科学目标 本重大研究计划围绕批量原子操控这一核心目标，聚焦原子尺度下物质与能量的相互作用原理，实现材料成分和结构的原子级构筑和测量表征，…
