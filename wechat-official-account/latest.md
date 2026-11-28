@@ -1,27 +1,27 @@
 # 小康康的物理世界 · 2026-11-27 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 4/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 12/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[Thermal effects on stellar neutron capture reactions: a quantum dynamical approach](https://doi.org/10.1140/epja/s10050-026-02009-w)**  
+1. **[恒星中子俘获反应的热效应：一种量子动力学方法](https://doi.org/10.1140/epja/s10050-026-02009-w)**  
    The European Physical Journal A · 2026-11-27  
-   Abstract The neutron capture process plays a vital role in creating the heavy elements in the universe. Astrophysical environments involved in these processes are characterized by two distinct reaction mechanisms: the slow and rapid neutron capture processes. In this work, the slow neutron capture process is described with the time-dependent coupled channel…
-2. **[Structure of multi-$$\Lambda $$ hypernuclei with a Skyrme-type $$\Lambda \Lambda $$ interaction guided by double-$$\Lambda $$ hypernuclear and neutron-star constraints](https://doi.org/10.1140/epja/s10050-026-02000-5)**  
+   摘要 中子俘获过程在宇宙中重元素的形成中起着至关重要的作用。参与这些过程的天体物理环境以两种不同的反应机制为特征：慢中子俘获过程和快中子俘获过程。在本工作中，采用含时耦合道波包（TDCCWP）方法描述慢中子俘获过程，该方法同时使用多体核势和依赖于初始温度的状态来计及热环境。为了评估混合且纠缠的初态在依赖于温度的中子俘获截面中的作用，将 TDCCWP 计算与基于 Lindblad 主方程的耦合道密度矩阵（CCDM）方法的计算进行了比较。将 TDCCWP 方法的初始波函数中纳入温度的重要性与采用 Hauser–Feshbach 型方法对反应率进行热化处理作了比较。TDCCWP 计算表明，n+ $$^{188}$$ 188 Os 俘获截面随温度升高而减小，同时在所研究的最高热能处反应率也降低，这与 Hauser–F…
+2. **[由双-$$\Lambda $$ 超核和中子星约束指导的、具有 Skyrme 型 $$\Lambda \Lambda $$ 相互作用的多-$$\Lambda $$ 超核结构](https://doi.org/10.1140/epja/s10050-026-02000-5)**  
    The European Physical Journal A · 2026-11-27  
-   We investigate multi- $$\Lambda $$ hypernuclei using a Skyrme-type $$\Lambda \Lambda $$ energy density functional whose s-wave parameters are fitted to double- $$\Lambda $$ hypernuclear information supplemented by pseudodata for heavier systems. The remaining parameters are explored over ranges guided by the double- $$\Lambda $$ fit quality and neutron-star…
-3. **[Energies and rates of α-decay of unknown nuclei in the region Z ≥ 100](https://doi.org/10.1142/s0218301327410011)**  
+   我们采用 Skyrme 型 $$\Lambda \Lambda $$ 能量密度泛函研究多-$$\Lambda $$ 超核，其 s 波参数通过双-$$\Lambda $$ 超核信息以及较重系统的伪数据进行拟合。其余参数则在由双-$$\Lambda $$ 拟合质量和中子星观测所指导的范围内进行探索。我们考察了正常核密度附近的均匀核子–$$\Lambda $$ 物质，并对构建于从氧到铅的稳定双幻数核芯之上的有限系统进行了不含配对的球形 Hartree–Fock 计算。在所探索的参数范围内，均匀物质中的 $$\Lambda $$ 化学势及其相应的发射阈值随排斥性 p 波耦合产生的变化，大于改变密度依赖耦合并重新拟合 s 波参数所获得的净变化。在有限原子核中，随着 $$\Lambda $$ 超子数目的增加，$$\Lam…
+3. **[Z ≥ 100 区域未知原子核的 α 衰变能量和速率](https://doi.org/10.1142/s0218301327410011)**  
    International Journal of Modern Physics E · 2026-11-27  
-   We consider the applicability of phenomenological methods for determining the characteristics of α-decay in transfermium region. Similar to the local mass relations method used to predict the masses of unknown nuclides, we use local relations based on the Q α values of neighboring nuclei to estimate α-decay energies. Based on the AME2020 compilation and mod…
-4. **[Decay Modes of the Newly Synthesised 231 Am Isotope](https://doi.org/10.1142/s0218301327500030)**  
+   我们考察了唯象方法在确定镄后元素区 α 衰变特性方面的适用性。与用于预测未知核素质量的局部质量关系方法类似，我们使用基于相邻原子核 Q α 值的局部关系来估算 α 衰变能。基于 AME2020 汇编和现代实验数据，获得了 100 ≥ Z ≥ 118 范围内原子核的 Q α 估计值。为了估算 α 衰变半衰期，我们考察了各种唯象依赖关系，并在考虑现代实验数据的情况下调整了参数。在现阶段，采用针对偶-偶、奇和奇-奇原子核的不同参数集的 Viola-Seaborg 公式可实现对实验的最佳描述。还与其他模型的预测进行了比较。
+4. **[新合成的 231 Am 同位素的衰变模式](https://doi.org/10.1142/s0218301327500030)**  
    International Journal of Modern Physics E · 2026-11-27  
-   Decay systematics of the newly synthesised 231 Am isotope were studied within the framework of the Coulomb and Proximity Potential Model (CPPM), and the results are compared with the predictions of the Universal Decay Law (UDL), the Modified Universal Decay Law (MUDL), and the Horoi formula. Alpha decay is found to be the dominant decay channel for 231 Am.…
-5. **[Determination of the Asymptotic Normalization Coefficient for the 12 N → 15 N+ n from 15 N(d,p) 15 N Neutron Transfer Reaction](https://doi.org/10.1142/s0218301327500042)**  
+   在库仑与邻近势模型（CPPM）框架内研究了新合成的 231 Am 同位素的衰变系统学，并将结果与普适衰变定律（UDL）、修正普适衰变定律（MUDL）和 Horoi 公式的预测进行了比较。研究发现，α 衰变是 231 Am 的主导衰变道。还预测了 231 Am 的若干种可能的团簇发射。通过输入使用 WS4、FRDM、AME(2020) 和 KTUY 质量表获得的 α 和团簇发射 Q 值并计算半衰期，对各种质量表的预测进行了比较。还使用 Sobhani 和 Khalafi 的经验公式（S K Formula）估算了 β 衰变和电子俘获半衰期。研究发现，α 与 β + /EC 半衰期之间的差异处于 α 衰变测量的实验不确定度范围内。
+5. **[利用 15 N(d,p) 15 N 中子转移反应测定 12 N → 15 N+ n 的渐近归一化系数](https://doi.org/10.1142/s0218301327500042)**  
    International Journal of Modern Physics E · 2026-11-27  
-   The main purpose of this work is to determine the values of the asymptotic normalization coefficients (ANC) for the ground and first three excited states of the 16 N nucleus. For this purpose, the analysis of the differential cross-section of the neutron transfer reaction 15 N(d,p) 16 N at deuteron energy of 15 MeV were performed within the framework of the…
-6. **[Principles of locus-specific chromatin remodeling induced by therapeutic DNA integration](https://doi.org/10.1126/sciadv.aef5318)**  
+   本工作的主要目的是确定 16 N 原子核基态和前三个激发态的渐近归一化系数（ANC）值。为此，在修正畸变波玻恩近似（MDWBA）框架内，对氘核能量为 15 MeV 时中子转移反应 15 N(d,p) 16 N 的微分截面进行了分析。确定了 16 N 原子核基态和前三个激发态的渐近归一化系数值及其不确定度。
+6. **[治疗性 DNA 整合诱导的位点特异性染色质重塑原理](https://doi.org/10.1126/sciadv.aef5318)**  
    Science Advances · 2026-11-27  
-   Understanding how integrated genetic elements engage host chromatin is essential for improving gene-therapy safety. Lentiviral vectors (LVs) are widely used, yet how integrated cis-regulatory elements (CREs) interact with the three-dimensional (3D) host genome remains poorly understood. Here, we performed a systematic, locus-resolved analysis of chromatin a…
+   了解整合的遗传元件如何与宿主染色质相互作用，对于提高基因治疗的安全性至关重要。慢病毒载体（LVs）已被广泛使用，但整合的顺式调控元件（CREs）如何与三维（3D）宿主基因组相互作用，仍知之甚少。在此，我们对 329 个经精确定位的 LV 整合位点处的染色质可及性、3D 基因组组织和转录输出进行了系统性的位点分辨分析。LV 整合通过提高可及性、诱导转录通读以及产生异常的宿主-LV 融合转录本，在局部重塑染色质，且这种作用强烈依赖于位点和方向，由此确立了方向是决定调控影响的关键因素，也是位点特异性遗传毒性风险的结构基础。引入染色质绝缘子元件可稳定转基因表达，同时维持拓扑关联结构域和整体架构。我们进一步开发了一个机器学习框架，根据在细胞类型特异性染色质背景下预测的调控扰动，对整合位点进行优先级排序。综上，这些发现明…
 7. **[circSRSF5-FUS-EIF4A3调控回路保护尤文肉瘤细胞免受EWS::FLI1小分子抑制](https://doi.org/10.1126/sciadv.aec1017)**  
    Science Advances · 2026-11-27  
    环状RNA（circRNAs）因其高稳定性、多样性以及调控多种生物过程的能力，已成为癌症研究的重点。本研究探讨了YK-4-279对尤文肉瘤（ES）中EWS::FLI1癌基因进行小分子抑制的影响。ES是一种罕见且高度侵袭性的儿童癌症，由破坏正常基因调控并促进肿瘤生长的融合蛋白驱动。当前的治疗依赖高强度化疗，伴有严重的长期副作用，这凸显了对靶向治疗的需求。一种前景良好的新方法利用小分子YK-4-279靶向EWS::FLI1与RNA解旋酶DHX9之间的相互作用；该分子显示出强效抗肿瘤作用，并已进入临床试验。转录组分析揭示，YK-4-279治疗后circRNA表达发生广泛变化，其中circSRSF5显著上调。功能和机制证据表明，circSRSF5通过稳定抗凋亡蛋白真核翻译起始因子4A3（EIF4A3）并促成治疗耐药，…
@@ -31,12 +31,12 @@
 
 ## 物理新闻
 
-- **[Differential active adhesion and a capillary instability drive global eversion and dissemination of bacterial colonies](https://www.nature.com/articles/s41567-026-03530-x)**  
+- **[差异性主动黏附与毛细不稳定性驱动细菌菌落的整体外翻和扩散](https://www.nature.com/articles/s41567-026-03530-x)**  
    Nature Physics · 2026-11-27  
-   Attractive forces between cells can determine the shape and sorting behaviour of bacterial colonies. During colony development, chemical gradients form within the colony, but it is unclear how they affect cohesion. Here we discover that such gradients trigger global eversion of proliferating colonies formed by the human pathogen Neisseria gonorrhoeae. Like…
-- **[Chemical gradients turn bacterial aggregates inside out](https://www.nature.com/articles/s41567-026-03531-w)**  
+   细胞之间的吸引力可以决定细菌菌落的形状和分选行为。在菌落发育过程中，菌落内部会形成化学梯度，但尚不清楚这些梯度如何影响内聚性。在此，我们发现，这类梯度会触发由人类病原体淋病奈瑟菌形成的增殖菌落发生整体外翻。像射流一样，内部核心流向外围，并在那里部分分散、部分围绕菌落核心铺展开来。分散的活细胞重新形成菌落，从而导致快速扩散。外翻取决于局部氧耗竭，这会降低控制自吸引的分子马达的活性：外翻之前，菌落由内聚性较弱的球形核心和包围其外的内聚性较强的壳层构成。一个理想化计算模型表明，在这种构型中，当强相互作用壳层的厚度降至临界值以下时，会出现一种类似于毛细不稳定性的不稳定性。我们表明，外翻概率强烈依赖于马达产生的细菌间吸引力。总体而言，我们的结果表明，化学梯度在一个力学活性菌落中诱导自发对称性破缺，从而触发非线性形状不稳…
+- **[化学梯度使细菌聚集体由内向外翻转](https://www.nature.com/articles/s41567-026-03531-w)**  
    Nature Physics · 2026-11-27  
-   When a Neisseria gonorrhoeae aggregate grows large enough, cell–cell adhesion in the oxygen-deprived core is weaker than among peripheral cells. This differential adhesion drives the inner cells to stream outward, causing colony eversion.
+   当淋病奈瑟菌聚集体生长到足够大时，缺氧核心中的细胞–细胞黏附弱于外周细胞之间的黏附。这种差异性黏附驱使内部细胞向外流动，导致菌落外翻。
 - **[晶格中偶极激子的超固体晶体](https://www.nature.com/articles/s41567-026-03522-x)**  
    Nature Physics · 2026-11-25  
    在凝聚态物理学中，长程关联会引入挑战直觉的物质量子态。例如，超固体结合了表现为对称性破缺空间排列的密度有序与无摩擦的超流流动。然而，事实证明，超固体仅在非常严格的条件下存在，相关证据仅限于在弱相互作用区观察到的少数自发碎裂超流体。在此，我们通过将偶极玻色子限制在具有长程跃迁的晶格中，展示了一种在强相互作用区实现晶态超固体的框架。我们表明，偶极激子可实现这一晶格模型。在四分之一、三分之一和二分之一的分数晶格填充下，我们在约 100 个格点上观察到自发破坏晶格平移对称性的介观量子晶体。同时，相干长程跃迁诱导非对角长程序，从而使激子固体成为超流体。我们的数值方法定量证实，超固态在晶格哈密顿量的基态中逐渐形成。此前已在弱相互作用情形中观察到超固体。现在，在受限于具有长程跃迁的晶格中的偶极激子强关联系统里，已展示出若干…
