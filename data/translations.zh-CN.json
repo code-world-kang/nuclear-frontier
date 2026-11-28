@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T16:13:39.356369+00:00",
+  "generated_at": "2026-11-28T14:37:34.438181+00:00",
   "provider": "mixed",
   "items": {
     "03fb0be72e560764": {
@@ -16903,13 +16903,15 @@
     },
     "15b6801086e0eaa4": {
       "title_zh": "线粒体裂变因子感知并调控铁死亡",
-      "abstract_zh": "",
-      "translated_at": "2026-09-17T00:07:26.697255+00:00",
-      "provider": "open-source-local",
-      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "source_hash": "db4db44c2abb0782b25c37354a00851d311248f2226038030b437c5db2bb9cfa",
+      "abstract_zh": "铁死亡是一种由铁依赖性脂质过氧化驱动的调控性细胞死亡形式，与多种病理状态1–4有关。尽管线粒体和其他细胞器日益被认为是铁死亡的重要调节因子5–7，但将细胞器动力学与铁死亡执行过程相耦联的统一机制仍难以捉摸。在此，我们利用定量磷酸化蛋白质组学，将线粒体裂变因子 (MFF) 鉴定为一种关键的铁死亡选择性调节因子。在机制上，脂质介质 17-HETE 促进 MFF 的 Ser155 位点磷酸化，从而触发线粒体和过氧化物酶体协调发生碎片化和功能障碍。这种重塑增强了细胞器间串扰、放大了氧化应激并加速了铁死亡。为了监测活细胞中的这一磷酸化事件，我们开发了 MFF–SPARK，这是一种基于相分离的生物传感器，可通过 MFF 激活实时追踪铁死亡。利用 MFF–SPARK，我们将 PKCβ 和 DUSP22 鉴定为共同调控 MFF 磷酸化的一对协调作用的激酶–磷酸酶。我们还发现阿维菌素 B1 是 PKCβ–MFF 轴的药理学激活剂，可在体内使肿瘤对铁死亡更加敏感。综上，我们的发现确立了 MFF 磷酸化作为铁死亡相关细胞器重塑中的核心调控节点，并为监测和以药理学方式探究铁死亡提供了概念框架和工具箱。线粒体–过氧化物酶体裂变衔接蛋白 MFF 被鉴定为一种选择性促铁死亡介质，而新开发的 MFF–SPARK 传感器可用于高内涵筛选铁死亡增敏化合物，并发现 MFF 的上游调节因子。",
+      "translated_at": "2026-11-28T14:37:09.939043+00:00",
+      "source_hash": "5de64184d73a1e50d6032af459c661e04684dd4d69f83a8d3140e39204ee4e3c",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
       "quality": "machine_draft",
-      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "ccf9ab5e82ae7328": {
       "title_zh": "核能级密度对r过程稀土峰核合成的影响",
@@ -19928,14 +19930,16 @@
       "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
     },
     "d2cedc4093369acc": {
-      "title_zh": "合肥先进光源存储环的端到端调试仿真",
-      "abstract_zh": "",
-      "translated_at": "2026-09-29T02:06:12.806349+00:00",
-      "provider": "open-source-local",
-      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "source_hash": "982a7bad36d66b6a1c893ff5ea51e71944c4598c07e6d5d277cef330a4e91ff8",
+      "title_zh": "合肥先进光源储存环的首尾贯通调试模拟",
+      "abstract_zh": "合肥先进光源 (HALF) 是一种第四代衍射极限同步辐射光源，于 2023 年开始建设。该储存环的能量为 2.2 GeV，发射度极低，小于 100 pm $$\\cdot$$ rad。它包含 20 个改进型混合六弯消色差结构的超级周期，周长约为 480 m。由于存在元件错位、磁场不完善和 RF 腔误差等各种误差源，实际储存环与理想模型不同。由于强非线性效应和较小的动态孔径，这些误差会严重影响低发射度储存环，给其调试带来重大困难。为了确定存在这些误差时 HALF 储存环的实际性能并验证其调试的有效性，开展了首尾贯通调试模拟。此外，调试模拟过程为调试软件的开发提供了基础。本文报告了调试模拟的细节和结果。",
+      "translated_at": "2026-11-28T14:37:09.938395+00:00",
+      "source_hash": "b06ed9b522141501acc32d05e6ec37c9734767a0b811cd016a7fa3f8183fa270",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
       "quality": "machine_draft",
-      "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "690c74621599f378": {
       "title_zh": "第一代恒星的锶和钡产量：来自金属贫乏恒星的约束*",
@@ -21752,14 +21756,16 @@
       "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
     },
     "1911e35784bb6e0d": {
-      "title_zh": "相对论性 $^{16}$O 和 $^{22}$Ne 解离中的阈值共振",
-      "abstract_zh": "核乳胶法被用于研究二元解离过程，该过程导致 $^{16}$O 原子核在 3.65 GeV/核子能量下和 $^{22}$Ne 原子核在 3.22 GeV/核子能量下形成 $\\alpha$-粒子。$^{16}$O$\\to$$^{12}$C(0$^+_1$)+$\\alpha$ 通道的不变质量分布表明 $^{16}$O(0$^+_6$) 激发态的衰变，其概率比 $^{12}$C(0$^+_2$)+$\\alpha$ 通道的估计值高出 20 倍。$^{22}$Ne$\\to$$^{18}$O+$\\alpha$ 通道的不变质量分布显示出对应于 $^{22}$Ne 激发态约 11.6 MeV 的峰值。",
-      "translated_at": "2026-10-07T01:40:25.138764+00:00",
-      "provider": "open-source-local",
-      "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
-      "source_hash": "a78a7b3828694893380d8231cb50696775437da03a9dd4d7499b75ef902d0127",
+      "title_zh": "相对论性 16 O 和 22 Ne 解离中的阈值共振",
+      "abstract_zh": "采用核乳胶方法研究二元解离，该过程由每核子 3.65 GeV 的 16 O 原子核和每核子 3.22 GeV 的 22 Ne 原子核形成 α 粒子。16 O → 12 C([Formula: see text])α 通道的不变质量分布表明存在 16O([Formula: see text]) 激发态的衰变，其概率是对 12C([Formula: see text])α 通道估计值的原来的 20 倍。22 Ne → 18 O α 的不变质量分布呈现一个峰，对应于 11.6 MeV 附近的 22 Ne 激发态。",
+      "translated_at": "2026-11-28T14:37:00.234213+00:00",
+      "source_hash": "922575d50666ebc0f2c2706804f165f488d2863481006f22362120c788435a36",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
       "quality": "machine_draft",
-      "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "6de582e9c0655013": {
       "title_zh": "中性流的精确实验弱物理在Z-极以下",
@@ -33726,10 +33732,10 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "9053699d5c110737": {
-      "title_zh": "用于10 TeV缪子对撞机束流诱导本底抑制的探测器端机器学习",
-      "abstract_zh": "摘要 10 TeV缪子对撞机是未来能量前沿设施一个极具吸引力的候选方案，为探索粒子物理学的基本定律提供了前所未有的机会。对撞机环中的缪子衰变会产生强烈的束流诱导本底（BIB），可能使探测器占用率不堪重负，并超出读出带宽限制。我们研究了在顶点探测器中利用探测器端机器学习抑制BIB的潜力，通过利用像素簇形状来区分本底与碰撞产物。我们研究了三类轻量级神经网络架构，并使用高级综合评估了其实现可行性。所选架构在99%信号效率下实现了88-90%的数据缩减，同时所需硬件资源与潜在的ASIC实现相容。这些结果表明，直接在像素读出中进行显著的BIB抑制具有潜力，为满足未来缪子对撞机的径迹探测器读出要求提供了一种策略。",
-      "translated_at": "2026-11-08T08:58:00.860138+00:00",
-      "source_hash": "d8f88040d6d2407c694c6f80fbbff3edc41d5a17ce101622d812b2c26534c735",
+      "title_zh": "用于 10 TeV μ子对撞机束流诱导本底抑制的探测器端机器学习",
+      "abstract_zh": "摘要 10 TeV μ子对撞机是未来能量前沿设施的一个极具吸引力的候选方案，为探索粒子物理学的基本定律提供了前所未有的机会。对撞机环中的 μ子衰变会产生强烈的束流诱导本底 (BIB)，可能使探测器占用率不堪重负并超过读出带宽限制。我们研究了探测器端机器学习在顶点探测器中抑制 BIB 的潜力，利用像素簇形状区分本底与碰撞产物。我们研究了三类轻量级神经网络架构，并通过高级综合评估其在硬件中实现的可行性。所选架构在 99% 信号效率下实现了 88%–90% 的数据削减，同时所需硬件资源与潜在的 ASIC 实现相兼容。这些结果表明，直接在像素读出中进行大幅度 BIB 抑制具有潜力，为满足未来 μ子对撞机的径迹探测器读出要求提供了一条途径。",
+      "translated_at": "2026-11-28T14:37:00.234994+00:00",
+      "source_hash": "f3718a5c363ffea70b5f4b36945531f462ea82c7091d9b65759b94a28fafbbae",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
@@ -39139,15 +39145,15 @@
     },
     "9af6f99e50c6be05": {
       "title_zh": "脂化大环肽 S-880008 通过抑制保守刺突位点处的原聚体解离来抑制 SARS-CoV-2 融合",
-      "abstract_zh": "",
-      "translated_at": "2026-11-08T11:16:34.857455+00:00",
-      "source_hash": "4a34a8b401dd8b490ae631f348f6988c1532c392302ef5f713b7812f04e60f30",
+      "abstract_zh": "病毒感染仍是持续存在的全球性威胁，因此需要开发靶向保守位点的广谱抗病毒药物，以对抗新出现的变异株。在此，我们开发了 S-880008，这是一种通过 mRNA 展示筛选和结构优化鉴定出的脂质修饰大环肽，属于一类新型 SARS-CoV-2 融合抑制剂。S-880008 对包括 Omicron 在内的多种变异株表现出强效的广谱抗病毒活性。冷冻电子显微镜揭示，S-880008 采用一种前所未有的双重结合机制，靶向保守的隐蔽位点：大环肽部分锚定受体结合域 (RBD)–亚结构域 1 界面，而脂质链则穿入相邻原聚体的 N 端结构域。这些相互作用强制形成 RBD 3-up 构象，抑制原聚体解离并阻断病毒融合。至关重要的是，鼻内给予 S-880008 可显著降低病毒滴度，并提高小鼠感染模型中的存活率。这些发现凸显了一种新机制，即 S-880008 深度结合保守的原聚体间区域，为设计广谱抗病毒融合抑制剂提供了依据。S-880008 是一种可广泛抑制 SARS-CoV-2 变异株的脂化大环肽。通过与保守位点相互作用，将刺突蛋白锁定在不具备融合能力的状态，它能够阻断病毒进入，并在体内防止感染。",
+      "translated_at": "2026-11-28T14:37:09.938111+00:00",
+      "source_hash": "14942d9338aa1cea31e252ca27110eff98b0ff484f55b3356c2cff690c55d050",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "ed87fc7881628af4": {
       "title_zh": "$\\sqrt{s} = 200$ 和 $510$ GeV 下 $pp$ 碰撞中的单举喷注截面",
@@ -39390,16 +39396,16 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "c233ffeb806bc373": {
-      "title_zh": "中子星中夸克唯象相的可观测特征",
-      "abstract_zh": "",
-      "translated_at": "2026-11-08T11:20:19.800546+00:00",
-      "source_hash": "eca1016fa6c1e7aab074e4148d6230cfc9024e0d61f7acbd0e3612c115375e65",
+      "title_zh": "中子星中夸克子相的可观测特征",
+      "abstract_zh": "处于 \\(\\beta\\)-平衡的夸克子物质是对中子星 (NSs) 中冷致密物质的一种潜在描述，它在 NS 核心中除核子和轻子外还引入了非相互作用夸克。在本文中，我们对该模型施加观测和理论约束，以对其进行贝叶斯推断，并发现有可能存在满足当前所有天体物理观测的夸克子物质状态方程，从而强化了将其与传统状态方程一同使用的论据。为了区分核心中出现和未出现夸克子相的 NSs，我们基于质量-半径关系确定了一些新颖特征。聚焦于典型的（\\(1.4\\ \\mathrm{M_\\odot}\\)）NSs，我们发现，有夸克子核心和无夸克子核心的 NSs 群体可依据质量-半径曲线的斜率和曲率、恒星的中心声速，以及质量分别为 \\(2\\ \\mathrm{M_\\odot}\\) 和 \\(1.4\\ \\mathrm{M_\\odot}\\) 的两颗 NSs 之间的半径差异进行区分。我们的结果表明，观测到一颗具有这些特征且其数值与夸克子核心 NSs 的数值相符的中子星，将为其核心中存在夸克子相或类似的交叉跃迁提供强有力的证据。",
+      "translated_at": "2026-11-28T14:37:00.235550+00:00",
+      "source_hash": "d3b9083dee6e9c6408dd364013892f6f3a81e8618e6315e665dcf8c5fb150bdd",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "20d025af3d73eb03": {
       "title_zh": "HIRFL-CSR 能区不同π介子的干涉测量分析",
@@ -59322,16 +59328,16 @@
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "526b958bd0959653": {
-      "title_zh": "关于将成团作为观察量子系统层级结构窗口的专题合集",
-      "abstract_zh": "",
-      "translated_at": "2026-11-08T22:35:25.532747+00:00",
-      "source_hash": "7298d805a40104c0979f0e64b8f54206a621d55b616edae95a7aa766de20d3dc",
+      "title_zh": "关于将成团视为洞察量子系统层级结构之窗口的专题合集",
+      "abstract_zh": "量子物质为何会呈现从夸克、强子和原子核到原子和分子的层级结构，是现代物理学的基本问题之一，但这一问题尚未得到广泛的统一讨论。其中一个原因可能是，传统上每个层级都是独立研究的，不同尺度之间显而易见的联系并未得到清楚认识。另一方面，“团簇”概念或可提供一个连接这些层级范围的共同框架。也就是说，在一个层级内形成的团簇本身可以成为下一个层级中的组成粒子，正如强子层级中的核子形成原子核一样。",
+      "translated_at": "2026-11-28T14:37:09.938590+00:00",
+      "source_hash": "26070a071e83eee926a4997420c8c22172d41217ea44594d2c91b6202d7995c7",
       "provider": "codex-cli",
       "model": "gpt-5.6-sol",
       "quality": "machine_draft",
       "preserved_previous_title": false,
       "content_validation": "disabled",
-      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     },
     "c54ca016cbb26c34": {
       "title_zh": "次开普勒吸积流中的辐射驱动磁场：MRI 的一种替代机制",
@@ -445816,6 +445822,114 @@
       "preserved_previous_title": false,
       "content_validation": "disabled",
       "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "6144bcadc8c15e6a": {
+      "title_zh": "化学梯度使细菌聚集体由内向外翻转",
+      "abstract_zh": "当淋病奈瑟菌聚集体生长到足够大时，缺氧核心中的细胞–细胞黏附弱于外周细胞之间的黏附。这种差异性黏附驱使内部细胞向外流动，导致菌落外翻。",
+      "translated_at": "2026-11-28T14:37:00.234427+00:00",
+      "source_hash": "6cf81d7027a8ba2213c5e8d24b339c189c3b62e8bc557d3f212dc4fcf0d015f9",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "87f8735ddca270cb": {
+      "title_zh": "恒星中子俘获反应的热效应：一种量子动力学方法",
+      "abstract_zh": "摘要 中子俘获过程在宇宙中重元素的形成中起着至关重要的作用。参与这些过程的天体物理环境以两种不同的反应机制为特征：慢中子俘获过程和快中子俘获过程。在本工作中，采用含时耦合道波包（TDCCWP）方法描述慢中子俘获过程，该方法同时使用多体核势和依赖于初始温度的状态来计及热环境。为了评估混合且纠缠的初态在依赖于温度的中子俘获截面中的作用，将 TDCCWP 计算与基于 Lindblad 主方程的耦合道密度矩阵（CCDM）方法的计算进行了比较。将 TDCCWP 方法的初始波函数中纳入温度的重要性与采用 Hauser–Feshbach 型方法对反应率进行热化处理作了比较。TDCCWP 计算表明，n+ $$^{188}$$ 188 Os 俘获截面随温度升高而减小，同时在所研究的最高热能处反应率也降低，这与 Hauser–Feshbach 计算相反，并且对快中子俘获过程很重要。造成这一差异的物理原因是靶核热布居态之间的动力学核耦合发挥了关键作用；Hauser–Feshbach 方法忽略了这种耦合，但它会在中子速度增大时形成占主导地位的中子俘获路径，从而降低中子俘获截面。",
+      "translated_at": "2026-11-28T14:37:04.247247+00:00",
+      "source_hash": "c3a5884373baf278cf7abc06582918c27a9a693ef456efb38a71a5a674a51e41",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "148f7e63b25c8ac2": {
+      "title_zh": "由双-$$\\Lambda $$ 超核和中子星约束指导的、具有 Skyrme 型 $$\\Lambda \\Lambda $$ 相互作用的多-$$\\Lambda $$ 超核结构",
+      "abstract_zh": "我们采用 Skyrme 型 $$\\Lambda \\Lambda $$ 能量密度泛函研究多-$$\\Lambda $$ 超核，其 s 波参数通过双-$$\\Lambda $$ 超核信息以及较重系统的伪数据进行拟合。其余参数则在由双-$$\\Lambda $$ 拟合质量和中子星观测所指导的范围内进行探索。我们考察了正常核密度附近的均匀核子–$$\\Lambda $$ 物质，并对构建于从氧到铅的稳定双幻数核芯之上的有限系统进行了不含配对的球形 Hartree–Fock 计算。在所探索的参数范围内，均匀物质中的 $$\\Lambda $$ 化学势及其相应的发射阈值随排斥性 p 波耦合产生的变化，大于改变密度依赖耦合并重新拟合 s 波参数所获得的净变化。在有限原子核中，随着 $$\\Lambda $$ 超子数目的增加，$$\\Lambda $$ 半径、分离能和单粒子结构对 p 波项越来越敏感，而核子物质半径的变化则很小。当最高占据的 $$\\Lambda $$ 轨道变为弱束缚时，会出现一种明显的阈值效应：排斥性 p 波项使该轨道向连续区移动，并可导致 $$\\Lambda $$ 半径迅速增大。这些结果量化了中子星指导的参数域内 p 波 $$\\Lambda \\Lambda $$ 相互作用在有限原子核中的表现，将天体物理约束与正常密度附近的超核结构联系起来。",
+      "translated_at": "2026-11-28T14:37:04.247706+00:00",
+      "source_hash": "ad0264c082837fab0928d032c2da947873f17e660ff1fc643f219b505f8cc570",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "af1e62198326fcb2": {
+      "title_zh": "Z ≥ 100 区域未知原子核的 α 衰变能量和速率",
+      "abstract_zh": "我们考察了唯象方法在确定镄后元素区 α 衰变特性方面的适用性。与用于预测未知核素质量的局部质量关系方法类似，我们使用基于相邻原子核 Q α 值的局部关系来估算 α 衰变能。基于 AME2020 汇编和现代实验数据，获得了 100 ≥ Z ≥ 118 范围内原子核的 Q α 估计值。为了估算 α 衰变半衰期，我们考察了各种唯象依赖关系，并在考虑现代实验数据的情况下调整了参数。在现阶段，采用针对偶-偶、奇和奇-奇原子核的不同参数集的 Viola-Seaborg 公式可实现对实验的最佳描述。还与其他模型的预测进行了比较。",
+      "translated_at": "2026-11-28T14:37:04.247987+00:00",
+      "source_hash": "538b49e169a7c88e701f4525a1c8b96bed8c92244e9ffba21e0ee3f359c1ff6b",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "848cb27cef165092": {
+      "title_zh": "新合成的 231 Am 同位素的衰变模式",
+      "abstract_zh": "在库仑与邻近势模型（CPPM）框架内研究了新合成的 231 Am 同位素的衰变系统学，并将结果与普适衰变定律（UDL）、修正普适衰变定律（MUDL）和 Horoi 公式的预测进行了比较。研究发现，α 衰变是 231 Am 的主导衰变道。还预测了 231 Am 的若干种可能的团簇发射。通过输入使用 WS4、FRDM、AME(2020) 和 KTUY 质量表获得的 α 和团簇发射 Q 值并计算半衰期，对各种质量表的预测进行了比较。还使用 Sobhani 和 Khalafi 的经验公式（S K Formula）估算了 β 衰变和电子俘获半衰期。研究发现，α 与 β + /EC 半衰期之间的差异处于 α 衰变测量的实验不确定度范围内。",
+      "translated_at": "2026-11-28T14:37:04.248227+00:00",
+      "source_hash": "9ffedc4d6292c8f26d6afa380c7deef954966dbb195a14ccad3bae826ce5e228",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "a7d229eb3f371654": {
+      "title_zh": "差异性主动黏附与毛细不稳定性驱动细菌菌落的整体外翻和扩散",
+      "abstract_zh": "细胞之间的吸引力可以决定细菌菌落的形状和分选行为。在菌落发育过程中，菌落内部会形成化学梯度，但尚不清楚这些梯度如何影响内聚性。在此，我们发现，这类梯度会触发由人类病原体淋病奈瑟菌形成的增殖菌落发生整体外翻。像射流一样，内部核心流向外围，并在那里部分分散、部分围绕菌落核心铺展开来。分散的活细胞重新形成菌落，从而导致快速扩散。外翻取决于局部氧耗竭，这会降低控制自吸引的分子马达的活性：外翻之前，菌落由内聚性较弱的球形核心和包围其外的内聚性较强的壳层构成。一个理想化计算模型表明，在这种构型中，当强相互作用壳层的厚度降至临界值以下时，会出现一种类似于毛细不稳定性的不稳定性。我们表明，外翻概率强烈依赖于马达产生的细菌间吸引力。总体而言，我们的结果表明，化学梯度在一个力学活性菌落中诱导自发对称性破缺，从而触发非线性形状不稳定性。这种不稳定性产生大尺度细胞通量，将细菌重新分布至更有利于其生长的环境。化学梯度有助于塑造细菌菌落。现已表明，这些梯度可导致淋病奈瑟菌菌落中出现非线性形状不稳定性。",
+      "translated_at": "2026-11-28T14:37:07.999631+00:00",
+      "source_hash": "d529885cbd6b4d80821b96be45e965cc72aa117aaae661bd380cca70ac7a1ca4",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "38dc018e2287a031": {
+      "title_zh": "治疗性 DNA 整合诱导的位点特异性染色质重塑原理",
+      "abstract_zh": "了解整合的遗传元件如何与宿主染色质相互作用，对于提高基因治疗的安全性至关重要。慢病毒载体（LVs）已被广泛使用，但整合的顺式调控元件（CREs）如何与三维（3D）宿主基因组相互作用，仍知之甚少。在此，我们对 329 个经精确定位的 LV 整合位点处的染色质可及性、3D 基因组组织和转录输出进行了系统性的位点分辨分析。LV 整合通过提高可及性、诱导转录通读以及产生异常的宿主-LV 融合转录本，在局部重塑染色质，且这种作用强烈依赖于位点和方向，由此确立了方向是决定调控影响的关键因素，也是位点特异性遗传毒性风险的结构基础。引入染色质绝缘子元件可稳定转基因表达，同时维持拓扑关联结构域和整体架构。我们进一步开发了一个机器学习框架，根据在细胞类型特异性染色质背景下预测的调控扰动，对整合位点进行优先级排序。综上，这些发现明确了异位 CREs 重塑局部基因组功能的原理，并为更安全的治疗性基因组整合提供了依据。",
+      "translated_at": "2026-11-28T14:37:08.000007+00:00",
+      "source_hash": "946328dc74ec59fdc380355ddc9331a0a5c11ede583f1e34a9f57aeaac6d1874",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "f873ca4373a98d1e": {
+      "title_zh": "利用 15 N(d,p) 15 N 中子转移反应测定 12 N → 15 N+ n 的渐近归一化系数",
+      "abstract_zh": "本工作的主要目的是确定 16 N 原子核基态和前三个激发态的渐近归一化系数（ANC）值。为此，在修正畸变波玻恩近似（MDWBA）框架内，对氘核能量为 15 MeV 时中子转移反应 15 N(d,p) 16 N 的微分截面进行了分析。确定了 16 N 原子核基态和前三个激发态的渐近归一化系数值及其不确定度。",
+      "translated_at": "2026-11-28T14:37:08.000195+00:00",
+      "source_hash": "d1d4ed6d8b035515ca31eeab045cdcf86fecda5c49c13800d280adcad7e368ae",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+    },
+    "f3d79fd4f061703b": {
+      "title_zh": "利用天然 15 N 15 N 特征区分内陆水体中 N 2 过饱和的生物与物理来源",
+      "abstract_zh": "内陆水体是生物成因双氮（N 2 ）排放的热点，是人为活性氮（N）的永久汇。尽管通常依据 N 2 过饱和推断 N 2 排放，但这种过饱和在多大程度上反映生物贡献仍知之甚少。在此，我们将溶解 N 2 /氩比值（N 2 /Ar）与 N 2 团簇同位素组成相结合，以量化两个氧化还原条件不同的深水湖泊中过饱和 N 2 的生物成因比例。我们的结果表明，生物成因 N 2 仅占观测到的 N 2 过饱和的 59 ± 30%，其余部分来自物理气泡注入；气泡注入会提高 N 2 /Ar 比值，但对 N 去除没有贡献。气泡注入的 N 2 在入流河流中尤为显著，表明河流气泡输入可以传播至湖泊内部，并使全湖 N 2 收支产生偏差。这些发现证明，N 2 过饱和并非生物 N 2 产生的可靠替代指标，并意味着以往基于 N 2 饱和度的研究可能在很大程度上高估了内陆水生生态系统的 N 去除能力。",
+      "translated_at": "2026-11-28T14:37:08.000472+00:00",
+      "source_hash": "add6bae2725765e66890761aaf428025d03ff1520c92eff8019551d6e519099e",
+      "provider": "codex-cli",
+      "model": "gpt-5.6-sol",
+      "quality": "machine_draft",
+      "preserved_previous_title": false,
+      "content_validation": "disabled",
+      "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
     }
   },
   "provider_note": "来源以条目 provider/model/note 为准。",
@@ -451898,6 +452012,98 @@
         "preserved_previous_title": false,
         "content_validation": "disabled",
         "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+      }
+    },
+    "15b6801086e0eaa4": {
+      "db4db44c2abb0782b25c37354a00851d311248f2226038030b437c5db2bb9cfa": {
+        "title_zh": "线粒体裂变因子感知并调控铁死亡",
+        "abstract_zh": "",
+        "translated_at": "2026-09-17T00:07:26.697255+00:00",
+        "provider": "open-source-local",
+        "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+        "source_hash": "db4db44c2abb0782b25c37354a00851d311248f2226038030b437c5db2bb9cfa",
+        "quality": "machine_draft",
+        "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      }
+    },
+    "d2cedc4093369acc": {
+      "982a7bad36d66b6a1c893ff5ea51e71944c4598c07e6d5d277cef330a4e91ff8": {
+        "title_zh": "合肥先进光源存储环的端到端调试仿真",
+        "abstract_zh": "",
+        "translated_at": "2026-09-29T02:06:12.806349+00:00",
+        "provider": "open-source-local",
+        "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+        "source_hash": "982a7bad36d66b6a1c893ff5ea51e71944c4598c07e6d5d277cef330a4e91ff8",
+        "quality": "machine_draft",
+        "note": "开放模型机器初译，未经人工校对；请对照原文核查。 原始来源未提供 abstract/summary，仅翻译题目。"
+      }
+    },
+    "1911e35784bb6e0d": {
+      "a78a7b3828694893380d8231cb50696775437da03a9dd4d7499b75ef902d0127": {
+        "title_zh": "相对论性 $^{16}$O 和 $^{22}$Ne 解离中的阈值共振",
+        "abstract_zh": "核乳胶法被用于研究二元解离过程，该过程导致 $^{16}$O 原子核在 3.65 GeV/核子能量下和 $^{22}$Ne 原子核在 3.22 GeV/核子能量下形成 $\\alpha$-粒子。$^{16}$O$\\to$$^{12}$C(0$^+_1$)+$\\alpha$ 通道的不变质量分布表明 $^{16}$O(0$^+_6$) 激发态的衰变，其概率比 $^{12}$C(0$^+_2$)+$\\alpha$ 通道的估计值高出 20 倍。$^{22}$Ne$\\to$$^{18}$O+$\\alpha$ 通道的不变质量分布显示出对应于 $^{22}$Ne 激发态约 11.6 MeV 的峰值。",
+        "translated_at": "2026-10-07T01:40:25.138764+00:00",
+        "provider": "open-source-local",
+        "model": "Qwen3-4B-Instruct-2507-Q4_K_M",
+        "source_hash": "a78a7b3828694893380d8231cb50696775437da03a9dd4d7499b75ef902d0127",
+        "quality": "machine_draft",
+        "note": "开放模型机器初译，未经人工校对；请对照原文核查。"
+      }
+    },
+    "9053699d5c110737": {
+      "d8f88040d6d2407c694c6f80fbbff3edc41d5a17ce101622d812b2c26534c735": {
+        "title_zh": "用于10 TeV缪子对撞机束流诱导本底抑制的探测器端机器学习",
+        "abstract_zh": "摘要 10 TeV缪子对撞机是未来能量前沿设施一个极具吸引力的候选方案，为探索粒子物理学的基本定律提供了前所未有的机会。对撞机环中的缪子衰变会产生强烈的束流诱导本底（BIB），可能使探测器占用率不堪重负，并超出读出带宽限制。我们研究了在顶点探测器中利用探测器端机器学习抑制BIB的潜力，通过利用像素簇形状来区分本底与碰撞产物。我们研究了三类轻量级神经网络架构，并使用高级综合评估了其实现可行性。所选架构在99%信号效率下实现了88-90%的数据缩减，同时所需硬件资源与潜在的ASIC实现相容。这些结果表明，直接在像素读出中进行显著的BIB抑制具有潜力，为满足未来缪子对撞机的径迹探测器读出要求提供了一种策略。",
+        "translated_at": "2026-11-08T08:58:00.860138+00:00",
+        "source_hash": "d8f88040d6d2407c694c6f80fbbff3edc41d5a17ce101622d812b2c26534c735",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。"
+      }
+    },
+    "9af6f99e50c6be05": {
+      "4a34a8b401dd8b490ae631f348f6988c1532c392302ef5f713b7812f04e60f30": {
+        "title_zh": "脂化大环肽 S-880008 通过抑制保守刺突位点处的原聚体解离来抑制 SARS-CoV-2 融合",
+        "abstract_zh": "",
+        "translated_at": "2026-11-08T11:16:34.857455+00:00",
+        "source_hash": "4a34a8b401dd8b490ae631f348f6988c1532c392302ef5f713b7812f04e60f30",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      }
+    },
+    "c233ffeb806bc373": {
+      "eca1016fa6c1e7aab074e4148d6230cfc9024e0d61f7acbd0e3612c115375e65": {
+        "title_zh": "中子星中夸克唯象相的可观测特征",
+        "abstract_zh": "",
+        "translated_at": "2026-11-08T11:20:19.800546+00:00",
+        "source_hash": "eca1016fa6c1e7aab074e4148d6230cfc9024e0d61f7acbd0e3612c115375e65",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
+      }
+    },
+    "526b958bd0959653": {
+      "7298d805a40104c0979f0e64b8f54206a621d55b616edae95a7aa766de20d3dc": {
+        "title_zh": "关于将成团作为观察量子系统层级结构窗口的专题合集",
+        "abstract_zh": "",
+        "translated_at": "2026-11-08T22:35:25.532747+00:00",
+        "source_hash": "7298d805a40104c0979f0e64b8f54206a621d55b616edae95a7aa766de20d3dc",
+        "provider": "codex-cli",
+        "model": "gpt-5.6-sol",
+        "quality": "machine_draft",
+        "preserved_previous_title": false,
+        "content_validation": "disabled",
+        "note": "Sol 直接翻译，未进行译文内容一致性校验，未经人工校对。 原始来源未提供摘要/介绍，仅翻译题目。"
       }
     }
   }
