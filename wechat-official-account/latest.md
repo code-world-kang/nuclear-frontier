@@ -1,68 +1,68 @@
-# 小康康的物理世界 · 2026-11-23 科研简报
+# 小康康的物理世界 · 2026-11-27 科研简报
 
->今日精选 8 篇论文、4 条新闻、6 条通知；其中 13/18 条已有中文内容。
+>今日精选 8 篇论文、4 条新闻、6 条通知；其中 4/18 条已有中文内容。
 
 ## 今日重点论文
 
-1. **[与 229Th 同步的核钟](https://doi.org/10.1038/s41586-026-11122-1)**  
-   Nature · 2026-10-07  
-   摘要 原子钟已使时间和频率成为物理学中测量最精确的量，从实现 SI 秒 1 的微波基准发展到具有前所未有精度 2 的光钟。核钟将频率参考从电子跃迁转移至核跃迁，而 229 Th 中独特的低能、激光可访问的同质异能跃迁目前为实现紧凑、稳健的计时以及对基础物理学的灵敏检验提供了最切实可行的途径 3–8。实现这样的钟需要将 229 Th 核共振的光谱学研究 9–17 转化为一个稳定的鉴频器，以调控可溯源振荡器。在此，我们通过将连续波、窄线宽 148.4 nm 真空紫外（VUV）激光器 18 稳定到 229 Th:CaF 2 晶体 20–22 中一条已分辨、温度敏感性弱的核跃迁 17,19，实现了 229 Th 核钟。由镉蒸气中的四波混频 18,23,24 产生的 10-μW VUV 光源，以及基于光电管的频率调制吸…
-2. **[轻原子核从头算 β 衰变计算在探索超越标准模型物理中的作用](https://doi.org/10.1016/j.ppnp.2026.104260)**  
-   Progress in Particle and Nuclear Physics · 2026-09-01  
-   精密 β 衰变实验是探索超越标准模型物理的有力手段，能够对自然界的基本对称性进行严格检验。特别是，这些实验主要聚焦于精确确定 Cabibbo-Kobayashi-Maskawa 矩阵元 Vud 以及寻找奇异弱流，而这两者都关键依赖于对辐射修正、反冲阶修正和同位旋破缺修正进行具有量化不确定度的理论计算。近年来，以现实的核子-核子相互作用和可系统改进的近似为基础的从头算核多体方法，在计算各种原子核的这些高阶修正方面取得了长足进展。本综述全面概述了最先进的 β 衰变修正从头算计算，涵盖辐射修正和反冲阶项，并考察了它们对于精密检验标准模型的重要意义。我们讨论了所采用的理论形式体系，包括将有效场论框架与多体方法相结合。本文特别关注了超允许 Fermi 衰变（例如 10C ->10B 和 14O ->14C）以及允许的…
-3. **[基于 Gamow-Teller 联合测量对 Landau 参数 G 0 ′ 的贝叶斯推断](https://doi.org/10.1103/kn6h-dkxb)**  
-   Physical Review Letters · 2026-11-23  
-   $G'_0$ 是表征自旋-同位旋依赖核子-核子相互作用的最低阶 Landau-Migdal 参数。因此，$G'_0$ 与 Gamow-Teller 共振（GTR）、有限原子核的 β 衰变和双 β 衰变率、会改变核心坍缩超新星（CCSNe）和双中子星（BNS）并合中中微子-核子吸收率的高温致密核子物质响应，以及最终中子星中发生 π 介子凝聚的临界密度密切相关。本文首次报告了贝叶斯推断框架下具有量化不确定度的 $G'_0$，其中采用自洽的标准 Skyrme 随机相位近似（RPA）模型，并使用来自 $^{208}\mathrm{Pb}$、$^{132}\mathrm{Sn}$、$^{90}\mathrm{Zr}$ 的实验 GTR 测量进行联合约束。我们提取的饱和密度下的 $G_0'$ 为 $0.48\pm0.034…
-4. **[$^{76}$As 到 $^{76}$Ge 第一激发态的电子俘获测量](https://doi.org/10.1103/2w69-czyv)**  
-   Physical Review C · 2026-11-03  
-   大型实验 LEGEND 正在搜寻 $^{76}$Ge 的无中微子双 $β$ 衰变。测量该过程的半衰期可借助核矩阵元获得中微子质量。实验上，可通过其 $\beta^-$ 衰变和电子俘获衰变的分支比研究 $^{76}$As 基态对核矩阵元的贡献。尽管从能量上 $^{76}$As 到 $^{76}$Ge 第一激发态的电子俘获是可能的，且在本工作之前曾被测量过一次，但到 $^{76}$Ge 基态的电子俘获尚未被观测到。本研究考察由薄 As$_2$O$_3$ 样品上的 $^{75}$As(n,$\gamma$) 反应产生的 $^{76}$As 的分支。硅漂移探测器测量电子俘获后内层空位导致锗原子发出的特征 X 射线。高纯锗探测器用于测量电子俘获到激发态后发射的 562.9$\,$keV $\gamma$ 射线。对两台探…
-5. **[寻找超重核：实验视角](https://doi.org/10.1146/annurev-nucl-100324-103404)**  
-   Annual Review of Nuclear and Particle Science · 2026-09-21  
-   实验物理学家目前正致力于将周期表扩展至第八行，元素119和120的搜寻工作正在进行中，此时回顾合成元素发现近一个世纪的历史显得尤为及时。从最初生产铀以外的元素到最近完成第七行的探索，本综述全面概述了扩展周期表过程中的重要里程碑和进展。历史上，新元素的搜寻一直激发公众的想象力，同时也为基本科学提供了独特的窗口。这一点在超重元素的发现与研究中表现得尤为明显，这些元素使人们能够直接进行核科学和化学极端情况的实验探索。本综述探讨了合成元素发现中的主要发展和突破，展示了科学好奇心、创新研究与不断拓展我们对周期表理解之间的复杂关系。
-6. **[在s = 200 GeV的横向极化质子-质子碰撞中喷注内的能量相关子](https://doi.org/10.1103/fgsf-gx2q)**  
-   Physical Review Letters · 2026-09-08  
-   我们报告了在横向极化的质子-质子碰撞中，s = 200 GeV 条件下，利用相对论重离子对撞机上的STAR探测器首次测量了单点和双点能量相关函数。这些可观测量分别量化了单个强子和强子对在喷注内的能量加权角分布。对于π⁺、π⁻以及π⁺π⁻对，观察到显著的自旋依赖不对称性，揭示了在特定角尺度下非微扰动力学的出现。通过将碎片化动力学投影到梅林矩上，这些测量对核子的横向不对称性具有敏感性，同时最小化了来自非微扰碎片化函数的不确定性。这些结果确立了能量相关函数作为探测核子结构的一种新颖且精确的手段，并为未来电子-离子对撞机上的三维核子断层成像开辟了有前景的途径。
-7. **[首次 Nb 94 ( n , γ ) 测量：约束前太阳颗粒中 Mo 94 的核合成起源](https://doi.org/10.1103/538w-rhqb)**  
-   Physical Review Letters · 2026-08-18  
-   对来自濒死恒星的前太阳碳化硅颗粒进行的同位素测量揭示了令人困惑的 Mo 94 过丰度，而恒星核合成模型二十年来一直未能再现这一现象。这一差异对我们关于慢中子俘获过程（ s -过程）的理解提出了挑战，该过程生成了约一半比铁重的元素。关键的不确定性位于 Nb 94，这是一个放射性分支点，中子俘获与 β 衰变之间的竞争支配着 Mo 94 的生成，但其中子俘获截面此前从未得到测量。在此，我们报告了对 Mo 同位素丰度具有重要意义的 Nb 94 ( n , γ ) Nb 95 截面的首次实验测定。这项测量由一项协同工作实现，其中包括在德累斯顿固体与材料研究所制备高纯度靶、在格勒诺布尔劳厄-朗之万研究所制备放射性样品、在菲利根保罗·谢勒研究所进行放射化学表征，以及在飞行时间 CERN n_TOF 装置首次使用分段式总能量…
-8. **[Double Chooz 实验首次测量乏核燃料的中微子辐射](https://doi.org/10.1103/dr26-j19g)**  
-   Physical Review Letters · 2026-08-04  
-   核反应堆的中微子辐射可实时揭示反应堆功率和燃料演化，并有望用于监测与核保障。反应堆停堆后，由于堆芯内剩余部分燃耗燃料及附近冷却池中储存的乏核燃料内长寿命裂变同位素衰变，低强度“剩余中微子”通量仍会持续存在。位于法国 Chooz B 核电站的 Double Chooz 实验，基于 17.2 天反应堆停运数据，首次定量测量了这一剩余通量。在剩余信号最显著的能量范围内，距堆芯 400 m 的中微子探测器记录到 106 ± 18 个中微子候选事例（5.9 σ 显著性）。该测量与 88 ± 7 个事例的预测值高度一致；后者由详细反应堆模拟导出，该模拟对裂变产物的衰变活度进行建模，并纳入当前最佳中微子谱模型。
+1. **[Thermal effects on stellar neutron capture reactions: a quantum dynamical approach](https://doi.org/10.1140/epja/s10050-026-02009-w)**  
+   The European Physical Journal A · 2026-11-27  
+   Abstract The neutron capture process plays a vital role in creating the heavy elements in the universe. Astrophysical environments involved in these processes are characterized by two distinct reaction mechanisms: the slow and rapid neutron capture processes. In this work, the slow neutron capture process is described with the time-dependent coupled channel…
+2. **[Structure of multi-$$\Lambda $$ hypernuclei with a Skyrme-type $$\Lambda \Lambda $$ interaction guided by double-$$\Lambda $$ hypernuclear and neutron-star constraints](https://doi.org/10.1140/epja/s10050-026-02000-5)**  
+   The European Physical Journal A · 2026-11-27  
+   We investigate multi- $$\Lambda $$ hypernuclei using a Skyrme-type $$\Lambda \Lambda $$ energy density functional whose s-wave parameters are fitted to double- $$\Lambda $$ hypernuclear information supplemented by pseudodata for heavier systems. The remaining parameters are explored over ranges guided by the double- $$\Lambda $$ fit quality and neutron-star…
+3. **[Energies and rates of α-decay of unknown nuclei in the region Z ≥ 100](https://doi.org/10.1142/s0218301327410011)**  
+   International Journal of Modern Physics E · 2026-11-27  
+   We consider the applicability of phenomenological methods for determining the characteristics of α-decay in transfermium region. Similar to the local mass relations method used to predict the masses of unknown nuclides, we use local relations based on the Q α values of neighboring nuclei to estimate α-decay energies. Based on the AME2020 compilation and mod…
+4. **[Decay Modes of the Newly Synthesised 231 Am Isotope](https://doi.org/10.1142/s0218301327500030)**  
+   International Journal of Modern Physics E · 2026-11-27  
+   Decay systematics of the newly synthesised 231 Am isotope were studied within the framework of the Coulomb and Proximity Potential Model (CPPM), and the results are compared with the predictions of the Universal Decay Law (UDL), the Modified Universal Decay Law (MUDL), and the Horoi formula. Alpha decay is found to be the dominant decay channel for 231 Am.…
+5. **[Determination of the Asymptotic Normalization Coefficient for the 12 N → 15 N+ n from 15 N(d,p) 15 N Neutron Transfer Reaction](https://doi.org/10.1142/s0218301327500042)**  
+   International Journal of Modern Physics E · 2026-11-27  
+   The main purpose of this work is to determine the values of the asymptotic normalization coefficients (ANC) for the ground and first three excited states of the 16 N nucleus. For this purpose, the analysis of the differential cross-section of the neutron transfer reaction 15 N(d,p) 16 N at deuteron energy of 15 MeV were performed within the framework of the…
+6. **[Principles of locus-specific chromatin remodeling induced by therapeutic DNA integration](https://doi.org/10.1126/sciadv.aef5318)**  
+   Science Advances · 2026-11-27  
+   Understanding how integrated genetic elements engage host chromatin is essential for improving gene-therapy safety. Lentiviral vectors (LVs) are widely used, yet how integrated cis-regulatory elements (CREs) interact with the three-dimensional (3D) host genome remains poorly understood. Here, we performed a systematic, locus-resolved analysis of chromatin a…
+7. **[circSRSF5-FUS-EIF4A3调控回路保护尤文肉瘤细胞免受EWS::FLI1小分子抑制](https://doi.org/10.1126/sciadv.aec1017)**  
+   Science Advances · 2026-11-27  
+   环状RNA（circRNAs）因其高稳定性、多样性以及调控多种生物过程的能力，已成为癌症研究的重点。本研究探讨了YK-4-279对尤文肉瘤（ES）中EWS::FLI1癌基因进行小分子抑制的影响。ES是一种罕见且高度侵袭性的儿童癌症，由破坏正常基因调控并促进肿瘤生长的融合蛋白驱动。当前的治疗依赖高强度化疗，伴有严重的长期副作用，这凸显了对靶向治疗的需求。一种前景良好的新方法利用小分子YK-4-279靶向EWS::FLI1与RNA解旋酶DHX9之间的相互作用；该分子显示出强效抗肿瘤作用，并已进入临床试验。转录组分析揭示，YK-4-279治疗后circRNA表达发生广泛变化，其中circSRSF5显著上调。功能和机制证据表明，circSRSF5通过稳定抗凋亡蛋白真核翻译起始因子4A3（EIF4A3）并促成治疗耐药，…
+8. **[硒同位素揭示MORB地幔中深部板块构造循环的机制](https://doi.org/10.1126/sciadv.aec9625)**  
+   Science Advances · 2026-11-27  
+   数十亿年来，俯冲作用一直将洋壳循环带入地球内部，但深度俯冲物质如何演化并对地幔源熔体（如大洋中脊玄武岩（MORBs））作出贡献，仍未得到充分阐明。由于俯冲板片衍生的脱水流体通常会使残余榴辉岩中的硒（Se）同位素组成偏轻，而这种特征会在不发生进一步分馏的情况下传递至地幔熔体，因此Se可作为一种强有力的同位素示踪剂，用于示踪进入地幔的再循环组分。在此，我们给出了再循环地壳衍生的石榴辉石岩的高精度Se同位素数据，弥合了原始地幔与同位素组成较轻的MORB之间的差距。通过两阶段热力学建模，我们追踪了榴辉岩衍生熔体在对流地幔内的反应性渗透过程，该过程导致俯冲衍生的石榴辉石岩与其中保存的残余榴辉岩核同时形成，二者均在绝热减压期间对MORBs的地幔源作出贡献。我们的结果建立了一个岩石学上一致且经同位素验证的框架，用以追踪俯冲…
 
 ## 物理新闻
 
+- **[Differential active adhesion and a capillary instability drive global eversion and dissemination of bacterial colonies](https://www.nature.com/articles/s41567-026-03530-x)**  
+   Nature Physics · 2026-11-27  
+   Attractive forces between cells can determine the shape and sorting behaviour of bacterial colonies. During colony development, chemical gradients form within the colony, but it is unclear how they affect cohesion. Here we discover that such gradients trigger global eversion of proliferating colonies formed by the human pathogen Neisseria gonorrhoeae. Like…
+- **[Chemical gradients turn bacterial aggregates inside out](https://www.nature.com/articles/s41567-026-03531-w)**  
+   Nature Physics · 2026-11-27  
+   When a Neisseria gonorrhoeae aggregate grows large enough, cell–cell adhesion in the oxygen-deprived core is weaker than among peripheral cells. This differential adhesion drives the inner cells to stream outward, causing colony eversion.
 - **[晶格中偶极激子的超固体晶体](https://www.nature.com/articles/s41567-026-03522-x)**  
    Nature Physics · 2026-11-25  
    在凝聚态物理学中，长程关联会引入挑战直觉的物质量子态。例如，超固体结合了表现为对称性破缺空间排列的密度有序与无摩擦的超流流动。然而，事实证明，超固体仅在非常严格的条件下存在，相关证据仅限于在弱相互作用区观察到的少数自发碎裂超流体。在此，我们通过将偶极玻色子限制在具有长程跃迁的晶格中，展示了一种在强相互作用区实现晶态超固体的框架。我们表明，偶极激子可实现这一晶格模型。在四分之一、三分之一和二分之一的分数晶格填充下，我们在约 100 个格点上观察到自发破坏晶格平移对称性的介观量子晶体。同时，相干长程跃迁诱导非对角长程序，从而使激子固体成为超流体。我们的数值方法定量证实，超固态在晶格哈密顿量的基态中逐渐形成。此前已在弱相互作用情形中观察到超固体。现在，在受限于具有长程跃迁的晶格中的偶极激子强关联系统里，已展示出若干…
 - **[固态氖上相互作用电子量子比特的相干操控](https://www.nature.com/articles/s41567-026-03529-4)**  
    Nature Physics · 2026-11-25  
    俘获在固态氖表面的电子可以用作低噪声电荷量子比特，具备全电学控制能力和紧凑的器件占用空间。然而，量子信息处理需要实现双量子比特门，而这在该系统中一直难以实现。在此，我们报道了对多个相互作用的固态氖上电子电荷量子比特的相干操控。利用在氖表面上天然限制于彼此邻近位置的电子，我们展示了强量子比特–量子比特耦合，并使用全局微波驱动实现了交叉共振和 bSWAP 类型的双量子比特操作。我们的结果表明，设计固态氖上的电子限域可以增强对量子比特–量子比特相互作用的控制，并产生一种紧凑且可扩展的量子计算架构。固态氖表面上的电子已被确立为高质量的单个量子比特。现在，利用被限制在彼此邻近位置的电子之间的强耦合，已经展示了双量子比特门。
-- **[蛋白质液滴为无马达推进提供动力](http://link.aps.org/doi/10.1103/Physics.19.s157)**  
-   APS Physics · 2026-11-25  
-   作者：Ryan Wilkinson 一种新机制使微观物体能够利用蛋白质液滴实现自我推进，而无须分子马达。[Physics 19, s157] 发表于 2026 年 11 月 25 日，星期三
-- **[从量子存储器中获取更多光子](http://link.aps.org/doi/10.1103/Physics.19.s147)**  
-   APS Physics · 2026-11-25  
-   作者：Sophia Chen 一种新的固态量子存储器结合了多项创新，能够更高效地存储和读取光子。[Physics 19, s147] 发表于 2026 年 11 月 25 日星期三
 
 ## 科研通知
 
+- **[核物理与核技术全国重点实验室学术报告— 核物理前沿与交叉专题（第六十九讲）](https://sklnpt.pku.edu.cn/info/1121/4971.htm)**  
+   核物理与核技术全国重点实验室会议 · 2026-11-27  
+   ----友情链接---- ---- 北京大学 ---- ---- 北京大学物理学院 ---- ---- HIAF强流重离子加速器装置 ---- 地址：北京市海淀区成府路201号核物理与核技术全国重点实验室 邮编：100871 联系电话：010-62751870；010-62755215 邮箱：jingwu@pku.edu.cn
 - **[第一届光子核物理研讨会](https://napp.fudan.edu.cn/event/617/)**  
    复旦大学核物理 Indico · 2026-11-25  
-   会议摘要： 近年来，国际上短程关联（SRC）研究持续保持活跃。与此同时，国内位于中国科学院近代物理研究所的CEE实验装置已进入安装调试阶段，位于惠州的强流重离子加速器（HIAF）装置也顺利通过验收，为国内SRC实验研究奠定了坚实的坚实基础。在理论方面，国内专家同样取得了丰硕成果，特别是在利用重离子碰撞探究核子间相互作用及SRC现象上作出了开创性工作，为依托国内大科学装置开辟全新的SRC研究方向指明了路径。 在这一关键发展节点上，为进一步推动短程关联及相关领域的持续深入发展，拟召开第二届核物理短程关联研讨会。此次会议由湖州师范大学理学院承办。具体时间：2026年11月20日（周五）报到，21-22日开会，23日离会。具体的会场地址和会务费等事项见第二轮通知。 主办单位： 湖州师范大学、复旦大学、近代物理研究所、…
-- **[第一届光子核物理研讨会](https://napp.fudan.edu.cn/event/616/)**  
-   复旦大学核物理 Indico · 2026-11-25  
-   选择时区 您的个人资料时区：使用基于以下内容的时区：活动/类别 自定义 选择自定义时区 保存
+   会议摘要： 随着高亮准单能康普顿伽马源、超强激光、X 射线自由电子激光等光源技术与设施的快速发展，光子（涵盖伽马射线、X 射线、可见光等）与原子核相互作用研究迎来新契机。这些覆盖宽能区的各类光子束，有望为揭示核结构、核力、宇宙元素起源，以及支撑精密测量、能源、同位素应用等方向提供重要研究平台。为促进光子核物理这一交叉研究领域的深入发展，加强领域学术交流合作，第一届光子核物理研讨会将于 2026 年 12 月 23 日至 26 日在上海举办。本次会议由华东师范大学、复旦大学、中科院上海高等研究院联合举办。我们诚挚邀请各位专家学者于百忙中莅临参会。 本次会议的主要研讨内容包括但不限于： 1. 伽马光核物理：光核反应截面测量、巨共振与核结构研究 2. 强激光核物理：强激光驱动核反应、同核异能态激发、等离子体中核过程…
 - **[关于发布原子级制造基础研究重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100397.html)**  
    国家自然科学基金委项目指南 · 2030-12-31  
    国科金发计〔2026〕12号 国家自然科学基金委员会现发布原子级制造基础研究重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请。 国家自然科学基金委员会 2026年1月26日 原子级制造基础研究重大研究计划 2026年度项目指南 原子级制造是指在原子尺度控制材料的结构与成分，其核心是通过原子的精确操控来获得特定功能，突破传统制造技术的精度极限，实现物质的原子级转化与高效利用。原子级制造的科学基础是在原子尺度下优化物质转化与能量利用，实现物质结构和材料性能的按需订制，为实现颠覆性技术、升级战略性产业和提升国家安全竞争力奠定科学与技术基础。 一、科学目标 本重大研究计划围绕批量原子操控这一核心目标，聚焦原子尺度下物质与能量的相互作用原理，实现材料成分和结构的原子级构筑和测量表征，…
 - **[关于发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南的通告](https://www.nsfc.gov.cn/p1/3381/2824/100371.html)**  
    国家自然科学基金委项目指南 · 2029-12-31  
    国科金发计〔2026〕6号 国家自然科学基金委员会现发布可解释、可通用的下一代人工智能方法重大研究计划2026年度项目指南，请申请人及依托单位按项目指南所述要求和注意事项申请
+- **[关于转发国家重点研发计划“关键基础件及制造工艺”重点专项2026年度公开竞争项目申报指南的通知](https://kxjst.jiangsu.gov.cn/art/2026/11/27/art_82540_11866352.html)**  
+   江苏省科技厅 · 2026-11-27  
+   首页 > 科技资讯 > 通知公告 关于转发国家重点研发计划“关键基础件及制造工艺”重点专项2026年度公开竞争项目申报指南的通知 发布日期：2026-11-27 14:38 浏览次数： 点击正文.pdf 扫一扫在手机打开当前页 加入收藏 取消收藏 打印 关闭
 - **[关于废止《关于组织申报2025年湖北省支持高新技术企业发展专项资金（第二批）的通知》的通告](https://kjt.hubei.gov.cn/kjdt/tzgg/202611/t20261127_6136135.shtml)**  
    湖北省科技厅 · 2026-11-27  
    --湖北省科学技术厅 6136135 关于废止《关于组织申报2025年湖北省支持高新技术企业发展专项资金（第二批）的通知》的通告 20 湖北省科学技术厅 2026-11-27 3824 通知公告 湖北政府网 | 科技部网 | 邮箱 | 计划管理 | 奖励评审 | 登录 | 注册 湖北省科学技术厅 搜 索 首页 政府信息公开 互动交流 办事服务 科技动态 科技一网通 当前位置： 首页 > 科技动态 > 通知公告 关于废止《关于组织申报2025年湖北省支持高新技术企业发展专项资金（第二批）的通知》的通告 2026-11-27 09:55 | 湖北省科学技术厅 经公平竞争审查复核，《关于组织申报2025年湖北省支持高新技术企业发展专项资金（第二批）的通知》（以下简称《通知》）有关申报条件设置存在表述不够清晰严谨、可…
-- **[北京市科学技术委员会、中关村科技园区管理委员会关于转发推荐国家重点研发计划“主要粮食与经济作物大面积单产提升技术”等5个重点专项2026年度项目申报指南的通知](https://kw.beijing.gov.cn/zwgk/zcwj/202611/t20261126_4958433.html)**  
-   北京市科委 · 2026-11-26  
-   京科资发〔2026〕174号 各有关单位： 根据农业农村部《关于发布国家重点研发计划“主要粮食与经济作物大面积单产提升技术”等5个重点专项2026年度项目申报指南的通知》要求，为做好专项的组织推荐工作，现提出如下要求： 一、申报要求 请有关单位严格按照农业农村部《关于发布国家重点研发计划“主要粮食与经济作物大面积单产提升技术”等5个重点专项2026年度项目申报指南的通知》要求进行项目申报。 二、填报要求 请各申报单位通过国家科技管理信息系统公共服务平台进行网上填报。申报材料中所需的附件材料，全部要以电子扫描件形式上传。 网上填报申报书的受理时间为：2026年11月23日12:00至12月15日16:00。 三、联系方式 联系人：曲老师 联系电话：010-88827155 北京市科学技术委员会、中关村科技园区管…
 
 [访问完整网站](https://code-world-kang.github.io/nuclear-frontier/)

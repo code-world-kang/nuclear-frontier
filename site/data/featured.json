@@ -1,5 +1,79 @@
 [
   {
+    "id": "38dc018e2287a031",
+    "type": "paper",
+    "title": "Principles of locus-specific chromatin remodeling induced by therapeutic DNA integration",
+    "abstract": "Understanding how integrated genetic elements engage host chromatin is essential for improving gene-therapy safety. Lentiviral vectors (LVs) are widely used, yet how integrated cis-regulatory elements (CREs) interact with the three-dimensional (3D) host genome remains poorly understood. Here, we performed a systematic, locus-resolved analysis of chromatin accessibility, 3D genome organization, and transcriptional output at 329 precisely mapped LV integration sites. LV integration locally remodels chromatin by increasing accessibility, inducing transcriptional read-through, and generating aberrant host-LV fusion transcripts in a strongly site- and orientation-dependent manner, establishing orientation as a key determinant of regulatory impact and a structural basis for locus-specific genotoxic risk. Incorporating chromatin insulator elements stabilizes transgene expression while preserving topologically associating domains and global architecture. We further developed a machine learning framework that prioritizes integration sites by predicted regulatory perturbation across cell-type–specific chromatin contexts. Together, these findings define principles by which ectopic CREs reshape local genome function and inform safer therapeutic genome integration.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Qian Qi",
+      "Yichao Li",
+      "Tiffany Yee",
+      "Lance Palmer",
+      "Yan Ju",
+      "Lei Han",
+      "Sheng Zhou",
+      "Yong Cheng"
+    ],
+    "published": "2026-11-27",
+    "updated": "2026-11-27",
+    "source": "Science Advances",
+    "source_short": "Science Advances",
+    "source_type": "journal",
+    "doi": "10.1126/sciadv.aef5318",
+    "arxiv_id": "",
+    "publication_links": [],
+    "url": "https://doi.org/10.1126/sciadv.aef5318",
+    "pdf_url": "",
+    "categories": [
+      "ai-science"
+    ],
+    "tags": [
+      "machine learning"
+    ],
+    "primary_topic": "ai-science",
+    "methods": [],
+    "classification_confidence": 0.56,
+    "classification_evidence": [
+      "machine learning"
+    ],
+    "importance": 54,
+    "score_reasons": [
+      "来源权重 +48",
+      "核物理研究侧重 +4",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Qi, Qian",
+      "Li, Yichao",
+      "Yee, Tiffany",
+      "Palmer, Lance",
+      "Ju, Yan",
+      "Han, Lei",
+      "Zhou, Sheng",
+      "Cheng, Yong"
+    ],
+    "journal_abbrev": "Sci. Adv.",
+    "volume": "12",
+    "issue": "48",
+    "pages": "eaef5318",
+    "numpages": "",
+    "publisher": "American Association for the Advancement of Science (AAAS)",
+    "publisher_url": "https://www.science.org/doi/10.1126/sciadv.aef5318",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-28T03:41:23+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
+    "abstract_checked_sources": [],
+    "translation_source_hash": "946328dc74ec59fdc380355ddc9331a0a5c11ede583f1e34a9f57aeaac6d1874"
+  },
+  {
     "id": "4fdb4c542a1784f5",
     "type": "paper",
     "title": "The circSRSF5 -FUS-EIF4A3 regulatory circuitry protects Ewing sarcoma cells from EWS::FLI1 small-molecule inhibition",
@@ -66,9 +140,19 @@
     "publisher_url": "https://www.science.org/doi/10.1126/sciadv.aec1017",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-27T03:54:50+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "abstract_checked_sources": [],
-    "translation_source_hash": "f18605e521a45cd4351a971868d3754bdaf359c130f9027f581d7441d1ab7e13"
+    "translation_source_hash": "f18605e521a45cd4351a971868d3754bdaf359c130f9027f581d7441d1ab7e13",
+    "record_aliases": [],
+    "abstract_source_type": "journal",
+    "figure_enrichment": "",
+    "arxiv_publication_checked": "",
+    "translation_legacy_hashes": {
+      "4fdb4c542a1784f5": "f18605e521a45cd4351a971868d3754bdaf359c130f9027f581d7441d1ab7e13"
+    },
+    "merge_evidence": [
+      "record-id"
+    ]
   },
   {
     "id": "8520e3fcb117e570",
@@ -127,9 +211,80 @@
     "publisher_url": "https://www.science.org/doi/10.1126/sciadv.aec9625",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-27T03:54:50+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "abstract_checked_sources": [],
-    "translation_source_hash": "836300c1cd6663c8a8c53f8b765a2cb2bc4bfd9bd8fa18ecd931077f8b25bd1e"
+    "translation_source_hash": "836300c1cd6663c8a8c53f8b765a2cb2bc4bfd9bd8fa18ecd931077f8b25bd1e",
+    "record_aliases": [],
+    "abstract_source_type": "journal",
+    "figure_enrichment": "",
+    "arxiv_publication_checked": "",
+    "translation_legacy_hashes": {
+      "8520e3fcb117e570": "836300c1cd6663c8a8c53f8b765a2cb2bc4bfd9bd8fa18ecd931077f8b25bd1e"
+    },
+    "merge_evidence": [
+      "record-id"
+    ]
+  },
+  {
+    "id": "f3d79fd4f061703b",
+    "type": "paper",
+    "title": "Partitioning biological and physical sources of N 2 supersaturation in inland waters using natural 15 N 15 N signatures",
+    "abstract": "Inland waters are hotspots of biogenic dinitrogen (N 2 ) emission, serving as a permanent sink for anthropogenic reactive nitrogen (N). Although N 2 emission is commonly inferred from N 2 supersaturation, the extent to which this supersaturation reflects biological contribution remains poorly understood. Here, we combine dissolved N 2 /Argon ratio (N 2 /Ar) with N 2 clumped isotope composition to quantify the biogenic fraction of supersaturated N 2 in two deep lakes with contrasting redox conditions. Our results show that biogenic N 2 accounts for only 59 ± 30% of the observed N 2 supersaturation, with the remainder coming from physical bubble injection, which elevates N 2 /Ar ratios without contributing to N removal. Bubble-injected N 2 is especially pronounced in inflowing rivers, indicating that riverine bubble input can propagate into lake interiors and bias whole-lake N 2 budgets. These findings demonstrate that N 2 supersaturation is not a reliable proxy for biological N 2 production and imply that previous N 2 saturation–based studies may largely have overestimated N removal capacities of inland aquatic ecosystems.",
+    "abstract_status": "full",
+    "abstract_source": "Crossref",
+    "authors": [
+      "Yankai Shang",
+      "Hao Yan",
+      "Fengtai Tong",
+      "Huiming Bao"
+    ],
+    "published": "2026-11-27",
+    "updated": "2026-11-27",
+    "source": "Science Advances",
+    "source_short": "Science Advances",
+    "source_type": "journal",
+    "doi": "10.1126/sciadv.aef3864",
+    "arxiv_id": "",
+    "publication_links": [],
+    "url": "https://doi.org/10.1126/sciadv.aef3864",
+    "pdf_url": "",
+    "categories": [
+      "frontiers"
+    ],
+    "tags": [],
+    "primary_topic": "frontiers",
+    "methods": [],
+    "classification_confidence": 0.38,
+    "classification_evidence": [],
+    "importance": 50,
+    "score_reasons": [
+      "来源权重 +48",
+      "完整摘要 +2"
+    ],
+    "open_access": null,
+    "license": "",
+    "publisher_licenses": [],
+    "rights_status": "unknown",
+    "figures": [],
+    "figure_status": "rights_unknown",
+    "citation_authors": [
+      "Shang, Yankai",
+      "Yan, Hao",
+      "Tong, Fengtai",
+      "Bao, Huiming"
+    ],
+    "journal_abbrev": "Sci. Adv.",
+    "volume": "12",
+    "issue": "48",
+    "pages": "eaef3864",
+    "numpages": "",
+    "publisher": "American Association for the Advancement of Science (AAAS)",
+    "publisher_url": "https://www.science.org/doi/10.1126/sciadv.aef3864",
+    "citation_metadata_checked": true,
+    "first_seen": "2026-11-28T03:41:23+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
+    "abstract_checked_sources": [],
+    "translation_source_hash": "add6bae2725765e66890761aaf428025d03ff1520c92eff8019551d6e519099e"
   },
   {
     "id": "05fd332e0749ddb8",
@@ -278,7 +433,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/flqh-zxzr",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-26T03:54:29+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "0872e6622502b6afeb68249e18916c751dbb84323b08113ccd8f0ef15a4317e3",
     "record_aliases": [],
@@ -395,7 +550,8 @@
         "publisher": "American Physical Society (APS)",
         "publisher_url": "https://link.aps.org/doi/10.1103/flqh-zxzr",
         "citation_metadata_checked": true,
-        "translation_source_hash": "0872e6622502b6afeb68249e18916c751dbb84323b08113ccd8f0ef15a4317e3"
+        "translation_source_hash": "0872e6622502b6afeb68249e18916c751dbb84323b08113ccd8f0ef15a4317e3",
+        "pdf_url": "https://arxiv.org/pdf/2605.07176"
       }
     ],
     "journal_published": "2026-11-25",
@@ -538,7 +694,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/bvrv-g659",
     "citation_metadata_checked": true,
     "first_seen": "2026-09-05T23:29:45+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "history_month": "2026-08",
     "abstract_checked_sources": [
       "期刊官网/Cite",
@@ -762,7 +918,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/6sjz-g7hs",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-26T03:54:29+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-11-26T03:54:29+00:00",
@@ -934,7 +1090,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/2jhg-pclg",
     "citation_metadata_checked": true,
     "first_seen": "2026-10-17T00:06:33+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "history_month": "2026-10",
     "abstract_checked_sources": [
       "期刊官网/Cite",
@@ -1045,7 +1201,7 @@
     "figures": [],
     "figure_status": "rights_unknown",
     "first_seen": "2026-11-03T03:15:49+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "citation_authors": [
       "Lin, Zidu",
       "Colò, Gianluca",
@@ -1237,7 +1393,7 @@
     "publisher_url": "https://www.nature.com/articles/s43588-026-01058-x",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-21T02:57:39+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "394f46e283e8d359990e0e4dc9bf87f42ccc6917ab650c65397ba6068a78ecfe",
     "record_aliases": [],
@@ -1325,7 +1481,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-78986-9",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-21T02:57:39+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "c30c5a80d6a66294eeff8cc57caf1cb686b166c8d116c2dee5a1705bfc093c09",
     "record_aliases": [],
@@ -1420,7 +1576,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-79632-0",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-21T02:57:39+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "9d7b27f1b3d124f12f587cf3943c761a40ea16056b27504bcb23e8efdd4822f3",
     "record_aliases": [],
@@ -1518,7 +1674,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/science.aej5001",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-20T02:48:32+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "a17fc2f0aa2e27e16fbea4aab79368c5333106647f4b785fcc924c6b086e8527",
     "record_aliases": [],
@@ -1587,7 +1743,7 @@
     "publisher_url": "https://www.science.org/doi/10.1126/science.aeo2674",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-20T02:48:32+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "eb4a2d3a1b7203e35f8aa2177be748aae7aaabbcaa50bea0625750b587215b70",
     "record_aliases": [],
@@ -1670,7 +1826,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/b11r-j369",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-20T02:48:32+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-11-27T03:54:50+00:00",
@@ -1787,7 +1943,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-79368-x",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-20T02:48:32+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "18f77e8701493509b54474c5b6a8cda491e5aa4f9113b41fed62be7ab004b2e8",
     "record_aliases": [],
@@ -1937,7 +2093,7 @@
     "publisher_url": "https://www.nature.com/articles/s41586-026-11295-9",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-19T02:55:06+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "6ba3c606010ab1d5dae2d035eb026c6bdadbbf43170379b3cfa8ed569dd11e60",
     "record_aliases": [],
@@ -2088,7 +2244,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/smcg-h16w",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-19T02:55:06+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "publisher_abstract_enrichment": {
       "status": "blocked",
       "checked_at": "2026-11-26T03:54:29+00:00",
@@ -2195,7 +2351,7 @@
     "publisher_url": "https://link.aps.org/doi/10.1103/sgtd-c4zg",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-19T02:55:06+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "18896d1af9c54fcb2b28a35e17d8afc2bc0567128ff12fb60776e06eabba768a",
     "record_aliases": [],
@@ -2314,7 +2470,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-79566-7",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-18T03:16:34+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "abstract_checked_sources": [],
     "translation_source_hash": "c44b9be07c771ebbe5b07b36cb8d16da3b5f03157759649ed8bcdb2a745c5651",
     "record_aliases": [],
@@ -2398,7 +2554,7 @@
     "publisher_url": "https://www.nature.com/articles/s41467-026-79078-4",
     "citation_metadata_checked": true,
     "first_seen": "2026-11-17T04:17:49+00:00",
-    "last_seen": "2026-11-27T03:54:50+00:00",
+    "last_seen": "2026-11-28T03:41:23+00:00",
     "publisher_abstract_enrichment": {
       "status": "ready",
       "checked_at": "2026-11-17T04:17:49+00:00",
@@ -10163,225 +10319,6 @@
     "arxiv_publication_checked": "",
     "translation_legacy_hashes": {
       "faead03812cf74d7": "b2abd46af40309864808fcce094d2f0ae38070311f59a7fc8ba2bb55fda68e97"
-    },
-    "merge_evidence": [
-      "record-id"
-    ]
-  },
-  {
-    "id": "1efab6d8a04d4f31",
-    "type": "paper",
-    "title": "Data-driven calibration of large liquid detectors with unsupervised learning",
-    "abstract": "This paper demonstrates a novel method to extract photomultiplier tube (PMT) calibration timing constants in large liquid scintillation detectors from physics data using the machinery of unsupervised deep learning. The approach uses a simplified physical model of optical photon transport in the loss function, with PMT calibration constants treated as free parameters, and the simple assumption that individual events represent point-like emission. The problem is, thus, effectively reduced to that of regression on a very large scale, made tractable by deep learning architectures and automatic differentiation frameworks. Using data from the 9300 PMTs in the SNO＋ detector, the method has been shown to reliably extract 3 calibration constants for each of the over 7500 online PMTs using radioactive background events. We believe that this basic approach can be straightforwardly generalized for a wide range of applications.",
-    "abstract_status": "full",
-    "abstract_source": "OpenAlex",
-    "authors": [
-      "Scott DeGraw",
-      "Steve Biller",
-      "Armin Reichold"
-    ],
-    "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "source": "Nuclear Instruments and Methods in Physics Research A",
-    "source_short": "NIMA",
-    "source_type": "journal",
-    "doi": "10.1016/j.nima.2026.171722",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1016/j.nima.2026.171722",
-    "pdf_url": "",
-    "categories": [
-      "detectors-daq",
-      "ai-science"
-    ],
-    "tags": [
-      "photomultiplier",
-      "deep learning"
-    ],
-    "primary_topic": "detectors-daq",
-    "methods": [
-      "experimental"
-    ],
-    "classification_confidence": 0.64,
-    "classification_evidence": [
-      "photomultiplier",
-      "deep learning"
-    ],
-    "importance": 61,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +17",
-      "跨领域关联 +2",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "DeGraw, Scott",
-      "Biller, Steve",
-      "Reichold, Armin"
-    ],
-    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
-    "volume": "1091",
-    "issue": "",
-    "pages": "171722",
-    "numpages": "",
-    "publisher": "Elsevier BV",
-    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0168900226004481",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-15T01:29:15+00:00",
-    "openalex_abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-11-01T00:37:12+00:00",
-      "source": "OpenAlex"
-    },
-    "abstract_checked_sources": [
-      "OpenAlex"
-    ],
-    "summary": "",
-    "content": "",
-    "translation_source_hash": "d76f21778728cc0d2870f139e013bb2022ec8599af6629c90db4ec2877c2082f",
-    "publication_links": [],
-    "record_aliases": [],
-    "abstract_source_type": "journal",
-    "figure_enrichment": "",
-    "arxiv_publication_checked": "",
-    "translation_legacy_hashes": {
-      "1efab6d8a04d4f31": "d76f21778728cc0d2870f139e013bb2022ec8599af6629c90db4ec2877c2082f"
-    },
-    "merge_evidence": [
-      "record-id"
-    ]
-  },
-  {
-    "id": "4e91ebaca4e0852d",
-    "type": "paper",
-    "title": "A wide-range RO-based PLL for particle physics experiments",
-    "abstract": "Wide-range clock generators with flexible reference and synthesized clocks are highly adaptable to diverse systems and applications. This paper presents a phase-locked loop based on a ring-oscillator voltage-controlled oscillator (VCO) fabricated using 55-nm technology. The design employs a programmable pre-divider, a feedback divider, and an output divider to enable a broad frequency range. Three versions of the VCO core have been implemented to compare clock performance. One of them achieves a maximum tuning frequency range from 0.6 to 5.57 GHz, with a corresponding phase noise values from −105 to −96 dBc/Hz at a 1-MHz frequency offset. The corresponding random jitter ranges from 3.2 to 1 ps. The core power consumption remains under 36 mW for all configurations.",
-    "abstract_status": "full",
-    "abstract_source": "OpenAlex",
-    "authors": [
-      "Qingkang Wu",
-      "Xiaoting Li",
-      "Qiusheng Zhu",
-      "Xiongbo Yan",
-      "Yinmeng Bai",
-      "Jiaolong Chen",
-      "Yunqi Deng",
-      "Wenhao Huang",
-      "Hui Jiang",
-      "Huaishen Li",
-      "Zehong Liang",
-      "Lei Liu",
-      "Ming Qi",
-      "Chuanye Wang",
-      "Xin Wang",
-      "Zheng Wang",
-      "Jingbo Ye",
-      "Guorui Zhang"
-    ],
-    "published": "2026-11-01",
-    "updated": "2026-11-01",
-    "source": "Nuclear Instruments and Methods in Physics Research A",
-    "source_short": "NIMA",
-    "source_type": "journal",
-    "doi": "10.1016/j.nima.2026.171707",
-    "arxiv_id": "",
-    "url": "https://doi.org/10.1016/j.nima.2026.171707",
-    "pdf_url": "",
-    "categories": [
-      "detectors-daq",
-      "particle-cross"
-    ],
-    "tags": [
-      "particle physics"
-    ],
-    "primary_topic": "detectors-daq",
-    "methods": [],
-    "classification_confidence": 0.56,
-    "classification_evidence": [
-      "particle physics"
-    ],
-    "importance": 61,
-    "score_reasons": [
-      "来源权重 +40",
-      "核物理研究侧重 +17",
-      "跨领域关联 +2",
-      "完整摘要 +2"
-    ],
-    "open_access": null,
-    "license": "",
-    "publisher_licenses": [
-      "https://www.elsevier.com/tdm/userlicense/1.0/",
-      "https://www.elsevier.com/legal/tdmrep-license",
-      "http://creativecommons.org/licenses/by/4.0/"
-    ],
-    "rights_status": "unknown",
-    "figures": [],
-    "figure_status": "rights_unknown",
-    "citation_authors": [
-      "Wu, Qingkang",
-      "Li, Xiaoting",
-      "Zhu, Qiusheng",
-      "Yan, Xiongbo",
-      "Bai, Yinmeng",
-      "Chen, Jiaolong",
-      "Deng, Yunqi",
-      "Huang, Wenhao",
-      "Jiang, Hui",
-      "Li, Huaishen",
-      "Liang, Zehong",
-      "Liu, Lei",
-      "Qi, Ming",
-      "Wang, Chuanye",
-      "Wang, Xin",
-      "Wang, Zheng",
-      "Ye, Jingbo",
-      "Zhang, Guorui"
-    ],
-    "journal_abbrev": "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
-    "volume": "1091",
-    "issue": "",
-    "pages": "171707",
-    "numpages": "",
-    "publisher": "Elsevier BV",
-    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S016890022600433X",
-    "citation_metadata_checked": true,
-    "first_seen": "2026-11-01T00:37:12+00:00",
-    "last_seen": "2026-11-15T01:29:15+00:00",
-    "publisher_abstract_enrichment": {
-      "status": "not_found",
-      "checked_at": "2026-11-01T00:37:12+00:00",
-      "source": "Publisher",
-      "url": "https://linkinghub.elsevier.com/retrieve/pii/S016890022600433X"
-    },
-    "openalex_abstract_enrichment": {
-      "status": "ready",
-      "checked_at": "2026-11-01T00:37:12+00:00",
-      "source": "OpenAlex"
-    },
-    "abstract_checked_sources": [
-      "期刊官网/Cite",
-      "OpenAlex"
-    ],
-    "summary": "",
-    "content": "",
-    "translation_source_hash": "8f5b4b8131a3c3bd3d9147f34904f8272022e605ad59c2e9b1a089ddb4178f35",
-    "publication_links": [],
-    "record_aliases": [],
-    "abstract_source_type": "journal",
-    "figure_enrichment": "",
-    "arxiv_publication_checked": "",
-    "translation_legacy_hashes": {
-      "4e91ebaca4e0852d": "8f5b4b8131a3c3bd3d9147f34904f8272022e605ad59c2e9b1a089ddb4178f35"
     },
     "merge_evidence": [
       "record-id"
